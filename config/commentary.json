@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ra_policy",
+    "title": "Risk-adjustment disaggregation limits margin comparisons",
+    "companies": [],
+    "body": "An insurer that does not split the change in the risk adjustment between the insurance service result and insurance finance income or expense carries the whole RA change, including the effect of discount-rate movements, in the insurance service result. Service margins are therefore compared only within each policy group. Restating to a common basis would need the P&L/OCI split of the RA finance effect, which the statements do not disclose, so no restated margin is shown. Net profit is not affected by the choice."
+  },
+  {
+    "id": "transition",
+    "title": "FY2024 figures are transition comparatives",
+    "companies": [],
+    "body": "TFRS 17 took effect on 1 January 2025 with transition on 1 January 2024. FY2024 figures are the restated comparatives in the FY2025 statements, not previously reported results, and the transition approach chosen by each insurer shapes its FY2024 CSM. Year-on-year changes are shown, but a large move can come from transition mechanics rather than from performance."
+  },
+  {
+    "id": "chubb_rabbit",
+    "title": "CHUBB and Rabbit Life sit above the replacement scale",
+    "companies": ["CHUBB Life", "Rabbit Life"],
+    "body": "Both took heavy onerous-contract charges in the FY2024 transition comparative, which left a small CSM and a small FY2025 release. A small denominator inflates new business / release, so their position in the quadrant reflects transition mechanics rather than unusually strong new business."
+  },
+  {
+    "id": "t_life_accretion",
+    "title": "T Life's CSM interest accretion is negative in FY2025",
+    "companies": ["T Life"],
+    "body": "Accretion at locked-in rates on a positive CSM should be positive; the likely explanation is that another movement is netted into that row. The roll-forward closes exactly with the row as printed, so it is carried unchanged."
+  },
+  {
+    "id": "rabbit_scale",
+    "title": "Ratios to insurance revenue stop being meaningful for Rabbit Life",
+    "companies": ["Rabbit Life"],
+    "body": "Its investment book is very large relative to a small insurance operation, so the investment result and other expenses run far past the scale of the profit bridge. Its bars are clipped at the axis; the net-profit margin shown is the true figure."
+  },
+  {
+    "id": "release_ratio",
+    "title": "Reading the CSM quadrant",
+    "companies": [],
+    "body": "A release ratio of roughly 8-13% is the normal run-off pace for a stable book. Far above it, the store is drawn down quickly relative to what remains; far below it, the runway is long. New business below 1.0x the release for more than a year or two is the early warning on future earnings."
+  }
+]

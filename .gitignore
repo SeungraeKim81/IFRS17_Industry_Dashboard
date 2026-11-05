@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+~$*.xlsx
+# source statements are registered in data/<period>/sources.csv, not committed
+sources/
+*.pdf

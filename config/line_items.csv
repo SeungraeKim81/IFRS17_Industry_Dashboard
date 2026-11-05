@@ -1,0 +1,31 @@
+code,workbook_label,aliases,block,sign_convention,description
+ra_release,RA release,,revenue,+,Risk adjustment released for current service (insurance revenue component; LRC basis from the revenue note)
+bel_release,BEL release (excl. NDIC),,revenue,+,Expected claims and expenses released (excluding non-distinct investment components)
+paa_revenue,PAA insurance revenue,,revenue,+,Insurance revenue from contracts measured under the premium allocation approach
+other_revenue,Others insurance revenue,,revenue,+/-,Other revenue line (e.g. premium experience adjustment) where the insurer discloses one
+incurred_claims,Incurred claims,,expense,-,Incurred claims and other directly attributable expenses
+past_service,Past service,,expense,+/-,Changes relating to past service (changes in the LIC)
+loss_component,Loss component (P&L),,expense,+/-,Losses on onerous contracts and reversals recognised in P&L
+acq_recovery,Recovery of acquisition CF,,revenue,+,Allocation of the portion of premiums relating to recovery of insurance acquisition cash flows
+acq_amortisation,Amortisation of acquisition CF,,expense,-,Amortisation of insurance acquisition cash flows
+net_investment_income,Net investment income,,finance,+/-,Total net investment income (statement of comprehensive income)
+ifie,Net insurance finance expense,,finance,-,Net insurance finance income/expense recognised in P&L
+other_expense,Other expense,Other expense (opex+oth finance),other,-,Other operating and finance expenses outside the insurance service result
+other_income,Other income,,other,+,Other income outside the insurance service result
+income_tax,Income tax,Income tax (credit),tax,+/-,Income tax (expense negative; credit positive)
+net_profit,Net profit (per FS),Net profit,result,+/-,Net profit for the year as printed
+reinsurance_result,Reinsurance service result,,reinsurance,+/-,Net income/expense from reinsurance contracts held
+csm_nb,CSM - increase from new business,CSM — increase from new business,csm,+,CSM recognised on contracts initially recognised in the year (roll-forward row)
+csm_accretion,CSM - interest accretion,CSM — interest accretion,csm,+/-,Interest accreted on the CSM at locked-in rates
+csm_future_service,CSM - change for future service,CSM — change for future service,csm,+/-,Changes in estimates adjusting the CSM (future service excluding new business)
+csm_release,CSM - release to P&L,CSM — release to P&L,csm,-,CSM recognised in P&L for services provided (negative in the roll-forward)
+nb_pv_premium,PV inflow from new business,,new_business,+,Present value of future cash inflows on contracts initially recognised
+nb_pv_acq,PV acquisition cost,,new_business,+,Present value of insurance acquisition cash flows on new business (shown positive)
+nb_pv_claims,PV claim outgo,,new_business,+,Present value of claims and other outflows on new business (shown positive)
+nb_ra,RA on new business,,new_business,+,Risk adjustment on new business
+nb_csm,CSM from new business,,new_business,+,CSM from new business per the new-business disclosure
+csm_open,CSM opening,,csm,+,CSM at the beginning of the year (net)
+csm_close,CSM closing,,csm,+,CSM at the end of the year (net)
+nb_loss_component,Loss component - new business,Loss component — new business,new_business,+,Losses on initial recognition of onerous new business (shown positive)
+insurance_revenue,Total insurance revenue,,total,+,Total insurance revenue as printed
+insurance_service_expense,Total insurance service expense,,total,-,Total insurance service expense as printed

@@ -1,0 +1,817 @@
+company,fiscal_year,metric,value,rank_desc,n
+AIA Thailand,FY2025,insurance_revenue,91244,1,17
+Thai Life,FY2025,insurance_revenue,35954.787,2,17
+Muang Thai Life,FY2025,insurance_revenue,30835.593,3,17
+Allianz Ayudhya,FY2025,insurance_revenue,27359.967,4,17
+FWD Thailand,FY2025,insurance_revenue,27175.494,5,17
+Krungthai-AXA Life,FY2025,insurance_revenue,25020.989,6,17
+Bangkok Life,FY2025,insurance_revenue,13234.86,7,17
+Prudential Life,FY2025,insurance_revenue,13010.322,8,17
+Generali Life,FY2025,insurance_revenue,7536.929,9,17
+Ocean Life,FY2025,insurance_revenue,5748.018,10,17
+CHUBB Life,FY2025,insurance_revenue,5453.01,11,17
+Tokio Marine Life,FY2025,insurance_revenue,5418.285,12,17
+Dhipaya Life,FY2025,insurance_revenue,3777.59,13,17
+Southeast Life,FY2025,insurance_revenue,3578.127,14,17
+Samsung Life,FY2025,insurance_revenue,2321.096,15,17
+T Life,FY2025,insurance_revenue,462.924,16,17
+Rabbit Life,FY2025,insurance_revenue,413.957,17,17
+AIA Thailand,FY2025,net_profit,11715,2,17
+Thai Life,FY2025,net_profit,11881.918,1,17
+Muang Thai Life,FY2025,net_profit,9484.238,4,17
+Allianz Ayudhya,FY2025,net_profit,7734.152,6,17
+FWD Thailand,FY2025,net_profit,10272.642,3,17
+Krungthai-AXA Life,FY2025,net_profit,8004.58,5,17
+Bangkok Life,FY2025,net_profit,6968.382,7,17
+Prudential Life,FY2025,net_profit,1608.694,9,17
+Generali Life,FY2025,net_profit,502.719,14,17
+Ocean Life,FY2025,net_profit,2649.389,8,17
+CHUBB Life,FY2025,net_profit,592.797,13,17
+Tokio Marine Life,FY2025,net_profit,367.02,15,17
+Dhipaya Life,FY2025,net_profit,658.418,11,17
+Southeast Life,FY2025,net_profit,1260.902,10,17
+Samsung Life,FY2025,net_profit,616.445,12,17
+T Life,FY2025,net_profit,84.972,17,17
+Rabbit Life,FY2025,net_profit,179.769,16,17
+AIA Thailand,FY2025,csm_close,195504,1,17
+Thai Life,FY2025,csm_close,91620.019,2,17
+Muang Thai Life,FY2025,csm_close,69596.151,4,17
+Allianz Ayudhya,FY2025,csm_close,73348.639,3,17
+FWD Thailand,FY2025,csm_close,52750.162,5,17
+Krungthai-AXA Life,FY2025,csm_close,42659.476,7,17
+Bangkok Life,FY2025,csm_close,44186.646,6,17
+Prudential Life,FY2025,csm_close,21335.232,8,17
+Generali Life,FY2025,csm_close,3164.822,14,17
+Ocean Life,FY2025,csm_close,10350.599,9,17
+CHUBB Life,FY2025,csm_close,2420.248,15,17
+Tokio Marine Life,FY2025,csm_close,7057.24,10,17
+Dhipaya Life,FY2025,csm_close,3948.473,13,17
+Southeast Life,FY2025,csm_close,6044.295,11,17
+Samsung Life,FY2025,csm_close,5151.677,12,17
+T Life,FY2025,csm_close,115.46,17,17
+Rabbit Life,FY2025,csm_close,623.445,16,17
+AIA Thailand,FY2025,nb_csm,20865,1,17
+Thai Life,FY2025,nb_csm,12089.199,3,17
+Muang Thai Life,FY2025,nb_csm,8437.995,4,17
+Allianz Ayudhya,FY2025,nb_csm,7464.205,5,17
+FWD Thailand,FY2025,nb_csm,12372.929,2,17
+Krungthai-AXA Life,FY2025,nb_csm,5453.641,6,17
+Bangkok Life,FY2025,nb_csm,3389.464,7,17
+Prudential Life,FY2025,nb_csm,3192.028,8,17
+Generali Life,FY2025,nb_csm,827.686,13,17
+Ocean Life,FY2025,nb_csm,654.757,15,17
+CHUBB Life,FY2025,nb_csm,1611.462,9,17
+Tokio Marine Life,FY2025,nb_csm,1125.6,11,17
+Dhipaya Life,FY2025,nb_csm,966.619,12,17
+Southeast Life,FY2025,nb_csm,667.929,14,17
+Samsung Life,FY2025,nb_csm,1431.614,10,17
+T Life,FY2025,nb_csm,20.512,17,17
+Rabbit Life,FY2025,nb_csm,481.134,16,17
+AIA Thailand,FY2025,nb_pv_premium,136303,1,17
+Thai Life,FY2025,nb_pv_premium,82208.404,4,17
+Muang Thai Life,FY2025,nb_pv_premium,92639.135,3,17
+Allianz Ayudhya,FY2025,nb_pv_premium,57428.883,7,17
+FWD Thailand,FY2025,nb_pv_premium,96578.959,2,17
+Krungthai-AXA Life,FY2025,nb_pv_premium,58844.297,6,17
+Bangkok Life,FY2025,nb_pv_premium,36703.049,8,17
+Prudential Life,FY2025,nb_pv_premium,59672.47,5,17
+Generali Life,FY2025,nb_pv_premium,11598.369,12,17
+Ocean Life,FY2025,nb_pv_premium,6671.808,15,17
+CHUBB Life,FY2025,nb_pv_premium,12550.639,11,17
+Tokio Marine Life,FY2025,nb_pv_premium,8462.12,14,17
+Dhipaya Life,FY2025,nb_pv_premium,12822.514,10,17
+Southeast Life,FY2025,nb_pv_premium,9103.059,13,17
+Samsung Life,FY2025,nb_pv_premium,15910.927,9,17
+T Life,FY2025,nb_pv_premium,1692.543,17,17
+Rabbit Life,FY2025,nb_pv_premium,3022.662,16,17
+AIA Thailand,FY2025,isr_gross,20036,1,17
+Thai Life,FY2025,isr_gross,13103.942,2,17
+Muang Thai Life,FY2025,isr_gross,8417.306,5,17
+Allianz Ayudhya,FY2025,isr_gross,11368.278,3,17
+FWD Thailand,FY2025,isr_gross,8227.399,6,17
+Krungthai-AXA Life,FY2025,isr_gross,8720.342,4,17
+Bangkok Life,FY2025,isr_gross,4640.773,7,17
+Prudential Life,FY2025,isr_gross,2964.403,8,17
+Generali Life,FY2025,isr_gross,1052.807,13,17
+Ocean Life,FY2025,isr_gross,2020.171,9,17
+CHUBB Life,FY2025,isr_gross,1247.709,11,17
+Tokio Marine Life,FY2025,isr_gross,1294.695,10,17
+Dhipaya Life,FY2025,isr_gross,220.713,15,17
+Southeast Life,FY2025,isr_gross,1112.074,12,17
+Samsung Life,FY2025,isr_gross,716.311,14,17
+T Life,FY2025,isr_gross,110.039,16,17
+Rabbit Life,FY2025,isr_gross,18.269,17,17
+AIA Thailand,FY2025,ism_gross,0.219587,14,17
+Thai Life,FY2025,ism_gross,0.364456,2,17
+Muang Thai Life,FY2025,ism_gross,0.272974,9,17
+Allianz Ayudhya,FY2025,ism_gross,0.415508,1,17
+FWD Thailand,FY2025,ism_gross,0.302751,8,17
+Krungthai-AXA Life,FY2025,ism_gross,0.348521,5,17
+Bangkok Life,FY2025,ism_gross,0.350648,4,17
+Prudential Life,FY2025,ism_gross,0.22785,13,17
+Generali Life,FY2025,ism_gross,0.139686,15,17
+Ocean Life,FY2025,ism_gross,0.351455,3,17
+CHUBB Life,FY2025,ism_gross,0.228811,12,17
+Tokio Marine Life,FY2025,ism_gross,0.238949,10,17
+Dhipaya Life,FY2025,ism_gross,0.058427,16,17
+Southeast Life,FY2025,ism_gross,0.310798,6,17
+Samsung Life,FY2025,ism_gross,0.308609,7,17
+T Life,FY2025,ism_gross,0.237704,11,17
+Rabbit Life,FY2025,ism_gross,0.044133,17,17
+AIA Thailand,FY2025,ism_net,0.143429,13,17
+Thai Life,FY2025,ism_net,0.363054,2,17
+Muang Thai Life,FY2025,ism_net,0.253899,9,17
+Allianz Ayudhya,FY2025,ism_net,0.406837,1,17
+FWD Thailand,FY2025,ism_net,0.295105,8,17
+Krungthai-AXA Life,FY2025,ism_net,0.343222,4,17
+Bangkok Life,FY2025,ism_net,0.335287,5,17
+Prudential Life,FY2025,ism_net,0.202722,11,17
+Generali Life,FY2025,ism_net,0.100729,16,17
+Ocean Life,FY2025,ism_net,0.359595,3,17
+CHUBB Life,FY2025,ism_net,0.100795,15,17
+Tokio Marine Life,FY2025,ism_net,0.212744,10,17
+Dhipaya Life,FY2025,ism_net,0.042646,17,17
+Southeast Life,FY2025,ism_net,0.300764,7,17
+Samsung Life,FY2025,ism_net,0.302014,6,17
+T Life,FY2025,ism_net,0.154675,12,17
+Rabbit Life,FY2025,ism_net,0.106134,14,17
+AIA Thailand,FY2025,inv_margin,0.059587,13,17
+Thai Life,FY2025,inv_margin,0.09028,12,17
+Muang Thai Life,FY2025,inv_margin,0.257953,5,17
+Allianz Ayudhya,FY2025,inv_margin,-0.017366,16,17
+FWD Thailand,FY2025,inv_margin,0.228737,6,17
+Krungthai-AXA Life,FY2025,inv_margin,0.102958,10,17
+Bangkok Life,FY2025,inv_margin,0.294305,4,17
+Prudential Life,FY2025,inv_margin,-0.024907,17,17
+Generali Life,FY2025,inv_margin,0.018951,14,17
+Ocean Life,FY2025,inv_margin,0.314836,2,17
+CHUBB Life,FY2025,inv_margin,0.105671,9,17
+Tokio Marine Life,FY2025,inv_margin,0.017697,15,17
+Dhipaya Life,FY2025,inv_margin,0.225151,7,17
+Southeast Life,FY2025,inv_margin,0.314356,3,17
+Samsung Life,FY2025,inv_margin,0.09333,11,17
+T Life,FY2025,inv_margin,0.221842,8,17
+Rabbit Life,FY2025,inv_margin,1.107845,1,17
+AIA Thailand,FY2025,other_ratio,-0.042896,4,17
+Thai Life,FY2025,other_ratio,-0.044045,5,17
+Muang Thai Life,FY2025,other_ratio,-0.129998,12,17
+Allianz Ayudhya,FY2025,other_ratio,-0.03477,3,17
+FWD Thailand,FY2025,other_ratio,-0.048176,6,17
+Krungthai-AXA Life,FY2025,other_ratio,-0.048765,7,17
+Bangkok Life,FY2025,other_ratio,-0.022053,2,17
+Prudential Life,FY2025,other_ratio,-0.014765,1,17
+Generali Life,FY2025,other_ratio,-0.054491,9,17
+Ocean Life,FY2025,other_ratio,-0.135367,13,17
+CHUBB Life,FY2025,other_ratio,-0.066799,11,17
+Tokio Marine Life,FY2025,other_ratio,-0.145098,14,17
+Dhipaya Life,FY2025,other_ratio,-0.05248,8,17
+Southeast Life,FY2025,other_ratio,-0.192137,16,17
+Samsung Life,FY2025,other_ratio,-0.060175,10,17
+T Life,FY2025,other_ratio,-0.149714,15,17
+Rabbit Life,FY2025,other_ratio,-0.650816,17,17
+AIA Thailand,FY2025,tax_ratio,-0.031728,4,17
+Thai Life,FY2025,tax_ratio,-0.078821,14,17
+Muang Thai Life,FY2025,tax_ratio,-0.07428,11,17
+Allianz Ayudhya,FY2025,tax_ratio,-0.07202,10,17
+FWD Thailand,FY2025,tax_ratio,-0.097656,16,17
+Krungthai-AXA Life,FY2025,tax_ratio,-0.0775,12,17
+Bangkok Life,FY2025,tax_ratio,-0.081021,15,17
+Prudential Life,FY2025,tax_ratio,-0.039403,5,17
+Generali Life,FY2025,tax_ratio,0.001512,1,17
+Ocean Life,FY2025,tax_ratio,-0.078142,13,17
+CHUBB Life,FY2025,tax_ratio,-0.030957,3,17
+Tokio Marine Life,FY2025,tax_ratio,-0.017607,2,17
+Dhipaya Life,FY2025,tax_ratio,-0.04102,6,17
+Southeast Life,FY2025,tax_ratio,-0.070593,9,17
+Samsung Life,FY2025,tax_ratio,-0.069585,8,17
+T Life,FY2025,tax_ratio,-0.043247,7,17
+Rabbit Life,FY2025,tax_ratio,-0.128893,17,17
+AIA Thailand,FY2025,npm,0.128392,13,17
+Thai Life,FY2025,npm,0.330468,6,17
+Muang Thai Life,FY2025,npm,0.307574,8,17
+Allianz Ayudhya,FY2025,npm,0.282681,9,17
+FWD Thailand,FY2025,npm,0.378011,4,17
+Krungthai-AXA Life,FY2025,npm,0.319915,7,17
+Bangkok Life,FY2025,npm,0.526517,1,17
+Prudential Life,FY2025,npm,0.123648,14,17
+Generali Life,FY2025,npm,0.066701,17,17
+Ocean Life,FY2025,npm,0.460922,2,17
+CHUBB Life,FY2025,npm,0.10871,15,17
+Tokio Marine Life,FY2025,npm,0.067737,16,17
+Dhipaya Life,FY2025,npm,0.174296,12,17
+Southeast Life,FY2025,npm,0.352392,5,17
+Samsung Life,FY2025,npm,0.265584,10,17
+T Life,FY2025,npm,0.183555,11,17
+Rabbit Life,FY2025,npm,0.43427,3,17
+AIA Thailand,FY2025,current_loss_ratio,0.644997,10,17
+Thai Life,FY2025,current_loss_ratio,0.769533,9,17
+Muang Thai Life,FY2025,current_loss_ratio,0.813027,2,17
+Allianz Ayudhya,FY2025,current_loss_ratio,0.562581,13,17
+FWD Thailand,FY2025,current_loss_ratio,0.54211,14,17
+Krungthai-AXA Life,FY2025,current_loss_ratio,0.779208,7,17
+Bangkok Life,FY2025,current_loss_ratio,0.788377,4,17
+Prudential Life,FY2025,current_loss_ratio,0.481052,15,17
+Generali Life,FY2025,current_loss_ratio,0.601972,12,17
+Ocean Life,FY2025,current_loss_ratio,0.8112,3,17
+CHUBB Life,FY2025,current_loss_ratio,0.771856,8,17
+Tokio Marine Life,FY2025,current_loss_ratio,0.788246,5,17
+Dhipaya Life,FY2025,current_loss_ratio,0.841045,1,17
+Southeast Life,FY2025,current_loss_ratio,0.783555,6,17
+Samsung Life,FY2025,current_loss_ratio,0.455939,16,17
+T Life,FY2025,current_loss_ratio,0.382206,17,17
+Rabbit Life,FY2025,current_loss_ratio,0.642031,11,17
+AIA Thailand,FY2025,csm_release_share,0.141204,12,17
+Thai Life,FY2025,csm_release_share,0.323674,2,17
+Muang Thai Life,FY2025,csm_release_share,0.217761,11,17
+Allianz Ayudhya,FY2025,csm_release_share,0.365108,1,17
+FWD Thailand,FY2025,csm_release_share,0.258463,7,17
+Krungthai-AXA Life,FY2025,csm_release_share,0.261403,6,17
+Bangkok Life,FY2025,csm_release_share,0.284306,4,17
+Prudential Life,FY2025,csm_release_share,0.224834,8,17
+Generali Life,FY2025,csm_release_share,0.076227,16,17
+Ocean Life,FY2025,csm_release_share,0.224683,9,17
+CHUBB Life,FY2025,csm_release_share,0.033843,17,17
+Tokio Marine Life,FY2025,csm_release_share,0.133503,13,17
+Dhipaya Life,FY2025,csm_release_share,0.114969,14,17
+Southeast Life,FY2025,csm_release_share,0.283218,5,17
+Samsung Life,FY2025,csm_release_share,0.31883,3,17
+T Life,FY2025,csm_release_share,0.087448,15,17
+Rabbit Life,FY2025,csm_release_share,0.223985,10,17
+AIA Thailand,FY2025,csm_growth,0.068871,9,17
+Thai Life,FY2025,csm_growth,0.041426,10,17
+Muang Thai Life,FY2025,csm_growth,0.077236,5,17
+Allianz Ayudhya,FY2025,csm_growth,-0.013442,13,17
+FWD Thailand,FY2025,csm_growth,0.169012,3,17
+Krungthai-AXA Life,FY2025,csm_growth,0.071753,6,17
+Bangkok Life,FY2025,csm_growth,0.069924,8,17
+Prudential Life,FY2025,csm_growth,0.125347,4,17
+Generali Life,FY2025,csm_growth,0.007818,11,17
+Ocean Life,FY2025,csm_growth,-0.132852,16,17
+CHUBB Life,FY2025,csm_growth,0.476845,1,17
+Tokio Marine Life,FY2025,csm_growth,-0.069295,14,17
+Dhipaya Life,FY2025,csm_growth,0.070197,7,17
+Southeast Life,FY2025,csm_growth,-0.071873,15,17
+Samsung Life,FY2025,csm_growth,0.239852,2,17
+T Life,FY2025,csm_growth,-0.16507,17,17
+Rabbit Life,FY2025,csm_growth,0.003075,12,17
+AIA Thailand,FY2025,release_ratio,0.061827,17,17
+Thai Life,FY2025,release_ratio,0.112705,10,17
+Muang Thai Life,FY2025,release_ratio,0.087992,14,17
+Allianz Ayudhya,FY2025,release_ratio,0.119865,8,17
+FWD Thailand,FY2025,release_ratio,0.117507,9,17
+Krungthai-AXA Life,FY2025,release_ratio,0.132938,4,17
+Bangkok Life,FY2025,release_ratio,0.078473,15,17
+Prudential Life,FY2025,release_ratio,0.120574,7,17
+Generali Life,FY2025,release_ratio,0.153642,2,17
+Ocean Life,FY2025,release_ratio,0.110932,11,17
+CHUBB Life,FY2025,release_ratio,0.070849,16,17
+Tokio Marine Life,FY2025,release_ratio,0.09297,13,17
+Dhipaya Life,FY2025,release_ratio,0.099093,12,17
+Southeast Life,FY2025,release_ratio,0.143587,3,17
+Samsung Life,FY2025,release_ratio,0.125606,6,17
+T Life,FY2025,release_ratio,0.259597,1,17
+Rabbit Life,FY2025,release_ratio,0.129467,5,17
+AIA Thailand,FY2025,nb_to_release,1.61945,6,17
+Thai Life,FY2025,nb_to_release,1.038801,11,17
+Muang Thai Life,FY2025,nb_to_release,1.25663,9,17
+Allianz Ayudhya,FY2025,nb_to_release,0.747217,14,17
+FWD Thailand,FY2025,nb_to_release,1.76156,5,17
+Krungthai-AXA Life,FY2025,nb_to_release,0.833817,13,17
+Bangkok Life,FY2025,nb_to_release,0.900795,12,17
+Prudential Life,FY2025,nb_to_release,1.091229,10,17
+Generali Life,FY2025,nb_to_release,1.440654,8,17
+Ocean Life,FY2025,nb_to_release,0.506982,16,17
+CHUBB Life,FY2025,nb_to_release,8.73194,1,17
+Tokio Marine Life,FY2025,nb_to_release,1.556072,7,17
+Dhipaya Life,FY2025,nb_to_release,2.225674,3,17
+Southeast Life,FY2025,nb_to_release,0.659104,15,17
+Samsung Life,FY2025,nb_to_release,1.934519,4,17
+T Life,FY2025,nb_to_release,0.506694,17,17
+Rabbit Life,FY2025,nb_to_release,5.189107,2,17
+AIA Thailand,FY2025,nb_csm_margin,0.153078,2,17
+Thai Life,FY2025,nb_csm_margin,0.147056,3,17
+Muang Thai Life,FY2025,nb_csm_margin,0.091085,11,17
+Allianz Ayudhya,FY2025,nb_csm_margin,0.129973,5,17
+FWD Thailand,FY2025,nb_csm_margin,0.128112,7,17
+Krungthai-AXA Life,FY2025,nb_csm_margin,0.092679,9,17
+Bangkok Life,FY2025,nb_csm_margin,0.092348,10,17
+Prudential Life,FY2025,nb_csm_margin,0.053492,16,17
+Generali Life,FY2025,nb_csm_margin,0.071362,15,17
+Ocean Life,FY2025,nb_csm_margin,0.098138,8,17
+CHUBB Life,FY2025,nb_csm_margin,0.128397,6,17
+Tokio Marine Life,FY2025,nb_csm_margin,0.133016,4,17
+Dhipaya Life,FY2025,nb_csm_margin,0.075385,13,17
+Southeast Life,FY2025,nb_csm_margin,0.073374,14,17
+Samsung Life,FY2025,nb_csm_margin,0.089977,12,17
+T Life,FY2025,nb_csm_margin,0.012119,17,17
+Rabbit Life,FY2025,nb_csm_margin,0.159176,1,17
+AIA Thailand,FY2025,acq_cost_ratio,0.182344,4,17
+Thai Life,FY2025,acq_cost_ratio,0.139264,9,17
+Muang Thai Life,FY2025,acq_cost_ratio,0.104374,14,17
+Allianz Ayudhya,FY2025,acq_cost_ratio,0.147614,7,17
+FWD Thailand,FY2025,acq_cost_ratio,0.137396,10,17
+Krungthai-AXA Life,FY2025,acq_cost_ratio,0.123014,11,17
+Bangkok Life,FY2025,acq_cost_ratio,0.0862,17,17
+Prudential Life,FY2025,acq_cost_ratio,0.157776,6,17
+Generali Life,FY2025,acq_cost_ratio,0.351879,1,17
+Ocean Life,FY2025,acq_cost_ratio,0.08975,16,17
+CHUBB Life,FY2025,acq_cost_ratio,0.18534,3,17
+Tokio Marine Life,FY2025,acq_cost_ratio,0.116433,12,17
+Dhipaya Life,FY2025,acq_cost_ratio,0.11185,13,17
+Southeast Life,FY2025,acq_cost_ratio,0.167231,5,17
+Samsung Life,FY2025,acq_cost_ratio,0.212129,2,17
+T Life,FY2025,acq_cost_ratio,0.14056,8,17
+Rabbit Life,FY2025,acq_cost_ratio,0.101111,15,17
+AIA Thailand,FY2025,nb_claims_ratio,0.645863,16,17
+Thai Life,FY2025,nb_claims_ratio,0.682357,14,17
+Muang Thai Life,FY2025,nb_claims_ratio,0.785167,4,17
+Allianz Ayudhya,FY2025,nb_claims_ratio,0.690331,13,17
+FWD Thailand,FY2025,nb_claims_ratio,0.723648,10,17
+Krungthai-AXA Life,FY2025,nb_claims_ratio,0.774533,7,17
+Bangkok Life,FY2025,nb_claims_ratio,0.804381,3,17
+Prudential Life,FY2025,nb_claims_ratio,0.77975,6,17
+Generali Life,FY2025,nb_claims_ratio,0.56919,17,17
+Ocean Life,FY2025,nb_claims_ratio,0.780033,5,17
+CHUBB Life,FY2025,nb_claims_ratio,0.660041,15,17
+Tokio Marine Life,FY2025,nb_claims_ratio,0.722547,11,17
+Dhipaya Life,FY2025,nb_claims_ratio,0.813445,2,17
+Southeast Life,FY2025,nb_claims_ratio,0.752073,8,17
+Samsung Life,FY2025,nb_claims_ratio,0.700332,12,17
+T Life,FY2025,nb_claims_ratio,0.857599,1,17
+Rabbit Life,FY2025,nb_claims_ratio,0.748813,9,17
+AIA Thailand,FY2025,onerous_ratio,0.002348,14,17
+Thai Life,FY2025,onerous_ratio,0.001058,15,17
+Muang Thai Life,FY2025,onerous_ratio,0.09432,7,17
+Allianz Ayudhya,FY2025,onerous_ratio,0,17,17
+FWD Thailand,FY2025,onerous_ratio,0.00312,13,17
+Krungthai-AXA Life,FY2025,onerous_ratio,0.004226,11,17
+Bangkok Life,FY2025,onerous_ratio,0.027942,8,17
+Prudential Life,FY2025,onerous_ratio,0.027547,9,17
+Generali Life,FY2025,onerous_ratio,0.000557,16,17
+Ocean Life,FY2025,onerous_ratio,0.00698,10,17
+CHUBB Life,FY2025,onerous_ratio,0.106188,6,17
+Tokio Marine Life,FY2025,onerous_ratio,0.003598,12,17
+Dhipaya Life,FY2025,onerous_ratio,0.267588,3,17
+Southeast Life,FY2025,onerous_ratio,0.273014,2,17
+Samsung Life,FY2025,onerous_ratio,0.119149,5,17
+T Life,FY2025,onerous_ratio,2.766673,1,17
+Rabbit Life,FY2025,onerous_ratio,0.170023,4,17
+AIA Thailand,FY2025,rev_share,0.305628,1,17
+Thai Life,FY2025,rev_share,0.120433,2,17
+Muang Thai Life,FY2025,rev_share,0.103286,3,17
+Allianz Ayudhya,FY2025,rev_share,0.091644,4,17
+FWD Thailand,FY2025,rev_share,0.091026,5,17
+Krungthai-AXA Life,FY2025,rev_share,0.08381,6,17
+Bangkok Life,FY2025,rev_share,0.044331,7,17
+Prudential Life,FY2025,rev_share,0.043579,8,17
+Generali Life,FY2025,rev_share,0.025245,9,17
+Ocean Life,FY2025,rev_share,0.019253,10,17
+CHUBB Life,FY2025,rev_share,0.018265,11,17
+Tokio Marine Life,FY2025,rev_share,0.018149,12,17
+Dhipaya Life,FY2025,rev_share,0.012653,13,17
+Southeast Life,FY2025,rev_share,0.011985,14,17
+Samsung Life,FY2025,rev_share,0.007775,15,17
+T Life,FY2025,rev_share,0.001551,16,17
+Rabbit Life,FY2025,rev_share,0.001387,17,17
+AIA Thailand,FY2025,csm_share,0.310385,1,17
+Thai Life,FY2025,csm_share,0.145457,2,17
+Muang Thai Life,FY2025,csm_share,0.110492,4,17
+Allianz Ayudhya,FY2025,csm_share,0.116449,3,17
+FWD Thailand,FY2025,csm_share,0.083747,5,17
+Krungthai-AXA Life,FY2025,csm_share,0.067727,7,17
+Bangkok Life,FY2025,csm_share,0.070151,6,17
+Prudential Life,FY2025,csm_share,0.033872,8,17
+Generali Life,FY2025,csm_share,0.005025,14,17
+Ocean Life,FY2025,csm_share,0.016433,9,17
+CHUBB Life,FY2025,csm_share,0.003842,15,17
+Tokio Marine Life,FY2025,csm_share,0.011204,10,17
+Dhipaya Life,FY2025,csm_share,0.006269,13,17
+Southeast Life,FY2025,csm_share,0.009596,11,17
+Samsung Life,FY2025,csm_share,0.008179,12,17
+T Life,FY2025,csm_share,0.000183,17,17
+Rabbit Life,FY2025,csm_share,0.00099,16,17
+AIA Thailand,FY2025,nb_csm_share,0.257428,1,17
+Thai Life,FY2025,nb_csm_share,0.149154,3,17
+Muang Thai Life,FY2025,nb_csm_share,0.104106,4,17
+Allianz Ayudhya,FY2025,nb_csm_share,0.092092,5,17
+FWD Thailand,FY2025,nb_csm_share,0.152655,2,17
+Krungthai-AXA Life,FY2025,nb_csm_share,0.067286,6,17
+Bangkok Life,FY2025,nb_csm_share,0.041819,7,17
+Prudential Life,FY2025,nb_csm_share,0.039383,8,17
+Generali Life,FY2025,nb_csm_share,0.010212,13,17
+Ocean Life,FY2025,nb_csm_share,0.008078,15,17
+CHUBB Life,FY2025,nb_csm_share,0.019882,9,17
+Tokio Marine Life,FY2025,nb_csm_share,0.013887,11,17
+Dhipaya Life,FY2025,nb_csm_share,0.011926,12,17
+Southeast Life,FY2025,nb_csm_share,0.008241,14,17
+Samsung Life,FY2025,nb_csm_share,0.017663,10,17
+T Life,FY2025,nb_csm_share,0.000253,17,17
+Rabbit Life,FY2025,nb_csm_share,0.005936,16,17
+AIA Thailand,FY2024,insurance_revenue,83600,1,17
+Thai Life,FY2024,insurance_revenue,32811.372,2,17
+Muang Thai Life,FY2024,insurance_revenue,27339.525,3,17
+Allianz Ayudhya,FY2024,insurance_revenue,25216.768,5,17
+FWD Thailand,FY2024,insurance_revenue,26741.234,4,17
+Krungthai-AXA Life,FY2024,insurance_revenue,22178.397,6,17
+Bangkok Life,FY2024,insurance_revenue,12954.752,7,17
+Prudential Life,FY2024,insurance_revenue,12095.778,8,17
+Generali Life,FY2024,insurance_revenue,5370.603,10,17
+Ocean Life,FY2024,insurance_revenue,6568.4,9,17
+CHUBB Life,FY2024,insurance_revenue,4215.366,12,17
+Tokio Marine Life,FY2024,insurance_revenue,5133.149,11,17
+Dhipaya Life,FY2024,insurance_revenue,3008.982,14,17
+Southeast Life,FY2024,insurance_revenue,3688.297,13,17
+Samsung Life,FY2024,insurance_revenue,1821.682,15,17
+T Life,FY2024,insurance_revenue,350.874,17,17
+Rabbit Life,FY2024,insurance_revenue,366.034,16,17
+AIA Thailand,FY2024,net_profit,9089,2,17
+Thai Life,FY2024,net_profit,13369.409,1,17
+Muang Thai Life,FY2024,net_profit,7298.64,3,17
+Allianz Ayudhya,FY2024,net_profit,7199.262,4,17
+FWD Thailand,FY2024,net_profit,7118.306,5,17
+Krungthai-AXA Life,FY2024,net_profit,5945.639,6,17
+Bangkok Life,FY2024,net_profit,4633.881,7,17
+Prudential Life,FY2024,net_profit,2035.366,9,17
+Generali Life,FY2024,net_profit,535.32,13,17
+Ocean Life,FY2024,net_profit,2686.666,8,17
+CHUBB Life,FY2024,net_profit,-1917.662,17,17
+Tokio Marine Life,FY2024,net_profit,250.17,14,17
+Dhipaya Life,FY2024,net_profit,650.804,12,17
+Southeast Life,FY2024,net_profit,790.395,11,17
+Samsung Life,FY2024,net_profit,883.435,10,17
+T Life,FY2024,net_profit,64.774,15,17
+Rabbit Life,FY2024,net_profit,-415.163,16,17
+AIA Thailand,FY2024,csm_close,182907,1,17
+Thai Life,FY2024,csm_close,87975.522,2,17
+Muang Thai Life,FY2024,csm_close,64606.237,4,17
+Allianz Ayudhya,FY2024,csm_close,74348.041,3,17
+FWD Thailand,FY2024,csm_close,45123.703,5,17
+Krungthai-AXA Life,FY2024,csm_close,39803.473,7,17
+Bangkok Life,FY2024,csm_close,41298.872,6,17
+Prudential Life,FY2024,csm_close,18958.809,8,17
+Generali Life,FY2024,csm_close,3140.27,14,17
+Ocean Life,FY2024,csm_close,11936.368,9,17
+CHUBB Life,FY2024,csm_close,1638.796,15,17
+Tokio Marine Life,FY2024,csm_close,7582.68,10,17
+Dhipaya Life,FY2024,csm_close,3689.482,13,17
+Southeast Life,FY2024,csm_close,6512.361,11,17
+Samsung Life,FY2024,csm_close,4155.074,12,17
+T Life,FY2024,csm_close,138.287,17,17
+Rabbit Life,FY2024,csm_close,621.534,16,17
+AIA Thailand,FY2024,nb_csm,22208,1,17
+Thai Life,FY2024,nb_csm,11431.191,3,17
+Muang Thai Life,FY2024,nb_csm,10659.066,4,17
+Allianz Ayudhya,FY2024,nb_csm,6949.582,5,17
+FWD Thailand,FY2024,nb_csm,14738.341,2,17
+Krungthai-AXA Life,FY2024,nb_csm,5831.259,6,17
+Bangkok Life,FY2024,nb_csm,4349.508,7,17
+Prudential Life,FY2024,nb_csm,4268.999,8,17
+Generali Life,FY2024,nb_csm,673.395,14,17
+Ocean Life,FY2024,nb_csm,889.445,13,17
+CHUBB Life,FY2024,nb_csm,2116.146,9,17
+Tokio Marine Life,FY2024,nb_csm,1295.22,10,17
+Dhipaya Life,FY2024,nb_csm,1206.266,11,17
+Southeast Life,FY2024,nb_csm,550.236,15,17
+Samsung Life,FY2024,nb_csm,979.596,12,17
+T Life,FY2024,nb_csm,23.112,17,17
+Rabbit Life,FY2024,nb_csm,327.576,16,17
+AIA Thailand,FY2024,nb_pv_premium,135279,1,17
+Thai Life,FY2024,nb_pv_premium,78201.565,3,17
+Muang Thai Life,FY2024,nb_pv_premium,77713.458,4,17
+Allianz Ayudhya,FY2024,nb_pv_premium,51199.108,6,17
+FWD Thailand,FY2024,nb_pv_premium,102407.074,2,17
+Krungthai-AXA Life,FY2024,nb_pv_premium,51152.2,7,17
+Bangkok Life,FY2024,nb_pv_premium,32890.238,8,17
+Prudential Life,FY2024,nb_pv_premium,51634.566,5,17
+Generali Life,FY2024,nb_pv_premium,9344.544,12,17
+Ocean Life,FY2024,nb_pv_premium,6932.479,14,17
+CHUBB Life,FY2024,nb_pv_premium,12337.276,10,17
+Tokio Marine Life,FY2024,nb_pv_premium,8439.45,13,17
+Dhipaya Life,FY2024,nb_pv_premium,14718.801,9,17
+Southeast Life,FY2024,nb_pv_premium,6668.669,15,17
+Samsung Life,FY2024,nb_pv_premium,11752.108,11,17
+T Life,FY2024,nb_pv_premium,1833.703,16,17
+Rabbit Life,FY2024,nb_pv_premium,1569.587,17,17
+AIA Thailand,FY2024,isr_gross,16885,1,17
+Thai Life,FY2024,isr_gross,12573.651,2,17
+Muang Thai Life,FY2024,isr_gross,6078.417,6,17
+Allianz Ayudhya,FY2024,isr_gross,10227.609,3,17
+FWD Thailand,FY2024,isr_gross,6255.336,5,17
+Krungthai-AXA Life,FY2024,isr_gross,6891.149,4,17
+Bangkok Life,FY2024,isr_gross,3596.1,7,17
+Prudential Life,FY2024,isr_gross,2036.888,8,17
+Generali Life,FY2024,isr_gross,627.491,13,17
+Ocean Life,FY2024,isr_gross,1790.032,9,17
+CHUBB Life,FY2024,isr_gross,-3485.405,17,17
+Tokio Marine Life,FY2024,isr_gross,1247.989,10,17
+Dhipaya Life,FY2024,isr_gross,242.308,14,17
+Southeast Life,FY2024,isr_gross,1030.673,11,17
+Samsung Life,FY2024,isr_gross,752.227,12,17
+T Life,FY2024,isr_gross,35.111,15,17
+Rabbit Life,FY2024,isr_gross,-259.316,16,17
+AIA Thailand,FY2024,ism_gross,0.201974,11,17
+Thai Life,FY2024,ism_gross,0.38321,3,17
+Muang Thai Life,FY2024,ism_gross,0.222331,10,17
+Allianz Ayudhya,FY2024,ism_gross,0.405588,2,17
+FWD Thailand,FY2024,ism_gross,0.233921,9,17
+Krungthai-AXA Life,FY2024,ism_gross,0.310714,4,17
+Bangkok Life,FY2024,ism_gross,0.277589,6,17
+Prudential Life,FY2024,ism_gross,0.168397,12,17
+Generali Life,FY2024,ism_gross,0.116838,13,17
+Ocean Life,FY2024,ism_gross,0.272522,7,17
+CHUBB Life,FY2024,ism_gross,-0.826833,17,17
+Tokio Marine Life,FY2024,ism_gross,0.243123,8,17
+Dhipaya Life,FY2024,ism_gross,0.080528,15,17
+Southeast Life,FY2024,ism_gross,0.279444,5,17
+Samsung Life,FY2024,ism_gross,0.41293,1,17
+T Life,FY2024,ism_gross,0.100067,14,17
+Rabbit Life,FY2024,ism_gross,-0.708448,16,17
+AIA Thailand,FY2024,ism_net,0.150766,12,17
+Thai Life,FY2024,ism_net,0.381568,3,17
+Muang Thai Life,FY2024,ism_net,0.2184,9,17
+Allianz Ayudhya,FY2024,ism_net,0.40107,2,17
+FWD Thailand,FY2024,ism_net,0.239755,8,17
+Krungthai-AXA Life,FY2024,ism_net,0.31592,4,17
+Bangkok Life,FY2024,ism_net,0.274086,6,17
+Prudential Life,FY2024,ism_net,0.16349,11,17
+Generali Life,FY2024,ism_net,0.107763,14,17
+Ocean Life,FY2024,ism_net,0.267695,7,17
+CHUBB Life,FY2024,ism_net,-0.579861,16,17
+Tokio Marine Life,FY2024,ism_net,0.2159,10,17
+Dhipaya Life,FY2024,ism_net,0.027668,15,17
+Southeast Life,FY2024,ism_net,0.297457,5,17
+Samsung Life,FY2024,ism_net,0.412502,1,17
+T Life,FY2024,ism_net,0.149866,13,17
+Rabbit Life,FY2024,ism_net,-0.69016,17,17
+AIA Thailand,FY2024,inv_margin,0.038445,15,17
+Thai Life,FY2024,inv_margin,0.171958,7,17
+Muang Thai Life,FY2024,inv_margin,0.207356,5,17
+Allianz Ayudhya,FY2024,inv_margin,-0.015516,17,17
+FWD Thailand,FY2024,inv_margin,0.161214,8,17
+Krungthai-AXA Life,FY2024,inv_margin,0.07592,12,17
+Bangkok Life,FY2024,inv_margin,0.183099,6,17
+Prudential Life,FY2024,inv_margin,0.049757,14,17
+Generali Life,FY2024,inv_margin,0.051468,13,17
+Ocean Life,FY2024,inv_margin,0.305162,3,17
+CHUBB Life,FY2024,inv_margin,0.14229,9,17
+Tokio Marine Life,FY2024,inv_margin,-0.012493,16,17
+Dhipaya Life,FY2024,inv_margin,0.345666,2,17
+Southeast Life,FY2024,inv_margin,0.121201,11,17
+Samsung Life,FY2024,inv_margin,0.129688,10,17
+T Life,FY2024,inv_margin,0.23704,4,17
+Rabbit Life,FY2024,inv_margin,0.668402,1,17
+AIA Thailand,FY2024,other_ratio,-0.053589,6,17
+Thai Life,FY2024,other_ratio,-0.044812,4,17
+Muang Thai Life,FY2024,other_ratio,-0.128425,13,17
+Allianz Ayudhya,FY2024,other_ratio,-0.02948,3,17
+FWD Thailand,FY2024,other_ratio,-0.067914,9,17
+Krungthai-AXA Life,FY2024,other_ratio,-0.054506,7,17
+Bangkok Life,FY2024,other_ratio,-0.026635,2,17
+Prudential Life,FY2024,other_ratio,-0.008574,1,17
+Generali Life,FY2024,other_ratio,-0.06102,8,17
+Ocean Life,FY2024,other_ratio,-0.09013,10,17
+CHUBB Life,FY2024,other_ratio,-0.11037,12,17
+Tokio Marine Life,FY2024,other_ratio,-0.14279,14,17
+Dhipaya Life,FY2024,other_ratio,-0.10591,11,17
+Southeast Life,FY2024,other_ratio,-0.168573,15,17
+Samsung Life,FY2024,other_ratio,-0.052514,5,17
+T Life,FY2024,other_ratio,-0.202298,16,17
+Rabbit Life,FY2024,other_ratio,-0.777966,17,17
+AIA Thailand,FY2024,tax_ratio,-0.026902,6,17
+Thai Life,FY2024,tax_ratio,-0.101251,16,17
+Muang Thai Life,FY2024,tax_ratio,-0.030368,7,17
+Allianz Ayudhya,FY2024,tax_ratio,-0.070579,13,17
+FWD Thailand,FY2024,tax_ratio,-0.066862,11,17
+Krungthai-AXA Life,FY2024,tax_ratio,-0.069252,12,17
+Bangkok Life,FY2024,tax_ratio,-0.072853,14,17
+Prudential Life,FY2024,tax_ratio,-0.036403,9,17
+Generali Life,FY2024,tax_ratio,0.001465,2,17
+Ocean Life,FY2024,tax_ratio,-0.073699,15,17
+CHUBB Life,FY2024,tax_ratio,0.093019,1,17
+Tokio Marine Life,FY2024,tax_ratio,-0.011885,5,17
+Dhipaya Life,FY2024,tax_ratio,-0.051138,10,17
+Southeast Life,FY2024,tax_ratio,-0.035786,8,17
+Samsung Life,FY2024,tax_ratio,-0.004721,4,17
+T Life,FY2024,tax_ratio,0,3,17
+Rabbit Life,FY2024,tax_ratio,-0.334496,17,17
+AIA Thailand,FY2024,npm,0.10872,13,17
+Thai Life,FY2024,npm,0.407463,3,17
+Muang Thai Life,FY2024,npm,0.266963,7,17
+Allianz Ayudhya,FY2024,npm,0.285495,5,17
+FWD Thailand,FY2024,npm,0.266192,8,17
+Krungthai-AXA Life,FY2024,npm,0.268082,6,17
+Bangkok Life,FY2024,npm,0.357697,4,17
+Prudential Life,FY2024,npm,0.168271,12,17
+Generali Life,FY2024,npm,0.099676,14,17
+Ocean Life,FY2024,npm,0.409029,2,17
+CHUBB Life,FY2024,npm,-0.454922,16,17
+Tokio Marine Life,FY2024,npm,0.048736,15,17
+Dhipaya Life,FY2024,npm,0.216287,9,17
+Southeast Life,FY2024,npm,0.214298,10,17
+Samsung Life,FY2024,npm,0.484956,1,17
+T Life,FY2024,npm,0.184608,11,17
+Rabbit Life,FY2024,npm,-1.13422,17,17
+AIA Thailand,FY2024,current_loss_ratio,0.675662,13,17
+Thai Life,FY2024,current_loss_ratio,0.810756,8,17
+Muang Thai Life,FY2024,current_loss_ratio,0.945784,2,17
+Allianz Ayudhya,FY2024,current_loss_ratio,0.611496,14,17
+FWD Thailand,FY2024,current_loss_ratio,0.601003,15,17
+Krungthai-AXA Life,FY2024,current_loss_ratio,0.880356,5,17
+Bangkok Life,FY2024,current_loss_ratio,0.915545,4,17
+Prudential Life,FY2024,current_loss_ratio,0.570911,16,17
+Generali Life,FY2024,current_loss_ratio,0.704548,12,17
+Ocean Life,FY2024,current_loss_ratio,0.919225,3,17
+CHUBB Life,FY2024,current_loss_ratio,0.805936,9,17
+Tokio Marine Life,FY2024,current_loss_ratio,0.844542,6,17
+Dhipaya Life,FY2024,current_loss_ratio,0.84287,7,17
+Southeast Life,FY2024,current_loss_ratio,0.959773,1,17
+Samsung Life,FY2024,current_loss_ratio,0.486745,17,17
+T Life,FY2024,current_loss_ratio,0.741475,11,17
+Rabbit Life,FY2024,current_loss_ratio,0.768906,10,17
+AIA Thailand,FY2024,csm_release_share,0.14677,14,17
+Thai Life,FY2024,csm_release_share,0.350536,2,17
+Muang Thai Life,FY2024,csm_release_share,0.231471,9,17
+Allianz Ayudhya,FY2024,csm_release_share,0.392932,1,17
+FWD Thailand,FY2024,csm_release_share,0.236013,8,17
+Krungthai-AXA Life,FY2024,csm_release_share,0.259446,7,17
+Bangkok Life,FY2024,csm_release_share,0.298029,5,17
+Prudential Life,FY2024,csm_release_share,0.223531,10,17
+Generali Life,FY2024,csm_release_share,0.101829,16,17
+Ocean Life,FY2024,csm_release_share,0.219467,11,17
+CHUBB Life,FY2024,csm_release_share,0.0304,17,17
+Tokio Marine Life,FY2024,csm_release_share,0.153574,13,17
+Dhipaya Life,FY2024,csm_release_share,0.125087,15,17
+Southeast Life,FY2024,csm_release_share,0.317779,4,17
+Samsung Life,FY2024,csm_release_share,0.33832,3,17
+T Life,FY2024,csm_release_share,0.211706,12,17
+Rabbit Life,FY2024,csm_release_share,0.284476,6,17
+AIA Thailand,FY2024,csm_growth,0.117467,5,17
+Thai Life,FY2024,csm_growth,0.034352,10,17
+Muang Thai Life,FY2024,csm_growth,0.085316,6,17
+Allianz Ayudhya,FY2024,csm_growth,0.03445,9,17
+FWD Thailand,FY2024,csm_growth,-0.005137,12,17
+Krungthai-AXA Life,FY2024,csm_growth,-0.035971,13,17
+Bangkok Life,FY2024,csm_growth,0.051011,8,17
+Prudential Life,FY2024,csm_growth,0.169562,4,17
+Generali Life,FY2024,csm_growth,0.015356,11,17
+Ocean Life,FY2024,csm_growth,-0.08855,15,17
+CHUBB Life,FY2024,csm_growth,1.16017,1,17
+Tokio Marine Life,FY2024,csm_growth,0.215027,3,17
+Dhipaya Life,FY2024,csm_growth,0.485094,2,17
+Southeast Life,FY2024,csm_growth,-0.088159,14,17
+Samsung Life,FY2024,csm_growth,0.074672,7,17
+T Life,FY2024,csm_growth,-0.333094,17,17
+Rabbit Life,FY2024,csm_growth,-0.235021,16,17
+AIA Thailand,FY2024,release_ratio,0.062866,17,17
+Thai Life,FY2024,release_ratio,0.11562,10,17
+Muang Thai Life,FY2024,release_ratio,0.089213,14,17
+Allianz Ayudhya,FY2024,release_ratio,0.117599,9,17
+FWD Thailand,FY2024,release_ratio,0.122704,8,17
+Krungthai-AXA Life,FY2024,release_ratio,0.126304,6,17
+Bangkok Life,FY2024,release_ratio,0.085494,15,17
+Prudential Life,FY2024,release_ratio,0.124814,7,17
+Generali Life,FY2024,release_ratio,0.148322,3,17
+Ocean Life,FY2024,release_ratio,0.107756,11,17
+CHUBB Life,FY2024,release_ratio,0.072525,16,17
+Tokio Marine Life,FY2024,release_ratio,0.094173,12,17
+Dhipaya Life,FY2024,release_ratio,0.092572,13,17
+Southeast Life,FY2024,release_ratio,0.152525,2,17
+Samsung Life,FY2024,release_ratio,0.129168,5,17
+T Life,FY2024,release_ratio,0.349449,1,17
+Rabbit Life,FY2024,release_ratio,0.143494,4,17
+AIA Thailand,FY2024,nb_to_release,1.809943,5,17
+Thai Life,FY2024,nb_to_release,0.99388,13,17
+Muang Thai Life,FY2024,nb_to_release,1.684344,6,17
+Allianz Ayudhya,FY2024,nb_to_release,0.701377,14,17
+FWD Thailand,FY2024,nb_to_release,2.335242,4,17
+Krungthai-AXA Life,FY2024,nb_to_release,1.013411,12,17
+Bangkok Life,FY2024,nb_to_release,1.126554,11,17
+Prudential Life,FY2024,nb_to_release,1.578896,9,17
+Generali Life,FY2024,nb_to_release,1.231328,10,17
+Ocean Life,FY2024,nb_to_release,0.617006,15,17
+CHUBB Life,FY2024,nb_to_release,16.513426,1,17
+Tokio Marine Life,FY2024,nb_to_release,1.643013,7,17
+Dhipaya Life,FY2024,nb_to_release,3.204881,2,17
+Southeast Life,FY2024,nb_to_release,0.469459,16,17
+Samsung Life,FY2024,nb_to_release,1.589448,8,17
+T Life,FY2024,nb_to_release,0.311139,17,17
+Rabbit Life,FY2024,nb_to_release,3.145897,3,17
+AIA Thailand,FY2024,nb_csm_margin,0.164164,3,17
+Thai Life,FY2024,nb_csm_margin,0.146176,5,17
+Muang Thai Life,FY2024,nb_csm_margin,0.137159,7,17
+Allianz Ayudhya,FY2024,nb_csm_margin,0.135736,8,17
+FWD Thailand,FY2024,nb_csm_margin,0.143919,6,17
+Krungthai-AXA Life,FY2024,nb_csm_margin,0.113998,11,17
+Bangkok Life,FY2024,nb_csm_margin,0.132243,9,17
+Prudential Life,FY2024,nb_csm_margin,0.082677,13,17
+Generali Life,FY2024,nb_csm_margin,0.072063,16,17
+Ocean Life,FY2024,nb_csm_margin,0.128301,10,17
+CHUBB Life,FY2024,nb_csm_margin,0.171525,2,17
+Tokio Marine Life,FY2024,nb_csm_margin,0.153472,4,17
+Dhipaya Life,FY2024,nb_csm_margin,0.081954,15,17
+Southeast Life,FY2024,nb_csm_margin,0.082511,14,17
+Samsung Life,FY2024,nb_csm_margin,0.083355,12,17
+T Life,FY2024,nb_csm_margin,0.012604,17,17
+Rabbit Life,FY2024,nb_csm_margin,0.208702,1,17
+AIA Thailand,FY2024,acq_cost_ratio,0.195189,3,17
+Thai Life,FY2024,acq_cost_ratio,0.147725,10,17
+Muang Thai Life,FY2024,acq_cost_ratio,0.120559,13,17
+Allianz Ayudhya,FY2024,acq_cost_ratio,0.153978,7,17
+FWD Thailand,FY2024,acq_cost_ratio,0.150344,8,17
+Krungthai-AXA Life,FY2024,acq_cost_ratio,0.141266,11,17
+Bangkok Life,FY2024,acq_cost_ratio,0.098158,17,17
+Prudential Life,FY2024,acq_cost_ratio,0.170154,4,17
+Generali Life,FY2024,acq_cost_ratio,0.407492,1,17
+Ocean Life,FY2024,acq_cost_ratio,0.104796,16,17
+CHUBB Life,FY2024,acq_cost_ratio,0.149927,9,17
+Tokio Marine Life,FY2024,acq_cost_ratio,0.119054,15,17
+Dhipaya Life,FY2024,acq_cost_ratio,0.119796,14,17
+Southeast Life,FY2024,acq_cost_ratio,0.155544,6,17
+Samsung Life,FY2024,acq_cost_ratio,0.197622,2,17
+T Life,FY2024,acq_cost_ratio,0.137253,12,17
+Rabbit Life,FY2024,acq_cost_ratio,0.156128,5,17
+AIA Thailand,FY2024,nb_claims_ratio,0.623711,16,17
+Thai Life,FY2024,nb_claims_ratio,0.677744,13,17
+Muang Thai Life,FY2024,nb_claims_ratio,0.716013,9,17
+Allianz Ayudhya,FY2024,nb_claims_ratio,0.685809,12,17
+FWD Thailand,FY2024,nb_claims_ratio,0.695691,10,17
+Krungthai-AXA Life,FY2024,nb_claims_ratio,0.729838,7,17
+Bangkok Life,FY2024,nb_claims_ratio,0.752891,3,17
+Prudential Life,FY2024,nb_claims_ratio,0.735495,6,17
+Generali Life,FY2024,nb_claims_ratio,0.512509,17,17
+Ocean Life,FY2024,nb_claims_ratio,0.735785,5,17
+CHUBB Life,FY2024,nb_claims_ratio,0.649689,14,17
+Tokio Marine Life,FY2024,nb_claims_ratio,0.689293,11,17
+Dhipaya Life,FY2024,nb_claims_ratio,0.790595,2,17
+Southeast Life,FY2024,nb_claims_ratio,0.748344,4,17
+Samsung Life,FY2024,nb_claims_ratio,0.71713,8,17
+T Life,FY2024,nb_claims_ratio,0.864737,1,17
+Rabbit Life,FY2024,nb_claims_ratio,0.63184,15,17
+AIA Thailand,FY2024,onerous_ratio,0.005854,11,17
+Thai Life,FY2024,onerous_ratio,0.000343,15,17
+Muang Thai Life,FY2024,onerous_ratio,0.026208,7,17
+Allianz Ayudhya,FY2024,onerous_ratio,0,17,17
+FWD Thailand,FY2024,onerous_ratio,0.010598,9,17
+Krungthai-AXA Life,FY2024,onerous_ratio,0.003421,13,17
+Bangkok Life,FY2024,onerous_ratio,0.018825,8,17
+Prudential Life,FY2024,onerous_ratio,0.004098,12,17
+Generali Life,FY2024,onerous_ratio,0,16,17
+Ocean Life,FY2024,onerous_ratio,0.006359,10,17
+CHUBB Life,FY2024,onerous_ratio,0.053447,5,17
+Tokio Marine Life,FY2024,onerous_ratio,0.001212,14,17
+Dhipaya Life,FY2024,onerous_ratio,0.126204,2,17
+Southeast Life,FY2024,onerous_ratio,0.124474,3,17
+Samsung Life,FY2024,onerous_ratio,0.052737,6,17
+T Life,FY2024,onerous_ratio,2.986111,1,17
+Rabbit Life,FY2024,onerous_ratio,0.122881,4,17
+AIA Thailand,FY2024,rev_share,0.305711,1,17
+Thai Life,FY2024,rev_share,0.119985,2,17
+Muang Thai Life,FY2024,rev_share,0.099976,3,17
+Allianz Ayudhya,FY2024,rev_share,0.092213,5,17
+FWD Thailand,FY2024,rev_share,0.097788,4,17
+Krungthai-AXA Life,FY2024,rev_share,0.081103,6,17
+Bangkok Life,FY2024,rev_share,0.047373,7,17
+Prudential Life,FY2024,rev_share,0.044232,8,17
+Generali Life,FY2024,rev_share,0.019639,10,17
+Ocean Life,FY2024,rev_share,0.024019,9,17
+CHUBB Life,FY2024,rev_share,0.015415,12,17
+Tokio Marine Life,FY2024,rev_share,0.018771,11,17
+Dhipaya Life,FY2024,rev_share,0.011003,14,17
+Southeast Life,FY2024,rev_share,0.013487,13,17
+Samsung Life,FY2024,rev_share,0.006662,15,17
+T Life,FY2024,rev_share,0.001283,17,17
+Rabbit Life,FY2024,rev_share,0.001339,16,17
+AIA Thailand,FY2024,csm_share,0.307698,1,17
+Thai Life,FY2024,csm_share,0.147998,2,17
+Muang Thai Life,FY2024,csm_share,0.108685,4,17
+Allianz Ayudhya,FY2024,csm_share,0.125073,3,17
+FWD Thailand,FY2024,csm_share,0.07591,5,17
+Krungthai-AXA Life,FY2024,csm_share,0.06696,7,17
+Bangkok Life,FY2024,csm_share,0.069476,6,17
+Prudential Life,FY2024,csm_share,0.031894,8,17
+Generali Life,FY2024,csm_share,0.005283,14,17
+Ocean Life,FY2024,csm_share,0.02008,9,17
+CHUBB Life,FY2024,csm_share,0.002757,15,17
+Tokio Marine Life,FY2024,csm_share,0.012756,10,17
+Dhipaya Life,FY2024,csm_share,0.006207,13,17
+Southeast Life,FY2024,csm_share,0.010956,11,17
+Samsung Life,FY2024,csm_share,0.00699,12,17
+T Life,FY2024,csm_share,0.000233,17,17
+Rabbit Life,FY2024,csm_share,0.001046,16,17
+AIA Thailand,FY2024,nb_csm_share,0.250947,1,17
+Thai Life,FY2024,nb_csm_share,0.12917,3,17
+Muang Thai Life,FY2024,nb_csm_share,0.120446,4,17
+Allianz Ayudhya,FY2024,nb_csm_share,0.078529,5,17
+FWD Thailand,FY2024,nb_csm_share,0.166541,2,17
+Krungthai-AXA Life,FY2024,nb_csm_share,0.065892,6,17
+Bangkok Life,FY2024,nb_csm_share,0.049149,7,17
+Prudential Life,FY2024,nb_csm_share,0.048239,8,17
+Generali Life,FY2024,nb_csm_share,0.007609,14,17
+Ocean Life,FY2024,nb_csm_share,0.010051,13,17
+CHUBB Life,FY2024,nb_csm_share,0.023912,9,17
+Tokio Marine Life,FY2024,nb_csm_share,0.014636,10,17
+Dhipaya Life,FY2024,nb_csm_share,0.013631,11,17
+Southeast Life,FY2024,nb_csm_share,0.006218,15,17
+Samsung Life,FY2024,nb_csm_share,0.011069,12,17
+T Life,FY2024,nb_csm_share,0.000261,17,17
+Rabbit Life,FY2024,nb_csm_share,0.003702,16,17

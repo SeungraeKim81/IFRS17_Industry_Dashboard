@@ -1,0 +1,21 @@
+{
+  "title": "Thai life insurance industry — IFRS 17 dashboard",
+  "market": "Thailand · life insurance",
+  "standard": "TFRS 17 (IFRS 17)",
+  "period": "FY2025",
+  "comparative": "FY2024",
+  "period_end": "31 December 2025 (B.E. 2568)",
+  "unit": "THB million",
+  "focus_company": "Samsung Life",
+  "large_insurer_count": 10,
+  "capture_workbook": "data/capture/IFRS17_extraction_FY2025_v11.xlsx",
+  "tolerance_thb_m": 0.05,
+  "plausibility": {
+    "release_ratio_min": 0.05,
+    "release_ratio_max": 0.20,
+    "nb_to_release_max": 3.0,
+    "yoy_revenue_abs_max": 0.5,
+    "nb_csm_margin_max": 0.30
+  },
+  "comparative_caveat": "TFRS 17 became effective in Thailand on 1 January 2025 with transition on 1 January 2024, so FY2024 figures are restated transition comparatives, not previously reported performance. Year-on-year changes should be read with that in mind."
+}

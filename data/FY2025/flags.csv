@@ -1,0 +1,13 @@
+company,fiscal_year,flag,message
+CHUBB Life,FY2024,nb_to_release,New business / release 16.5x is above 3.0x
+CHUBB Life,FY2024,loss_year,"Net loss of -1,917.7m"
+CHUBB Life,FY2025,nb_to_release,New business / release 8.7x is above 3.0x
+Dhipaya Life,FY2024,nb_to_release,New business / release 3.2x is above 3.0x
+Rabbit Life,FY2024,nb_to_release,New business / release 3.1x is above 3.0x
+Rabbit Life,FY2024,loss_year,Net loss of -415.2m
+Rabbit Life,FY2025,nb_to_release,New business / release 5.2x is above 3.0x
+T Life,FY2024,release_ratio,CSM release ratio 34.9% is outside 5%-20%
+T Life,FY2024,onerous_nb,Losses on onerous new business (69.0m) exceed new-business CSM (23.1m)
+T Life,FY2025,negative_accretion,CSM interest accretion is negative (-5.9m) on a positive opening CSM
+T Life,FY2025,release_ratio,CSM release ratio 26.0% is outside 5%-20%
+T Life,FY2025,onerous_nb,Losses on onerous new business (56.8m) exceed new-business CSM (20.5m)
