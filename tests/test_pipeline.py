@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -83,6 +84,32 @@ class TestMetricsAgainstBenchmark(unittest.TestCase):
                     self.assertAlmostEqual(self.m[name][mk] * scale, b[bk], places=3)
             self.assertAlmostEqual(self.m[name]["csm_close"], b["csmClose"], places=3)
             self.assertAlmostEqual(self.m[name]["insurance_revenue"], b["rev"], places=3)
+
+
+class TestTranslations(unittest.TestCase):
+    def test_data_translations_complete(self):
+        data = build.payload(PERIOD)
+        for lang in data["i18n"]:
+            with self.subTest(lang=lang):
+                self.assertEqual(build.missing_translations(data, lang), [])
+
+    def test_interface_keys_match(self):
+        """UI.en and every other UI.<lang> in the template define the same keys."""
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node not installed")
+        tpl = (ROOT / "templates" / "dashboard.html").read_text(encoding="utf-8")
+        block = tpl[tpl.index("const UI = {"):tpl.index("const TR = ")]
+        script = ("const nf=(v,d)=>String(v);" + block +
+                  "const out={};for(const l in UI){out[l]={keys:Object.keys(UI[l]).sort(),"
+                  "cols:Object.keys(UI[l].cols).sort(),toc:UI[l].toc.length,wf:UI[l].wf.length}}"
+                  "console.log(JSON.stringify(out));")
+        res = subprocess.run([node, "-e", script], capture_output=True, text=True, check=True)
+        out = json.loads(res.stdout)
+        self.assertIn("ko", out)
+        for lang, v in out.items():
+            with self.subTest(lang=lang):
+                self.assertEqual(v, out["en"])
 
 
 class TestBuild(unittest.TestCase):

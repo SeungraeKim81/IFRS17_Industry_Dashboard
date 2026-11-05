@@ -24,6 +24,28 @@ def _git_rev() -> str:
         return ""
 
 
+def load_translation(lang: str) -> dict:
+    """config/i18n/<lang>.json: translations of the data-driven text (English is the source)."""
+    with open(CONFIG / "i18n" / f"{lang}.json", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def missing_translations(data: dict, lang: str) -> list[str]:
+    """Every data-driven string shown on the page must have a translation."""
+    tr = data["i18n"].get(lang, {})
+    miss = [f"meta.{k}" for k in ("title", "standard", "period_end", "unit", "comparative_caveat") if not tr.get("meta", {}).get(k)]
+    miss += [f"metrics.{d['code']}" for d in data["metric_defs"]
+             if not all(tr.get("metrics", {}).get(d["code"], {}).get(x) for x in ("label", "formula"))]
+    miss += [f"checks.{c['id']}" for c in data["check_defs"]
+             if not all(tr.get("checks", {}).get(c["id"], {}).get(x) for x in ("label", "short"))]
+    miss += [f"commentary.{n['id']}" for n in data["commentary"]
+             if not all(tr.get("commentary", {}).get(n["id"], {}).get(x) for x in ("title", "body"))]
+    miss += [f"groups.{g}" for g in {d["group"] for d in data["metric_defs"]} if not tr.get("groups", {}).get(g)]
+    if lang == "ko":
+        miss += [f"flags.{f['company']}.{f['fiscal_year']}.{f['flag']}" for f in data["flags"] if not f.get("message_ko")]
+    return miss
+
+
 def payload(period: str, focus: str | None = None) -> dict:
     s = load_settings()
     pdir = period_dir(period)
@@ -66,12 +88,14 @@ def payload(period: str, focus: str | None = None) -> dict:
 
     with open(CONFIG / "commentary.json", encoding="utf-8") as f:
         commentary = json.load(f)
+    i18n = {lang: load_translation(lang) for lang in s.get("languages", ["en"]) if lang != "en"}
 
     return {
         "meta": {**{k: s[k] for k in ("title", "market", "standard", "period", "comparative", "period_end",
                                        "unit", "large_insurer_count", "comparative_caveat", "tolerance_thb_m")},
                  "default_focus": focus, "workbook": s["capture_workbook"],
                  "indexing": bool(s.get("search_engine_indexing", False)),
+                 "languages": s.get("languages", ["en"]), "default_language": s.get("default_language", "en"),
                  "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "git": _git_rev()},
         "years": years,
         "companies": cos,
@@ -86,6 +110,7 @@ def payload(period: str, focus: str | None = None) -> dict:
         "flags": read_csv(pdir / "flags.csv"),
         "company_notes": read_csv(pdir / "company_notes.csv"),
         "commentary": commentary,
+        "i18n": i18n,
     }
 
 
@@ -101,6 +126,10 @@ def render(data: dict) -> str:
 
 def run(period: str, focus: str | None = None) -> None:
     data = payload(period, focus)
+    for lang in data["i18n"]:
+        miss = missing_translations(data, lang)
+        if miss:
+            raise SystemExit(f"build: missing {lang} translations in config/i18n/{lang}.json: {', '.join(miss)}")
     out = OUTPUT / period / f"Thai_Life_IFRS17_Dashboard_{period}.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(render(data), encoding="utf-8")

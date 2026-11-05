@@ -21,6 +21,10 @@ the analyst capture workbook into one self-contained HTML page. See
 - The template uses no external scripts, fonts or styles, so the output works
   offline. Keep it that way. Colours are CSS variables at the top of
   `templates/dashboard.html`, with light and dark values.
+- The page is bilingual (English / Korean). Every interface string goes into
+  both `UI.en` and `UI.ko` in the template; data-driven text into
+  `config/i18n/ko.json`. The build and tests fail on a missing translation.
+  See "Languages" in `docs/WORKFLOW.md`.
 - Check a template change by rendering it with Playwright (light, dark,
   390px wide) and looking for console errors and overlaps.
 - Publishing: `.github/workflows/pages.yml` validates every push and deploys

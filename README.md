@@ -13,7 +13,8 @@ command line.
 | Source | Public information, mainly the audited financial statements (SET filings, OIC annual disclosures, company websites) |
 | Coverage | FY2025 with FY2024 comparatives, 17 insurers, THB million |
 | Output | `output/FY2025/Thai_Life_IFRS17_Dashboard_FY2025.html`: one file that works offline and can be emailed |
-| Published | <https://seungraekim81.github.io/IFRS17_Industry_Dashboard/> once GitHub Pages is switched on (see `docs/DEPLOY.md`) |
+| Published | <https://seungraekim81.github.io/IFRS17_Industry_Dashboard/> (see `docs/DEPLOY.md`) |
+| Languages | English and Korean (한국어), switched with the button at the top right; the choice is remembered in the browser |
 
 ## Quick start
 
@@ -80,6 +81,7 @@ ties to the insurers' printed subtotals.
 | `config/companies.csv` | Insurer master: names, workbook sheet, RA policy, source units |
 | `config/line_items.csv` | The 30 captured line items, their workbook labels and sign convention |
 | `config/commentary.json` | Analyst comparability notes (tagged to insurers where they apply) |
+| `config/i18n/ko.json` | Korean text for everything that comes from data: indicator names and definitions, reconciliation names, commentary, period and unit text |
 | `data/capture/` | The analyst capture workbook (input) |
 | `data/<period>/` | Generated, committed CSVs, so every change to a figure shows in the diff |
 | `pipeline/` | The four steps (`ingest`, `validate`, `metrics`, `build`) |
@@ -97,3 +99,4 @@ ties to the insurers' printed subtotals.
 |---|---|---|
 | v1.0 | 2026-11 | First pipeline release: FY2025 + FY2024, 17 insurers, Samsung Life focus. Reproduces every figure on the benchmark board. |
 | v1.1 | 2026-11 | GitHub Pages publishing: validation workflow, `site` step, per-period addresses, `noindex` by default |
+| v1.2 | 2026-11 | Korean version: language switch at the top right (English / 한국어), remembered per browser and settable by `#lang=ko`; Korean review flags; translation completeness tests |

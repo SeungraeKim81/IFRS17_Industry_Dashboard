@@ -7,6 +7,8 @@
   "period_end": "31 December 2025 (B.E. 2568)",
   "unit": "THB million",
   "focus_company": "Samsung Life",
+  "languages": ["en", "ko"],
+  "default_language": "en",
   "large_insurer_count": 10,
   "search_engine_indexing": false,
   "capture_workbook": "data/capture/IFRS17_extraction_FY2025_v11.xlsx",

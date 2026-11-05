@@ -39,26 +39,31 @@ def _plausibility(c: str, fy: str, v: dict, prev: dict | None, p: dict) -> list[
     m = {k: METRIC_INDEX[k][6](v) for k in ("release_ratio", "nb_to_release", "nb_csm_margin")}
     flags = []
 
-    def add(fid, msg):
-        flags.append({"company": c, "fiscal_year": fy, "flag": fid, "message": msg})
+    def add(fid, msg, msg_ko):
+        flags.append({"company": c, "fiscal_year": fy, "flag": fid, "message": msg, "message_ko": msg_ko})
 
     if v["csm_accretion"] < 0 < v["csm_open"]:
-        add("negative_accretion", f"CSM interest accretion is negative ({v['csm_accretion']:,.1f}m) on a positive opening CSM")
+        add("negative_accretion", f"CSM interest accretion is negative ({v['csm_accretion']:,.1f}m) on a positive opening CSM",
+            f"기초 CSM이 양수인데 CSM 이자부리가 음수({v['csm_accretion']:,.1f}백만)")
     rr = m["release_ratio"]
     if rr is not None and not (p["release_ratio_min"] <= rr <= p["release_ratio_max"]):
-        add("release_ratio", f"CSM release ratio {rr:.1%} is outside {p['release_ratio_min']:.0%}-{p['release_ratio_max']:.0%}")
+        add("release_ratio", f"CSM release ratio {rr:.1%} is outside {p['release_ratio_min']:.0%}-{p['release_ratio_max']:.0%}",
+            f"CSM 상각률 {rr:.1%}가 {p['release_ratio_min']:.0%}~{p['release_ratio_max']:.0%} 범위를 벗어남")
     if m["nb_to_release"] is not None and m["nb_to_release"] > p["nb_to_release_max"]:
-        add("nb_to_release", f"New business / release {m['nb_to_release']:.1f}x is above {p['nb_to_release_max']:.1f}x")
+        add("nb_to_release", f"New business / release {m['nb_to_release']:.1f}x is above {p['nb_to_release_max']:.1f}x",
+            f"신계약 CSM ÷ 상각 {m['nb_to_release']:.1f}배로 {p['nb_to_release_max']:.1f}배 초과")
     if m["nb_csm_margin"] is not None and m["nb_csm_margin"] > p["nb_csm_margin_max"]:
-        add("nb_margin", f"New-business CSM margin {m['nb_csm_margin']:.1%} is above {p['nb_csm_margin_max']:.0%}")
+        add("nb_margin", f"New-business CSM margin {m['nb_csm_margin']:.1%} is above {p['nb_csm_margin_max']:.0%}",
+            f"신계약 CSM 마진율 {m['nb_csm_margin']:.1%}로 {p['nb_csm_margin_max']:.0%} 초과")
     if v["nb_csm"] > 0 and v["nb_loss_component"] > v["nb_csm"]:
-        add("onerous_nb", f"Losses on onerous new business ({v['nb_loss_component']:,.1f}m) exceed new-business CSM ({v['nb_csm']:,.1f}m)")
+        add("onerous_nb", f"Losses on onerous new business ({v['nb_loss_component']:,.1f}m) exceed new-business CSM ({v['nb_csm']:,.1f}m)",
+            f"손실부담 신계약 손실({v['nb_loss_component']:,.1f}백만)이 신계약 CSM({v['nb_csm']:,.1f}백만)보다 큼")
     if v["net_profit"] < 0:
-        add("loss_year", f"Net loss of {v['net_profit']:,.1f}m")
+        add("loss_year", f"Net loss of {v['net_profit']:,.1f}m", f"당기순손실 {v['net_profit']:,.1f}백만")
     if prev and prev["insurance_revenue"]:
         g = v["insurance_revenue"] / prev["insurance_revenue"] - 1
         if abs(g) > p["yoy_revenue_abs_max"]:
-            add("revenue_yoy", f"Insurance revenue changed {g:+.0%} year on year")
+            add("revenue_yoy", f"Insurance revenue changed {g:+.0%} year on year", f"보험수익 전년 대비 {g:+.0%} 변동")
     return flags
 
 
@@ -82,7 +87,7 @@ def run(period: str, strict: bool = True) -> bool:
     checks, flags = validate(period)
     write_csv(period_dir(period) / "validation.csv", checks,
               ["company", "fiscal_year", "check", "label", "computed", "printed", "difference", "result"])
-    write_csv(period_dir(period) / "flags.csv", flags, ["company", "fiscal_year", "flag", "message"])
+    write_csv(period_dir(period) / "flags.csv", flags, ["company", "fiscal_year", "flag", "message", "message_ko"])
     fails = [c for c in checks if c["result"] != "OK"]
     print(f"validate: {len(checks) - len(fails)}/{len(checks)} reconciliations OK, {len(flags)} plausibility flags")
     for f in fails:

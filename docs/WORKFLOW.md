@@ -72,7 +72,23 @@ The previous period's folder keeps the figures as originally reported, so both r
 - **Line item**: add a row to the template block (rows 5 to 34) of every insurer sheet, then a row to
   `config/line_items.csv` (label and aliases). Ingest refuses to run until every sheet carries the new item.
 - **Indicator**: add one entry to `METRICS` in `pipeline/metrics.py` (label, unit, direction, formula text,
-  function). It flows automatically to the CSV download and the definitions table. To chart it, edit the template.
+  function), and its Korean label and definition under `metrics` in `config/i18n/ko.json`. It flows
+  automatically to the CSV download and the definitions table. To chart it, edit the template.
+
+## Languages
+
+The page is in English and Korean. English is the source; the build stops if any Korean text is missing.
+
+| Text | Where the Korean lives |
+|---|---|
+| Interface (headings, notes under headings, legends, buttons, tooltips, headlines) | `UI.ko` in `templates/dashboard.html`, next to `UI.en`; a test checks both have the same keys |
+| Indicator names and definitions, reconciliation names, period and unit text | `config/i18n/ko.json` |
+| Commentary | `config/i18n/ko.json` → `commentary.<id>`, one entry per note in `config/commentary.json` |
+| Review flags | `pipeline/validate.py` writes `message` and `message_ko` together |
+| Insurer names, extraction notes | Not translated: names are kept as published; extraction notes are the analyst's English originals |
+
+When commentary changes, update both languages in the same commit. Korean style: plain declarative (~다),
+IFRS 17 terms as used in Korean practice (보험계약마진(CSM), 위험조정(RA), 보험서비스결과, 보험금융비용, CSM 상각).
 
 ## Conventions
 
