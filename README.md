@@ -13,6 +13,7 @@ command line.
 | Source | Public information, mainly the audited financial statements (SET filings, OIC annual disclosures, company websites) |
 | Coverage | FY2025 with FY2024 comparatives, 17 insurers, THB million |
 | Output | `output/FY2025/Thai_Life_IFRS17_Dashboard_FY2025.html`: one file that works offline and can be emailed |
+| Published | <https://seungraekim81.github.io/IFRS17_Industry_Dashboard/> once GitHub Pages is switched on (see `docs/DEPLOY.md`) |
 
 ## Quick start
 
@@ -30,6 +31,7 @@ python -m pipeline validate    # reconciliations (blocking) + plausibility flags
 python -m pipeline metrics     # indicators, ranks, industry aggregates
 python -m pipeline build       # render the HTML
 python -m pipeline build --focus "Dhipaya Life"   # highlight another insurer
+python -m pipeline site       # collect the built dashboards into _site/ for GitHub Pages
 python -m unittest discover -s tests -v
 ```
 
@@ -85,6 +87,8 @@ ties to the insurers' printed subtotals.
 | `output/<period>/` | The built dashboard |
 | `docs/WORKFLOW.md` | The operating process: roles, steps, gates, review checklist, period roll-over |
 | `docs/BACKLOG.md` | Benchmark review, improvement proposals and open decisions |
+| `docs/DEPLOY.md` | Publishing on GitHub Pages: routes, one-off setup, troubleshooting |
+| `.github/workflows/pages.yml` | Validate on every push; publish to GitHub Pages from `main` |
 | `docs/benchmark/` | The benchmark board this version was built against |
 
 ## Versioning
@@ -92,3 +96,4 @@ ties to the insurers' printed subtotals.
 | Version | Date | Change |
 |---|---|---|
 | v1.0 | 2026-11 | First pipeline release: FY2025 + FY2024, 17 insurers, Samsung Life focus. Reproduces every figure on the benchmark board. |
+| v1.1 | 2026-11 | GitHub Pages publishing: validation workflow, `site` step, per-period addresses, `noindex` by default |

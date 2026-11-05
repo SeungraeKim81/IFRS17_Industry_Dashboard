@@ -71,6 +71,7 @@ def payload(period: str, focus: str | None = None) -> dict:
         "meta": {**{k: s[k] for k in ("title", "market", "standard", "period", "comparative", "period_end",
                                        "unit", "large_insurer_count", "comparative_caveat", "tolerance_thb_m")},
                  "default_focus": focus, "workbook": s["capture_workbook"],
+                 "indexing": bool(s.get("search_engine_indexing", False)),
                  "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "git": _git_rev()},
         "years": years,
         "companies": cos,
@@ -91,7 +92,11 @@ def payload(period: str, focus: str | None = None) -> dict:
 def render(data: dict) -> str:
     tpl = (TEMPLATES / "dashboard.html").read_text(encoding="utf-8")
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    return tpl.replace("__TITLE__", data["meta"]["title"]).replace("__DATA__", blob)
+    robots = "" if data["meta"]["indexing"] else '<meta name="robots" content="noindex,nofollow">'
+    desc = (f"{data['meta']['standard']} figures and indicators for {len(data['companies'])} Thai life insurers, "
+            f"{data['meta']['period']}, highlighting {data['meta']['default_focus']}.")
+    return (tpl.replace("__TITLE__", data["meta"]["title"]).replace("__ROBOTS__", robots)
+            .replace("__DESCRIPTION__", desc.replace('"', "&quot;")).replace("__DATA__", blob))
 
 
 def run(period: str, focus: str | None = None) -> None:

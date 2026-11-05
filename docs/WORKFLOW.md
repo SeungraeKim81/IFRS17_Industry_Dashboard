@@ -29,7 +29,7 @@ must be different people** for any insurer.
 | 6 | **Metrics**: `python -m pipeline metrics` | Maintainer | `metrics.csv`, `industry.csv` | Tests pass (`python -m unittest discover -s tests`) |
 | 7 | **Build**: `python -m pipeline build` | Maintainer | `output/<period>/…html` | Opens without console errors, in light and dark mode and at phone width |
 | 8 | **Review**: see the checklist below | Reviewer | Signed-off pull request | Checklist complete |
-| 9 | **Release**: merge, tag (`fy2025-v1`), distribute the HTML file | Owner | Release | Owner approval |
+| 9 | **Release**: merge into `main` (publishes to GitHub Pages, see `docs/DEPLOY.md`), tag (`fy2025-v1`), share the link | Owner | Release | Owner approval; the publish run is green |
 
 ### The six reconciliations (step 5)
 

@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>__TITLE__</title>
+<meta name="description" content="__DESCRIPTION__">
+__ROBOTS__
 <style>
 :root{
   color-scheme:light;
@@ -720,7 +722,7 @@ function method() {
   });
   $("#foot").innerHTML = "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), captured in <code>" +
     esc(M.workbook) + "</code>. Built " + esc(M.generated) + (M.git ? " from commit " + esc(M.git) : "") +
-    ". Analyst compilation of public information; verify against the filed statements before external use.";
+    ". Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.";
 }
 
 function renderAll() {

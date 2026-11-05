@@ -1,15 +1,15 @@
-"""Command line: python -m pipeline [ingest|validate|metrics|build|all] [--period FY2025]"""
+"""Command line: python -m pipeline [ingest|validate|metrics|build|all|site] [--period FY2025]"""
 from __future__ import annotations
 
 import argparse
 
-from . import build, ingest, metrics, validate
+from . import build, ingest, metrics, site, validate
 from .common import load_settings
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(prog="python -m pipeline", description=__doc__)
-    ap.add_argument("step", nargs="?", default="all", choices=["ingest", "validate", "metrics", "build", "all"])
+    ap.add_argument("step", nargs="?", default="all", choices=["ingest", "validate", "metrics", "build", "all", "site"])
     ap.add_argument("--period", help="reporting period, e.g. FY2025 (default: config/dashboard.json)")
     ap.add_argument("--workbook", help="capture workbook (default: config/dashboard.json)")
     ap.add_argument("--focus", help="company to highlight (default: config/dashboard.json)")
@@ -23,6 +23,8 @@ def main() -> None:
         metrics.run(period)
     if a.step in ("build", "all"):
         build.run(period, a.focus)
+    if a.step == "site":
+        site.run(period)
 
 
 if __name__ == "__main__":

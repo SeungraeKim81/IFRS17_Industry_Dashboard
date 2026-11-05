@@ -23,4 +23,7 @@ the analyst capture workbook into one self-contained HTML page. See
   `templates/dashboard.html`, with light and dark values.
 - Check a template change by rendering it with Playwright (light, dark,
   390px wide) and looking for console errors and overlaps.
+- Publishing: `.github/workflows/pages.yml` validates every push and deploys
+  `_site/` (from `python -m pipeline site`) to GitHub Pages from `main` only.
+  Only built dashboards go on the site. See `docs/DEPLOY.md`.
 - Work on the designated branch; open a pull request only when the owner asks.

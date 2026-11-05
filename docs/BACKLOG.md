@@ -47,7 +47,7 @@ Priority reflects value to the Samsung Life perspective against extraction effor
 
 | # | Decision | Options | v1.0 default |
 |---|---|---|---|
-| D1 | Distribution channel and audience | Internal email or SharePoint only / management pack / external | Internal; footer says "verify before external use" |
+| D1 | Distribution channel and audience | GitHub Pages link / email the HTML file / management pack | GitHub Pages (`docs/DEPLOY.md`), not indexed by search engines; the file can still be emailed |
 | D2 | Samsung Life peer group | (a) the 7 smallest by revenue, as in the benchmark split; (b) a chosen set of foreign-owned mid-size insurers; (c) by main channel | All 17, with the focus highlighted; size break after the 10 largest |
 | D3 | Which P1/P2 items go into v1.1 | See section 2 | None started |
 | D4 | Language | English only / English + Thai labels | English |

@@ -1,0 +1,73 @@
+name: Validate and publish
+
+# Every push and pull request: rebuild from the capture workbook, run the
+# reconciliations and tests, and check the committed data matches.
+# Pushes to main then publish the dashboard to GitHub Pages, only if all of
+# that passed. Private repositories skip publishing unless the repository
+# variable PAGES_FROM_PRIVATE is set to true (needs a paid GitHub plan).
+# See docs/DEPLOY.md.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Rebuild (ingest, reconciliations, metrics, HTML)
+        run: python -m pipeline all
+      - name: Tests (incl. benchmark regression)
+        run: python -m unittest discover -s tests -v
+      - name: Committed data matches the capture workbook
+        run: |
+          if ! git diff --exit-code --stat -- data; then
+            echo "::error::data/ differs from a fresh run of the pipeline. Run 'python -m pipeline all' and commit the result."
+            exit 1
+          fi
+      - name: Assemble site
+        run: python -m pipeline site
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-site
+          path: _site
+          include-hidden-files: true
+          retention-days: 14
+
+  deploy:
+    needs: validate
+    if: >-
+      github.ref == 'refs/heads/main' && github.event_name != 'pull_request' &&
+      (!github.event.repository.private || vars.PAGES_FROM_PRIVATE == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dashboard-site
+          path: _site
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
