@@ -50,6 +50,6 @@ Priority reflects value to the Samsung Life perspective against extraction effor
 | D1 | Distribution channel and audience | GitHub Pages link / email the HTML file / management pack | GitHub Pages (`docs/DEPLOY.md`), not indexed by search engines; the file can still be emailed |
 | D2 | Samsung Life peer group | (a) the 7 smallest by revenue, as in the benchmark split; (b) a chosen set of foreign-owned mid-size insurers; (c) by main channel | All 17, with the focus highlighted; size break after the 10 largest |
 | D3 | Which P1/P2 items go into v1.1 | See section 2 | None started |
-| D4 | Language | English only / English + Thai labels | English |
+| D4 | Language | English only / English + Korean / + Thai | **Decided:** English + Korean (v1.2) |
 | D5 | Cadence | Annual / semi-annual / quarterly | Annual |
 | D6 | Branding | Neutral palette / Samsung Life corporate palette and logo | Neutral; colours sit in CSS variables at the top of the template, so a palette swap is one place |

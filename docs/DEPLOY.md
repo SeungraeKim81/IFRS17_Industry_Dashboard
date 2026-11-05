@@ -20,6 +20,7 @@ Site address once live: **<https://seungraekim81.github.io/IFRS17_Industry_Dashb
 | `/` | The current period's dashboard (`period` in `config/dashboard.json`) |
 | `/FY2025/` | The FY2025 dashboard. Every period gets its own lasting address |
 | `/#focus=Dhipaya%20Life` | Opens with another insurer highlighted |
+| `/#lang=ko` | Opens in Korean (the language button at the top right does the same, and the browser remembers it) |
 
 ---
 
@@ -63,6 +64,8 @@ The repository has no `main` branch yet; the work sits on `claude/eloquent-gooda
 After one to two minutes the run shows a green tick, and the **deploy** box shows the site address.
 Settings → Pages also shows "Your site is live at …".
 
+If the deploy job is then rejected straight away, check the `github-pages` environment rule (section 6).
+
 Later changes go through a pull request into `main`. Merging it publishes automatically.
 
 ## 5. Updating the site
@@ -78,6 +81,7 @@ Later changes go through a pull request into `main`. Merging it publishes automa
 |---|---|---|
 | Site address returns 404 | Pages not switched on, or no deploy yet | Sections 3 and 4 |
 | deploy step: "Get Pages site failed" / "Not Found" | Source is not set to GitHub Actions | Section 3 |
+| deploy job fails in about 2 seconds with no log | The `github-pages` environment does not allow `main` to deploy (it can keep the default branch from when Pages was switched on) | Settings → Environments → `github-pages` → Deployment branches and tags: add `main`, then re-run the failed job |
 | deploy step greyed out (skipped) | Repository private without `PAGES_FROM_PRIVATE`, or not on `main` | Section 2 / merge into `main` |
 | validate fails at "Committed data matches" | `data/` was edited by hand or not regenerated | Run `python -m pipeline all`, commit `data/` and `output/` |
 | validate fails at "Rebuild" with a reconciliation failure | The workbook no longer ties | Fix the workbook. The site keeps its previous version |

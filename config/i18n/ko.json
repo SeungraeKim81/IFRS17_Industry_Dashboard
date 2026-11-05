@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "태국 생명보험업계 IFRS 17 대시보드",
+    "market": "태국 · 생명보험",
+    "standard": "TFRS 17 (IFRS 17)",
+    "period_end": "2025년 12월 31일 (불기 2568년)",
+    "unit": "백만 바트",
+    "comparative_caveat": "태국은 TFRS 17을 2025년 1월 1일부터 시행했고 전환일은 2024년 1월 1일이다. 따라서 FY2024 수치는 기존에 보고된 실적이 아니라 재작성된 전환 비교기간 수치다. 전년 대비 변동은 이 점을 감안해 읽어야 한다."
+  },
+  "groups": {
+    "scale": "규모",
+    "profitability": "수익성",
+    "csm": "CSM",
+    "new_business": "신계약"
+  },
+  "metrics": {
+    "insurance_revenue": {"label": "보험수익", "formula": "보험수익 합계"},
+    "net_profit": {"label": "당기순이익", "formula": "당기순이익"},
+    "csm_close": {"label": "기말 CSM", "formula": "기말 보험계약마진(CSM)"},
+    "nb_csm": {"label": "신계약 CSM", "formula": "당기에 최초 인식한 계약에서 발생한 CSM"},
+    "nb_pv_premium": {"label": "신계약 PV 보험료", "formula": "신계약 미래 현금유입의 현재가치"},
+    "isr_gross": {"label": "보험서비스결과", "formula": "보험수익 + 보험서비스비용"},
+    "ism_gross": {"label": "보험서비스이익률", "formula": "(보험수익 + 보험서비스비용) ÷ 보험수익"},
+    "ism_net": {"label": "재보험 후 보험서비스이익률", "formula": "(보험서비스결과 + 재보험손익) ÷ 보험수익"},
+    "inv_margin": {"label": "투자손익(보험금융비용 차감 후)", "formula": "(순투자수익 + 순보험금융비용) ÷ 보험수익"},
+    "other_ratio": {"label": "기타비용(순)", "formula": "(기타비용 + 기타수익) ÷ 보험수익"},
+    "tax_ratio": {"label": "법인세", "formula": "법인세 ÷ 보험수익"},
+    "npm": {"label": "순이익률", "formula": "당기순이익 ÷ 보험수익"},
+    "current_loss_ratio": {"label": "당기 서비스 손해율", "formula": "−(발생사고 + 과거서비스 관련 변동) ÷ (BEL 해제 + RA 해제 + PAA 보험수익 + 기타 보험수익 + 보험취득현금흐름 회수)"},
+    "csm_release_share": {"label": "보험수익 중 CSM 상각 비중", "formula": "CSM 상각 ÷ 보험수익"},
+    "csm_growth": {"label": "CSM 증가율", "formula": "기말 CSM ÷ 기초 CSM − 1"},
+    "release_ratio": {"label": "CSM 상각률", "formula": "CSM 상각 ÷ (기초 CSM + 신계약 + 이자부리 + 미래서비스 관련 변동)"},
+    "nb_to_release": {"label": "신계약 CSM ÷ 상각", "formula": "신계약 CSM ÷ CSM 상각"},
+    "nb_csm_margin": {"label": "신계약 CSM 마진율", "formula": "신계약 CSM ÷ 신계약 PV 보험료"},
+    "acq_cost_ratio": {"label": "신계약비율", "formula": "신계약 PV 보험취득현금흐름 ÷ 신계약 PV 보험료"},
+    "nb_claims_ratio": {"label": "신계약 보험금·급부 비율", "formula": "신계약 PV 보험금 유출 ÷ 신계약 PV 보험료"},
+    "onerous_ratio": {"label": "신계약 손실부담 비율", "formula": "신계약 손실요소 ÷ 신계약 CSM"},
+    "rev_share": {"label": "보험수익 점유율", "formula": "회사 보험수익 ÷ 대상 보험사 전체 합계"},
+    "csm_share": {"label": "기말 CSM 점유율", "formula": "회사 기말 CSM ÷ 대상 보험사 전체 합계"},
+    "nb_csm_share": {"label": "신계약 CSM 점유율", "formula": "회사 신계약 CSM ÷ 대상 보험사 전체 합계"}
+  },
+  "checks": {
+    "revenue_split": {"label": "보험수익 구성 합계 = 보험수익 총액", "short": "수익"},
+    "expense_split": {"label": "비용 구성 합계 = 보험서비스비용 총액", "short": "비용"},
+    "net_profit": {"label": "순이익 브리지 = 공시 당기순이익", "short": "순이익"},
+    "csm_rollforward": {"label": "CSM 변동표 = 기말 CSM", "short": "CSM 변동"},
+    "nb_csm": {"label": "신계약: PV 유입 − 취득비용 − 보험금 − RA + 손실요소 = CSM", "short": "신계약 CSM"},
+    "nb_consistency": {"label": "CSM 변동표의 신계약 = 신계약 주석", "short": "신계약 일치"}
+  },
+  "commentary": {
+    "ra_policy": {
+      "title": "위험조정(RA) 분리 여부에 따라 이익률 비교가 제한된다",
+      "body": "위험조정 변동을 보험서비스결과와 보험금융손익으로 나누지 않는 보험사는 할인율 변동 효과를 포함한 RA 변동 전체를 보험서비스결과에 반영한다. 그래서 보험서비스이익률은 같은 정책 그룹 안에서만 비교한다. 공통 기준으로 재계산하려면 RA 금융효과의 당기손익/기타포괄손익 구분이 필요한데 재무제표에 공시되지 않으므로, 재계산한 이익률은 보여 주지 않는다. 당기순이익은 이 선택의 영향을 받지 않는다."
+    },
+    "transition": {
+      "title": "FY2024 수치는 전환 비교기간 수치다",
+      "body": "TFRS 17은 2025년 1월 1일 시행, 전환일은 2024년 1월 1일이다. FY2024 수치는 FY2025 재무제표에 재작성되어 실린 비교기간 수치이며, 보험사별로 선택한 전환 방법이 FY2024 CSM에 영향을 준다. 전년 대비 변동을 표시하지만, 큰 변동은 실적보다 전환 방식에서 비롯될 수 있다."
+    },
+    "chubb_rabbit": {
+      "title": "CHUBB와 Rabbit Life는 신계약 대체 배수 눈금 밖에 있다",
+      "body": "두 회사 모두 FY2024 전환 비교기간에 손실부담계약 비용을 크게 인식해 CSM과 FY2025 상각액이 작다. 분모가 작아 신계약 CSM ÷ 상각 배수가 부풀려지므로, 사분면에서의 위치는 신계약이 특별히 강해서가 아니라 전환 방식의 결과로 읽어야 한다."
+    },
+    "t_life_accretion": {
+      "title": "T Life의 FY2025 CSM 이자부리는 음수다",
+      "body": "양(+)의 CSM에 최초 인식 시점 이율로 부리하는 이자는 양수여야 한다. 다른 변동이 해당 행에 상계되어 있을 가능성이 크다. 공시된 그대로 CSM 변동표가 정확히 맞으므로 수정하지 않고 반영했다."
+    },
+    "rabbit_scale": {
+      "title": "Rabbit Life는 보험수익 대비 비율의 의미가 약하다",
+      "body": "보험 영업 규모에 비해 투자 자산이 매우 커서, 투자손익과 기타비용이 이익 브리지 눈금을 크게 벗어난다. 막대는 축에서 잘라 표시했고, 순이익률은 실제 값이다."
+    },
+    "release_ratio": {
+      "title": "CSM 사분면 읽는 법",
+      "body": "CSM 상각률이 대략 8~13%이면 안정적인 보유계약의 일반적인 상각 속도다. 그보다 훨씬 높으면 남은 CSM 대비 빠르게 소진되는 것이고, 훨씬 낮으면 이익 실현 기간이 길다는 뜻이다. 신계약 CSM이 상각액의 1.0배에 못 미치는 상태가 1~2년 넘게 이어지면 미래 이익에 대한 조기 경고 신호다."
+    }
+  },
+  "notes_language_label": "추출 메모는 분석가가 작성한 영문 원문 그대로 표시한다."
+}

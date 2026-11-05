@@ -36,13 +36,20 @@ __ROBOTS__
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
   -webkit-font-smoothing:antialiased;padding:32px 16px 64px}
 .wrap{max-width:1180px;margin:0 auto}
-header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
+.top-text{flex:1 1 560px;min-width:0}
 h1{font-weight:650;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
 .lede{color:var(--ink-2);max-width:72ch;margin:0}
 .units{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
+.controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.lang-pick{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.lang-pick .seg button{text-transform:none;letter-spacing:0}
+:lang(ko) body{word-break:keep-all;overflow-wrap:anywhere}
+:lang(ko) .units,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
+@media(max-width:620px){.controls{align-items:stretch;width:100%}.lang-pick{justify-content:space-between}}
 .focus-pick{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .focus-pick select{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--surface);
   border:1px solid var(--axis);border-radius:6px;padding:7px 10px;min-width:220px}
@@ -58,7 +65,7 @@ h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:860px){.panels{grid-template-columns:1fr}}
 svg{display:block;width:100%;height:auto;overflow:visible}
-svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif}
 .num{font-variant-numeric:tabular-nums}
 .legend{display:flex;gap:8px 18px;align-items:center;flex-wrap:wrap;margin:12px 0 0;font-size:13px;color:var(--ink-2)}
 .key{display:inline-flex;align-items:center;gap:7px}
@@ -125,26 +132,27 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 .tip table{border-collapse:collapse;width:100%}
 .tip td{padding:1px 0;font-size:12px;white-space:nowrap}
 .tip td:last-child{text-align:right;padding-left:16px;font-variant-numeric:tabular-nums}
-@media print{body{padding:0}.focus-pick,nav.toc,.tbl-tools button{display:none}.tile,.panel{break-inside:avoid}}
+@media print{body{padding:0}.controls,nav.toc,.tbl-tools button{display:none}.tile,.panel{break-inside:avoid}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header class="top">
-  <div>
+  <div class="top-text">
     <h1 id="title"></h1>
     <p class="lede" id="lede"></p>
     <div class="units" id="units"></div>
   </div>
-  <label class="focus-pick">Highlighted insurer
-    <select id="focusSel" aria-label="Highlighted insurer"></select>
-  </label>
+  <div class="controls">
+    <div class="lang-pick"><span data-t="langLabel"></span>
+      <div class="seg" role="group" id="langSeg"></div>
+    </div>
+    <label class="focus-pick"><span data-t="focusPick"></span>
+      <select id="focusSel"></select>
+    </label>
+  </div>
 </header>
-<nav class="toc" aria-label="Sections">
-  <a href="#s-focus">1 Focus</a><a href="#s-market">2 Market position</a><a href="#s-csm">3 CSM engine</a>
-  <a href="#s-nb">4 New business</a><a href="#s-ism">5 Service margin</a><a href="#s-bridge">6 Profit bridge</a>
-  <a href="#s-all">7 All insurers</a><a href="#s-dq">8 Data quality</a><a href="#s-method">9 Method &amp; notes</a>
-</nav>
+<nav class="toc" id="toc"></nav>
 
 <section id="s-focus">
   <div class="focus-head"><span class="focus-name" id="fName"></span><span id="fChips"></span></div>
@@ -154,107 +162,95 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 </section>
 
 <section id="s-market">
-  <h2>2&nbsp; Market position</h2>
-  <p class="sec-note">Size on three measures: what the insurer earns this year (insurance revenue), the profit
-  stored for future years (closing CSM) and the profit added by this year's sales (new-business CSM). Share is of
-  the <span class="n-co"></span> insurers covered.</p>
+  <h2 data-t="h2market"></h2>
+  <p class="sec-note" data-t="noteMarket"></p>
   <div class="tbl-wrap"><table class="data" id="mkt"></table></div>
 </section>
 
 <section id="s-csm">
-  <h2>3&nbsp; The CSM engine</h2>
-  <p class="sec-note">How the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the
-  highlighted insurer against the industry total. The quadrant then sets the release pace against how much new
-  business replaces what was released.</p>
-  <div class="panel"><h3>CSM roll-forward, opening = 100</h3><div class="sub" id="wfSub"></div>
-    <svg id="wf" viewBox="0 0 900 320" role="img" aria-label="CSM roll-forward waterfall for the highlighted insurer and the industry"></svg>
+  <h2 data-t="h2csm"></h2>
+  <p class="sec-note" data-t="noteCsm"></p>
+  <div class="panel"><h3 data-t="h3wf"></h3><div class="sub" id="wfSub"></div>
+    <svg id="wf" viewBox="0 0 900 320" role="img" data-t-aria="ariaWf"></svg>
     <div class="legend">
-      <span class="key"><i class="sq" style="background:var(--total)"></i>Opening / closing</span>
-      <span class="key"><i class="sq" style="background:var(--pos)"></i>Increase</span>
-      <span class="key"><i class="sq" style="background:var(--neg)"></i>Decrease</span>
+      <span class="key"><i class="sq" style="background:var(--total)"></i><span data-t="lgOpenClose"></span></span>
+      <span class="key"><i class="sq" style="background:var(--pos)"></i><span data-t="lgIncrease"></span></span>
+      <span class="key"><i class="sq" style="background:var(--neg)"></i><span data-t="lgDecrease"></span></span>
     </div>
   </div>
-  <div class="panel" style="margin-top:20px"><h3>CSM sustainability quadrant</h3><div class="sub" id="qSub"></div>
-    <svg id="quad" viewBox="0 0 900 470" role="img" aria-label="Scatter of CSM release ratio against new business divided by release"></svg>
+  <div class="panel" style="margin-top:20px"><h3 data-t="h3quad"></h3><div class="sub" id="qSub"></div>
+    <svg id="quad" viewBox="0 0 900 470" role="img" data-t-aria="ariaQuad"></svg>
     <div class="legend">
       <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span></span>
-      <span class="key"><i class="dot" style="background:var(--peer)"></i>Other insurers</span>
-      <span class="key" style="color:var(--muted)">&#9650;&nbsp;plotted at the ceiling, true value labelled</span>
-      <span class="key" style="color:var(--muted)">bubble area = closing CSM</span>
+      <span class="key"><i class="dot" style="background:var(--peer)"></i><span data-t="lgOthers"></span></span>
+      <span class="key" style="color:var(--muted)">&#9650;&nbsp;<span data-t="lgCeiling"></span></span>
+      <span class="key" style="color:var(--muted)" data-t="lgBubble"></span>
     </div>
   </div>
 </section>
 
 <section id="s-nb">
-  <h2>4&nbsp; New-business quality</h2>
-  <p class="sec-note">Each row places all insurers on one measure of the year's new business. The highlighted insurer is
-  labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the
-  industry median.</p>
-  <div class="panel"><svg id="strips" viewBox="0 0 900 380" role="img" aria-label="Strip plots of new-business indicators"></svg>
+  <h2 data-t="h2nb"></h2>
+  <p class="sec-note" data-t="noteNb"></p>
+  <div class="panel"><svg id="strips" viewBox="0 0 900 380" role="img" data-t-aria="ariaStrips"></svg>
     <div class="legend">
       <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span> <span class="p-cur"></span></span>
       <span class="key"><i class="dot" style="border:2px solid var(--focus);background:transparent"></i><span class="f-name"></span> <span class="p-cmp"></span></span>
-      <span class="key"><i class="dot" style="background:var(--peer);opacity:.6"></i>Other insurers</span>
-      <span class="key"><i class="sq" style="width:2px;height:12px;background:var(--ink-2)"></i>Industry median</span>
+      <span class="key"><i class="dot" style="background:var(--peer);opacity:.6"></i><span data-t="lgOthers"></span></span>
+      <span class="key"><i class="sq" style="width:2px;height:12px;background:var(--ink-2)"></i><span data-t="lgMedian"></span></span>
     </div>
   </div>
 </section>
 
 <section id="s-ism">
-  <h2>5&nbsp; Insurance service margin, split by RA policy</h2>
-  <p class="sec-note">An insurer that does <b>not</b> disaggregate the risk-adjustment change carries its financial
-  effect inside the insurance service result, which lifts the margin. The two groups are on different bases and are
-  compared only within each group; the tick marks each group's median.</p>
+  <h2 data-t="h2ism"></h2>
+  <p class="sec-note" data-t="noteIsm"></p>
   <div class="panels">
-    <div class="panel"><h3>Disaggregates the RA</h3><div class="sub" id="m1sub"></div><svg id="m1" viewBox="0 0 520 330" role="img" aria-label="Insurance service margin, insurers that disaggregate the risk adjustment"></svg></div>
-    <div class="panel"><h3>Does not disaggregate</h3><div class="sub" id="m2sub"></div><svg id="m2" viewBox="0 0 520 330" role="img" aria-label="Insurance service margin, insurers that do not disaggregate the risk adjustment"></svg></div>
+    <div class="panel"><h3 data-t="h3dis"></h3><div class="sub" id="m1sub"></div><svg id="m1" viewBox="0 0 520 330" role="img" data-t-aria="h3dis"></svg></div>
+    <div class="panel"><h3 data-t="h3not"></h3><div class="sub" id="m2sub"></div><svg id="m2" viewBox="0 0 520 330" role="img" data-t-aria="h3not"></svg></div>
   </div>
 </section>
 
 <section id="s-bridge">
-  <h2>6&nbsp; What happens to a hundred baht of insurance revenue</h2>
-  <p class="sec-note">Every driver between the insurance service result and net profit, as a share of the insurer's own
-  insurance revenue. Contributions sit right of zero, drags left of it; the diamond marks the net-profit margin.
-  Investment income is shown <b>net of insurance finance expense</b>: the two move together with rates and mislead apart.
-  The rule marks the break after the <span class="n-large"></span> largest insurers.</p>
-  <div class="panel"><svg id="br" viewBox="0 0 900 640" role="img" aria-label="Contribution chart from insurance service result to net profit margin"></svg>
+  <h2 data-t="h2bridge"></h2>
+  <p class="sec-note" data-t="noteBridge"></p>
+  <div class="panel"><svg id="br" viewBox="0 0 900 640" role="img" data-t-aria="ariaBridge"></svg>
     <div class="legend">
-      <span class="key"><i class="sq" style="background:var(--c1)"></i>Insurance service result after reinsurance</span>
-      <span class="key"><i class="sq" style="background:var(--c2)"></i>Investment result net of IFIE</span>
-      <span class="key"><i class="sq" style="background:var(--c3)"></i>Other expense, net</span>
-      <span class="key"><i class="sq" style="background:var(--c4)"></i>Income tax</span>
-      <span class="key">&#9670;&nbsp;Net profit margin</span>
-      <span class="key" style="color:var(--muted)">&rsaquo;&rsaquo;&nbsp;clipped at the axis</span>
+      <span class="key"><i class="sq" style="background:var(--c1)"></i><span data-t="lgIsr"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c2)"></i><span data-t="lgInv"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c3)"></i><span data-t="lgOther"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c4)"></i><span data-t="lgTax"></span></span>
+      <span class="key">&#9670;&nbsp;<span data-t="lgNpm"></span></span>
+      <span class="key" style="color:var(--muted)">&rsaquo;&rsaquo;&nbsp;<span data-t="lgClipped"></span></span>
     </div>
   </div>
 </section>
 
 <section id="s-all">
-  <h2>7&nbsp; All insurers</h2>
-  <p class="sec-note">Click a column heading to sort. The view switch shows the current year, the comparative year or the
-  change between them (percentage-point change for ratios). The download gives the full indicator set as CSV.</p>
+  <h2 data-t="h2all"></h2>
+  <p class="sec-note" data-t="noteAll"></p>
   <div class="tbl-tools">
-    <div class="seg" role="group" aria-label="Table view" id="viewSeg"></div>
-    <button class="dl" id="dlBtn" type="button">Download CSV</button>
+    <div class="seg" role="group" id="viewSeg"></div>
+    <button class="dl" id="dlBtn" type="button" data-t="download"></button>
   </div>
   <div class="tbl-wrap"><table class="data" id="all"></table></div>
 </section>
 
 <section id="s-dq">
-  <h2>8&nbsp; Data quality</h2>
+  <h2 data-t="h2dq"></h2>
   <p class="sec-note" id="dqNote"></p>
   <div class="tbl-wrap"><table class="data" id="dq"></table></div>
-  <div class="notes" style="margin-top:16px"><h4>Plausibility flags</h4>
-    <p>Raised automatically for review; they do not stop the build. Each one is either explained in section 9 or followed up with the source.</p>
+  <div class="notes" style="margin-top:16px"><h4 data-t="h4flags"></h4>
+    <p data-t="noteFlags"></p>
     <ul class="flags" id="flags"></ul></div>
 </section>
 
 <section id="s-method">
-  <h2>9&nbsp; Method &amp; notes</h2>
+  <h2 data-t="h2method"></h2>
   <div class="notes" id="commentary"></div>
-  <div class="notes"><h4>Indicator definitions</h4></div>
+  <div class="notes"><h4 data-t="h4defs"></h4></div>
   <div class="tbl-wrap" style="margin-top:8px"><table class="data" id="defs"></table></div>
-  <div class="notes" id="extract"><h4>Extraction notes by insurer</h4></div>
+  <div class="notes" id="extract"></div>
 </section>
 
 <footer id="foot"></footer>
@@ -271,15 +267,169 @@ const NS = "http://www.w3.org/2000/svg";
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const tip = $("#tip");
 let F = M.default_focus;
+let LANG = M.default_language || "en";
+
+/* ---------- interface text ----------
+   Every visible string lives here, per language. Data-driven text (indicator names,
+   definitions, checks, commentary, review flags) comes from config/i18n/<lang>.json. */
+const UI = {
+  en: {
+    langName: "English", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
+    lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
+    units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
+    toc: ["Focus", "Market position", "CSM engine", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
+    h2market: "2&nbsp; Market position",
+    noteMarket: "Size on three measures: what the insurer earns this year (insurance revenue), the profit stored for future years (closing CSM) and the profit added by this year's sales (new-business CSM). Share is of the {n} insurers covered.",
+    h2csm: "3&nbsp; The CSM engine",
+    noteCsm: "How the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total. The quadrant then sets the release pace against how much new business replaces what was released.",
+    h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
+    lgOpenClose: "Opening / closing", lgIncrease: "Increase", lgDecrease: "Decrease",
+    h3quad: "CSM sustainability quadrant", ariaQuad: "Scatter of CSM release ratio against new business divided by release",
+    lgOthers: "Other insurers", lgCeiling: "plotted at the ceiling, true value labelled", lgBubble: "bubble area = closing CSM",
+    h2nb: "4&nbsp; New-business quality",
+    noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median.",
+    ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
+    h2ism: "5&nbsp; Insurance service margin, split by RA policy",
+    noteIsm: "An insurer that does <b>not</b> disaggregate the risk-adjustment change carries its financial effect inside the insurance service result, which lifts the margin. The two groups are on different bases and are compared only within each group; the tick marks each group's median.",
+    h3dis: "Disaggregates the RA", h3not: "Does not disaggregate",
+    h2bridge: "6&nbsp; What happens to a hundred baht of insurance revenue",
+    noteBridge: "Every driver between the insurance service result and net profit, as a share of the insurer's own insurance revenue. Contributions sit right of zero, drags left of it; the diamond marks the net-profit margin. Investment income is shown <b>net of insurance finance expense</b>: the two move together with rates and mislead apart. The rule marks the break after the {nLarge} largest insurers.",
+    ariaBridge: "Contribution chart from insurance service result to net profit margin",
+    lgIsr: "Insurance service result after reinsurance", lgInv: "Investment result net of IFIE", lgOther: "Other expense, net",
+    lgTax: "Income tax", lgNpm: "Net profit margin", lgClipped: "clipped at the axis",
+    h2all: "7&nbsp; All insurers",
+    noteAll: "Click a column heading to sort. The view switch shows the current year, the comparative year or the change between them (percentage-point change for ratios). The download gives the full indicator set as CSV.",
+    download: "Download CSV", viewChange: "Change", tableView: "Table view",
+    h2dq: "8&nbsp; Data quality", h4flags: "Plausibility flags",
+    noteFlags: "Raised automatically for review; they do not stop the build. Each one is either explained in section 9 or followed up with the source.",
+    h2method: "9&nbsp; Method &amp; notes", h4defs: "Indicator definitions", h4comp: "Comparability notes", compYear: "Comparative year",
+    h4extract: "Extraction notes by insurer", notesLang: "",
+    na: "n/a", nm: "n.m.", noCmp: "no comparative", nmBase: "n.m. vs {cmp} (base ≤ 0)", vs: "vs {cmp}", pp: "pp", m: "m",
+    rankOf: "{r} of {n} by revenue", raChip: "RA {p}", raDis: "disaggregated", raNot: "not disagg.", raYes: "Yes", raNo: "No",
+    focusFlag: "focus", industry: "Industry", industryAgg: "Industry aggregate", industryN: "Industry ({n} insurers)",
+    insurer: "Insurer", shareCol: "{x} · share", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
+    tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy", tipIsmNet: "Margin after reinsurance",
+    tipIsmCmp: "Service margin {cmp}", tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
+    ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
+    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}", ctxRel: "Release ratio {r} · median {v}",
+    wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
+    wf: ["Opening", "New business", "Accretion", "Future service", "Release", "Closing"],
+    qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
+    qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
+    better: "higher is better", worse: "lower is better", median: "median {v}",
+    groupSub: "{n} insurers · {cur} · group median {v}",
+    dqNote: "<b>{ok} of {total}</b> reconciliations pass within {tol}m ({n} insurers × {y} years × {c} checks). The build stops if any one fails, so a published dashboard always ties to the printed subtotals. Hover a tick for the difference.",
+    dqFlags: "Flags", diff: "difference {v}m", none: "None.",
+    defArea: "Area", defInd: "Indicator", defDef: "Definition",
+    foot: "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), captured in <code>{wb}</code>. Built {gen}{git}. Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.",
+    footGit: " from commit {git}", reviewFlag: "Review flag {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
+      csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
+      acq_cost_ratio: "Acq. cost ratio", onerous_ratio: "Onerous NB" },
+    ord: n => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] || ["th", "st", "nd", "rd"][n % 100] || "th"),
+    chg: (x, up, down) => x == null ? "moved (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
+    headlines: p => [
+      p.short + " is the " + p.ord(p.sizeRank) + " largest of " + p.n + " by insurance revenue (" + p.revShare + " share), " +
+        p.ord(p.csmRank) + " by closing CSM and " + p.ord(p.nbRank) + " by new-business CSM.",
+      "CSM " + p.chg(p.csmG, "grew", "fell") + " over the year to " + p.csmClose + "m (industry " + p.csmGi + "); new business replaced " +
+        p.nbr + " the release (industry median " + p.nbrMed + ").",
+      "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
+        (p.taxBig ? "; income tax went from " + p.taxPrev + "m to " + p.taxNow + "m." : "."),
+      "New-business CSM margin of " + p.nbm + " ranks " + p.ord(p.nbmRank) + " of " + p.n + "; acquisition cost takes " + p.acq +
+        " of new-business premium (median " + p.acqMed + ").",
+    ],
+  },
+  ko: {
+    langName: "한국어", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
+    lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
+    units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
+    toc: ["강조 보험사", "시장 지위", "CSM 엔진", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
+    h2market: "2&nbsp; 시장 지위",
+    noteMarket: "세 가지 기준의 규모: 올해 벌어들인 이익의 원천(보험수익), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 판매로 새로 더한 이익(신계약 CSM). 점유율은 대상 {n}개사 합계 기준이다.",
+    h2csm: "3&nbsp; CSM 엔진",
+    noteCsm: "강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다. 이어서 사분면에서 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다.",
+    h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
+    lgOpenClose: "기초 / 기말", lgIncrease: "증가", lgDecrease: "감소",
+    h3quad: "CSM 지속가능성 사분면", ariaQuad: "CSM 상각률과 신계약 CSM ÷ 상각 배수의 산점도",
+    lgOthers: "다른 보험사", lgCeiling: "상한선에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
+    h2nb: "4&nbsp; 신계약 품질",
+    noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다.",
+    ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
+    h2ism: "5&nbsp; 보험서비스이익률 (RA 분리 정책별)",
+    noteIsm: "위험조정 변동을 <b>분리하지 않는</b> 보험사는 RA의 금융효과까지 보험서비스결과에 포함하므로 이익률이 높게 나온다. 두 그룹은 기준이 달라 그룹 안에서만 비교하며, 세로선은 그룹별 중앙값이다.",
+    h3dis: "RA 분리", h3not: "RA 미분리",
+    h2bridge: "6&nbsp; 보험수익 100바트는 어디로 가나",
+    noteBridge: "보험서비스결과부터 당기순이익까지의 각 요인을 해당 보험사 보험수익 대비 비율로 표시한다. 0 오른쪽은 이익에 더하는 요인, 왼쪽은 빼는 요인이고, 마름모는 순이익률이다. 투자수익은 <b>보험금융비용을 차감한 순액</b>으로 보여 준다. 둘은 금리와 함께 움직여서 따로 보면 오해를 낳는다. 가로선은 상위 {nLarge}개사 다음의 구분선이다.",
+    ariaBridge: "보험서비스결과에서 순이익률까지의 기여도 차트",
+    lgIsr: "재보험 후 보험서비스결과", lgInv: "투자손익(보험금융비용 차감 후)", lgOther: "기타비용(순)",
+    lgTax: "법인세", lgNpm: "순이익률", lgClipped: "축에서 잘림",
+    h2all: "7&nbsp; 전체 보험사",
+    noteAll: "열 이름을 누르면 정렬된다. 보기 전환으로 당기, 비교기간, 두 기간의 차이(비율은 %p 변동)를 볼 수 있다. 다운로드하면 전체 지표를 CSV로 받는다.",
+    download: "CSV 다운로드", viewChange: "변동", tableView: "표 보기",
+    h2dq: "8&nbsp; 데이터 품질", h4flags: "검토 플래그",
+    noteFlags: "검토용으로 자동 생성되며 빌드를 멈추지 않는다. 각 항목은 9장에서 설명하거나 원천 자료로 확인한다.",
+    h2method: "9&nbsp; 방법론 및 주석", h4defs: "지표 정의", h4comp: "비교 가능성 관련 주석", compYear: "비교기간",
+    h4extract: "보험사별 추출 메모", notesLang: "",
+    na: "없음", nm: "산출 불가", noCmp: "비교기간 없음", nmBase: "{cmp} 대비 산출 불가 (기준값 ≤ 0)", vs: "{cmp} 대비", pp: "%p", m: "백만",
+    rankOf: "보험수익 {n}개사 중 {r}위", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
+    focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
+    insurer: "보험사", shareCol: "{x} · 점유율", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
+    tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스이익률", tipRel: "CSM 상각률",
+    tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책", tipIsmNet: "재보험 후 이익률",
+    tipIsmCmp: "{cmp} 보험서비스이익률", tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
+    ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
+    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}", ctxRel: "CSM 상각률 {r} · 중앙값 {v}",
+    wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
+    wf: ["기초", "신계약", "이자부리", "미래서비스", "상각", "기말"],
+    qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
+    qX: "CSM 상각률 (상각 ÷ 상각 전 CSM)", qY: "신계약 CSM ÷ 상각",
+    better: "높을수록 좋음", worse: "낮을수록 좋음", median: "중앙값 {v}",
+    groupSub: "{n}개사 · {cur} · 그룹 중앙값 {v}",
+    dqNote: "대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사 × {y}개 연도 × {c}개 점검). 하나라도 어긋나면 빌드가 멈추므로, 게시된 대시보드는 항상 재무제표의 소계와 맞는다. 체크 표시에 마우스를 올리면 차이가 보인다.",
+    dqFlags: "플래그", diff: "차이 {v}백만", none: "없음.",
+    defArea: "구분", defInd: "지표", defDef: "정의",
+    foot: "출처: 각 보험사가 공시한 TFRS 17 재무제표(SET 공시, OIC 연차 공시, 회사 홈페이지)를 <code>{wb}</code>에 입력. 빌드 {gen}{git}. 대시보드 작성자가 공개 정보로 정리한 자료로, 추출 오류가 있을 수 있으므로 공시된 재무제표가 최종 기준이다. 투자 권유가 아니다.",
+    footGit: " (커밋 {git})", reviewFlag: "{fy} 검토 플래그", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
+      csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
+      acq_cost_ratio: "신계약비율", onerous_ratio: "손실부담 비율" },
+    ord: n => n + "위",
+    chg: (x, up, down) => x == null ? "변동(산출 불가)" : nf(Math.abs(x) * 100, 1) + "% " + (x >= 0 ? up : down),
+    headlines: p => [
+      "보험수익 기준 " + p.n + "개사 중 " + p.ord(p.sizeRank) + "(점유율 " + p.revShare + "), 기말 CSM 기준 " + p.ord(p.csmRank) +
+        ", 신계약 CSM 기준 " + p.ord(p.nbRank) + ".",
+      "CSM은 연간 " + p.chg(p.csmG, "증가", "감소") + "해 " + p.csmClose + "백만 바트가 됐다(업계 " + p.csmGi + "). 신계약 CSM이 상각액의 " +
+        p.nbr + "를 채웠다(업계 중앙값 " + p.nbrMed + ").",
+      "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
+        (p.taxBig ? ". 법인세는 " + p.taxPrev + "백만에서 " + p.taxNow + "백만 바트로 바뀌었다." : "."),
+      "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq +
+        "를 차지한다(중앙값 " + p.acqMed + ").",
+    ],
+  },
+};
+const TR = () => (DATA.i18n || {})[LANG] || null;
+function t(key, p = {}) {
+  const v = (UI[LANG] && UI[LANG][key] != null) ? UI[LANG][key] : UI.en[key];
+  return typeof v === "string" ? v.replace(/\{(\w+)\}/g, (_, k) => p[k] != null ? p[k] : "{" + k + "}") : v;
+}
+const metaT = k => { const tr = TR(); return (tr && tr.meta && tr.meta[k]) || M[k]; };
+const mLabel = code => { const tr = TR(); return (tr && tr.metrics[code] && tr.metrics[code].label) || DEF[code].label; };
+const mFormula = code => { const tr = TR(); return (tr && tr.metrics[code] && tr.metrics[code].formula) || DEF[code].formula; };
+const chk = (id, f) => { const tr = TR(); const d = DATA.check_defs.find(c => c.id === id); return (tr && tr.checks[id] && tr.checks[id][f]) || (f === "short" ? EN_CHECK_SHORT[id] : d.label); };
+const EN_CHECK_SHORT = { revenue_split: "Revenue", expense_split: "Expense", net_profit: "Net profit", csm_rollforward: "CSM roll", nb_csm: "NB CSM", nb_consistency: "NB = roll" };
+const noteT = (n, f) => { const tr = TR(); return (tr && tr.commentary[n.id] && tr.commentary[n.id][f]) || n[f]; };
+const flagMsg = f => (LANG === "ko" && f.message_ko) ? f.message_ko : f.message;
+const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business" }[gname]); };
 
 /* ---------- helpers ---------- */
 const el = (n, a = {}, txt) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
 const nf = (v, d) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
-const fM = v => v == null ? "n/a" : nf(v, Math.abs(v) >= 100 ? 0 : 1);
-const fP = (v, d = 1) => v == null ? "n/a" : nf(v * 100, d) + "%";
-const fX = (v, d = 2) => v == null ? "n/a" : nf(v, d) + "×";
+const fM = v => v == null ? t("na") : nf(v, Math.abs(v) >= 100 ? 0 : 1);
+const fP = (v, d = 1) => v == null ? t("na") : nf(v * 100, d) + "%";
+const fX = (v, d = 2) => v == null ? t("na") : nf(v, d) + "×";
 const fmtU = (u, v) => u === "pct" ? fP(v) : u === "x" ? fX(v) : fM(v);
-const ord = n => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] || ["th", "st", "nd", "rd"][n % 100] || "th");
+const ord = n => t("ord")(n);
 const g = (c, k, fy = CUR) => { const y = c.y[fy]; return y && y.m[k] ? y.m[k].v : null; };
 const raw = (c, k, fy = CUR) => { const y = c.y[fy]; return y ? y.raw[k] : null; };
 const rk = (c, k, fy = CUR) => { const y = c.y[fy]; return y && y.m[k] ? y.m[k] : null; };
@@ -288,8 +438,9 @@ const byName = n => COS.find(c => c.name === n);
 const isF = c => c.name === F;
 const colr = c => isF(c) ? "var(--focus)" : "var(--peer)";
 const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
-const raLabel = c => c.ra === "disaggregated" ? "disaggregated" : "not disagg.";
+const raLabel = c => c.ra === "disaggregated" ? t("raDis") : t("raNot");
 const growth = (a, b) => (a == null || b == null || b <= 0) ? null : a / b - 1;
+const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
 
 function showTip(ev, html) {
   tip.innerHTML = html; tip.style.opacity = 1;
@@ -300,14 +451,14 @@ function showTip(ev, html) {
   tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
 }
 const hideTip = () => tip.style.opacity = 0;
+const tipTable = (title, rows) => "<b>" + esc(title) + "</b><table>" + rows.map(r => "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td></tr>").join("") + "</table>";
 function coTip(c, extra = []) {
-  const rows = [
-    ["Insurance revenue", fM(raw(c, "insurance_revenue"))], ["Net profit", fM(raw(c, "net_profit"))],
-    ["CSM closing", fM(raw(c, "csm_close"))], ["Service margin", fP(g(c, "ism_gross"))],
-    ["Release ratio", fP(g(c, "release_ratio"))], ["NB / release", fX(g(c, "nb_to_release"))],
-    ["NB CSM margin", fP(g(c, "nb_csm_margin"))], ["Net profit margin", fP(g(c, "npm"))],
-    ["RA policy", raLabel(c)], ...extra];
-  return "<b>" + esc(c.name) + "</b><table>" + rows.map(r => "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td></tr>").join("") + "</table>";
+  return tipTable(c.name, [
+    [t("tipRev"), fM(raw(c, "insurance_revenue"))], [t("tipNp"), fM(raw(c, "net_profit"))],
+    [t("tipCsm"), fM(raw(c, "csm_close"))], [t("tipIsm"), fP(g(c, "ism_gross"))],
+    [t("tipRel"), fP(g(c, "release_ratio"))], [t("tipNbr"), fX(g(c, "nb_to_release"))],
+    [t("tipNbm"), fP(g(c, "nb_csm_margin"))], [t("tipNpm"), fP(g(c, "npm"))],
+    [t("tipRa"), raLabel(c)], ...extra]);
 }
 function hover(node, html) {
   node.addEventListener("mousemove", e => showTip(e, typeof html === "function" ? html() : html));
@@ -317,139 +468,157 @@ function hover(node, html) {
 function niceTicks(lo, hi, n = 5) {
   const span = hi - lo, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
   const step = [1, 2, 2.5, 5, 10].map(s => s * mag).find(s => span / s <= n) || 10 * mag;
-  const out = []; for (let t = Math.ceil(lo / step - 1e-9) * step; t <= hi + 1e-9; t += step) out.push(+t.toFixed(10));
+  const out = []; for (let x = Math.ceil(lo / step - 1e-9) * step; x <= hi + 1e-9; x += step) out.push(+x.toFixed(10));
   return { ticks: out, step };
 }
 
-/* ---------- header ---------- */
-function header() {
-  $("#title").textContent = M.title;
-  $("#lede").textContent = COS.length + " Thai life insurers under " + M.standard + ", " + CUR +
-    ". Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.";
-  $("#units").textContent = M.unit + " · year ended " + M.period_end + " · comparative " + CMP + " · " + COS.length + " insurers";
+/* ---------- header, language, static text ---------- */
+function staticText() {
+  document.documentElement.lang = LANG;
+  document.title = metaT("title");
+  const p = { n: COS.length, nLarge: M.large_insurer_count, cur: CUR, cmp: CMP };
+  $$("[data-t]").forEach(e => e.innerHTML = t(e.dataset.t, p));
+  $$("[data-t-aria]").forEach(e => e.setAttribute("aria-label", t(e.dataset.tAria, p)));
+  $("#title").textContent = metaT("title");
+  $("#lede").textContent = t("lede", { n: COS.length, std: metaT("standard"), cur: CUR });
+  $("#units").textContent = t("units", { unit: metaT("unit"), pe: metaT("period_end"), cmp: CMP, n: COS.length });
+  const ids = ["s-focus", "s-market", "s-csm", "s-nb", "s-ism", "s-bridge", "s-all", "s-dq", "s-method"];
+  $("#toc").innerHTML = t("toc").map((lab, i) => '<a href="#' + ids[i] + '">' + (i + 1) + " " + esc(lab) + "</a>").join("");
+  $("#toc").setAttribute("aria-label", t("toc")[0]);
   const sel = $("#focusSel");
-  COS.forEach(c => sel.appendChild(new Option(c.name + (c.name === M.default_focus ? "  (default)" : ""), c.name)));
-  sel.value = F;
-  sel.addEventListener("change", () => { F = sel.value; try { history.replaceState(null, "", "#focus=" + encodeURIComponent(F)); } catch (e) {} renderAll(); });
-  $$(".n-co").forEach(e => e.textContent = COS.length);
-  $$(".n-large").forEach(e => e.textContent = M.large_insurer_count);
+  sel.innerHTML = "";
+  COS.forEach(c => sel.appendChild(new Option(c.name + (c.name === M.default_focus ? "  " + t("deflt") : ""), c.name)));
+  sel.value = F; sel.setAttribute("aria-label", t("focusPick"));
+  $("#langSeg").setAttribute("aria-label", t("langLabel"));
+  $("#langSeg").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
   $$(".p-cur").forEach(e => e.textContent = CUR); $$(".p-cmp").forEach(e => e.textContent = CMP);
+}
+function writeHash() {
+  const parts = [];
+  if (F !== M.default_focus) parts.push("focus=" + encodeURIComponent(F));
+  if (LANG !== (M.default_language || "en")) parts.push("lang=" + LANG);
+  try { history.replaceState(null, "", parts.length ? "#" + parts.join("&") : location.pathname + location.search); } catch (e) {}
+}
+function controls() {
+  const seg = $("#langSeg");
+  (M.languages || ["en"]).forEach(code => {
+    const b = document.createElement("button"); b.type = "button"; b.dataset.lang = code;
+    b.textContent = (UI[code] || UI.en).langName; b.lang = code;
+    b.addEventListener("click", () => { if (LANG === code) return; LANG = code; store.set("ifrs17-dash-lang", code); writeHash(); renderAll(); });
+    seg.appendChild(b);
+  });
+  $("#focusSel").addEventListener("change", e => { F = e.target.value; writeHash(); renderAll(); });
 }
 
 /* ---------- 1 focus ---------- */
 function deltaHtml(kind, cur, prev, better) {
-  if (cur == null || prev == null) return '<span class="flat">no comparative</span>';
+  if (cur == null || prev == null) return '<span class="flat">' + t("noCmp") + "</span>";
   let d, txt;
-  if (kind === "growth") { d = growth(cur, prev); if (d == null) return '<span class="flat">n.m. vs ' + CMP + ' (base ≤ 0)</span>'; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
-  else if (kind === "pp") { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + " pp"; }
+  if (kind === "growth") { d = growth(cur, prev); if (d == null) return '<span class="flat">' + t("nmBase", { cmp: CMP }) + "</span>"; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
+  else if (kind === "pp") { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
   else { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d, 2) + "×"; }
   const dir = Math.abs(d) < 1e-9 ? "flat" : d > 0 ? "up" : "down";
   const cls = dir === "flat" || better == null ? "flat" : ((dir === "up") === better ? dir + "-good" : dir + "-bad");
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "◆";
-  return '<span class="' + cls + '">' + arrow + " " + txt + "</span> <span class=\"flat\">vs " + CMP + "</span>";
+  return '<span class="' + cls + '">' + arrow + " " + txt + '</span> <span class="flat">' + t("vs", { cmp: CMP }) + "</span>";
 }
 function focusSection() {
-  const c = byName(F);
+  const c = byName(F), n = COS.length;
   $("#fName").textContent = c.name;
-  $("#fChips").innerHTML = ['<span class="chip">' + ord(c.size_rank) + " of " + COS.length + " by revenue</span>",
-    '<span class="chip">RA ' + raLabel(c) + "</span>", '<span class="chip">' + esc(c.legal) + "</span>"].join(" ");
+  $("#fChips").innerHTML = ['<span class="chip">' + t("rankOf", { r: ord(c.size_rank), n }) + "</span>",
+    '<span class="chip">' + t("raChip", { p: raLabel(c) }) + "</span>", '<span class="chip">' + esc(c.legal) + "</span>"].join(" ");
   const sameRA = COS.filter(x => x.ra === c.ra);
-  const medOf = (list, k) => { const v = list.map(x => g(x, k)).filter(v => v != null).sort((a, b) => a - b); const n = v.length; return n ? (n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2) : null; };
+  const medOf = (list, k) => { const v = list.map(x => g(x, k)).filter(v => v != null).sort((a, b) => a - b); const m = v.length; return m ? (m % 2 ? v[(m - 1) / 2] : (v[m / 2 - 1] + v[m / 2]) / 2) : null; };
   const rankIn = (list, k) => 1 + list.filter(x => g(x, k) > g(c, k)).length;
   const T = [
-    { k: "insurance_revenue", kind: "growth", ctx: () => "Rank " + rk(c, "insurance_revenue").rank + " of " + COS.length + " · share " + fP(g(c, "rev_share")) },
-    { k: "net_profit", kind: "growth", ctx: () => "Rank " + rk(c, "net_profit").rank + " of " + COS.length + " · industry " + fM(ind("net_profit").agg) },
-    { k: "csm_close", kind: "growth", ctx: () => "Rank " + rk(c, "csm_close").rank + " · growth rank " + rk(c, "csm_growth").rank + " of " + COS.length },
-    { k: "nb_csm", kind: "growth", ctx: () => "Rank " + rk(c, "nb_csm").rank + " of " + COS.length + " · share " + fP(g(c, "nb_csm_share")) },
-    { k: "ism_gross", kind: "pp", ctx: () => "Rank " + rankIn(sameRA, "ism_gross") + " of " + sameRA.length + " in RA group · group median " + fP(medOf(sameRA, "ism_gross")) },
-    { k: "npm", kind: "pp", ctx: () => "Rank " + rk(c, "npm").rank + " of " + COS.length + " · median " + fP(ind("npm").median) },
-    { k: "nb_csm_margin", kind: "pp", ctx: () => "Rank " + rk(c, "nb_csm_margin").rank + " of " + COS.length + " · median " + fP(ind("nb_csm_margin").median) },
-    { k: "nb_to_release", kind: "x", ctx: () => "Release ratio " + fP(g(c, "release_ratio")) + " · median " + fX(ind("nb_to_release").median) },
+    { k: "insurance_revenue", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "insurance_revenue").rank, n, s: fP(g(c, "rev_share")) }) },
+    { k: "net_profit", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_profit").rank, n, v: fM(ind("net_profit").agg) }) },
+    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
+    { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
+    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
+    { k: "npm", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "npm").rank, n, v: fP(ind("npm").median) }) },
+    { k: "nb_csm_margin", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "nb_csm_margin").rank, n, v: fP(ind("nb_csm_margin").median) }) },
+    { k: "nb_to_release", kind: "x", ctx: () => t("ctxRel", { r: fP(g(c, "release_ratio")), v: fX(ind("nb_to_release").median) }) },
   ];
-  $("#tiles").innerHTML = T.map(t => {
-    const d = DEF[t.k];
-    return '<div class="tile"><div class="lab">' + d.label + (d.unit === "thb_m" ? " (m)" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, t.k)) +
-      '</div><div class="delta">' + deltaHtml(t.kind, g(c, t.k), g(c, t.k, CMP), d.better) + '</div><div class="ctx">' + t.ctx() + "</div></div>";
+  $("#tiles").innerHTML = T.map(x => {
+    const d = DEF[x.k];
+    return '<div class="tile"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
+      '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div></div>";
   }).join("");
 
-  const csmG = g(c, "csm_growth"), csmGi = growth(ind("csm_close").agg, ind("csm_close", CMP).agg);
-  const npG = growth(raw(c, "net_profit"), raw(c, "net_profit", CMP));
-  const isr = g(c, "isr_gross"), isrP = g(c, "isr_gross", CMP), isrG = growth(isr, isrP);
   const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
-  const chg = (x, up, down) => x == null ? "moved (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%";
-  const L = [
-    c.short + " is the " + ord(c.size_rank) + " largest of " + COS.length + " by insurance revenue (" + fP(g(c, "rev_share")) + " share), " +
-      ord(rk(c, "csm_close").rank) + " by closing CSM and " + ord(rk(c, "nb_csm").rank) + " by new-business CSM.",
-    "CSM " + chg(csmG, "grew", "fell") + " over the year to " + fM(raw(c, "csm_close")) + "m (industry " + fP(csmGi) + "); new business replaced " +
-      fX(g(c, "nb_to_release")) + " the release (industry median " + fX(ind("nb_to_release").median) + ").",
-    "Net profit " + chg(npG, "rose", "fell") + " to " + fM(raw(c, "net_profit")) + "m while the insurance service result " + chg(isrG, "rose", "fell") +
-      (Math.abs(taxNow - taxPrev) > 0.2 * Math.abs(raw(c, "net_profit")) ? "; income tax went from " + fM(taxPrev) + "m to " + fM(taxNow) + "m." : "."),
-    "New-business CSM margin of " + fP(g(c, "nb_csm_margin")) + " ranks " + ord(rk(c, "nb_csm_margin").rank) + " of " + COS.length +
-      "; acquisition cost takes " + fP(g(c, "acq_cost_ratio")) + " of new-business premium (median " + fP(ind("acq_cost_ratio").median) + ").",
-  ];
+  const L = t("headlines")({
+    short: c.short, n, ord, chg: t("chg"), sizeRank: c.size_rank, revShare: fP(g(c, "rev_share")),
+    csmRank: rk(c, "csm_close").rank, nbRank: rk(c, "nb_csm").rank,
+    csmG: g(c, "csm_growth"), csmClose: fM(raw(c, "csm_close")), csmGi: fP(growth(ind("csm_close").agg, ind("csm_close", CMP).agg)),
+    nbr: fX(g(c, "nb_to_release")), nbrMed: fX(ind("nb_to_release").median),
+    npG: growth(raw(c, "net_profit"), raw(c, "net_profit", CMP)), np: fM(raw(c, "net_profit")),
+    isrG: growth(g(c, "isr_gross"), g(c, "isr_gross", CMP)),
+    taxBig: Math.abs(taxNow - taxPrev) > 0.2 * Math.abs(raw(c, "net_profit")), taxNow: fM(taxNow), taxPrev: fM(taxPrev),
+    nbm: fP(g(c, "nb_csm_margin")), nbmRank: rk(c, "nb_csm_margin").rank, acq: fP(g(c, "acq_cost_ratio")), acqMed: fP(ind("acq_cost_ratio").median),
+  });
   $("#headlines").innerHTML = L.map(s => "<li>" + esc(s) + "</li>").join("");
-  const notes = DATA.commentary.filter(n => n.companies.includes(F));
+  const notes = DATA.commentary.filter(x => x.companies.includes(F));
   const flags = DATA.flags.filter(f => f.company === F);
-  $("#callouts").innerHTML = notes.map(n => '<div class="callout"><b>' + esc(n.title) + ".</b> " + esc(n.body) + "</div>").join("") +
-    flags.map(f => '<div class="callout"><b>Review flag ' + f.fiscal_year + ".</b> " + esc(f.message) + "</div>").join("");
+  $("#callouts").innerHTML = notes.map(x => '<div class="callout"><b>' + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</div>").join("") +
+    flags.map(f => '<div class="callout"><b>' + t("reviewFlag", { fy: f.fiscal_year }) + ".</b> " + esc(flagMsg(f)) + "</div>").join("");
 }
 
 /* ---------- 2 market ---------- */
 function market() {
-  const cols = [["insurance_revenue", "rev_share", "Insurance revenue"], ["csm_close", "csm_share", "CSM closing"], ["nb_csm", "nb_csm_share", "New-business CSM"]];
+  const cols = [["insurance_revenue", "rev_share"], ["csm_close", "csm_share"], ["nb_csm", "nb_csm_share"]];
   const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
-  let h = "<thead><tr><th class='l'>#</th><th class='l'>Insurer</th>" + cols.map(c => "<th>" + c[2] + " &middot; share</th>").join("") + "</tr></thead><tbody>";
+  let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
   COS.forEach((c, i) => {
     const cls = [isF(c) ? "focus" : "", i > 0 && c.tier !== COS[i - 1].tier ? "tier-break" : ""].join(" ");
-    h += "<tr class='" + cls + "' data-co='" + esc(c.name) + "'><td class='l'>" + c.size_rank + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>focus</span>" : "") + "</td>" +
+    h += "<tr class='" + cls + "' data-co='" + esc(c.name) + "'><td class='l'>" + c.size_rank + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
       cols.map(([k, s]) => "<td><div class='barcell'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, k)) / max[k]).toFixed(2) + "%'></div></div><span class='v'>" +
         fM(g(c, k)) + "</span><span class='s'>" + fP(g(c, s)) + "</span></div></td>").join("") + "</tr>";
   });
-  h += "<tr><td class='l'></td><td class='l'><b>Industry</b></td>" + cols.map(([k]) => "<td><div class='barcell'><span class='v'><b>" + fM(ind(k).agg) + "</b></span><span class='s'>100%</span></div></td>").join("") + "</tr></tbody>";
-  const t = $("#mkt"); t.innerHTML = h;
-  t.querySelectorAll("tr[data-co]").forEach(tr => hover(tr, () => coTip(byName(tr.dataset.co))));
+  h += "<tr><td class='l'></td><td class='l'><b>" + t("industry") + "</b></td>" + cols.map(([k]) => "<td><div class='barcell'><span class='v'><b>" + fM(ind(k).agg) + "</b></span><span class='s'>100%</span></div></td>").join("") + "</tr></tbody>";
+  const tb = $("#mkt"); tb.innerHTML = h;
+  tb.querySelectorAll("tr[data-co]").forEach(tr => hover(tr, () => coTip(byName(tr.dataset.co))));
 }
 
 /* ---------- 3a waterfall ---------- */
 function waterfall() {
   const svg = $("#wf"); svg.textContent = "";
   const c = byName(F);
-  const steps = [["csm_open", "Opening"], ["csm_nb", "New business"], ["csm_accretion", "Accretion"], ["csm_future_service", "Future service"], ["csm_release", "Release"], ["csm_close", "Closing"]];
+  const keys = ["csm_open", "csm_nb", "csm_accretion", "csm_future_service", "csm_release", "csm_close"], labs = t("wf");
   const series = [
     { title: c.name, val: k => raw(c, k) },
-    { title: "Industry (" + COS.length + " insurers)", val: k => ind("sum_" + k).agg },
+    { title: t("industryN", { n: COS.length }), val: k => ind("sum_" + k).agg },
   ].map(s => {
     const o = s.val("csm_open"); let run = 0;
-    s.bars = steps.map(([k, lab], i) => {
-      const v = s.val(k) / o * 100;
-      if (i === 0 || i === steps.length - 1) { run = v; return { lab, k, v, y0: 0, y1: v, total: true, abs: s.val(k) }; }
-      const b = { lab, k, v, y0: run, y1: run + v, total: false, abs: s.val(k) }; run += v; return b;
+    s.bars = keys.map((k, i) => {
+      const v = s.val(k) / o * 100, lab = labs[i];
+      if (i === 0 || i === keys.length - 1) { run = v; return { lab, v, y0: 0, y1: v, total: true, abs: s.val(k) }; }
+      const b = { lab, v, y0: run, y1: run + v, total: false, abs: s.val(k) }; run += v; return b;
     });
     return s;
   });
   const hi = Math.max(...series.flatMap(s => s.bars.map(b => Math.max(b.y0, b.y1)))) * 1.1;
   const W = 900, H = 320, T = 34, B = 46, gap = 40, pw = (W - gap) / 2, L = 40;
   const py = v => T + (1 - v / hi) * (H - T - B);
-  $("#wfSub").textContent = CUR + " · THB m in the tooltip · " + c.short + " opening CSM " + fM(raw(c, "csm_open")) + "m";
+  $("#wfSub").textContent = t("wfSub", { cur: CUR, co: c.short, v: fM(raw(c, "csm_open")) });
   const { ticks } = niceTicks(0, hi, 5);
   series.forEach((s, si) => {
     const x0 = si * (pw + gap), slot = (pw - L) / s.bars.length, bw = Math.min(34, slot * 0.5);
     svg.appendChild(el("text", { x: x0 + L, y: 14, "font-size": 13, "font-weight": 600, fill: si === 0 ? "var(--ink)" : "var(--ink-2)" }, s.title));
-    ticks.forEach(t => {
-      svg.appendChild(el("line", { x1: x0 + L, x2: x0 + pw, y1: py(t), y2: py(t), stroke: t === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
-      svg.appendChild(el("text", { x: x0 + L - 6, y: py(t) + 4, "text-anchor": "end", "font-size": 10.5, fill: "var(--muted)" }, String(t)));
+    ticks.forEach(tk => {
+      svg.appendChild(el("line", { x1: x0 + L, x2: x0 + pw, y1: py(tk), y2: py(tk), stroke: tk === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+      svg.appendChild(el("text", { x: x0 + L - 6, y: py(tk) + 4, "text-anchor": "end", "font-size": 10.5, fill: "var(--muted)" }, String(tk)));
     });
     s.bars.forEach((b, i) => {
       const cx = x0 + L + slot * i + slot / 2, top = py(Math.max(b.y0, b.y1)), bot = py(Math.min(b.y0, b.y1));
       const fill = b.total ? "var(--total)" : b.v >= 0 ? "var(--pos)" : "var(--neg)";
       const r = el("rect", { x: cx - bw / 2, y: top, width: bw, height: Math.max(1, bot - top), fill, rx: 3 });
-      hover(r, "<b>" + esc(s.title) + "</b><table><tr><td>" + b.lab + "</td><td>" + fM(b.abs) + "m</td></tr><tr><td>Index (opening = 100)</td><td>" + nf(b.v, 1) + "</td></tr></table>");
+      hover(r, tipTable(s.title, [[b.lab, fM(b.abs) + " " + t("m")], [t("tipIndex"), nf(b.v, 1)]]));
       svg.appendChild(r);
       if (i < s.bars.length - 1) { const yy = py(b.y1); svg.appendChild(el("line", { x1: cx + bw / 2, x2: cx + slot - bw / 2, y1: yy, y2: yy, stroke: "var(--axis)", "stroke-width": 1 })); }
       const lab = b.total ? nf(b.v, 0) : (b.v >= 0 ? "+" : "−") + nf(Math.abs(b.v), 1);
       svg.appendChild(el("text", { x: cx, y: top - 6, "text-anchor": "middle", "font-size": 11.5, fill: "var(--ink)", "font-weight": b.total ? 600 : 400 }, lab));
-      const words = b.lab.split(" ");
-      words.forEach((w, wi) => svg.appendChild(el("text", { x: cx, y: H - B + 16 + wi * 13, "text-anchor": "middle", "font-size": 11, fill: "var(--ink-2)" }, w)));
+      b.lab.split(" ").forEach((w, wi) => svg.appendChild(el("text", { x: cx, y: H - B + 16 + wi * 13, "text-anchor": "middle", "font-size": 11, fill: "var(--ink-2)" }, w)));
     });
   });
 }
@@ -463,17 +632,17 @@ function quadrant() {
   const px = v => L + v / x1 * (W - L - R), py = v => H - B - Math.min(v, CAP) / CAP * (H - T - B);
   const maxC = Math.max(...COS.map(c => raw(c, "csm_close")));
   const rad = v => 4.5 + 19 * Math.sqrt(v / maxC);
-  $("#qSub").textContent = CUR + " · bubble = closing CSM, " + fM(Math.min(...COS.map(c => raw(c, "csm_close")))) + " to " + fM(maxC) + "m";
-  for (let t = 0; t <= CAP; t += 0.5) {
-    svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(t), y2: py(t), stroke: "var(--grid)" }));
-    svg.appendChild(el("text", { x: L - 9, y: py(t) + 4, "text-anchor": "end", fill: "var(--muted)", "font-size": 11 }, t.toFixed(1) + "×"));
+  $("#qSub").textContent = t("qSub", { cur: CUR, lo: fM(Math.min(...COS.map(c => raw(c, "csm_close")))), hi: fM(maxC) });
+  for (let v = 0; v <= CAP; v += 0.5) {
+    svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(v), y2: py(v), stroke: "var(--grid)" }));
+    svg.appendChild(el("text", { x: L - 9, y: py(v) + 4, "text-anchor": "end", fill: "var(--muted)", "font-size": 11 }, v.toFixed(1) + "×"));
   }
-  for (let t = 0; t <= x1; t += 5) svg.appendChild(el("text", { x: px(t), y: H - B + 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, t + "%"));
+  for (let v = 0; v <= x1; v += 5) svg.appendChild(el("text", { x: px(v), y: H - B + 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, v + "%"));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: "var(--axis)" }));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(1), y2: py(1), stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "5 4" }));
-  svg.appendChild(el("text", { x: W - R - 4, y: py(1) - 7, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, "1.0× — replenishing above, depleting below"));
-  svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, "CSM release ratio (release ÷ CSM available before release)"));
-  svg.appendChild(el("text", { x: 0, y: 0, fill: "var(--ink-2)", "font-size": 12, "text-anchor": "middle", transform: "translate(13," + ((T + H - B) / 2) + ") rotate(-90)" }, "New-business CSM ÷ release"));
+  svg.appendChild(el("text", { x: W - R - 4, y: py(1) - 7, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, t("qThreshold")));
+  svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, t("qX")));
+  svg.appendChild(el("text", { x: 0, y: 0, fill: "var(--ink-2)", "font-size": 12, "text-anchor": "middle", transform: "translate(13," + ((T + H - B) / 2) + ") rotate(-90)" }, t("qY")));
 
   const pts = COS.map(c => ({ c, x: px(g(c, "release_ratio") * 100), y: py(g(c, "nb_to_release")), rad: rad(raw(c, "csm_close")), over: g(c, "nb_to_release") > CAP, txt: c.short }))
     .sort((a, b) => (isF(b.c) - isF(a.c)) || (b.rad - a.rad));
@@ -495,7 +664,6 @@ function quadrant() {
     if (!best) { const lx = p.x + p.rad + 6; best = { side: 1, dy: 0, lx, ly: p.y + 4, box: { x1: lx, x2: lx + w, y1: p.y - 7, y2: p.y + 7 } }; }
     Object.assign(p, best); boxes.push(best.box);
   });
-  // draw peers first, focus last (on top)
   pts.slice().sort((a, b) => isF(a.c) - isF(b.c) || b.rad - a.rad).forEach(p => {
     const c = colr(p.c), gg = el("g");
     if (Math.abs(p.dy) > 8) gg.appendChild(el("line", { x1: p.x + p.side * p.rad, y1: p.y, x2: p.side > 0 ? p.lx - 3 : p.lx + 3, y2: p.ly - 4, stroke: "var(--axis)" }));
@@ -521,20 +689,20 @@ function strips() {
     let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
     const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
-    svg.appendChild(el("text", { x: 0, y: cy - 4, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, d.label));
-    svg.appendChild(el("text", { x: 0, y: cy + 12, "font-size": 11, fill: "var(--muted)" }, d.better === true ? "higher is better" : d.better === false ? "lower is better" : ""));
-    ticks.forEach(t => {
-      svg.appendChild(el("line", { x1: px(t), x2: px(t), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
-      svg.appendChild(el("text", { x: px(t), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(t * 100, 0) + "%" : nf(t, 1) + "×"));
+    svg.appendChild(el("text", { x: 0, y: cy - 4, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
+    svg.appendChild(el("text", { x: 0, y: cy + 12, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
+    ticks.forEach(tk => {
+      svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
+      svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(tk * 100, 0) + "%" : nf(tk, 1) + "×"));
     });
     svg.appendChild(el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "var(--axis)" }));
     const med = ind(k).median;
     if (med != null) svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: cy - 16, y2: cy + 16, stroke: "var(--ink-2)", "stroke-width": 2 }));
+    const dotTip = (c, extra = []) => tipTable(c.name, [[mLabel(k) + " " + CUR, fmtU(d.unit, g(c, k))], [CMP, fmtU(d.unit, g(c, k, CMP))], ...extra]);
     COS.filter(c => !isF(c)).forEach(c => {
       const v = g(c, k); if (v == null) return;
       const dot = el("circle", { cx: px(v), cy, r: 5, fill: "var(--peer)", "fill-opacity": .55, stroke: "var(--surface)", "stroke-width": 1.5 });
-      hover(dot, () => "<b>" + esc(c.name) + "</b><table><tr><td>" + d.label + " " + CUR + "</td><td>" + fmtU(d.unit, v) + "</td></tr><tr><td>" + CMP + "</td><td>" + fmtU(d.unit, g(c, k, CMP)) + "</td></tr></table>");
-      svg.appendChild(dot);
+      hover(dot, () => dotTip(c)); svg.appendChild(dot);
       if (cap && v > cap) svg.appendChild(el("text", { x: px(v) + 7, y: cy + 4, "font-size": 10, fill: "var(--muted)" }, "›"));
     });
     const c = byName(F), v = g(c, k), vp = g(c, k, CMP);
@@ -543,10 +711,10 @@ function strips() {
       svg.appendChild(el("circle", { cx: px(vp), cy, r: 6, fill: "var(--surface)", stroke: "var(--focus)", "stroke-width": 2 }));
     }
     const fd = el("circle", { cx: px(v), cy, r: 7, fill: "var(--focus)", stroke: "var(--surface)", "stroke-width": 2 });
-    hover(fd, () => "<b>" + esc(c.name) + "</b><table><tr><td>" + d.label + " " + CUR + "</td><td>" + fmtU(d.unit, v) + "</td></tr><tr><td>" + CMP + "</td><td>" + fmtU(d.unit, vp) + "</td></tr><tr><td>Industry median</td><td>" + fmtU(d.unit, med) + "</td></tr><tr><td>Rank (1 = highest)</td><td>" + rk(c, k).rank + " of " + rk(c, k).n + "</td></tr></table>");
+    hover(fd, () => dotTip(c, [[t("tipMedian"), fmtU(d.unit, med)], [t("tipRank"), rk(c, k).rank + " / " + rk(c, k).n]]));
     svg.appendChild(fd);
     svg.appendChild(el("text", { x: px(v), y: cy - 14, "text-anchor": "middle", "font-size": 12, "font-weight": 650, fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 4, "paint-order": "stroke" }, c.short + " " + fmtU(d.unit, v) + (cap && v > cap ? " ›" : "")));
-    if (med != null) svg.appendChild(el("text", { x: px(med), y: cy + 46 - 2, "text-anchor": "middle", "font-size": 10.5, fill: "var(--ink-2)" }, "median " + fmtU(d.unit, med)));
+    if (med != null) svg.appendChild(el("text", { x: px(med), y: cy + 44, "text-anchor": "middle", "font-size": 10.5, fill: "var(--ink-2)" }, t("median", { v: fmtU(d.unit, med) })));
   });
 }
 
@@ -559,14 +727,14 @@ function lolli(sel, subSel, list, slots) {
   const lo = Math.min(0, Math.floor(Math.min(...vals) * 20) / 20), hi = Math.max(0.45, Math.ceil(Math.max(...vals) * 20) / 20);
   const px = v => L + (v - lo) / (hi - lo) * (W - L - R);
   const { ticks } = niceTicks(lo, hi, 4);
-  ticks.forEach(t => {
-    svg.appendChild(el("line", { x1: px(t), x2: px(t), y1: T - 4, y2: H - B + 4, stroke: t === 0 ? "var(--axis)" : "var(--grid)" }));
-    svg.appendChild(el("text", { x: px(t), y: H - B + 20, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, nf(t * 100, 0) + "%"));
+  ticks.forEach(tk => {
+    svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: T - 4, y2: H - B + 4, stroke: tk === 0 ? "var(--axis)" : "var(--grid)" }));
+    svg.appendChild(el("text", { x: px(tk), y: H - B + 20, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, nf(tk * 100, 0) + "%"));
   });
   const sorted = list.slice().sort((a, b) => g(b, "ism_gross") - g(a, "ism_gross"));
   const v = sorted.map(c => g(c, "ism_gross")).sort((a, b) => a - b), n = v.length;
   const med = n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2;
-  $(subSel).textContent = n + " insurers · " + CUR + " · group median " + fP(med);
+  $(subSel).textContent = t("groupSub", { n, cur: CUR, v: fP(med) });
   svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: T - 4, y2: T + n * step, stroke: "var(--ink-2)", "stroke-width": 1.5 }));
   sorted.forEach((c, i) => {
     const y = T + i * step + step / 2, col = colr(c), xv = px(g(c, "ism_gross")), gg = el("g");
@@ -576,7 +744,7 @@ function lolli(sel, subSel, list, slots) {
     gg.appendChild(el("text", { x: L - 10, y: y + 4, "text-anchor": "end", fill: "var(--ink)", "font-size": 12.5, "font-weight": isF(c) ? 650 : 400 }, c.name));
     gg.appendChild(el("text", { x: W - R + 10, y: y + 4, fill: "var(--ink-2)", "font-size": 11.5 }, fP(g(c, "ism_gross"))));
     const hit = el("rect", { x: 0, y: y - step / 2, width: W, height: step, fill: "transparent" });
-    hover(hit, () => coTip(c, [["Margin after reinsurance", fP(g(c, "ism_net"))], ["Service margin " + CMP, fP(g(c, "ism_gross", CMP))]]));
+    hover(hit, () => coTip(c, [[t("tipIsmNet"), fP(g(c, "ism_net"))], [t("tipIsmCmp", { cmp: CMP }), fP(g(c, "ism_gross", CMP))]]));
     gg.appendChild(hit); svg.appendChild(gg);
   });
 }
@@ -593,18 +761,18 @@ function bridge() {
   svg.setAttribute("viewBox", "0 0 " + W + " " + H);
   const lo = -30, hi = 70;
   const px = v => L + (Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo) * (W - L - R);
-  const parts = [["ism_net", "var(--c1)", "Insurance service result after reinsurance"], ["inv_margin", "var(--c2)", "Investment result net of IFIE"], ["other_ratio", "var(--c3)", "Other expense, net"], ["tax_ratio", "var(--c4)", "Income tax"]];
-  for (let t = lo; t <= hi; t += 10) {
-    svg.appendChild(el("line", { x1: px(t), x2: px(t), y1: T - 12, y2: H - B + 4, stroke: t === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": t === 0 ? 1.5 : 1 }));
-    svg.appendChild(el("text", { x: px(t), y: T - 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, (t > 0 ? "+" : "") + t + "%"));
+  const parts = [["ism_net", "var(--c1)", "lgIsr"], ["inv_margin", "var(--c2)", "lgInv"], ["other_ratio", "var(--c3)", "lgOther"], ["tax_ratio", "var(--c4)", "lgTax"]];
+  for (let v = lo; v <= hi; v += 10) {
+    svg.appendChild(el("line", { x1: px(v), x2: px(v), y1: T - 12, y2: H - B + 4, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": v === 0 ? 1.5 : 1 }));
+    svg.appendChild(el("text", { x: px(v), y: T - 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, (v > 0 ? "+" : "") + v + "%"));
   }
   COS.forEach((c, i) => {
     const y = T + i * step + step / 2, h = 14, gg = el("g");
     if (isF(c)) gg.appendChild(el("rect", { x: 4, y: y - step / 2 + 2, width: W - 8, height: step - 4, fill: "var(--focus-soft)", rx: 3 }));
     if (i > 0 && c.tier !== COS[i - 1].tier) gg.appendChild(el("line", { x1: 4, x2: W - 4, y1: y - step / 2, y2: y - step / 2, stroke: "var(--axis)", "stroke-width": 1.5 }));
     let cp = 0, cn = 0, clipped = false;
-    const tipHtml = () => "<b>" + esc(c.name) + "</b><table>" + parts.map(p => "<tr><td>" + p[2] + "</td><td>" + fP(g(c, p[0])) + "</td></tr>").join("") +
-      "<tr><td><b>Net profit margin</b></td><td><b>" + fP(g(c, "npm")) + "</b></td></tr><tr><td>Insurance revenue</td><td>" + fM(raw(c, "insurance_revenue")) + "m</td></tr></table>";
+    const tipHtml = () => tipTable(c.name, [...parts.map(p => [t(p[2]), fP(g(c, p[0]))]), ["<b>" + t("lgNpm") + "</b>", "<b>" + fP(g(c, "npm")) + "</b>"],
+      [t("tipRev"), fM(raw(c, "insurance_revenue")) + " " + t("m")]]);
     parts.forEach(([k, col]) => {
       const v = g(c, k) * 100; if (Math.abs(v) < 0.05) return;
       let x1, x2;
@@ -625,10 +793,8 @@ function bridge() {
 
 /* ---------- 7 table ---------- */
 const COLS = [
-  ["insurance_revenue", "Revenue", "growth"], ["net_profit", "Net profit", "growth"], ["ism_gross", "Service margin", "pp"],
-  ["npm", "NP margin", "pp"], ["csm_close", "CSM closing", "growth"], ["csm_growth", "CSM growth", "pp"],
-  ["release_ratio", "Release ratio", "pp"], ["nb_to_release", "NB / release", "x"], ["nb_csm", "NB CSM", "growth"],
-  ["nb_csm_margin", "NB CSM margin", "pp"], ["acq_cost_ratio", "Acq. cost ratio", "pp"], ["onerous_ratio", "Onerous NB", "pp"]];
+  ["insurance_revenue", "growth"], ["net_profit", "growth"], ["ism_gross", "pp"], ["npm", "pp"], ["csm_close", "growth"], ["csm_growth", "pp"],
+  ["release_ratio", "pp"], ["nb_to_release", "x"], ["nb_csm", "growth"], ["nb_csm_margin", "pp"], ["acq_cost_ratio", "pp"], ["onerous_ratio", "pp"]];
 let VIEW = "cur", SORT = { k: "insurance_revenue", dir: -1 };
 function cellVal(c, k, kind) {
   if (VIEW === "cur") return g(c, k);
@@ -638,44 +804,45 @@ function cellVal(c, k, kind) {
   return kind === "growth" ? growth(a, b) : a - b;
 }
 function cellTxt(k, kind, v) {
-  if (v == null) return "n.m.";
+  if (v == null) return t("nm");
   if (VIEW !== "chg") return fmtU(DEF[k].unit, v);
   if (kind === "growth") return (v >= 0 ? "+" : "") + nf(v * 100, 1) + "%";
-  if (kind === "pp") return (v >= 0 ? "+" : "") + nf(v * 100, 1) + " pp";
+  if (kind === "pp") return (v >= 0 ? "+" : "") + nf(v * 100, 1) + " " + t("pp");
   return (v >= 0 ? "+" : "") + nf(v, 2) + "×";
 }
 function table() {
   const seg = $("#viewSeg");
   if (!seg.childElementCount) {
-    [["cur", CUR], ["cmp", CMP], ["chg", "Change"]].forEach(([id, lab]) => {
-      const b = document.createElement("button"); b.type = "button"; b.textContent = lab; b.dataset.v = id;
+    ["cur", "cmp", "chg"].forEach(id => {
+      const b = document.createElement("button"); b.type = "button"; b.dataset.v = id;
       b.addEventListener("click", () => { VIEW = id; table(); }); seg.appendChild(b);
     });
     $("#dlBtn").addEventListener("click", downloadCsv);
   }
-  seg.querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === VIEW));
+  seg.setAttribute("aria-label", t("tableView"));
+  seg.querySelectorAll("button").forEach(b => { b.textContent = b.dataset.v === "cur" ? CUR : b.dataset.v === "cmp" ? CMP : t("viewChange"); b.setAttribute("aria-pressed", b.dataset.v === VIEW); });
   const rows = COS.slice().sort((a, b) => {
     if (SORT.k === "name") return SORT.dir * a.name.localeCompare(b.name);
-    const kind = (COLS.find(x => x[0] === SORT.k) || [])[2];
+    const kind = (COLS.find(x => x[0] === SORT.k) || [])[1];
     const va = cellVal(a, SORT.k, kind), vb = cellVal(b, SORT.k, kind);
     return (va == null) - (vb == null) || SORT.dir * ((va ?? 0) - (vb ?? 0));
   });
   const arr = k => SORT.k === k ? (SORT.dir < 0 ? "▼" : "▲") : "";
-  let h = "<thead><tr><th class='l sortable' data-k='name'>Insurer <span class='arr'>" + arr("name") + "</span></th><th class='l' title='Risk-adjustment change disaggregated between insurance service result and IFIE'>RA split</th>" +
-    COLS.map(([k, lab]) => "<th class='sortable' data-k='" + k + "' title='" + esc(DEF[k].formula) + "'>" + lab + " <span class='arr'>" + arr(k) + "</span></th>").join("") + "</tr></thead><tbody>";
+  let h = "<thead><tr><th class='l sortable' data-k='name'>" + t("insurer") + " <span class='arr'>" + arr("name") + "</span></th><th class='l' title='" + esc(t("raSplitTitle")) + "'>" + t("raSplit") + "</th>" +
+    COLS.map(([k]) => "<th class='sortable' data-k='" + k + "' title='" + esc(mFormula(k)) + "'>" + esc(t("cols")[k]) + " <span class='arr'>" + arr(k) + "</span></th>").join("") + "</tr></thead><tbody>";
   const defaultOrder = SORT.k === "insurance_revenue" && SORT.dir < 0 && VIEW === "cur";
   rows.forEach((c, i) => {
     const cls = [isF(c) ? "focus" : "", defaultOrder && i > 0 && c.tier !== rows[i - 1].tier ? "tier-break" : ""].join(" ");
-    h += "<tr class='" + cls + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>focus</span>" : "") + "</td><td class='l'>" + (c.ra === "disaggregated" ? "Yes" : "No") + "</td>" +
-      COLS.map(([k, , kind]) => "<td>" + cellTxt(k, kind, cellVal(c, k, kind)) + "</td>").join("") + "</tr>";
+    h += "<tr class='" + cls + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td><td class='l'>" + (c.ra === "disaggregated" ? t("raYes") : t("raNo")) + "</td>" +
+      COLS.map(([k, kind]) => "<td>" + cellTxt(k, kind, cellVal(c, k, kind)) + "</td>").join("") + "</tr>";
   });
-  const agg = (k, fy) => { const d = ind(k, fy); return d.agg; };
-  h += "<tr><td class='l'><b>Industry aggregate</b></td><td class='l'></td>" + COLS.map(([k, , kind]) => {
-    const a = agg(k, CUR), b = agg(k, CMP); const v = VIEW === "cur" ? a : VIEW === "cmp" ? b : (a == null || b == null ? null : kind === "growth" ? growth(a, b) : a - b);
+  h += "<tr><td class='l'><b>" + t("industryAgg") + "</b></td><td class='l'></td>" + COLS.map(([k, kind]) => {
+    const a = ind(k, CUR).agg, b = ind(k, CMP).agg;
+    const v = VIEW === "cur" ? a : VIEW === "cmp" ? b : (a == null || b == null ? null : kind === "growth" ? growth(a, b) : a - b);
     return "<td><b>" + cellTxt(k, kind, v) + "</b></td>";
   }).join("") + "</tr></tbody>";
-  const t = $("#all"); t.innerHTML = h;
-  t.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
+  const tb = $("#all"); tb.innerHTML = h;
+  tb.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
     const k = th.dataset.k; SORT = SORT.k === k ? { k, dir: -SORT.dir } : { k, dir: k === "name" ? 1 : -1 }; table();
   }));
 }
@@ -684,55 +851,55 @@ function downloadCsv() {
   const lines = [["company", "fiscal_year", "ra_policy", ...codes].join(",")];
   COS.forEach(c => DATA.years.forEach(fy => { if (c.y[fy]) lines.push(['"' + c.name + '"', fy, c.ra, ...codes.map(k => g(c, k, fy) ?? "")].join(",")); }));
   const blob = new Blob([lines.join("\n")], { type: "text/csv" });
-  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "thai_life_ifrs17_indicators_" + CUR + ".csv";
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = t("csvName", { cur: CUR });
   document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
 }
 
 /* ---------- 8 data quality ---------- */
 function dataQuality() {
-  const defs = DATA.check_defs, short = { revenue_split: "Revenue", expense_split: "Expense", net_profit: "Net profit", csm_rollforward: "CSM roll", nb_csm: "NB CSM", nb_consistency: "NB = roll" };
+  const defs = DATA.check_defs;
   let total = 0, ok = 0;
-  let h = "<thead><tr><th class='l'>Insurer</th>" + DATA.years.map(fy => defs.map(d => "<th title='" + esc(d.label) + "'>" + short[d.id] + "<br>" + fy + "</th>").join("")).join("") + "<th>Flags</th></tr></thead><tbody>";
+  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + DATA.years.map(fy => defs.map(d => "<th title='" + esc(chk(d.id, "label")) + "'>" + esc(chk(d.id, "short")) + "<br>" + fy + "</th>").join("")).join("") + "<th>" + t("dqFlags") + "</th></tr></thead><tbody>";
   COS.forEach(c => {
     h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + "</td>" + DATA.years.map(fy => defs.map(d => {
       const r = ((DATA.checks[c.name] || {})[fy] || {})[d.id]; total++; if (r && r.ok) ok++;
-      return r ? (r.ok ? "<td class='ok' title='difference " + nf(r.diff, 3) + "m'>✓</td>" : "<td class='fail' title='difference " + nf(r.diff, 3) + "m'>✗</td>") : "<td>–</td>";
+      return r ? "<td class='" + (r.ok ? "ok" : "fail") + "' title='" + esc(t("diff", { v: nf(r.diff, 3) })) + "'>" + (r.ok ? "✓" : "✗") + "</td>" : "<td>–</td>";
     }).join("")).join("") + "<td>" + (DATA.flags.filter(f => f.company === c.name).length || "") + "</td></tr>";
   });
   $("#dq").innerHTML = h + "</tbody>";
-  $("#dqNote").innerHTML = "<b>" + ok + " of " + total + "</b> reconciliations pass within " + M.tolerance_thb_m + "m (" + COS.length + " insurers × " +
-    DATA.years.length + " years × " + defs.length + " checks). The build stops if any one fails, so a published dashboard always ties to the printed subtotals. Hover a tick for the difference.";
-  $("#flags").innerHTML = DATA.flags.map(f => "<li><b>" + esc(f.company) + "</b> " + f.fiscal_year + ": " + esc(f.message) + "</li>").join("") || "<li>None.</li>";
+  $("#dqNote").innerHTML = t("dqNote", { ok, total, tol: M.tolerance_thb_m, n: COS.length, y: DATA.years.length, c: defs.length });
+  $("#flags").innerHTML = DATA.flags.map(f => "<li><b>" + esc(f.company) + "</b> " + f.fiscal_year + ": " + esc(flagMsg(f)) + "</li>").join("") || "<li>" + t("none") + "</li>";
 }
 
 /* ---------- 9 method ---------- */
 function method() {
-  $("#commentary").innerHTML = "<h4>Comparability notes</h4>" + "<p><b>Comparative year.</b> " + esc(M.comparative_caveat) + "</p>" +
-    DATA.commentary.filter(n => n.id !== "transition").map(n => "<p><b>" + esc(n.title) + ".</b> " + esc(n.body) + "</p>").join("");
-  const grp = { scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business" };
-  $("#defs").innerHTML = "<thead><tr><th class='l'>Area</th><th class='l'>Indicator</th><th class='l'>Definition</th></tr></thead><tbody>" +
-    DATA.metric_defs.map(d => "<tr><td class='l'>" + grp[d.group] + "</td><td class='l'>" + esc(d.label) + "</td><td class='l' style='white-space:normal'>" + esc(d.formula) + "</td></tr>").join("") + "</tbody>";
-  const ex = $("#extract");
-  ex.querySelectorAll("details").forEach(d => d.remove());
+  $("#commentary").innerHTML = "<h4>" + t("h4comp") + "</h4><p><b>" + t("compYear") + ".</b> " + esc(metaT("comparative_caveat")) + "</p>" +
+    DATA.commentary.filter(x => x.id !== "transition").map(x => "<p><b>" + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</p>").join("");
+  $("#defs").innerHTML = "<thead><tr><th class='l'>" + t("defArea") + "</th><th class='l'>" + t("defInd") + "</th><th class='l'>" + t("defDef") + "</th></tr></thead><tbody>" +
+    DATA.metric_defs.map(d => "<tr><td class='l'>" + esc(groupT(d.group)) + "</td><td class='l'>" + esc(mLabel(d.code)) + "</td><td class='l' style='white-space:normal'>" + esc(mFormula(d.code)) + "</td></tr>").join("") + "</tbody>";
+  const tr = TR(), ex = $("#extract");
+  ex.innerHTML = "<h4>" + t("h4extract") + "</h4>" + (tr && tr.notes_language_label ? "<p>" + esc(tr.notes_language_label) + "</p>" : "");
   COS.forEach(c => {
     const n = DATA.company_notes.find(x => x.company === c.name) || {};
     const d = document.createElement("details");
-    d.innerHTML = "<summary>" + esc(c.name) + " — " + esc(c.units) + "</summary><p>" + esc(n.header_note || "") + "</p><p>" + esc(n.extraction_note || "") + "</p>";
+    d.innerHTML = "<summary>" + esc(c.name) + " — " + esc(c.units) + "</summary><p lang='en'>" + esc(n.header_note || "") + "</p><p lang='en'>" + esc(n.extraction_note || "") + "</p>";
     ex.appendChild(d);
   });
-  $("#foot").innerHTML = "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), captured in <code>" +
-    esc(M.workbook) + "</code>. Built " + esc(M.generated) + (M.git ? " from commit " + esc(M.git) : "") +
-    ". Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.";
+  $("#foot").innerHTML = t("foot", { wb: esc(M.workbook), gen: esc(M.generated), git: M.git ? t("footGit", { git: esc(M.git) }) : "" });
 }
 
 function renderAll() {
+  staticText();
   $$(".f-name").forEach(e => e.textContent = F);
-  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); dataQuality();
+  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); dataQuality(); method();
 }
 (function init() {
-  const m = /focus=([^&]+)/.exec(location.hash);
-  if (m && byName(decodeURIComponent(m[1]))) F = decodeURIComponent(m[1]);
-  header(); method(); renderAll();
+  const h = new URLSearchParams(location.hash.slice(1));
+  const langs = M.languages || ["en"];
+  const want = h.get("lang") || store.get("ifrs17-dash-lang");
+  if (want && langs.includes(want) && (want === "en" || (DATA.i18n || {})[want])) LANG = want;
+  if (h.get("focus") && byName(h.get("focus"))) F = h.get("focus");
+  controls(); renderAll();
 })();
 </script>
 </body>

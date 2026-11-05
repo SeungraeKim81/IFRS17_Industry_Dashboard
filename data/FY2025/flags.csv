@@ -1,13 +1,13 @@
-company,fiscal_year,flag,message
-CHUBB Life,FY2024,nb_to_release,New business / release 16.5x is above 3.0x
-CHUBB Life,FY2024,loss_year,"Net loss of -1,917.7m"
-CHUBB Life,FY2025,nb_to_release,New business / release 8.7x is above 3.0x
-Dhipaya Life,FY2024,nb_to_release,New business / release 3.2x is above 3.0x
-Rabbit Life,FY2024,nb_to_release,New business / release 3.1x is above 3.0x
-Rabbit Life,FY2024,loss_year,Net loss of -415.2m
-Rabbit Life,FY2025,nb_to_release,New business / release 5.2x is above 3.0x
-T Life,FY2024,release_ratio,CSM release ratio 34.9% is outside 5%-20%
-T Life,FY2024,onerous_nb,Losses on onerous new business (69.0m) exceed new-business CSM (23.1m)
-T Life,FY2025,negative_accretion,CSM interest accretion is negative (-5.9m) on a positive opening CSM
-T Life,FY2025,release_ratio,CSM release ratio 26.0% is outside 5%-20%
-T Life,FY2025,onerous_nb,Losses on onerous new business (56.8m) exceed new-business CSM (20.5m)
+company,fiscal_year,flag,message,message_ko
+CHUBB Life,FY2024,nb_to_release,New business / release 16.5x is above 3.0x,신계약 CSM ÷ 상각 16.5배로 3.0배 초과
+CHUBB Life,FY2024,loss_year,"Net loss of -1,917.7m","당기순손실 -1,917.7백만"
+CHUBB Life,FY2025,nb_to_release,New business / release 8.7x is above 3.0x,신계약 CSM ÷ 상각 8.7배로 3.0배 초과
+Dhipaya Life,FY2024,nb_to_release,New business / release 3.2x is above 3.0x,신계약 CSM ÷ 상각 3.2배로 3.0배 초과
+Rabbit Life,FY2024,nb_to_release,New business / release 3.1x is above 3.0x,신계약 CSM ÷ 상각 3.1배로 3.0배 초과
+Rabbit Life,FY2024,loss_year,Net loss of -415.2m,당기순손실 -415.2백만
+Rabbit Life,FY2025,nb_to_release,New business / release 5.2x is above 3.0x,신계약 CSM ÷ 상각 5.2배로 3.0배 초과
+T Life,FY2024,release_ratio,CSM release ratio 34.9% is outside 5%-20%,CSM 상각률 34.9%가 5%~20% 범위를 벗어남
+T Life,FY2024,onerous_nb,Losses on onerous new business (69.0m) exceed new-business CSM (23.1m),손실부담 신계약 손실(69.0백만)이 신계약 CSM(23.1백만)보다 큼
+T Life,FY2025,negative_accretion,CSM interest accretion is negative (-5.9m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-5.9백만)
+T Life,FY2025,release_ratio,CSM release ratio 26.0% is outside 5%-20%,CSM 상각률 26.0%가 5%~20% 범위를 벗어남
+T Life,FY2025,onerous_nb,Losses on onerous new business (56.8m) exceed new-business CSM (20.5m),손실부담 신계약 손실(56.8백만)이 신계약 CSM(20.5백만)보다 큼
