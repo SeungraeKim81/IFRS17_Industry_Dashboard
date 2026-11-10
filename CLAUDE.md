@@ -5,9 +5,9 @@ the analyst capture workbook into one self-contained HTML page. See
 `README.md` for the layout and commands and `docs/WORKFLOW.md` for the process.
 
 **Work in progress:** the data layer is moving from the pilot workbook to the
-insurers' published statements (`sources/`). Read `docs/HANDOFF.md` first: it
-holds the decisions made so far, the sample test to run next and the
-extraction pitfalls.
+insurers' published statements. Read `docs/HANDOFF.md` first: it holds the
+decisions, how a local session starts, the remaining extractions (section 6)
+and the extraction pitfalls. Locate tables by heading, never by page number.
 
 - Samsung Life is the default highlighted insurer (`config/dashboard.json`,
   `focus_company`). Do not change it unless the owner asks.

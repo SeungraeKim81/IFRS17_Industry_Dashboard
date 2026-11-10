@@ -92,11 +92,12 @@ ties to the insurers' printed subtotals.
 | `output/<period>/` | The built dashboard |
 | `docs/WORKFLOW.md` | The operating process: roles, steps, gates, review checklist, period roll-over |
 | `docs/BACKLOG.md` | Benchmark review, improvement proposals and open decisions |
-| `docs/HANDOFF.md` | Handoff (Korean): move to statement-based sources, decisions, sample-test results, next steps |
+| `docs/HANDOFF.md` | Handoff (Korean) for the local session: decisions, how to start, the remaining extractions, pitfalls, results |
 | `sources/<period>/registry.csv` | Register of the published statements (kept in Google Drive): file ID, name, size, SHA-256, pages, status |
 | `config/extraction/` | Per-insurer extraction specs: page, row, column, unit and sign for every line item |
 | `extract/<period>/` | Values extracted from the statements, with provenance, and a review workbook in the capture layout |
 | `tools/split_pdf.py` | Run on your own computer: split a large statement PDF into parts under 5 MB for the Drive connector, keeping the page ranges in the names |
+| `tools/pdf_pages.py`, `tools/visual_spec.py`, `tools/pilot_values.py` | Extraction helpers: page sheets and page renders for scanned statements, spec builder for transcribed figures, pilot reference values |
 | `docs/DEPLOY.md` | Publishing on GitHub Pages: routes, one-off setup, troubleshooting |
 | `.github/workflows/pages.yml` | Validate on every push; publish to GitHub Pages from `main` |
 | `docs/benchmark/` | The benchmark board this version was built against |
