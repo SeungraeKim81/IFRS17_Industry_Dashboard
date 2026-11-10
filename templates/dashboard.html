@@ -322,7 +322,7 @@ const UI = {
     dqNote: "<b>{ok} of {total}</b> reconciliations pass within {tol}m ({n} insurers × {y} years × {c} checks). The build stops if any one fails, so a published dashboard always ties to the printed subtotals. Hover a tick for the difference.",
     dqFlags: "Flags", diff: "difference {v}m", none: "None.",
     defArea: "Area", defInd: "Indicator", defDef: "Definition",
-    foot: "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), captured in <code>{wb}</code>. Built {gen}{git}. Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.",
+    foot: "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), extracted page by page from each filed statement (files used: <code>{wb}</code>). Built {gen}{git}. Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.",
     footGit: " from commit {git}", reviewFlag: "Review flag {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
     cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
       csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
@@ -389,7 +389,7 @@ const UI = {
     dqNote: "대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사 × {y}개 연도 × {c}개 점검). 하나라도 어긋나면 빌드가 멈추므로, 게시된 대시보드는 항상 재무제표의 소계와 맞는다. 체크 표시에 마우스를 올리면 차이가 보인다.",
     dqFlags: "플래그", diff: "차이 {v}백만", none: "없음.",
     defArea: "구분", defInd: "지표", defDef: "정의",
-    foot: "출처: 각 보험사가 공시한 TFRS 17 재무제표(SET 공시, OIC 연차 공시, 회사 홈페이지)를 <code>{wb}</code>에 입력. 빌드 {gen}{git}. 대시보드 작성자가 공개 정보로 정리한 자료로, 추출 오류가 있을 수 있으므로 공시된 재무제표가 최종 기준이다. 투자 권유가 아니다.",
+    foot: "출처: 각 보험사가 공시한 TFRS 17 재무제표(SET 공시, OIC 연차 공시, 회사 홈페이지)의 원문에서 쪽 단위로 추출(사용한 원문 목록: <code>{wb}</code>). 빌드 {gen}{git}. 대시보드 작성자가 공개 정보로 정리한 자료로, 추출 오류가 있을 수 있으므로 공시된 재무제표가 최종 기준이다. 투자 권유가 아니다.",
     footGit: " (커밋 {git})", reviewFlag: "{fy} 검토 플래그", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
     cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
       csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
@@ -885,7 +885,7 @@ function method() {
     d.innerHTML = "<summary>" + esc(c.name) + " — " + esc(c.units) + "</summary><p lang='en'>" + esc(n.header_note || "") + "</p><p lang='en'>" + esc(n.extraction_note || "") + "</p>";
     ex.appendChild(d);
   });
-  $("#foot").innerHTML = t("foot", { wb: esc(M.workbook), gen: esc(M.generated), git: M.git ? t("footGit", { git: esc(M.git) }) : "" });
+  $("#foot").innerHTML = t("foot", { wb: esc(M.source_ref), gen: esc(M.generated), git: M.git ? t("footGit", { git: esc(M.git) }) : "" });
 }
 
 function renderAll() {
