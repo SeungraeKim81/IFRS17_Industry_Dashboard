@@ -1,0 +1,412 @@
+{
+ "company": "Thai Life",
+ "company_id": "thai-life",
+ "period": "2026Q2",
+ "source": {
+  "drive_file_id": "1wdZNGR7G39dokcYkdchko5oNNajMHdqG",
+  "original_name": "09_FS_THAILIFE_2Q2026.pdf",
+  "sha256": "80f1d6971cbaea503785ac0d5eb45707d1793128b1e3b61da9e629af7eae5f1a",
+  "doc_type": "Reviewed interim financial statements 2Q2026 (Thai)",
+  "pages": 68,
+  "text_layer": "no (scanned)"
+ },
+ "notes": "Quarterly (6 months to 30 June 2026 = year to date). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (KPMG). Thousand Baht. The SCI (three months p.6, six months p.8) has equity-method and separate columns; the separate columns are used (owner decision). Note 10.1 1) (p.52, six months, both years) prints expenses as positive figures; they are turned negative; incurred claims = non-PAA claims + PAA insurance service expense; no past-service line. Other revenue = experience adjustment. CSM roll-forward 7.1 2) p.33 (measurement components, 30 มิถุนายน 2569). Future-service change = change in estimates (CSM column). New business 7.1 4) p.37. RA release uses 10.1 (1,017,635), not the AOC RA (1,001,038). The three-month profit or loss is the separate SCI for the three months to 30 June 2569 (p.6).",
+ "ytd_months": 6,
+ "items": {
+  "ra_release": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "1,017,635",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.1 1)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "bel_release": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "8,105,997",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.1 1)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "paa_revenue": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "1,124,450",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.1 1) PAA revenue",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "other_revenue": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "8,920",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.1 1) experience adjustment",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "incurred_claims": {
+   "2026Q2": {
+    "page": 52,
+    "printed": [
+     "7,843,707",
+     "975,782"
+    ],
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.1 1) non-PAA claims + PAA expense (printed positive)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "past_service": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.1 1) (no past-service line)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "loss_component": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "23,086",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.1 1) onerous losses (printed positive)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "acq_recovery": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "2,312,885",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.1 1)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "acq_amortisation": {
+   "2026Q2": {
+    "page": 52,
+    "printed": "2,312,885",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.1 1) (printed positive)",
+    "heading_seen": "10.1 สัญญาประกันภัย / 1) รายได้และค่าใช้จ่ายจากการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 / 2568)"
+   }
+  },
+  "net_investment_income": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "9,992,038",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "(8,073,701)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, net insurance finance expense",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "(813,227)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "42,363",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate (no share of the associate)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "(1,485,508)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "6,564,045",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "(54,934)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "csm_nb": {
+   "2026Q2": {
+    "page": 33,
+    "printed": "5,210,954",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 2) CSM column, contracts initially recognised",
+    "heading_seen": "7.1 สัญญาประกันภัย (ต่อ) / 2) กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "csm_accretion": {
+   "2026Q2": {
+    "page": 33,
+    "printed": "1,427,665",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 2) CSM column, insurance finance row",
+    "heading_seen": "7.1 สัญญาประกันภัย (ต่อ) / 2) กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "csm_future_service": {
+   "2026Q2": {
+    "page": 33,
+    "printed": "(111,429)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 2) CSM column, change in estimates",
+    "heading_seen": "7.1 สัญญาประกันภัย (ต่อ) / 2) กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "csm_release": {
+   "2026Q2": {
+    "page": 33,
+    "printed": "(5,542,587)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 2) CSM column (equals 10.1)",
+    "heading_seen": "7.1 สัญญาประกันภัย (ต่อ) / 2) กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "nb_pv_premium": {
+   "2026Q2": {
+    "page": 37,
+    "printed": "(29,329,150)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "7.1 4) total",
+    "heading_seen": "7.1 (ต่อ) / 4) ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "nb_pv_acq": {
+   "2026Q2": {
+    "page": 37,
+    "printed": "5,030,920",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 4) total",
+    "heading_seen": "7.1 (ต่อ) / 4) ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "nb_pv_claims": {
+   "2026Q2": {
+    "page": 37,
+    "printed": "18,313,046",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 4) total",
+    "heading_seen": "7.1 (ต่อ) / 4) ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "nb_ra": {
+   "2026Q2": {
+    "page": 37,
+    "printed": "784,026",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 4) total",
+    "heading_seen": "7.1 (ต่อ) / 4) ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "nb_csm": {
+   "2026Q2": {
+    "page": 37,
+    "printed": "5,210,954",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 4) total",
+    "heading_seen": "7.1 (ต่อ) / 4) ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "csm_open": {
+   "2026Q2": {
+    "page": 33,
+    "printed": "91,620,019",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 2) CSM column, opening",
+    "heading_seen": "7.1 สัญญาประกันภัย (ต่อ) / 2) กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "csm_close": {
+   "2026Q2": {
+    "page": 33,
+    "printed": "92,604,622",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 2) CSM column, closing",
+    "heading_seen": "7.1 สัญญาประกันภัย (ต่อ) / 2) กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "nb_loss_component": {
+   "2026Q2": {
+    "page": 37,
+    "printed": "9,796",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.1 4) total, onerous contracts",
+    "heading_seen": "7.1 (ต่อ) / 4) ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (30 มิถุนายน 2569)"
+   }
+  },
+  "insurance_revenue": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "18,112,474",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate (equals 10.1)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2026Q2": {
+    "page": 8,
+    "printed": "(11,155,460)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate (equals 10.1)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  }
+ },
+ "items_3m": {
+  "insurance_revenue": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "9,007,792",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "(5,675,332)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "(23,886)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "net_investment_income": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "5,214,914",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "(4,074,315)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "(411,707)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months, other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "20,389",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "(754,254)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2026Q2": {
+    "page": 6,
+    "printed": "3,303,601",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  }
+ }
+}
