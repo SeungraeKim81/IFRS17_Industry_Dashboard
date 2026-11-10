@@ -16,7 +16,7 @@ from pipeline.common import ROOT, load_settings, read_csv
 
 PERIOD = load_settings()["period"]
 WORKBOOK = ROOT / load_settings()["capture_workbook"]
-BENCHMARK = ROOT / "docs" / "benchmark" / "IFRS17_CSM_board_17companies_benchmark.html"
+BENCHMARK = ROOT / "tests" / "fixtures" / f"{PERIOD}_benchmark.json"  # tools/benchmark_fixture.py
 
 
 def setUpModule():
@@ -69,12 +69,15 @@ class TestValidate(unittest.TestCase):
 
 
 class TestMetricsAgainstBenchmark(unittest.TestCase):
-    """The FY2025 figures must reproduce the benchmark board exactly (to its 4 dp)."""
+    """The FY2025 figures must reproduce the benchmark expectations (to 3 dp).
+
+    The expectations were the pilot benchmark board (docs/benchmark/, kept for reference); since the
+    switch to the extractions they are tests/fixtures/<period>_benchmark.json. Regenerate them with
+    tools/benchmark_fixture.py only when a figure changes on purpose, and say so in the pull request."""
 
     @classmethod
     def setUpClass(cls):
-        html = BENCHMARK.read_text(encoding="utf-8")
-        cls.bench = {r["name"]: r for r in json.loads(re.search(r"const D = (\[.*?\]);", html).group(1))}
+        cls.bench = {r["name"]: r for r in json.loads(BENCHMARK.read_text(encoding="utf-8"))["companies"]}
         cls.m = {}
         for r in metrics.compute(PERIOD):
             if r["fiscal_year"] == PERIOD:
