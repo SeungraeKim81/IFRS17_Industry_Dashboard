@@ -3,6 +3,8 @@ _site/
 *.pyc
 .DS_Store
 ~$*.xlsx
-# source statements are registered in data/<period>/sources.csv, not committed
-sources/
+# The published statements stay in Google Drive; only sources/<period>/registry.csv is committed.
+sources/**/*.pdf
+sources/**/*.xlsx
+sources/**/*.docx
 *.pdf

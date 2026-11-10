@@ -12,7 +12,7 @@ from pathlib import Path
 import openpyxl
 
 from pipeline import build, ingest, metrics, validate
-from pipeline.common import ROOT, load_settings
+from pipeline.common import ROOT, load_settings, read_csv
 
 PERIOD = load_settings()["period"]
 WORKBOOK = ROOT / load_settings()["capture_workbook"]
@@ -110,6 +110,46 @@ class TestTranslations(unittest.TestCase):
         for lang, v in out.items():
             with self.subTest(lang=lang):
                 self.assertEqual(v, out["en"])
+
+
+class TestExtractions(unittest.TestCase):
+    """Extractions from the published statements (extract/<period>/*.json)."""
+
+    files = sorted((ROOT / "extract").glob("*/*.json"))
+
+    def test_extractions_reconcile(self):
+        from pipeline import verify_extract
+        self.assertTrue(self.files)
+        for f in self.files:
+            ex = verify_extract.load(f)
+            with self.subTest(company=ex["company"]):
+                self.assertEqual(len(ex["items"]), 30)
+                self.assertEqual([r for r in verify_extract.reconcile(ex) if not r["ok"]], [])
+
+    def test_registry_matches_extractions(self):
+        reg = {}
+        for f in (ROOT / "sources").glob("*/registry.csv"):
+            for r in read_csv(f):
+                reg[(r["period"], r["company"])] = r
+        for f in self.files:
+            ex = json.loads(f.read_text(encoding="utf-8"))
+            with self.subTest(company=ex["company"]):
+                r = reg[(ex["period"], ex["company"])]
+                self.assertEqual(r["sha256"], ex["source"]["sha256"])
+                self.assertEqual(r["status"], "extracted")
+
+    def test_transcribed_spec_reproduces_extraction(self):
+        """A spec made only of transcribed figures needs no PDF: re-running it gives the committed values."""
+        from pipeline import extract
+        for spec in sorted((ROOT / "config" / "extraction").glob("*.json")):
+            rules = [r for years in json.loads(spec.read_text(encoding="utf-8"))["items"].values() for r in years.values()]
+            if not all("printed" in r or "const" in r for r in rules):
+                continue
+            res = extract.extract(spec, None)
+            committed = json.loads((ROOT / "extract" / res["period"] / f"{res['company_id']}.json").read_text(encoding="utf-8"))
+            with self.subTest(spec=spec.name):
+                self.assertEqual({k: {fy: x["value"] for fy, x in v.items()} for k, v in res["items"].items()},
+                                 {k: {fy: x["value"] for fy, x in v.items()} for k, v in committed["items"].items()})
 
 
 class TestBuild(unittest.TestCase):
