@@ -4,7 +4,7 @@
    A line item the statement does not disclose is None. Where the statement prints only a total
    that covers not-disclosed items (MEMO_TOTALS, from the extraction's "memo"), the total stands
    in for them; any other None in an identity fails it.
-2. Pilot comparison: every value against the pilot capture workbook (data/FY2025/line_items.csv),
+2. Pilot comparison: every value against the pilot capture workbook (kept as docs/pilot/FY2025_line_items.csv),
    classified as identical, rounding (within half a unit of the last digit the pilot kept: the
    pilot rounds to thousand Baht, for some insurers to 10,000 Baht) or different.
 
@@ -71,7 +71,7 @@ def reconcile(ex: dict) -> list[dict]:
 
 
 def compare_pilot(ex: dict, pilot_csv: Path | None = None) -> list[dict]:
-    pilot_csv = pilot_csv or ROOT / "data" / "FY2025" / "line_items.csv"
+    pilot_csv = pilot_csv or ROOT / "docs" / "pilot" / "FY2025_line_items.csv"
     pilot = {(r["fiscal_year"], r["code"]): (float(r["value"]), r["source"], r["value"])
              for r in read_csv(pilot_csv) if r["company"] == ex["company"]}
     rows = []

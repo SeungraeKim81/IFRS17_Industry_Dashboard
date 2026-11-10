@@ -1,0 +1,1021 @@
+report,fiscal_year,company,code,value,status,source
+FY2025,FY2025,AIA Thailand,ra_release,887,Confirmed,17.1 revenue analysis (p.146) — LRC only
+FY2025,FY2024,AIA Thailand,ra_release,806,Confirmed,17.1 revenue analysis (p.146) — LRC only
+FY2025,FY2025,AIA Thailand,bel_release,15804,Confirmed,17.1 expected incurred claims & other ISE (p.146)
+FY2025,FY2024,AIA Thailand,bel_release,14553,Confirmed,17.1 expected incurred claims & other ISE (p.146)
+FY2025,FY2025,AIA Thailand,paa_revenue,58802,Confirmed,17.1 contracts measured under the PAA (p.146)
+FY2025,FY2024,AIA Thailand,paa_revenue,53693,Confirmed,17.1 contracts measured under the PAA (p.146)
+FY2025,FY2025,AIA Thailand,other_revenue,0,Confirmed,— (nil; no Others line in 17.1)
+FY2025,FY2024,AIA Thailand,other_revenue,0,Confirmed,— (nil; no Others line in 17.1)
+FY2025,FY2025,AIA Thailand,incurred_claims,-50542,Confirmed,17.2 claims & benefits + other ISE (p.146)
+FY2025,FY2024,AIA Thailand,incurred_claims,-48195,Confirmed,17.2 claims & benefits + other ISE (p.146)
+FY2025,FY2025,AIA Thailand,past_service,0,Confirmed,— (17.2 nets LIC adjustments into claims)
+FY2025,FY2024,AIA Thailand,past_service,0,Confirmed,— (17.2 nets LIC adjustments into claims)
+FY2025,FY2025,AIA Thailand,loss_component,-240,Confirmed,17.2 losses on onerous contracts (p.146)
+FY2025,FY2024,AIA Thailand,loss_component,-8,Confirmed,17.2 losses on onerous contracts (p.146)
+FY2025,FY2025,AIA Thailand,acq_recovery,2867,Confirmed,17.1 recovery of acquisition CF (p.146)
+FY2025,FY2024,AIA Thailand,acq_recovery,2278,Confirmed,17.1 recovery of acquisition CF (p.146)
+FY2025,FY2025,AIA Thailand,acq_amortisation,-20426,Confirmed,17.2 amortisation of acquisition CF (p.146)
+FY2025,FY2024,AIA Thailand,acq_amortisation,-18512,Confirmed,17.2 amortisation of acquisition CF (p.146)
+FY2025,FY2025,AIA Thailand,net_investment_income,35614,Confirmed,SCI (p.77)
+FY2025,FY2024,AIA Thailand,net_investment_income,32296,Confirmed,SCI (p.77)
+FY2025,FY2025,AIA Thailand,ifie,-30177,Confirmed,"SCI (printed +, FLIPPED)"
+FY2025,FY2024,AIA Thailand,ifie,-29082,Confirmed,"SCI (printed +, FLIPPED)"
+FY2025,FY2025,AIA Thailand,other_expense,-5085,Confirmed,SCI finance costs + other opex
+FY2025,FY2024,AIA Thailand,other_expense,-5287,Confirmed,SCI finance costs + other opex
+FY2025,FY2025,AIA Thailand,other_income,1171,Confirmed,SCI other revenue
+FY2025,FY2024,AIA Thailand,other_income,807,Confirmed,SCI other revenue
+FY2025,FY2025,AIA Thailand,income_tax,-2895,Confirmed,"SCI (printed +, FLIPPED)"
+FY2025,FY2024,AIA Thailand,income_tax,-2249,Confirmed,"SCI (printed +, FLIPPED)"
+FY2025,FY2025,AIA Thailand,net_profit,11715,Confirmed,SCI
+FY2025,FY2024,AIA Thailand,net_profit,9089,Confirmed,SCI
+FY2025,FY2025,AIA Thailand,reinsurance_result,-6949,Confirmed,SCI
+FY2025,FY2024,AIA Thailand,reinsurance_result,-4281,Confirmed,SCI
+FY2025,FY2025,AIA Thailand,csm_nb,20865,Confirmed,17.3 AOC (p.149/150)
+FY2025,FY2024,AIA Thailand,csm_nb,22208,Confirmed,17.3 AOC (p.149/150)
+FY2025,FY2025,AIA Thailand,csm_accretion,6123,Confirmed,"17.3 AOC finance row, CSM col"
+FY2025,FY2024,AIA Thailand,csm_accretion,5666,Confirmed,"17.3 AOC finance row, CSM col"
+FY2025,FY2025,AIA Thailand,csm_future_service,-1507,Confirmed,derived residual (absorbs 1m 17.1/AOC rounding in 2024)
+FY2025,FY2024,AIA Thailand,csm_future_service,3623,Confirmed,derived residual (absorbs 1m 17.1/AOC rounding in 2024)
+FY2025,FY2025,AIA Thailand,csm_release,-12884,Confirmed,17.1 CSM recognised for services provided (p.146)
+FY2025,FY2024,AIA Thailand,csm_release,-12270,Confirmed,17.1 CSM recognised for services provided (p.146)
+FY2025,FY2025,AIA Thailand,nb_pv_premium,136303,Confirmed,17.4 new business (p.159)
+FY2025,FY2024,AIA Thailand,nb_pv_premium,135279,Confirmed,17.4 new business (p.159)
+FY2025,FY2025,AIA Thailand,nb_pv_acq,24854,Confirmed,17.4
+FY2025,FY2024,AIA Thailand,nb_pv_acq,26405,Confirmed,17.4
+FY2025,FY2025,AIA Thailand,nb_pv_claims,88033,Confirmed,17.4
+FY2025,FY2024,AIA Thailand,nb_pv_claims,84375,Confirmed,17.4
+FY2025,FY2025,AIA Thailand,nb_ra,2600,Confirmed,17.4
+FY2025,FY2024,AIA Thailand,nb_ra,2421,Confirmed,17.4
+FY2025,FY2025,AIA Thailand,nb_csm,20865,Confirmed,17.4
+FY2025,FY2024,AIA Thailand,nb_csm,22208,Confirmed,17.4
+FY2025,FY2025,AIA Thailand,csm_open,182907,Confirmed,17.3 AOC
+FY2025,FY2024,AIA Thailand,csm_open,163680,Confirmed,17.3 AOC
+FY2025,FY2025,AIA Thailand,csm_close,195504,Confirmed,17.3 AOC
+FY2025,FY2024,AIA Thailand,csm_close,182907,Confirmed,17.3 AOC
+FY2025,FY2025,AIA Thailand,nb_loss_component,49,Confirmed,17.4 losses on initial recognition
+FY2025,FY2024,AIA Thailand,nb_loss_component,130,Confirmed,17.4 losses on initial recognition
+FY2025,FY2025,AIA Thailand,insurance_revenue,91244,Confirmed,17.1 total insurance revenue (p.146)
+FY2025,FY2024,AIA Thailand,insurance_revenue,83600,Confirmed,17.1 total insurance revenue (p.146)
+FY2025,FY2025,AIA Thailand,insurance_service_expense,-71208,Confirmed,17.2 total insurance service expenses (p.146)
+FY2025,FY2024,AIA Thailand,insurance_service_expense,-66715,Confirmed,17.2 total insurance service expenses (p.146)
+FY2025,FY2025,Thai Life,ra_release,1972.483,Confirmed,17.1 revenue analysis
+FY2025,FY2024,Thai Life,ra_release,2186.29,Confirmed,17.1 revenue analysis
+FY2025,FY2025,Thai Life,bel_release,16019.876,Confirmed,17.1
+FY2025,FY2024,Thai Life,bel_release,15095.607,Confirmed,17.1
+FY2025,FY2025,Thai Life,paa_revenue,2473.249,Confirmed,17.1 PAA revenue
+FY2025,FY2024,Thai Life,paa_revenue,1679.441,Confirmed,17.1 PAA revenue
+FY2025,FY2025,Thai Life,other_revenue,-261.562,Confirmed,17.1 experience adj (negative)
+FY2025,FY2024,Thai Life,other_revenue,-597.54,Confirmed,17.1 experience adj (negative)
+FY2025,FY2025,Thai Life,incurred_claims,-18712.833,Confirmed,"17.1 non-PAA + PAA expense (printed +, FLIPPED)"
+FY2025,FY2024,Thai Life,incurred_claims,-17277.038,Confirmed,"17.1 non-PAA + PAA expense (printed +, FLIPPED)"
+FY2025,FY2025,Thai Life,past_service,0,Confirmed,no past-service line disclosed
+FY2025,FY2024,Thai Life,past_service,0,Confirmed,no past-service line disclosed
+FY2025,FY2025,Thai Life,loss_component,-24.918,Confirmed,"17.1 (printed +, FLIPPED)"
+FY2025,FY2024,Thai Life,loss_component,-14.686,Confirmed,"17.1 (printed +, FLIPPED)"
+FY2025,FY2025,Thai Life,acq_recovery,4113.094,Confirmed,17.1
+FY2025,FY2024,Thai Life,acq_recovery,2945.997,Confirmed,17.1
+FY2025,FY2025,Thai Life,acq_amortisation,-4113.094,Confirmed,"17.1 (printed +, FLIPPED)"
+FY2025,FY2024,Thai Life,acq_amortisation,-2945.997,Confirmed,"17.1 (printed +, FLIPPED)"
+FY2025,FY2025,Thai Life,net_investment_income,19286.551,Confirmed,SCI (XLSX PL 9-10)
+FY2025,FY2024,Thai Life,net_investment_income,21112.513,Confirmed,SCI (XLSX PL 9-10)
+FY2025,FY2025,Thai Life,ifie,-16040.544,Confirmed,SCI
+FY2025,FY2024,Thai Life,ifie,-15470.336,Confirmed,SCI
+FY2025,FY2025,Thai Life,other_expense,-1697.08,Confirmed,SCI other operating expenses
+FY2025,FY2024,Thai Life,other_expense,-1585.482,Confirmed,SCI other operating expenses
+FY2025,FY2025,Thai Life,other_income,113.456,Confirmed,SCI other income + share of associate
+FY2025,FY2024,Thai Life,other_income,115.136,Confirmed,SCI other income + share of associate
+FY2025,FY2025,Thai Life,income_tax,-2834.01,Confirmed,SCI
+FY2025,FY2024,Thai Life,income_tax,-3322.199,Confirmed,SCI
+FY2025,FY2025,Thai Life,net_profit,11881.918,Confirmed,SCI
+FY2025,FY2024,Thai Life,net_profit,13369.409,Confirmed,SCI
+FY2025,FY2025,Thai Life,reinsurance_result,-50.397,Confirmed,SCI
+FY2025,FY2024,Thai Life,reinsurance_result,-53.874,Confirmed,SCI
+FY2025,FY2025,Thai Life,csm_nb,12089.199,Confirmed,11.1(2) meas-comp recon
+FY2025,FY2024,Thai Life,csm_nb,11431.191,Confirmed,11.1(2) meas-comp recon
+FY2025,FY2025,Thai Life,csm_accretion,2922.821,Confirmed,11.1(2)
+FY2025,FY2024,Thai Life,csm_accretion,2890.771,Confirmed,11.1(2)
+FY2025,FY2025,Thai Life,csm_future_service,270.124,Confirmed,11.1(2)
+FY2025,FY2024,Thai Life,csm_future_service,101.412,Confirmed,11.1(2)
+FY2025,FY2025,Thai Life,csm_release,-11637.647,Confirmed,11.1(2)
+FY2025,FY2024,Thai Life,csm_release,-11501.577,Confirmed,11.1(2)
+FY2025,FY2025,Thai Life,nb_pv_premium,82208.404,Confirmed,11.1(4) new business
+FY2025,FY2024,Thai Life,nb_pv_premium,78201.565,Confirmed,11.1(4) new business
+FY2025,FY2025,Thai Life,nb_pv_acq,11448.658,Confirmed,11.1(4)
+FY2025,FY2024,Thai Life,nb_pv_acq,11552.354,Confirmed,11.1(4)
+FY2025,FY2025,Thai Life,nb_pv_claims,56095.442,Confirmed,11.1(4)
+FY2025,FY2024,Thai Life,nb_pv_claims,53000.67,Confirmed,11.1(4)
+FY2025,FY2025,Thai Life,nb_ra,2587.901,Confirmed,11.1(4)
+FY2025,FY2024,Thai Life,nb_ra,2221.269,Confirmed,11.1(4)
+FY2025,FY2025,Thai Life,nb_csm,12089.199,Confirmed,11.1(4)
+FY2025,FY2024,Thai Life,nb_csm,11431.191,Confirmed,11.1(4)
+FY2025,FY2025,Thai Life,csm_open,87975.522,Confirmed,11.1(2)
+FY2025,FY2024,Thai Life,csm_open,85053.725,Confirmed,11.1(2)
+FY2025,FY2025,Thai Life,csm_close,91620.019,Confirmed,11.1(2)
+FY2025,FY2024,Thai Life,csm_close,87975.522,Confirmed,11.1(2)
+FY2025,FY2025,Thai Life,nb_loss_component,12.796,Confirmed,11.1(4)
+FY2025,FY2024,Thai Life,nb_loss_component,3.919,Confirmed,11.1(4)
+FY2025,FY2025,Thai Life,insurance_revenue,35954.787,Confirmed,SCI / 17.1
+FY2025,FY2024,Thai Life,insurance_revenue,32811.372,Confirmed,SCI / 17.1
+FY2025,FY2025,Thai Life,insurance_service_expense,-22850.845,Confirmed,SCI / 17.1
+FY2025,FY2024,Thai Life,insurance_service_expense,-20237.721,Confirmed,SCI / 17.1
+FY2025,FY2025,Muang Thai Life,ra_release,1244.003,Confirmed,Note 17.1
+FY2025,FY2024,Muang Thai Life,ra_release,1270.383,Confirmed,Note 17.1
+FY2025,FY2025,Muang Thai Life,bel_release,14463.009,Confirmed,Note 17.1 expected claims
+FY2025,FY2024,Muang Thai Life,bel_release,13586.235,Confirmed,Note 17.1 expected claims
+FY2025,FY2025,Muang Thai Life,paa_revenue,6838.959,Confirmed,Note 17.1
+FY2025,FY2024,Muang Thai Life,paa_revenue,5542.894,Confirmed,Note 17.1
+FY2025,FY2025,Muang Thai Life,other_revenue,0,Confirmed,MTL: none (folded into BEL)
+FY2025,FY2024,Muang Thai Life,other_revenue,0,Confirmed,MTL: none (folded into BEL)
+FY2025,FY2025,Muang Thai Life,incurred_claims,-19639.811,Confirmed,Note 17.1 (flipped)
+FY2025,FY2024,Muang Thai Life,incurred_claims,-19870.764,Confirmed,Note 17.1 (flipped)
+FY2025,FY2025,Muang Thai Life,past_service,28.929,Confirmed,Note 17.1 chg liab incurred (flipped)
+FY2025,FY2024,Muang Thai Life,past_service,-1.293,Confirmed,Note 17.1 chg liab incurred (flipped)
+FY2025,FY2025,Muang Thai Life,loss_component,-956.05,Confirmed,Note 17.1 onerous (flipped)
+FY2025,FY2024,Muang Thai Life,loss_component,-469.006,Confirmed,Note 17.1 onerous (flipped)
+FY2025,FY2025,Muang Thai Life,acq_recovery,1574.841,Confirmed,Note 17.1
+FY2025,FY2024,Muang Thai Life,acq_recovery,611.694,Confirmed,Note 17.1
+FY2025,FY2025,Muang Thai Life,acq_amortisation,-1851.355,Confirmed,Note 17.1 (flipped)
+FY2025,FY2024,Muang Thai Life,acq_amortisation,-920.045,Confirmed,Note 17.1 (flipped)
+FY2025,FY2025,Muang Thai Life,net_investment_income,23979.264,Confirmed,Comprehensive income
+FY2025,FY2024,Muang Thai Life,net_investment_income,21884.216,Confirmed,Comprehensive income
+FY2025,FY2025,Muang Thai Life,ifie,-16025.138,Confirmed,Comprehensive income
+FY2025,FY2024,Muang Thai Life,ifie,-16215.215,Confirmed,Comprehensive income
+FY2025,FY2025,Muang Thai Life,other_expense,-4135.433,Confirmed,Other opex + other finance costs
+FY2025,FY2024,Muang Thai Life,other_expense,-3625.804,Confirmed,Other opex + other finance costs
+FY2025,FY2025,Muang Thai Life,other_income,126.877,Confirmed,Comprehensive income
+FY2025,FY2024,Muang Thai Life,other_income,114.738,Confirmed,Comprehensive income
+FY2025,FY2025,Muang Thai Life,income_tax,-2290.458,Confirmed,Comprehensive income
+FY2025,FY2024,Muang Thai Life,income_tax,-830.237,Confirmed,Comprehensive income
+FY2025,FY2025,Muang Thai Life,net_profit,9484.238,Confirmed,Comprehensive income (separate FS)
+FY2025,FY2024,Muang Thai Life,net_profit,7298.64,Confirmed,Comprehensive income (separate FS)
+FY2025,FY2025,Muang Thai Life,reinsurance_result,-588.18,Confirmed,Note 17.2
+FY2025,FY2024,Muang Thai Life,reinsurance_result,-107.475,Confirmed,Note 17.2
+FY2025,FY2025,Muang Thai Life,csm_nb,8437.995,Confirmed,Note 11 recon
+FY2025,FY2024,Muang Thai Life,csm_nb,10659.066,Confirmed,Note 11 recon
+FY2025,FY2025,Muang Thai Life,csm_accretion,2212.641,Confirmed,Note 11 recon
+FY2025,FY2024,Muang Thai Life,csm_accretion,2039.956,Confirmed,Note 11 recon
+FY2025,FY2025,Muang Thai Life,csm_future_service,1054.059,Confirmed,Note 11 recon
+FY2025,FY2024,Muang Thai Life,csm_future_service,-1292.054,Confirmed,Note 11 recon
+FY2025,FY2025,Muang Thai Life,csm_release,-6714.781,Confirmed,Note 11 recon
+FY2025,FY2024,Muang Thai Life,csm_release,-6328.319,Confirmed,Note 11 recon
+FY2025,FY2025,Muang Thai Life,nb_pv_premium,92639.135,Confirmed,New-business disclosure
+FY2025,FY2024,Muang Thai Life,nb_pv_premium,77713.458,Confirmed,New-business disclosure
+FY2025,FY2025,Muang Thai Life,nb_pv_acq,9669.116,Confirmed,New-business disclosure
+FY2025,FY2024,Muang Thai Life,nb_pv_acq,9369.06,Confirmed,New-business disclosure
+FY2025,FY2025,Muang Thai Life,nb_pv_claims,72737.167,Confirmed,New-business disclosure
+FY2025,FY2024,Muang Thai Life,nb_pv_claims,55643.81,Confirmed,New-business disclosure
+FY2025,FY2025,Muang Thai Life,nb_ra,2590.726,Confirmed,New-business disclosure
+FY2025,FY2024,Muang Thai Life,nb_ra,2320.871,Confirmed,New-business disclosure
+FY2025,FY2025,Muang Thai Life,nb_csm,8437.995,Confirmed,(item 17)
+FY2025,FY2024,Muang Thai Life,nb_csm,10659.066,Confirmed,(item 17)
+FY2025,FY2025,Muang Thai Life,csm_open,64606.237,Confirmed,Note 11 opening
+FY2025,FY2024,Muang Thai Life,csm_open,59527.588,Confirmed,Note 11 opening
+FY2025,FY2025,Muang Thai Life,csm_close,69596.151,Confirmed,Note 11 closing
+FY2025,FY2024,Muang Thai Life,csm_close,64606.237,Confirmed,Note 11 closing
+FY2025,FY2025,Muang Thai Life,nb_loss_component,795.869,Confirmed,NB onerous
+FY2025,FY2024,Muang Thai Life,nb_loss_component,279.349,Confirmed,NB onerous
+FY2025,FY2025,Muang Thai Life,insurance_revenue,30835.593,Confirmed,Comprehensive income / Note 17.1
+FY2025,FY2024,Muang Thai Life,insurance_revenue,27339.525,Confirmed,Comprehensive income / Note 17.1
+FY2025,FY2025,Muang Thai Life,insurance_service_expense,-22418.287,Confirmed,Comprehensive income
+FY2025,FY2024,Muang Thai Life,insurance_service_expense,-21261.108,Confirmed,Comprehensive income
+FY2025,FY2025,Allianz Ayudhya,ra_release,617.524,Confirmed,"30.1 revenue analysis (p.205, landscape)"
+FY2025,FY2024,Allianz Ayudhya,ra_release,467.396,Confirmed,"30.1 revenue analysis (p.205, landscape)"
+FY2025,FY2025,Allianz Ayudhya,bel_release,6871.852,Confirmed,30.1
+FY2025,FY2024,Allianz Ayudhya,bel_release,6099.472,Confirmed,30.1
+FY2025,FY2025,Allianz Ayudhya,paa_revenue,5122.604,Confirmed,30.1 PAA revenue
+FY2025,FY2024,Allianz Ayudhya,paa_revenue,4698.082,Confirmed,30.1 PAA revenue
+FY2025,FY2025,Allianz Ayudhya,other_revenue,-41.973,Confirmed,30.1 อื่นๆ (negative)
+FY2025,FY2024,Allianz Ayudhya,other_revenue,-220.373,Confirmed,30.1 อื่นๆ (negative)
+FY2025,FY2025,Allianz Ayudhya,incurred_claims,-9854.129,Confirmed,"30.1 (printed −, kept)"
+FY2025,FY2024,Allianz Ayudhya,incurred_claims,-9613.55,Confirmed,"30.1 (printed −, kept)"
+FY2025,FY2025,Allianz Ayudhya,past_service,81.737,Confirmed,30.1 changes in LIC
+FY2025,FY2024,Allianz Ayudhya,past_service,252.59,Confirmed,30.1 changes in LIC
+FY2025,FY2025,Allianz Ayudhya,loss_component,1.801,Confirmed,30.1 onerous (CREDIT both years)
+FY2025,FY2024,Allianz Ayudhya,loss_component,0.507,Confirmed,30.1 onerous (CREDIT both years)
+FY2025,FY2025,Allianz Ayudhya,acq_recovery,4800.62,Confirmed,30.1 recovery of acq CF
+FY2025,FY2024,Allianz Ayudhya,acq_recovery,4263.707,Confirmed,30.1 recovery of acq CF
+FY2025,FY2025,Allianz Ayudhya,acq_amortisation,-6221.098,Confirmed,30.1 amortisation + impairment of acq CF
+FY2025,FY2024,Allianz Ayudhya,acq_amortisation,-5628.706,Confirmed,30.1 amortisation + impairment of acq CF
+FY2025,FY2025,Allianz Ayudhya,net_investment_income,6867.942,Confirmed,SCI (p.82) total net investment income
+FY2025,FY2024,Allianz Ayudhya,net_investment_income,7047.838,Confirmed,SCI (p.82) total net investment income
+FY2025,FY2025,Allianz Ayudhya,ifie,-7343.08,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Allianz Ayudhya,ifie,-7439.089,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Allianz Ayudhya,other_expense,-1041.015,Confirmed,SCI other finance cost (36) + other opex (37)
+FY2025,FY2024,Allianz Ayudhya,other_expense,-854.579,Confirmed,SCI other finance cost (36) + other opex (37)
+FY2025,FY2025,Allianz Ayudhya,other_income,89.71,Confirmed,SCI other income
+FY2025,FY2024,Allianz Ayudhya,other_income,111.185,Confirmed,SCI other income
+FY2025,FY2025,Allianz Ayudhya,income_tax,-1970.457,Confirmed,SCI (note 39)
+FY2025,FY2024,Allianz Ayudhya,income_tax,-1779.781,Confirmed,SCI (note 39)
+FY2025,FY2025,Allianz Ayudhya,net_profit,7734.152,Confirmed,SCI
+FY2025,FY2024,Allianz Ayudhya,net_profit,7199.262,Confirmed,SCI
+FY2025,FY2025,Allianz Ayudhya,reinsurance_result,-237.226,Confirmed,SCI
+FY2025,FY2024,Allianz Ayudhya,reinsurance_result,-113.921,Confirmed,SCI
+FY2025,FY2025,Allianz Ayudhya,csm_nb,7464.205,Confirmed,22.1.2 / 22.1.3 (p.185/187)
+FY2025,FY2024,Allianz Ayudhya,csm_nb,6949.582,Confirmed,22.1.2 / 22.1.3 (p.185/187)
+FY2025,FY2025,Allianz Ayudhya,csm_accretion,2579.329,Confirmed,"22.1.2 finance row, CSM col"
+FY2025,FY2024,Allianz Ayudhya,csm_accretion,2744.163,Confirmed,"22.1.2 finance row, CSM col"
+FY2025,FY2025,Allianz Ayudhya,csm_future_service,-1053.596,Confirmed,22.1.2 future service less NB
+FY2025,FY2024,Allianz Ayudhya,csm_future_service,2690.713,Confirmed,22.1.2 future service less NB
+FY2025,FY2025,Allianz Ayudhya,csm_release,-9989.34,Confirmed,30.1 = 22.1.2 current service
+FY2025,FY2024,Allianz Ayudhya,csm_release,-9908.484,Confirmed,30.1 = 22.1.2 current service
+FY2025,FY2025,Allianz Ayudhya,nb_pv_premium,57428.883,Confirmed,22.1.3 (p.187)
+FY2025,FY2024,Allianz Ayudhya,nb_pv_premium,51199.108,Confirmed,22.1.3 (p.187)
+FY2025,FY2025,Allianz Ayudhya,nb_pv_acq,8477.328,Confirmed,22.1.3
+FY2025,FY2024,Allianz Ayudhya,nb_pv_acq,7883.553,Confirmed,22.1.3
+FY2025,FY2025,Allianz Ayudhya,nb_pv_claims,39644.937,Confirmed,22.1.3
+FY2025,FY2024,Allianz Ayudhya,nb_pv_claims,35112.795,Confirmed,22.1.3
+FY2025,FY2025,Allianz Ayudhya,nb_ra,1842.413,Confirmed,22.1.3
+FY2025,FY2024,Allianz Ayudhya,nb_ra,1253.178,Confirmed,22.1.3
+FY2025,FY2025,Allianz Ayudhya,nb_csm,7464.205,Confirmed,22.1.3
+FY2025,FY2024,Allianz Ayudhya,nb_csm,6949.582,Confirmed,22.1.3
+FY2025,FY2025,Allianz Ayudhya,csm_open,74348.041,Confirmed,22.1.2 opening
+FY2025,FY2024,Allianz Ayudhya,csm_open,71872.067,Confirmed,22.1.2 opening
+FY2025,FY2025,Allianz Ayudhya,csm_close,73348.639,Confirmed,22.1.2 closing
+FY2025,FY2024,Allianz Ayudhya,csm_close,74348.041,Confirmed,22.1.2 closing
+FY2025,FY2025,Allianz Ayudhya,nb_loss_component,0,Confirmed,— (no onerous new groups)
+FY2025,FY2024,Allianz Ayudhya,nb_loss_component,0,Confirmed,— (no onerous new groups)
+FY2025,FY2025,Allianz Ayudhya,insurance_revenue,27359.967,Confirmed,SCI / 30.1
+FY2025,FY2024,Allianz Ayudhya,insurance_revenue,25216.768,Confirmed,SCI / 30.1
+FY2025,FY2025,Allianz Ayudhya,insurance_service_expense,-15991.689,Confirmed,SCI / 30.1
+FY2025,FY2024,Allianz Ayudhya,insurance_service_expense,-14989.159,Confirmed,SCI / 30.1
+FY2025,FY2025,FWD Thailand,ra_release,882.636,Confirmed,9.1 revenue analysis (p.65/67)
+FY2025,FY2024,FWD Thailand,ra_release,495.765,Confirmed,9.1 revenue analysis (p.65/67)
+FY2025,FY2025,FWD Thailand,bel_release,10488.961,Confirmed,9.1
+FY2025,FY2024,FWD Thailand,bel_release,10386.287,Confirmed,9.1
+FY2025,FY2025,FWD Thailand,paa_revenue,993.818,Confirmed,9.1 PAA revenue
+FY2025,FY2024,FWD Thailand,paa_revenue,2532.028,Confirmed,9.1 PAA revenue
+FY2025,FY2025,FWD Thailand,other_revenue,0,Confirmed,no Others line
+FY2025,FY2024,FWD Thailand,other_revenue,0,Confirmed,no Others line
+FY2025,FY2025,FWD Thailand,incurred_claims,-11260.308,Confirmed,"9.1 non-PAA + PAA (printed −, kept)"
+FY2025,FY2024,FWD Thailand,incurred_claims,-11891.567,Confirmed,"9.1 non-PAA + PAA (printed −, kept)"
+FY2025,FY2025,FWD Thailand,past_service,335.891,Confirmed,9.1 changes in LIC
+FY2025,FY2024,FWD Thailand,past_service,-386.902,Confirmed,9.1 changes in LIC
+FY2025,FY2025,FWD Thailand,loss_component,-166.028,Confirmed,9.1 onerous losses/reversals
+FY2025,FY2024,FWD Thailand,loss_component,-889.51,Confirmed,9.1 onerous losses/reversals
+FY2025,FY2025,FWD Thailand,acq_recovery,7786.232,Confirmed,9.1 acquisition recovery
+FY2025,FY2024,FWD Thailand,acq_recovery,7015.884,Confirmed,9.1 acquisition recovery
+FY2025,FY2025,FWD Thailand,acq_amortisation,-7857.65,Confirmed,9.1 amortisation
+FY2025,FY2024,FWD Thailand,acq_amortisation,-7317.919,Confirmed,9.1 amortisation
+FY2025,FY2025,FWD Thailand,net_investment_income,21645.184,Confirmed,SCI (p.8)
+FY2025,FY2024,FWD Thailand,net_investment_income,18516.174,Confirmed,SCI (p.8)
+FY2025,FY2025,FWD Thailand,ifie,-15429.131,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,FWD Thailand,ifie,-14205.125,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,FWD Thailand,other_expense,-1317.801,Confirmed,SCI other finance costs + other opex
+FY2025,FY2024,FWD Thailand,other_expense,-1831.641,Confirmed,SCI other finance costs + other opex
+FY2025,FY2025,FWD Thailand,other_income,8.596,Confirmed,SCI other income
+FY2025,FY2024,FWD Thailand,other_income,15.524,Confirmed,SCI other income
+FY2025,FY2025,FWD Thailand,income_tax,-2653.837,Confirmed,SCI
+FY2025,FY2024,FWD Thailand,income_tax,-1787.972,Confirmed,SCI
+FY2025,FY2025,FWD Thailand,net_profit,10272.642,Confirmed,SCI
+FY2025,FY2024,FWD Thailand,net_profit,7118.306,Confirmed,SCI
+FY2025,FY2025,FWD Thailand,reinsurance_result,-207.768,Confirmed,SCI
+FY2025,FY2024,FWD Thailand,reinsurance_result,156.01,Confirmed,SCI
+FY2025,FY2025,FWD Thailand,csm_nb,12372.929,Confirmed,"10.2 (p.73/74, sign restated)"
+FY2025,FY2024,FWD Thailand,csm_nb,14738.341,Confirmed,"10.2 (p.73/74, sign restated)"
+FY2025,FY2025,FWD Thailand,csm_accretion,1408.898,Confirmed,10.2 P&L finance row CSM col
+FY2025,FY2024,FWD Thailand,csm_accretion,1379.429,Confirmed,10.2 P&L finance row CSM col
+FY2025,FY2025,FWD Thailand,csm_future_service,868.479,Confirmed,10.2 future-service CSM excl NB
+FY2025,FY2024,FWD Thailand,csm_future_service,-10039.478,Confirmed,10.2 future-service CSM excl NB
+FY2025,FY2025,FWD Thailand,csm_release,-7023.847,Confirmed,10.2
+FY2025,FY2024,FWD Thailand,csm_release,-6311.27,Confirmed,10.2
+FY2025,FY2025,FWD Thailand,nb_pv_premium,96578.959,Confirmed,10.3 new business (p.75)
+FY2025,FY2024,FWD Thailand,nb_pv_premium,102407.074,Confirmed,10.3 new business (p.75)
+FY2025,FY2025,FWD Thailand,nb_pv_acq,13269.559,Confirmed,10.3
+FY2025,FY2024,FWD Thailand,nb_pv_acq,15396.259,Confirmed,10.3
+FY2025,FY2025,FWD Thailand,nb_pv_claims,69889.169,Confirmed,10.3
+FY2025,FY2024,FWD Thailand,nb_pv_claims,71243.707,Confirmed,10.3
+FY2025,FY2025,FWD Thailand,nb_ra,1085.9,Confirmed,10.3
+FY2025,FY2024,FWD Thailand,nb_ra,1184.962,Confirmed,10.3
+FY2025,FY2025,FWD Thailand,nb_csm,12372.929,Confirmed,10.3
+FY2025,FY2024,FWD Thailand,nb_csm,14738.341,Confirmed,10.3
+FY2025,FY2025,FWD Thailand,csm_open,45123.703,Confirmed,10.2
+FY2025,FY2024,FWD Thailand,csm_open,45356.681,Confirmed,10.2
+FY2025,FY2025,FWD Thailand,csm_close,52750.162,Confirmed,10.2
+FY2025,FY2024,FWD Thailand,csm_close,45123.703,Confirmed,10.2
+FY2025,FY2025,FWD Thailand,nb_loss_component,38.598,Confirmed,10.3
+FY2025,FY2024,FWD Thailand,nb_loss_component,156.195,Confirmed,10.3
+FY2025,FY2025,FWD Thailand,insurance_revenue,27175.494,Confirmed,SCI / 9.1
+FY2025,FY2024,FWD Thailand,insurance_revenue,26741.234,Confirmed,SCI / 9.1
+FY2025,FY2025,FWD Thailand,insurance_service_expense,-18948.095,Confirmed,SCI / 9.1
+FY2025,FY2024,FWD Thailand,insurance_service_expense,-20485.898,Confirmed,SCI / 9.1
+FY2025,FY2025,Krungthai-AXA Life,ra_release,442.416,Confirmed,8.1 revenue analysis (p.62/64)
+FY2025,FY2024,Krungthai-AXA Life,ra_release,510.313,Confirmed,8.1 revenue analysis (p.62/64)
+FY2025,FY2025,Krungthai-AXA Life,bel_release,14254.29,Confirmed,8.1
+FY2025,FY2024,Krungthai-AXA Life,bel_release,13759.119,Confirmed,8.1
+FY2025,FY2025,Krungthai-AXA Life,paa_revenue,2345.838,Confirmed,8.1 PAA revenue
+FY2025,FY2024,Krungthai-AXA Life,paa_revenue,1771.412,Confirmed,8.1 PAA revenue
+FY2025,FY2025,Krungthai-AXA Life,other_revenue,-144.654,Confirmed,8.1 รายการอื่น (negative)
+FY2025,FY2024,Krungthai-AXA Life,other_revenue,-169.788,Confirmed,8.1 รายการอื่น (negative)
+FY2025,FY2025,Krungthai-AXA Life,incurred_claims,-14405.75,Confirmed,"8.1 (printed −, kept) (p.63/65)"
+FY2025,FY2024,Krungthai-AXA Life,incurred_claims,-14442.478,Confirmed,"8.1 (printed −, kept) (p.63/65)"
+FY2025,FY2025,Krungthai-AXA Life,past_service,5.652,Confirmed,8.1 changes in LIC
+FY2025,FY2024,Krungthai-AXA Life,past_service,-16.753,Confirmed,8.1 changes in LIC
+FY2025,FY2025,Krungthai-AXA Life,loss_component,-31.925,Confirmed,8.1 onerous losses
+FY2025,FY2024,Krungthai-AXA Life,loss_component,-26.777,Confirmed,8.1 onerous losses
+FY2025,FY2025,Krungthai-AXA Life,acq_recovery,1582.527,Confirmed,8.1 recovery of acq CF
+FY2025,FY2024,Krungthai-AXA Life,acq_recovery,553.252,Confirmed,8.1 recovery of acq CF
+FY2025,FY2025,Krungthai-AXA Life,acq_amortisation,-1868.624,Confirmed,8.1 amortisation
+FY2025,FY2024,Krungthai-AXA Life,acq_amortisation,-801.24,Confirmed,8.1 amortisation
+FY2025,FY2025,Krungthai-AXA Life,net_investment_income,9579.778,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2024,Krungthai-AXA Life,net_investment_income,8857.239,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2025,Krungthai-AXA Life,ifie,-7003.676,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Krungthai-AXA Life,ifie,-7173.445,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Krungthai-AXA Life,other_expense,-1233.844,Confirmed,SCI other finance costs + other opex
+FY2025,FY2024,Krungthai-AXA Life,other_expense,-1215.485,Confirmed,SCI other finance costs + other opex
+FY2025,FY2025,Krungthai-AXA Life,other_income,13.697,Confirmed,SCI other income
+FY2025,FY2024,Krungthai-AXA Life,other_income,6.632,Confirmed,SCI other income
+FY2025,FY2025,Krungthai-AXA Life,income_tax,-1939.119,Confirmed,SCI (note 26.2)
+FY2025,FY2024,Krungthai-AXA Life,income_tax,-1535.909,Confirmed,SCI (note 26.2)
+FY2025,FY2025,Krungthai-AXA Life,net_profit,8004.58,Confirmed,SCI
+FY2025,FY2024,Krungthai-AXA Life,net_profit,5945.639,Confirmed,SCI
+FY2025,FY2025,Krungthai-AXA Life,reinsurance_result,-132.598,Confirmed,SCI
+FY2025,FY2024,Krungthai-AXA Life,reinsurance_result,115.458,Confirmed,SCI
+FY2025,FY2025,Krungthai-AXA Life,csm_nb,5453.641,Confirmed,9.2+10.2+11.2+12.2 (p.71/77/83/88)
+FY2025,FY2024,Krungthai-AXA Life,csm_nb,5831.259,Confirmed,9.2+10.2+11.2+12.2 (p.71/77/83/88)
+FY2025,FY2025,Krungthai-AXA Life,csm_accretion,1302.11,Confirmed,"x.2 IFIE P&L row, CSM col"
+FY2025,FY2024,Krungthai-AXA Life,csm_accretion,1356.81,Confirmed,"x.2 IFIE P&L row, CSM col"
+FY2025,FY2025,Krungthai-AXA Life,csm_future_service,2640.824,Confirmed,x.2 future-service total less new business
+FY2025,FY2024,Krungthai-AXA Life,csm_future_service,-2919.196,Confirmed,x.2 future-service total less new business
+FY2025,FY2025,Krungthai-AXA Life,csm_release,-6540.572,Confirmed,x.2 current service (ties to 8.1)
+FY2025,FY2024,Krungthai-AXA Life,csm_release,-5754.089,Confirmed,x.2 current service (ties to 8.1)
+FY2025,FY2025,Krungthai-AXA Life,nb_pv_premium,58844.297,Confirmed,9.3+10.3+12.3 (p.73/79/90)
+FY2025,FY2024,Krungthai-AXA Life,nb_pv_premium,51152.2,Confirmed,9.3+10.3+12.3 (p.73/79/90)
+FY2025,FY2025,Krungthai-AXA Life,nb_pv_acq,7238.687,Confirmed,x.3
+FY2025,FY2024,Krungthai-AXA Life,nb_pv_acq,7226.06,Confirmed,x.3
+FY2025,FY2025,Krungthai-AXA Life,nb_pv_claims,45576.847,Confirmed,x.3
+FY2025,FY2024,Krungthai-AXA Life,nb_pv_claims,37332.796,Confirmed,x.3
+FY2025,FY2025,Krungthai-AXA Life,nb_ra,598.17,Confirmed,x.3
+FY2025,FY2024,Krungthai-AXA Life,nb_ra,782.034,Confirmed,x.3
+FY2025,FY2025,Krungthai-AXA Life,nb_csm,5453.641,Confirmed,x.3
+FY2025,FY2024,Krungthai-AXA Life,nb_csm,5831.259,Confirmed,x.3
+FY2025,FY2025,Krungthai-AXA Life,csm_open,39803.473,Confirmed,x.2 opening (4 groups)
+FY2025,FY2024,Krungthai-AXA Life,csm_open,41288.689,Confirmed,x.2 opening (4 groups)
+FY2025,FY2025,Krungthai-AXA Life,csm_close,42659.476,Confirmed,x.2 closing (4 groups)
+FY2025,FY2024,Krungthai-AXA Life,csm_close,39803.473,Confirmed,x.2 closing (4 groups)
+FY2025,FY2025,Krungthai-AXA Life,nb_loss_component,23.048,Confirmed,x.3 losses on initial recognition
+FY2025,FY2024,Krungthai-AXA Life,nb_loss_component,19.949,Confirmed,x.3 losses on initial recognition
+FY2025,FY2025,Krungthai-AXA Life,insurance_revenue,25020.989,Confirmed,SCI / 8.1
+FY2025,FY2024,Krungthai-AXA Life,insurance_revenue,22178.397,Confirmed,SCI / 8.1
+FY2025,FY2025,Krungthai-AXA Life,insurance_service_expense,-16300.647,Confirmed,SCI / 8.1
+FY2025,FY2024,Krungthai-AXA Life,insurance_service_expense,-15287.248,Confirmed,SCI / 8.1
+FY2025,FY2025,Bangkok Life,ra_release,311.545,Confirmed,25.1 (file p.122/124) — NEGATIVE in 2024
+FY2025,FY2024,Bangkok Life,ra_release,-77.616,Confirmed,25.1 (file p.122/124) — NEGATIVE in 2024
+FY2025,FY2025,Bangkok Life,bel_release,5690.969,Confirmed,25.1 (file p.122/124)
+FY2025,FY2024,Bangkok Life,bel_release,6519.853,Confirmed,25.1 (file p.122/124)
+FY2025,FY2025,Bangkok Life,paa_revenue,2364.818,Confirmed,25.1 PAA revenue (file p.122/124)
+FY2025,FY2024,Bangkok Life,paa_revenue,1714.392,Confirmed,25.1 PAA revenue (file p.122/124)
+FY2025,FY2025,Bangkok Life,other_revenue,0,Confirmed,"no separate ""Others"" line — components sum to non-PAA revenue"
+FY2025,FY2024,Bangkok Life,other_revenue,0,Confirmed,"no separate ""Others"" line — components sum to non-PAA revenue"
+FY2025,FY2025,Bangkok Life,incurred_claims,-7204.078,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2024,Bangkok Life,incurred_claims,-7993.843,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2025,Bangkok Life,past_service,-263.513,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2024,Bangkok Life,past_service,-331.988,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2025,Bangkok Life,loss_component,-21.717,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2024,Bangkok Life,loss_component,-95.595,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2025,Bangkok Life,acq_recovery,1104.779,Confirmed,25.1 (file p.122/124)
+FY2025,FY2024,Bangkok Life,acq_recovery,937.226,Confirmed,25.1 (file p.122/124)
+FY2025,FY2025,Bangkok Life,acq_amortisation,-1104.779,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2024,Bangkok Life,acq_amortisation,-937.226,Confirmed,"25.1 (file p.123/124, printed +, FLIPPED)"
+FY2025,FY2025,Bangkok Life,net_investment_income,12470.061,Confirmed,SCI (file p.10) net investment income
+FY2025,FY2024,Bangkok Life,net_investment_income,11219.078,Confirmed,SCI (file p.10) net investment income
+FY2025,FY2025,Bangkok Life,ifie,-8574.982,Confirmed,SCI (file p.10) net insurance finance expense
+FY2025,FY2024,Bangkok Life,ifie,-8847.077,Confirmed,SCI (file p.10) net insurance finance expense
+FY2025,FY2025,Bangkok Life,other_expense,-461.778,Confirmed,SCI (other operating exp + other finance costs)
+FY2025,FY2024,Bangkok Life,other_expense,-506.064,Confirmed,SCI (other operating exp + other finance costs)
+FY2025,FY2025,Bangkok Life,other_income,169.913,Confirmed,SCI (file p.10)
+FY2025,FY2024,Bangkok Life,other_income,161.015,Confirmed,SCI (file p.10)
+FY2025,FY2025,Bangkok Life,income_tax,-1072.308,Confirmed,SCI — printed POSITIVE but is an expense (FLIPPED)
+FY2025,FY2024,Bangkok Life,income_tax,-943.788,Confirmed,SCI — printed POSITIVE but is an expense (FLIPPED)
+FY2025,FY2025,Bangkok Life,net_profit,6968.382,Confirmed,SCI (file p.10)
+FY2025,FY2024,Bangkok Life,net_profit,4633.881,Confirmed,SCI (file p.10)
+FY2025,FY2025,Bangkok Life,reinsurance_result,-203.297,Confirmed,SCI (file p.10)
+FY2025,FY2024,Bangkok Life,reinsurance_result,-45.383,Confirmed,SCI (file p.10)
+FY2025,FY2025,Bangkok Life,csm_nb,3389.464,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2024,Bangkok Life,csm_nb,4349.508,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2025,Bangkok Life,csm_accretion,1326.006,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2024,Bangkok Life,csm_accretion,1282.206,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2025,Bangkok Life,csm_future_service,1935.053,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2024,Bangkok Life,csm_future_service,233.626,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2025,Bangkok Life,csm_release,-3762.749,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2024,Bangkok Life,csm_release,-3860.897,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2025,Bangkok Life,nb_pv_premium,36703.049,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2024,Bangkok Life,nb_pv_premium,32890.238,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2025,Bangkok Life,nb_pv_acq,3163.787,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2024,Bangkok Life,nb_pv_acq,3228.448,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2025,Bangkok Life,nb_pv_claims,29523.248,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2024,Bangkok Life,nb_pv_claims,24762.763,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2025,Bangkok Life,nb_ra,721.257,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2024,Bangkok Life,nb_ra,631.399,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2025,Bangkok Life,nb_csm,3389.464,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2024,Bangkok Life,nb_csm,4349.508,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2025,Bangkok Life,csm_open,41298.872,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2024,Bangkok Life,csm_open,39294.429,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2025,Bangkok Life,csm_close,44186.646,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2024,Bangkok Life,csm_close,41298.872,Confirmed,7.1 GMM (p.69-71) + 7.3 VFA (p.88-89)
+FY2025,FY2025,Bangkok Life,nb_loss_component,94.707,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2024,Bangkok Life,nb_loss_component,81.88,Confirmed,7.1 GMM (p.72) + 7.3 VFA (p.90)
+FY2025,FY2025,Bangkok Life,insurance_revenue,13234.86,Confirmed,SCI / 25.1
+FY2025,FY2024,Bangkok Life,insurance_revenue,12954.752,Confirmed,SCI / 25.1
+FY2025,FY2025,Bangkok Life,insurance_service_expense,-8594.087,Confirmed,SCI / 25.1
+FY2025,FY2024,Bangkok Life,insurance_service_expense,-9358.652,Confirmed,SCI / 25.1
+FY2025,FY2025,Prudential Life,ra_release,321.476,Confirmed,8.1 revenue analysis (p.50) — NOT the AOC
+FY2025,FY2024,Prudential Life,ra_release,354.099,Confirmed,8.1 revenue analysis (p.50) — NOT the AOC
+FY2025,FY2025,Prudential Life,bel_release,4601.389,Confirmed,8.1
+FY2025,FY2024,Prudential Life,bel_release,4168.48,Confirmed,8.1
+FY2025,FY2025,Prudential Life,paa_revenue,0,Confirmed,8.1 PAA (nil 2025)
+FY2025,FY2024,Prudential Life,paa_revenue,266.031,Confirmed,8.1 PAA (nil 2025)
+FY2025,FY2025,Prudential Life,other_revenue,-13.236,Confirmed,8.1 Others (negative)
+FY2025,FY2024,Prudential Life,other_revenue,-119.45,Confirmed,8.1 Others (negative)
+FY2025,FY2025,Prudential Life,incurred_claims,-4661.853,Confirmed,"8.1 expenses (p.51, printed −, kept)"
+FY2025,FY2024,Prudential Life,incurred_claims,-5069.639,Confirmed,"8.1 expenses (p.51, printed −, kept)"
+FY2025,FY2025,Prudential Life,past_service,-189.632,Confirmed,8.1 changes in LIC
+FY2025,FY2024,Prudential Life,past_service,-292.348,Confirmed,8.1 changes in LIC
+FY2025,FY2025,Prudential Life,loss_component,-18.907,Confirmed,8.1 onerous losses (credit 2024)
+FY2025,FY2024,Prudential Life,loss_component,25.928,Confirmed,8.1 onerous losses (credit 2024)
+FY2025,FY2025,Prudential Life,acq_recovery,5175.526,Confirmed,8.1 recovery of acq CF
+FY2025,FY2024,Prudential Life,acq_recovery,4722.831,Confirmed,8.1 recovery of acq CF
+FY2025,FY2025,Prudential Life,acq_amortisation,-5175.527,Confirmed,8.1 amortisation
+FY2025,FY2024,Prudential Life,acq_amortisation,-4722.831,Confirmed,8.1 amortisation
+FY2025,FY2025,Prudential Life,net_investment_income,6249.278,Confirmed,SCI (p.7) total net investment income
+FY2025,FY2024,Prudential Life,net_investment_income,4794.823,Confirmed,SCI (p.7) total net investment income
+FY2025,FY2025,Prudential Life,ifie,-6573.328,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Prudential Life,ifie,-4192.97,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Prudential Life,other_expense,-198.8,Confirmed,SCI other finance cost + other opex (note 28)
+FY2025,FY2024,Prudential Life,other_expense,-149.538,Confirmed,SCI other finance cost + other opex (note 28)
+FY2025,FY2025,Prudential Life,other_income,6.7,Confirmed,SCI other income
+FY2025,FY2024,Prudential Life,other_income,45.834,Confirmed,SCI other income
+FY2025,FY2025,Prudential Life,income_tax,-512.64,Confirmed,SCI (note 21.2)
+FY2025,FY2024,Prudential Life,income_tax,-440.323,Confirmed,SCI (note 21.2)
+FY2025,FY2025,Prudential Life,net_profit,1608.694,Confirmed,SCI
+FY2025,FY2024,Prudential Life,net_profit,2035.366,Confirmed,SCI
+FY2025,FY2025,Prudential Life,reinsurance_result,-326.919,Confirmed,SCI
+FY2025,FY2024,Prudential Life,reinsurance_result,-59.348,Confirmed,SCI
+FY2025,FY2025,Prudential Life,csm_nb,3192.028,Confirmed,9.2 / 9.3 (p.56 / p.58)
+FY2025,FY2024,Prudential Life,csm_nb,4268.999,Confirmed,9.2 / 9.3 (p.56 / p.58)
+FY2025,FY2025,Prudential Life,csm_accretion,551.719,Confirmed,"9.2 finance row, CSM col"
+FY2025,FY2024,Prudential Life,csm_accretion,459.23,Confirmed,"9.2 finance row, CSM col"
+FY2025,FY2025,Prudential Life,csm_future_service,1557.843,Confirmed,9.2 future service less NB
+FY2025,FY2024,Prudential Life,csm_future_service,724.195,Confirmed,9.2 future service less NB
+FY2025,FY2025,Prudential Life,csm_release,-2925.167,Confirmed,8.1 = 9.2 current service
+FY2025,FY2024,Prudential Life,csm_release,-2703.787,Confirmed,8.1 = 9.2 current service
+FY2025,FY2025,Prudential Life,nb_pv_premium,59672.47,Confirmed,9.3 (p.58)
+FY2025,FY2024,Prudential Life,nb_pv_premium,51634.566,Confirmed,9.3 (p.58)
+FY2025,FY2025,Prudential Life,nb_pv_acq,9414.911,Confirmed,9.3
+FY2025,FY2024,Prudential Life,nb_pv_acq,8785.839,Confirmed,9.3
+FY2025,FY2025,Prudential Life,nb_pv_claims,46529.594,Confirmed,9.3
+FY2025,FY2024,Prudential Life,nb_pv_claims,37976.973,Confirmed,9.3
+FY2025,FY2025,Prudential Life,nb_ra,623.869,Confirmed,9.3
+FY2025,FY2024,Prudential Life,nb_ra,620.25,Confirmed,9.3
+FY2025,FY2025,Prudential Life,nb_csm,3192.028,Confirmed,9.3
+FY2025,FY2024,Prudential Life,nb_csm,4268.999,Confirmed,9.3
+FY2025,FY2025,Prudential Life,csm_open,18958.809,Confirmed,9.2 opening
+FY2025,FY2024,Prudential Life,csm_open,16210.172,Confirmed,9.2 opening
+FY2025,FY2025,Prudential Life,csm_close,21335.232,Confirmed,9.2 closing
+FY2025,FY2024,Prudential Life,csm_close,18958.809,Confirmed,9.2 closing
+FY2025,FY2025,Prudential Life,nb_loss_component,87.932,Confirmed,9.3 losses on initial recognition
+FY2025,FY2024,Prudential Life,nb_loss_component,17.495,Confirmed,9.3 losses on initial recognition
+FY2025,FY2025,Prudential Life,insurance_revenue,13010.322,Confirmed,SCI / 8.1
+FY2025,FY2024,Prudential Life,insurance_revenue,12095.778,Confirmed,SCI / 8.1
+FY2025,FY2025,Prudential Life,insurance_service_expense,-10045.919,Confirmed,SCI / 8.1
+FY2025,FY2024,Prudential Life,insurance_service_expense,-10058.89,Confirmed,SCI / 8.1
+FY2025,FY2025,Generali Life,ra_release,39.796,Confirmed,15.1.1 (file p.162)
+FY2025,FY2024,Generali Life,ra_release,33.763,Confirmed,15.1.1 (file p.162)
+FY2025,FY2025,Generali Life,bel_release,1247.541,Confirmed,15.1.1 (file p.162)
+FY2025,FY2024,Generali Life,bel_release,1095.074,Confirmed,15.1.1 (file p.162)
+FY2025,FY2025,Generali Life,paa_revenue,4456.949,Confirmed,15.1.1 (file p.162)
+FY2025,FY2024,Generali Life,paa_revenue,3242.653,Confirmed,15.1.1 (file p.162)
+FY2025,FY2025,Generali Life,other_revenue,0,Confirmed,"15.1.1 — 2025 nil, 2024 = 7.238 (read per year)"
+FY2025,FY2024,Generali Life,other_revenue,7.238,Confirmed,"15.1.1 — 2025 nil, 2024 = 7.238 (read per year)"
+FY2025,FY2025,Generali Life,incurred_claims,-4266.651,Confirmed,"15.1.1 (file p.163, printed −, kept)"
+FY2025,FY2024,Generali Life,incurred_claims,-3436.428,Confirmed,"15.1.1 (file p.163, printed −, kept)"
+FY2025,FY2025,Generali Life,past_service,75.473,Confirmed,15.1.1 (file p.163)
+FY2025,FY2024,Generali Life,past_service,37.888,Confirmed,15.1.1 (file p.163)
+FY2025,FY2025,Generali Life,loss_component,-42.754,Confirmed,15.1.1 (file p.163)
+FY2025,FY2024,Generali Life,loss_component,0,Confirmed,15.1.1 (file p.163)
+FY2025,FY2025,Generali Life,acq_recovery,1218.122,Confirmed,15.1.1 (file p.162)
+FY2025,FY2024,Generali Life,acq_recovery,444.99,Confirmed,15.1.1 (file p.162)
+FY2025,FY2025,Generali Life,acq_amortisation,-2250.19,Confirmed,15.1.1 (file p.163)
+FY2025,FY2024,Generali Life,acq_amortisation,-1344.572,Confirmed,15.1.1 (file p.163)
+FY2025,FY2025,Generali Life,net_investment_income,952.638,Confirmed,SCI (file p.8)
+FY2025,FY2024,Generali Life,net_investment_income,967.265,Confirmed,SCI (file p.8)
+FY2025,FY2025,Generali Life,ifie,-809.808,Confirmed,SCI (file p.8)
+FY2025,FY2024,Generali Life,ifie,-690.85,Confirmed,SCI (file p.8)
+FY2025,FY2025,Generali Life,other_expense,-430.018,Confirmed,SCI (opex+oth finance)
+FY2025,FY2024,Generali Life,other_expense,-332.231,Confirmed,SCI (opex+oth finance)
+FY2025,FY2025,Generali Life,other_income,19.321,Confirmed,SCI (file p.8)
+FY2025,FY2024,Generali Life,other_income,4.518,Confirmed,SCI (file p.8)
+FY2025,FY2025,Generali Life,income_tax,11.397,Confirmed,SCI — tax credit (+)
+FY2025,FY2024,Generali Life,income_tax,7.867,Confirmed,SCI — tax credit (+)
+FY2025,FY2025,Generali Life,net_profit,502.719,Confirmed,SCI (file p.8)
+FY2025,FY2024,Generali Life,net_profit,535.32,Confirmed,SCI (file p.8)
+FY2025,FY2025,Generali Life,reinsurance_result,-293.619,Confirmed,SCI (file p.8)
+FY2025,FY2024,Generali Life,reinsurance_result,-48.74,Confirmed,SCI (file p.8)
+FY2025,FY2025,Generali Life,csm_nb,827.686,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2024,Generali Life,csm_nb,673.395,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2025,Generali Life,csm_accretion,387.387,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2024,Generali Life,csm_accretion,385.847,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2025,Generali Life,csm_future_service,-616,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2024,Generali Life,csm_future_service,-464.863,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2025,Generali Life,csm_release,-574.521,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2024,Generali Life,csm_release,-546.885,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2025,Generali Life,nb_pv_premium,11598.369,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2024,Generali Life,nb_pv_premium,9344.544,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2025,Generali Life,nb_pv_acq,4081.219,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2024,Generali Life,nb_pv_acq,3807.827,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2025,Generali Life,nb_pv_claims,6601.681,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2024,Generali Life,nb_pv_claims,4789.161,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2025,Generali Life,nb_ra,88.244,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2024,Generali Life,nb_ra,74.161,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2025,Generali Life,nb_csm,827.686,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2024,Generali Life,nb_csm,673.395,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2025,Generali Life,csm_open,3140.27,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2024,Generali Life,csm_open,3092.776,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2025,Generali Life,csm_close,3164.822,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2024,Generali Life,csm_close,3140.27,Confirmed,11.1.1 meas-comp recon (file p.91-96)
+FY2025,FY2025,Generali Life,nb_loss_component,0.461,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2024,Generali Life,nb_loss_component,0,Confirmed,11.1.1 new business (file p.97)
+FY2025,FY2025,Generali Life,insurance_revenue,7536.929,Confirmed,SCI / 15.1.1
+FY2025,FY2024,Generali Life,insurance_revenue,5370.603,Confirmed,SCI / 15.1.1
+FY2025,FY2025,Generali Life,insurance_service_expense,-6484.122,Confirmed,SCI / 15.1.1
+FY2025,FY2024,Generali Life,insurance_service_expense,-4743.112,Confirmed,SCI / 15.1.1
+FY2025,FY2025,Ocean Life,ra_release,175.047,Confirmed,16.1 revenue analysis (p.96/97)
+FY2025,FY2024,Ocean Life,ra_release,182.893,Confirmed,16.1 revenue analysis (p.96/97)
+FY2025,FY2025,Ocean Life,bel_release,2311.059,Confirmed,16.1
+FY2025,FY2024,Ocean Life,bel_release,2327.126,Confirmed,16.1
+FY2025,FY2025,Ocean Life,paa_revenue,1867.657,Confirmed,16.1 PAA revenue
+FY2025,FY2024,Ocean Life,paa_revenue,2564.783,Confirmed,16.1 PAA revenue
+FY2025,FY2025,Ocean Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2024,Ocean Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2025,Ocean Life,incurred_claims,-3600.028,Confirmed,"16.1 expenses (p.97/98, printed −, kept)"
+FY2025,FY2024,Ocean Life,incurred_claims,-4802.653,Confirmed,"16.1 expenses (p.97/98, printed −, kept)"
+FY2025,FY2025,Ocean Life,past_service,-15.114,Confirmed,16.1 changes in LIC
+FY2025,FY2024,Ocean Life,past_service,89.926,Confirmed,16.1 changes in LIC
+FY2025,FY2025,Ocean Life,loss_component,-9.93,Confirmed,16.1 onerous losses
+FY2025,FY2024,Ocean Life,loss_component,-13.593,Confirmed,16.1 onerous losses
+FY2025,FY2025,Ocean Life,acq_recovery,102.775,Confirmed,16.1 recovery of acq CF
+FY2025,FY2024,Ocean Life,acq_recovery,52.048,Confirmed,16.1 recovery of acq CF
+FY2025,FY2025,Ocean Life,acq_amortisation,-102.775,Confirmed,16.1 amortisation (= recovery)
+FY2025,FY2024,Ocean Life,acq_amortisation,-52.048,Confirmed,16.1 amortisation (= recovery)
+FY2025,FY2025,Ocean Life,net_investment_income,3874.669,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2024,Ocean Life,net_investment_income,4060.769,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2025,Ocean Life,ifie,-2064.987,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Ocean Life,ifie,-2056.34,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Ocean Life,other_expense,-864.182,Confirmed,"SCI other operating expenses (22,23,24)"
+FY2025,FY2024,Ocean Life,other_expense,-857.625,Confirmed,"SCI other operating expenses (22,23,24)"
+FY2025,FY2025,Ocean Life,other_income,86.091,Confirmed,SCI other income
+FY2025,FY2024,Ocean Life,other_income,265.615,Confirmed,SCI other income
+FY2025,FY2025,Ocean Life,income_tax,-449.163,Confirmed,SCI (note 25)
+FY2025,FY2024,Ocean Life,income_tax,-484.083,Confirmed,SCI (note 25)
+FY2025,FY2025,Ocean Life,net_profit,2649.389,Confirmed,SCI
+FY2025,FY2024,Ocean Life,net_profit,2686.666,Confirmed,SCI
+FY2025,FY2025,Ocean Life,reinsurance_result,46.79,Confirmed,SCI / 16.2
+FY2025,FY2024,Ocean Life,reinsurance_result,-31.702,Confirmed,SCI / 16.2
+FY2025,FY2025,Ocean Life,csm_nb,654.757,Confirmed,12.1.2 / 12.1.3 (p.77/79)
+FY2025,FY2024,Ocean Life,csm_nb,889.445,Confirmed,12.1.2 / 12.1.3 (p.77/79)
+FY2025,FY2025,Ocean Life,csm_accretion,358.523,Confirmed,"12.1.2 finance row, CSM col"
+FY2025,FY2024,Ocean Life,csm_accretion,394.097,Confirmed,"12.1.2 finance row, CSM col"
+FY2025,FY2025,Ocean Life,csm_future_service,-1307.569,Confirmed,12.1.2 future service less NB
+FY2025,FY2024,Ocean Life,csm_future_service,-1001.638,Confirmed,12.1.2 future service less NB
+FY2025,FY2025,Ocean Life,csm_release,-1291.48,Confirmed,16.1 = 12.1.2 current service
+FY2025,FY2024,Ocean Life,csm_release,-1441.55,Confirmed,16.1 = 12.1.2 current service
+FY2025,FY2025,Ocean Life,nb_pv_premium,6671.808,Confirmed,12.1.3 (p.79)
+FY2025,FY2024,Ocean Life,nb_pv_premium,6932.479,Confirmed,12.1.3 (p.79)
+FY2025,FY2025,Ocean Life,nb_pv_acq,598.794,Confirmed,12.1.3
+FY2025,FY2024,Ocean Life,nb_pv_acq,726.496,Confirmed,12.1.3
+FY2025,FY2025,Ocean Life,nb_pv_claims,5204.231,Confirmed,12.1.3
+FY2025,FY2024,Ocean Life,nb_pv_claims,5100.811,Confirmed,12.1.3
+FY2025,FY2025,Ocean Life,nb_ra,218.596,Confirmed,12.1.3
+FY2025,FY2024,Ocean Life,nb_ra,221.383,Confirmed,12.1.3
+FY2025,FY2025,Ocean Life,nb_csm,654.757,Confirmed,12.1.3
+FY2025,FY2024,Ocean Life,nb_csm,889.445,Confirmed,12.1.3
+FY2025,FY2025,Ocean Life,csm_open,11936.368,Confirmed,12.1.2 opening
+FY2025,FY2024,Ocean Life,csm_open,13096.014,Confirmed,12.1.2 opening
+FY2025,FY2025,Ocean Life,csm_close,10350.599,Confirmed,12.1.2 closing
+FY2025,FY2024,Ocean Life,csm_close,11936.368,Confirmed,12.1.2 closing
+FY2025,FY2025,Ocean Life,nb_loss_component,4.57,Confirmed,12.1.3 losses on initial recognition
+FY2025,FY2024,Ocean Life,nb_loss_component,5.656,Confirmed,12.1.3 losses on initial recognition
+FY2025,FY2025,Ocean Life,insurance_revenue,5748.018,Confirmed,SCI / 16.1
+FY2025,FY2024,Ocean Life,insurance_revenue,6568.4,Confirmed,SCI / 16.1
+FY2025,FY2025,Ocean Life,insurance_service_expense,-3727.847,Confirmed,SCI / 16.1
+FY2025,FY2024,Ocean Life,insurance_service_expense,-4778.368,Confirmed,SCI / 16.1
+FY2025,FY2025,CHUBB Life,ra_release,264.205,Confirmed,27.1 (file p.94)
+FY2025,FY2024,CHUBB Life,ra_release,247.124,Confirmed,27.1 (file p.94)
+FY2025,FY2025,CHUBB Life,bel_release,4100.259,Confirmed,27.1 (file p.94)
+FY2025,FY2024,CHUBB Life,bel_release,3379.713,Confirmed,27.1 (file p.94)
+FY2025,FY2025,CHUBB Life,paa_revenue,0,Confirmed,no PAA business (nil)
+FY2025,FY2024,CHUBB Life,paa_revenue,0,Confirmed,no PAA business (nil)
+FY2025,FY2025,CHUBB Life,other_revenue,2.422,Confirmed,"27.1 ""other changes"" — 2025=2.422, 2024 nil (read per year)"
+FY2025,FY2024,CHUBB Life,other_revenue,0,Confirmed,"27.1 ""other changes"" — 2025=2.422, 2024 nil (read per year)"
+FY2025,FY2025,CHUBB Life,incurred_claims,-4062.774,Confirmed,"27.1 (file p.94, printed −, kept)"
+FY2025,FY2024,CHUBB Life,incurred_claims,-3295.87,Confirmed,"27.1 (file p.94, printed −, kept)"
+FY2025,FY2025,CHUBB Life,past_service,-3.721,Confirmed,"27.1 (file p.94, past service)"
+FY2025,FY2024,CHUBB Life,past_service,1.833,Confirmed,"27.1 (file p.94, past service)"
+FY2025,FY2025,CHUBB Life,loss_component,762.769,Confirmed,"27.1 reversal/(increase) onerous — 2025 reversal +, 2024 increase −"
+FY2025,FY2024,CHUBB Life,loss_component,-3946.352,Confirmed,"27.1 reversal/(increase) onerous — 2025 reversal +, 2024 increase −"
+FY2025,FY2025,CHUBB Life,acq_recovery,901.575,Confirmed,27.1 (file p.94)
+FY2025,FY2024,CHUBB Life,acq_recovery,460.382,Confirmed,27.1 (file p.94)
+FY2025,FY2025,CHUBB Life,acq_amortisation,-901.575,Confirmed,"27.1 (file p.94, printed −, kept)"
+FY2025,FY2024,CHUBB Life,acq_amortisation,-460.382,Confirmed,"27.1 (file p.94, printed −, kept)"
+FY2025,FY2025,CHUBB Life,net_investment_income,769.121,Confirmed,SCI (file p.7) net investment income
+FY2025,FY2024,CHUBB Life,net_investment_income,657.58,Confirmed,SCI (file p.7) net investment income
+FY2025,FY2025,CHUBB Life,ifie,-192.897,Confirmed,SCI (file p.7) net insurance finance expense
+FY2025,FY2024,CHUBB Life,ifie,-57.775,Confirmed,SCI (file p.7) net insurance finance expense
+FY2025,FY2025,CHUBB Life,other_expense,-369.638,Confirmed,SCI (opex + other finance costs)
+FY2025,FY2024,CHUBB Life,other_expense,-461.899,Confirmed,SCI (opex + other finance costs)
+FY2025,FY2025,CHUBB Life,other_income,5.383,Confirmed,SCI (file p.7)
+FY2025,FY2024,CHUBB Life,other_income,-3.352,Confirmed,SCI (file p.7)
+FY2025,FY2025,CHUBB Life,income_tax,-168.811,Confirmed,"SCI — 2025 expense (−), 2024 credit (+) on the loss"
+FY2025,FY2024,CHUBB Life,income_tax,392.111,Confirmed,"SCI — 2025 expense (−), 2024 credit (+) on the loss"
+FY2025,FY2025,CHUBB Life,net_profit,592.797,Confirmed,SCI (file p.7)
+FY2025,FY2024,CHUBB Life,net_profit,-1917.662,Confirmed,SCI (file p.7)
+FY2025,FY2025,CHUBB Life,reinsurance_result,-698.071,Confirmed,SCI (file p.7)
+FY2025,FY2024,CHUBB Life,reinsurance_result,1041.077,Confirmed,SCI (file p.7)
+FY2025,FY2025,CHUBB Life,csm_nb,1611.462,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2024,CHUBB Life,csm_nb,2116.146,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2025,CHUBB Life,csm_accretion,72.654,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2024,CHUBB Life,csm_accretion,55.693,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2025,CHUBB Life,csm_future_service,-718.116,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2024,CHUBB Life,csm_future_service,-1163.539,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2025,CHUBB Life,csm_release,-184.548,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2024,CHUBB Life,csm_release,-128.147,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2025,CHUBB Life,nb_pv_premium,12550.639,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2024,CHUBB Life,nb_pv_premium,12337.276,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2025,CHUBB Life,nb_pv_acq,2326.133,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2024,CHUBB Life,nb_pv_acq,1849.693,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2025,CHUBB Life,nb_pv_claims,8283.938,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2024,CHUBB Life,nb_pv_claims,8015.388,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2025,CHUBB Life,nb_ra,500.224,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2024,CHUBB Life,nb_ra,469.151,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2025,CHUBB Life,nb_csm,1611.462,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2024,CHUBB Life,nb_csm,2116.146,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2025,CHUBB Life,csm_open,1638.796,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2024,CHUBB Life,csm_open,758.642,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2025,CHUBB Life,csm_close,2420.248,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2024,CHUBB Life,csm_close,1638.796,Confirmed,18.1.2 meas-comp recon (file p.72-73)
+FY2025,FY2025,CHUBB Life,nb_loss_component,171.118,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2024,CHUBB Life,nb_loss_component,113.102,Confirmed,18.1.3 new business (file p.74)
+FY2025,FY2025,CHUBB Life,insurance_revenue,5453.01,Confirmed,SCI / 27.1
+FY2025,FY2024,CHUBB Life,insurance_revenue,4215.366,Confirmed,SCI / 27.1
+FY2025,FY2025,CHUBB Life,insurance_service_expense,-4205.301,Confirmed,SCI / 27.1
+FY2025,FY2024,CHUBB Life,insurance_service_expense,-7700.771,Confirmed,SCI / 27.1
+FY2025,FY2025,Tokio Marine Life,ra_release,182.86,Confirmed,Note 20.1.2 (all groups)
+FY2025,FY2024,Tokio Marine Life,ra_release,264.16,Confirmed,Note 20.1.2 (all groups)
+FY2025,FY2025,Tokio Marine Life,bel_release,1929.75,Confirmed,non-PAA expected-claims comp
+FY2025,FY2024,Tokio Marine Life,bel_release,2199.55,Confirmed,non-PAA expected-claims comp
+FY2025,FY2025,Tokio Marine Life,paa_revenue,2494.15,Confirmed,Note 20.2
+FY2025,FY2024,Tokio Marine Life,paa_revenue,1944.98,Confirmed,Note 20.2
+FY2025,FY2025,Tokio Marine Life,other_revenue,-52.76,Confirmed,Premium exp adj (Note 20.1.2)
+FY2025,FY2024,Tokio Marine Life,other_revenue,-97.11,Confirmed,Premium exp adj (Note 20.1.2)
+FY2025,FY2025,Tokio Marine Life,incurred_claims,-3857.13,Confirmed,20.1.1+20.2
+FY2025,FY2024,Tokio Marine Life,incurred_claims,-3842.73,Confirmed,20.1.1+20.2
+FY2025,FY2025,Tokio Marine Life,past_service,156.36,Confirmed,chg in liab incurred (revenue-side +)
+FY2025,FY2024,Tokio Marine Life,past_service,173.34,Confirmed,chg in liab incurred (revenue-side +)
+FY2025,FY2025,Tokio Marine Life,loss_component,-64.23,Confirmed,20.1.1 onerous
+FY2025,FY2024,Tokio Marine Life,loss_component,-8.51,Confirmed,20.1.1 onerous
+FY2025,FY2025,Tokio Marine Life,acq_recovery,140.94,Confirmed,acq CF amortisation recovery
+FY2025,FY2024,Tokio Marine Life,acq_recovery,33.25,Confirmed,acq CF amortisation recovery
+FY2025,FY2025,Tokio Marine Life,acq_amortisation,-358.6,Confirmed,20.1.1+20.2
+FY2025,FY2024,Tokio Marine Life,acq_amortisation,-207.22,Confirmed,20.1.1+20.2
+FY2025,FY2025,Tokio Marine Life,net_investment_income,1511.66,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,net_investment_income,1250.7,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,ifie,-1415.77,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,ifie,-1314.83,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,other_expense,-827.56,Confirmed,Opex + other finance costs
+FY2025,FY2024,Tokio Marine Life,other_expense,-771.64,Confirmed,Opex + other finance costs
+FY2025,FY2025,Tokio Marine Life,other_income,41.38,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,other_income,38.68,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,income_tax,-95.4,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,income_tax,-61.01,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,net_profit,367.02,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,net_profit,250.17,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,reinsurance_result,-141.99,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,reinsurance_result,-139.74,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,csm_nb,1125.6,Confirmed,Note 20.1.2/20.1.3
+FY2025,FY2024,Tokio Marine Life,csm_nb,1295.22,Confirmed,Note 20.1.2/20.1.3
+FY2025,FY2025,Tokio Marine Life,csm_accretion,327.63,Confirmed,Note 20.1.2
+FY2025,FY2024,Tokio Marine Life,csm_accretion,276.54,Confirmed,Note 20.1.2
+FY2025,FY2025,Tokio Marine Life,csm_future_service,-1255.31,Confirmed,Note 20.1.2
+FY2025,FY2024,Tokio Marine Life,csm_future_service,558.49,Confirmed,Note 20.1.2
+FY2025,FY2025,Tokio Marine Life,csm_release,-723.36,Confirmed,Note 20.1.2
+FY2025,FY2024,Tokio Marine Life,csm_release,-788.32,Confirmed,Note 20.1.2
+FY2025,FY2025,Tokio Marine Life,nb_pv_premium,8462.12,Confirmed,Note 20.1.3
+FY2025,FY2024,Tokio Marine Life,nb_pv_premium,8439.45,Confirmed,Note 20.1.3
+FY2025,FY2025,Tokio Marine Life,nb_pv_acq,985.27,Confirmed,Note 20.1.3
+FY2025,FY2024,Tokio Marine Life,nb_pv_acq,1004.75,Confirmed,Note 20.1.3
+FY2025,FY2025,Tokio Marine Life,nb_pv_claims,6114.28,Confirmed,Note 20.1.3
+FY2025,FY2024,Tokio Marine Life,nb_pv_claims,5817.25,Confirmed,Note 20.1.3
+FY2025,FY2025,Tokio Marine Life,nb_ra,241.02,Confirmed,Note 20.1.3
+FY2025,FY2024,Tokio Marine Life,nb_ra,323.8,Confirmed,Note 20.1.3
+FY2025,FY2025,Tokio Marine Life,nb_csm,1125.6,Confirmed,(item 17)
+FY2025,FY2024,Tokio Marine Life,nb_csm,1295.22,Confirmed,(item 17)
+FY2025,FY2025,Tokio Marine Life,csm_open,7582.68,Confirmed,Note 20.1.2 net beginning
+FY2025,FY2024,Tokio Marine Life,csm_open,6240.75,Confirmed,Note 20.1.2 net beginning
+FY2025,FY2025,Tokio Marine Life,csm_close,7057.24,Confirmed,Note 20.1.2 net ending
+FY2025,FY2024,Tokio Marine Life,csm_close,7582.68,Confirmed,Note 20.1.2 net ending
+FY2025,FY2025,Tokio Marine Life,nb_loss_component,4.05,Confirmed,Note 20.1.3 onerous
+FY2025,FY2024,Tokio Marine Life,nb_loss_component,1.57,Confirmed,Note 20.1.3 onerous
+FY2025,FY2025,Tokio Marine Life,insurance_revenue,5418.285,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,insurance_revenue,5133.149,Confirmed,Comprehensive income
+FY2025,FY2025,Tokio Marine Life,insurance_service_expense,-4123.59,Confirmed,Comprehensive income
+FY2025,FY2024,Tokio Marine Life,insurance_service_expense,-3885.16,Confirmed,Comprehensive income
+FY2025,FY2025,Dhipaya Life,ra_release,207.842,Confirmed,Note 8.1 (file p.81/82)
+FY2025,FY2024,Dhipaya Life,ra_release,146.524,Confirmed,Note 8.1 (file p.81/82)
+FY2025,FY2025,Dhipaya Life,bel_release,2766.311,Confirmed,Note 8.1
+FY2025,FY2024,Dhipaya Life,bel_release,2322.124,Confirmed,Note 8.1
+FY2025,FY2025,Dhipaya Life,paa_revenue,0,Confirmed,no PAA business (all GMM)
+FY2025,FY2024,Dhipaya Life,paa_revenue,0,Confirmed,no PAA business (all GMM)
+FY2025,FY2025,Dhipaya Life,other_revenue,-54.878,Confirmed,Note 8.1 (per year)
+FY2025,FY2024,Dhipaya Life,other_revenue,-0.004,Confirmed,Note 8.1 (per year)
+FY2025,FY2025,Dhipaya Life,incurred_claims,-2813.752,Confirmed,"Note 8.1 (printed −, kept)"
+FY2025,FY2024,Dhipaya Life,incurred_claims,-2029.404,Confirmed,"Note 8.1 (printed −, kept)"
+FY2025,FY2025,Dhipaya Life,past_service,1.899,Confirmed,Note 8.1
+FY2025,FY2024,Dhipaya Life,past_service,-189.533,Confirmed,Note 8.1
+FY2025,FY2025,Dhipaya Life,loss_component,-321.013,Confirmed,Note 8.1
+FY2025,FY2024,Dhipaya Life,loss_component,-383.784,Confirmed,Note 8.1
+FY2025,FY2025,Dhipaya Life,acq_recovery,424.011,Confirmed,Note 8.1
+FY2025,FY2024,Dhipaya Life,acq_recovery,163.953,Confirmed,Note 8.1
+FY2025,FY2025,Dhipaya Life,acq_amortisation,-424.011,Confirmed,Note 8.1
+FY2025,FY2024,Dhipaya Life,acq_amortisation,-163.953,Confirmed,Note 8.1
+FY2025,FY2025,Dhipaya Life,net_investment_income,1798.836,Confirmed,SCI (file p.33)
+FY2025,FY2024,Dhipaya Life,net_investment_income,1987.401,Confirmed,SCI (file p.33)
+FY2025,FY2025,Dhipaya Life,ifie,-948.309,Confirmed,SCI
+FY2025,FY2024,Dhipaya Life,ifie,-947.299,Confirmed,SCI
+FY2025,FY2025,Dhipaya Life,other_expense,-198.61,Confirmed,SCI other operating expenses
+FY2025,FY2024,Dhipaya Life,other_expense,-319.022,Confirmed,SCI other operating expenses
+FY2025,FY2025,Dhipaya Life,other_income,0.361,Confirmed,SCI
+FY2025,FY2024,Dhipaya Life,other_income,0.342,Confirmed,SCI
+FY2025,FY2025,Dhipaya Life,income_tax,-154.958,Confirmed,SCI
+FY2025,FY2024,Dhipaya Life,income_tax,-153.872,Confirmed,SCI
+FY2025,FY2025,Dhipaya Life,net_profit,658.418,Confirmed,SCI
+FY2025,FY2024,Dhipaya Life,net_profit,650.804,Confirmed,SCI
+FY2025,FY2025,Dhipaya Life,reinsurance_result,-59.614,Confirmed,SCI
+FY2025,FY2024,Dhipaya Life,reinsurance_result,-159.055,Confirmed,SCI
+FY2025,FY2025,Dhipaya Life,csm_nb,966.619,Confirmed,Note 9.2+10.2 (2 groups combined)
+FY2025,FY2024,Dhipaya Life,csm_nb,1206.266,Confirmed,Note 9.2+10.2 (2 groups combined)
+FY2025,FY2025,Dhipaya Life,csm_accretion,156.954,Confirmed,Note 9.2+10.2 combined
+FY2025,FY2024,Dhipaya Life,csm_accretion,135.357,Confirmed,Note 9.2+10.2 combined
+FY2025,FY2025,Dhipaya Life,csm_future_service,-430.278,Confirmed,Note 9.2+10.2 combined
+FY2025,FY2024,Dhipaya Life,csm_future_service,239.901,Confirmed,Note 9.2+10.2 combined
+FY2025,FY2025,Dhipaya Life,csm_release,-434.304,Confirmed,Note 9.2+10.2 combined (=note 8.1 CSM)
+FY2025,FY2024,Dhipaya Life,csm_release,-376.384,Confirmed,Note 9.2+10.2 combined (=note 8.1 CSM)
+FY2025,FY2025,Dhipaya Life,nb_pv_premium,12822.514,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2024,Dhipaya Life,nb_pv_premium,14718.801,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2025,Dhipaya Life,nb_pv_acq,1434.204,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2024,Dhipaya Life,nb_pv_acq,1763.247,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2025,Dhipaya Life,nb_pv_claims,10430.416,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2024,Dhipaya Life,nb_pv_claims,11636.61,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2025,Dhipaya Life,nb_ra,249.931,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2024,Dhipaya Life,nb_ra,264.914,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2025,Dhipaya Life,nb_csm,966.619,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2024,Dhipaya Life,nb_csm,1206.266,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2025,Dhipaya Life,csm_open,3689.482,Confirmed,Note 9.2+10.2 net beginning
+FY2025,FY2024,Dhipaya Life,csm_open,2484.342,Confirmed,Note 9.2+10.2 net beginning
+FY2025,FY2025,Dhipaya Life,csm_close,3948.473,Confirmed,Note 9.2+10.2 net ending
+FY2025,FY2024,Dhipaya Life,csm_close,3689.482,Confirmed,Note 9.2+10.2 net ending
+FY2025,FY2025,Dhipaya Life,nb_loss_component,258.656,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2024,Dhipaya Life,nb_loss_component,152.236,Confirmed,Note 9.3+10.3 combined
+FY2025,FY2025,Dhipaya Life,insurance_revenue,3777.59,Confirmed,SCI / Note 8.1
+FY2025,FY2024,Dhipaya Life,insurance_revenue,3008.982,Confirmed,SCI / Note 8.1
+FY2025,FY2025,Dhipaya Life,insurance_service_expense,-3556.877,Confirmed,SCI / Note 8.1
+FY2025,FY2024,Dhipaya Life,insurance_service_expense,-2766.674,Confirmed,SCI / Note 8.1
+FY2025,FY2025,Southeast Life,ra_release,227.129,Confirmed,"18 revenue analysis (p.89/91), total col"
+FY2025,FY2024,Southeast Life,ra_release,183.957,Confirmed,"18 revenue analysis (p.89/91), total col"
+FY2025,FY2025,Southeast Life,bel_release,2030.798,Confirmed,18
+FY2025,FY2024,Southeast Life,bel_release,2188.148,Confirmed,18
+FY2025,FY2025,Southeast Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2024,Southeast Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2025,Southeast Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2024,Southeast Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2025,Southeast Life,incurred_claims,-2160.042,Confirmed,"18 expenses (printed −, kept)"
+FY2025,FY2024,Southeast Life,incurred_claims,-2510.961,Confirmed,"18 expenses (printed −, kept)"
+FY2025,FY2025,Southeast Life,past_service,150.429,Confirmed,18 changes in LIC
+FY2025,FY2024,Southeast Life,past_service,95.947,Confirmed,18 changes in LIC
+FY2025,FY2025,Southeast Life,loss_component,-149.63,Confirmed,18 onerous losses
+FY2025,FY2024,Southeast Life,loss_component,-98.481,Confirmed,18 onerous losses
+FY2025,FY2025,Southeast Life,acq_recovery,306.81,Confirmed,18 recovery of acq CF
+FY2025,FY2024,Southeast Life,acq_recovery,144.129,Confirmed,18 recovery of acq CF
+FY2025,FY2025,Southeast Life,acq_amortisation,-306.81,Confirmed,18 amortisation (= recovery)
+FY2025,FY2024,Southeast Life,acq_amortisation,-144.129,Confirmed,18 amortisation (= recovery)
+FY2025,FY2025,Southeast Life,net_investment_income,2546.741,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2024,Southeast Life,net_investment_income,1825.81,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2025,Southeast Life,ifie,-1421.934,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Southeast Life,ifie,-1378.785,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Southeast Life,other_expense,-695.145,Confirmed,"SCI other finance cost + other opex (24,25,26)"
+FY2025,FY2024,Southeast Life,other_expense,-626.774,Confirmed,"SCI other finance cost + other opex (24,25,26)"
+FY2025,FY2025,Southeast Life,other_income,7.656,Confirmed,SCI other income
+FY2025,FY2024,Southeast Life,other_income,5.025,Confirmed,SCI other income
+FY2025,FY2025,Southeast Life,income_tax,-252.589,Confirmed,"SCI (note 27) — printed +, FLIPPED"
+FY2025,FY2024,Southeast Life,income_tax,-131.99,Confirmed,"SCI (note 27) — printed +, FLIPPED"
+FY2025,FY2025,Southeast Life,net_profit,1260.902,Confirmed,SCI
+FY2025,FY2024,Southeast Life,net_profit,790.395,Confirmed,SCI
+FY2025,FY2025,Southeast Life,reinsurance_result,-35.901,Confirmed,SCI
+FY2025,FY2024,Southeast Life,reinsurance_result,66.436,Confirmed,SCI
+FY2025,FY2025,Southeast Life,csm_nb,667.929,Confirmed,14.1.1.2 (p.71 / p.72)
+FY2025,FY2024,Southeast Life,csm_nb,550.236,Confirmed,14.1.1.2 (p.71 / p.72)
+FY2025,FY2025,Southeast Life,csm_accretion,198.377,Confirmed,"14.1.1.2 finance row, CSM col"
+FY2025,FY2024,Southeast Life,csm_accretion,229.418,Confirmed,"14.1.1.2 finance row, CSM col"
+FY2025,FY2025,Southeast Life,csm_future_service,-320.982,Confirmed,14.1.1.2 future service less NB
+FY2025,FY2024,Southeast Life,csm_future_service,-237.225,Confirmed,14.1.1.2 future service less NB
+FY2025,FY2025,Southeast Life,csm_release,-1013.39,Confirmed,18 = 14.1.1.2 current service
+FY2025,FY2024,Southeast Life,csm_release,-1172.063,Confirmed,18 = 14.1.1.2 current service
+FY2025,FY2025,Southeast Life,nb_pv_premium,9103.059,Confirmed,14.1.1.3 (p.73)
+FY2025,FY2024,Southeast Life,nb_pv_premium,6668.669,Confirmed,14.1.1.3 (p.73)
+FY2025,FY2025,Southeast Life,nb_pv_acq,1522.311,Confirmed,14.1.1.3
+FY2025,FY2024,Southeast Life,nb_pv_acq,1037.269,Confirmed,14.1.1.3
+FY2025,FY2025,Southeast Life,nb_pv_claims,6846.166,Confirmed,14.1.1.3
+FY2025,FY2024,Southeast Life,nb_pv_claims,4990.459,Confirmed,14.1.1.3
+FY2025,FY2025,Southeast Life,nb_ra,249.007,Confirmed,14.1.1.3
+FY2025,FY2024,Southeast Life,nb_ra,159.195,Confirmed,14.1.1.3
+FY2025,FY2025,Southeast Life,nb_csm,667.929,Confirmed,14.1.1.3
+FY2025,FY2024,Southeast Life,nb_csm,550.236,Confirmed,14.1.1.3
+FY2025,FY2025,Southeast Life,csm_open,6512.361,Confirmed,14.1.1.2 opening
+FY2025,FY2024,Southeast Life,csm_open,7141.995,Confirmed,14.1.1.2 opening
+FY2025,FY2025,Southeast Life,csm_close,6044.295,Confirmed,14.1.1.2 closing
+FY2025,FY2024,Southeast Life,csm_close,6512.361,Confirmed,14.1.1.2 closing
+FY2025,FY2025,Southeast Life,nb_loss_component,182.354,Confirmed,14.1.1.3 losses on initial recognition
+FY2025,FY2024,Southeast Life,nb_loss_component,68.49,Confirmed,14.1.1.3 losses on initial recognition
+FY2025,FY2025,Southeast Life,insurance_revenue,3578.127,Confirmed,SCI / 18
+FY2025,FY2024,Southeast Life,insurance_revenue,3688.297,Confirmed,SCI / 18
+FY2025,FY2025,Southeast Life,insurance_service_expense,-2466.053,Confirmed,SCI / 18
+FY2025,FY2024,Southeast Life,insurance_service_expense,-2657.624,Confirmed,SCI / 18
+FY2025,FY2025,Samsung Life,ra_release,53.36,Confirmed,17.1 revenue analysis (p.152) — NOT the AOC
+FY2025,FY2024,Samsung Life,ra_release,41.111,Confirmed,17.1 revenue analysis (p.152) — NOT the AOC
+FY2025,FY2025,Samsung Life,bel_release,797.38,Confirmed,17.1
+FY2025,FY2024,Samsung Life,bel_release,730.693,Confirmed,17.1
+FY2025,FY2025,Samsung Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2024,Samsung Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2025,Samsung Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2024,Samsung Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2025,Samsung Life,incurred_claims,-847.551,Confirmed,"17.1 (printed −, kept)"
+FY2025,FY2024,Samsung Life,incurred_claims,-682.363,Confirmed,"17.1 (printed −, kept)"
+FY2025,FY2025,Samsung Life,past_service,126.684,Confirmed,17.1 changes in LIC
+FY2025,FY2024,Samsung Life,past_service,95.655,Confirmed,17.1 changes in LIC
+FY2025,FY2025,Samsung Life,loss_component,-153.598,Confirmed,17.1 onerous losses
+FY2025,FY2024,Samsung Life,loss_component,-49.181,Confirmed,17.1 onerous losses
+FY2025,FY2025,Samsung Life,acq_recovery,730.32,Confirmed,17.1 recovery of acq CF
+FY2025,FY2024,Samsung Life,acq_recovery,433.566,Confirmed,17.1 recovery of acq CF
+FY2025,FY2025,Samsung Life,acq_amortisation,-730.32,Confirmed,17.1 amortisation (= recovery)
+FY2025,FY2024,Samsung Life,acq_amortisation,-433.566,Confirmed,17.1 amortisation (= recovery)
+FY2025,FY2025,Samsung Life,net_investment_income,838.923,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2024,Samsung Life,net_investment_income,805.05,Confirmed,SCI (p.8) total net investment income
+FY2025,FY2025,Samsung Life,ifie,-622.296,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Samsung Life,ifie,-568.799,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Samsung Life,other_expense,-157.262,Confirmed,SCI other operating expenses (note 21)
+FY2025,FY2024,Samsung Life,other_expense,-105.418,Confirmed,SCI other operating expenses (note 21)
+FY2025,FY2025,Samsung Life,other_income,17.59,Confirmed,SCI other income
+FY2025,FY2024,Samsung Life,other_income,9.755,Confirmed,SCI other income
+FY2025,FY2025,Samsung Life,income_tax,-161.513,Confirmed,SCI (note 24)
+FY2025,FY2024,Samsung Life,income_tax,-8.6,Confirmed,SCI (note 24)
+FY2025,FY2025,Samsung Life,net_profit,616.445,Confirmed,SCI
+FY2025,FY2024,Samsung Life,net_profit,883.435,Confirmed,SCI
+FY2025,FY2025,Samsung Life,reinsurance_result,-15.308,Confirmed,17.2 reinsurance
+FY2025,FY2024,Samsung Life,reinsurance_result,-0.78,Confirmed,17.2 reinsurance
+FY2025,FY2025,Samsung Life,csm_nb,1431.614,Confirmed,12.1.2 / 12.1.3 total tables
+FY2025,FY2024,Samsung Life,csm_nb,979.596,Confirmed,12.1.2 / 12.1.3 total tables
+FY2025,FY2025,Samsung Life,csm_accretion,127.014,Confirmed,"12.1.2 finance row, CSM col"
+FY2025,FY2024,Samsung Life,csm_accretion,115.425,Confirmed,"12.1.2 finance row, CSM col"
+FY2025,FY2025,Samsung Life,csm_future_service,178.011,Confirmed,12.1.2 future service less NB
+FY2025,FY2024,Samsung Life,csm_future_service,-190.001,Confirmed,12.1.2 future service less NB
+FY2025,FY2025,Samsung Life,csm_release,-740.036,Confirmed,17.1 = 12.1.2 current service
+FY2025,FY2024,Samsung Life,csm_release,-616.312,Confirmed,17.1 = 12.1.2 current service
+FY2025,FY2025,Samsung Life,nb_pv_premium,15910.927,Confirmed,12.1.3 total (p.94)
+FY2025,FY2024,Samsung Life,nb_pv_premium,11752.108,Confirmed,12.1.3 total (p.94)
+FY2025,FY2025,Samsung Life,nb_pv_acq,3375.173,Confirmed,12.1.3
+FY2025,FY2024,Samsung Life,nb_pv_acq,2322.471,Confirmed,12.1.3
+FY2025,FY2025,Samsung Life,nb_pv_claims,11142.936,Confirmed,12.1.3
+FY2025,FY2024,Samsung Life,nb_pv_claims,8427.788,Confirmed,12.1.3
+FY2025,FY2025,Samsung Life,nb_ra,131.78,Confirmed,12.1.3
+FY2025,FY2024,Samsung Life,nb_ra,73.914,Confirmed,12.1.3
+FY2025,FY2025,Samsung Life,nb_csm,1431.614,Confirmed,12.1.3
+FY2025,FY2024,Samsung Life,nb_csm,979.596,Confirmed,12.1.3
+FY2025,FY2025,Samsung Life,csm_open,4155.074,Confirmed,12.1.2 total opening
+FY2025,FY2024,Samsung Life,csm_open,3866.366,Confirmed,12.1.2 total opening
+FY2025,FY2025,Samsung Life,csm_close,5151.677,Confirmed,12.1.2 total closing
+FY2025,FY2024,Samsung Life,csm_close,4155.074,Confirmed,12.1.2 total closing
+FY2025,FY2025,Samsung Life,nb_loss_component,170.576,Confirmed,12.1.3 losses on initial recognition
+FY2025,FY2024,Samsung Life,nb_loss_component,51.661,Confirmed,12.1.3 losses on initial recognition
+FY2025,FY2025,Samsung Life,insurance_revenue,2321.096,Confirmed,SCI / 17.1
+FY2025,FY2024,Samsung Life,insurance_revenue,1821.682,Confirmed,SCI / 17.1
+FY2025,FY2025,Samsung Life,insurance_service_expense,-1604.785,Confirmed,SCI / 17.1
+FY2025,FY2024,Samsung Life,insurance_service_expense,-1069.455,Confirmed,SCI / 17.1
+FY2025,FY2025,T Life,ra_release,34.665,Confirmed,4.2.1 revenue analysis (p.75)
+FY2025,FY2024,T Life,ra_release,34.619,Confirmed,4.2.1 revenue analysis (p.75)
+FY2025,FY2025,T Life,bel_release,244.57,Confirmed,4.2.1
+FY2025,FY2024,T Life,bel_release,194.413,Confirmed,4.2.1
+FY2025,FY2025,T Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2024,T Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2025,T Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2024,T Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2025,T Life,incurred_claims,-180.962,Confirmed,"4.2.1 (printed −, kept)"
+FY2025,FY2024,T Life,incurred_claims,-209.133,Confirmed,"4.2.1 (printed −, kept)"
+FY2025,FY2025,T Life,past_service,19.502,Confirmed,4.2.1 changes in LIC
+FY2025,FY2024,T Life,past_service,4.047,Confirmed,4.2.1 changes in LIC
+FY2025,FY2025,T Life,loss_component,-48.218,Confirmed,4.2.1 onerous losses
+FY2025,FY2024,T Life,loss_component,-63.117,Confirmed,4.2.1 onerous losses
+FY2025,FY2025,T Life,acq_recovery,143.207,Confirmed,4.2.1 recovery of acq CF
+FY2025,FY2024,T Life,acq_recovery,47.56,Confirmed,4.2.1 recovery of acq CF
+FY2025,FY2025,T Life,acq_amortisation,-143.207,Confirmed,4.2.1 amortisation (= recovery)
+FY2025,FY2024,T Life,acq_amortisation,-47.56,Confirmed,4.2.1 amortisation (= recovery)
+FY2025,FY2025,T Life,net_investment_income,272.18,Confirmed,SCI (p.39) total net investment income
+FY2025,FY2024,T Life,net_investment_income,216.385,Confirmed,SCI (p.39) total net investment income
+FY2025,FY2025,T Life,ifie,-169.484,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,T Life,ifie,-133.214,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,T Life,other_expense,-69.32,Confirmed,SCI other finance cost (23) + other opex
+FY2025,FY2024,T Life,other_expense,-71.042,Confirmed,SCI other finance cost (23) + other opex
+FY2025,FY2025,T Life,other_income,0.014,Confirmed,SCI other income
+FY2025,FY2024,T Life,other_income,0.061,Confirmed,SCI other income
+FY2025,FY2025,T Life,income_tax,-20.02,Confirmed,SCI (note 13) — NIL in 2024
+FY2025,FY2024,T Life,income_tax,0,Confirmed,SCI (note 13) — NIL in 2024
+FY2025,FY2025,T Life,net_profit,84.972,Confirmed,SCI
+FY2025,FY2024,T Life,net_profit,64.774,Confirmed,SCI
+FY2025,FY2025,T Life,reinsurance_result,-38.436,Confirmed,SCI
+FY2025,FY2024,T Life,reinsurance_result,17.473,Confirmed,SCI
+FY2025,FY2025,T Life,csm_nb,20.512,Confirmed,4.3.1.2 / 4.3.1.3 (p.82/86)
+FY2025,FY2024,T Life,csm_nb,23.112,Confirmed,4.3.1.2 / 4.3.1.3 (p.82/86)
+FY2025,FY2025,T Life,csm_accretion,-5.912,Confirmed,4.3.1.2 finance row — NEGATIVE in 2025
+FY2025,FY2024,T Life,csm_accretion,7.929,Confirmed,4.3.1.2 finance row — NEGATIVE in 2025
+FY2025,FY2025,T Life,csm_future_service,3.055,Confirmed,4.3.1.2 future service less NB
+FY2025,FY2024,T Life,csm_future_service,-25.828,Confirmed,4.3.1.2 future service less NB
+FY2025,FY2025,T Life,csm_release,-40.482,Confirmed,4.2.1 = 4.3.1.2 current service
+FY2025,FY2024,T Life,csm_release,-74.282,Confirmed,4.2.1 = 4.3.1.2 current service
+FY2025,FY2025,T Life,nb_pv_premium,1692.543,Confirmed,4.3.1.3 (p.86)
+FY2025,FY2024,T Life,nb_pv_premium,1833.703,Confirmed,4.3.1.3 (p.86)
+FY2025,FY2025,T Life,nb_pv_acq,237.904,Confirmed,4.3.1.3
+FY2025,FY2024,T Life,nb_pv_acq,251.681,Confirmed,4.3.1.3
+FY2025,FY2025,T Life,nb_pv_claims,1451.523,Confirmed,4.3.1.3
+FY2025,FY2024,T Life,nb_pv_claims,1585.671,Confirmed,4.3.1.3
+FY2025,FY2025,T Life,nb_ra,39.354,Confirmed,4.3.1.3
+FY2025,FY2024,T Life,nb_ra,42.254,Confirmed,4.3.1.3
+FY2025,FY2025,T Life,nb_csm,20.512,Confirmed,4.3.1.3
+FY2025,FY2024,T Life,nb_csm,23.112,Confirmed,4.3.1.3
+FY2025,FY2025,T Life,csm_open,138.287,Confirmed,4.3.1.2 opening
+FY2025,FY2024,T Life,csm_open,207.356,Confirmed,4.3.1.2 opening
+FY2025,FY2025,T Life,csm_close,115.46,Confirmed,4.3.1.2 closing
+FY2025,FY2024,T Life,csm_close,138.287,Confirmed,4.3.1.2 closing
+FY2025,FY2025,T Life,nb_loss_component,56.75,Confirmed,4.3.1.3 losses on initial recognition
+FY2025,FY2024,T Life,nb_loss_component,69.015,Confirmed,4.3.1.3 losses on initial recognition
+FY2025,FY2025,T Life,insurance_revenue,462.924,Confirmed,SCI / 4.2.1
+FY2025,FY2024,T Life,insurance_revenue,350.874,Confirmed,SCI / 4.2.1
+FY2025,FY2025,T Life,insurance_service_expense,-352.885,Confirmed,SCI / 4.2.1
+FY2025,FY2024,T Life,insurance_service_expense,-315.763,Confirmed,SCI / 4.2.1
+FY2025,FY2025,Rabbit Life,ra_release,16.682,Confirmed,8.1 revenue analysis (file p.94) — NOT the AOC
+FY2025,FY2024,Rabbit Life,ra_release,14.614,Confirmed,8.1 revenue analysis (file p.94) — NOT the AOC
+FY2025,FY2025,Rabbit Life,bel_release,185.569,Confirmed,8.1
+FY2025,FY2024,Rabbit Life,bel_release,110.69,Confirmed,8.1
+FY2025,FY2025,Rabbit Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2024,Rabbit Life,paa_revenue,0,Confirmed,— (no PAA)
+FY2025,FY2025,Rabbit Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2024,Rabbit Life,other_revenue,0,Confirmed,— (no Others line)
+FY2025,FY2025,Rabbit Life,incurred_claims,-205.057,Confirmed,"8.1 (printed −, kept)"
+FY2025,FY2024,Rabbit Life,incurred_claims,-198.718,Confirmed,"8.1 (printed −, kept)"
+FY2025,FY2025,Rabbit Life,past_service,-1.187,Confirmed,8.1 changes in LIC (an expense)
+FY2025,FY2024,Rabbit Life,past_service,-2.663,Confirmed,8.1 changes in LIC (an expense)
+FY2025,FY2025,Rabbit Life,loss_component,-70.458,Confirmed,8.1 onerous — the 2024 loss driver
+FY2025,FY2024,Rabbit Life,loss_component,-287.367,Confirmed,8.1 onerous — the 2024 loss driver
+FY2025,FY2025,Rabbit Life,acq_recovery,118.986,Confirmed,8.1 recovery of acq CF
+FY2025,FY2024,Rabbit Life,acq_recovery,136.602,Confirmed,8.1 recovery of acq CF
+FY2025,FY2025,Rabbit Life,acq_amortisation,-118.986,Confirmed,8.1 amortisation (= recovery)
+FY2025,FY2024,Rabbit Life,acq_amortisation,-136.602,Confirmed,8.1 amortisation (= recovery)
+FY2025,FY2025,Rabbit Life,net_investment_income,538.696,Confirmed,SCI (p.49) total net investment income
+FY2025,FY2024,Rabbit Life,net_investment_income,338.305,Confirmed,SCI (p.49) total net investment income
+FY2025,FY2025,Rabbit Life,ifie,-80.096,Confirmed,SCI net insurance finance expense
+FY2025,FY2024,Rabbit Life,ifie,-93.647,Confirmed,SCI net insurance finance expense
+FY2025,FY2025,Rabbit Life,other_expense,-272.205,Confirmed,SCI other finance cost + other opex (33) + other exp
+FY2025,FY2024,Rabbit Life,other_expense,-286.554,Confirmed,SCI other finance cost + other opex (33) + other exp
+FY2025,FY2025,Rabbit Life,other_income,2.795,Confirmed,SCI other income
+FY2025,FY2024,Rabbit Life,other_income,1.792,Confirmed,SCI other income
+FY2025,FY2025,Rabbit Life,income_tax,-53.356,Confirmed,SCI (note 20.2) — a CHARGE in the 2024 loss year
+FY2025,FY2024,Rabbit Life,income_tax,-122.437,Confirmed,SCI (note 20.2) — a CHARGE in the 2024 loss year
+FY2025,FY2025,Rabbit Life,net_profit,179.769,Confirmed,SCI
+FY2025,FY2024,Rabbit Life,net_profit,-415.163,Confirmed,SCI
+FY2025,FY2025,Rabbit Life,reinsurance_result,25.666,Confirmed,SCI — a NET INCOME both years
+FY2025,FY2024,Rabbit Life,reinsurance_result,6.694,Confirmed,SCI — a NET INCOME both years
+FY2025,FY2025,Rabbit Life,csm_nb,481.134,Confirmed,9.2 / 9.3 (file p.99/101)
+FY2025,FY2024,Rabbit Life,csm_nb,327.576,Confirmed,9.2 / 9.3 (file p.99/101)
+FY2025,FY2025,Rabbit Life,csm_accretion,22.759,Confirmed,"9.2 P&L finance row, CSM col"
+FY2025,FY2024,Rabbit Life,csm_accretion,26.699,Confirmed,"9.2 P&L finance row, CSM col"
+FY2025,FY2025,Rabbit Life,csm_future_service,-409.262,Confirmed,9.2 future service less NB
+FY2025,FY2024,Rabbit Life,csm_future_service,-441.098,Confirmed,9.2 future service less NB
+FY2025,FY2025,Rabbit Life,csm_release,-92.72,Confirmed,8.1 = 9.2 current service
+FY2025,FY2024,Rabbit Life,csm_release,-104.128,Confirmed,8.1 = 9.2 current service
+FY2025,FY2025,Rabbit Life,nb_pv_premium,3022.662,Confirmed,9.3 (file p.101)
+FY2025,FY2024,Rabbit Life,nb_pv_premium,1569.587,Confirmed,9.3 (file p.101)
+FY2025,FY2025,Rabbit Life,nb_pv_acq,305.624,Confirmed,9.3
+FY2025,FY2024,Rabbit Life,nb_pv_acq,245.057,Confirmed,9.3
+FY2025,FY2025,Rabbit Life,nb_pv_claims,2263.41,Confirmed,9.3
+FY2025,FY2024,Rabbit Life,nb_pv_claims,991.728,Confirmed,9.3
+FY2025,FY2025,Rabbit Life,nb_ra,54.298,Confirmed,9.3
+FY2025,FY2024,Rabbit Life,nb_ra,45.479,Confirmed,9.3
+FY2025,FY2025,Rabbit Life,nb_csm,481.134,Confirmed,9.3
+FY2025,FY2024,Rabbit Life,nb_csm,327.576,Confirmed,9.3
+FY2025,FY2025,Rabbit Life,csm_open,621.534,Confirmed,9.2 opening
+FY2025,FY2024,Rabbit Life,csm_open,812.485,Confirmed,9.2 opening
+FY2025,FY2025,Rabbit Life,csm_close,623.445,Confirmed,9.2 closing
+FY2025,FY2024,Rabbit Life,csm_close,621.534,Confirmed,9.2 closing
+FY2025,FY2025,Rabbit Life,nb_loss_component,81.804,Confirmed,9.3 losses on initial recognition
+FY2025,FY2024,Rabbit Life,nb_loss_component,40.253,Confirmed,9.3 losses on initial recognition
+FY2025,FY2025,Rabbit Life,insurance_revenue,413.957,Confirmed,SCI / 8.1
+FY2025,FY2024,Rabbit Life,insurance_revenue,366.034,Confirmed,SCI / 8.1
+FY2025,FY2025,Rabbit Life,insurance_service_expense,-395.688,Confirmed,SCI / 8.1
+FY2025,FY2024,Rabbit Life,insurance_service_expense,-625.35,Confirmed,SCI / 8.1
