@@ -157,6 +157,15 @@ class TestExtractions(unittest.TestCase):
         self.assertFalse(verify_extract.continuity(q)["ok"])
         q["company_id"] = "no-such-insurer"
         self.assertFalse(verify_extract.continuity(q)["ok"])
+        # No 2024FY extraction: 2025Q1 falls back to the FY2024 comparative column of the 2025FY extraction.
+        fy = json.loads((ROOT / "extract" / "2025FY" / "samsung-life.json").read_text(encoding="utf-8"))
+        close24 = fy["items"]["csm_close"]["FY2024"]["value"]
+        q = {"period": "2025Q1", "company_id": "samsung-life", "items": {"csm_open": {"2025Q1": {"value": close24}}}}
+        result = verify_extract.continuity(q)
+        self.assertTrue(result["ok"])
+        self.assertIn("comparative in 2025FY", result["note"])
+        q["items"]["csm_open"]["2025Q1"]["value"] = close24 + 1.0
+        self.assertFalse(verify_extract.continuity(q)["ok"])
 
     def test_not_disclosed_items_use_the_memo_total(self):
         """Acquisition and other outflows not split: the printed total stands in; without it the check fails."""

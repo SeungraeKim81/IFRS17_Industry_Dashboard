@@ -103,19 +103,29 @@ def reconcile_3m(ex: dict) -> list[dict]:
 
 
 def continuity(ex: dict) -> dict | None:
-    """Year-to-date opening CSM against the prior year-end closing CSM (quarterly extractions only)."""
+    """Year-to-date opening CSM against the prior year-end closing CSM (quarterly extractions only).
+
+    The prior year-end comes from the prior annual extraction (2025FY for 2026Q1); when that does not exist, from
+    the prior-year comparative column of the same year's annual extraction (FY2024 in 2025FY for 2025Q1)."""
     q = quarter_info(ex["period"])
     if q is None:
         return None
-    prior_path = ROOT / "extract" / q["prior_annual"] / f"{ex['company_id']}.json"
     opening = ex["items"]["csm_open"][ex["period"]]["value"]
-    if not prior_path.exists():
+    prior_path = ROOT / "extract" / q["prior_annual"] / f"{ex['company_id']}.json"
+    same_year_path = ROOT / "extract" / f"{q['year']}FY" / f"{ex['company_id']}.json"
+    prior = note = None
+    if prior_path.exists():
+        prior, note = load(prior_path)["items"]["csm_close"][q["prior_fy"]]["value"], f"{q['prior_annual']} closing CSM"
+    elif same_year_path.exists():
+        column = load(same_year_path)["items"]["csm_close"].get(q["prior_fy"])
+        if column is not None:
+            prior, note = column["value"], f"{q['prior_fy']} closing CSM (comparative in {q['year']}FY)"
+    if prior is None:
         return {"opening": opening, "prior_close": None, "difference": None, "ok": False,
                 "note": f"no {q['prior_annual']} extraction to compare with"}
-    prior = load(prior_path)["items"]["csm_close"][q["prior_fy"]]["value"]
     tol = load_settings()["tolerance_thb_m"]
     return {"opening": opening, "prior_close": prior, "difference": opening - prior, "ok": abs(opening - prior) <= tol,
-            "note": f"{q['prior_annual']} closing CSM"}
+            "note": note}
 
 
 def compare_pilot(ex: dict, pilot_csv: Path | None = None) -> list[dict]:
