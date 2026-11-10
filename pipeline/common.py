@@ -39,6 +39,16 @@ def load_line_items() -> list[dict]:
     return read_csv(CONFIG / "line_items.csv")
 
 
+def quarter_info(period: str) -> dict | None:
+    """Extraction period 2026Q2 -> year 2026, quarter 2, 6 months to date, prior year-end 2025FY; None for FY periods."""
+    import re
+    m = re.fullmatch(r"(\d{4})Q([1-3])", period)
+    if not m:
+        return None
+    year, q = int(m.group(1)), int(m.group(2))
+    return {"year": year, "quarter": q, "ytd_months": 3 * q, "prior_annual": f"{year - 1}FY", "prior_fy": f"FY{year - 1}"}
+
+
 def period_dir(period: str) -> Path:
     return DATA / period
 

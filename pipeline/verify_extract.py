@@ -4,9 +4,16 @@
    A line item the statement does not disclose is None. Where the statement prints only a total
    that covers not-disclosed items (MEMO_TOTALS, from the extraction's "memo"), the total stands
    in for them; any other None in an identity fails it.
-2. Pilot comparison: every value against the pilot capture workbook (kept as docs/pilot/FY2025_line_items.csv),
+2. Pilot comparison (FY2025 only): every value against the pilot capture workbook (kept as docs/pilot/FY2025_line_items.csv),
    classified as identical, rounding (within half a unit of the last digit the pilot kept: the
    pilot rounds to thousand Baht, for some insurers to 10,000 Baht) or different.
+
+For a quarterly extraction (2026Q1, 2026Q2 ...) the six identities run on the year-to-date column,
+and two more checks apply:
+
+3. The three-month profit or loss (items_3m) ties to its net profit (the net profit bridge).
+4. Continuity: the year-to-date opening CSM equals the closing CSM of the prior year-end extraction
+   (extract/<year-1>FY/<company_id>.json). A missing prior extraction is reported, not passed.
 
   python -m pipeline verify-extract extract/2025FY/samsung-life.json
 """
@@ -15,7 +22,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .common import ROOT, load_settings, read_csv
+from .common import ROOT, load_settings, quarter_info, read_csv
 from .validate import RECONCILIATIONS
 
 ROUNDING = 0.0005  # half a thousand Baht, in THB million
@@ -70,7 +77,50 @@ def reconcile(ex: dict) -> list[dict]:
     return rows
 
 
+# the profit-or-loss lines a quarterly statement prints for the three months of the quarter
+PL_3M = ("insurance_revenue", "insurance_service_expense", "reinsurance_result", "net_investment_income", "ifie",
+         "other_expense", "other_income", "income_tax", "net_profit")
+
+
+def reconcile_3m(ex: dict) -> list[dict]:
+    """Net profit bridge on the three-month profit or loss of a quarterly extraction."""
+    tol = load_settings()["tolerance_thb_m"]
+    by_fy: dict[str, dict[str, float]] = {}
+    for code, years in ex.get("items_3m", {}).items():
+        for fy, rec in years.items():
+            by_fy.setdefault(fy, {})[code] = rec["value"]
+    rows = []
+    for fy, v in sorted(by_fy.items()):
+        missing = [c for c in PL_3M if v.get(c) is None]
+        if missing:
+            rows.append({"fiscal_year": fy, "check": "net_profit_3m", "computed": None, "printed": None,
+                         "difference": None, "ok": False, "missing": missing})
+            continue
+        a = sum(v[c] for c in PL_3M if c != "net_profit")
+        rows.append({"fiscal_year": fy, "check": "net_profit_3m", "computed": a, "printed": v["net_profit"],
+                     "difference": a - v["net_profit"], "ok": abs(a - v["net_profit"]) <= tol})
+    return rows
+
+
+def continuity(ex: dict) -> dict | None:
+    """Year-to-date opening CSM against the prior year-end closing CSM (quarterly extractions only)."""
+    q = quarter_info(ex["period"])
+    if q is None:
+        return None
+    prior_path = ROOT / "extract" / q["prior_annual"] / f"{ex['company_id']}.json"
+    opening = ex["items"]["csm_open"][ex["period"]]["value"]
+    if not prior_path.exists():
+        return {"opening": opening, "prior_close": None, "difference": None, "ok": False,
+                "note": f"no {q['prior_annual']} extraction to compare with"}
+    prior = load(prior_path)["items"]["csm_close"][q["prior_fy"]]["value"]
+    tol = load_settings()["tolerance_thb_m"]
+    return {"opening": opening, "prior_close": prior, "difference": opening - prior, "ok": abs(opening - prior) <= tol,
+            "note": f"{q['prior_annual']} closing CSM"}
+
+
 def compare_pilot(ex: dict, pilot_csv: Path | None = None) -> list[dict]:
+    if ex["period"] != "2025FY":
+        return []
     pilot_csv = pilot_csv or ROOT / "docs" / "pilot" / "FY2025_line_items.csv"
     pilot = {(r["fiscal_year"], r["code"]): (float(r["value"]), r["source"], r["value"])
              for r in read_csv(pilot_csv) if r["company"] == ex["company"]}
@@ -103,8 +153,22 @@ def run(path: str) -> bool:
     counts: dict[str, int] = {}
     for r in cmp_:
         counts[r["status"]] = counts.get(r["status"], 0) + 1
-    print("  vs pilot workbook: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
+    if cmp_:
+        print("  vs pilot workbook: " + ", ".join(f"{k} {v}" for k, v in sorted(counts.items())))
     for r in cmp_:
         if r["status"] not in ("identical", "rounding", "missing in pilot"):
             print(f"    {r['status']}: {r['fiscal_year']} {r['code']} extracted {r['extracted']} pilot {r['pilot']} (p.{r['page']})")
-    return all(r["ok"] for r in rec) and not any(r["status"] == "DIFFERENT" for r in cmp_)
+    rec3 = reconcile_3m(ex)
+    if rec3:
+        print(f"  three-month net profit bridge: {sum(r['ok'] for r in rec3)}/{len(rec3)} OK")
+        for r in rec3:
+            if not r["ok"]:
+                print(f"    FAIL {r['fiscal_year']}: " + (f"missing {r['missing']}" if r["computed"] is None
+                      else f"{r['computed']:.3f} vs {r['printed']:.3f}"))
+    cont = continuity(ex)
+    if cont:
+        print(f"  continuity: opening CSM {cont['opening']:.3f} vs {cont['note']} "
+              + ("(none)" if cont["prior_close"] is None else f"{cont['prior_close']:.3f}")
+              + (" OK" if cont["ok"] else " MISMATCH"))
+    return (all(r["ok"] for r in rec) and not any(r["status"] == "DIFFERENT" for r in cmp_)
+            and all(r["ok"] for r in rec3) and (cont is None or cont["ok"]))

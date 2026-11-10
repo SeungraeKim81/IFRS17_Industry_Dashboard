@@ -24,6 +24,10 @@ of a figure; its value is None. Figures that are printed but are not line items 
 of future cash outflows when the statement does not split acquisition cash flows from other
 outflows) go in the spec's "memo" section, read the same way, and land in the result's "memo".
 
+A quarterly spec (period 2026Q1, 2026Q2 ...) holds one column per line item, the year to date, plus
+"items_3m": the profit-or-loss lines for the three months of the quarter (pipeline/verify_extract.py
+PL_3M), read the same way and landing in the result's "items_3m".
+
   python -m pipeline extract --spec config/extraction/samsung-life.json --pdf <statement.pdf>
 """
 from __future__ import annotations
@@ -111,8 +115,10 @@ def extract(spec_path: Path, pdf: Path | None) -> dict:
                            f"{spec['source']['sha256'][:12]}…")
     tables, found = spec.get("tables", {}), {}
     doc = None
-    items, memo, errors = {}, {}, []
-    codes = [("items", it["code"]) for it in load_line_items()] + [("memo", c) for c in spec.get("memo", {})]
+    errors = []
+    codes = ([("items", it["code"]) for it in load_line_items()] + [("memo", c) for c in spec.get("memo", {})]
+             + [("items_3m", c) for c in spec.get("items_3m", {})])
+    sections: dict[str, dict] = {"items": {}, "memo": {}, "items_3m": {}}
     for section, code in codes:
         rule = spec[section].get(code)
         if rule is None:
@@ -152,12 +158,13 @@ def extract(spec_path: Path, pdf: Path | None) -> dict:
             out[fy] = {"value": round(val, 9), "printed": printed, "unit": r["unit"], "sign": r.get("sign", 1),
                        "page": page, "table": r["table"], "note": r.get("note", tables[r["table"]].get("note", "")),
                        "line": line}
-        (items if section == "items" else memo)[code] = out
+        sections[section][code] = out
     if errors:
         raise ExtractError(f"{spec['company']}: extraction failed:\n  - " + "\n  - ".join(errors))
     return {"company": spec["company"], "company_id": spec["company_id"], "period": spec["period"],
-            "source": {**spec["source"], "sha256": digest}, "tables_found": found, "items": items,
-            **({"memo": memo} if memo else {})}
+            "source": {**spec["source"], "sha256": digest}, "tables_found": found, "items": sections["items"],
+            **({"ytd_months": spec["ytd_months"]} if "ytd_months" in spec else {}),
+            **{k: sections[k] for k in ("memo", "items_3m") if sections[k]}}
 
 
 def run(spec: str, pdf: str | None, out: str | None = None) -> Path:

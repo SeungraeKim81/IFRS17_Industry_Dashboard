@@ -132,9 +132,31 @@ class TestExtractions(unittest.TestCase):
         self.assertTrue(self.files)
         for f in self.files:
             ex = verify_extract.load(f)
-            with self.subTest(company=ex["company"]):
+            with self.subTest(company=ex["company"], period=ex["period"]):
                 self.assertEqual(len(ex["items"]), 30)
                 self.assertEqual([r for r in verify_extract.reconcile(ex) if not r["ok"]], [])
+                if ex.get("ytd_months"):  # quarterly: three-month bridge and continuity with the prior year-end
+                    self.assertEqual(set(ex["items_3m"]), set(verify_extract.PL_3M))
+                    self.assertEqual([r for r in verify_extract.reconcile_3m(ex) if not r["ok"]], [])
+                    self.assertTrue(verify_extract.continuity(ex)["ok"])
+
+    def test_quarterly_checks_catch_a_break(self):
+        """A three-month profit or loss that does not tie, or an opening CSM off the prior closing, fails."""
+        from pipeline import verify_extract
+        pl = {c: 10.0 for c in verify_extract.PL_3M}
+        pl["net_profit"] = 80.0  # eight lines of 10
+        ex = {"items_3m": {c: {"2026Q1": {"value": x}} for c, x in pl.items()}}
+        self.assertTrue(verify_extract.reconcile_3m(ex)[0]["ok"])
+        ex["items_3m"]["net_profit"]["2026Q1"]["value"] = 81.0
+        self.assertFalse(verify_extract.reconcile_3m(ex)[0]["ok"])
+        close = json.loads((ROOT / "extract" / "2025FY" / "samsung-life.json").read_text(encoding="utf-8"))
+        close = close["items"]["csm_close"]["FY2025"]["value"]
+        q = {"period": "2026Q1", "company_id": "samsung-life", "items": {"csm_open": {"2026Q1": {"value": close}}}}
+        self.assertTrue(verify_extract.continuity(q)["ok"])
+        q["items"]["csm_open"]["2026Q1"]["value"] = close + 1.0
+        self.assertFalse(verify_extract.continuity(q)["ok"])
+        q["company_id"] = "no-such-insurer"
+        self.assertFalse(verify_extract.continuity(q)["ok"])
 
     def test_not_disclosed_items_use_the_memo_total(self):
         """Acquisition and other outflows not split: the printed total stands in; without it the check fails."""
@@ -173,15 +195,17 @@ class TestExtractions(unittest.TestCase):
     def test_transcribed_spec_reproduces_extraction(self):
         """A spec made only of transcribed figures needs no PDF: re-running it gives the committed values."""
         from pipeline import extract
-        for spec in sorted((ROOT / "config" / "extraction").glob("*.json")):
-            rules = [r for years in json.loads(spec.read_text(encoding="utf-8"))["items"].values() for r in years.values()]
+        for spec in sorted((ROOT / "config" / "extraction").rglob("*.json")):  # annual and quarterly/<period>/
+            body = json.loads(spec.read_text(encoding="utf-8"))
+            rules = [r for sec in ("items", "items_3m") for years in body.get(sec, {}).values() for r in years.values()]
             if not all("printed" in r or "const" in r or "not_disclosed" in r for r in rules):
                 continue
             res = extract.extract(spec, None)
             committed = json.loads((ROOT / "extract" / res["period"] / f"{res['company_id']}.json").read_text(encoding="utf-8"))
-            with self.subTest(spec=spec.name):
-                self.assertEqual({k: {fy: x["value"] for fy, x in v.items()} for k, v in res["items"].items()},
-                                 {k: {fy: x["value"] for fy, x in v.items()} for k, v in committed["items"].items()})
+            with self.subTest(spec=str(spec.relative_to(ROOT))):
+                for sec in ("items", "items_3m"):
+                    self.assertEqual({k: {fy: x["value"] for fy, x in v.items()} for k, v in res.get(sec, {}).items()},
+                                     {k: {fy: x["value"] for fy, x in v.items()} for k, v in committed.get(sec, {}).items()})
 
 
 class TestBuild(unittest.TestCase):
