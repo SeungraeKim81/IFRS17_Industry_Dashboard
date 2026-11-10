@@ -1,7 +1,7 @@
 company,period,doc_type,drive_folder,original_name,drive_file_id,bytes,sha256,pages,text_layer,connector_download,status
 AIA Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,21_FS-AIA_4Q2025.pdf,12v94xGTkexX79jl-O1y4lWlS_89kF-Kw,5130160,29b69cdc860f1782e6a77233990171f4f645ffa00da05cd57342eb7af720a70d,151,no (scanned),ok,extracted
 Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,09_FS_THAILIFE_4Q2025.pdf,1haa2aPDAPWHUN-XcWa6BCnAaIC5aneyP,9726010,b47b6cd0ebbcb67a85e12b4592f88df50dc55e06d223f9175eae27863c828c88,188,no (scanned),n/a (read locally),extracted
-Muang Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,15_FS_MTL_4Q2025.pdf,1_L1F7lWhBIhRTSJK_F4Q2YBlrRlOdMUg,9626373,,,,"failed (connector message limit, about 5.5 MB)",pending
+Muang Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,15_FS_MTL_4Q2025.pdf,1_L1F7lWhBIhRTSJK_F4Q2YBlrRlOdMUg,9626373,cf462649ee2854863705c15622f6109be4346002a2e4effdef0545cfde06f8cb,122,no (scanned),n/a (read locally),extracted
 Allianz Ayudhya,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,20_FS_CAR_AYU_4Q2025.pdf,1jjSVw5h1-dZ2shWFukgd_qkvnZ_g5Zz6,5528543,16dd7163eba845e9e7905267375aea776fd2e8f2b7756d7b53aa587fe92d2e7a,224,hybrid (financial statements scanned),ok,extracted
 FWD Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025.pdf,1Sv0hgt1piW7bLSAhhqD05CAcz17fBiYs,6906832,,146,no (scanned),"failed (connector message limit, about 5.5 MB); read from parts",extracted from parts
 FWD Thailand,2025FY,FS part (original pages 1-85),FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025__p001-085.pdf,1TQy2Zact3gsezsYAKbTpD7iAYVsEmEnm,4997861,e0d5aacf00f86870d829946bbddb41afe590f32c2e6407f5bfd88356087e73a6,1-85,no (scanned),ok,extracted (part)

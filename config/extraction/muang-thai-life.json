@@ -1,0 +1,562 @@
+{
+ "company": "Muang Thai Life",
+ "company_id": "muang-thai-life",
+ "period": "2025FY",
+ "source": {
+  "drive_file_id": "1_L1F7lWhBIhRTSJK_F4Q2YBlrRlOdMUg",
+  "original_name": "15_FS_MTL_4Q2025.pdf",
+  "sha256": "cf462649ee2854863705c15622f6109be4346002a2e4effdef0545cfde06f8cb",
+  "doc_type": "Audited financial statements FY2025 (Thai)",
+  "pages": 122,
+  "text_layer": "no (scanned)"
+ },
+ "notes": "Scanned; read locally, pages located by their headings (file page numbers). Thousand Baht. The SCI (p.8) has equity-method and separate columns; the separate columns are used, as in the pilot (they differ by the share of profit of the associate and the tax charge; the insurance figures and the notes are common to both). Note 17.1 (p.91, both years) prints expenses as positive figures; they are turned negative (a printed bracketed past-service figure becomes positive). Acquisition-cost amortisation (1,851,355) exceeds the non-PAA recovery (1,574,841): the amortisation line covers PAA business too. CSM roll-forward 11.1 ข. p.73 (2568) and p.74 (2567); future-service change = change in estimates (CSM column). New business 11.1 ค. p.75 (both years). RA release uses 17.1 (1,244,003 / 1,270,383), not the AOC RA (1,246,246 / 1,264,718). Other expense = other finance costs + other operating expenses.",
+ "items": {
+  "ra_release": {
+   "FY2025": {
+    "page": 91,
+    "printed": "1,244,003",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "1,270,383",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "bel_release": {
+   "FY2025": {
+    "page": 91,
+    "printed": "14,463,009",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "13,586,235",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "paa_revenue": {
+   "FY2025": {
+    "page": 91,
+    "printed": "6,838,959",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1 PAA revenue",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "5,542,894",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1 PAA revenue",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "other_revenue": {
+   "FY2025": {
+    "page": 91,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1 (no other revenue line)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1 (no other revenue line)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "incurred_claims": {
+   "FY2025": {
+    "page": 91,
+    "printed": "19,639,811",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 (printed positive)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "19,870,764",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 (printed positive)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "past_service": {
+   "FY2025": {
+    "page": 91,
+    "printed": "(28,929)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 changes in LIC (printed as expense)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "1,293",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 changes in LIC (printed as expense)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "loss_component": {
+   "FY2025": {
+    "page": 91,
+    "printed": "956,050",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 onerous losses (printed positive)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "469,006",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 onerous losses (printed positive)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "acq_recovery": {
+   "FY2025": {
+    "page": 91,
+    "printed": "1,574,841",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "611,694",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "17.1",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "acq_amortisation": {
+   "FY2025": {
+    "page": 91,
+    "printed": "1,851,355",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 (printed positive)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 91,
+    "printed": "920,045",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "17.1 (printed positive)",
+    "heading_seen": "17 ผลการดำเนินงานการบริการประกันภัย / 17.1 รายได้จากการประกันภัยและค่าใช้จ่ายในการบริการประกันภัย - สัญญาประกันภัยที่ออก (2568 / 2567)"
+   }
+  },
+  "net_investment_income": {
+   "FY2025": {
+    "page": 8,
+    "printed": "23,979,264",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "21,884,216",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "ifie": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(16,025,138)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, net insurance finance expense",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(16,215,215)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, net insurance finance expense",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "other_expense": {
+   "FY2025": {
+    "page": 8,
+    "printed": [
+     "(419,495)",
+     "(3,715,938)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": [
+     "(466,501)",
+     "(3,159,303)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate, other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "other_income": {
+   "FY2025": {
+    "page": 8,
+    "printed": "126,877",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "114,738",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "income_tax": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(2,290,458)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(830,237)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "net_profit": {
+   "FY2025": {
+    "page": 8,
+    "printed": "9,484,238",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "7,298,640",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "reinsurance_result": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(588,180)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(107,475)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "csm_nb": {
+   "FY2025": {
+    "page": 73,
+    "printed": "8,437,995",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, contracts initially recognised",
+    "heading_seen": "11.1 ข. การกระทบยอดคงเหลือตามองค์ประกอบการวัดมูลค่า - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "10,659,066",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, contracts initially recognised",
+    "heading_seen": "11.1 ข. continued (สำหรับงวดปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_accretion": {
+   "FY2025": {
+    "page": 73,
+    "printed": "2,212,641",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, insurance finance row",
+    "heading_seen": "11.1 ข. การกระทบยอดคงเหลือตามองค์ประกอบการวัดมูลค่า - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "2,039,956",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, insurance finance row",
+    "heading_seen": "11.1 ข. continued (สำหรับงวดปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_future_service": {
+   "FY2025": {
+    "page": 73,
+    "printed": "1,054,059",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, change in estimates",
+    "heading_seen": "11.1 ข. การกระทบยอดคงเหลือตามองค์ประกอบการวัดมูลค่า - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "(1,292,054)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, change in estimates",
+    "heading_seen": "11.1 ข. continued (สำหรับงวดปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_release": {
+   "FY2025": {
+    "page": 73,
+    "printed": "(6,714,781)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column (equals 17.1)",
+    "heading_seen": "11.1 ข. การกระทบยอดคงเหลือตามองค์ประกอบการวัดมูลค่า - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "(6,328,319)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column (equals 17.1)",
+    "heading_seen": "11.1 ข. continued (สำหรับงวดปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "nb_pv_premium": {
+   "FY2025": {
+    "page": 75,
+    "printed": "(92,639,135)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "(77,713,458)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   }
+  },
+  "nb_pv_acq": {
+   "FY2025": {
+    "page": 75,
+    "printed": "9,669,116",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "9,369,060",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   }
+  },
+  "nb_pv_claims": {
+   "FY2025": {
+    "page": 75,
+    "printed": "72,737,167",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "55,643,810",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   }
+  },
+  "nb_ra": {
+   "FY2025": {
+    "page": 75,
+    "printed": "2,590,726",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "2,320,871",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   }
+  },
+  "nb_csm": {
+   "FY2025": {
+    "page": 75,
+    "printed": "8,437,995",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "10,659,066",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   }
+  },
+  "csm_open": {
+   "FY2025": {
+    "page": 73,
+    "printed": "64,606,237",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, net opening",
+    "heading_seen": "11.1 ข. การกระทบยอดคงเหลือตามองค์ประกอบการวัดมูลค่า - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "59,527,588",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, net opening",
+    "heading_seen": "11.1 ข. continued (สำหรับงวดปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_close": {
+   "FY2025": {
+    "page": 73,
+    "printed": "69,596,151",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, net closing",
+    "heading_seen": "11.1 ข. การกระทบยอดคงเหลือตามองค์ประกอบการวัดมูลค่า - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "64,606,237",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ข. CSM column, net closing",
+    "heading_seen": "11.1 ข. continued (สำหรับงวดปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "nb_loss_component": {
+   "FY2025": {
+    "page": 75,
+    "printed": "795,869",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total (สุทธิ), onerous contracts",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "279,349",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "11.1 ค. total (สุทธิ), onerous contracts",
+    "heading_seen": "11.1 ค. องค์ประกอบของสัญญาที่รับรู้เมื่อเริ่มแรกในรอบระยะเวลา - สัญญาประกันภัยที่ไม่ได้วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (2568 and 2567)"
+   }
+  },
+  "insurance_revenue": {
+   "FY2025": {
+    "page": 8,
+    "printed": "30,835,593",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI (equals 17.1)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "27,339,525",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI (equals 17.1)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "insurance_service_expense": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(22,418,287)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI (equals 17.1)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(21,261,108)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI (equals 17.1)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 และ 2567 (หน่วย: พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  }
+ }
+}
