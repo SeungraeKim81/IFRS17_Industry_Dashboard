@@ -16,5 +16,5 @@ Tokio Marine Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,07_FS-TOKIO_4Q2025.pd
 Dhipaya Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,08_FS_CAR_TIPLIFE_4Q2025.pdf,1WLjh2k5N41TzZC_NsQmxd1TAyJ7Ig0QC,7348428,,,,"failed (connector message limit, about 5.5 MB)",pending (file named TIPLIFE: confirm it is Dhipaya Life)
 Southeast Life,2025FY,annual report incl. FS,FS_Life_Industry/Y2025/4Q_2025,18_FS_SE_4Q2025.pdf,1O8POEn4IjNRz6DfujOGIWjWF6XJeYmfV,21969782,,,,over 10 MB (connector refuses),pending
 Samsung Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,06_FS_SAMSUNG_4Q2025.pdf,1pXuh5zxyi-OwpMrXfAtAnHFuzwwdLXAN,3240590,2ac2bb380d07c4525d7a6216d8f5d4728284cd309c84c63254f4b5f140384045,183,yes,ok,extracted
-T Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,20_FS_CAR_TLIFE_4Q2025.pdf,1I1bWQa6vlaWHEya8TmXd8-nugokPFmh5,14224593,,,,over 10 MB (connector refuses),pending
+T Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,20_FS_CAR_TLIFE_4Q2025.pdf,1I1bWQa6vlaWHEya8TmXd8-nugokPFmh5,14224593,6b591be408f4d4af4c3d15dfd912e90e99883ae2e3847fded52e5c2b0070eaf5,147,no (scanned),n/a (read locally),extracted
 Rabbit Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,22_CAR_FS-RBL_4Q2025.pdf,1zZ3FQlntjwTPdgcSG_kwQLrUcKFpGcN_,9126916,,,,"failed (connector message limit, about 5.5 MB)",pending
