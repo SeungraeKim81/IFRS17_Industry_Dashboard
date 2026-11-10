@@ -1,0 +1,583 @@
+{
+ "company": "FWD Thailand",
+ "company_id": "fwd-thailand",
+ "period": "2025FY",
+ "source": {
+  "drive_file_id": "1Sv0hgt1piW7bLSAhhqD05CAcz17fBiYs",
+  "original_name": "19_FS_FWD_4Q2025.pdf",
+  "sha256": "",
+  "doc_type": "Audited financial statements FY2025 (Thai)",
+  "pages": 146,
+  "text_layer": "no (scanned)",
+  "parts": [
+   {
+    "name": "19_FS_FWD_4Q2025__p001-085.pdf",
+    "drive_file_id": "1TQy2Zact3gsezsYAKbTpD7iAYVsEmEnm",
+    "sha256": "e0d5aacf00f86870d829946bbddb41afe590f32c2e6407f5bfd88356087e73a6",
+    "pages": "1-85"
+   },
+   {
+    "name": "19_FS_FWD_4Q2025__p086-146.pdf",
+    "drive_file_id": "1Sd5KZ7RUvzdFHFjgPgOZ0iYOkYNk_OdV",
+    "sha256": "5a67aab793c2d8a512a9b56fe63ed1d5b0818bb13a02776114baeb9c87af5952",
+    "pages": "86-146"
+   }
+  ]
+ },
+ "notes": "The original (6.9 MB) exceeds the connector limit; read from the two parts made with tools/split_pdf.py (page ranges in the names), pages numbered as in the original. Scanned; pages located by their headings. Units thousand Baht. FWD presents insurance contract balances as negative, so note 10.2 and 10.3 print every CSM and new-business figure with the opposite sign: those rules carry sign -1 (the PV inflow of new business, printed positive, keeps +1). Future-service change = change in estimates + onerous line + experience adjustment (CSM column). Other expense = other finance costs + other operating expenses.",
+ "items": {
+  "ra_release": {
+   "FY2025": {
+    "page": 65,
+    "printed": "882,636",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "495,765",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "bel_release": {
+   "FY2025": {
+    "page": 65,
+    "printed": "10,488,961",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "10,386,287",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "paa_revenue": {
+   "FY2025": {
+    "page": 65,
+    "printed": "993,818",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "2,532,028",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "other_revenue": {
+   "FY2025": {
+    "page": 65,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 (no other line)",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 (no other line)",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "incurred_claims": {
+   "FY2025": {
+    "page": 65,
+    "printed": "(11,260,308)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "(11,891,567)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "past_service": {
+   "FY2025": {
+    "page": 65,
+    "printed": "335,891",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "(386,902)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "loss_component": {
+   "FY2025": {
+    "page": 65,
+    "printed": "(166,028)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "(889,510)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "acq_recovery": {
+   "FY2025": {
+    "page": 65,
+    "printed": "7,786,232",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "7,015,884",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "acq_amortisation": {
+   "FY2025": {
+    "page": 65,
+    "printed": "(7,857,650)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568)"
+   },
+   "FY2024": {
+    "page": 67,
+    "printed": "(7,317,919)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "9.1 total",
+    "heading_seen": "9.1 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "net_investment_income": {
+   "FY2025": {
+    "page": 8,
+    "printed": "21,645,184",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "18,516,174",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(15,429,131)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(14,205,125)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "FY2025": {
+    "page": 8,
+    "printed": [
+     "(16,807)",
+     "(1,300,994)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": [
+     "(11,177)",
+     "(1,820,464)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "FY2025": {
+    "page": 8,
+    "printed": "8,596",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "15,524",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(2,653,837)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(1,787,972)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "FY2025": {
+    "page": 8,
+    "printed": "10,272,642",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "7,118,306",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(207,768)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "156,010",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "csm_nb": {
+   "FY2025": {
+    "page": 73,
+    "printed": "(12,372,929)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column (printed with opposite sign)",
+    "heading_seen": "10.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "(14,738,341)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column (printed with opposite sign)",
+    "heading_seen": "10.2 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_accretion": {
+   "FY2025": {
+    "page": 73,
+    "printed": "(1,408,898)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column, finance row recognised in profit or loss (opposite sign)",
+    "heading_seen": "10.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "(1,379,429)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column, finance row recognised in profit or loss (opposite sign)",
+    "heading_seen": "10.2 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_future_service": {
+   "FY2025": {
+    "page": 73,
+    "printed": [
+     "(515,840)",
+     "(352,639)"
+    ],
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column: change in estimates (+ onerous) + experience adjustment (opposite sign)",
+    "heading_seen": "10.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": [
+     "10,291,359",
+     "(150)",
+     "(251,731)"
+    ],
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column: change in estimates (+ onerous) + experience adjustment (opposite sign)",
+    "heading_seen": "10.2 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_release": {
+   "FY2025": {
+    "page": 73,
+    "printed": "7,023,847",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column (opposite sign)",
+    "heading_seen": "10.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "6,311,270",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 CSM column (opposite sign)",
+    "heading_seen": "10.2 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "nb_pv_premium": {
+   "FY2025": {
+    "page": 75,
+    "printed": "96,578,959",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.3 total (printed positive)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "102,407,074",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "10.3 total (printed positive)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   }
+  },
+  "nb_pv_acq": {
+   "FY2025": {
+    "page": 75,
+    "printed": "(13,269,559)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "(15,396,259)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   }
+  },
+  "nb_pv_claims": {
+   "FY2025": {
+    "page": 75,
+    "printed": "(69,889,169)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "(71,243,707)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   }
+  },
+  "nb_ra": {
+   "FY2025": {
+    "page": 75,
+    "printed": "(1,085,900)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "(1,184,962)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   }
+  },
+  "nb_csm": {
+   "FY2025": {
+    "page": 75,
+    "printed": "(12,372,929)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "(14,738,341)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   }
+  },
+  "csm_open": {
+   "FY2025": {
+    "page": 73,
+    "printed": "(45,123,703)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 net opening, CSM column (opposite sign)",
+    "heading_seen": "10.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "(45,356,681)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 net opening, CSM column (opposite sign)",
+    "heading_seen": "10.2 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "csm_close": {
+   "FY2025": {
+    "page": 73,
+    "printed": "(52,750,162)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 net closing, CSM column (opposite sign)",
+    "heading_seen": "10.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (2568)"
+   },
+   "FY2024": {
+    "page": 74,
+    "printed": "(45,123,703)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.2 net closing, CSM column (opposite sign)",
+    "heading_seen": "10.2 continued (สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2567)"
+   }
+  },
+  "nb_loss_component": {
+   "FY2025": {
+    "page": 75,
+    "printed": "(38,598)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 75,
+    "printed": "(156,195)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "10.3 total (opposite sign)",
+    "heading_seen": "10.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (2568 / 2567)"
+   }
+  },
+  "insurance_revenue": {
+   "FY2025": {
+    "page": 8,
+    "printed": "27,175,494",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "26,741,234",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "FY2025": {
+    "page": 8,
+    "printed": "(18,948,095)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 8,
+    "printed": "(20,485,898)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุน สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (พันบาท)"
+   }
+  }
+ }
+}

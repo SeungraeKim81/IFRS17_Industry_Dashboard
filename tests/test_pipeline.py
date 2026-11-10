@@ -130,13 +130,21 @@ class TestExtractions(unittest.TestCase):
         reg = {}
         for f in (ROOT / "sources").glob("*/registry.csv"):
             for r in read_csv(f):
-                reg[(r["period"], r["company"])] = r
+                reg.setdefault((r["period"], r["company"]), []).append(r)
         for f in self.files:
             ex = json.loads(f.read_text(encoding="utf-8"))
+            rows = reg[(ex["period"], ex["company"])]
             with self.subTest(company=ex["company"]):
-                r = reg[(ex["period"], ex["company"])]
-                self.assertEqual(r["sha256"], ex["source"]["sha256"])
-                self.assertEqual(r["status"], "extracted")
+                parts = ex["source"].get("parts")
+                if parts:  # read from parts of a file too large for the connector
+                    by_name = {r["original_name"]: r for r in rows}
+                    for part in parts:
+                        self.assertEqual(by_name[part["name"]]["sha256"], part["sha256"])
+                        self.assertEqual(by_name[part["name"]]["status"], "extracted (part)")
+                else:
+                    r = next(r for r in rows if r["original_name"] == ex["source"]["original_name"])
+                    self.assertEqual(r["sha256"], ex["source"]["sha256"])
+                    self.assertEqual(r["status"], "extracted")
 
     def test_transcribed_spec_reproduces_extraction(self):
         """A spec made only of transcribed figures needs no PDF: re-running it gives the committed values."""

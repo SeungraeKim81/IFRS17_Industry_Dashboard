@@ -3,7 +3,9 @@ AIA Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,21_FS-AIA_4Q2025.pdf,12v94
 Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,09_FS_THAILIFE_4Q2025.pdf,1haa2aPDAPWHUN-XcWa6BCnAaIC5aneyP,9726010,,,,"failed (connector message limit, about 5.5 MB)",pending
 Muang Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,15_FS_MTL_4Q2025.pdf,1_L1F7lWhBIhRTSJK_F4Q2YBlrRlOdMUg,9626373,,,,"failed (connector message limit, about 5.5 MB)",pending
 Allianz Ayudhya,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,20_FS_CAR_AYU_4Q2025.pdf,1jjSVw5h1-dZ2shWFukgd_qkvnZ_g5Zz6,5528543,16dd7163eba845e9e7905267375aea776fd2e8f2b7756d7b53aa587fe92d2e7a,224,hybrid (financial statements scanned),ok,extracted
-FWD Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025.pdf,1Sv0hgt1piW7bLSAhhqD05CAcz17fBiYs,6906832,,,,"failed (connector message limit, about 5.5 MB)",pending
+FWD Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025.pdf,1Sv0hgt1piW7bLSAhhqD05CAcz17fBiYs,6906832,,146,no (scanned),"failed (connector message limit, about 5.5 MB); read from parts",extracted from parts
+FWD Thailand,2025FY,FS part (original pages 1-85),FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025__p001-085.pdf,1TQy2Zact3gsezsYAKbTpD7iAYVsEmEnm,4997861,e0d5aacf00f86870d829946bbddb41afe590f32c2e6407f5bfd88356087e73a6,1-85,no (scanned),ok,extracted (part)
+FWD Thailand,2025FY,FS part (original pages 86-146),FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025__p086-146.pdf,1Sd5KZ7RUvzdFHFjgPgOZ0iYOkYNk_OdV,1971582,5a67aab793c2d8a512a9b56fe63ed1d5b0818bb13a02776114baeb9c87af5952,86-146,no (scanned),ok,extracted (part)
 Krungthai-AXA Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,02_FS_AXA_4Q2025.pdf,15H6GLEs8CnaK8WaEa55rZQ07fxLDW2BX,4584409,30f0d9931fed2515a4282ac230897157fb1262749d4bf515a104a0069b1ba4b4,164,no (scanned),ok,extracted
 Bangkok Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,01_FS_BANGKOK_4Q2025.pdf,1rBpJhEQlX5FHG6Uw17G05We9t9Y0-Tcx,11838687,,,,over 10 MB (connector refuses),pending
 Prudential Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,13_FS-PLT_4Q2025.pdf,1BhsDmvi6q_UYOb6xuJ_om9g50s4Ezrlp,36062475,,,,over 10 MB (connector refuses),pending
