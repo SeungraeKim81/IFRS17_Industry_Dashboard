@@ -10,6 +10,7 @@
   "pages": 125,
   "text_layer": "no (scanned)"
  },
+ "tables_found": {},
  "items": {
   "ra_release": {
    "FY2025": {
@@ -19,7 +20,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    },
    "FY2024": {
     "value": 264.163517,
@@ -28,7 +30,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    }
   },
   "bel_release": {
@@ -39,7 +42,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    },
    "FY2024": {
     "value": 2199.550836,
@@ -48,7 +52,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    }
   },
   "paa_revenue": {
@@ -59,7 +64,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    },
    "FY2024": {
     "value": 1944.977966,
@@ -68,7 +74,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    }
   },
   "other_revenue": {
@@ -79,7 +86,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1 experience adjustment",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    },
    "FY2024": {
     "value": -97.114652,
@@ -88,7 +96,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1 experience adjustment",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    }
   },
   "incurred_claims": {
@@ -99,7 +108,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    },
    "FY2024": {
     "value": -3842.7331,
@@ -108,7 +118,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    }
   },
   "past_service": {
@@ -119,7 +130,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    },
    "FY2024": {
     "value": 173.342717,
@@ -128,7 +140,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    }
   },
   "loss_component": {
@@ -139,7 +152,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    },
    "FY2024": {
     "value": -8.511736,
@@ -148,7 +162,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    }
   },
   "acq_recovery": {
@@ -159,7 +174,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    },
    "FY2024": {
     "value": 33.248758,
@@ -168,7 +184,8 @@
     "sign": 1,
     "page": 111,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 รายได้และผลการดำเนินงานการบริการประกันภัย (landscape; 2568 and 2567 columns)"
    }
   },
   "acq_amortisation": {
@@ -179,7 +196,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    },
    "FY2024": {
     "value": -207.218696,
@@ -188,7 +206,8 @@
     "sign": 1,
     "page": 112,
     "note": "26.1",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "26.1 continued: ค่าใช้จ่ายในการบริการประกันภัย (landscape)"
    }
   },
   "net_investment_income": {
@@ -199,7 +218,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": 1250.703895,
@@ -208,7 +228,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "ifie": {
@@ -219,7 +240,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": -1314.828824,
@@ -228,7 +250,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "other_expense": {
@@ -242,7 +265,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI operating expenses + other finance costs",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": -771.633502,
@@ -254,7 +278,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI operating expenses + other finance costs",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "other_income": {
@@ -265,7 +290,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": 38.676769,
@@ -274,7 +300,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "income_tax": {
@@ -285,7 +312,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": -61.005349,
@@ -294,7 +322,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "net_profit": {
@@ -305,7 +334,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": 250.165583,
@@ -314,7 +344,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "reinsurance_result": {
@@ -325,7 +356,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": -139.735243,
@@ -334,7 +366,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "csm_nb": {
@@ -345,7 +378,8 @@
     "sign": 1,
     "page": 91,
     "note": "20.1.2 CSM total column",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 การกระทบยอดองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - สัญญาประกันภัยที่ออก, พ.ศ. 2568"
    },
    "FY2024": {
     "value": 1295.222468,
@@ -354,7 +388,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.2 CSM total column",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "csm_accretion": {
@@ -365,7 +400,8 @@
     "sign": 1,
     "page": 91,
     "note": "20.1.2 CSM total column",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 การกระทบยอดองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - สัญญาประกันภัยที่ออก, พ.ศ. 2568"
    },
    "FY2024": {
     "value": 276.536306,
@@ -374,7 +410,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.2 CSM total column",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "csm_future_service": {
@@ -388,7 +425,8 @@
     "sign": 1,
     "page": 91,
     "note": "20.1.2 CSM total: change in estimates + experience adjustment",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 การกระทบยอดองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - สัญญาประกันภัยที่ออก, พ.ศ. 2568"
    },
    "FY2024": {
     "value": 558.484369,
@@ -400,7 +438,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.2 CSM total: change in estimates + experience adjustment",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "csm_release": {
@@ -411,7 +450,8 @@
     "sign": 1,
     "page": 91,
     "note": "20.1.2 CSM total column",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 การกระทบยอดองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - สัญญาประกันภัยที่ออก, พ.ศ. 2568"
    },
    "FY2024": {
     "value": -788.322231,
@@ -420,7 +460,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.2 CSM total column",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "nb_pv_premium": {
@@ -431,7 +472,8 @@
     "sign": -1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    },
    "FY2024": {
     "value": 8439.445279,
@@ -440,7 +482,8 @@
     "sign": -1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    }
   },
   "nb_pv_acq": {
@@ -451,7 +494,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    },
    "FY2024": {
     "value": 1004.751731,
@@ -460,7 +504,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    }
   },
   "nb_pv_claims": {
@@ -471,7 +516,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    },
    "FY2024": {
     "value": 5817.248768,
@@ -480,7 +526,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    }
   },
   "nb_ra": {
@@ -491,7 +538,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    },
    "FY2024": {
     "value": 323.802355,
@@ -500,7 +548,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    }
   },
   "nb_csm": {
@@ -511,7 +560,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    },
    "FY2024": {
     "value": 1295.222468,
@@ -520,7 +570,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 total",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    }
   },
   "csm_open": {
@@ -531,7 +582,8 @@
     "sign": 1,
     "page": 91,
     "note": "20.1.2 net opening",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 การกระทบยอดองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - สัญญาประกันภัยที่ออก, พ.ศ. 2568"
    },
    "FY2024": {
     "value": 6240.754707,
@@ -540,7 +592,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.2 net opening",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "csm_close": {
@@ -551,7 +604,8 @@
     "sign": 1,
     "page": 91,
     "note": "20.1.2 net closing",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 การกระทบยอดองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - สัญญาประกันภัยที่ออก, พ.ศ. 2568"
    },
    "FY2024": {
     "value": 7582.675619,
@@ -560,7 +614,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.2 net closing",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "nb_loss_component": {
@@ -571,7 +626,8 @@
     "sign": 1,
     "page": 93,
     "note": "20.1.3 (FY2024: 20.1.2 new-business row, total column)",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา - สัญญาประกันภัยที่ออก (2568 and 2567)"
    },
    "FY2024": {
     "value": 1.580043,
@@ -580,7 +636,8 @@
     "sign": 1,
     "page": 92,
     "note": "20.1.3 (FY2024: 20.1.2 new-business row, total column)",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "20.1.2 continued, พ.ศ. 2567 (ปรับปรุงใหม่)"
    }
   },
   "insurance_revenue": {
@@ -591,7 +648,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": 5133.148656,
@@ -600,7 +658,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   },
   "insurance_service_expense": {
@@ -611,7 +670,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    },
    "FY2024": {
     "value": -3885.160815,
@@ -620,7 +680,8 @@
     "sign": 1,
     "page": 7,
     "note": "SCI",
-    "read": "visual"
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568"
    }
   }
  }

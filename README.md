@@ -96,6 +96,7 @@ ties to the insurers' printed subtotals.
 | `sources/<period>/registry.csv` | Register of the published statements (kept in Google Drive): file ID, name, size, SHA-256, pages, status |
 | `config/extraction/` | Per-insurer extraction specs: page, row, column, unit and sign for every line item |
 | `extract/<period>/` | Values extracted from the statements, with provenance, and a review workbook in the capture layout |
+| `tools/split_pdf.py` | Run on your own computer: split a large statement PDF into parts under 5 MB for the Drive connector, keeping the page ranges in the names |
 | `docs/DEPLOY.md` | Publishing on GitHub Pages: routes, one-off setup, troubleshooting |
 | `.github/workflows/pages.yml` | Validate on every push; publish to GitHub Pages from `main` |
 | `docs/benchmark/` | The benchmark board this version was built against |

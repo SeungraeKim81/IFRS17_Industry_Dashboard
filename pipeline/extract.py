@@ -1,17 +1,23 @@
-"""Extract the captured line items from an insurer's published statement (PDF with a text layer).
+"""Extract the captured line items from an insurer's published statement.
 
-An extraction spec (config/extraction/<company_id>.json) says, for every line item and year,
-which page, which row (a label pattern), which numeric column, which unit and which sign.
-For a scanned statement (no text layer) the spec carries the printed figure as transcribed
-from the page image instead of a row pattern ("printed", marked read: visual); a list of
-printed figures is summed (e.g. operating expenses + other finance costs).
-The extractor reads the PDF's text layer, finds each row, records what was printed and
-converts it to THB million. Every value keeps its provenance, so a reviewer can go straight
-to the page.
+An extraction spec (config/extraction/<company_id>.json) names the statement's tables and,
+for every line item and year, the table, row, numeric column, unit and sign.
 
-Row labels are matched on text with whitespace removed and the Thai sara am (U+0E33)
-folded into sara aa (U+0E32): several statements' fonts emit one for the other, and
-pdftotext inserts spaces inside Thai words. Numbers are read from the unmodified line.
+Tables are found by their content, not by page number. A table is described by text that
+must appear on its page ("all"), text that must not ("none"), and optionally the table it
+follows ("after": the first matching page after that table, e.g. the comparative-year page
+of a note). A table found on no page or on more than one page stops the run, so a statement
+whose layout changed is caught rather than misread. A page number in the spec ("hint") is
+documentation only and is never used to choose a page.
+
+Rows are found within the table's pages by a label pattern. Labels are matched on text with
+whitespace removed and the Thai sara am (U+0E33) folded into sara aa (U+0E32), because
+pdftotext inserts spaces inside Thai words and some fonts emit one vowel for the other.
+Numbers are read from the unmodified line, counting columns from the right.
+
+For a scanned statement (no text layer) the rule carries the printed figure as transcribed
+from the page image ("printed", recorded as read: visual), with the page where it was read and
+the heading seen on that page. A list of printed figures is summed.
 
   python -m pipeline extract --spec config/extraction/samsung-life.json --pdf <statement.pdf>
 """
@@ -45,43 +51,63 @@ def _num(tok: str) -> float:
     return -v if neg else v
 
 
-def page_lines(pdf: Path, page: int, _cache: dict = {}) -> list[str]:
-    key = (str(pdf), page)
-    if key not in _cache:
-        out = subprocess.run(["pdftotext", "-layout", "-f", str(page), "-l", str(page), str(pdf), "-"],
-                             capture_output=True, text=True).stdout
-        _cache[key] = [ln for ln in out.splitlines() if ln.strip()]
-    return _cache[key]
+class Document:
+    """The text layer of a PDF, page by page."""
+
+    def __init__(self, pdf: Path):
+        out = subprocess.run(["pdftotext", "-layout", str(pdf), "-"], capture_output=True, text=True).stdout
+        pages = out.split("\f")
+        if pages and not pages[-1].strip():
+            pages = pages[:-1]
+        self.lines = [[ln for ln in p.splitlines() if ln.strip()] for p in pages]
+        self.norm = [_norm(p) for p in pages]
+
+    def find_table(self, name: str, tables: dict, found: dict) -> int:
+        """1-based page where the table starts."""
+        if name in found:
+            return found[name]
+        t = tables[name]
+        after = self.find_table(t["after"], tables, found) if t.get("after") else 0
+        rx_all = [re.compile(_norm(x)) for x in t.get("all", [])]
+        rx_none = [re.compile(_norm(x)) for x in t.get("none", [])]
+        cands = [i + 1 for i, txt in enumerate(self.norm)
+                 if i + 1 > after and all(r.search(txt) for r in rx_all) and not any(r.search(txt) for r in rx_none)]
+        if not cands:
+            raise ExtractError(f"table {name}: no page matches {t.get('all')} / not {t.get('none', [])}"
+                               + (f" after p.{after}" if after else ""))
+        if not after and len(cands) > 1:
+            raise ExtractError(f"table {name}: {len(cands)} pages match ({cands[:8]}); add anchors to make it unique")
+        found[name] = cands[0]
+        return cands[0]
+
+    def find_row(self, start: int, span: int, pattern: str, occurrence: int) -> tuple[int, str, list[str]]:
+        rx = re.compile(_norm(pattern))
+        n = 0
+        for page in range(start, min(start + span, len(self.lines) + 1)):
+            lines = self.lines[page - 1]
+            for i, ln in enumerate(lines):
+                if not rx.search(_norm(ln)):
+                    continue
+                n += 1
+                if n < occurrence:
+                    continue
+                toks, text = NUM.findall(ln), ln
+                if not toks and i + 1 < len(lines):  # label wrapped: figures on the next line
+                    toks, text = NUM.findall(lines[i + 1]), ln + " / " + lines[i + 1]
+                return page, text.strip(), toks
+        raise ExtractError(f"row /{pattern}/ occurrence {occurrence} not found on p.{start}-{start + span - 1} ({n} found)")
 
 
-def find_row(pdf: Path, page: int, pattern: str, occurrence: int = 1) -> tuple[str, list[str]]:
-    """Return (printed line, numeric tokens) for the n-th line on the page matching the pattern.
-    If the matching line carries no numbers (a label wrapped onto the next line), the numbers
-    are taken from the following line."""
-    rx = re.compile(_norm(pattern))
-    lines = page_lines(pdf, page)
-    hits = [i for i, ln in enumerate(lines) if rx.search(_norm(ln))]
-    if len(hits) < occurrence:
-        raise ExtractError(f"p.{page}: row /{pattern}/ occurrence {occurrence} not found ({len(hits)} found)")
-    i = hits[occurrence - 1]
-    toks = NUM.findall(lines[i][max(len(lines[i]) - len(lines[i].lstrip()), 0):])
-    # Drop digits that belong to the label (e.g. a note number) by keeping only the trailing run of tokens.
-    line_text = lines[i]
-    if not toks and i + 1 < len(lines):
-        line_text = lines[i] + " / " + lines[i + 1]
-        toks = NUM.findall(lines[i + 1])
-    return line_text.strip(), toks
-
-
-def extract(spec_path: Path, pdf: Path) -> dict:
-    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+def extract(spec_path: Path, pdf: Path | None) -> dict:
+    spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
     digest = hashlib.sha256(Path(pdf).read_bytes()).hexdigest() if pdf else spec["source"]["sha256"]
     if spec["source"].get("sha256") and spec["source"]["sha256"] != digest:
-        raise ExtractError(f"{pdf.name}: SHA-256 {digest[:12]}… does not match the registered source "
+        raise ExtractError(f"{Path(pdf).name}: SHA-256 {digest[:12]}… does not match the registered source "
                            f"{spec['source']['sha256'][:12]}…")
-    codes = [it["code"] for it in load_line_items()]
+    tables, found = spec.get("tables", {}), {}
+    doc = None
     items, errors = {}, []
-    for code in codes:
+    for code in [it["code"] for it in load_line_items()]:
         rule = spec["items"].get(code)
         if rule is None:
             errors.append(f"{code}: no rule in spec")
@@ -92,27 +118,35 @@ def extract(spec_path: Path, pdf: Path) -> dict:
                 out[fy] = {"value": float(r["const"]), "page": r.get("page"), "evidence": r["evidence"]}
                 continue
             if "printed" in r:
-                # Transcribed from the page image (scanned statements): one printed figure, or a list summed.
                 parts = r["printed"] if isinstance(r["printed"], list) else [r["printed"]]
                 val = sum(_num(x) for x in parts) / DIVISOR[r["unit"]] * r.get("sign", 1)
                 out[fy] = {"value": round(val, 9), "printed": r["printed"], "unit": r["unit"], "sign": r.get("sign", 1),
-                           "page": r["page"], "note": r.get("note", ""), "read": "visual"}
+                           "page": r["page"], "note": r.get("note", ""), "read": "visual",
+                           "heading_seen": r.get("heading_seen", tables.get(r.get("table"), {}).get("heading_seen", ""))}
                 continue
+            if pdf is None:
+                errors.append(f"{code} {fy}: rule reads the text layer; pass --pdf")
+                continue
+            doc = doc or Document(Path(pdf))
             try:
-                line, toks = find_row(pdf, r["page"], r["row"], r.get("occurrence", 1))
-                col = r.get("col", -1)
-                printed = toks[col]
-            except (ExtractError, IndexError) as e:
-                errors.append(f"{code} {fy}: {e if isinstance(e, ExtractError) else 'column ' + str(r.get('col', -1)) + ' missing'}")
+                start = doc.find_table(r["table"], tables, found)
+                page, line, toks = doc.find_row(start, tables[r["table"]].get("span", 1), r["row"], r.get("occurrence", 1))
+                printed = toks[r.get("col", -1)]
+            except ExtractError as e:
+                errors.append(f"{code} {fy}: {e}")
+                continue
+            except IndexError:
+                errors.append(f"{code} {fy}: column {r.get('col', -1)} missing on row /{r['row']}/")
                 continue
             val = _num(printed) / DIVISOR[r["unit"]] * r.get("sign", 1)
             out[fy] = {"value": round(val, 9), "printed": printed, "unit": r["unit"], "sign": r.get("sign", 1),
-                       "page": r["page"], "note": r.get("note", ""), "line": line}
+                       "page": page, "table": r["table"], "note": r.get("note", tables[r["table"]].get("note", "")),
+                       "line": line}
         items[code] = out
     if errors:
         raise ExtractError(f"{spec['company']}: extraction failed:\n  - " + "\n  - ".join(errors))
     return {"company": spec["company"], "company_id": spec["company_id"], "period": spec["period"],
-            "source": {**spec["source"], "sha256": digest}, "items": items}
+            "source": {**spec["source"], "sha256": digest}, "tables_found": found, "items": items}
 
 
 def run(spec: str, pdf: str | None, out: str | None = None) -> Path:
@@ -121,5 +155,6 @@ def run(spec: str, pdf: str | None, out: str | None = None) -> Path:
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     n = sum(len(v) for v in res["items"].values())
-    print(f"extract: {res['company']} {n} values -> {dest.relative_to(ROOT)}")
+    pages = ", ".join(f"{k} p.{v}" for k, v in res["tables_found"].items())
+    print(f"extract: {res['company']} {n} values -> {dest.relative_to(ROOT)}" + (f" (tables: {pages})" if pages else ""))
     return dest

@@ -14,42 +14,38 @@
  "items": {
   "ra_release": {
    "FY2025": {
-    "page": 152,
     "row": "ที่ไม่ใช่ความเสี่ยงทางการเงินหลังจากการจัดสรรองค์ประกอบที่เป็นส่วนขาดทุน",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "ที่ไม่ใช่ความเสี่ยงทางการเงินหลังจากการจัดสรรองค์ประกอบที่เป็นส่วนขาดทุน",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "bel_release": {
    "FY2025": {
-    "page": 152,
     "row": "^หลังจากการจัดสรรองค์ประกอบที่เป็นส่วนขาดทุน",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^หลังจากการจัดสรรองค์ประกอบที่เป็นส่วนขาดทุน",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "paa_revenue": {
@@ -78,497 +74,514 @@
   },
   "incurred_claims": {
    "FY2025": {
-    "page": 152,
     "row": "^ค่าสินไหมทดแทนที่เกิดขึ้นและค่าใช้จ่าย",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^ค่าสินไหมทดแทนที่เกิดขึ้นและค่าใช้จ่าย",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "past_service": {
    "FY2025": {
-    "page": 152,
     "row": "^ค่าปรับปรุงหนี้สินสาหรับค่าสินไหมทดแทนที่เกิดขึ้นแล้ว",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^ค่าปรับปรุงหนี้สินสาหรับค่าสินไหมทดแทนที่เกิดขึ้นแล้ว",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "loss_component": {
    "FY2025": {
-    "page": 152,
     "row": "^ผลขาดทุนจากสัญญาที่สร้างภาระ",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^ผลขาดทุนจากสัญญาที่สร้างภาระ",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "acq_recovery": {
    "FY2025": {
-    "page": 152,
     "row": "^การได้รับคืนกระแสเงินสด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^การได้รับคืนกระแสเงินสด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "acq_amortisation": {
    "FY2025": {
-    "page": 152,
     "row": "^การตัดจาหน่ายกระแสเงินสด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^การตัดจาหน่ายกระแสเงินสด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "net_investment_income": {
    "FY2025": {
-    "page": 8,
     "row": "^รายได้จากการลงทุนสุทธิ",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^รายได้จากการลงทุนสุทธิ",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "ifie": {
    "FY2025": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายทางการเงินจากสัญญาประกันภัยสุทธิ",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายทางการเงินจากสัญญาประกันภัยสุทธิ",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "other_expense": {
    "FY2025": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายในการดาเนินงานอื่น",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายในการดาเนินงานอื่น",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "other_income": {
    "FY2025": {
-    "page": 8,
     "row": "^รายได้อื่น",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^รายได้อื่น",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "income_tax": {
    "FY2025": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายภาษีเงินได้",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายภาษีเงินได้",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "net_profit": {
    "FY2025": {
-    "page": 8,
     "row": "^กาไรสาหรับปี",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^กาไรสาหรับปี",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "reinsurance_result": {
    "FY2025": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายสุทธิจากสัญญาประกันภัยต่อที่ถือไว้",
     "col": -2,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    },
    "FY2024": {
-    "page": 8,
     "row": "^ค่าใช้จ่ายสุทธิจากสัญญาประกันภัยต่อที่ถือไว้",
     "col": -1,
     "unit": "baht",
     "sign": 1,
-    "note": "SCI"
+    "table": "sci"
    }
   },
   "csm_nb": {
    "FY2025": {
-    "page": 74,
     "row": "^สัญญาที่รับรู้เริ่มแรกในรอบระยะเวลา",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc25"
    },
    "FY2024": {
-    "page": 76,
     "row": "^สัญญาที่รับรู้เริ่มแรกในรอบระยะเวลา",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc24"
    }
   },
   "csm_accretion": {
    "FY2025": {
-    "page": 74,
     "row": "^ค่าใช้จ่ายทางการเงินจากสัญญาประกันภัยที่ออก",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc25"
    },
    "FY2024": {
-    "page": 76,
     "row": "^ค่าใช้จ่ายทางการเงินจากสัญญาประกันภัยที่ออก",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc24"
    }
   },
   "csm_future_service": {
    "FY2025": {
-    "page": 74,
     "row": "^การให้บริการตามสัญญา",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc25"
    },
    "FY2024": {
-    "page": 76,
     "row": "^การให้บริการตามสัญญา",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc24"
    }
   },
   "csm_release": {
    "FY2025": {
-    "page": 74,
     "row": "^กาไรจากการให้บริการตามสัญญา",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc25"
    },
    "FY2024": {
-    "page": 76,
     "row": "^กาไรจากการให้บริการตามสัญญา",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc24"
    }
   },
   "nb_pv_premium": {
    "FY2025": {
-    "page": 94,
     "row": "กระแสเงินสดรับในอนาคต",
     "col": -1,
     "unit": "thousand_baht",
     "sign": -1,
-    "note": "12.1.3 total",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "nb"
    },
    "FY2024": {
-    "page": 94,
     "row": "กระแสเงินสดรับในอนาคต",
     "col": -1,
     "unit": "thousand_baht",
     "sign": -1,
-    "note": "12.1.3 total",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "nb"
    }
   },
   "nb_pv_acq": {
    "FY2025": {
-    "page": 94,
     "row": "^ประมาณการกระแสเงินสดที่ทาให้ได้มาซึ่งการประกันภัย",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "nb"
    },
    "FY2024": {
-    "page": 94,
     "row": "^ประมาณการกระแสเงินสดที่ทาให้ได้มาซึ่งการประกันภัย",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "nb"
    }
   },
   "nb_pv_claims": {
    "FY2025": {
-    "page": 94,
     "row": "กระแสเงินสดที่ไม่รวมกระแสเงินสดที่ทาให้ได้มา",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "nb"
    },
    "FY2024": {
-    "page": 94,
     "row": "กระแสเงินสดที่ไม่รวมกระแสเงินสดที่ทาให้ได้มา",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "nb"
    }
   },
   "nb_ra": {
    "FY2025": {
-    "page": 94,
     "row": "^ค่าปรับปรุงความเสี่ยง",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "nb"
    },
    "FY2024": {
-    "page": 94,
     "row": "^ค่าปรับปรุงความเสี่ยง",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "nb"
    }
   },
   "nb_csm": {
    "FY2025": {
-    "page": 94,
     "row": "^กาไรจากการให้บริการตามสัญญา",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "nb"
    },
    "FY2024": {
-    "page": 94,
     "row": "^กาไรจากการให้บริการตามสัญญา",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "nb"
    }
   },
   "csm_open": {
    "FY2025": {
-    "page": 74,
     "row": "^ยอดสุทธิต้นปี",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc25"
    },
    "FY2024": {
-    "page": 76,
     "row": "^ยอดสุทธิต้นปี",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc24"
    }
   },
   "csm_close": {
    "FY2025": {
-    "page": 75,
     "row": "^ยอดสุทธิปลายปี",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "aoc25"
    },
    "FY2024": {
-    "page": 77,
     "row": "^ยอดสุทธิปลายปี",
     "col": -2,
     "unit": "thousand_baht",
-    "note": "12.1.2 total, CSM column",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "aoc24"
    }
   },
   "nb_loss_component": {
    "FY2025": {
-    "page": 94,
     "row": "^ที่รับรู้ในรอบระยะเวลา",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "nb"
    },
    "FY2024": {
-    "page": 94,
     "row": "^ที่รับรู้ในรอบระยะเวลา",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "12.1.3 total",
-    "occurrence": 2
+    "occurrence": 2,
+    "table": "nb"
    }
   },
   "insurance_revenue": {
    "FY2025": {
-    "page": 152,
     "row": "^รายได้จากการประกันภัยทั้งหมด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^รายได้จากการประกันภัยทั้งหมด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
   },
   "insurance_service_expense": {
    "FY2025": {
-    "page": 152,
     "row": "^ค่าใช้จ่ายในการบริการประกันภัยทั้งหมด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev25"
    },
    "FY2024": {
-    "page": 153,
     "row": "^ค่าใช้จ่ายในการบริการประกันภัยทั้งหมด",
     "col": -1,
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "17.1",
-    "occurrence": 1
+    "occurrence": 1,
+    "table": "rev24"
    }
+  }
+ },
+ "tables": {
+  "sci": {
+   "all": [
+    "งบกาไรขาดทุนเบ็ดเสร็จ",
+    "รายได้จากการประกันภัย",
+    "กาไรก่อนภาษีเงินได้",
+    "กาไรสาหรับปี"
+   ],
+   "note": "SCI",
+   "hint": 8
+  },
+  "rev25": {
+   "all": [
+    "รายได้จากการประกันภัยทั้งหมด",
+    "ค่าใช้จ่ายในการบริการประกันภัยทั้งหมด",
+    "สามัญ"
+   ],
+   "none": [
+    "31ธันวาคม2567"
+   ],
+   "note": "17.1",
+   "hint": 152
+  },
+  "rev24": {
+   "after": "rev25",
+   "all": [
+    "รายได้จากการประกันภัยทั้งหมด",
+    "ค่าใช้จ่ายในการบริการประกันภัยทั้งหมด",
+    "31ธันวาคม2567"
+   ],
+   "note": "17.1",
+   "hint": 153
+  },
+  "aoc25": {
+   "all": [
+    "ทั้งหมด-สัญญาประกันภัย",
+    "กระทบยอดการวัดมูลค่าองค์ประกอบ",
+    "ยอดสุทธิต้นปี"
+   ],
+   "none": [
+    "31ธันวาคม2567",
+    "ประกันภัยต่อ"
+   ],
+   "span": 2,
+   "note": "12.1.2 total, CSM column",
+   "hint": 74
+  },
+  "aoc24": {
+   "after": "aoc25",
+   "all": [
+    "ยอดสุทธิต้นปี",
+    "31ธันวาคม2567"
+   ],
+   "span": 2,
+   "note": "12.1.2 total, CSM column",
+   "hint": 76,
+   "none": [
+    "ประกันภัยต่อ"
+   ]
+  },
+  "nb": {
+   "all": [
+    "ทั้งหมด-สัญญาประกันภัย",
+    "ผลกระทบของสัญญา"
+   ],
+   "note": "12.1.3 total",
+   "hint": 94
   }
  }
 }
