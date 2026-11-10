@@ -1,0 +1,575 @@
+{
+ "company": "Allianz Ayudhya",
+ "company_id": "allianz-ayudhya",
+ "period": "2025FY",
+ "source": {
+  "drive_file_id": "1jjSVw5h1-dZ2shWFukgd_qkvnZ_g5Zz6",
+  "original_name": "20_FS_CAR_AYU_4Q2025.pdf",
+  "sha256": "16dd7163eba845e9e7905267375aea776fd2e8f2b7756d7b53aa587fe92d2e7a",
+  "doc_type": "OIC annual disclosure with audited financial statements FY2025 (Thai)",
+  "pages": 224,
+  "text_layer": "hybrid (narrative has text; financial statements scanned)"
+ },
+ "notes": "Financial statements are scanned images; every page located by its heading or, for the sideways note 30.1, by its content (its totals equal the SCI). Units thousand Baht. Acquisition-cost amortisation includes the impairment of acquisition cash flows (a fifth expense line the template has no row for), as in the pilot. Other expense = other finance costs + other operating expenses. CSM future-service change = change in estimates + onerous-contract line (CSM column) + experience adjustment.",
+ "items": {
+  "ra_release": {
+   "FY2025": {
+    "page": 205,
+    "printed": "617,524",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "467,396",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "bel_release": {
+   "FY2025": {
+    "page": 205,
+    "printed": "6,871,852",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "6,099,472",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "paa_revenue": {
+   "FY2025": {
+    "page": 205,
+    "printed": "5,122,604",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "4,698,082",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "other_revenue": {
+   "FY2025": {
+    "page": 205,
+    "printed": "(41,973)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 อื่นๆ",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "(220,373)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 อื่นๆ",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "incurred_claims": {
+   "FY2025": {
+    "page": 205,
+    "printed": "(9,854,129)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "(9,613,550)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "past_service": {
+   "FY2025": {
+    "page": 205,
+    "printed": "81,737",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "252,590",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "loss_component": {
+   "FY2025": {
+    "page": 205,
+    "printed": "1,801",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total (reversal)",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "507",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total (reversal)",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "acq_recovery": {
+   "FY2025": {
+    "page": 205,
+    "printed": "4,800,620",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": "4,263,707",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 total",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "acq_amortisation": {
+   "FY2025": {
+    "page": 205,
+    "printed": [
+     "(6,180,247)",
+     "(40,851)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 amortisation + impairment of acquisition cash flows",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   },
+   "FY2024": {
+    "page": 205,
+    "printed": [
+     "(5,605,090)",
+     "(23,616)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "30.1 amortisation + impairment of acquisition cash flows",
+    "heading_seen": "Insurance revenue and expense analysis (sideways page; note 30.1 per the SCI note reference), 2568 / 2567, total columns; totals equal the SCI"
+   }
+  },
+  "net_investment_income": {
+   "FY2025": {
+    "page": 82,
+    "printed": "6,867,942",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "7,047,838",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "FY2025": {
+    "page": 82,
+    "printed": "(7,343,080)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "(7,439,089)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "FY2025": {
+    "page": 82,
+    "printed": [
+     "(38,205)",
+     "(1,002,810)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": [
+     "(16,118)",
+     "(838,461)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "FY2025": {
+    "page": 82,
+    "printed": "89,710",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "111,185",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "FY2025": {
+    "page": 82,
+    "printed": "(1,970,457)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "(1,779,781)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "FY2025": {
+    "page": 82,
+    "printed": "7,734,152",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "7,199,262",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "FY2025": {
+    "page": 82,
+    "printed": "(237,226)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "(113,921)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "csm_nb": {
+   "FY2025": {
+    "page": 185,
+    "printed": "7,464,205",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column",
+    "heading_seen": "22.1.2 การกระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2568)"
+   },
+   "FY2024": {
+    "page": 186,
+    "printed": "6,949,582",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column",
+    "heading_seen": "22.1.2 continued (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2567)"
+   }
+  },
+  "csm_accretion": {
+   "FY2025": {
+    "page": 185,
+    "printed": "2,579,329",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column, finance row",
+    "heading_seen": "22.1.2 การกระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2568)"
+   },
+   "FY2024": {
+    "page": 186,
+    "printed": "2,744,163",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column, finance row",
+    "heading_seen": "22.1.2 continued (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2567)"
+   }
+  },
+  "csm_future_service": {
+   "FY2025": {
+    "page": 185,
+    "printed": [
+     "(235,940)",
+     "(817,656)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column: change in estimates (+ onerous line) + experience adjustment",
+    "heading_seen": "22.1.2 การกระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2568)"
+   },
+   "FY2024": {
+    "page": 186,
+    "printed": [
+     "3,271,154",
+     "1,714",
+     "(582,155)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column: change in estimates (+ onerous line) + experience adjustment",
+    "heading_seen": "22.1.2 continued (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2567)"
+   }
+  },
+  "csm_release": {
+   "FY2025": {
+    "page": 185,
+    "printed": "(9,989,340)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column",
+    "heading_seen": "22.1.2 การกระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2568)"
+   },
+   "FY2024": {
+    "page": 186,
+    "printed": "(9,908,484)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 CSM column",
+    "heading_seen": "22.1.2 continued (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2567)"
+   }
+  },
+  "nb_pv_premium": {
+   "FY2025": {
+    "page": 187,
+    "printed": "(57,428,883)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 187,
+    "printed": "(51,199,108)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   }
+  },
+  "nb_pv_acq": {
+   "FY2025": {
+    "page": 187,
+    "printed": "8,477,328",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 187,
+    "printed": "7,883,553",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   }
+  },
+  "nb_pv_claims": {
+   "FY2025": {
+    "page": 187,
+    "printed": "39,644,937",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 187,
+    "printed": "35,112,795",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   }
+  },
+  "nb_ra": {
+   "FY2025": {
+    "page": 187,
+    "printed": "1,842,413",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 187,
+    "printed": "1,253,178",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   }
+  },
+  "nb_csm": {
+   "FY2025": {
+    "page": 187,
+    "printed": "7,464,205",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 187,
+    "printed": "6,949,582",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   }
+  },
+  "csm_open": {
+   "FY2025": {
+    "page": 185,
+    "printed": "74,348,041",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 net opening, CSM column",
+    "heading_seen": "22.1.2 การกระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2568)"
+   },
+   "FY2024": {
+    "page": 186,
+    "printed": "71,872,067",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 net opening, CSM column",
+    "heading_seen": "22.1.2 continued (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2567)"
+   }
+  },
+  "csm_close": {
+   "FY2025": {
+    "page": 185,
+    "printed": "73,348,639",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 net closing, CSM column",
+    "heading_seen": "22.1.2 การกระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2568)"
+   },
+   "FY2024": {
+    "page": 186,
+    "printed": "74,348,041",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.2 net closing, CSM column",
+    "heading_seen": "22.1.2 continued (ยอดสุทธิ ณ วันที่ 1 มกราคม พ.ศ. 2567)"
+   }
+  },
+  "nb_loss_component": {
+   "FY2025": {
+    "page": 187,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3 (no onerous new groups)",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   },
+   "FY2024": {
+    "page": 187,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "22.1.3 (no onerous new groups)",
+    "heading_seen": "22.1.3 ผลกระทบของสัญญาที่รับรู้ในปี (2568 / 2567)"
+   }
+  },
+  "insurance_revenue": {
+   "FY2025": {
+    "page": 82,
+    "printed": "27,359,967",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "25,216,768",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "FY2025": {
+    "page": 82,
+    "printed": "(15,991,689)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   },
+   "FY2024": {
+    "page": 82,
+    "printed": "(14,989,159)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (พันบาท)"
+   }
+  }
+ }
+}

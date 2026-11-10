@@ -1,0 +1,20 @@
+company,period,doc_type,drive_folder,original_name,drive_file_id,bytes,sha256,pages,text_layer,connector_download,status
+AIA Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,21_FS-AIA_4Q2025.pdf,12v94xGTkexX79jl-O1y4lWlS_89kF-Kw,5130160,29b69cdc860f1782e6a77233990171f4f645ffa00da05cd57342eb7af720a70d,151,no (scanned),ok,extracted
+Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,09_FS_THAILIFE_4Q2025.pdf,1haa2aPDAPWHUN-XcWa6BCnAaIC5aneyP,9726010,,,,"failed (connector message limit, about 5.5 MB)",pending
+Muang Thai Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,15_FS_MTL_4Q2025.pdf,1_L1F7lWhBIhRTSJK_F4Q2YBlrRlOdMUg,9626373,,,,"failed (connector message limit, about 5.5 MB)",pending
+Allianz Ayudhya,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,20_FS_CAR_AYU_4Q2025.pdf,1jjSVw5h1-dZ2shWFukgd_qkvnZ_g5Zz6,5528543,16dd7163eba845e9e7905267375aea776fd2e8f2b7756d7b53aa587fe92d2e7a,224,hybrid (financial statements scanned),ok,extracted
+FWD Thailand,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025.pdf,1Sv0hgt1piW7bLSAhhqD05CAcz17fBiYs,6906832,,146,no (scanned),"failed (connector message limit, about 5.5 MB); read from parts",extracted from parts
+FWD Thailand,2025FY,FS part (original pages 1-85),FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025__p001-085.pdf,1TQy2Zact3gsezsYAKbTpD7iAYVsEmEnm,4997861,e0d5aacf00f86870d829946bbddb41afe590f32c2e6407f5bfd88356087e73a6,1-85,no (scanned),ok,extracted (part)
+FWD Thailand,2025FY,FS part (original pages 86-146),FS_Life_Industry/Y2025/4Q_2025,19_FS_FWD_4Q2025__p086-146.pdf,1Sd5KZ7RUvzdFHFjgPgOZ0iYOkYNk_OdV,1971582,5a67aab793c2d8a512a9b56fe63ed1d5b0818bb13a02776114baeb9c87af5952,86-146,no (scanned),ok,extracted (part)
+Krungthai-AXA Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,02_FS_AXA_4Q2025.pdf,15H6GLEs8CnaK8WaEa55rZQ07fxLDW2BX,4584409,30f0d9931fed2515a4282ac230897157fb1262749d4bf515a104a0069b1ba4b4,164,no (scanned),ok,extracted
+Bangkok Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,01_FS_BANGKOK_4Q2025.pdf,1rBpJhEQlX5FHG6Uw17G05We9t9Y0-Tcx,11838687,,,,over 10 MB (connector refuses),pending
+Prudential Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,13_FS-PLT_4Q2025.pdf,1BhsDmvi6q_UYOb6xuJ_om9g50s4Ezrlp,36062475,,,,over 10 MB (connector refuses),pending
+Generali Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,04_FS_GEN_4Q2025.pdf,1qZSH0o6NxRb0slrsHaEcaeRPpQ3X0dVE,14419811,,,,over 10 MB (connector refuses),pending
+Ocean Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,11_FS_OCEAN_4Q2025.pdf,12gE4fEse_aqNNP8HoAj_NAQoZJUQX_Ma,15761452,,,,over 10 MB (connector refuses),pending
+CHUBB Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,05_FS_CHUBB_4Q2025.pdf,1f_nhSuP1yPldppuRfAkQ5jIC8F8mHqJN,5496003,2080ce1d20abfe3ae87a448fe6f54855b242158489b6b40161f4edad80e297c4,106,no (scanned),ok,extracted
+Tokio Marine Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,07_FS-TOKIO_4Q2025.pdf,13O9FPGkCW3VK9nrAPBfJPRs0jH-g2Ewv,3657109,a5e1d6ee2b7a41038d14849cd456099f7f7f75f6a0be6c27c22b3aacbde47350,125,no (scanned),ok,extracted
+Dhipaya Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,08_FS_CAR_TIPLIFE_4Q2025.pdf,1WLjh2k5N41TzZC_NsQmxd1TAyJ7Ig0QC,7348428,,,,"failed (connector message limit, about 5.5 MB)",pending (file named TIPLIFE: confirm it is Dhipaya Life)
+Southeast Life,2025FY,annual report incl. FS,FS_Life_Industry/Y2025/4Q_2025,18_FS_SE_4Q2025.pdf,1O8POEn4IjNRz6DfujOGIWjWF6XJeYmfV,21969782,,,,over 10 MB (connector refuses),pending
+Samsung Life,2025FY,FS,FS_Life_Industry/Y2025/4Q_2025,06_FS_SAMSUNG_4Q2025.pdf,1pXuh5zxyi-OwpMrXfAtAnHFuzwwdLXAN,3240590,2ac2bb380d07c4525d7a6216d8f5d4728284cd309c84c63254f4b5f140384045,183,yes,ok,extracted
+T Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,20_FS_CAR_TLIFE_4Q2025.pdf,1I1bWQa6vlaWHEya8TmXd8-nugokPFmh5,14224593,,,,over 10 MB (connector refuses),pending
+Rabbit Life,2025FY,FS+CAR,FS_Life_Industry/Y2025/4Q_2025,22_CAR_FS-RBL_4Q2025.pdf,1zZ3FQlntjwTPdgcSG_kwQLrUcKFpGcN_,9126916,,,,"failed (connector message limit, about 5.5 MB)",pending

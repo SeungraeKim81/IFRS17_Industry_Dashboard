@@ -21,7 +21,7 @@ must be different people** for any insurer.
 
 | # | Step | Who | Output | Gate to pass |
 |---|---|---|---|---|
-| 1 | **Collect sources**: download each insurer's audited annual statements (SET filing, OIC annual disclosure or company website) | Extractor | `data/<period>/sources.csv` filled (URL, date retrieved, file name, SHA-256, text layer or scanned) | All 17 insurers have a source file, or the gap is agreed with the owner |
+| 1 | **Collect sources**: download each insurer's audited annual statements (SET filing, OIC annual disclosure or company website) | Extractor | Statement saved in Google Drive `FS_Life_Industry/Y<year>/<quarter>/` and registered in `sources/<period>/registry.csv` (Drive file ID, name, size, SHA-256, pages, text layer) | All 17 insurers have a source file, or the gap is agreed with the owner |
 | 2 | **Locate notes**: use `Source Map (Annual)` and `Note Anchors` in the workbook. Search by the on-page heading, not the page number; record the new page and year | Extractor | Updated Source Map and Note Anchors | Every note located by heading |
 | 3 | **Extract** into the insurer's sheet: current year in C, comparative in D, status in E, note/page in F. Convert to THB million with the face/notes divisors; apply the sign rule (revenue +, expense −) | Extractor | Capture workbook | Workbook's own `OK/CHECK` cells all `OK` |
 | 4 | **Ingest**: `python -m pipeline ingest` | Extractor | `data/<period>/line_items.csv` | No unknown or missing line items, every value numeric |
