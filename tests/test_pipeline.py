@@ -16,7 +16,7 @@ from pipeline.common import ROOT, load_settings, read_csv
 
 PERIOD = load_settings()["period"]
 WORKBOOK = ROOT / load_settings()["capture_workbook"]
-BENCHMARK = ROOT / "docs" / "benchmark" / "IFRS17_CSM_board_17companies_benchmark.html"
+BENCHMARK = ROOT / "tests" / "fixtures" / f"{PERIOD}_benchmark.json"  # tools/benchmark_fixture.py
 
 
 def setUpModule():
@@ -36,6 +36,13 @@ class TestIngest(unittest.TestCase):
         self.assertAlmostEqual(v["insurance_revenue"], 2321.096)
         self.assertAlmostEqual(v["csm_close"], 5151.677)
         self.assertAlmostEqual(v["csm_release"], -740.036)
+
+    def test_extractions_give_every_company_and_item(self):
+        rows, notes = ingest.ingest_extractions(PERIOD)
+        self.assertEqual(len(notes), 17)
+        self.assertEqual(len(rows), 17 * 2 * 30)
+        self.assertEqual({r["status"] for r in rows}, {"Extracted"})
+        self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows))  # where each value was read
 
     def test_unknown_label_stops_the_run(self):
         tmp = Path(tempfile.mkdtemp()) / "wb.xlsx"
@@ -62,12 +69,15 @@ class TestValidate(unittest.TestCase):
 
 
 class TestMetricsAgainstBenchmark(unittest.TestCase):
-    """The FY2025 figures must reproduce the benchmark board exactly (to its 4 dp)."""
+    """The FY2025 figures must reproduce the benchmark expectations (to 3 dp).
+
+    The expectations were the pilot benchmark board (docs/benchmark/, kept for reference); since the
+    switch to the extractions they are tests/fixtures/<period>_benchmark.json. Regenerate them with
+    tools/benchmark_fixture.py only when a figure changes on purpose, and say so in the pull request."""
 
     @classmethod
     def setUpClass(cls):
-        html = BENCHMARK.read_text(encoding="utf-8")
-        cls.bench = {r["name"]: r for r in json.loads(re.search(r"const D = (\[.*?\]);", html).group(1))}
+        cls.bench = {r["name"]: r for r in json.loads(BENCHMARK.read_text(encoding="utf-8"))["companies"]}
         cls.m = {}
         for r in metrics.compute(PERIOD):
             if r["fiscal_year"] == PERIOD:
@@ -126,6 +136,20 @@ class TestExtractions(unittest.TestCase):
                 self.assertEqual(len(ex["items"]), 30)
                 self.assertEqual([r for r in verify_extract.reconcile(ex) if not r["ok"]], [])
 
+    def test_not_disclosed_items_use_the_memo_total(self):
+        """Acquisition and other outflows not split: the printed total stands in; without it the check fails."""
+        from pipeline import verify_extract
+        from pipeline.common import load_line_items
+        v = {it["code"]: 0.0 for it in load_line_items()}
+        v.update({"nb_pv_premium": 100.0, "nb_pv_acq": None, "nb_pv_claims": None, "nb_ra": 5.0,
+                  "nb_loss_component": 2.0, "nb_csm": 17.0})
+        def ex(memo):
+            items = {k: {"FY2025": {"value": x}} for k, x in v.items()}
+            return {"items": items, **({"memo": {"nb_pv_outflows": {"FY2025": {"value": 80.0}}}} if memo else {})}
+        nb = lambda e: next(r for r in verify_extract.reconcile(e) if r["check"] == "nb_csm")
+        self.assertTrue(nb(ex(True))["ok"])
+        self.assertFalse(nb(ex(False))["ok"])
+
     def test_registry_matches_extractions(self):
         reg = {}
         for f in (ROOT / "sources").glob("*/registry.csv"):
@@ -151,7 +175,7 @@ class TestExtractions(unittest.TestCase):
         from pipeline import extract
         for spec in sorted((ROOT / "config" / "extraction").glob("*.json")):
             rules = [r for years in json.loads(spec.read_text(encoding="utf-8"))["items"].values() for r in years.values()]
-            if not all("printed" in r or "const" in r for r in rules):
+            if not all("printed" in r or "const" in r or "not_disclosed" in r for r in rules):
                 continue
             res = extract.extract(spec, None)
             committed = json.loads((ROOT / "extract" / res["period"] / f"{res['company_id']}.json").read_text(encoding="utf-8"))

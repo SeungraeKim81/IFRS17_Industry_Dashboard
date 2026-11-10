@@ -1,4 +1,14 @@
-"""Step 1 - read the analyst capture workbook into tidy, reviewable CSV.
+"""Step 1 - read the period's line items into tidy, reviewable CSV.
+
+Two sources, chosen by "source" in config/dashboard.json:
+
+  "extract"   the extractions from the published statements (extract/<YYYY>FY/<company_id>.json,
+              made by `python -m pipeline extract`), one per company in config/companies.csv.
+              Each value keeps where it was read (file page, printed figure); the company note is
+              the extraction spec's notes (config/extraction/<company_id>.json).
+  "workbook"  the analyst capture workbook (the pilot; kept for reference).
+
+The capture workbook layout:
 
 The capture workbook has one sheet per insurer with a fixed layout:
 column B = line item label, C = current year, D = comparative year,
@@ -15,6 +25,8 @@ from __future__ import annotations
 import re
 import sys
 from pathlib import Path
+
+import json
 
 import openpyxl
 
@@ -110,15 +122,66 @@ def ingest(workbook: Path, period: str) -> tuple[list[dict], list[dict]]:
     return rows, notes
 
 
+def extract_period(period: str) -> str:
+    """Dashboard period FY2025 -> extraction folder 2025FY."""
+    m = re.fullmatch(r"FY(\d{4})", period)
+    if not m:
+        raise IngestError(f"period {period!r}: only annual periods (FYyyyy) have extractions so far")
+    return f"{m.group(1)}FY"
+
+
+def ingest_extractions(period: str) -> tuple[list[dict], list[dict]]:
+    from .review_workbook import _source_text
+    folder = ROOT / "extract" / extract_period(period)
+    by_company = {}
+    for f in sorted(folder.glob("*.json")):
+        ex = json.loads(f.read_text(encoding="utf-8"))
+        by_company[ex["company"]] = ex
+    fy_cmp = f"FY{int(period[2:]) - 1}"
+    rows, notes, errors = [], [], []
+    for co in load_companies():
+        ex = by_company.get(co["company"])
+        if ex is None:
+            errors.append(f"{co['company']}: no extraction in {folder.relative_to(ROOT)}/")
+            continue
+        for it in load_line_items():
+            years = ex["items"].get(it["code"], {})
+            for fy in (period, fy_cmp):
+                rec = years.get(fy)
+                if rec is None:
+                    errors.append(f"{co['company']}: {it['code']} {fy} missing from the extraction")
+                elif rec["value"] is None:
+                    errors.append(f"{co['company']}: {it['code']} {fy} is not disclosed; the metrics do not handle "
+                                  "not-disclosed values yet")
+                else:
+                    rows.append({"report": period, "fiscal_year": fy, "company": co["company"], "code": it["code"],
+                                 "value": fmt_num(rec["value"]), "status": "Extracted", "source": _source_text(rec)})
+        src = ex["source"]
+        spec = ROOT / "config" / "extraction" / f"{ex['company_id']}.json"
+        spec_notes = json.loads(spec.read_text(encoding="utf-8")).get("notes", "") if spec.exists() else ""
+        notes.append({"company": co["company"],
+                      "sheet_title": f"{co['company']} - extracted from {src['original_name']} (THB million)",
+                      "header_note": spec_notes,
+                      "extraction_note": (f"Source: {src['original_name']} ({src.get('doc_type', '')}), "
+                                          f"{src.get('pages', '')} pages, text layer: {src.get('text_layer', '')}, "
+                                          f"SHA-256 {src['sha256']} (sources/{extract_period(period)}/registry.csv).")})
+    if errors:
+        raise IngestError("extractions failed ingestion:\n  - " + "\n  - ".join(errors))
+    return rows, notes
+
+
 def run(period: str | None = None, workbook: str | None = None) -> Path:
     s = load_settings()
     period = period or s["period"]
-    wb = Path(workbook) if workbook else ROOT / s["capture_workbook"]
-    rows, notes = ingest(wb, period)
+    if workbook or s.get("source", "workbook") == "workbook":
+        wb = Path(workbook) if workbook else ROOT / s["capture_workbook"]
+        rows, notes = ingest(wb, period)
+    else:
+        rows, notes = ingest_extractions(period)
     out = period_dir(period)
     write_csv(out / "line_items.csv", rows, ["report", "fiscal_year", "company", "code", "value", "status", "source"])
     write_csv(out / "company_notes.csv", notes, ["company", "sheet_title", "header_note", "extraction_note"])
-    unconfirmed = [r for r in rows if r["status"].strip().lower() != "confirmed"]
+    unconfirmed = [r for r in rows if r["status"].strip().lower() not in ("confirmed", "extracted")]
     print(f"ingest: {len(rows)} values for {len(notes)} companies -> {out.relative_to(ROOT)}/line_items.csv")
     if unconfirmed:
         print(f"ingest: WARNING {len(unconfirmed)} values not marked 'Confirmed'", file=sys.stderr)

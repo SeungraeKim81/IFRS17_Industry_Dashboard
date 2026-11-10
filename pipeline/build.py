@@ -46,6 +46,14 @@ def missing_translations(data: dict, lang: str) -> list[str]:
     return miss
 
 
+def _source_ref(s: dict, period: str) -> str:
+    """What the footer names as the data source: the registry of the statements read, or the workbook."""
+    if s.get("source", "workbook") == "extract":
+        from .ingest import extract_period
+        return f"sources/{extract_period(period)}/registry.csv"
+    return s["capture_workbook"]
+
+
 def payload(period: str, focus: str | None = None) -> dict:
     s = load_settings()
     pdir = period_dir(period)
@@ -93,7 +101,7 @@ def payload(period: str, focus: str | None = None) -> dict:
     return {
         "meta": {**{k: s[k] for k in ("title", "market", "standard", "period", "comparative", "period_end",
                                        "unit", "large_insurer_count", "comparative_caveat", "tolerance_thb_m")},
-                 "default_focus": focus, "workbook": s["capture_workbook"],
+                 "default_focus": focus, "source_ref": _source_ref(s, period),
                  "indexing": bool(s.get("search_engine_indexing", False)),
                  "languages": s.get("languages", ["en"]), "default_language": s.get("default_language", "en"),
                  "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"), "git": _git_rev()},

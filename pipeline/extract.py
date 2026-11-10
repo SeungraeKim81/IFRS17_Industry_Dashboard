@@ -19,6 +19,11 @@ For a scanned statement (no text layer) the rule carries the printed figure as t
 from the page image ("printed", recorded as read: visual), with the page where it was read and
 the heading seen on that page. A list of printed figures is summed.
 
+A line item the statement does not disclose is a rule with "not_disclosed" (the reason) instead
+of a figure; its value is None. Figures that are printed but are not line items (e.g. the total
+of future cash outflows when the statement does not split acquisition cash flows from other
+outflows) go in the spec's "memo" section, read the same way, and land in the result's "memo".
+
   python -m pipeline extract --spec config/extraction/samsung-life.json --pdf <statement.pdf>
 """
 from __future__ import annotations
@@ -106,14 +111,19 @@ def extract(spec_path: Path, pdf: Path | None) -> dict:
                            f"{spec['source']['sha256'][:12]}…")
     tables, found = spec.get("tables", {}), {}
     doc = None
-    items, errors = {}, []
-    for code in [it["code"] for it in load_line_items()]:
-        rule = spec["items"].get(code)
+    items, memo, errors = {}, {}, []
+    codes = [("items", it["code"]) for it in load_line_items()] + [("memo", c) for c in spec.get("memo", {})]
+    for section, code in codes:
+        rule = spec[section].get(code)
         if rule is None:
             errors.append(f"{code}: no rule in spec")
             continue
         out = {}
         for fy, r in rule.items():
+            if "not_disclosed" in r:
+                out[fy] = {"value": None, "not_disclosed": r["not_disclosed"], "page": r.get("page"),
+                           "heading_seen": r.get("heading_seen", "")}
+                continue
             if "const" in r:
                 out[fy] = {"value": float(r["const"]), "page": r.get("page"), "evidence": r["evidence"]}
                 continue
@@ -142,11 +152,12 @@ def extract(spec_path: Path, pdf: Path | None) -> dict:
             out[fy] = {"value": round(val, 9), "printed": printed, "unit": r["unit"], "sign": r.get("sign", 1),
                        "page": page, "table": r["table"], "note": r.get("note", tables[r["table"]].get("note", "")),
                        "line": line}
-        items[code] = out
+        (items if section == "items" else memo)[code] = out
     if errors:
         raise ExtractError(f"{spec['company']}: extraction failed:\n  - " + "\n  - ".join(errors))
     return {"company": spec["company"], "company_id": spec["company_id"], "period": spec["period"],
-            "source": {**spec["source"], "sha256": digest}, "tables_found": found, "items": items}
+            "source": {**spec["source"], "sha256": digest}, "tables_found": found, "items": items,
+            **({"memo": memo} if memo else {})}
 
 
 def run(spec: str, pdf: str | None, out: str | None = None) -> Path:

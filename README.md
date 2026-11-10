@@ -27,7 +27,7 @@ python -m pipeline all
 That runs the four steps below and writes the dashboard. Each step can also be run on its own:
 
 ```bash
-python -m pipeline ingest      # capture workbook -> data/FY2025/line_items.csv
+python -m pipeline ingest      # extractions (extract/2025FY/*.json) -> data/FY2025/line_items.csv
 python -m pipeline validate    # reconciliations (blocking) + plausibility flags (advisory)
 python -m pipeline metrics     # indicators, ranks, industry aggregates
 python -m pipeline build       # render the HTML
@@ -42,11 +42,12 @@ python -m unittest discover -s tests -v
 ## How it works
 
 ```
- Financial statements (PDF / XLSX / DOCX)
-        │  analyst extraction, guided by Source Map + Note Anchors
+ Published statements (PDF, registered in sources/<period>/registry.csv)
+        │  extract     tables located by heading; figures read from the text layer or
+        │              transcribed from page images (config/extraction/<company_id>.json)
         ▼
- data/capture/IFRS17_extraction_FY2025_v11.xlsx      one sheet per insurer
-        │  1 ingest    match rows by label, normalise, fail on unknown/missing items
+ extract/2025FY/<company_id>.json                    one per insurer, every value with its page
+        │  1 ingest    the insurers in config/companies.csv; fail on a missing extraction or item
         ▼
  data/FY2025/line_items.csv                          tidy: company × year × line item
         │  2 validate  6 reconciliations × 2 years × 17 insurers must tie (0.05m)
@@ -81,11 +82,11 @@ ties to the insurers' printed subtotals.
 | Path | What it holds |
 |---|---|
 | `config/dashboard.json` | Period, focus insurer, tolerance, plausibility thresholds, title |
-| `config/companies.csv` | Insurer master: names, workbook sheet, RA policy, source units |
-| `config/line_items.csv` | The 30 captured line items, their workbook labels and sign convention |
+| `config/companies.csv` | Insurer master: the insurers on the dashboard, names, RA policy, source units (the workbook sheet is used only by the pilot reference) |
+| `config/line_items.csv` | The 30 line items, their labels and sign convention |
 | `config/commentary.json` | Analyst comparability notes (tagged to insurers where they apply) |
 | `config/i18n/ko.json` | Korean text for everything that comes from data: indicator names and definitions, reconciliation names, commentary, period and unit text |
-| `data/capture/` | The analyst capture workbook (input) |
+| `data/capture/` | The pilot capture workbook (reference only since the switch to the extractions; `docs/pilot/`) |
 | `data/<period>/` | Generated, committed CSVs, so every change to a figure shows in the diff |
 | `pipeline/` | The four steps (`ingest`, `validate`, `metrics`, `build`) |
 | `templates/dashboard.html` | Page layout, styles and charts (vanilla JS + SVG, no external libraries) |
@@ -100,7 +101,7 @@ ties to the insurers' printed subtotals.
 | `tools/pdf_pages.py`, `tools/visual_spec.py`, `tools/pilot_values.py` | Extraction helpers: page sheets and page renders for scanned statements, spec builder for transcribed figures, pilot reference values |
 | `docs/DEPLOY.md` | Publishing on GitHub Pages: routes, one-off setup, troubleshooting |
 | `.github/workflows/pages.yml` | Validate on every push; publish to GitHub Pages from `main` |
-| `docs/benchmark/` | The benchmark board this version was built against |
+| `docs/benchmark/`, `docs/pilot/` | The pilot benchmark board and pilot values, kept for reference. The regression expectations are `tests/fixtures/<period>_benchmark.json` (`tools/benchmark_fixture.py`) |
 
 ## Versioning
 

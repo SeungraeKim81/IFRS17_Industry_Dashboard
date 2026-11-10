@@ -19,7 +19,7 @@ def main() -> None:
     if len(sys.argv) != 2:
         sys.exit(__doc__)
     company = sys.argv[1]
-    rows = [r for r in csv.DictReader(open(ROOT / "data" / "FY2025" / "line_items.csv", encoding="utf-8"))
+    rows = [r for r in csv.DictReader(open(ROOT / "docs" / "pilot" / "FY2025_line_items.csv", encoding="utf-8"))
             if r["company"] == company]
     if not rows:
         sys.exit(f"no pilot rows for {company!r}; names are as in config/companies.csv")
