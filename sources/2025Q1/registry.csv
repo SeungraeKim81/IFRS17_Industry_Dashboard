@@ -1,2 +1,3 @@
 company,period,doc_type,drive_folder,original_name,drive_file_id,bytes,sha256,pages,text_layer,connector_download,status
 Samsung Life,2025Q1,Reviewed condensed interim financial statements 1Q2025 (Thai),FS_Life_Industry/Y2025/1Q_2025,06_FS_SAMSUNG_1Q2025.pdf,1t4uxnad_whJaT9ttPt0gD_A1Ilifgd_Y,2307185,5a56a20a6c43ea47edcb8a86dee6ae715e4b098803058fa378fb8571d450e7df,141,yes (statements and notes),n/a (read locally),extracted
+Bangkok Life,2025Q1,Reviewed condensed consolidated and separate interim financial statements 1Q2025 (Thai),FS_Life_Industry/Y2025/1Q_2025,01_FS_BANGKOK_1Q2025.pdf,1RDC-HeZDnO71Eevb2J6RDFydSoqXttrA,8399535,1b3ac941edc780fc8914c70263ea81f8983d36f52b6d715bcd733bf8702baf8b,112,no (scanned),n/a (read locally),extracted
