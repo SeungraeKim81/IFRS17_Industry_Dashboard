@@ -10,7 +10,7 @@
   "pages": 188,
   "text_layer": "no (scanned)"
  },
- "notes": "Scanned; read locally, pages located by their headings (file page numbers). Thousand Baht. The statement has equity-method and separate columns; the equity-method columns are used, as in the pilot (they differ only by the share of profit of the associate and investment income). The insurance notes are common to both. SCI p.10. Note 17.1 1) p.138 (both years) prints expenses as positive figures; they are turned negative. Incurred claims = non-PAA claims + PAA insurance service expense. There is no past-service line in 17.1 or in the AOC. Other revenue = experience adjustment (negative). CSM roll-forward 11.1 2) p.105 (2568) and p.106 (2567); future-service change = change in estimates (CSM column; the onerous line has no CSM entry). New business 11.1 4) p.109 (2568) and p.110 (2567). RA release uses 17.1 (1,972,483 / 2,186,290), not the AOC RA (1,953,491 / 2,191,664). Other income = other income + share of profit of the associate.",
+ "notes": "Scanned; read locally, pages located by their headings (file page numbers). Thousand Baht. The statement has equity-method and separate columns; the separate columns are used (owner decision 2026-11-10: separate statements for every insurer with an associate). The pilot used the equity-method columns, which differ by the share of profit of the associate and investment income; the insurance notes are common to both. SCI p.10. Note 17.1 1) p.138 (both years) prints expenses as positive figures; they are turned negative. Incurred claims = non-PAA claims + PAA insurance service expense. There is no past-service line in 17.1 or in the AOC. Other revenue = experience adjustment (negative). CSM roll-forward 11.1 2) p.105 (2568) and p.106 (2567); future-service change = change in estimates (CSM column; the onerous line has no CSM entry). New business 11.1 4) p.109 (2568) and p.110 (2567). RA release uses 17.1 (1,972,483 / 2,186,290), not the AOC RA (1,953,491 / 2,191,664).",
  "items": {
   "ra_release": {
    "FY2025": {
@@ -183,19 +183,19 @@
   "net_investment_income": {
    "FY2025": {
     "page": 10,
-    "printed": "19,286,551",
+    "printed": "19,291,611",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
-    "printed": "21,112,513",
+    "printed": "21,115,355",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "ifie": {
@@ -204,16 +204,16 @@
     "printed": "(16,040,544)",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method, net insurance finance expense",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate, net insurance finance expense",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
     "printed": "(15,470,336)",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method, net insurance finance expense",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate, net insurance finance expense",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "other_expense": {
@@ -223,7 +223,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI other operating expenses (note 22)",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
@@ -231,31 +231,25 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI other operating expenses (note 22)",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "other_income": {
    "FY2025": {
     "page": 10,
-    "printed": [
-     "15,608",
-     "97,848"
-    ],
+    "printed": "97,848",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method, share of profit of associate + other income",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate (no share of profit of the associate)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
-    "printed": [
-     "14,427",
-     "100,709"
-    ],
+    "printed": "100,709",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method, share of profit of associate + other income",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate (no share of profit of the associate)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "income_tax": {
@@ -265,7 +259,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
@@ -273,25 +267,25 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "net_profit": {
    "FY2025": {
     "page": 10,
-    "printed": "11,881,918",
+    "printed": "11,871,370",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
-    "printed": "13,369,409",
+    "printed": "13,357,824",
     "unit": "thousand_baht",
     "sign": 1,
-    "note": "SCI equity method",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "note": "SCI separate",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "reinsurance_result": {
@@ -301,7 +295,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
@@ -309,7 +303,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "csm_nb": {
@@ -535,7 +529,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI (equals 17.1)",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
@@ -543,7 +537,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI (equals 17.1)",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   },
   "insurance_service_expense": {
@@ -553,7 +547,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI (equals 17.1)",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    },
    "FY2024": {
     "page": 10,
@@ -561,7 +555,7 @@
     "unit": "thousand_baht",
     "sign": 1,
     "note": "SCI (equals 17.1)",
-    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินที่แสดงเงินลงทุนตามวิธีส่วนได้เสีย, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (งบการเงินเฉพาะกิจการ columns, สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 / 2567 ปรับปรุงใหม่, พันบาท)"
    }
   }
  }
