@@ -126,6 +126,20 @@ class TestExtractions(unittest.TestCase):
                 self.assertEqual(len(ex["items"]), 30)
                 self.assertEqual([r for r in verify_extract.reconcile(ex) if not r["ok"]], [])
 
+    def test_not_disclosed_items_use_the_memo_total(self):
+        """Acquisition and other outflows not split: the printed total stands in; without it the check fails."""
+        from pipeline import verify_extract
+        from pipeline.common import load_line_items
+        v = {it["code"]: 0.0 for it in load_line_items()}
+        v.update({"nb_pv_premium": 100.0, "nb_pv_acq": None, "nb_pv_claims": None, "nb_ra": 5.0,
+                  "nb_loss_component": 2.0, "nb_csm": 17.0})
+        def ex(memo):
+            items = {k: {"FY2025": {"value": x}} for k, x in v.items()}
+            return {"items": items, **({"memo": {"nb_pv_outflows": {"FY2025": {"value": 80.0}}}} if memo else {})}
+        nb = lambda e: next(r for r in verify_extract.reconcile(e) if r["check"] == "nb_csm")
+        self.assertTrue(nb(ex(True))["ok"])
+        self.assertFalse(nb(ex(False))["ok"])
+
     def test_registry_matches_extractions(self):
         reg = {}
         for f in (ROOT / "sources").glob("*/registry.csv"):
@@ -151,7 +165,7 @@ class TestExtractions(unittest.TestCase):
         from pipeline import extract
         for spec in sorted((ROOT / "config" / "extraction").glob("*.json")):
             rules = [r for years in json.loads(spec.read_text(encoding="utf-8"))["items"].values() for r in years.values()]
-            if not all("printed" in r or "const" in r for r in rules):
+            if not all("printed" in r or "const" in r or "not_disclosed" in r for r in rules):
                 continue
             res = extract.extract(spec, None)
             committed = json.loads((ROOT / "extract" / res["period"] / f"{res['company_id']}.json").read_text(encoding="utf-8"))

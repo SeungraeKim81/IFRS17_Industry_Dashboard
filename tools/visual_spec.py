@@ -19,6 +19,10 @@ it into config/extraction/<company_id>.json:
 Where the face statements and the notes use different units (face in Baht, notes in thousand
 Baht), UNIT is the default and UNITS = {page: unit} sets the unit of the pages that differ.
 
+A line item the statement does not disclose takes None for the printed figure; the note says
+why. Figures printed but not line items go in MEMO = {code: (same tuple)}, e.g. nb_pv_outflows
+when acquisition cash flows are not split from other outflows (see pipeline/verify_extract.py).
+
 Printed figures are copied exactly as printed (brackets for negatives, "-" for nil); a list is
 summed. Every one of the 30 line items in config/line_items.csv needs an entry.
 
@@ -43,13 +47,19 @@ def main() -> None:
     cur, cmp_ = (a.years.split(",") if a.years else (f"FY{year}", f"FY{year - 1}"))
     heads = d["HEADINGS"]
     units = d.get("UNITS", {})
-    items = {}
-    for code, (p_cur, v_cur, p_cmp, v_cmp, note, *rest) in d["ITEMS"].items():
-        sign = rest[0] if rest else 1
-        items[code] = {fy: {"page": p, "printed": v, "unit": units.get(p, d["UNIT"]), "sign": sign, "note": note, "heading_seen": heads[p]}
-                       for fy, p, v in ((cur, p_cur, v_cur), (cmp_, p_cmp, v_cmp))}
+    def rules(table: dict) -> dict:
+        out = {}
+        for code, (p_cur, v_cur, p_cmp, v_cmp, note, *rest) in table.items():
+            sign = rest[0] if rest else 1
+            out[code] = {fy: ({"page": p, "not_disclosed": note, "heading_seen": heads[p]} if v is None else
+                              {"page": p, "printed": v, "unit": units.get(p, d["UNIT"]), "sign": sign, "note": note,
+                               "heading_seen": heads[p]})
+                         for fy, p, v in ((cur, p_cur, v_cur), (cmp_, p_cmp, v_cmp))}
+        return out
+
+    items = rules(d["ITEMS"])
     spec = {"company": d["COMPANY"], "company_id": d["COMPANY_ID"], "period": a.period, "source": d["SOURCE"],
-            "notes": d["NOTES"], "items": items}
+            "notes": d["NOTES"], "items": items, **({"memo": rules(d["MEMO"])} if d.get("MEMO") else {})}
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(json.dumps(spec, ensure_ascii=False, indent=1) + "\n")
     print(f"spec written: {a.out} ({len(items)} line items)")

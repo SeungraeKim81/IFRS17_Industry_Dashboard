@@ -22,6 +22,8 @@ FLAG = PatternFill("solid", fgColor="FCE4D6")
 
 
 def _source_text(rec: dict) -> str:
+    if "not_disclosed" in rec:
+        return f"file p.{rec.get('page')} not disclosed: {rec['not_disclosed']}"
     if "evidence" in rec:
         return f"p.{rec.get('page')} {rec['evidence']}"
     how = "read from page image" if rec.get("read") == "visual" else "text layer"
