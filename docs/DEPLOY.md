@@ -4,11 +4,11 @@ Set up the same way as the earnings tracker
 (<https://seungraekim81.github.io/earnings-tracker/>): on every push,
 `.github/workflows/pages.yml` does the following:
 
-1. **Validate**: rebuilds from the capture workbook (`python -m pipeline all`), runs the six reconciliations
+1. **Validate**: rebuilds from the committed extractions (`python -m pipeline all`), runs the six reconciliations
    and the tests (including the benchmark regression), and checks that the committed `data/` matches a fresh
    run. If any of these fails, nothing is published and the site keeps its previous version.
 2. **Publish** (pushes to `main` only): runs `python -m pipeline site`, which collects **only the built
-   dashboards**, and deploys them to GitHub Pages. The workbook, CSVs, pipeline code and docs are not part of
+   dashboards**, and deploys them to GitHub Pages. The extractions, CSVs, pipeline code and docs are not part of
    the site.
 
 Pull requests and other branches are validated but never published.
@@ -70,7 +70,8 @@ Later changes go through a pull request into `main`. Merging it publishes automa
 
 ## 5. Updating the site
 
-- New figures or commentary: edit the workbook or config, run `python -m pipeline all` and the tests, commit,
+- New figures or commentary: correct the extraction spec (`config/extraction/`) and re-run `python -m pipeline extract`,
+  or edit the config; run `python -m pipeline all` and the tests, commit,
   merge into `main`. The site updates in one to two minutes.
 - New period: follow "Rolling to a new period" in `docs/WORKFLOW.md`. The previous period stays at its own address.
 - If the site looks unchanged, do a hard refresh (Windows `Ctrl+Shift+R`, Mac `Cmd+Shift+R`).
@@ -84,6 +85,6 @@ Later changes go through a pull request into `main`. Merging it publishes automa
 | deploy job fails in about 2 seconds with no log | The `github-pages` environment does not allow `main` to deploy (it can keep the default branch from when Pages was switched on) | Settings → Environments → `github-pages` → Deployment branches and tags: add `main`, then re-run the failed job |
 | deploy step greyed out (skipped) | Repository private without `PAGES_FROM_PRIVATE`, or not on `main` | Section 2 / merge into `main` |
 | validate fails at "Committed data matches" | `data/` was edited by hand or not regenerated | Run `python -m pipeline all`, commit `data/` and `output/` |
-| validate fails at "Rebuild" with a reconciliation failure | The workbook no longer ties | Fix the workbook. The site keeps its previous version |
+| validate fails at "Rebuild" with a reconciliation failure | An extraction no longer ties | Fix the extraction spec against the statement and re-extract. The site keeps its previous version |
 
 To take the site down: Settings → Pages → **Unpublish site**.

@@ -1,6 +1,6 @@
 name: Validate and publish
 
-# Every push and pull request: rebuild from the capture workbook, run the
+# Every push and pull request: rebuild from the committed extractions, run the
 # reconciliations and tests, and check the committed data matches.
 # Pushes to main then publish the dashboard to GitHub Pages, only if all of
 # that passed. Private repositories skip publishing unless the repository
@@ -29,7 +29,7 @@ jobs:
         run: python -m pipeline all
       - name: Tests (incl. benchmark regression)
         run: python -m unittest discover -s tests -v
-      - name: Committed data matches the capture workbook
+      - name: Committed data matches a fresh run
         run: |
           if ! git diff --exit-code --stat -- data; then
             echo "::error::data/ differs from a fresh run of the pipeline. Run 'python -m pipeline all' and commit the result."

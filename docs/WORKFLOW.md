@@ -10,7 +10,7 @@ trustworthy.
 | Role | Responsibility |
 |---|---|
 | **Owner** | Sets scope and the focus insurer, approves release, owns the backlog |
-| **Extractor** (analyst) | Collects the statements, fills the capture workbook, explains flags |
+| **Extractor** (analyst) | Collects the statements, writes the extraction specs and extracts, explains flags |
 | **Reviewer** (second analyst / actuary) | Independent check of extraction and commentary (four-eyes) |
 | **Maintainer** | Pipeline, template, tests, repository |
 
@@ -22,9 +22,9 @@ must be different people** for any insurer.
 | # | Step | Who | Output | Gate to pass |
 |---|---|---|---|---|
 | 1 | **Collect sources**: download each insurer's audited annual statements (SET filing, OIC annual disclosure or company website) | Extractor | Statement saved in Google Drive `FS_Life_Industry/Y<year>/<quarter>/` and registered in `sources/<period>/registry.csv` (Drive file ID, name, size, SHA-256, pages, text layer) | All 17 insurers have a source file, or the gap is agreed with the owner |
-| 2 | **Locate notes**: use `Source Map (Annual)` and `Note Anchors` in the workbook. Search by the on-page heading, not the page number; record the new page and year | Extractor | Updated Source Map and Note Anchors | Every note located by heading |
-| 3 | **Extract** into the insurer's sheet: current year in C, comparative in D, status in E, note/page in F. Convert to THB million with the face/notes divisors; apply the sign rule (revenue +, expense −) | Extractor | Capture workbook | Workbook's own `OK/CHECK` cells all `OK` |
-| 4 | **Ingest**: `python -m pipeline ingest` | Extractor | `data/<period>/line_items.csv` | No unknown or missing line items, every value numeric |
+| 2 | **Locate notes**: find the statement of comprehensive income, the insurance revenue and expense note, the CSM roll-forward and the new-business table **by their headings** (`tools/pdf_pages.py sheet`/`page`, or `pdftotext` when there is a text layer). Last period's spec notes and `docs/HANDOFF.md` section 8 are the starting point; page numbers are never reused | Extractor | The page of each table, with the heading seen | Every table located by heading |
+| 3 | **Extract**: write `config/extraction/<company_id>.json` (text layer: table anchors and row patterns; scanned: printed figures via `tools/visual_spec.py`, with per-page units, sign rules and sums), then `python -m pipeline extract` and `python -m pipeline verify-extract` | Extractor | `extract/<period>/<company_id>.json`; registry status `extracted` | 12/12 reconciliations per insurer; every difference from the previous source explained in the spec notes |
+| 4 | **Ingest**: `python -m pipeline ingest` (source `extract` in `config/dashboard.json`) | Extractor | `data/<period>/line_items.csv` | Every insurer in `config/companies.csv` has an extraction with all line items |
 | 5 | **Validate**: `python -m pipeline validate` | Extractor | `validation.csv`, `flags.csv` | **Blocking:** 6 reconciliations × 2 years × 17 insurers within 0.05m. **Advisory:** each flag is either explained in `config/commentary.json` or fixed at source |
 | 6 | **Metrics**: `python -m pipeline metrics` | Maintainer | `metrics.csv`, `industry.csv` | Tests pass (`python -m unittest discover -s tests`) |
 | 7 | **Build**: `python -m pipeline build` | Maintainer | `output/<period>/…html` | Opens without console errors, in light and dark mode and at phone width |
@@ -42,8 +42,8 @@ must be different people** for any insurer.
 | New-business CSM | PV inflows − PV acquisition − PV claims − RA + loss component = CSM from new business |
 | NB consistency | new business in the roll-forward = CSM in the new-business note |
 
-The first five are the workbook's own checks. The sixth is added because the
-two figures come from different notes and must agree.
+`verify-extract` runs the same six on each extraction before it reaches the pipeline. The sixth matters because
+the two figures come from different notes and must agree.
 
 ### Review checklist (step 8)
 
@@ -57,9 +57,11 @@ two figures come from different notes and must agree.
 
 ## Rolling to a new period
 
-1. Copy the capture workbook to `data/capture/IFRS17_extraction_<period>_v1.xlsx`. Clear columns C:F, set the
-   headers in row 4 (C = new year, D = comparative), keep Source Map and Note Anchors (page numbers become "last seen").
-2. Set `period`, `comparative`, `period_end` and `capture_workbook` in `config/dashboard.json`.
+1. Register the new statements in `sources/<period>/registry.csv` and extract each insurer into
+   `extract/<period>/` (steps 1 to 3). Start each spec from last period's: tables are re-located by heading, the
+   page numbers of the old spec are only a starting point.
+2. Set `period`, `comparative` and `period_end` in `config/dashboard.json`. Refresh the benchmark expectations
+   with `tools/benchmark_fixture.py` once the figures are reviewed, and say so in the pull request.
 3. Add or remove insurers in `config/companies.csv`; RA policy and units are re-confirmed every year.
 4. Re-read `config/commentary.json`: retire notes that no longer apply, add new ones.
 5. Run steps 1 to 9. Earlier periods stay in `data/<old period>/` and `output/<old period>/`.
@@ -69,8 +71,8 @@ The previous period's folder keeps the figures as originally reported, so both r
 
 ## Adding a line item or an indicator
 
-- **Line item**: add a row to the template block (rows 5 to 34) of every insurer sheet, then a row to
-  `config/line_items.csv` (label and aliases). Ingest refuses to run until every sheet carries the new item.
+- **Line item**: add a row to `config/line_items.csv`, then a rule for it in every extraction spec and re-extract.
+  Extraction and ingest refuse to run until every insurer carries the new item.
 - **Indicator**: add one entry to `METRICS` in `pipeline/metrics.py` (label, unit, direction, formula text,
   function), and its Korean label and definition under `metrics` in `config/i18n/ko.json`. It flows
   automatically to the CSV download and the definitions table. To chart it, edit the template.
