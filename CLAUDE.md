@@ -1,24 +1,29 @@
 # Notes for Claude
 
 Thai life insurance IFRS 17 industry dashboard: a Python pipeline that turns
-the analyst capture workbook into one self-contained HTML page. See
-`README.md` for the layout and commands and `docs/WORKFLOW.md` for the process.
+the figures extracted from the insurers' published statements into one
+self-contained HTML page. See `README.md` for the layout and commands and
+`docs/WORKFLOW.md` for the process.
 
-**Work in progress:** the data layer is moving from the pilot workbook to the
-insurers' published statements. Read `docs/HANDOFF.md` first: it holds the
-decisions, how a local session starts, the remaining extractions (section 6)
-and the extraction pitfalls. Locate tables by heading, never by page number.
+The data layer reads the extractions (`extract/<YYYY>FY/<company_id>.json`,
+made from `config/extraction/<company_id>.json` with `python -m pipeline extract`;
+`"source": "extract"` in `config/dashboard.json`). The pilot capture workbook is
+kept for reference only (`docs/pilot/`). Read `docs/HANDOFF.md` first: it holds
+the decisions, how a local session starts, the next steps and the extraction
+pitfalls. Locate tables by heading, never by page number.
 
 - Samsung Life is the default highlighted insurer (`config/dashboard.json`,
   `focus_company`). Do not change it unless the owner asks.
 - Run `python -m pipeline all` and `python -m unittest discover -s tests` before
   every commit. Commit the regenerated `data/<period>/*.csv` and
   `output/<period>/*.html` together with the change that caused them.
-- Do not edit `data/<period>/*.csv` by hand: they are generated from the
-  capture workbook. Fix figures in the workbook and re-run.
+- Do not edit `data/<period>/*.csv` or `extract/` by hand: they are generated.
+  Fix a figure in its extraction spec (against the statement), re-run
+  `python -m pipeline extract` and `verify-extract`, then `python -m pipeline all`.
 - The benchmark-regression test (`TestMetricsAgainstBenchmark`) must keep
-  passing for FY2025. If a figure changes on purpose (a corrected extraction),
-  say so in the pull request and update the test's expectation deliberately.
+  passing for FY2025. Its expectations are `tests/fixtures/<period>_benchmark.json`.
+  If a figure changes on purpose (a corrected extraction), say so in the pull
+  request and regenerate them deliberately with `tools/benchmark_fixture.py`.
 - Indicators are defined once in `pipeline/metrics.py` (`METRICS`); the
   dashboard's definitions table is generated from it.
 - Commentary in `config/commentary.json` holds no figures; numbers on the page
