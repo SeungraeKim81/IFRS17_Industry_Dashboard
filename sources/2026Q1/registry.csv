@@ -1,0 +1,2 @@
+company,period,doc_type,drive_folder,original_name,drive_file_id,bytes,sha256,pages,text_layer,connector_download,status
+Samsung Life,2026Q1,Reviewed condensed interim financial statements 1Q2026 (Thai),FS_Life_Industry/Y2026/1Q2026,06_FS_SAMSUNG_1Q2026.pdf,12cJbjMAWKVc3Pyt0jYb9QNN2Eh6A104j,8031058,7fc2bd84befb37da00d7ba220c2cefb1ac1569fd709143c164144c1ef4308871,31,no (scanned),n/a (read locally),extracted
