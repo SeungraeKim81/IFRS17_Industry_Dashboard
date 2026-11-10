@@ -89,6 +89,7 @@ ties to the insurers' printed subtotals.
 | `output/<period>/` | The built dashboard |
 | `docs/WORKFLOW.md` | The operating process: roles, steps, gates, review checklist, period roll-over |
 | `docs/BACKLOG.md` | Benchmark review, improvement proposals and open decisions |
+| `docs/HANDOFF.md` | Handoff (Korean): move to statement-based sources, decisions, next steps |
 | `docs/DEPLOY.md` | Publishing on GitHub Pages: routes, one-off setup, troubleshooting |
 | `.github/workflows/pages.yml` | Validate on every push; publish to GitHub Pages from `main` |
 | `docs/benchmark/` | The benchmark board this version was built against |
