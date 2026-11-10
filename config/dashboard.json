@@ -11,6 +11,7 @@
   "default_language": "en",
   "large_insurer_count": 10,
   "search_engine_indexing": false,
+  "source": "workbook",
   "capture_workbook": "data/capture/IFRS17_extraction_FY2025_v11.xlsx",
   "tolerance_thb_m": 0.05,
   "plausibility": {

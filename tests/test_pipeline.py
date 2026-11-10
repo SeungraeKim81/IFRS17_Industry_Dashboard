@@ -37,6 +37,13 @@ class TestIngest(unittest.TestCase):
         self.assertAlmostEqual(v["csm_close"], 5151.677)
         self.assertAlmostEqual(v["csm_release"], -740.036)
 
+    def test_extractions_give_every_company_and_item(self):
+        rows, notes = ingest.ingest_extractions(PERIOD)
+        self.assertEqual(len(notes), 17)
+        self.assertEqual(len(rows), 17 * 2 * 30)
+        self.assertEqual({r["status"] for r in rows}, {"Extracted"})
+        self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows))  # where each value was read
+
     def test_unknown_label_stops_the_run(self):
         tmp = Path(tempfile.mkdtemp()) / "wb.xlsx"
         shutil.copy(WORKBOOK, tmp)
