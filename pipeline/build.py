@@ -57,13 +57,14 @@ def _source_ref(s: dict, period: str) -> str:
 def payload(period: str, focus: str | None = None) -> dict:
     s = load_settings()
     pdir = period_dir(period)
-    companies = load_companies()
+    values = load_values(period)
+    # the insurers with figures for this period: the annual list, or every insurer extracted for a quarter
+    companies = [c for c in load_companies() if (c["company"], period) in values]
     names = {c["company"] for c in companies}
     focus = focus or s["focus_company"]
     if focus not in names:
         raise SystemExit(f"build: focus company {focus!r} is not in config/companies.csv")
 
-    values = load_values(period)
     metrics: dict[tuple[str, str], dict] = {}
     for r in read_csv(pdir / "metrics.csv"):
         metrics.setdefault((r["company"], r["fiscal_year"]), {})[r["metric"]] = {

@@ -32,7 +32,25 @@ def write_csv(path: Path, rows: list[dict], fields: list[str]) -> None:
 
 
 def load_companies() -> list[dict]:
+    """Every insurer the pipeline knows (config/companies.csv)."""
     return read_csv(CONFIG / "companies.csv")
+
+
+def annual_companies() -> list[dict]:
+    """The insurers on the annual dashboard ("annual" = yes); the quarterly pages show every insurer extracted."""
+    return [c for c in load_companies() if c.get("annual", "yes") == "yes"]
+
+
+def comparative_period(period: str) -> str:
+    """The period a dashboard compares with: FY2025 -> FY2024, 2026Q2 -> 2025Q2 (the same year to date a year earlier)."""
+    import re
+    m = re.fullmatch(r"FY(\d{4})", period)
+    if m:
+        return f"FY{int(m.group(1)) - 1}"
+    q = quarter_info(period)
+    if q:
+        return f"{q['year'] - 1}Q{q['quarter']}"
+    raise ValueError(f"period {period!r}: expected FYyyyy or yyyyQn")
 
 
 def load_line_items() -> list[dict]:

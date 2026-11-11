@@ -38,11 +38,28 @@ class TestIngest(unittest.TestCase):
         self.assertAlmostEqual(v["csm_release"], -740.036)
 
     def test_extractions_give_every_company_and_item(self):
-        rows, notes = ingest.ingest_extractions(PERIOD)
+        rows, notes, rows_3m = ingest.ingest_extractions(PERIOD)
+        self.assertEqual(rows_3m, [])  # annual: no three-month profit or loss
         self.assertEqual(len(notes), 17)
         self.assertEqual(len(rows), 17 * 2 * 30)
         self.assertEqual({r["status"] for r in rows}, {"Extracted"})
         self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows))  # where each value was read
+
+    def test_quarterly_extractions(self):
+        """A quarter takes every insurer extracted; the comparative is the same quarter a year earlier, where extracted."""
+        rows, notes, rows_3m = ingest.ingest_extractions("2026Q2")
+        per_year = {}
+        for r in rows:
+            per_year.setdefault(r["fiscal_year"], set()).add(r["company"])
+        self.assertEqual(len(notes), len(per_year["2026Q2"]))
+        self.assertTrue(per_year["2025Q2"] < per_year["2026Q2"])  # fewer insurers extracted for 2025Q2
+        self.assertEqual({r["code"] for r in rows_3m}, {"insurance_revenue", "insurance_service_expense",
+                         "reinsurance_result", "net_investment_income", "ifie", "other_expense", "other_income",
+                         "income_tax", "net_profit"})
+        nd = [r for r in rows if r["status"] == "Not disclosed"]
+        self.assertTrue(nd and all(r["value"] == "" for r in nd))
+        self.assertEqual(ingest.extract_period("2026Q2"), "2026Q2")
+        self.assertEqual(ingest.extract_period("FY2025"), "2025FY")
 
     def test_unknown_label_stops_the_run(self):
         tmp = Path(tempfile.mkdtemp()) / "wb.xlsx"
