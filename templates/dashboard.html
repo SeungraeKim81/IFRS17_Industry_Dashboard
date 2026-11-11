@@ -81,8 +81,10 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic 
 .focus-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:12px}
 .focus-name{font-size:22px;font-weight:650}
 .chip{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--hair);color:var(--ink-2);background:var(--surface)}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:960px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.tiles + .tiles{margin-top:12px}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.tiles{grid-template-columns:1fr}}
 .tile{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
 .tile .lab{font-size:13px;color:var(--ink-2)}
@@ -163,7 +165,8 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 
 <section id="s-focus">
   <div class="focus-head"><span class="focus-name" id="fName"></span><span id="fChips"></span></div>
-  <div class="tiles" id="tiles"></div>
+  <div class="tiles" id="tiles1"></div>
+  <div class="tiles" id="tiles2"></div>
   <ul class="headlines" id="headlines"></ul>
   <div class="callouts" id="callouts"></div>
 </section>
@@ -323,7 +326,7 @@ const UI = {
     tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy", tipIsmNet: "Margin after reinsurance",
     tipIsmCmp: "Service margin {cmp}", tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
-    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}", ctxRel: "Release ratio {r} · median {v}",
+    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
     wf: ["Opening", "New business", "Accretion", "Future service", "Release", "Closing"],
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
@@ -405,7 +408,7 @@ const UI = {
     tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책", tipIsmNet: "재보험 후 이익률",
     tipIsmCmp: "{cmp} 보험서비스이익률", tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
-    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}", ctxRel: "CSM 상각률 {r} · 중앙값 {v}",
+    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
     wf: ["기초", "신계약", "이자부리", "미래서비스", "상각", "기말"],
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
@@ -585,21 +588,29 @@ function focusSection() {
   const sameRA = COS.filter(x => x.ra === c.ra);
   const medOf = (list, k) => { const v = list.map(x => g(x, k)).filter(v => v != null).sort((a, b) => a - b); const m = v.length; return m ? (m % 2 ? v[(m - 1) / 2] : (v[m / 2 - 1] + v[m / 2]) / 2) : null; };
   const rankIn = (list, k) => 1 + list.filter(x => g(x, k) > g(c, k)).length;
-  const T = [
+  const rankMed = (k, fmt) => () => t("ctxRankMed", { r: rk(c, k).rank, n, v: fmt(ind(k).median) });
+  // top row: amounts, CSM first; bottom row: the matching ratios
+  const T1 = [
+    { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
+    { k: "csm_release_amount", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "csm_release_amount").rank, n, v: fM(ind("csm_release_amount").agg) }) },
+    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
     { k: "insurance_revenue", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "insurance_revenue").rank, n, s: fP(g(c, "rev_share")) }) },
     { k: "net_profit", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_profit").rank, n, v: fM(ind("net_profit").agg) }) },
-    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
-    { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
-    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
-    { k: "npm", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "npm").rank, n, v: fP(ind("npm").median) }) },
-    { k: "nb_csm_margin", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "nb_csm_margin").rank, n, v: fP(ind("nb_csm_margin").median) }) },
-    { k: "nb_to_release", kind: "x", ctx: () => t("ctxRel", { r: fP(g(c, "release_ratio")), v: fX(ind("nb_to_release").median) }) },
   ];
-  $("#tiles").innerHTML = T.map(x => {
+  const T2 = [
+    { k: "nb_csm_margin", kind: "pp", ctx: rankMed("nb_csm_margin", fP) },
+    { k: "nb_to_release", kind: "x", ctx: rankMed("nb_to_release", fX) },
+    { k: "release_ratio", kind: "pp", ctx: rankMed("release_ratio", fP) },
+    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
+    { k: "npm", kind: "pp", ctx: rankMed("npm", fP) },
+  ];
+  const tile = x => {
     const d = DEF[x.k];
     return '<div class="tile"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
       '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div></div>";
-  }).join("");
+  };
+  $("#tiles1").innerHTML = T1.map(tile).join("");
+  $("#tiles2").innerHTML = T2.map(tile).join("");
 
   const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
   const L = t("headlines")({
