@@ -1,7 +1,8 @@
 """Step 5 (publishing only) - collect the files GitHub Pages serves into _site/.
 
-  _site/index.html            the current period's dashboard (config/dashboard.json)
-  _site/<period>/index.html   every built period, so earlier dashboards keep a stable address
+  _site/index.html            the current period's dashboard (config/dashboard.json "period")
+  _site/<period>/index.html   every built period (annual and quarterly), so each keeps a stable address;
+                              the same page also under its file name, which the period links on each page use
   _site/.nojekyll             serve files as they are
 
 Only the built dashboards are published. The capture workbook, the CSVs, the
@@ -27,6 +28,7 @@ def run(period: str | None = None) -> None:
     for p in built:
         (SITE / p.parent.name).mkdir()
         shutil.copyfile(p, SITE / p.parent.name / "index.html")
+        shutil.copyfile(p, SITE / p.parent.name / p.name)
         if p.parent.name == current:
             shutil.copyfile(p, SITE / "index.html")
     (SITE / ".nojekyll").touch()

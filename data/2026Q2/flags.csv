@@ -1,0 +1,16 @@
+company,fiscal_year,flag,message,message_ko
+BUI Life,2025Q2,release_ratio,CSM release ratio 38.4% is outside 5%-20%,CSM 상각률 38.4%가 5%~20% 범위를 벗어남
+BUI Life,2025Q2,onerous_nb,Losses on onerous new business (5.6m) exceed new-business CSM (0.1m),손실부담 신계약 손실(5.6백만)이 신계약 CSM(0.1백만)보다 큼
+BUI Life,2025Q2,loss_year,Net loss of -10.9m,당기순손실 -10.9백만
+BUI Life,2026Q2,release_ratio,CSM release ratio 88.4% is outside 5%-20%,CSM 상각률 88.4%가 5%~20% 범위를 벗어남
+BUI Life,2026Q2,revenue_yoy,Insurance revenue changed +891% year on year,보험수익 전년 대비 +891% 변동
+CHUBB Life,2025Q2,nb_to_release,New business / release 8.8x is above 3.0x,신계약 CSM ÷ 상각 8.8배로 3.0배 초과
+CHUBB Life,2026Q2,nb_to_release,New business / release 6.9x is above 3.0x,신계약 CSM ÷ 상각 6.9배로 3.0배 초과
+Rabbit Life,2026Q2,nb_to_release,New business / release 5.2x is above 3.0x,신계약 CSM ÷ 상각 5.2배로 3.0배 초과
+Saha Life,2025Q2,release_ratio,CSM release ratio 24.4% is outside 5%-20%,CSM 상각률 24.4%가 5%~20% 범위를 벗어남
+Saha Life,2025Q2,onerous_nb,Losses on onerous new business (45.0m) exceed new-business CSM (2.0m),손실부담 신계약 손실(45.0백만)이 신계약 CSM(2.0백만)보다 큼
+Saha Life,2025Q2,loss_year,Net loss of -38.3m,당기순손실 -38.3백만
+Saha Life,2026Q2,onerous_nb,Losses on onerous new business (52.1m) exceed new-business CSM (1.4m),손실부담 신계약 손실(52.1백만)이 신계약 CSM(1.4백만)보다 큼
+T Life,2025Q2,release_ratio,CSM release ratio 34.9% is outside 5%-20%,CSM 상각률 34.9%가 5%~20% 범위를 벗어남
+T Life,2025Q2,onerous_nb,Losses on onerous new business (31.5m) exceed new-business CSM (7.5m),손실부담 신계약 손실(31.5백만)이 신계약 CSM(7.5백만)보다 큼
+T Life,2026Q2,release_ratio,CSM release ratio 28.1% is outside 5%-20%,CSM 상각률 28.1%가 5%~20% 범위를 벗어남
