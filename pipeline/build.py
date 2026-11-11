@@ -128,11 +128,6 @@ def payload(period: str, focus: str | None = None) -> dict:
     industry_common = _industry_table(pdir / "industry_common.csv")
     accepted = {(r["company"], r["fiscal_year"], r["check"]): r["reason"]
                 for r in (read_csv(pdir / "accepted_breaks.csv") if (pdir / "accepted_breaks.csv").exists() else [])}
-    three_month: dict = {}
-    if (pdir / "line_items_3m.csv").exists():
-        for r in read_csv(pdir / "line_items_3m.csv"):
-            three_month.setdefault(r["company"], {}).setdefault(r["fiscal_year"], {})[r["code"]] = (
-                float(r["value"]) if r["value"] != "" else None)
 
     checks: dict = {}
     for r in read_csv(pdir / "validation.csv"):
@@ -166,7 +161,6 @@ def payload(period: str, focus: str | None = None) -> dict:
         "companies": cos,
         "industry": industry,
         "industry_common": industry_common,
-        "three_month": three_month,
         "metric_defs": [{"code": m[0], "label": m[1], "unit": m[2], "better": m[3], "group": m[4], "formula": m[5]}
                         for m in METRICS] + [
             {"code": k, "label": "Share of " + METRIC_LABEL[b], "unit": "pct", "better": True, "group": "scale",

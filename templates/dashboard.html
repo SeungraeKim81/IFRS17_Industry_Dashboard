@@ -35,6 +35,9 @@ __ROBOTS__
   --good:#0ca30c; --bad:#e66767; --neutral-mid:#383835;
 }
 *{box-sizing:border-box}
+/* one line length for all running text, about the width of the charts. In rem, not ch: ch is the width
+   of the digit 0, about half a Korean character, so ch-based widths wrapped Korean text early. */
+:root{--measure:60rem}
 html,body{margin:0}
 body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
   -webkit-font-smoothing:antialiased;padding:32px 16px 64px}
@@ -42,14 +45,12 @@ body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-appl
 header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
 .top-text{flex:1 1 560px;min-width:0}
 h1{font-weight:650;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
-.lede{color:var(--ink-2);max-width:72ch;margin:0}
+.lede{color:var(--ink-2);max-width:var(--measure);margin:0}
 .units{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
 nav.periods{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:8px;font-size:13px}
 nav.periods .lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 nav.periods a{color:var(--ink-2)}
 nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decoration:none}
-.q3{margin-top:24px}
-.q3 h3{margin:0 0 4px}
 .controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .lang-pick{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .lang-pick .seg button{text-transform:none;letter-spacing:0}
@@ -64,7 +65,7 @@ nav.toc a{color:var(--ink-2);text-decoration:none}
 nav.toc a:hover{color:var(--ink);text-decoration:underline}
 section{margin-top:44px;scroll-margin-top:12px}
 h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
-.sec-note{color:var(--ink-2);font-size:14px;max-width:76ch;margin:6px 0 16px}
+.sec-note{color:var(--ink-2);font-size:14px;max-width:var(--measure);margin:6px 0 16px}
 .panel{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:16px}
 .panel h3{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
 .panel .sub{font-size:12px;color:var(--muted);margin:3px 0 10px}
@@ -81,8 +82,10 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic 
 .focus-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:12px}
 .focus-name{font-size:22px;font-weight:650}
 .chip{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--hair);color:var(--ink-2);background:var(--surface)}
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-@media(max-width:960px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.tiles + .tiles{margin-top:12px}
+@media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.tiles{grid-template-columns:1fr}}
 .tile{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
 .tile .lab{font-size:13px;color:var(--ink-2)}
@@ -90,7 +93,7 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic 
 .tile .delta{font-size:13px;margin-top:2px}
 .tile .ctx{font-size:12px;color:var(--muted);margin-top:4px}
 .up-good,.down-good{color:var(--good)} .up-bad,.down-bad{color:var(--bad)} .flat{color:var(--ink-2)}
-.headlines{margin:16px 0 0;padding:0 0 0 18px;color:var(--ink);max-width:90ch}
+.headlines{margin:16px 0 0;padding:0 0 0 18px;color:var(--ink);max-width:var(--measure)}
 .headlines li{margin:4px 0}
 .callouts{margin-top:14px;display:grid;gap:8px}
 .callout{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--axis);padding:4px 0 4px 12px}
@@ -124,12 +127,18 @@ tr.focus .barcell .fill{background:var(--focus);opacity:1}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
 button.dl{font:inherit;font-size:13px;border:1px solid var(--axis);background:var(--surface);color:var(--ink);border-radius:6px;padding:5px 12px;cursor:pointer}
 .ok{color:var(--good)} .fail{color:var(--bad);font-weight:700}
-.notes{font-size:13.5px;color:var(--ink-2);max-width:82ch}
+.notes{font-size:13.5px;color:var(--ink-2);max-width:var(--measure)}
 .notes h4{color:var(--ink);font-size:14px;margin:18px 0 4px}
 .notes p{margin:0 0 8px}
-details{border-top:1px solid var(--grid);padding:6px 0}
-details summary{cursor:pointer;color:var(--ink);font-size:13.5px}
-details p{margin:6px 0 4px;font-size:13px;color:var(--ink-2)}
+details:not(.sec-fold){border-top:1px solid var(--grid);padding:6px 0}
+details:not(.sec-fold) summary{cursor:pointer;color:var(--ink);font-size:13.5px}
+details:not(.sec-fold) p{margin:6px 0 4px;font-size:13px;color:var(--ink-2)}
+/* a section that opens on request: its heading is the summary */
+.sec-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px}
+.sec-fold>summary::-webkit-details-marker{display:none}
+.sec-fold>summary::before{content:"\25B8";color:var(--muted);font-size:16px;display:inline-block;transition:transform .15s}
+.sec-fold[open]>summary::before{transform:rotate(90deg)}
+.sec-fold>summary:hover h2{text-decoration:underline;text-decoration-color:var(--axis)}
 ul.flags{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}
 footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted)}
 .tip{position:fixed;pointer-events:none;z-index:9;background:var(--surface);color:var(--ink);border:1px solid var(--hair);border-radius:6px;
@@ -163,7 +172,8 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 
 <section id="s-focus">
   <div class="focus-head"><span class="focus-name" id="fName"></span><span id="fChips"></span></div>
-  <div class="tiles" id="tiles"></div>
+  <div class="tiles" id="tiles1"></div>
+  <div class="tiles" id="tiles2"></div>
   <ul class="headlines" id="headlines"></ul>
   <div class="callouts" id="callouts"></div>
 </section>
@@ -190,7 +200,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     <div class="legend">
       <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span></span>
       <span class="key"><i class="dot" style="background:var(--peer)"></i><span data-t="lgOthers"></span></span>
-      <span class="key" style="color:var(--muted)">&#9650;&nbsp;<span data-t="lgCeiling"></span></span>
+      <span class="key" style="color:var(--muted)">&#9650;&nbsp;&#9654;&nbsp;<span data-t="lgCeiling"></span></span>
       <span class="key" style="color:var(--muted)" data-t="lgBubble"></span>
     </div>
   </div>
@@ -211,6 +221,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 
 <section id="s-ism">
   <h2 data-t="h2ism"></h2>
+  <p class="sec-note" data-t="noteIsmDef" style="margin-bottom:6px"></p>
   <p class="sec-note" data-t="noteIsm"></p>
   <div class="panels">
     <div class="panel"><h3 data-t="h3dis"></h3><div class="sub" id="m1sub"></div><svg id="m1" viewBox="0 0 520 330" role="img" data-t-aria="h3dis"></svg></div>
@@ -241,26 +252,24 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     <button class="dl" id="dlBtn" type="button" data-t="download"></button>
   </div>
   <div class="tbl-wrap"><table class="data" id="all"></table></div>
-  <div class="q3" id="q3" hidden><h3 id="q3h"></h3><p class="sec-note" data-t="note3m"></p>
-    <div class="tbl-wrap"><table class="data" id="q3t"></table></div></div>
 </section>
 
-<section id="s-dq">
-  <h2 data-t="h2dq"></h2>
+<section id="s-dq"><details class="sec-fold">
+  <summary><h2 data-t="h2dq"></h2></summary>
   <p class="sec-note" id="dqNote"></p>
   <div class="tbl-wrap"><table class="data" id="dq"></table></div>
   <div class="notes" style="margin-top:16px"><h4 data-t="h4flags"></h4>
     <p data-t="noteFlags"></p>
     <ul class="flags" id="flags"></ul></div>
-</section>
+</details></section>
 
-<section id="s-method">
-  <h2 data-t="h2method"></h2>
+<section id="s-method"><details class="sec-fold">
+  <summary><h2 data-t="h2method"></h2></summary>
   <div class="notes" id="commentary"></div>
   <div class="notes"><h4 data-t="h4defs"></h4></div>
   <div class="tbl-wrap" style="margin-top:8px"><table class="data" id="defs"></table></div>
   <div class="notes" id="extract"></div>
-</section>
+</details></section>
 
 <footer id="foot"></footer>
 </div>
@@ -288,23 +297,24 @@ const UI = {
     langName: "English", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
     lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
-    toc: ["Focus", "Market position", "CSM engine", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
+    toc: ["Focus", "Market position", "CSM movement", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
-    noteMarket: "Size on three measures: what the insurer earns this year (insurance revenue), the profit stored for future years (closing CSM) and the profit added by this year's sales (new-business CSM). Share is of the {n} insurers covered.",
-    h2csm: "3&nbsp; The CSM engine",
+    noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and what the insurer earns this year (insurance revenue). Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
+    h2csm: "3&nbsp; CSM movement analysis",
     noteCsm: "How the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total. The quadrant then sets the release pace against how much new business replaces what was released.",
     h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
     lgOpenClose: "Opening / closing", lgIncrease: "Increase", lgDecrease: "Decrease",
     h3quad: "CSM sustainability quadrant", ariaQuad: "Scatter of CSM release ratio against new business divided by release",
-    lgOthers: "Other insurers", lgCeiling: "plotted at the ceiling, true value labelled", lgBubble: "bubble area = closing CSM",
+    lgOthers: "Other insurers", lgCeiling: "plotted at the axis limit, true value labelled", lgBubble: "bubble area = closing CSM",
     h2nb: "4&nbsp; New-business quality",
     noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median.",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Insurance service margin, split by RA policy",
+    noteIsmDef: "The insurance service margin is the insurance service result (insurance revenue plus insurance service expense) divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results.",
     noteIsm: "An insurer that does <b>not</b> disaggregate the risk-adjustment change carries its financial effect inside the insurance service result, which lifts the margin. The two groups are on different bases and are compared only within each group; the tick marks each group's median.",
     h3dis: "Disaggregates the RA", h3not: "Does not disaggregate",
     h2bridge: "6&nbsp; What happens to a hundred baht of insurance revenue",
-    noteBridge: "Every driver between the insurance service result and net profit, as a share of the insurer's own insurance revenue. Contributions sit right of zero, drags left of it; the diamond marks the net-profit margin. Investment income is shown <b>net of insurance finance expense</b>: the two move together with rates and mislead apart. The rule marks the break after the {nLarge} largest insurers.",
+    noteBridge: "Every driver between the insurance service result and net profit, as a share of the insurer's own insurance revenue. Contributions sit right of zero, drags left of it; the diamond marks the net-profit margin. Investment income is shown <b>net of insurance finance expense</b>: the two move together with rates and mislead apart. Insurers are ordered by net-profit margin, highest first.",
     ariaBridge: "Contribution chart from insurance service result to net profit margin",
     lgIsr: "Insurance service result after reinsurance", lgInv: "Investment result net of IFIE", lgOther: "Other expense, net",
     lgTax: "Income tax", lgNpm: "Net profit margin", lgClipped: "clipped at the axis",
@@ -323,9 +333,9 @@ const UI = {
     tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy", tipIsmNet: "Margin after reinsurance",
     tipIsmCmp: "Service margin {cmp}", tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
-    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}", ctxRel: "Release ratio {r} · median {v}",
+    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
-    wf: ["Opening", "New business", "Accretion", "Future service", "Release", "Closing"],
+    wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
     qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
     better: "higher is better", worse: "lower is better", median: "median {v}",
@@ -341,12 +351,9 @@ const UI = {
     qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (ann.)",
     noteAllQ: " Figures are year to date. The industry change compares the {k} insurers present in both periods.",
     industryAggCommon: "Industry, like for like ({k} insurers)",
-    h3m: "The quarter alone: three months to {pe}",
-    note3m: "From the three-month profit or loss in the interim statements, against the same quarter a year earlier. The industry change compares the insurers present in both quarters.",
     dqNoteQ: "<b>{ok} of {total}</b> reconciliations pass within {tol}m on the year-to-date figures shown ({n} insurers, {c} checks per period). The build stops if any one fails. Hover a tick for the difference.",
     dqNoteAcc: " ✓* ({a}) marks a break the statement itself contains, accepted at the recorded difference.",
     dqNoteNa: " n/a ({na}) marks a check that needs an item the statement does not disclose; it was tied to the printed total at extraction.",
-    industry3m: "Industry · change over the {k} insurers with both quarters",
     dqAccepted: "accepted break, difference {v}m: {r}", dqNa: "not disclosed; tied to the printed total at extraction",
     cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
       csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
@@ -370,23 +377,24 @@ const UI = {
     langName: "한국어", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
     lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
-    toc: ["강조 보험사", "시장 지위", "CSM 엔진", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
+    toc: ["강조 보험사", "시장 지위", "CSM 변동분석", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
-    noteMarket: "세 가지 기준의 규모: 올해 벌어들인 이익의 원천(보험수익), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 판매로 새로 더한 이익(신계약 CSM). 점유율은 대상 {n}개사 합계 기준이다.",
-    h2csm: "3&nbsp; CSM 엔진",
+    noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 벌어들인 이익의 원천(보험수익). 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
+    h2csm: "3&nbsp; CSM 변동분석",
     noteCsm: "강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다. 이어서 사분면에서 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다.",
     h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
     lgOpenClose: "기초 / 기말", lgIncrease: "증가", lgDecrease: "감소",
     h3quad: "CSM 지속가능성 사분면", ariaQuad: "CSM 상각률과 신계약 CSM ÷ 상각 배수의 산점도",
-    lgOthers: "다른 보험사", lgCeiling: "상한선에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
+    lgOthers: "다른 보험사", lgCeiling: "축 한계에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
     h2nb: "4&nbsp; 신계약 품질",
     noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다.",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 보험서비스이익률 (RA 분리 정책별)",
+    noteIsmDef: "보험서비스이익률은 보험서비스결과(보험수익 + 보험서비스비용)를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다.",
     noteIsm: "위험조정 변동을 <b>분리하지 않는</b> 보험사는 RA의 금융효과까지 보험서비스결과에 포함하므로 이익률이 높게 나온다. 두 그룹은 기준이 달라 그룹 안에서만 비교하며, 세로선은 그룹별 중앙값이다.",
     h3dis: "RA 분리", h3not: "RA 미분리",
     h2bridge: "6&nbsp; 보험수익 100바트는 어디로 가나",
-    noteBridge: "보험서비스결과부터 당기순이익까지의 각 요인을 해당 보험사 보험수익 대비 비율로 표시한다. 0 오른쪽은 이익에 더하는 요인, 왼쪽은 빼는 요인이고, 마름모는 순이익률이다. 투자수익은 <b>보험금융비용을 차감한 순액</b>으로 보여 준다. 둘은 금리와 함께 움직여서 따로 보면 오해를 낳는다. 가로선은 상위 {nLarge}개사 다음의 구분선이다.",
+    noteBridge: "보험서비스결과부터 당기순이익까지의 각 요인을 해당 보험사 보험수익 대비 비율로 표시한다. 0 오른쪽은 이익에 더하는 요인, 왼쪽은 빼는 요인이고, 마름모는 순이익률이다. 투자수익은 <b>보험금융비용을 차감한 순액</b>으로 보여 준다. 둘은 금리와 함께 움직여서 따로 보면 오해를 낳는다. 보험사는 순이익률이 높은 순으로 놓았다.",
     ariaBridge: "보험서비스결과에서 순이익률까지의 기여도 차트",
     lgIsr: "재보험 후 보험서비스결과", lgInv: "투자손익(보험금융비용 차감 후)", lgOther: "기타비용(순)",
     lgTax: "법인세", lgNpm: "순이익률", lgClipped: "축에서 잘림",
@@ -398,16 +406,16 @@ const UI = {
     h2method: "9&nbsp; 방법론 및 주석", h4defs: "지표 정의", h4comp: "비교 가능성 관련 주석", compYear: "비교기간",
     h4extract: "보험사별 추출 메모", notesLang: "",
     na: "없음", nm: "산출 불가", noCmp: "비교기간 없음", nmBase: "{cmp} 대비 산출 불가 (기준값 ≤ 0)", vs: "{cmp} 대비", pp: "%p", m: "백만",
-    rankOf: "보험수익 {n}개사 중 {r}위", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
+    rankOf: "보험수익 {n}개사 중 {r}", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
     focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
     insurer: "보험사", shareCol: "{x} · 점유율", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
     tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스이익률", tipRel: "CSM 상각률",
     tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책", tipIsmNet: "재보험 후 이익률",
     tipIsmCmp: "{cmp} 보험서비스이익률", tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
-    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}", ctxRel: "CSM 상각률 {r} · 중앙값 {v}",
+    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
-    wf: ["기초", "신계약", "이자부리", "미래서비스", "상각", "기말"],
+    wf: ["기초", "신계약", "이자부리", "CSM 조정", "상각", "기말"],
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
     qX: "CSM 상각률 (상각 ÷ 상각 전 CSM)", qY: "신계약 CSM ÷ 상각",
     better: "높을수록 좋음", worse: "낮을수록 좋음", median: "중앙값 {v}",
@@ -423,16 +431,13 @@ const UI = {
     qXQ: "CSM 상각률, 연환산 (상각 ÷ 상각 전 CSM, × 12 ÷ 경과월수)", ann: " (연환산)",
     noteAllQ: " 수치는 누적 기준이다. 업계 변동은 두 기간에 모두 있는 {k}개사끼리 비교한다.",
     industryAggCommon: "업계, 동일 회사 기준 ({k}개사)",
-    h3m: "해당 분기만: {pe}까지 3개월",
-    note3m: "중간재무제표의 3개월 손익계산서 값이며 전년 같은 분기와 비교한다. 업계 변동은 두 분기에 모두 있는 보험사끼리 비교한다.",
     dqNoteQ: "표시한 누적 수치 기준으로 대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사, 기간마다 {c}개 점검). 하나라도 어긋나면 빌드가 멈춘다. 체크 표시에 마우스를 올리면 차이가 보인다.",
     dqNoteAcc: " ✓*({a}건)는 재무제표 자체에 있는 불일치를 기록한 차이에서 수용한 것이다.",
     dqNoteNa: " n/a({na}건)는 공시하지 않은 항목이 필요한 점검으로, 추출 때 인쇄된 합계와 대사했다.",
-    industry3m: "업계 · 변동은 두 분기 모두 있는 {k}개사 기준",
     dqAccepted: "수용한 불일치, 차이 {v}백만: {r}", dqNa: "미공시 항목, 추출 때 인쇄된 합계와 대사",
     cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
       csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
-      acq_cost_ratio: "신계약비율", onerous_ratio: "손실부담 비율" },
+      acq_cost_ratio: "신계약비용률", onerous_ratio: "손실부담 비율" },
     ord: n => n + "위",
     chg: (x, up, down) => x == null ? "변동(산출 불가)" : nf(Math.abs(x) * 100, 1) + "% " + (x >= 0 ? up : down),
     headlines: p => [
@@ -585,21 +590,29 @@ function focusSection() {
   const sameRA = COS.filter(x => x.ra === c.ra);
   const medOf = (list, k) => { const v = list.map(x => g(x, k)).filter(v => v != null).sort((a, b) => a - b); const m = v.length; return m ? (m % 2 ? v[(m - 1) / 2] : (v[m / 2 - 1] + v[m / 2]) / 2) : null; };
   const rankIn = (list, k) => 1 + list.filter(x => g(x, k) > g(c, k)).length;
-  const T = [
+  const rankMed = (k, fmt) => () => t("ctxRankMed", { r: rk(c, k).rank, n, v: fmt(ind(k).median) });
+  // top row: amounts, CSM first; bottom row: the matching ratios
+  const T1 = [
+    { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
+    { k: "csm_release_amount", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "csm_release_amount").rank, n, v: fM(ind("csm_release_amount").agg) }) },
+    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
     { k: "insurance_revenue", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "insurance_revenue").rank, n, s: fP(g(c, "rev_share")) }) },
     { k: "net_profit", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_profit").rank, n, v: fM(ind("net_profit").agg) }) },
-    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
-    { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
-    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
-    { k: "npm", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "npm").rank, n, v: fP(ind("npm").median) }) },
-    { k: "nb_csm_margin", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "nb_csm_margin").rank, n, v: fP(ind("nb_csm_margin").median) }) },
-    { k: "nb_to_release", kind: "x", ctx: () => t("ctxRel", { r: fP(g(c, "release_ratio")), v: fX(ind("nb_to_release").median) }) },
   ];
-  $("#tiles").innerHTML = T.map(x => {
+  const T2 = [
+    { k: "nb_csm_margin", kind: "pp", ctx: rankMed("nb_csm_margin", fP) },
+    { k: "nb_to_release", kind: "x", ctx: rankMed("nb_to_release", fX) },
+    { k: "release_ratio", kind: "pp", ctx: rankMed("release_ratio", fP) },
+    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
+    { k: "npm", kind: "pp", ctx: rankMed("npm", fP) },
+  ];
+  const tile = x => {
     const d = DEF[x.k];
     return '<div class="tile"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
       '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div></div>";
-  }).join("");
+  };
+  $("#tiles1").innerHTML = T1.map(tile).join("");
+  $("#tiles2").innerHTML = T2.map(tile).join("");
 
   const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
   const L = t("headlines")({
@@ -622,12 +635,14 @@ function focusSection() {
 
 /* ---------- 2 market ---------- */
 function market() {
-  const cols = [["insurance_revenue", "rev_share"], ["csm_close", "csm_share"], ["nb_csm", "nb_csm_share"]];
+  const cols = [["nb_csm", "nb_csm_share"], ["csm_close", "csm_share"], ["insurance_revenue", "rev_share"]];
   const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
   let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
-  COS.forEach((c, i) => {
-    const cls = [isF(c) ? "focus" : "", i > 0 && c.tier !== COS[i - 1].tier ? "tier-break" : ""].join(" ");
-    h += "<tr class='" + cls + "' data-co='" + esc(c.name) + "'><td class='l'>" + c.size_rank + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+  // ordered by new-business CSM; # is the new-business CSM rank
+  const nbv = c => g(c, "nb_csm") ?? -Infinity;
+  COS.slice().sort((a, b) => nbv(b) - nbv(a)).forEach(c => {
+    const r = rk(c, "nb_csm")?.rank;
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (r ?? "") + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
       cols.map(([k, s]) => "<td><div class='barcell'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, k)) / max[k]).toFixed(2) + "%'></div></div><span class='v'>" +
         fM(g(c, k)) + "</span><span class='s'>" + fP(g(c, s)) + "</span></div></td>").join("") + "</tr>";
   });
@@ -679,13 +694,18 @@ function waterfall() {
   });
 }
 
+// Approximate width of text at font size fs: a Korean character is about 1 em, others about 0.55 em.
+const textW = (s, fs) => [...s].reduce((a, ch) => a + (/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/.test(ch) ? 1 : 0.55) * fs, 0);
+
 /* ---------- 3b quadrant ---------- */
 function quadrant() {
   const svg = $("#quad"); svg.textContent = "";
-  const W = 900, H = 470, L = 56, R = 20, T = 20, B = 46, CAP = 3;
+  // axis limits: y at 3x; x at 30%, 1.5 times the top of the 5%-20% plausibility range. A point beyond
+  // a limit sits on it with a marker and its true value, so one outlier cannot squeeze the others.
+  const W = 900, H = 470, L = 56, R = 20, T = 20, B = 46, CAP = 3, XCAP = 30;
   const xs = COS.map(c => g(c, "release_ratio") * 100);
-  const x1 = Math.max(25, Math.ceil(Math.max(...xs) / 5) * 5);
-  const px = v => L + v / x1 * (W - L - R), py = v => H - B - Math.min(v, CAP) / CAP * (H - T - B);
+  const x1 = Math.min(XCAP, Math.max(25, Math.ceil(Math.max(...xs) / 5) * 5));
+  const px = v => L + Math.min(v, x1) / x1 * (W - L - R), py = v => H - B - Math.min(v, CAP) / CAP * (H - T - B);
   const maxC = Math.max(...COS.map(c => raw(c, "csm_close")));
   const rad = v => 4.5 + 19 * Math.sqrt(v / maxC);
   $("#qSub").textContent = t("qSub", { cur: CURL, lo: fM(Math.min(...COS.map(c => raw(c, "csm_close")))), hi: fM(maxC) });
@@ -696,16 +716,27 @@ function quadrant() {
   for (let v = 0; v <= x1; v += 5) svg.appendChild(el("text", { x: px(v), y: H - B + 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, v + "%"));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: "var(--axis)" }));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(1), y2: py(1), stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "5 4" }));
-  svg.appendChild(el("text", { x: W - R - 4, y: py(1) - 7, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, t("qThreshold")));
   svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, t(QTR ? "qXQ" : "qX")));
   svg.appendChild(el("text", { x: 0, y: 0, fill: "var(--ink-2)", "font-size": 12, "text-anchor": "middle", transform: "translate(13," + ((T + H - B) / 2) + ") rotate(-90)" }, t("qY")));
 
-  const pts = COS.map(c => ({ c, x: px(g(c, "release_ratio") * 100), y: py(g(c, "nb_to_release")), rad: rad(raw(c, "csm_close")), over: g(c, "nb_to_release") > CAP, txt: c.short }))
+  const pts = COS.map(c => {
+    const overY = g(c, "nb_to_release") > CAP, overX = g(c, "release_ratio") * 100 > x1;
+    const extra = [overX ? fP(g(c, "release_ratio")) : null, overY ? fX(g(c, "nb_to_release"), 1) : null].filter(Boolean).join(" · ");
+    return { c, x: px(g(c, "release_ratio") * 100), y: py(g(c, "nb_to_release")), rad: rad(raw(c, "csm_close")), over: overX || overY, overX, overY, extra, txt: c.short };
+  })
     .sort((a, b) => (isF(b.c) - isF(a.c)) || (b.rad - a.rad));
-  const boxes = [], LH = 13;
+  // the 1.0x label goes at the right end of its line, or the left end when a bubble sits there;
+  // its box is reserved so that no insurer's label is placed over it
+  const thTxt = t("qThreshold"), thW = textW(thTxt, 11) * 1.06, thY = py(1) - 7;
+  const thBox = [{ x1: W - R - 4 - thW, x2: W - R - 4, anchor: "end", x: W - R - 4 }, { x1: L + 4, x2: L + 4 + thW, anchor: "start", x: L + 4 }]
+    .map(b => Object.assign(b, { y1: thY - 11, y2: thY + 3 }))
+    .find(b => !pts.some(q => q.x + q.rad > b.x1 && q.x - q.rad < b.x2 && q.y + q.rad > b.y1 && q.y - q.rad < b.y2)) ||
+    { x1: W - R - 4 - thW, x2: W - R - 4, y1: thY - 11, y2: thY + 3, anchor: "end", x: W - R - 4 };
+  svg.appendChild(el("text", { x: thBox.x, y: thY, "text-anchor": thBox.anchor, fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, thTxt));
+  const boxes = [thBox], LH = 13;
   const overlap = (a, b) => !(a.x2 < b.x1 || b.x2 < a.x1 || a.y2 < b.y1 || b.y2 < a.y1);
   pts.forEach(p => {
-    const w = p.txt.length * (isF(p.c) ? 7 : 6.2), h = p.over ? LH + 11 : LH;
+    const w = Math.max(p.txt.length * (isF(p.c) ? 7 : 6.2), p.over ? p.extra.length * 5.8 : 0), h = p.over ? LH + 11 : LH;
     let best = null;
     for (const side of [1, -1]) for (const dy of [0, -14, 14, -28, 28, -42, 42, -56, 56]) {
       const lx = p.x + side * (p.rad + 6), ly = p.y + 4 + dy;
@@ -724,15 +755,26 @@ function quadrant() {
     const c = colr(p.c), gg = el("g");
     if (Math.abs(p.dy) > 8) gg.appendChild(el("line", { x1: p.x + p.side * p.rad, y1: p.y, x2: p.side > 0 ? p.lx - 3 : p.lx + 3, y2: p.ly - 4, stroke: "var(--axis)" }));
     gg.appendChild(el("circle", { cx: p.x, cy: p.y, r: p.rad, fill: c, "fill-opacity": isF(p.c) ? .45 : .22, stroke: c, "stroke-width": 2 }));
-    if (p.over) gg.appendChild(el("path", { d: "M" + (p.x - 6) + "," + (p.y - p.rad - 4) + " L" + (p.x + 6) + "," + (p.y - p.rad - 4) + " L" + p.x + "," + (p.y - p.rad - 13) + " Z", fill: c }));
+    if (p.overY) gg.appendChild(el("path", { d: "M" + (p.x - 6) + "," + (p.y - p.rad - 4) + " L" + (p.x + 6) + "," + (p.y - p.rad - 4) + " L" + p.x + "," + (p.y - p.rad - 13) + " Z", fill: c }));
+    if (p.overX) gg.appendChild(el("path", { d: "M" + (p.x + p.rad + 4) + "," + (p.y - 6) + " L" + (p.x + p.rad + 4) + "," + (p.y + 6) + " L" + (p.x + p.rad + 13) + "," + p.y + " Z", fill: c }));
     gg.appendChild(el("text", { x: p.lx, y: p.ly, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--ink)", "font-size": isF(p.c) ? 13 : 11.5, "font-weight": isF(p.c) ? 650 : 400 }, p.txt));
-    if (p.over) gg.appendChild(el("text", { x: p.lx, y: p.ly + 12, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--muted)", "font-size": 10.5 }, fX(g(p.c, "nb_to_release"), 1)));
+    if (p.over) gg.appendChild(el("text", { x: p.lx, y: p.ly + 12, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--muted)", "font-size": 10.5 }, p.extra));
     const hit = el("circle", { cx: p.x, cy: p.y, r: Math.max(p.rad, 12), fill: "transparent" });
     hover(hit, () => coTip(p.c)); gg.appendChild(hit); svg.appendChild(gg);
   });
 }
 
 /* ---------- 4 strips ---------- */
+// Break text into lines no wider than maxW (SVG units) at font size fs.
+function wrapText(s, maxW, fs) {
+  const w = x => textW(x, fs);
+  const lines = [];
+  s.split(" ").forEach(word => {
+    const last = lines[lines.length - 1];
+    if (last != null && w(last + " " + word) <= maxW) lines[lines.length - 1] = last + " " + word; else lines.push(word);
+  });
+  return lines;
+}
 function strips() {
   const svg = $("#strips"); svg.textContent = "";
   const rows = ["nb_csm_margin", "acq_cost_ratio", "onerous_ratio", "nb_to_release"];
@@ -745,8 +787,11 @@ function strips() {
     let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
     const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
-    svg.appendChild(el("text", { x: 0, y: cy - 4, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
-    svg.appendChild(el("text", { x: 0, y: cy + 12, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
+    // name, then its definition (as in the definitions table) in small type, then the reading direction
+    svg.appendChild(el("text", { x: 0, y: cy - 14, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
+    const defLines = wrapText(mFormula(k), L - 14, 10.5);
+    defLines.forEach((s, i) => svg.appendChild(el("text", { x: 0, y: cy + 2 + i * 12.5, "font-size": 10.5, fill: "var(--ink-2)" }, s)));
+    svg.appendChild(el("text", { x: 0, y: cy + 6 + defLines.length * 12.5, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
     ticks.forEach(tk => {
       svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
       svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(tk * 100, 0) + "%" : nf(tk, 1) + "×"));
@@ -826,10 +871,10 @@ function bridge() {
     svg.appendChild(el("line", { x1: px(v), x2: px(v), y1: T - 12, y2: H - B + 4, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": v === 0 ? 1.5 : 1 }));
     svg.appendChild(el("text", { x: px(v), y: T - 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, (v > 0 ? "+" : "") + v + "%"));
   }
-  COS.forEach((c, i) => {
+  const npmOf = c => g(c, "npm") ?? -Infinity;  // ordered by net-profit margin, highest first
+  COS.slice().sort((a, b) => npmOf(b) - npmOf(a)).forEach((c, i) => {
     const y = T + i * step + step / 2, h = 14, gg = el("g");
     if (isF(c)) gg.appendChild(el("rect", { x: 4, y: y - step / 2 + 2, width: W - 8, height: step - 4, fill: "var(--focus-soft)", rx: 3 }));
-    if (i > 0 && c.tier !== COS[i - 1].tier) gg.appendChild(el("line", { x1: 4, x2: W - 4, y1: y - step / 2, y2: y - step / 2, stroke: "var(--axis)", "stroke-width": 1.5 }));
     let cp = 0, cn = 0, clipped = false;
     const tipHtml = () => tipTable(c.name, [...parts.map(p => [t(p[2]), fP(g(c, p[0]))]), ["<b>" + t("lgNpm") + "</b>", "<b>" + fP(g(c, "npm")) + "</b>"],
       [t("tipRev"), fM(raw(c, "insurance_revenue")) + " " + t("m")]]);
@@ -908,40 +953,6 @@ function table() {
     const k = th.dataset.k; SORT = SORT.k === k ? { k, dir: -SORT.dir } : { k, dir: k === "name" ? 1 : -1 }; table();
   }));
 }
-function threeMonth() {
-  const box = $("#q3");
-  box.hidden = !QTR;
-  if (!QTR) return;
-  const q = DATA.three_month || {};
-  const v3 = (c, k, fy) => ((q[c.name] || {})[fy] || {})[k];
-  const calc = {
-    insurance_revenue: v => v.insurance_revenue, isr_gross: v => v.insurance_revenue + v.insurance_service_expense,
-    net_profit: v => v.net_profit, npm: v => v.insurance_revenue ? v.net_profit / v.insurance_revenue : null };
-  const kinds = { insurance_revenue: "growth", isr_gross: "growth", net_profit: "growth", npm: "pp" };
-  const val = (c, k, fy) => { const r = (q[c.name] || {})[fy]; return r && r.insurance_revenue != null ? calc[k](r) : null; };
-  const chgTxt = (k, a, b) => {
-    if (a == null || b == null) return t("noCmp");
-    if (kinds[k] === "pp") { const d = a - b; return (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
-    const d = growth(a, b); return d == null ? t("nm") : (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%";
-  };
-  $("#q3h").textContent = t("h3m", { pe: metaT("period_end") });
-  const keys = Object.keys(calc);
-  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + keys.map(k => "<th>" + esc(mLabel(k)) + (DEF[k].unit === "thb_m" ? " (" + t("m") + ")" : "") +
-    "</th><th>" + esc(t("vs", { cmp: CMPL })) + "</th>").join("") + "</tr></thead><tbody>";
-  const rows = COS.slice().sort((a, b) => (val(b, "insurance_revenue", CUR) ?? -1e18) - (val(a, "insurance_revenue", CUR) ?? -1e18));
-  rows.forEach(c => {
-    h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
-      keys.map(k => "<td>" + fmtU(DEF[k].unit, val(c, k, CUR)) + "</td><td>" + chgTxt(k, val(c, k, CUR), val(c, k, CMP)) + "</td>").join("") + "</tr>";
-  });
-  // industry: the current quarter over every insurer shown; the change over the insurers with both quarters
-  const sum = (list, fy) => { const s = {}; list.forEach(c => { const r = (q[c.name] || {})[fy]; if (!r) return;
-    Object.keys(r).forEach(k => { s[k] = (s[k] || 0) + (r[k] || 0); }); }); return Object.keys(s).length ? s : null; };
-  const both = COS.filter(c => v3(c, "insurance_revenue", CUR) != null && v3(c, "insurance_revenue", CMP) != null);
-  const tot = sum(COS, CUR), tc = sum(both, CUR), tp = sum(both, CMP);
-  h += "<tr><td class='l'><b>" + esc(both.length && both.length < COS.length ? t("industry3m", { k: both.length }) : t("industryAgg")) + "</b></td>" +
-    keys.map(k => "<td><b>" + fmtU(DEF[k].unit, tot ? calc[k](tot) : null) + "</b></td><td><b>" + chgTxt(k, tc ? calc[k](tc) : null, tp ? calc[k](tp) : null) + "</b></td>").join("") + "</tr></tbody>";
-  $("#q3t").innerHTML = h;
-}
 function downloadCsv() {
   const codes = DATA.metric_defs.map(d => d.code);
   const lines = [["company", "fiscal_year", "ra_policy", ...codes].join(",")];
@@ -992,7 +1003,7 @@ function method() {
 function renderAll() {
   staticText();
   $$(".f-name").forEach(e => e.textContent = F);
-  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); threeMonth(); dataQuality(); method();
+  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));
@@ -1001,6 +1012,11 @@ function renderAll() {
   if (want && langs.includes(want) && (want === "en" || (DATA.i18n || {})[want])) LANG = want;
   if (h.get("focus") && byName(h.get("focus"))) F = h.get("focus");
   controls(); renderAll();
+  // a link to a folded section (table of contents, or a #s-dq address) opens it; printing opens them all
+  const unfold = id => { const s = document.getElementById(id), d = s && s.querySelector(".sec-fold"); if (d) d.open = true; };
+  $("#toc").addEventListener("click", e => { const a = e.target.closest("a[href^='#']"); if (a) unfold(a.getAttribute("href").slice(1)); });
+  if (/^#s-/.test(location.hash)) unfold(location.hash.slice(1));
+  window.addEventListener("beforeprint", () => $$(".sec-fold").forEach(d => { d.open = true; }));
 })();
 </script>
 </body>

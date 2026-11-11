@@ -57,6 +57,8 @@ METRICS = [
      "CSM release / insurance revenue", lambda v: _div(-v["csm_release"], v["insurance_revenue"])),
     ("csm_growth", "CSM growth", "pct", True, "csm",
      "CSM closing / CSM opening - 1", lambda v: _div(v["csm_close"], v["csm_open"]) - 1 if v["csm_open"] else None),
+    ("csm_release_amount", "CSM release", "thb_m", None, "csm",
+     "CSM recognised in profit or loss for the services provided (shown as a positive amount)", lambda v: -v["csm_release"]),
     ("release_ratio", "CSM release ratio", "pct", None, "csm",
      "CSM release / (opening CSM + new business + accretion + future-service changes); quarterly pages annualise it (x 12 / months to date)",
      lambda v: _div(-v["csm_release"], v["csm_open"] + v["csm_nb"] + v["csm_accretion"] + v["csm_future_service"])),

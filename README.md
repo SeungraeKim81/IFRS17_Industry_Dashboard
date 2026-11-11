@@ -76,16 +76,18 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 
 ## Dashboard sections
 
-1. **Focus**: KPI tiles for the highlighted insurer, each with its change from the prior year, rank and industry
-   benchmark, plus auto-generated headlines and any notes or review flags that apply to it
-2. **Market position**: insurance revenue, closing CSM and new-business CSM with market shares
-3. **CSM engine**: roll-forward waterfall (focus vs industry, opening = 100) and the CSM sustainability quadrant
-4. **New-business quality**: NB CSM margin, acquisition cost ratio, onerous share and NB / release; focus FY2025 vs FY2024 against all insurers
+1. **Focus**: ten KPI tiles for the highlighted insurer, amounts on top (new-business CSM, CSM release, closing CSM,
+   insurance revenue, net profit) and the matching ratios below, each with its change from the comparative period,
+   rank and industry benchmark, plus auto-generated headlines and any notes or review flags that apply to it
+2. **Market position**: new-business CSM, closing CSM and insurance revenue with market shares, ordered by new-business CSM
+3. **CSM movement analysis**: roll-forward waterfall (focus vs industry, opening = 100) and the CSM sustainability quadrant
+   (axes capped at a 30% release ratio and 3x new business / release; points beyond sit on the edge with their true value)
+4. **New-business quality**: NB CSM margin, acquisition cost ratio, onerous share and NB / release, each with its definition; focus vs comparative against all insurers
 5. **Insurance service margin by RA policy**: compared only within each risk-adjustment disaggregation group
-6. **Profit bridge**: what happens to 100 baht of insurance revenue
+6. **Profit bridge**: what happens to 100 baht of insurance revenue, ordered by net-profit margin
 7. **All insurers**: sortable table with FY2025 / FY2024 / change views and a CSV download
-8. **Data quality**: reconciliation matrix and plausibility flags
-9. **Method & notes**: comparability notes, indicator definitions, per-insurer extraction notes
+8. **Data quality**: reconciliation matrix and plausibility flags (folded; opens on click)
+9. **Method & notes**: comparability notes, indicator definitions, per-insurer extraction notes (folded; opens on click)
 
 ## Repository layout
 
@@ -120,5 +122,6 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.0 | 2026-11 | First pipeline release: FY2025 + FY2024, 17 insurers, Samsung Life focus. Reproduces every figure on the benchmark board. |
 | v1.1 | 2026-11 | GitHub Pages publishing: validation workflow, `site` step, per-period addresses, `noindex` by default |
 | v1.2 | 2026-11 | Korean version: language switch at the top right (English / 한국어), remembered per browser and settable by `#lang=ko`; Korean review flags; translation completeness tests |
-| v1.4 | 2026-11 | Annual page covers all 20 insurers extracted for FY2025 (adds BUI, Phillip, Saha); benchmark expectations regenerated |
 | v1.3 | 2026-11 | Quarterly pages 1Q2025 to 2Q2026 (year to date, every insurer extracted, annualised release ratio, like-for-like industry change, three-month table); period links on every page; not-disclosed values shown as n/a |
+| v1.4 | 2026-11 | Annual page covers all 20 insurers extracted for FY2025 (adds BUI, Phillip, Saha); benchmark expectations regenerated |
+| v1.5 | 2026-11 | Layout: two rows of five focus cards (CSM first, adds CSM release); market position ordered by new-business CSM; 'CSM movement analysis' with the quadrant's x-axis capped at 30%; definitions under the new-business measures; profit bridge ordered by net-profit margin; one line length for text; Data quality and Method fold away; three-month table dropped |

@@ -14,6 +14,7 @@ fiscal_year,metric,aggregate,median,n
 2025Q1,current_loss_ratio,0.692697,0.792703,19
 2025Q1,csm_release_share,0.224187,0.219685,19
 2025Q1,csm_growth,0.022966,0.020989,19
+2025Q1,csm_release_amount,16366.354826,246.433,19
 2025Q1,release_ratio,0.104666,0.12829,19
 2025Q1,nb_to_release,1.625416,1.437804,19
 2025Q1,nb_csm_margin,0.132096,0.109796,19
