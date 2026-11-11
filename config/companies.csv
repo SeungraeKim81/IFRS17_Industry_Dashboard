@@ -16,6 +16,6 @@ Southeast Life,Southeast Life,Southeast,Southeast Life Insurance PCL,disaggregat
 Samsung Life,Samsung Life,Samsung,Samsung Life Insurance (Thailand) PCL,disaggregated,Baht,Thousand Baht,yes
 T Life,T Life,T Life,T Life Assurance PCL,disaggregated,Baht,Thousand Baht,yes
 Rabbit Life,Rabbit Life,Rabbit,Rabbit Life Assurance PCL,disaggregated,Baht,Thousand Baht,yes
-BUI Life,BUI Life,BUI,BUI Life Insurance PCL,not_disaggregated,Baht,Baht,no
-Phillip Life,Phillip Life,Phillip,Phillip Life Assurance PCL,disaggregated,Baht,Thousand Baht,no
-Saha Life,Saha Life,Saha,Saha Life Insurance PCL,disaggregated,Baht,Baht,no
+BUI Life,,BUI,BUI Life Insurance PCL,not_disaggregated,Baht,Baht,yes
+Phillip Life,,Phillip,Phillip Life Assurance PCL,disaggregated,Baht,Thousand Baht,yes
+Saha Life,,Saha,Saha Life Insurance PCL,disaggregated,Baht,Baht,yes

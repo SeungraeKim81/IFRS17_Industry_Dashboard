@@ -40,9 +40,11 @@ class TestIngest(unittest.TestCase):
     def test_extractions_give_every_company_and_item(self):
         rows, notes, rows_3m, _ = ingest.ingest_extractions(PERIOD)
         self.assertEqual(rows_3m, [])  # annual: no three-month profit or loss
-        self.assertEqual(len(notes), 17)
-        self.assertEqual(len(rows), 17 * 2 * 30)
-        self.assertEqual({r["status"] for r in rows}, {"Extracted"})
+        self.assertEqual(len(notes), 20)  # the 17 pilot insurers + BUI, Phillip, Saha
+        self.assertEqual(len(rows), 20 * 2 * 30)
+        nd = {(r["company"], r["code"]) for r in rows if r["status"] == "Not disclosed"}
+        self.assertEqual(nd, {("BUI Life", "nb_pv_acq"), ("BUI Life", "nb_pv_claims")})
+        self.assertEqual({r["status"] for r in rows}, {"Extracted", "Not disclosed"})
         self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows))  # where each value was read
 
     def test_quarterly_extractions(self):
@@ -75,8 +77,11 @@ class TestIngest(unittest.TestCase):
 class TestValidate(unittest.TestCase):
     def test_all_reconciliations_pass(self):
         checks, _ = validate.validate(PERIOD)
-        self.assertEqual(len(checks), 17 * 2 * len(validate.RECONCILIATIONS))
-        self.assertEqual([c for c in checks if c["result"] != "OK"], [])
+        self.assertEqual(len(checks), 20 * 2 * len(validate.RECONCILIATIONS))
+        self.assertEqual([c for c in checks if c["result"] == "FAIL"], [])
+        na = {(c["company"], c["check"]) for c in checks if c["result"] == "N/A"}
+        self.assertEqual(na, {("BUI Life", "nb_csm")})  # needs the not-disclosed split; tied to the memo total
+        self.assertEqual([c for c in checks if c["result"] == "ACCEPTED"], [])
 
     def test_known_flags_raised(self):
         _, flags = validate.validate(PERIOD)
@@ -290,7 +295,7 @@ class TestBuild(unittest.TestCase):
     def test_payload_and_render(self):
         data = build.payload(PERIOD)
         self.assertEqual(data["meta"]["default_focus"], "Samsung Life")
-        self.assertEqual(len(data["companies"]), 17)
+        self.assertEqual(len(data["companies"]), 20)
         html = build.render(data)
         self.assertNotIn("__DATA__", html)
         self.assertNotIn("</script><", html.split('id="data"')[1].split("</script>")[0])
