@@ -35,6 +35,9 @@ __ROBOTS__
   --good:#0ca30c; --bad:#e66767; --neutral-mid:#383835;
 }
 *{box-sizing:border-box}
+/* one line length for all running text, about the width of the charts. In rem, not ch: ch is the width
+   of the digit 0, about half a Korean character, so ch-based widths wrapped Korean text early. */
+:root{--measure:60rem}
 html,body{margin:0}
 body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
   -webkit-font-smoothing:antialiased;padding:32px 16px 64px}
@@ -42,7 +45,7 @@ body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-appl
 header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
 .top-text{flex:1 1 560px;min-width:0}
 h1{font-weight:650;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
-.lede{color:var(--ink-2);max-width:72ch;margin:0}
+.lede{color:var(--ink-2);max-width:var(--measure);margin:0}
 .units{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
 nav.periods{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:8px;font-size:13px}
 nav.periods .lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
@@ -64,7 +67,7 @@ nav.toc a{color:var(--ink-2);text-decoration:none}
 nav.toc a:hover{color:var(--ink);text-decoration:underline}
 section{margin-top:44px;scroll-margin-top:12px}
 h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
-.sec-note{color:var(--ink-2);font-size:14px;max-width:76ch;margin:6px 0 16px}
+.sec-note{color:var(--ink-2);font-size:14px;max-width:var(--measure);margin:6px 0 16px}
 .panel{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:16px}
 .panel h3{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
 .panel .sub{font-size:12px;color:var(--muted);margin:3px 0 10px}
@@ -92,7 +95,7 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic 
 .tile .delta{font-size:13px;margin-top:2px}
 .tile .ctx{font-size:12px;color:var(--muted);margin-top:4px}
 .up-good,.down-good{color:var(--good)} .up-bad,.down-bad{color:var(--bad)} .flat{color:var(--ink-2)}
-.headlines{margin:16px 0 0;padding:0 0 0 18px;color:var(--ink);max-width:90ch}
+.headlines{margin:16px 0 0;padding:0 0 0 18px;color:var(--ink);max-width:var(--measure)}
 .headlines li{margin:4px 0}
 .callouts{margin-top:14px;display:grid;gap:8px}
 .callout{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--axis);padding:4px 0 4px 12px}
@@ -126,7 +129,7 @@ tr.focus .barcell .fill{background:var(--focus);opacity:1}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
 button.dl{font:inherit;font-size:13px;border:1px solid var(--axis);background:var(--surface);color:var(--ink);border-radius:6px;padding:5px 12px;cursor:pointer}
 .ok{color:var(--good)} .fail{color:var(--bad);font-weight:700}
-.notes{font-size:13.5px;color:var(--ink-2);max-width:82ch}
+.notes{font-size:13.5px;color:var(--ink-2);max-width:var(--measure)}
 .notes h4{color:var(--ink);font-size:14px;margin:18px 0 4px}
 .notes p{margin:0 0 8px}
 details{border-top:1px solid var(--grid);padding:6px 0}
