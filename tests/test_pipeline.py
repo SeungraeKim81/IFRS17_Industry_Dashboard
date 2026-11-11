@@ -316,7 +316,7 @@ class TestBuild(unittest.TestCase):
                 self.assertIn(period, [p["id"] for p in m["periods"]])
                 names = {c["name"] for c in data["companies"]}
                 self.assertTrue({"BUI Life", "Saha Life", "Samsung Life"} <= names)
-                self.assertEqual(set(data["three_month"]), names)
+                self.assertNotIn("three_month", data)  # the 3-month table was dropped from the page (v1.5)
                 self.assertEqual(build.missing_translations(data, "ko"), [])
                 self.assertTrue(all(n.get("periods") is None for n in data["commentary"]))  # FY-only notes left out
         self.assertEqual(build.period_label("FY2025"), "FY2025")

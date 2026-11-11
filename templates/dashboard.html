@@ -51,8 +51,6 @@ nav.periods{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin
 nav.periods .lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 nav.periods a{color:var(--ink-2)}
 nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decoration:none}
-.q3{margin-top:24px}
-.q3 h3{margin:0 0 4px}
 .controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .lang-pick{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .lang-pick .seg button{text-transform:none;letter-spacing:0}
@@ -248,8 +246,6 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     <button class="dl" id="dlBtn" type="button" data-t="download"></button>
   </div>
   <div class="tbl-wrap"><table class="data" id="all"></table></div>
-  <div class="q3" id="q3" hidden><h3 id="q3h"></h3><p class="sec-note" data-t="note3m"></p>
-    <div class="tbl-wrap"><table class="data" id="q3t"></table></div></div>
 </section>
 
 <section id="s-dq">
@@ -349,12 +345,9 @@ const UI = {
     qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (ann.)",
     noteAllQ: " Figures are year to date. The industry change compares the {k} insurers present in both periods.",
     industryAggCommon: "Industry, like for like ({k} insurers)",
-    h3m: "The quarter alone: three months to {pe}",
-    note3m: "From the three-month profit or loss in the interim statements, against the same quarter a year earlier. The industry change compares the insurers present in both quarters.",
     dqNoteQ: "<b>{ok} of {total}</b> reconciliations pass within {tol}m on the year-to-date figures shown ({n} insurers, {c} checks per period). The build stops if any one fails. Hover a tick for the difference.",
     dqNoteAcc: " ✓* ({a}) marks a break the statement itself contains, accepted at the recorded difference.",
     dqNoteNa: " n/a ({na}) marks a check that needs an item the statement does not disclose; it was tied to the printed total at extraction.",
-    industry3m: "Industry · change over the {k} insurers with both quarters",
     dqAccepted: "accepted break, difference {v}m: {r}", dqNa: "not disclosed; tied to the printed total at extraction",
     cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
       csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
@@ -432,12 +425,9 @@ const UI = {
     qXQ: "CSM 상각률, 연환산 (상각 ÷ 상각 전 CSM, × 12 ÷ 경과월수)", ann: " (연환산)",
     noteAllQ: " 수치는 누적 기준이다. 업계 변동은 두 기간에 모두 있는 {k}개사끼리 비교한다.",
     industryAggCommon: "업계, 동일 회사 기준 ({k}개사)",
-    h3m: "해당 분기만: {pe}까지 3개월",
-    note3m: "중간재무제표의 3개월 손익계산서 값이며 전년 같은 분기와 비교한다. 업계 변동은 두 분기에 모두 있는 보험사끼리 비교한다.",
     dqNoteQ: "표시한 누적 수치 기준으로 대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사, 기간마다 {c}개 점검). 하나라도 어긋나면 빌드가 멈춘다. 체크 표시에 마우스를 올리면 차이가 보인다.",
     dqNoteAcc: " ✓*({a}건)는 재무제표 자체에 있는 불일치를 기록한 차이에서 수용한 것이다.",
     dqNoteNa: " n/a({na}건)는 공시하지 않은 항목이 필요한 점검으로, 추출 때 인쇄된 합계와 대사했다.",
-    industry3m: "업계 · 변동은 두 분기 모두 있는 {k}개사 기준",
     dqAccepted: "수용한 불일치, 차이 {v}백만: {r}", dqNa: "미공시 항목, 추출 때 인쇄된 합계와 대사",
     cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
       csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
@@ -947,40 +937,6 @@ function table() {
     const k = th.dataset.k; SORT = SORT.k === k ? { k, dir: -SORT.dir } : { k, dir: k === "name" ? 1 : -1 }; table();
   }));
 }
-function threeMonth() {
-  const box = $("#q3");
-  box.hidden = !QTR;
-  if (!QTR) return;
-  const q = DATA.three_month || {};
-  const v3 = (c, k, fy) => ((q[c.name] || {})[fy] || {})[k];
-  const calc = {
-    insurance_revenue: v => v.insurance_revenue, isr_gross: v => v.insurance_revenue + v.insurance_service_expense,
-    net_profit: v => v.net_profit, npm: v => v.insurance_revenue ? v.net_profit / v.insurance_revenue : null };
-  const kinds = { insurance_revenue: "growth", isr_gross: "growth", net_profit: "growth", npm: "pp" };
-  const val = (c, k, fy) => { const r = (q[c.name] || {})[fy]; return r && r.insurance_revenue != null ? calc[k](r) : null; };
-  const chgTxt = (k, a, b) => {
-    if (a == null || b == null) return t("noCmp");
-    if (kinds[k] === "pp") { const d = a - b; return (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
-    const d = growth(a, b); return d == null ? t("nm") : (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%";
-  };
-  $("#q3h").textContent = t("h3m", { pe: metaT("period_end") });
-  const keys = Object.keys(calc);
-  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + keys.map(k => "<th>" + esc(mLabel(k)) + (DEF[k].unit === "thb_m" ? " (" + t("m") + ")" : "") +
-    "</th><th>" + esc(t("vs", { cmp: CMPL })) + "</th>").join("") + "</tr></thead><tbody>";
-  const rows = COS.slice().sort((a, b) => (val(b, "insurance_revenue", CUR) ?? -1e18) - (val(a, "insurance_revenue", CUR) ?? -1e18));
-  rows.forEach(c => {
-    h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
-      keys.map(k => "<td>" + fmtU(DEF[k].unit, val(c, k, CUR)) + "</td><td>" + chgTxt(k, val(c, k, CUR), val(c, k, CMP)) + "</td>").join("") + "</tr>";
-  });
-  // industry: the current quarter over every insurer shown; the change over the insurers with both quarters
-  const sum = (list, fy) => { const s = {}; list.forEach(c => { const r = (q[c.name] || {})[fy]; if (!r) return;
-    Object.keys(r).forEach(k => { s[k] = (s[k] || 0) + (r[k] || 0); }); }); return Object.keys(s).length ? s : null; };
-  const both = COS.filter(c => v3(c, "insurance_revenue", CUR) != null && v3(c, "insurance_revenue", CMP) != null);
-  const tot = sum(COS, CUR), tc = sum(both, CUR), tp = sum(both, CMP);
-  h += "<tr><td class='l'><b>" + esc(both.length && both.length < COS.length ? t("industry3m", { k: both.length }) : t("industryAgg")) + "</b></td>" +
-    keys.map(k => "<td><b>" + fmtU(DEF[k].unit, tot ? calc[k](tot) : null) + "</b></td><td><b>" + chgTxt(k, tc ? calc[k](tc) : null, tp ? calc[k](tp) : null) + "</b></td>").join("") + "</tr></tbody>";
-  $("#q3t").innerHTML = h;
-}
 function downloadCsv() {
   const codes = DATA.metric_defs.map(d => d.code);
   const lines = [["company", "fiscal_year", "ra_policy", ...codes].join(",")];
@@ -1031,7 +987,7 @@ function method() {
 function renderAll() {
   staticText();
   $$(".f-name").forEach(e => e.textContent = F);
-  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); threeMonth(); dataQuality(); method();
+  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));
