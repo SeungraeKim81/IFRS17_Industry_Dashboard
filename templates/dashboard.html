@@ -296,7 +296,7 @@ const UI = {
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "CSM engine", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
-    noteMarket: "Size on three measures: what the insurer earns this year (insurance revenue), the profit stored for future years (closing CSM) and the profit added by this year's sales (new-business CSM). Share is of the {n} insurers covered.",
+    noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and what the insurer earns this year (insurance revenue). Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
     h2csm: "3&nbsp; The CSM engine",
     noteCsm: "How the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total. The quadrant then sets the release pace against how much new business replaces what was released.",
     h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
@@ -378,7 +378,7 @@ const UI = {
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "CSM 엔진", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
-    noteMarket: "세 가지 기준의 규모: 올해 벌어들인 이익의 원천(보험수익), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 판매로 새로 더한 이익(신계약 CSM). 점유율은 대상 {n}개사 합계 기준이다.",
+    noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 벌어들인 이익의 원천(보험수익). 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
     h2csm: "3&nbsp; CSM 엔진",
     noteCsm: "강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다. 이어서 사분면에서 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다.",
     h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
@@ -636,12 +636,14 @@ function focusSection() {
 
 /* ---------- 2 market ---------- */
 function market() {
-  const cols = [["insurance_revenue", "rev_share"], ["csm_close", "csm_share"], ["nb_csm", "nb_csm_share"]];
+  const cols = [["nb_csm", "nb_csm_share"], ["csm_close", "csm_share"], ["insurance_revenue", "rev_share"]];
   const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
   let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
-  COS.forEach((c, i) => {
-    const cls = [isF(c) ? "focus" : "", i > 0 && c.tier !== COS[i - 1].tier ? "tier-break" : ""].join(" ");
-    h += "<tr class='" + cls + "' data-co='" + esc(c.name) + "'><td class='l'>" + c.size_rank + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+  // ordered by new-business CSM; # is the new-business CSM rank
+  const nbv = c => g(c, "nb_csm") ?? -Infinity;
+  COS.slice().sort((a, b) => nbv(b) - nbv(a)).forEach(c => {
+    const r = rk(c, "nb_csm")?.rank;
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (r ?? "") + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
       cols.map(([k, s]) => "<td><div class='barcell'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, k)) / max[k]).toFixed(2) + "%'></div></div><span class='v'>" +
         fM(g(c, k)) + "</span><span class='s'>" + fP(g(c, s)) + "</span></div></td>").join("") + "</tr>";
   });
