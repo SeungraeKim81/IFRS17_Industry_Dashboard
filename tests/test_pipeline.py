@@ -38,7 +38,7 @@ class TestIngest(unittest.TestCase):
         self.assertAlmostEqual(v["csm_release"], -740.036)
 
     def test_extractions_give_every_company_and_item(self):
-        rows, notes, rows_3m = ingest.ingest_extractions(PERIOD)
+        rows, notes, rows_3m, _ = ingest.ingest_extractions(PERIOD)
         self.assertEqual(rows_3m, [])  # annual: no three-month profit or loss
         self.assertEqual(len(notes), 17)
         self.assertEqual(len(rows), 17 * 2 * 30)
@@ -47,7 +47,7 @@ class TestIngest(unittest.TestCase):
 
     def test_quarterly_extractions(self):
         """A quarter takes every insurer extracted; the comparative is the same quarter a year earlier, where extracted."""
-        rows, notes, rows_3m = ingest.ingest_extractions("2026Q2")
+        rows, notes, rows_3m, _ = ingest.ingest_extractions("2026Q2")
         per_year = {}
         for r in rows:
             per_year.setdefault(r["fiscal_year"], set()).add(r["company"])
@@ -96,6 +96,40 @@ class TestNotDisclosed(unittest.TestCase):
         self.assertEqual(metrics.evaluate(npm, v), 1.0)
         nb = next(r for r in validate.RECONCILIATIONS if r[0] == "nb_csm")
         self.assertIsNone(metrics.evaluate(nb[2], v))  # reported N/A by the validation gate, not failed
+
+
+class TestQuarterly(unittest.TestCase):
+    """Quarterly pages: annualised release ratio, accepted breaks, like-for-like industry figures."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.period = "2026Q1"
+        ingest.run(cls.period)
+        validate.run(cls.period)
+        metrics.run(cls.period)
+
+    def test_release_ratio_is_annualised(self):
+        self.assertAlmostEqual(metrics.annualise("release_ratio", 0.02, "2026Q1"), 0.08)
+        self.assertAlmostEqual(metrics.annualise("release_ratio", 0.04, "2026Q2"), 0.08)
+        self.assertAlmostEqual(metrics.annualise("release_ratio", 0.08, "FY2025"), 0.08)
+        self.assertAlmostEqual(metrics.annualise("npm", 0.02, "2026Q1"), 0.02)  # only listed flows
+
+    def test_accepted_breaks_pass_only_as_recorded(self):
+        checks, _ = validate.validate(self.period)
+        acc = [c for c in checks if c["result"] == "ACCEPTED"]
+        self.assertTrue(acc)
+        self.assertTrue(all(c["fiscal_year"] == "2025Q1" for c in acc))  # 1Q2025 statements, the comparative
+        self.assertEqual([c for c in checks if c["result"] == "FAIL"], [])
+        self.assertEqual(validate._result(1.0, {"difference": "1.0"}, 0.05), "ACCEPTED")
+        self.assertEqual(validate._result(2.0, {"difference": "1.0"}, 0.05), "FAIL")
+
+    def test_like_for_like_industry(self):
+        common = read_csv(ROOT / "data" / self.period / "industry_common.csv")
+        n = {r["fiscal_year"]: int(r["n"]) for r in common if r["metric"] == "insurance_revenue"}
+        allrows = read_csv(ROOT / "data" / self.period / "industry.csv")
+        n_all = {r["fiscal_year"]: int(r["n"]) for r in allrows if r["metric"] == "insurance_revenue"}
+        self.assertEqual(n["2026Q1"], n["2025Q1"])  # same insurers in both years
+        self.assertLess(n["2026Q1"], n_all["2026Q1"])
 
 
 class TestMetricsAgainstBenchmark(unittest.TestCase):

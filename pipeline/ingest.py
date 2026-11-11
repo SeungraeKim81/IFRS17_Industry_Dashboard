@@ -155,8 +155,8 @@ def _row(period: str, fy: str, company: str, code: str, rec: dict | None, source
             "status": "Extracted", "source": source_text(rec)}
 
 
-def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict]]:
-    """Line items, company notes and (quarterly only) the three-month profit or loss, from the extractions."""
+def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict], list[dict]]:
+    """Line items, company notes, (quarterly only) the three-month profit or loss, and accepted breaks."""
     from .review_workbook import _source_text
     folder = ROOT / "extract" / extract_period(period)
     by_company = _load_folder(folder)
@@ -176,6 +176,7 @@ def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict]]
         cmp_by_company = by_company
         spec_dir = ROOT / "config" / "extraction"
     rows, rows_3m, notes, errors = [], [], [], []
+    accepted = []  # breaks the statement itself contains, recorded in the extraction (verify-extract)
     for co in companies:
         name = co["company"]
         ex = by_company.get(name)
@@ -196,6 +197,11 @@ def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict]]
                                   "not-disclosed values yet")
                 else:
                     rows.append(_row(period, fy, name, code, rec, _source_text))
+        for fy, src in ((period, ex), (fy_cmp, cmp_ex)) if quarterly else ((period, ex),):
+            for b in (src or {}).get("accepted_breaks", []):
+                if b["check"] != "continuity":  # continuity is checked on the extraction, not on the page data
+                    accepted.append({"company": name, "fiscal_year": fy, "check": b["check"],
+                                     "difference": fmt_num(b["difference"]), "reason": b["reason"]})
         if quarterly:
             for fy, src in ((period, ex), (fy_cmp, cmp_ex)):
                 for code, years in (src or {}).get("items_3m", {}).items():
@@ -212,23 +218,27 @@ def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict]]
                                           f"SHA-256 {s['sha256']} (sources/{extract_period(period)}/registry.csv).")})
     if errors:
         raise IngestError("extractions failed ingestion:\n  - " + "\n  - ".join(errors))
-    return rows, notes, rows_3m
+    return rows, notes, rows_3m, accepted
 
 
 def run(period: str | None = None, workbook: str | None = None) -> Path:
     s = load_settings()
     period = period or s["period"]
-    rows_3m = []
+    rows_3m, accepted = [], []
     if workbook or s.get("source", "workbook") == "workbook":
         wb = Path(workbook) if workbook else ROOT / s["capture_workbook"]
         rows, notes = ingest(wb, period)
     else:
-        rows, notes, rows_3m = ingest_extractions(period)
+        rows, notes, rows_3m, accepted = ingest_extractions(period)
     out = period_dir(period)
     fields = ["report", "fiscal_year", "company", "code", "value", "status", "source"]
     write_csv(out / "line_items.csv", rows, fields)
     if rows_3m:
         write_csv(out / "line_items_3m.csv", rows_3m, fields)
+    if accepted:
+        write_csv(out / "accepted_breaks.csv", accepted, ["company", "fiscal_year", "check", "difference", "reason"])
+    elif (out / "accepted_breaks.csv").exists():
+        (out / "accepted_breaks.csv").unlink()
     write_csv(out / "company_notes.csv", notes, ["company", "sheet_title", "header_note", "extraction_note"])
     unconfirmed = [r for r in rows if r["status"].strip().lower() not in ("confirmed", "extracted", "not disclosed")]
     print(f"ingest: {len(rows)} values for {len(notes)} companies -> {out.relative_to(ROOT)}/line_items.csv")

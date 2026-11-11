@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from statistics import median
 
-from .common import fmt_num, load_companies, period_dir, read_csv, write_csv
+from .common import fmt_num, load_companies, period_dir, quarter_info, read_csv, write_csv
 
 
 def _div(a: float, b: float):
@@ -58,7 +58,7 @@ METRICS = [
     ("csm_growth", "CSM growth", "pct", True, "csm",
      "CSM closing / CSM opening - 1", lambda v: _div(v["csm_close"], v["csm_open"]) - 1 if v["csm_open"] else None),
     ("release_ratio", "CSM release ratio", "pct", None, "csm",
-     "CSM release / (opening CSM + new business + accretion + future-service changes)",
+     "CSM release / (opening CSM + new business + accretion + future-service changes); quarterly pages annualise it (x 12 / months to date)",
      lambda v: _div(-v["csm_release"], v["csm_open"] + v["csm_nb"] + v["csm_accretion"] + v["csm_future_service"])),
     ("nb_to_release", "New business / release", "x", True, "csm",
      "CSM from new business / CSM release", lambda v: _div(v["nb_csm"], -v["csm_release"])),
@@ -72,6 +72,21 @@ METRICS = [
      "Loss component on new business / CSM from new business", lambda v: _div(v["nb_loss_component"], v["nb_csm"])),
 ]
 METRIC_INDEX = {m[0]: m for m in METRICS}
+# Year-to-date flows that a quarterly page scales to twelve months so that quarters compare with a year.
+ANNUALISED = {"release_ratio"}
+
+
+def annualise(code: str, value, fiscal_year: str):
+    """A quarterly year-to-date value of an ANNUALISED indicator, scaled by 12 / months to date."""
+    q = quarter_info(fiscal_year)
+    if value is None or q is None or code not in ANNUALISED:
+        return value
+    return value * 12 / q["ytd_months"]
+
+
+def metric_value(code: str, v: dict, fiscal_year: str):
+    """The indicator as the dashboard shows it (annualised where it applies); None when not disclosed."""
+    return annualise(code, evaluate(METRIC_INDEX[code][6], v), fiscal_year)
 # Market share is computed across companies, not per company.
 SHARE_OF = {"rev_share": "insurance_revenue", "csm_share": "csm_close", "nb_csm_share": "nb_csm"}
 
@@ -111,7 +126,7 @@ def compute(period: str) -> list[dict]:
             v = vals.get((co["company"], fy))
             if v is None:
                 continue
-            per_co[co["company"]] = {m[0]: evaluate(m[6], v) for m in METRICS}
+            per_co[co["company"]] = {m[0]: metric_value(m[0], v, fy) for m in METRICS}
         for share, base in SHARE_OF.items():
             tot = sum(m[base] for m in per_co.values())
             for m in per_co.values():
@@ -128,24 +143,46 @@ def compute(period: str) -> list[dict]:
     return out
 
 
+def _industry_rows(fy: str, rows: list[dict], basis: str) -> list[dict]:
+    out = []
+    agg = {k: sum(r[k] for r in rows) for k in rows[0] if all(r[k] is not None for r in rows)}
+    for code, *_rest, fn in METRICS:
+        # sum over sum across the insurers that disclose every line item this indicator needs
+        known = [r for r in rows if _discloses(fn, r)]
+        part = {k: sum(r[k] for r in known) for k in (known[0] if known else {})
+                if all(r[k] is not None for r in known)}
+        comp = [x for x in (annualise(code, fn(r), fy) for r in known) if x is not None]
+        out.append({"fiscal_year": fy, "basis": basis, "metric": code,
+                    "aggregate": fmt_num(annualise(code, fn(part), fy)) if known else "",
+                    "median": fmt_num(median(comp)) if comp else "", "n": len(comp)})
+    for code in ("csm_open", "csm_nb", "csm_accretion", "csm_future_service", "csm_release", "csm_close"):
+        out.append({"fiscal_year": fy, "basis": basis, "metric": "sum_" + code, "aggregate": fmt_num(agg[code]),
+                    "median": "", "n": len(rows)})
+    return out
+
+
 def industry(period: str) -> list[dict]:
-    """Industry aggregate (sum over sum) and median of company values, per year."""
+    """Industry aggregate (sum over sum) and median of company values, per year, over every insurer of that year."""
     vals = load_values(period)
     out = []
     for fy in sorted({fy for _, fy in vals}, reverse=True):
-        rows = [v for (c, y), v in vals.items() if y == fy]
-        agg = {k: sum(r[k] for r in rows) for k in rows[0] if all(r[k] is not None for r in rows)}
-        for code, *_rest, fn in METRICS:
-            # sum over sum across the insurers that disclose every line item this indicator needs
-            known = [r for r in rows if _discloses(fn, r)]
-            part = {k: sum(r[k] for r in known) for k in (known[0] if known else {})
-                    if all(r[k] is not None for r in known)}
-            comp = [x for x in (fn(r) for r in known) if x is not None]
-            out.append({"fiscal_year": fy, "metric": code, "aggregate": fmt_num(fn(part)) if known else "",
-                        "median": fmt_num(median(comp)) if comp else "", "n": len(comp)})
-        for code in ("csm_open", "csm_nb", "csm_accretion", "csm_future_service", "csm_release", "csm_close"):
-            out.append({"fiscal_year": fy, "metric": "sum_" + code, "aggregate": fmt_num(agg[code]),
-                        "median": "", "n": len(rows)})
+        out += _industry_rows(fy, [v for (c, y), v in vals.items() if y == fy], "all")
+    return [{k: r[k] for k in r if k != "basis"} for r in out]
+
+
+def industry_common(period: str) -> list[dict]:
+    """Both years over the insurers present in both (like for like), when the two years' insurer sets differ."""
+    vals = load_values(period)
+    years = sorted({fy for _, fy in vals}, reverse=True)
+    if len(years) < 2:
+        return []
+    sets = [{c for c, y in vals if y == fy} for fy in years]
+    common = set.intersection(*sets)
+    if all(s == common for s in sets) or not common:
+        return []
+    out = []
+    for fy in years:
+        out += _industry_rows(fy, [v for (c, y), v in vals.items() if y == fy and c in common], "common")
     return out
 
 
@@ -154,4 +191,10 @@ def run(period: str) -> None:
     write_csv(period_dir(period) / "metrics.csv", rows, ["company", "fiscal_year", "metric", "value", "rank_desc", "n"])
     ind = industry(period)
     write_csv(period_dir(period) / "industry.csv", ind, ["fiscal_year", "metric", "aggregate", "median", "n"])
+    common = industry_common(period)
+    common_path = period_dir(period) / "industry_common.csv"
+    if common:
+        write_csv(common_path, common, ["fiscal_year", "basis", "metric", "aggregate", "median", "n"])
+    elif common_path.exists():
+        common_path.unlink()
     print(f"metrics: {len(rows)} company values, {len(ind)} industry values -> data/{period}/metrics.csv, industry.csv")
