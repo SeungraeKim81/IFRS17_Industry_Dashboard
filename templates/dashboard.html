@@ -694,6 +694,9 @@ function waterfall() {
   });
 }
 
+// Approximate width of text at font size fs: a Korean character is about 1 em, others about 0.55 em.
+const textW = (s, fs) => [...s].reduce((a, ch) => a + (/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/.test(ch) ? 1 : 0.55) * fs, 0);
+
 /* ---------- 3b quadrant ---------- */
 function quadrant() {
   const svg = $("#quad"); svg.textContent = "";
@@ -713,7 +716,6 @@ function quadrant() {
   for (let v = 0; v <= x1; v += 5) svg.appendChild(el("text", { x: px(v), y: H - B + 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, v + "%"));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: "var(--axis)" }));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(1), y2: py(1), stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "5 4" }));
-  svg.appendChild(el("text", { x: W - R - 4, y: py(1) - 7, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, t("qThreshold")));
   svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, t(QTR ? "qXQ" : "qX")));
   svg.appendChild(el("text", { x: 0, y: 0, fill: "var(--ink-2)", "font-size": 12, "text-anchor": "middle", transform: "translate(13," + ((T + H - B) / 2) + ") rotate(-90)" }, t("qY")));
 
@@ -723,7 +725,15 @@ function quadrant() {
     return { c, x: px(g(c, "release_ratio") * 100), y: py(g(c, "nb_to_release")), rad: rad(raw(c, "csm_close")), over: overX || overY, overX, overY, extra, txt: c.short };
   })
     .sort((a, b) => (isF(b.c) - isF(a.c)) || (b.rad - a.rad));
-  const boxes = [], LH = 13;
+  // the 1.0x label goes at the right end of its line, or the left end when a bubble sits there;
+  // its box is reserved so that no insurer's label is placed over it
+  const thTxt = t("qThreshold"), thW = textW(thTxt, 11) * 1.06, thY = py(1) - 7;
+  const thBox = [{ x1: W - R - 4 - thW, x2: W - R - 4, anchor: "end", x: W - R - 4 }, { x1: L + 4, x2: L + 4 + thW, anchor: "start", x: L + 4 }]
+    .map(b => Object.assign(b, { y1: thY - 11, y2: thY + 3 }))
+    .find(b => !pts.some(q => q.x + q.rad > b.x1 && q.x - q.rad < b.x2 && q.y + q.rad > b.y1 && q.y - q.rad < b.y2)) ||
+    { x1: W - R - 4 - thW, x2: W - R - 4, y1: thY - 11, y2: thY + 3, anchor: "end", x: W - R - 4 };
+  svg.appendChild(el("text", { x: thBox.x, y: thY, "text-anchor": thBox.anchor, fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, thTxt));
+  const boxes = [thBox], LH = 13;
   const overlap = (a, b) => !(a.x2 < b.x1 || b.x2 < a.x1 || a.y2 < b.y1 || b.y2 < a.y1);
   pts.forEach(p => {
     const w = Math.max(p.txt.length * (isF(p.c) ? 7 : 6.2), p.over ? p.extra.length * 5.8 : 0), h = p.over ? LH + 11 : LH;
@@ -755,9 +765,9 @@ function quadrant() {
 }
 
 /* ---------- 4 strips ---------- */
-// Break text into lines no wider than maxW (SVG units) at font size fs; a Korean character is about 1 em, others about 0.55 em.
+// Break text into lines no wider than maxW (SVG units) at font size fs.
 function wrapText(s, maxW, fs) {
-  const w = x => [...x].reduce((a, ch) => a + (/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/.test(ch) ? 1 : 0.55) * fs, 0);
+  const w = x => textW(x, fs);
   const lines = [];
   s.split(" ").forEach(word => {
     const last = lines[lines.length - 1];
