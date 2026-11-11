@@ -295,6 +295,27 @@ class TestBuild(unittest.TestCase):
         self.assertNotIn("__DATA__", html)
         self.assertNotIn("</script><", html.split('id="data"')[1].split("</script>")[0])
 
+    def test_quarterly_payload(self):
+        """Quarterly pages: every insurer extracted, labels, comparative availability, period links."""
+        for period, has_cmp in (("2026Q2", True), ("2025Q1", False)):
+            ingest.run(period)
+            validate.run(period)
+            metrics.run(period)
+            data = build.payload(period)
+            with self.subTest(period=period):
+                m = data["meta"]
+                self.assertEqual(m["kind"], "quarter")
+                self.assertEqual(m["period_label"], period[-1] + "Q" + period[:4])
+                self.assertEqual(m["has_comparative"], has_cmp)
+                self.assertEqual(m["ytd_months"], 3 * int(period[-1]))
+                self.assertIn(period, [p["id"] for p in m["periods"]])
+                names = {c["name"] for c in data["companies"]}
+                self.assertTrue({"BUI Life", "Saha Life", "Samsung Life"} <= names)
+                self.assertEqual(set(data["three_month"]), names)
+                self.assertEqual(build.missing_translations(data, "ko"), [])
+                self.assertTrue(all(n.get("periods") is None for n in data["commentary"]))  # FY-only notes left out
+        self.assertEqual(build.period_label("FY2025"), "FY2025")
+
     def test_unknown_focus_rejected(self):
         with self.assertRaises(SystemExit):
             build.payload(PERIOD, "Not An Insurer")
