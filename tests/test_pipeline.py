@@ -172,6 +172,13 @@ class TestTranslations(unittest.TestCase):
             with self.subTest(lang=lang):
                 self.assertEqual(build.missing_translations(data, lang), [])
 
+    def test_thai_keeps_english_indicator_names(self):
+        """Thai page: indicator names stay in English (owner decision); only definitions are translated."""
+        data = build.payload(PERIOD)
+        th = data["i18n"]["th"]["metrics"]
+        self.assertEqual({d["code"]: th[d["code"]]["label"] for d in data["metric_defs"]},
+                         {d["code"]: d["label"] for d in data["metric_defs"]})
+
     def test_interface_keys_match(self):
         """UI.en and every other UI.<lang> in the template define the same keys."""
         node = shutil.which("node")
@@ -185,7 +192,7 @@ class TestTranslations(unittest.TestCase):
                   "console.log(JSON.stringify(out));")
         res = subprocess.run([node, "-e", script], capture_output=True, text=True, check=True)
         out = json.loads(res.stdout)
-        self.assertIn("ko", out)
+        self.assertTrue({"ko", "th"} <= set(out))
         for lang, v in out.items():
             with self.subTest(lang=lang):
                 self.assertEqual(v, out["en"])
@@ -317,8 +324,11 @@ class TestBuild(unittest.TestCase):
                 names = {c["name"] for c in data["companies"]}
                 self.assertTrue({"BUI Life", "Saha Life", "Samsung Life"} <= names)
                 self.assertNotIn("three_month", data)  # the 3-month table was dropped from the page (v1.5)
-                self.assertEqual(build.missing_translations(data, "ko"), [])
+                for lang in ("ko", "th"):
+                    self.assertEqual(build.missing_translations(data, lang), [])
                 self.assertTrue(all(n.get("periods") is None for n in data["commentary"]))  # FY-only notes left out
+        # Thai period end: Buddhist Era first (owner decision)
+        self.assertEqual(build.payload("2026Q2")["i18n"]["th"]["meta"]["period_end"], "30 มิถุนายน 2569 (ค.ศ. 2026)")
         self.assertEqual(build.period_label("FY2025"), "FY2025")
 
     def test_site_front_page(self):

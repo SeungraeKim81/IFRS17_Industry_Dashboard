@@ -9,7 +9,7 @@
   "period_end": "31 December 2025 (B.E. 2568)",
   "unit": "THB million",
   "focus_company": "Samsung Life",
-  "languages": ["en", "ko"],
+  "languages": ["en", "ko", "th"],
   "default_language": "en",
   "large_insurer_count": 10,
   "search_engine_indexing": false,

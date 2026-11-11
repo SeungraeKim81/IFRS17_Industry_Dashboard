@@ -1,10 +1,10 @@
-company,fiscal_year,flag,message,message_ko
-BUI Life,2025Q2,release_ratio,CSM release ratio 38.4% is outside 5%-20%,CSM 상각률 38.4%가 5%~20% 범위를 벗어남
-BUI Life,2025Q2,onerous_nb,Losses on onerous new business (5.6m) exceed new-business CSM (0.1m),손실부담 신계약 손실(5.6백만)이 신계약 CSM(0.1백만)보다 큼
-BUI Life,2025Q2,loss_year,Net loss of -10.9m,당기순손실 -10.9백만
-CHUBB Life,2025Q2,nb_to_release,New business / release 8.8x is above 3.0x,신계약 CSM ÷ 상각 8.8배로 3.0배 초과
-Saha Life,2025Q2,release_ratio,CSM release ratio 24.4% is outside 5%-20%,CSM 상각률 24.4%가 5%~20% 범위를 벗어남
-Saha Life,2025Q2,onerous_nb,Losses on onerous new business (45.0m) exceed new-business CSM (2.0m),손실부담 신계약 손실(45.0백만)이 신계약 CSM(2.0백만)보다 큼
-Saha Life,2025Q2,loss_year,Net loss of -38.3m,당기순손실 -38.3백만
-T Life,2025Q2,release_ratio,CSM release ratio 34.9% is outside 5%-20%,CSM 상각률 34.9%가 5%~20% 범위를 벗어남
-T Life,2025Q2,onerous_nb,Losses on onerous new business (31.5m) exceed new-business CSM (7.5m),손실부담 신계약 손실(31.5백만)이 신계약 CSM(7.5백만)보다 큼
+company,fiscal_year,flag,message,message_ko,message_th
+BUI Life,2025Q2,release_ratio,CSM release ratio 38.4% is outside 5%-20%,CSM 상각률 38.4%가 5%~20% 범위를 벗어남,CSM release ratio 38.4% อยู่นอกช่วง 5%-20%
+BUI Life,2025Q2,onerous_nb,Losses on onerous new business (5.6m) exceed new-business CSM (0.1m),손실부담 신계약 손실(5.6백만)이 신계약 CSM(0.1백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (5.6 ล้าน) สูงกว่า New-business CSM (0.1 ล้าน)
+BUI Life,2025Q2,loss_year,Net loss of -10.9m,당기순손실 -10.9백만,ขาดทุนสุทธิ -10.9 ล้าน
+CHUBB Life,2025Q2,nb_to_release,New business / release 8.8x is above 3.0x,신계약 CSM ÷ 상각 8.8배로 3.0배 초과,New business / release 8.8x สูงกว่า 3.0x
+Saha Life,2025Q2,release_ratio,CSM release ratio 24.4% is outside 5%-20%,CSM 상각률 24.4%가 5%~20% 범위를 벗어남,CSM release ratio 24.4% อยู่นอกช่วง 5%-20%
+Saha Life,2025Q2,onerous_nb,Losses on onerous new business (45.0m) exceed new-business CSM (2.0m),손실부담 신계약 손실(45.0백만)이 신계약 CSM(2.0백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (45.0 ล้าน) สูงกว่า New-business CSM (2.0 ล้าน)
+Saha Life,2025Q2,loss_year,Net loss of -38.3m,당기순손실 -38.3백만,ขาดทุนสุทธิ -38.3 ล้าน
+T Life,2025Q2,release_ratio,CSM release ratio 34.9% is outside 5%-20%,CSM 상각률 34.9%가 5%~20% 범위를 벗어남,CSM release ratio 34.9% อยู่นอกช่วง 5%-20%
+T Life,2025Q2,onerous_nb,Losses on onerous new business (31.5m) exceed new-business CSM (7.5m),손실부담 신계약 손실(31.5백만)이 신계약 CSM(7.5백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (31.5 ล้าน) สูงกว่า New-business CSM (7.5 ล้าน)

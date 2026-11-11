@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "title": "แดชบอร์ด IFRS 17 อุตสาหกรรมประกันชีวิตไทย",
+    "market": "ประเทศไทย · ประกันชีวิต",
+    "standard": "TFRS 17 (IFRS 17)",
+    "period_end": "31 ธันวาคม 2568 (ค.ศ. 2025)",
+    "unit": "ล้านบาท",
+    "quarterly_caveat": "ตัวเลขรายไตรมาสเป็นยอดสะสมตั้งแต่ต้นปี จากงบการเงินระหว่างกาลแบบย่อที่ผ่านการสอบทาน (ไม่ใช่การตรวจสอบ) การเปลี่ยนแปลง CSM และธุรกิจใหม่เป็นยอดสะสมตั้งแต่ 1 มกราคม ส่วน CSM release ratio ปรับเป็นรายปี (× 12 ÷ จำนวนเดือนสะสม) เพื่อให้อ่านได้ในระดับเดียวกับตัวเลขทั้งปี งวดเปรียบเทียบคือช่วงเวลาเดียวกันของปีก่อนจากงบการเงินระหว่างกาลของปีก่อน ไตรมาสของปี 2025 ไม่มีงวดเปรียบเทียบ เพราะไม่ได้ดึงข้อมูลไตรมาสของปี 2024 การเปลี่ยนแปลงของอุตสาหกรรมคำนวณเฉพาะบริษัทที่มีข้อมูลทั้งสองงวด บริษัทที่ไม่ได้รับงบการเงินระหว่างกาลของงวดใดจะไม่รวมอยู่ในงวดนั้น",
+    "comparative_caveat": "TFRS 17 มีผลบังคับใช้ในประเทศไทยตั้งแต่วันที่ 1 มกราคม 2025 โดยมีวันเปลี่ยนแปลง (transition) คือ 1 มกราคม 2024 ตัวเลข FY2024 จึงเป็นตัวเลขเปรียบเทียบที่ปรับปรุงใหม่ ณ วันเปลี่ยนแปลง ไม่ใช่ผลการดำเนินงานที่เคยรายงานไว้ ควรอ่านการเปลี่ยนแปลงเทียบกับปีก่อนโดยคำนึงถึงข้อนี้"
+  },
+  "groups": {
+    "scale": "ขนาด",
+    "profitability": "ความสามารถในการทำกำไร",
+    "csm": "CSM",
+    "new_business": "ธุรกิจใหม่"
+  },
+  "metrics": {
+    "insurance_revenue": {"label": "Insurance revenue", "formula": "Insurance revenue รวมทั้งหมด"},
+    "net_profit": {"label": "Net profit", "formula": "Net profit สำหรับงวด"},
+    "csm_close": {"label": "CSM closing", "formula": "Contractual service margin (CSM) ณ วันสิ้นงวด"},
+    "nb_csm": {"label": "New-business CSM", "formula": "CSM จากสัญญาที่รับรู้เมื่อเริ่มแรกในงวด"},
+    "nb_pv_premium": {"label": "New-business PV premium", "formula": "มูลค่าปัจจุบันของกระแสเงินสดรับในอนาคตของธุรกิจใหม่"},
+    "isr_gross": {"label": "Insurance service result", "formula": "Insurance revenue + insurance service expense"},
+    "ism_gross": {"label": "Insurance service margin", "formula": "(Insurance revenue + insurance service expense) / insurance revenue"},
+    "ism_net": {"label": "Insurance service margin after reinsurance", "formula": "(Insurance service result + reinsurance result) / insurance revenue"},
+    "inv_margin": {"label": "Investment result net of IFIE", "formula": "(Net investment income + net insurance finance expense) / insurance revenue"},
+    "other_ratio": {"label": "Other expense, net", "formula": "(Other expense + other income) / insurance revenue"},
+    "tax_ratio": {"label": "Income tax", "formula": "Income tax / insurance revenue"},
+    "npm": {"label": "Net profit margin", "formula": "Net profit / insurance revenue"},
+    "current_loss_ratio": {"label": "Current-service loss ratio", "formula": "-(Incurred claims + past service) / (BEL release + RA release + PAA revenue + other revenue + acquisition recovery)"},
+    "csm_release_share": {"label": "CSM release in revenue", "formula": "CSM release / insurance revenue"},
+    "csm_growth": {"label": "CSM growth", "formula": "CSM closing / CSM opening - 1"},
+    "csm_release_amount": {"label": "CSM release", "formula": "CSM ที่รับรู้ในกำไรหรือขาดทุนจากการให้บริการ (แสดงเป็นจำนวนบวก)"},
+    "release_ratio": {"label": "CSM release ratio", "formula": "CSM release / (CSM ต้นงวด + ธุรกิจใหม่ + accretion + การเปลี่ยนแปลงที่เกี่ยวกับบริการในอนาคต) หน้ารายไตรมาสปรับเป็นรายปี (× 12 ÷ จำนวนเดือนสะสม)"},
+    "nb_to_release": {"label": "New business / release", "formula": "CSM จากธุรกิจใหม่ / CSM release"},
+    "nb_csm_margin": {"label": "New-business CSM margin", "formula": "CSM จากธุรกิจใหม่ / PV premium ของธุรกิจใหม่"},
+    "acq_cost_ratio": {"label": "Acquisition cost ratio", "formula": "PV acquisition cost / PV premium ของธุรกิจใหม่"},
+    "nb_claims_ratio": {"label": "Claims & benefits ratio (NB)", "formula": "PV สินไหมและผลประโยชน์ / PV premium ของธุรกิจใหม่"},
+    "onerous_ratio": {"label": "Onerous new business", "formula": "Loss component ของธุรกิจใหม่ / CSM จากธุรกิจใหม่"},
+    "rev_share": {"label": "Share of insurance revenue", "formula": "Insurance revenue ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"},
+    "csm_share": {"label": "Share of closing CSM", "formula": "CSM closing ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"},
+    "nb_csm_share": {"label": "Share of new-business CSM", "formula": "New-business CSM ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"}
+  },
+  "checks": {
+    "revenue_split": {"label": "ผลรวมองค์ประกอบ = Insurance revenue รวม", "short": "รายได้"},
+    "expense_split": {"label": "ผลรวมองค์ประกอบ = Insurance service expense รวม", "short": "ค่าใช้จ่าย"},
+    "net_profit": {"label": "การกระทบยอดกำไร = Net profit ตามที่พิมพ์ในงบ", "short": "กำไร"},
+    "csm_rollforward": {"label": "การเปลี่ยนแปลง CSM = CSM closing", "short": "CSM"},
+    "nb_csm": {"label": "ธุรกิจใหม่: PV inflow - acquisition - claims - RA + loss component = CSM", "short": "NB CSM"},
+    "nb_consistency": {"label": "ธุรกิจใหม่ในตารางการเปลี่ยนแปลง CSM = หมายเหตุธุรกิจใหม่", "short": "NB ตรงกัน"}
+  },
+  "commentary": {
+    "ra_policy": {
+      "title": "การแยก risk adjustment (RA) จำกัดการเปรียบเทียบอัตรากำไร",
+      "body": "บริษัทที่ไม่แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับรายได้หรือค่าใช้จ่ายทางการเงินจากการประกันภัย จะรวมการเปลี่ยนแปลงของ RA ทั้งหมด รวมถึงผลจากการเปลี่ยนแปลงอัตราคิดลด ไว้ใน insurance service result จึงเปรียบเทียบ Insurance service margin เฉพาะภายในกลุ่มนโยบายเดียวกัน การปรับให้เป็นเกณฑ์เดียวกันต้องใช้การแยกผลทางการเงินของ RA เป็นกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น ซึ่งงบการเงินไม่ได้เปิดเผย จึงไม่แสดงอัตรากำไรที่ปรับใหม่ Net profit ไม่ได้รับผลกระทบจากทางเลือกนี้"
+    },
+    "transition": {
+      "title": "ตัวเลข FY2024 เป็นตัวเลขเปรียบเทียบ ณ วันเปลี่ยนแปลง",
+      "body": "TFRS 17 มีผลบังคับใช้ตั้งแต่ 1 มกราคม 2025 โดยมีวันเปลี่ยนแปลงคือ 1 มกราคม 2024 ตัวเลข FY2024 คือตัวเลขเปรียบเทียบที่ปรับปรุงใหม่ในงบการเงิน FY2025 ไม่ใช่ผลที่เคยรายงานไว้ และวิธีการเปลี่ยนแปลงที่แต่ละบริษัทเลือกมีผลต่อ CSM ของ FY2024 หน้านี้แสดงการเปลี่ยนแปลงเทียบกับปีก่อน แต่การเปลี่ยนแปลงขนาดใหญ่อาจเกิดจากกลไกการเปลี่ยนแปลงมากกว่าผลการดำเนินงาน"
+    },
+    "chubb_rabbit": {
+      "title": "CHUBB และ Rabbit Life อยู่เหนือขอบเขตของอัตราทดแทน",
+      "body": "ทั้งสองบริษัทรับรู้ค่าใช้จ่ายจากสัญญาที่สร้างภาระ (onerous) จำนวนมากในตัวเลขเปรียบเทียบ ณ วันเปลี่ยนแปลงของ FY2024 ทำให้ CSM และ CSM release ของ FY2025 มีขนาดเล็ก ตัวหารที่เล็กทำให้ New business / release สูงเกินจริง ตำแหน่งในแผนภาพสี่ส่วนจึงสะท้อนกลไกการเปลี่ยนแปลงมากกว่าธุรกิจใหม่ที่แข็งแกร่งเป็นพิเศษ"
+    },
+    "t_life_accretion": {
+      "title": "CSM interest accretion ของ T Life ติดลบใน FY2025",
+      "body": "accretion ที่อัตราดอกเบี้ย ณ วันรับรู้เริ่มแรกบน CSM ที่เป็นบวกควรเป็นบวก คำอธิบายที่เป็นไปได้คือมีการเปลี่ยนแปลงรายการอื่นหักกลบอยู่ในบรรทัดนั้น ตารางการเปลี่ยนแปลง CSM กระทบยอดได้พอดีตามที่พิมพ์ไว้ จึงนำมาใช้โดยไม่แก้ไข"
+    },
+    "rabbit_scale": {
+      "title": "อัตราส่วนต่อ insurance revenue ไม่มีความหมายสำหรับ Rabbit Life",
+      "body": "พอร์ตการลงทุนมีขนาดใหญ่มากเมื่อเทียบกับธุรกิจประกันภัยที่มีขนาดเล็ก ผลการลงทุนและค่าใช้จ่ายอื่นจึงเกินขอบเขตของแผนภูมิองค์ประกอบกำไรไปมาก แท่งของบริษัทนี้ถูกตัดที่ขอบแกน ส่วน Net profit margin ที่แสดงเป็นค่าจริง"
+    },
+    "release_ratio": {
+      "title": "วิธีอ่านแผนภาพสี่ส่วนของ CSM",
+      "body": "CSM release ratio ประมาณ 8-13% เป็นความเร็วปกติของการรับรู้สำหรับพอร์ตที่มีเสถียรภาพ หากสูงกว่านี้มาก CSM จะลดลงเร็วเมื่อเทียบกับส่วนที่เหลืออยู่ หากต่ำกว่านี้มาก ระยะเวลาการรับรู้กำไรจะยาว ธุรกิจใหม่ที่ต่ำกว่า 1.0 เท่าของ CSM release ต่อเนื่องเกินหนึ่งถึงสองปีเป็นสัญญาณเตือนล่วงหน้าต่อกำไรในอนาคต"
+    }
+  },
+  "notes_language_label": "บันทึกการดึงข้อมูลแสดงเป็นภาษาอังกฤษตามต้นฉบับที่บันทึกไว้ในข้อกำหนดการดึงข้อมูล"
+}

@@ -1,23 +1,23 @@
-company,fiscal_year,flag,message,message_ko
-BUI Life,2025Q1,release_ratio,CSM release ratio 26.1% is outside 5%-20%,CSM 상각률 26.1%가 5%~20% 범위를 벗어남
-BUI Life,2025Q1,onerous_nb,Losses on onerous new business (4.5m) exceed new-business CSM (0.3m),손실부담 신계약 손실(4.5백만)이 신계약 CSM(0.3백만)보다 큼
-BUI Life,2025Q1,loss_year,Net loss of -15.9m,당기순손실 -15.9백만
-BUI Life,2026Q1,release_ratio,CSM release ratio 197.4% is outside 5%-20%,CSM 상각률 197.4%가 5%~20% 범위를 벗어남
-BUI Life,2026Q1,revenue_yoy,Insurance revenue changed +904% year on year,보험수익 전년 대비 +904% 변동
-CHUBB Life,2025Q1,nb_to_release,New business / release 12.6x is above 3.0x,신계약 CSM ÷ 상각 12.6배로 3.0배 초과
-CHUBB Life,2026Q1,nb_to_release,New business / release 7.1x is above 3.0x,신계약 CSM ÷ 상각 7.1배로 3.0배 초과
-Generali Life,2025Q1,negative_accretion,CSM interest accretion is negative (-57.8m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-57.8백만)
-Generali Life,2026Q1,negative_accretion,CSM interest accretion is negative (-64.0m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-64.0백만)
-Phillip Life,2025Q1,nb_to_release,New business / release 3.1x is above 3.0x,신계약 CSM ÷ 상각 3.1배로 3.0배 초과
-Rabbit Life,2026Q1,nb_to_release,New business / release 4.0x is above 3.0x,신계약 CSM ÷ 상각 4.0배로 3.0배 초과
-Rabbit Life,2026Q1,nb_margin,New-business CSM margin 33.2% is above 30%,신계약 CSM 마진율 33.2%로 30% 초과
-Saha Life,2025Q1,release_ratio,CSM release ratio 22.5% is outside 5%-20%,CSM 상각률 22.5%가 5%~20% 범위를 벗어남
-Saha Life,2025Q1,onerous_nb,Losses on onerous new business (15.7m) exceed new-business CSM (1.0m),손실부담 신계약 손실(15.7백만)이 신계약 CSM(1.0백만)보다 큼
-Saha Life,2025Q1,loss_year,Net loss of -23.8m,당기순손실 -23.8백만
-Saha Life,2026Q1,release_ratio,CSM release ratio 22.6% is outside 5%-20%,CSM 상각률 22.6%가 5%~20% 범위를 벗어남
-Saha Life,2026Q1,onerous_nb,Losses on onerous new business (19.4m) exceed new-business CSM (3.6m),손실부담 신계약 손실(19.4백만)이 신계약 CSM(3.6백만)보다 큼
-T Life,2025Q1,release_ratio,CSM release ratio 36.2% is outside 5%-20%,CSM 상각률 36.2%가 5%~20% 범위를 벗어남
-T Life,2025Q1,onerous_nb,Losses on onerous new business (20.7m) exceed new-business CSM (6.2m),손실부담 신계약 손실(20.7백만)이 신계약 CSM(6.2백만)보다 큼
-T Life,2025Q1,loss_year,Net loss of -7.7m,당기순손실 -7.7백만
-T Life,2026Q1,release_ratio,CSM release ratio 31.5% is outside 5%-20%,CSM 상각률 31.5%가 5%~20% 범위를 벗어남
-T Life,2026Q1,nb_to_release,New business / release 3.4x is above 3.0x,신계약 CSM ÷ 상각 3.4배로 3.0배 초과
+company,fiscal_year,flag,message,message_ko,message_th
+BUI Life,2025Q1,release_ratio,CSM release ratio 26.1% is outside 5%-20%,CSM 상각률 26.1%가 5%~20% 범위를 벗어남,CSM release ratio 26.1% อยู่นอกช่วง 5%-20%
+BUI Life,2025Q1,onerous_nb,Losses on onerous new business (4.5m) exceed new-business CSM (0.3m),손실부담 신계약 손실(4.5백만)이 신계약 CSM(0.3백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (4.5 ล้าน) สูงกว่า New-business CSM (0.3 ล้าน)
+BUI Life,2025Q1,loss_year,Net loss of -15.9m,당기순손실 -15.9백만,ขาดทุนสุทธิ -15.9 ล้าน
+BUI Life,2026Q1,release_ratio,CSM release ratio 197.4% is outside 5%-20%,CSM 상각률 197.4%가 5%~20% 범위를 벗어남,CSM release ratio 197.4% อยู่นอกช่วง 5%-20%
+BUI Life,2026Q1,revenue_yoy,Insurance revenue changed +904% year on year,보험수익 전년 대비 +904% 변동,Insurance revenue เปลี่ยนแปลง +904% เทียบกับปีก่อน
+CHUBB Life,2025Q1,nb_to_release,New business / release 12.6x is above 3.0x,신계약 CSM ÷ 상각 12.6배로 3.0배 초과,New business / release 12.6x สูงกว่า 3.0x
+CHUBB Life,2026Q1,nb_to_release,New business / release 7.1x is above 3.0x,신계약 CSM ÷ 상각 7.1배로 3.0배 초과,New business / release 7.1x สูงกว่า 3.0x
+Generali Life,2025Q1,negative_accretion,CSM interest accretion is negative (-57.8m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-57.8백만),CSM interest accretion ติดลบ (-57.8 ล้าน) ทั้งที่ CSM ต้นงวดเป็นบวก
+Generali Life,2026Q1,negative_accretion,CSM interest accretion is negative (-64.0m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-64.0백만),CSM interest accretion ติดลบ (-64.0 ล้าน) ทั้งที่ CSM ต้นงวดเป็นบวก
+Phillip Life,2025Q1,nb_to_release,New business / release 3.1x is above 3.0x,신계약 CSM ÷ 상각 3.1배로 3.0배 초과,New business / release 3.1x สูงกว่า 3.0x
+Rabbit Life,2026Q1,nb_to_release,New business / release 4.0x is above 3.0x,신계약 CSM ÷ 상각 4.0배로 3.0배 초과,New business / release 4.0x สูงกว่า 3.0x
+Rabbit Life,2026Q1,nb_margin,New-business CSM margin 33.2% is above 30%,신계약 CSM 마진율 33.2%로 30% 초과,New-business CSM margin 33.2% สูงกว่า 30%
+Saha Life,2025Q1,release_ratio,CSM release ratio 22.5% is outside 5%-20%,CSM 상각률 22.5%가 5%~20% 범위를 벗어남,CSM release ratio 22.5% อยู่นอกช่วง 5%-20%
+Saha Life,2025Q1,onerous_nb,Losses on onerous new business (15.7m) exceed new-business CSM (1.0m),손실부담 신계약 손실(15.7백만)이 신계약 CSM(1.0백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (15.7 ล้าน) สูงกว่า New-business CSM (1.0 ล้าน)
+Saha Life,2025Q1,loss_year,Net loss of -23.8m,당기순손실 -23.8백만,ขาดทุนสุทธิ -23.8 ล้าน
+Saha Life,2026Q1,release_ratio,CSM release ratio 22.6% is outside 5%-20%,CSM 상각률 22.6%가 5%~20% 범위를 벗어남,CSM release ratio 22.6% อยู่นอกช่วง 5%-20%
+Saha Life,2026Q1,onerous_nb,Losses on onerous new business (19.4m) exceed new-business CSM (3.6m),손실부담 신계약 손실(19.4백만)이 신계약 CSM(3.6백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (19.4 ล้าน) สูงกว่า New-business CSM (3.6 ล้าน)
+T Life,2025Q1,release_ratio,CSM release ratio 36.2% is outside 5%-20%,CSM 상각률 36.2%가 5%~20% 범위를 벗어남,CSM release ratio 36.2% อยู่นอกช่วง 5%-20%
+T Life,2025Q1,onerous_nb,Losses on onerous new business (20.7m) exceed new-business CSM (6.2m),손실부담 신계약 손실(20.7백만)이 신계약 CSM(6.2백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (20.7 ล้าน) สูงกว่า New-business CSM (6.2 ล้าน)
+T Life,2025Q1,loss_year,Net loss of -7.7m,당기순손실 -7.7백만,ขาดทุนสุทธิ -7.7 ล้าน
+T Life,2026Q1,release_ratio,CSM release ratio 31.5% is outside 5%-20%,CSM 상각률 31.5%가 5%~20% 범위를 벗어남,CSM release ratio 31.5% อยู่นอกช่วง 5%-20%
+T Life,2026Q1,nb_to_release,New business / release 3.4x is above 3.0x,신계약 CSM ÷ 상각 3.4배로 3.0배 초과,New business / release 3.4x สูงกว่า 3.0x
