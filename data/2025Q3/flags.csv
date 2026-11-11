@@ -1,12 +1,12 @@
-company,fiscal_year,flag,message,message_ko
-BUI Life,2025Q3,release_ratio,CSM release ratio 21.9% is outside 5%-20%,CSM 상각률 21.9%가 5%~20% 범위를 벗어남
-BUI Life,2025Q3,nb_to_release,New business / release 3.4x is above 3.0x,신계약 CSM ÷ 상각 3.4배로 3.0배 초과
-BUI Life,2025Q3,onerous_nb,Losses on onerous new business (6.1m) exceed new-business CSM (3.2m),손실부담 신계약 손실(6.1백만)이 신계약 CSM(3.2백만)보다 큼
-CHUBB Life,2025Q3,nb_to_release,New business / release 8.6x is above 3.0x,신계약 CSM ÷ 상각 8.6배로 3.0배 초과
-Phillip Life,2025Q3,nb_to_release,New business / release 4.0x is above 3.0x,신계약 CSM ÷ 상각 4.0배로 3.0배 초과
-Prudential Life,2025Q3,loss_year,Net loss of -366.8m,당기순손실 -366.8백만
-Saha Life,2025Q3,release_ratio,CSM release ratio 23.7% is outside 5%-20%,CSM 상각률 23.7%가 5%~20% 범위를 벗어남
-Saha Life,2025Q3,onerous_nb,Losses on onerous new business (108.8m) exceed new-business CSM (3.5m),손실부담 신계약 손실(108.8백만)이 신계약 CSM(3.5백만)보다 큼
-T Life,2025Q3,negative_accretion,CSM interest accretion is negative (-1.4m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-1.4백만)
-T Life,2025Q3,release_ratio,CSM release ratio 36.6% is outside 5%-20%,CSM 상각률 36.6%가 5%~20% 범위를 벗어남
-T Life,2025Q3,onerous_nb,Losses on onerous new business (43.5m) exceed new-business CSM (10.6m),손실부담 신계약 손실(43.5백만)이 신계약 CSM(10.6백만)보다 큼
+company,fiscal_year,flag,message,message_ko,message_th
+BUI Life,2025Q3,release_ratio,CSM release ratio 21.9% is outside 5%-20%,CSM 상각률 21.9%가 5%~20% 범위를 벗어남,CSM release ratio 21.9% อยู่นอกช่วง 5%-20%
+BUI Life,2025Q3,nb_to_release,New business / release 3.4x is above 3.0x,신계약 CSM ÷ 상각 3.4배로 3.0배 초과,New business / release 3.4x สูงกว่า 3.0x
+BUI Life,2025Q3,onerous_nb,Losses on onerous new business (6.1m) exceed new-business CSM (3.2m),손실부담 신계약 손실(6.1백만)이 신계약 CSM(3.2백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (6.1 ล้าน) สูงกว่า New-business CSM (3.2 ล้าน)
+CHUBB Life,2025Q3,nb_to_release,New business / release 8.6x is above 3.0x,신계약 CSM ÷ 상각 8.6배로 3.0배 초과,New business / release 8.6x สูงกว่า 3.0x
+Phillip Life,2025Q3,nb_to_release,New business / release 4.0x is above 3.0x,신계약 CSM ÷ 상각 4.0배로 3.0배 초과,New business / release 4.0x สูงกว่า 3.0x
+Prudential Life,2025Q3,loss_year,Net loss of -366.8m,당기순손실 -366.8백만,ขาดทุนสุทธิ -366.8 ล้าน
+Saha Life,2025Q3,release_ratio,CSM release ratio 23.7% is outside 5%-20%,CSM 상각률 23.7%가 5%~20% 범위를 벗어남,CSM release ratio 23.7% อยู่นอกช่วง 5%-20%
+Saha Life,2025Q3,onerous_nb,Losses on onerous new business (108.8m) exceed new-business CSM (3.5m),손실부담 신계약 손실(108.8백만)이 신계약 CSM(3.5백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (108.8 ล้าน) สูงกว่า New-business CSM (3.5 ล้าน)
+T Life,2025Q3,negative_accretion,CSM interest accretion is negative (-1.4m) on a positive opening CSM,기초 CSM이 양수인데 CSM 이자부리가 음수(-1.4백만),CSM interest accretion ติดลบ (-1.4 ล้าน) ทั้งที่ CSM ต้นงวดเป็นบวก
+T Life,2025Q3,release_ratio,CSM release ratio 36.6% is outside 5%-20%,CSM 상각률 36.6%가 5%~20% 범위를 벗어남,CSM release ratio 36.6% อยู่นอกช่วง 5%-20%
+T Life,2025Q3,onerous_nb,Losses on onerous new business (43.5m) exceed new-business CSM (10.6m),손실부담 신계약 손실(43.5백만)이 신계약 CSM(10.6백만)보다 큼,ผลขาดทุนจากธุรกิจใหม่ที่เป็นสัญญาสร้างภาระ (43.5 ล้าน) สูงกว่า New-business CSM (10.6 ล้าน)

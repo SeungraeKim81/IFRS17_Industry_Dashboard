@@ -465,7 +465,7 @@ const mFormula = code => { const tr = TR(); return (tr && tr.metrics[code] && tr
 const chk = (id, f) => { const tr = TR(); const d = DATA.check_defs.find(c => c.id === id); return (tr && tr.checks[id] && tr.checks[id][f]) || (f === "short" ? EN_CHECK_SHORT[id] : d.label); };
 const EN_CHECK_SHORT = { revenue_split: "Revenue", expense_split: "Expense", net_profit: "Net profit", csm_rollforward: "CSM roll", nb_csm: "NB CSM", nb_consistency: "NB = roll" };
 const noteT = (n, f) => { const tr = TR(); return (tr && tr.commentary[n.id] && tr.commentary[n.id][f]) || n[f]; };
-const flagMsg = f => (LANG === "ko" && f.message_ko) ? f.message_ko : f.message;
+const flagMsg = f => f["message_" + LANG] || f.message;
 const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business" }[gname]); };
 
 /* ---------- helpers ---------- */

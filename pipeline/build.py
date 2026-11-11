@@ -47,12 +47,12 @@ def missing_translations(data: dict, lang: str) -> list[str]:
     miss += [f"commentary.{n['id']}" for n in data["commentary"]
              if not all(tr.get("commentary", {}).get(n["id"], {}).get(x) for x in ("title", "body"))]
     miss += [f"groups.{g}" for g in {d["group"] for d in data["metric_defs"]} if not tr.get("groups", {}).get(g)]
-    if lang == "ko":
-        miss += [f"flags.{f['company']}.{f['fiscal_year']}.{f['flag']}" for f in data["flags"] if not f.get("message_ko")]
+    miss += [f"flags.{f['company']}.{f['fiscal_year']}.{f['flag']}" for f in data["flags"] if not f.get("message_" + lang)]
     return miss
 
 
-MONTH_END = {1: ("31 March", "3월 31일"), 2: ("30 June", "6월 30일"), 3: ("30 September", "9월 30일")}
+MONTH_END = {1: ("31 March", "3월 31일", "31 มีนาคม"), 2: ("30 June", "6월 30일", "30 มิถุนายน"),
+             3: ("30 September", "9월 30일", "30 กันยายน")}
 
 
 def period_label(period: str) -> str:
@@ -64,12 +64,14 @@ def period_label(period: str) -> str:
 def _quarter_meta(period: str, s: dict, i18n: dict) -> dict:
     """Period end, months to date and the quarterly caveat (English in meta, Korean into the translation)."""
     q = quarter_info(period)
-    en, ko = MONTH_END[q["quarter"]]
+    en, ko, th = MONTH_END[q["quarter"]]
     be = q["year"] + 543
     for lang, tr in i18n.items():
         m = tr.setdefault("meta", {})
         if lang == "ko":
             m["period_end"] = f"{q['year']}년 {ko} (불기 {be}년)"
+        elif lang == "th":  # Buddhist Era first, as Thai statements print it
+            m["period_end"] = f"{th} {be} (ค.ศ. {q['year']})"
         m["comparative_caveat"] = m.get("quarterly_caveat", "")
     return {"period_end": f"{en} {q['year']} (B.E. {be})", "comparative_caveat": s["quarterly_caveat"],
             "ytd_months": q["ytd_months"]}
