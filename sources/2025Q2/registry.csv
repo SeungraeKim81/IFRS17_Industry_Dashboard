@@ -1,0 +1,2 @@
+company,period,doc_type,drive_folder,original_name,drive_file_id,bytes,sha256,pages,text_layer,connector_download,status
+Samsung Life,2025Q2,Reviewed condensed interim financial statements 2Q2025 (Thai),FS_Life_Industry/Y2025/2Q_2025,06_FS_SAMSUNG_2Q2025.pdf,1ba_zLmkWHIFisAiOsBmOqh0w7ZlCqXAy,2246211,1f641721c329422136cd95e35870e333e0b1f22b0af8a414cb99ca4f2a914f72,139,yes (statements and notes),n/a (read locally),extracted
