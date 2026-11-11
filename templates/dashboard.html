@@ -438,7 +438,7 @@ const UI = {
     dqAccepted: "수용한 불일치, 차이 {v}백만: {r}", dqNa: "미공시 항목, 추출 때 인쇄된 합계와 대사",
     cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
       csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
-      acq_cost_ratio: "신계약비율", onerous_ratio: "손실부담 비율" },
+      acq_cost_ratio: "신계약비용률", onerous_ratio: "손실부담 비율" },
     ord: n => n + "위",
     chg: (x, up, down) => x == null ? "변동(산출 불가)" : nf(Math.abs(x) * 100, 1) + "% " + (x >= 0 ? up : down),
     headlines: p => [
@@ -756,6 +756,16 @@ function quadrant() {
 }
 
 /* ---------- 4 strips ---------- */
+// Break text into lines no wider than maxW (SVG units) at font size fs; a Korean character is about 1 em, others about 0.55 em.
+function wrapText(s, maxW, fs) {
+  const w = x => [...x].reduce((a, ch) => a + (/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/.test(ch) ? 1 : 0.55) * fs, 0);
+  const lines = [];
+  s.split(" ").forEach(word => {
+    const last = lines[lines.length - 1];
+    if (last != null && w(last + " " + word) <= maxW) lines[lines.length - 1] = last + " " + word; else lines.push(word);
+  });
+  return lines;
+}
 function strips() {
   const svg = $("#strips"); svg.textContent = "";
   const rows = ["nb_csm_margin", "acq_cost_ratio", "onerous_ratio", "nb_to_release"];
@@ -768,8 +778,11 @@ function strips() {
     let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
     const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
-    svg.appendChild(el("text", { x: 0, y: cy - 4, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
-    svg.appendChild(el("text", { x: 0, y: cy + 12, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
+    // name, then its definition (as in the definitions table) in small type, then the reading direction
+    svg.appendChild(el("text", { x: 0, y: cy - 14, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
+    const defLines = wrapText(mFormula(k), L - 14, 10.5);
+    defLines.forEach((s, i) => svg.appendChild(el("text", { x: 0, y: cy + 2 + i * 12.5, "font-size": 10.5, fill: "var(--ink-2)" }, s)));
+    svg.appendChild(el("text", { x: 0, y: cy + 6 + defLines.length * 12.5, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
     ticks.forEach(tk => {
       svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
       svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(tk * 100, 0) + "%" : nf(tk, 1) + "×"));

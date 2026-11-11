@@ -34,7 +34,7 @@
     "release_ratio": {"label": "CSM 상각률", "formula": "CSM 상각 ÷ (기초 CSM + 신계약 + 이자부리 + 미래서비스 관련 변동). 분기 페이지는 연환산(× 12 ÷ 경과월수)"},
     "nb_to_release": {"label": "신계약 CSM ÷ 상각", "formula": "신계약 CSM ÷ CSM 상각"},
     "nb_csm_margin": {"label": "신계약 CSM 마진율", "formula": "신계약 CSM ÷ 신계약 PV 보험료"},
-    "acq_cost_ratio": {"label": "신계약비율", "formula": "신계약 PV 보험취득현금흐름 ÷ 신계약 PV 보험료"},
+    "acq_cost_ratio": {"label": "신계약비용률", "formula": "신계약 PV 보험취득현금흐름 ÷ 신계약 PV 보험료"},
     "nb_claims_ratio": {"label": "신계약 보험금·급부 비율", "formula": "신계약 PV 보험금 유출 ÷ 신계약 PV 보험료"},
     "onerous_ratio": {"label": "신계약 손실부담 비율", "formula": "신계약 손실요소 ÷ 신계약 CSM"},
     "rev_share": {"label": "보험수익 점유율", "formula": "회사 보험수익 ÷ 대상 보험사 전체 합계"},
