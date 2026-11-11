@@ -79,7 +79,7 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 1. **Focus**: KPI tiles for the highlighted insurer, each with its change from the prior year, rank and industry
    benchmark, plus auto-generated headlines and any notes or review flags that apply to it
 2. **Market position**: insurance revenue, closing CSM and new-business CSM with market shares
-3. **CSM engine**: roll-forward waterfall (focus vs industry, opening = 100) and the CSM sustainability quadrant
+3. **CSM movement analysis**: roll-forward waterfall (focus vs industry, opening = 100) and the CSM sustainability quadrant
 4. **New-business quality**: NB CSM margin, acquisition cost ratio, onerous share and NB / release; focus FY2025 vs FY2024 against all insurers
 5. **Insurance service margin by RA policy**: compared only within each risk-adjustment disaggregation group
 6. **Profit bridge**: what happens to 100 baht of insurance revenue
