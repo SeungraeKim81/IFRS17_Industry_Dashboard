@@ -1,6 +1,6 @@
 """Step 5 (publishing only) - collect the files GitHub Pages serves into _site/.
 
-  _site/index.html            the current period's dashboard (config/dashboard.json "period")
+  _site/index.html            the front page: config/dashboard.json "site_root" (else "period")
   _site/<period>/index.html   every built period (annual and quarterly), so each keeps a stable address;
                               the same page also under its file name, which the period links on each page use
   _site/.nojekyll             serve files as they are
@@ -18,7 +18,8 @@ SITE = ROOT / "_site"
 
 
 def run(period: str | None = None) -> None:
-    current = period or load_settings()["period"]
+    s = load_settings()
+    current = period or s.get("site_root", s["period"])
     if SITE.exists():
         shutil.rmtree(SITE)
     SITE.mkdir()

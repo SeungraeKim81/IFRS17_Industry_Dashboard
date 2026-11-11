@@ -316,6 +316,17 @@ class TestBuild(unittest.TestCase):
                 self.assertTrue(all(n.get("periods") is None for n in data["commentary"]))  # FY-only notes left out
         self.assertEqual(build.period_label("FY2025"), "FY2025")
 
+    def test_site_front_page(self):
+        """The site root is the site_root period; every built period keeps its own address and file name."""
+        from pipeline import site
+        site.run()
+        root = load_settings().get("site_root", PERIOD)
+        html = (site.SITE / "index.html").read_text(encoding="utf-8")
+        self.assertIn('"period":"' + root + '"', html)
+        for p in (ROOT / "output").glob("*/Thai_Life_IFRS17_Dashboard_*.html"):
+            self.assertTrue((site.SITE / p.parent.name / "index.html").exists())
+            self.assertTrue((site.SITE / p.parent.name / p.name).exists())
+
     def test_unknown_focus_rejected(self):
         with self.assertRaises(SystemExit):
             build.payload(PERIOD, "Not An Insurer")

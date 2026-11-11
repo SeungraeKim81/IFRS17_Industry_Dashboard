@@ -33,7 +33,7 @@ def main() -> None:
         return
     s = load_settings()
     if a.step == "site":
-        site.run(a.period or s["period"])
+        site.run(a.period)
         return
     for period in ([a.period] if a.period else s.get("periods", [s["period"]])):
         if a.step in ("ingest", "all"):
