@@ -93,7 +93,8 @@ def payload(period: str, focus: str | None = None) -> dict:
     checks: dict = {}
     for r in read_csv(pdir / "validation.csv"):
         checks.setdefault(r["company"], {}).setdefault(r["fiscal_year"], {})[r["check"]] = {
-            "ok": r["result"] == "OK", "diff": float(r["difference"])}
+            "ok": r["result"] != "FAIL", "status": r["result"],
+            "diff": float(r["difference"]) if r["difference"] != "" else None}
 
     with open(CONFIG / "commentary.json", encoding="utf-8") as f:
         commentary = json.load(f)

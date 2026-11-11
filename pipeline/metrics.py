@@ -4,6 +4,9 @@ Every indicator the dashboard shows is defined once here, with the formula
 text that is printed in the dashboard's methodology section. Ratios use the
 company's own figures; industry figures are aggregate ratios (sum over sum)
 plus the median of the company ratios.
+
+A line item the statement does not disclose is None. An indicator that needs it is None for that
+company ("n/a"), and the industry aggregate of that indicator leaves the company out.
 """
 from __future__ import annotations
 
@@ -73,11 +76,28 @@ METRIC_INDEX = {m[0]: m for m in METRICS}
 SHARE_OF = {"rev_share": "insurance_revenue", "csm_share": "csm_close", "nb_csm_share": "nb_csm"}
 
 
-def load_values(period: str) -> dict[tuple[str, str], dict[str, float]]:
-    vals: dict[tuple[str, str], dict[str, float]] = {}
+def load_values(period: str) -> dict[tuple[str, str], dict[str, float | None]]:
+    """Line items per (company, fiscal year); a not-disclosed value (blank) is None."""
+    vals: dict[tuple[str, str], dict[str, float | None]] = {}
     for r in read_csv(period_dir(period) / "line_items.csv"):
-        vals.setdefault((r["company"], r["fiscal_year"]), {})[r["code"]] = float(r["value"])
+        vals.setdefault((r["company"], r["fiscal_year"]), {})[r["code"]] = float(r["value"]) if r["value"] != "" else None
     return vals
+
+
+def evaluate(fn, v: dict):
+    """An indicator's value, or None when a line item it needs is not disclosed."""
+    try:
+        return fn(v)
+    except TypeError:  # arithmetic on a not-disclosed (None) value
+        return None
+
+
+def _discloses(fn, v: dict) -> bool:
+    try:
+        fn(v)
+        return True
+    except TypeError:
+        return False
 
 
 def compute(period: str) -> list[dict]:
@@ -91,7 +111,7 @@ def compute(period: str) -> list[dict]:
             v = vals.get((co["company"], fy))
             if v is None:
                 continue
-            per_co[co["company"]] = {m[0]: m[6](v) for m in METRICS}
+            per_co[co["company"]] = {m[0]: evaluate(m[6], v) for m in METRICS}
         for share, base in SHARE_OF.items():
             tot = sum(m[base] for m in per_co.values())
             for m in per_co.values():
@@ -114,11 +134,15 @@ def industry(period: str) -> list[dict]:
     out = []
     for fy in sorted({fy for _, fy in vals}, reverse=True):
         rows = [v for (c, y), v in vals.items() if y == fy]
-        agg = {k: sum(r[k] for r in rows) for k in rows[0]}
+        agg = {k: sum(r[k] for r in rows) for k in rows[0] if all(r[k] is not None for r in rows)}
         for code, *_rest, fn in METRICS:
-            comp = [x for x in (fn(r) for r in rows) if x is not None]
-            out.append({"fiscal_year": fy, "metric": code, "aggregate": fmt_num(fn(agg)),
-                        "median": fmt_num(median(comp)), "n": len(comp)})
+            # sum over sum across the insurers that disclose every line item this indicator needs
+            known = [r for r in rows if _discloses(fn, r)]
+            part = {k: sum(r[k] for r in known) for k in (known[0] if known else {})
+                    if all(r[k] is not None for r in known)}
+            comp = [x for x in (fn(r) for r in known) if x is not None]
+            out.append({"fiscal_year": fy, "metric": code, "aggregate": fmt_num(fn(part)) if known else "",
+                        "median": fmt_num(median(comp)) if comp else "", "n": len(comp)})
         for code in ("csm_open", "csm_nb", "csm_accretion", "csm_future_service", "csm_release", "csm_close"):
             out.append({"fiscal_year": fy, "metric": "sum_" + code, "aggregate": fmt_num(agg[code]),
                         "median": "", "n": len(rows)})

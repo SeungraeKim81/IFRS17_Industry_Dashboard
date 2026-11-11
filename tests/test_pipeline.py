@@ -85,6 +85,19 @@ class TestValidate(unittest.TestCase):
         self.assertIn(("CHUBB Life", "FY2025", "nb_to_release"), got)
 
 
+class TestNotDisclosed(unittest.TestCase):
+    def test_indicator_needing_a_missing_item_is_none(self):
+        from pipeline.common import load_line_items
+        v = {it["code"]: 1.0 for it in load_line_items()}
+        v["nb_pv_acq"] = None
+        acq = metrics.METRIC_INDEX["acq_cost_ratio"][6]
+        npm = metrics.METRIC_INDEX["npm"][6]
+        self.assertIsNone(metrics.evaluate(acq, v))
+        self.assertEqual(metrics.evaluate(npm, v), 1.0)
+        nb = next(r for r in validate.RECONCILIATIONS if r[0] == "nb_csm")
+        self.assertIsNone(metrics.evaluate(nb[2], v))  # reported N/A by the validation gate, not failed
+
+
 class TestMetricsAgainstBenchmark(unittest.TestCase):
     """The FY2025 figures must reproduce the benchmark expectations (to 3 dp).
 
