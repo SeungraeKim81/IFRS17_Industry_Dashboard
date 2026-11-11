@@ -1,0 +1,497 @@
+{
+ "company": "Allianz Ayudhya",
+ "company_id": "allianz-ayudhya",
+ "period": "2025Q2",
+ "source": {
+  "drive_file_id": "1uS4-7vci439GTXVHBh50jItuI-LkDlZX",
+  "original_name": "FS-AYU_2Q2025.pdf",
+  "sha256": "1bedd283081ff821881057151c4e9930f2377d26bbeff261e8642391b4b1a834",
+  "doc_type": "CAR disclosure with reviewed condensed interim financial statements 2Q2025 (Thai)",
+  "pages": 90,
+  "text_layer": "no (scanned)"
+ },
+ "tables_found": {},
+ "items": {
+  "ra_release": {
+   "2025Q2": {
+    "value": 296.697,
+    "printed": "296,697",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "bel_release": {
+   "2025Q2": {
+    "value": 3385.662,
+    "printed": "3,385,662",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "paa_revenue": {
+   "2025Q2": {
+    "value": 2437.285,
+    "printed": "2,437,285",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 PAA revenue",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "other_revenue": {
+   "2025Q2": {
+    "value": -50.759,
+    "printed": "(50,759)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total, อื่นๆ",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "incurred_claims": {
+   "2025Q2": {
+    "value": -4603.593,
+    "printed": "(4,603,593)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total (includes PAA)",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "past_service": {
+   "2025Q2": {
+    "value": 79.463,
+    "printed": "79,463",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "loss_component": {
+   "2025Q2": {
+    "value": 1.047,
+    "printed": "1,047",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total, onerous losses and reversals",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "acq_recovery": {
+   "2025Q2": {
+    "value": 2335.501,
+    "printed": "2,335,501",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "acq_amortisation": {
+   "2025Q2": {
+    "value": -2991.111,
+    "printed": "(2,991,111)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 82,
+    "note": "24.1 total (includes PAA)",
+    "read": "visual",
+    "heading_seen": "24 รายได้และค่าใช้จ่ายจากการประกันภัย / 24.1 รายได้และผลการดำเนินงานการบริการประกันภัย (หกเดือน 30 มิถุนายน พ.ศ. 2568; sideways)"
+   }
+  },
+  "net_investment_income": {
+   "2025Q2": {
+    "value": 3227.854,
+    "printed": "3,227,854",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "2025Q2": {
+    "value": -3239.096,
+    "printed": "(3,239,096)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months, net insurance finance expense",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2025Q2": {
+    "value": -479.447,
+    "printed": [
+     "(16,109)",
+     "(463,338)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months, other finance costs + other operating expenses",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "2025Q2": {
+    "value": 39.278,
+    "printed": "39,278",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2025Q2": {
+    "value": -942.114,
+    "printed": "(942,114)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2025Q2": {
+    "value": 4242.889,
+    "printed": "4,242,889",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2025Q2": {
+    "value": -101.064,
+    "printed": "(101,064)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "csm_nb": {
+   "2025Q2": {
+    "value": 4329.218,
+    "printed": "4,329,218",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 72,
+    "note": "19.1.2 CSM column, contracts initially recognised",
+    "read": "visual",
+    "heading_seen": "19.1.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวม PAA (ยอดสุทธิ ณ วันที่ 30 มิถุนายน พ.ศ. 2568)"
+   }
+  },
+  "csm_accretion": {
+   "2025Q2": {
+    "value": 1280.973,
+    "printed": "1,280,973",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 72,
+    "note": "19.1.2 CSM column, insurance finance row",
+    "read": "visual",
+    "heading_seen": "19.1.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวม PAA (ยอดสุทธิ ณ วันที่ 30 มิถุนายน พ.ศ. 2568)"
+   }
+  },
+  "csm_future_service": {
+   "2025Q2": {
+    "value": -749.048,
+    "printed": [
+     "(822,601)",
+     "(42)",
+     "73,595"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 72,
+    "note": "19.1.2 CSM column, change in estimates + onerous line + experience adjustment",
+    "read": "visual",
+    "heading_seen": "19.1.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวม PAA (ยอดสุทธิ ณ วันที่ 30 มิถุนายน พ.ศ. 2568)"
+   }
+  },
+  "csm_release": {
+   "2025Q2": {
+    "value": -4847.286,
+    "printed": "(4,847,286)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 72,
+    "note": "19.1.2 CSM column (equals 24.1)",
+    "read": "visual",
+    "heading_seen": "19.1.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวม PAA (ยอดสุทธิ ณ วันที่ 30 มิถุนายน พ.ศ. 2568)"
+   }
+  },
+  "nb_pv_premium": {
+   "2025Q2": {
+    "value": 32243.846,
+    "printed": "(32,243,846)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "page": 74,
+    "note": "19.1.3 non-onerous column (= total)",
+    "read": "visual",
+    "heading_seen": "19.1.3 ผลกระทบของสัญญาที่รับรู้ในปี - ไม่รวม PAA (30 มิถุนายน พ.ศ. 2568 columns)"
+   }
+  },
+  "nb_pv_acq": {
+   "2025Q2": {
+    "value": 4711.07,
+    "printed": "4,711,070",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 74,
+    "note": "19.1.3 non-onerous column (= total)",
+    "read": "visual",
+    "heading_seen": "19.1.3 ผลกระทบของสัญญาที่รับรู้ในปี - ไม่รวม PAA (30 มิถุนายน พ.ศ. 2568 columns)"
+   }
+  },
+  "nb_pv_claims": {
+   "2025Q2": {
+    "value": 22005.738,
+    "printed": "22,005,738",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 74,
+    "note": "19.1.3 non-onerous column (= total)",
+    "read": "visual",
+    "heading_seen": "19.1.3 ผลกระทบของสัญญาที่รับรู้ในปี - ไม่รวม PAA (30 มิถุนายน พ.ศ. 2568 columns)"
+   }
+  },
+  "nb_ra": {
+   "2025Q2": {
+    "value": 1197.82,
+    "printed": "1,197,820",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 74,
+    "note": "19.1.3 non-onerous column (= total)",
+    "read": "visual",
+    "heading_seen": "19.1.3 ผลกระทบของสัญญาที่รับรู้ในปี - ไม่รวม PAA (30 มิถุนายน พ.ศ. 2568 columns)"
+   }
+  },
+  "nb_csm": {
+   "2025Q2": {
+    "value": 4329.218,
+    "printed": "4,329,218",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 74,
+    "note": "19.1.3 non-onerous column (= total)",
+    "read": "visual",
+    "heading_seen": "19.1.3 ผลกระทบของสัญญาที่รับรู้ในปี - ไม่รวม PAA (30 มิถุนายน พ.ศ. 2568 columns)"
+   }
+  },
+  "csm_open": {
+   "2025Q2": {
+    "value": 74348.041,
+    "printed": "74,348,041",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 72,
+    "note": "19.1.2 CSM column, net opening",
+    "read": "visual",
+    "heading_seen": "19.1.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวม PAA (ยอดสุทธิ ณ วันที่ 30 มิถุนายน พ.ศ. 2568)"
+   }
+  },
+  "csm_close": {
+   "2025Q2": {
+    "value": 74361.898,
+    "printed": "74,361,898",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 72,
+    "note": "19.1.2 CSM column, net closing",
+    "read": "visual",
+    "heading_seen": "19.1.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย - ไม่รวม PAA (ยอดสุทธิ ณ วันที่ 30 มิถุนายน พ.ศ. 2568)"
+   }
+  },
+  "nb_loss_component": {
+   "2025Q2": {
+    "value": 0.0,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 74,
+    "note": "19.1.3 (no onerous new business)",
+    "read": "visual",
+    "heading_seen": "19.1.3 ผลกระทบของสัญญาที่รับรู้ในปี - ไม่รวม PAA (30 มิถุนายน พ.ศ. 2568 columns)"
+   }
+  },
+  "insurance_revenue": {
+   "2025Q2": {
+    "value": 13251.672,
+    "printed": "13,251,672",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months (equals 24.1)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2025Q2": {
+    "value": -7514.194,
+    "printed": "(7,514,194)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI six months (equals 24.1)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  }
+ },
+ "ytd_months": 6,
+ "items_3m": {
+  "insurance_revenue": {
+   "2025Q2": {
+    "value": 6796.827,
+    "printed": "6,796,827",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2025Q2": {
+    "value": -3736.772,
+    "printed": "(3,736,772)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2025Q2": {
+    "value": -71.074,
+    "printed": "(71,074)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "net_investment_income": {
+   "2025Q2": {
+    "value": 1751.429,
+    "printed": "1,751,429",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "2025Q2": {
+    "value": -1768.06,
+    "printed": "(1,768,060)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months, net insurance finance expense",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2025Q2": {
+    "value": -266.441,
+    "printed": [
+     "(8,682)",
+     "(257,759)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months, other finance costs + other operating expenses",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "2025Q2": {
+    "value": 19.178,
+    "printed": "19,178",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2025Q2": {
+    "value": -483.473,
+    "printed": "(483,473)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2025Q2": {
+    "value": 2241.614,
+    "printed": "2,241,614",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI three months",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (พันบาท)"
+   }
+  }
+ }
+}
