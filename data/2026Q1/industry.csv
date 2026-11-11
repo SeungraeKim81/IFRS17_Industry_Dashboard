@@ -14,6 +14,7 @@ fiscal_year,metric,aggregate,median,n
 2026Q1,current_loss_ratio,0.619048,0.684901,20
 2026Q1,csm_release_share,0.216219,0.216144,20
 2026Q1,csm_growth,0.015271,0.021371,20
+2026Q1,csm_release_amount,16682.037043,213.8355,20
 2026Q1,release_ratio,0.101554,0.127007,20
 2026Q1,nb_to_release,1.451769,1.602416,20
 2026Q1,nb_csm_margin,0.13198,0.114823,20
@@ -41,6 +42,7 @@ fiscal_year,metric,aggregate,median,n
 2025Q1,current_loss_ratio,0.692697,0.792703,19
 2025Q1,csm_release_share,0.224187,0.219685,19
 2025Q1,csm_growth,0.022966,0.020989,19
+2025Q1,csm_release_amount,16366.354826,246.433,19
 2025Q1,release_ratio,0.104666,0.12829,19
 2025Q1,nb_to_release,1.625416,1.437804,19
 2025Q1,nb_csm_margin,0.132096,0.109796,19

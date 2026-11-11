@@ -30,6 +30,7 @@
     "current_loss_ratio": {"label": "당기 서비스 손해율", "formula": "−(발생사고 + 과거서비스 관련 변동) ÷ (BEL 해제 + RA 해제 + PAA 보험수익 + 기타 보험수익 + 보험취득현금흐름 회수)"},
     "csm_release_share": {"label": "보험수익 중 CSM 상각 비중", "formula": "CSM 상각 ÷ 보험수익"},
     "csm_growth": {"label": "CSM 증가율", "formula": "기말 CSM ÷ 기초 CSM − 1"},
+    "csm_release_amount": {"label": "CSM 상각", "formula": "서비스 제공에 따라 당기손익으로 인식한 CSM (양수로 표시)"},
     "release_ratio": {"label": "CSM 상각률", "formula": "CSM 상각 ÷ (기초 CSM + 신계약 + 이자부리 + 미래서비스 관련 변동). 분기 페이지는 연환산(× 12 ÷ 경과월수)"},
     "nb_to_release": {"label": "신계약 CSM ÷ 상각", "formula": "신계약 CSM ÷ CSM 상각"},
     "nb_csm_margin": {"label": "신계약 CSM 마진율", "formula": "신계약 CSM ÷ 신계약 PV 보험료"},
