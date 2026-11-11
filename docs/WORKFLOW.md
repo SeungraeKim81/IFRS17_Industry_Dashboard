@@ -91,18 +91,25 @@ The previous period's folder keeps the figures as originally reported, so both r
 
 ## Languages
 
-The page is in English and Korean. English is the source; the build stops if any Korean text is missing.
+The page is in English, Korean and Thai (`languages` in `config/dashboard.json`). English is the source;
+the build stops if any Korean or Thai text is missing.
 
-| Text | Where the Korean lives |
+| Text | Where the translations live |
 |---|---|
-| Interface (headings, notes under headings, legends, buttons, tooltips, headlines) | `UI.ko` in `templates/dashboard.html`, next to `UI.en`; a test checks both have the same keys |
-| Indicator names and definitions, reconciliation names, period and unit text | `config/i18n/ko.json` (the quarterly period end is written by the build; the quarterly caveat is `meta.quarterly_caveat`) |
-| Commentary | `config/i18n/ko.json` → `commentary.<id>`, one entry per note in `config/commentary.json` |
-| Review flags | `pipeline/validate.py` writes `message` and `message_ko` together |
+| Interface (headings, notes under headings, legends, buttons, tooltips, headlines) | `UI.ko` and `UI.th` in `templates/dashboard.html`, next to `UI.en`; a test checks all have the same keys |
+| Indicator names and definitions, reconciliation names, period and unit text | `config/i18n/<lang>.json` (the quarterly period end is written by the build; the quarterly caveat is `meta.quarterly_caveat`) |
+| Commentary | `config/i18n/<lang>.json` → `commentary.<id>`, one entry per note in `config/commentary.json` |
+| Review flags | `pipeline/validate.py` writes `message`, `message_ko` and `message_th` together |
 | Insurer names, extraction notes | Not translated: names are kept as published; extraction notes are the analyst's English originals |
 
-When commentary changes, update both languages in the same commit. Korean style: plain declarative (~다),
-IFRS 17 terms as used in Korean practice (보험계약마진(CSM), 위험조정(RA), 보험서비스결과, 보험금융비용, CSM 상각).
+When commentary changes, update every language in the same commit.
+
+- Korean style: plain declarative (~다), IFRS 17 terms as used in Korean practice (보험계약마진(CSM), 위험조정(RA),
+  보험서비스결과, 보험금융비용, CSM 상각).
+- Thai style (owner decision): indicator names stay in English, so `metrics.<code>.label` in `th.json` equals the
+  English label (a test checks it), and so do table columns, indicator legends and tooltips. Sentences, headings and
+  definitions are in Thai, with IFRS 17 terms (CSM, RA, insurance revenue, insurance service result) left in English
+  inside them. Dates put the Buddhist Era first: 30 มิถุนายน 2569 (ค.ศ. 2026).
 
 ## Conventions
 

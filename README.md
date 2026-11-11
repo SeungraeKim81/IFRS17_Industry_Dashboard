@@ -14,7 +14,7 @@ command line.
 | Coverage | FY2025 with FY2024 comparatives (20 insurers), and the quarters 1Q2025 to 2Q2026 year to date (18 to 20 insurers, every insurer extracted), THB million |
 | Output | One page per period, `output/<period>/Thai_Life_IFRS17_Dashboard_<period>.html` (FY2025, 2026Q2 ...): each a single file that works offline and can be emailed, linked to the other periods |
 | Published | <https://seungraekim81.github.io/IFRS17_Industry_Dashboard/> (see `docs/DEPLOY.md`) |
-| Languages | English and Korean (한국어), switched with the button at the top right; the choice is remembered in the browser |
+| Languages | English, Korean (한국어) and Thai (ไทย), switched with the button at the top right; the choice is remembered in the browser. Thai keeps indicator names in English |
 
 ## Quick start
 
@@ -97,7 +97,7 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | `config/companies.csv` | Insurer master: the insurers on the dashboard, names, RA policy, source units (the workbook sheet is used only by the pilot reference) |
 | `config/line_items.csv` | The 30 line items, their labels and sign convention |
 | `config/commentary.json` | Analyst comparability notes (tagged to insurers where they apply) |
-| `config/i18n/ko.json` | Korean text for everything that comes from data: indicator names and definitions, reconciliation names, commentary, period and unit text |
+| `config/i18n/ko.json`, `th.json` | Korean and Thai text for everything that comes from data: indicator names and definitions, reconciliation names, commentary, period and unit text (Thai keeps the English indicator names) |
 | `data/capture/` | The pilot capture workbook (reference only since the switch to the extractions; `docs/pilot/`) |
 | `data/<period>/` | Generated, committed CSVs, so every change to a figure shows in the diff |
 | `pipeline/` | The four steps (`ingest`, `validate`, `metrics`, `build`) |
@@ -125,3 +125,4 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.3 | 2026-11 | Quarterly pages 1Q2025 to 2Q2026 (year to date, every insurer extracted, annualised release ratio, like-for-like industry change, three-month table); period links on every page; not-disclosed values shown as n/a |
 | v1.4 | 2026-11 | Annual page covers all 20 insurers extracted for FY2025 (adds BUI, Phillip, Saha); benchmark expectations regenerated |
 | v1.5 | 2026-11 | Layout: two rows of five focus cards (CSM first, adds CSM release); market position ordered by new-business CSM; 'CSM movement analysis' with the quadrant's x-axis capped at 30%; definitions under the new-business measures; profit bridge ordered by net-profit margin; one line length for text; Data quality and Method fold away; three-month table dropped |
+| v1.6 | 2026-11 | Thai version (ไทย): Thai interface and data text with indicator names kept in English, Buddhist Era dates, Thai review flags and fonts |
