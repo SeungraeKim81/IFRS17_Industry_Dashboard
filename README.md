@@ -11,8 +11,8 @@ command line.
 | Objective | A Thailand life-industry dashboard in HTML, rebuilt the same way every reporting period |
 | Scope | IFRS 17 figures and indicators: insurance revenue and service result, CSM roll-forward, new business, profit bridge |
 | Source | Public information, mainly the audited financial statements (SET filings, OIC annual disclosures, company websites) |
-| Coverage | FY2025 with FY2024 comparatives, 17 insurers, THB million |
-| Output | `output/FY2025/Thai_Life_IFRS17_Dashboard_FY2025.html`: one file that works offline and can be emailed |
+| Coverage | FY2025 with FY2024 comparatives (17 insurers), and the quarters 1Q2025 to 2Q2026 year to date (18 to 20 insurers, every insurer extracted), THB million |
+| Output | One page per period, `output/<period>/Thai_Life_IFRS17_Dashboard_<period>.html` (FY2025, 2026Q2 ...): each a single file that works offline and can be emailed, linked to the other periods |
 | Published | <https://seungraekim81.github.io/IFRS17_Industry_Dashboard/> (see `docs/DEPLOY.md`) |
 | Languages | English and Korean (한국어), switched with the button at the top right; the choice is remembered in the browser |
 
@@ -24,10 +24,12 @@ Requires Python 3.10+ and `openpyxl` (`pip install -r requirements.txt`).
 python -m pipeline all
 ```
 
-That runs the four steps below and writes the dashboard. Each step can also be run on its own:
+That runs the four steps below for every period in `config/dashboard.json` (`periods`) and writes one
+dashboard per period. `--period FY2025` or `--period 2026Q2` runs one period. Each step can also be run on its own:
 
 ```bash
 python -m pipeline ingest      # extractions (extract/2025FY/*.json) -> data/FY2025/line_items.csv
+python -m pipeline all --period 2026Q2   # one quarterly page (extract/2026Q2/ vs extract/2025Q2/)
 python -m pipeline validate    # reconciliations (blocking) + plausibility flags (advisory)
 python -m pipeline metrics     # indicators, ranks, industry aggregates
 python -m pipeline build       # render the HTML
@@ -63,6 +65,14 @@ python -m unittest discover -s tests -v
 
 The build stops if any reconciliation fails, so a published dashboard always
 ties to the insurers' printed subtotals.
+
+**Quarterly pages** (2025Q1 to 2026Q2) run the same steps on `extract/<YYYYQn>/`. They show every insurer
+extracted for the quarter, year to date, against the same quarter a year earlier where it was extracted
+(the 2025 quarters have none). The CSM release ratio is annualised (× 12 / months to date); industry
+changes are like for like over the insurers present in both periods (`industry_common.csv`); the
+three-month profit or loss (`line_items_3m.csv`) has its own table. A value the statement does not
+disclose is n/a, and a break the statement itself contains passes only as an accepted break
+(`accepted_breaks.csv`).
 
 ## Dashboard sections
 
@@ -110,3 +120,4 @@ ties to the insurers' printed subtotals.
 | v1.0 | 2026-11 | First pipeline release: FY2025 + FY2024, 17 insurers, Samsung Life focus. Reproduces every figure on the benchmark board. |
 | v1.1 | 2026-11 | GitHub Pages publishing: validation workflow, `site` step, per-period addresses, `noindex` by default |
 | v1.2 | 2026-11 | Korean version: language switch at the top right (English / 한국어), remembered per browser and settable by `#lang=ko`; Korean review flags; translation completeness tests |
+| v1.3 | 2026-11 | Quarterly pages 1Q2025 to 2Q2026 (year to date, every insurer extracted, annualised release ratio, like-for-like industry change, three-month table); period links on every page; not-disclosed values shown as n/a |

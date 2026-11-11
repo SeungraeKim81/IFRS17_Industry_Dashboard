@@ -23,6 +23,12 @@ A line item the statement does not disclose takes None for the printed figure; t
 why. Figures printed but not line items go in MEMO = {code: (same tuple)}, e.g. nb_pv_outflows
 when acquisition cash flows are not split from other outflows (see pipeline/verify_extract.py).
 
+A quarterly spec (--period 2026Q1, 2026Q2 ...) has one column, the year to date: ITEMS entries are
+(page, printed, note[, sign]), and ITEMS_3M holds the profit-or-loss lines for the three months of
+the quarter in the same form (pipeline/verify_extract.py PL_3M). The spec records ytd_months.
+
+  python3 tools/visual_spec.py my_spec.py config/extraction/quarterly/2026Q1/chubb-life.json --period 2026Q1
+
 Printed figures are copied exactly as printed (brackets for negatives, "-" for nil); a list is
 summed. Every one of the 30 line items in config/line_items.csv needs an entry.
 
@@ -32,6 +38,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import runpy
 
 
@@ -44,22 +51,35 @@ def main() -> None:
     a = ap.parse_args()
     d = runpy.run_path(a.source)
     year = int(a.period[:4])
+    quarter = re.fullmatch(r"\d{4}Q([1-3])", a.period)
     cur, cmp_ = (a.years.split(",") if a.years else (f"FY{year}", f"FY{year - 1}"))
     heads = d["HEADINGS"]
     units = d.get("UNITS", {})
+
+    def rule(p, v, note, sign):
+        if v is None:
+            return {"page": p, "not_disclosed": note, "heading_seen": heads[p]}
+        return {"page": p, "printed": v, "unit": units.get(p, d["UNIT"]), "sign": sign, "note": note,
+                "heading_seen": heads[p]}
+
     def rules(table: dict) -> dict:
         out = {}
-        for code, (p_cur, v_cur, p_cmp, v_cmp, note, *rest) in table.items():
-            sign = rest[0] if rest else 1
-            out[code] = {fy: ({"page": p, "not_disclosed": note, "heading_seen": heads[p]} if v is None else
-                              {"page": p, "printed": v, "unit": units.get(p, d["UNIT"]), "sign": sign, "note": note,
-                               "heading_seen": heads[p]})
-                         for fy, p, v in ((cur, p_cur, v_cur), (cmp_, p_cmp, v_cmp))}
+        for code, entry in table.items():
+            if quarter:  # (page, printed, note[, sign]) for the year to date
+                p, v, note, *rest = entry
+                out[code] = {a.period: rule(p, v, note, rest[0] if rest else 1)}
+            else:        # (page FY, printed FY, page comparative, printed comparative, note[, sign])
+                p_cur, v_cur, p_cmp, v_cmp, note, *rest = entry
+                sign = rest[0] if rest else 1
+                out[code] = {fy: rule(p, v, note, sign) for fy, p, v in ((cur, p_cur, v_cur), (cmp_, p_cmp, v_cmp))}
         return out
 
     items = rules(d["ITEMS"])
     spec = {"company": d["COMPANY"], "company_id": d["COMPANY_ID"], "period": a.period, "source": d["SOURCE"],
-            "notes": d["NOTES"], "items": items, **({"memo": rules(d["MEMO"])} if d.get("MEMO") else {})}
+            "notes": d["NOTES"], **({"ytd_months": 3 * int(quarter.group(1))} if quarter else {}), "items": items,
+            **({"memo": rules(d["MEMO"])} if d.get("MEMO") else {}),
+            **({"items_3m": rules(d["ITEMS_3M"])} if d.get("ITEMS_3M") else {}),
+            **({"accepted_breaks": d["ACCEPTED_BREAKS"]} if d.get("ACCEPTED_BREAKS") else {})}
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(json.dumps(spec, ensure_ascii=False, indent=1) + "\n")
     print(f"spec written: {a.out} ({len(items)} line items)")

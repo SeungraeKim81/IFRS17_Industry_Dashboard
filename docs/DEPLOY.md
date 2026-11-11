@@ -17,7 +17,7 @@ Site address once live: **<https://seungraekim81.github.io/IFRS17_Industry_Dashb
 
 | Address | Content |
 |---|---|
-| `/` | The current period's dashboard (`period` in `config/dashboard.json`) |
+| `/` | The front page: the period named by `site_root` in `config/dashboard.json` (2026Q2; falls back to `period`) |
 | `/FY2025/` | The FY2025 dashboard. Every period gets its own lasting address |
 | `/#focus=Dhipaya%20Life` | Opens with another insurer highlighted |
 | `/#lang=ko` | Opens in Korean (the language button at the top right does the same, and the browser remembers it) |

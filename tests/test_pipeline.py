@@ -38,11 +38,28 @@ class TestIngest(unittest.TestCase):
         self.assertAlmostEqual(v["csm_release"], -740.036)
 
     def test_extractions_give_every_company_and_item(self):
-        rows, notes = ingest.ingest_extractions(PERIOD)
+        rows, notes, rows_3m, _ = ingest.ingest_extractions(PERIOD)
+        self.assertEqual(rows_3m, [])  # annual: no three-month profit or loss
         self.assertEqual(len(notes), 17)
         self.assertEqual(len(rows), 17 * 2 * 30)
         self.assertEqual({r["status"] for r in rows}, {"Extracted"})
         self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows))  # where each value was read
+
+    def test_quarterly_extractions(self):
+        """A quarter takes every insurer extracted; the comparative is the same quarter a year earlier, where extracted."""
+        rows, notes, rows_3m, _ = ingest.ingest_extractions("2026Q2")
+        per_year = {}
+        for r in rows:
+            per_year.setdefault(r["fiscal_year"], set()).add(r["company"])
+        self.assertEqual(len(notes), len(per_year["2026Q2"]))
+        self.assertTrue(per_year["2025Q2"] < per_year["2026Q2"])  # fewer insurers extracted for 2025Q2
+        self.assertEqual({r["code"] for r in rows_3m}, {"insurance_revenue", "insurance_service_expense",
+                         "reinsurance_result", "net_investment_income", "ifie", "other_expense", "other_income",
+                         "income_tax", "net_profit"})
+        nd = [r for r in rows if r["status"] == "Not disclosed"]
+        self.assertTrue(nd and all(r["value"] == "" for r in nd))
+        self.assertEqual(ingest.extract_period("2026Q2"), "2026Q2")
+        self.assertEqual(ingest.extract_period("FY2025"), "2025FY")
 
     def test_unknown_label_stops_the_run(self):
         tmp = Path(tempfile.mkdtemp()) / "wb.xlsx"
@@ -66,6 +83,53 @@ class TestValidate(unittest.TestCase):
         got = {(f["company"], f["fiscal_year"], f["flag"]) for f in flags}
         self.assertIn(("T Life", "FY2025", "negative_accretion"), got)
         self.assertIn(("CHUBB Life", "FY2025", "nb_to_release"), got)
+
+
+class TestNotDisclosed(unittest.TestCase):
+    def test_indicator_needing_a_missing_item_is_none(self):
+        from pipeline.common import load_line_items
+        v = {it["code"]: 1.0 for it in load_line_items()}
+        v["nb_pv_acq"] = None
+        acq = metrics.METRIC_INDEX["acq_cost_ratio"][6]
+        npm = metrics.METRIC_INDEX["npm"][6]
+        self.assertIsNone(metrics.evaluate(acq, v))
+        self.assertEqual(metrics.evaluate(npm, v), 1.0)
+        nb = next(r for r in validate.RECONCILIATIONS if r[0] == "nb_csm")
+        self.assertIsNone(metrics.evaluate(nb[2], v))  # reported N/A by the validation gate, not failed
+
+
+class TestQuarterly(unittest.TestCase):
+    """Quarterly pages: annualised release ratio, accepted breaks, like-for-like industry figures."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.period = "2026Q1"
+        ingest.run(cls.period)
+        validate.run(cls.period)
+        metrics.run(cls.period)
+
+    def test_release_ratio_is_annualised(self):
+        self.assertAlmostEqual(metrics.annualise("release_ratio", 0.02, "2026Q1"), 0.08)
+        self.assertAlmostEqual(metrics.annualise("release_ratio", 0.04, "2026Q2"), 0.08)
+        self.assertAlmostEqual(metrics.annualise("release_ratio", 0.08, "FY2025"), 0.08)
+        self.assertAlmostEqual(metrics.annualise("npm", 0.02, "2026Q1"), 0.02)  # only listed flows
+
+    def test_accepted_breaks_pass_only_as_recorded(self):
+        checks, _ = validate.validate(self.period)
+        acc = [c for c in checks if c["result"] == "ACCEPTED"]
+        self.assertTrue(acc)
+        self.assertTrue(all(c["fiscal_year"] == "2025Q1" for c in acc))  # 1Q2025 statements, the comparative
+        self.assertEqual([c for c in checks if c["result"] == "FAIL"], [])
+        self.assertEqual(validate._result(1.0, {"difference": "1.0"}, 0.05), "ACCEPTED")
+        self.assertEqual(validate._result(2.0, {"difference": "1.0"}, 0.05), "FAIL")
+
+    def test_like_for_like_industry(self):
+        common = read_csv(ROOT / "data" / self.period / "industry_common.csv")
+        n = {r["fiscal_year"]: int(r["n"]) for r in common if r["metric"] == "insurance_revenue"}
+        allrows = read_csv(ROOT / "data" / self.period / "industry.csv")
+        n_all = {r["fiscal_year"]: int(r["n"]) for r in allrows if r["metric"] == "insurance_revenue"}
+        self.assertEqual(n["2026Q1"], n["2025Q1"])  # same insurers in both years
+        self.assertLess(n["2026Q1"], n_all["2026Q1"])
 
 
 class TestMetricsAgainstBenchmark(unittest.TestCase):
@@ -132,9 +196,45 @@ class TestExtractions(unittest.TestCase):
         self.assertTrue(self.files)
         for f in self.files:
             ex = verify_extract.load(f)
-            with self.subTest(company=ex["company"]):
+            with self.subTest(company=ex["company"], period=ex["period"]):
                 self.assertEqual(len(ex["items"]), 30)
                 self.assertEqual([r for r in verify_extract.reconcile(ex) if not r["ok"]], [])
+                if ex.get("ytd_months"):  # quarterly: three-month bridge and continuity with the prior year-end
+                    self.assertEqual(set(ex["items_3m"]), set(verify_extract.PL_3M))
+                    self.assertEqual([r for r in verify_extract.reconcile_3m(ex) if not r["ok"]], [])
+                    self.assertTrue(verify_extract.continuity(ex)["ok"])
+
+    def test_quarterly_checks_catch_a_break(self):
+        """A three-month profit or loss that does not tie, or an opening CSM off the prior closing, fails."""
+        from pipeline import verify_extract
+        pl = {c: 10.0 for c in verify_extract.PL_3M}
+        pl["net_profit"] = 80.0  # eight lines of 10
+        ex = {"items_3m": {c: {"2026Q1": {"value": x}} for c, x in pl.items()}}
+        self.assertTrue(verify_extract.reconcile_3m(ex)[0]["ok"])
+        ex["items_3m"]["net_profit"]["2026Q1"]["value"] = 81.0
+        self.assertFalse(verify_extract.reconcile_3m(ex)[0]["ok"])
+        close = json.loads((ROOT / "extract" / "2025FY" / "samsung-life.json").read_text(encoding="utf-8"))
+        close = close["items"]["csm_close"]["FY2025"]["value"]
+        q = {"period": "2026Q1", "company_id": "samsung-life", "items": {"csm_open": {"2026Q1": {"value": close}}}}
+        self.assertTrue(verify_extract.continuity(q)["ok"])
+        q["items"]["csm_open"]["2026Q1"]["value"] = close + 1.0
+        self.assertFalse(verify_extract.continuity(q)["ok"])
+        q["company_id"] = "no-such-insurer"
+        self.assertFalse(verify_extract.continuity(q)["ok"])
+        # No 2024FY extraction: 2025Q1 falls back to the FY2024 comparative column of the 2025FY extraction.
+        fy = json.loads((ROOT / "extract" / "2025FY" / "samsung-life.json").read_text(encoding="utf-8"))
+        close24 = fy["items"]["csm_close"]["FY2024"]["value"]
+        q = {"period": "2025Q1", "company_id": "samsung-life", "items": {"csm_open": {"2025Q1": {"value": close24}}}}
+        result = verify_extract.continuity(q)
+        self.assertTrue(result["ok"])
+        self.assertIn("comparative in 2025FY", result["note"])
+        q["items"]["csm_open"]["2025Q1"]["value"] = close24 + 1.0
+        self.assertFalse(verify_extract.continuity(q)["ok"])
+        # an accepted break passes only at the recorded difference
+        q["accepted_breaks"] = [{"check": "continuity", "difference": 1.0, "reason": "restated opening"}]
+        self.assertTrue(verify_extract.continuity(q)["ok"])
+        q["items"]["csm_open"]["2025Q1"]["value"] = close24 + 2.0
+        self.assertFalse(verify_extract.continuity(q)["ok"])
 
     def test_not_disclosed_items_use_the_memo_total(self):
         """Acquisition and other outflows not split: the printed total stands in; without it the check fails."""
@@ -173,15 +273,17 @@ class TestExtractions(unittest.TestCase):
     def test_transcribed_spec_reproduces_extraction(self):
         """A spec made only of transcribed figures needs no PDF: re-running it gives the committed values."""
         from pipeline import extract
-        for spec in sorted((ROOT / "config" / "extraction").glob("*.json")):
-            rules = [r for years in json.loads(spec.read_text(encoding="utf-8"))["items"].values() for r in years.values()]
+        for spec in sorted((ROOT / "config" / "extraction").rglob("*.json")):  # annual and quarterly/<period>/
+            body = json.loads(spec.read_text(encoding="utf-8"))
+            rules = [r for sec in ("items", "items_3m") for years in body.get(sec, {}).values() for r in years.values()]
             if not all("printed" in r or "const" in r or "not_disclosed" in r for r in rules):
                 continue
             res = extract.extract(spec, None)
             committed = json.loads((ROOT / "extract" / res["period"] / f"{res['company_id']}.json").read_text(encoding="utf-8"))
-            with self.subTest(spec=spec.name):
-                self.assertEqual({k: {fy: x["value"] for fy, x in v.items()} for k, v in res["items"].items()},
-                                 {k: {fy: x["value"] for fy, x in v.items()} for k, v in committed["items"].items()})
+            with self.subTest(spec=str(spec.relative_to(ROOT))):
+                for sec in ("items", "items_3m"):
+                    self.assertEqual({k: {fy: x["value"] for fy, x in v.items()} for k, v in res.get(sec, {}).items()},
+                                     {k: {fy: x["value"] for fy, x in v.items()} for k, v in committed.get(sec, {}).items()})
 
 
 class TestBuild(unittest.TestCase):
@@ -192,6 +294,38 @@ class TestBuild(unittest.TestCase):
         html = build.render(data)
         self.assertNotIn("__DATA__", html)
         self.assertNotIn("</script><", html.split('id="data"')[1].split("</script>")[0])
+
+    def test_quarterly_payload(self):
+        """Quarterly pages: every insurer extracted, labels, comparative availability, period links."""
+        for period, has_cmp in (("2026Q2", True), ("2025Q1", False)):
+            ingest.run(period)
+            validate.run(period)
+            metrics.run(period)
+            data = build.payload(period)
+            with self.subTest(period=period):
+                m = data["meta"]
+                self.assertEqual(m["kind"], "quarter")
+                self.assertEqual(m["period_label"], period[-1] + "Q" + period[:4])
+                self.assertEqual(m["has_comparative"], has_cmp)
+                self.assertEqual(m["ytd_months"], 3 * int(period[-1]))
+                self.assertIn(period, [p["id"] for p in m["periods"]])
+                names = {c["name"] for c in data["companies"]}
+                self.assertTrue({"BUI Life", "Saha Life", "Samsung Life"} <= names)
+                self.assertEqual(set(data["three_month"]), names)
+                self.assertEqual(build.missing_translations(data, "ko"), [])
+                self.assertTrue(all(n.get("periods") is None for n in data["commentary"]))  # FY-only notes left out
+        self.assertEqual(build.period_label("FY2025"), "FY2025")
+
+    def test_site_front_page(self):
+        """The site root is the site_root period; every built period keeps its own address and file name."""
+        from pipeline import site
+        site.run()
+        root = load_settings().get("site_root", PERIOD)
+        html = (site.SITE / "index.html").read_text(encoding="utf-8")
+        self.assertIn('"period":"' + root + '"', html)
+        for p in (ROOT / "output").glob("*/Thai_Life_IFRS17_Dashboard_*.html"):
+            self.assertTrue((site.SITE / p.parent.name / "index.html").exists())
+            self.assertTrue((site.SITE / p.parent.name / p.name).exists())
 
     def test_unknown_focus_rejected(self):
         with self.assertRaises(SystemExit):

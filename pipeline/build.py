@@ -2,6 +2,11 @@
 
 All data the page needs is embedded as one JSON block, so the output is a
 single file that opens offline and can be emailed or archived as-is.
+
+One page per period: the annual page (FY2025) and the quarterly pages (2026Q2 ...), all from
+the same template. A quarterly page is year to date; it also carries the three-month profit or
+loss, the like-for-like industry figures (industry_common.csv) and the quarterly caveat. Every
+page links to the other built periods (config/dashboard.json "periods").
 """
 from __future__ import annotations
 
@@ -9,7 +14,8 @@ import json
 import subprocess
 from datetime import datetime, timezone
 
-from .common import CONFIG, OUTPUT, ROOT, TEMPLATES, load_companies, load_settings, period_dir, read_csv
+from .common import (CONFIG, OUTPUT, ROOT, TEMPLATES, comparative_period, load_companies, load_settings, period_dir,
+                     quarter_info, read_csv)
 from .metrics import METRICS, SHARE_OF, load_values
 
 METRIC_LABEL = {"insurance_revenue": "insurance revenue", "csm_close": "closing CSM", "nb_csm": "new-business CSM"}
@@ -46,6 +52,39 @@ def missing_translations(data: dict, lang: str) -> list[str]:
     return miss
 
 
+MONTH_END = {1: ("31 March", "3월 31일"), 2: ("30 June", "6월 30일"), 3: ("30 September", "9월 30일")}
+
+
+def period_label(period: str) -> str:
+    """How a period is named on the page: FY2025, or 2Q2026 for the six months to 30 June 2026."""
+    q = quarter_info(period)
+    return period if q is None else f"{q['quarter']}Q{q['year']}"
+
+
+def _quarter_meta(period: str, s: dict, i18n: dict) -> dict:
+    """Period end, months to date and the quarterly caveat (English in meta, Korean into the translation)."""
+    q = quarter_info(period)
+    en, ko = MONTH_END[q["quarter"]]
+    be = q["year"] + 543
+    for lang, tr in i18n.items():
+        m = tr.setdefault("meta", {})
+        if lang == "ko":
+            m["period_end"] = f"{q['year']}년 {ko} (불기 {be}년)"
+        m["comparative_caveat"] = m.get("quarterly_caveat", "")
+    return {"period_end": f"{en} {q['year']} (B.E. {be})", "comparative_caveat": s["quarterly_caveat"],
+            "ytd_months": q["ytd_months"]}
+
+
+def _industry_table(path) -> dict:
+    out: dict = {}
+    if path.exists():
+        for r in read_csv(path):
+            out.setdefault(r["fiscal_year"], {})[r["metric"]] = {
+                "agg": float(r["aggregate"]) if r["aggregate"] != "" else None,
+                "median": float(r["median"]) if r["median"] else None, "n": int(r["n"])}
+    return out
+
+
 def _source_ref(s: dict, period: str) -> str:
     """What the footer names as the data source: the registry of the statements read, or the workbook."""
     if s.get("source", "workbook") == "extract":
@@ -57,13 +96,14 @@ def _source_ref(s: dict, period: str) -> str:
 def payload(period: str, focus: str | None = None) -> dict:
     s = load_settings()
     pdir = period_dir(period)
-    companies = load_companies()
+    values = load_values(period)
+    # the insurers with figures for this period: the annual list, or every insurer extracted for a quarter
+    companies = [c for c in load_companies() if (c["company"], period) in values]
     names = {c["company"] for c in companies}
     focus = focus or s["focus_company"]
     if focus not in names:
         raise SystemExit(f"build: focus company {focus!r} is not in config/companies.csv")
 
-    values = load_values(period)
     metrics: dict[tuple[str, str], dict] = {}
     for r in read_csv(pdir / "metrics.csv"):
         metrics.setdefault((r["company"], r["fiscal_year"]), {})[r["metric"]] = {
@@ -84,23 +124,40 @@ def payload(period: str, focus: str | None = None) -> dict:
         c["size_rank"] = i + 1
         c["tier"] = 1 if i < s["large_insurer_count"] else 2
 
-    industry: dict = {}
-    for r in read_csv(pdir / "industry.csv"):
-        industry.setdefault(r["fiscal_year"], {})[r["metric"]] = {
-            "agg": float(r["aggregate"]), "median": float(r["median"]) if r["median"] else None}
+    industry = _industry_table(pdir / "industry.csv")
+    industry_common = _industry_table(pdir / "industry_common.csv")
+    accepted = {(r["company"], r["fiscal_year"], r["check"]): r["reason"]
+                for r in (read_csv(pdir / "accepted_breaks.csv") if (pdir / "accepted_breaks.csv").exists() else [])}
+    three_month: dict = {}
+    if (pdir / "line_items_3m.csv").exists():
+        for r in read_csv(pdir / "line_items_3m.csv"):
+            three_month.setdefault(r["company"], {}).setdefault(r["fiscal_year"], {})[r["code"]] = (
+                float(r["value"]) if r["value"] != "" else None)
 
     checks: dict = {}
     for r in read_csv(pdir / "validation.csv"):
         checks.setdefault(r["company"], {}).setdefault(r["fiscal_year"], {})[r["check"]] = {
-            "ok": r["result"] == "OK", "diff": float(r["difference"])}
+            "ok": r["result"] != "FAIL", "status": r["result"],
+            "diff": float(r["difference"]) if r["difference"] != "" else None,
+            **({"reason": accepted[(r["company"], r["fiscal_year"], r["check"])]} if r["result"] == "ACCEPTED" else {})}
 
     with open(CONFIG / "commentary.json", encoding="utf-8") as f:
-        commentary = json.load(f)
+        # a note tied to periods ("periods") shows only on those pages
+        commentary = [n for n in json.load(f) if period in n.get("periods", [period])]
     i18n = {lang: load_translation(lang) for lang in s.get("languages", ["en"]) if lang != "en"}
+    quarterly = quarter_info(period) is not None
+    cmp = comparative_period(period)
+    meta = {k: s[k] for k in ("title", "market", "standard", "period_end", "unit", "large_insurer_count",
+                              "comparative_caveat", "tolerance_thb_m")}
+    if quarterly:
+        meta.update(_quarter_meta(period, s, i18n))
+    common_n = {fy: v["insurance_revenue"]["n"] for fy, v in industry_common.items()}
 
     return {
-        "meta": {**{k: s[k] for k in ("title", "market", "standard", "period", "comparative", "period_end",
-                                       "unit", "large_insurer_count", "comparative_caveat", "tolerance_thb_m")},
+        "meta": {**meta, "period": period, "comparative": cmp, "kind": "quarter" if quarterly else "annual",
+                 "period_label": period_label(period), "comparative_label": period_label(cmp),
+                 "has_comparative": cmp in years, "common_n": next(iter(common_n.values()), None),
+                 "periods": [{"id": p, "label": period_label(p)} for p in s.get("periods", [s["period"]])],
                  "default_focus": focus, "source_ref": _source_ref(s, period),
                  "indexing": bool(s.get("search_engine_indexing", False)),
                  "languages": s.get("languages", ["en"]), "default_language": s.get("default_language", "en"),
@@ -108,6 +165,8 @@ def payload(period: str, focus: str | None = None) -> dict:
         "years": years,
         "companies": cos,
         "industry": industry,
+        "industry_common": industry_common,
+        "three_month": three_month,
         "metric_defs": [{"code": m[0], "label": m[1], "unit": m[2], "better": m[3], "group": m[4], "formula": m[5]}
                         for m in METRICS] + [
             {"code": k, "label": "Share of " + METRIC_LABEL[b], "unit": "pct", "better": True, "group": "scale",

@@ -1,18 +1,21 @@
-company,sheet,short_name,legal_name,ra_policy,face_unit,notes_unit
-AIA Thailand,AIA Thailand,AIA,AIA Company Limited - Thailand Branch,not_disaggregated,Million Baht,Million Baht
-Thai Life,Thai Life,Thai Life,Thai Life Insurance PCL,disaggregated,Thousand Baht,Thousand Baht
-Muang Thai Life,Muang Thai Life,Muang Thai,Muang Thai Life Assurance PCL,disaggregated,Thousand Baht,Thousand Baht
-Allianz Ayudhya,Allianz Ayudhya,Allianz Ayudhya,Allianz Ayudhya Assurance PCL,disaggregated,Thousand Baht,Thousand Baht
-FWD Thailand,FWD Thailand,FWD,FWD Insurance (Thailand) PCL,not_disaggregated,Thousand Baht,Thousand Baht
-Krungthai-AXA Life,Krungthai-AXA Life,KTAXA,Krungthai-AXA Life Insurance PCL,not_disaggregated,Thousand Baht,Thousand Baht
-Bangkok Life,Bangkok Life,Bangkok Life,Bangkok Life Assurance PCL,not_disaggregated,Thousand Baht,Thousand Baht
-Prudential Life,Prudential Life,Prudential,Prudential Life Assurance (Thailand) PCL,disaggregated,Thousand Baht,Thousand Baht
-Generali Life,Generali Life,Generali,Generali Life Assurance (Thailand) PCL,disaggregated,Baht,Thousand Baht
-Ocean Life,Ocean Life,Ocean Life,Ocean Life Insurance PCL,disaggregated,Thousand Baht,Thousand Baht
-CHUBB Life,CHUBB Life,CHUBB,Chubb Life Assurance PCL,not_disaggregated,Baht,Baht
-Tokio Marine Life,Tokio Marine Life,Tokio Marine,Tokio Marine Life Insurance (Thailand) PCL,disaggregated,Baht,Baht
-Dhipaya Life,Dhipaya Life,Dhipaya,Dhipaya Life Assurance PCL,not_disaggregated,Baht,Baht
-Southeast Life,Southeast Life,Southeast,Southeast Life Insurance PCL,disaggregated,Thousand Baht,Thousand Baht
-Samsung Life,Samsung Life,Samsung,Samsung Life Insurance (Thailand) PCL,disaggregated,Baht,Thousand Baht
-T Life,T Life,T Life,T Life Assurance PCL,disaggregated,Baht,Thousand Baht
-Rabbit Life,Rabbit Life,Rabbit,Rabbit Life Assurance PCL,disaggregated,Baht,Thousand Baht
+company,sheet,short_name,legal_name,ra_policy,face_unit,notes_unit,annual
+AIA Thailand,AIA Thailand,AIA,AIA Company Limited - Thailand Branch,not_disaggregated,Million Baht,Million Baht,yes
+Thai Life,Thai Life,Thai Life,Thai Life Insurance PCL,disaggregated,Thousand Baht,Thousand Baht,yes
+Muang Thai Life,Muang Thai Life,Muang Thai,Muang Thai Life Assurance PCL,disaggregated,Thousand Baht,Thousand Baht,yes
+Allianz Ayudhya,Allianz Ayudhya,Allianz Ayudhya,Allianz Ayudhya Assurance PCL,disaggregated,Thousand Baht,Thousand Baht,yes
+FWD Thailand,FWD Thailand,FWD,FWD Insurance (Thailand) PCL,not_disaggregated,Thousand Baht,Thousand Baht,yes
+Krungthai-AXA Life,Krungthai-AXA Life,KTAXA,Krungthai-AXA Life Insurance PCL,not_disaggregated,Thousand Baht,Thousand Baht,yes
+Bangkok Life,Bangkok Life,Bangkok Life,Bangkok Life Assurance PCL,not_disaggregated,Thousand Baht,Thousand Baht,yes
+Prudential Life,Prudential Life,Prudential,Prudential Life Assurance (Thailand) PCL,disaggregated,Thousand Baht,Thousand Baht,yes
+Generali Life,Generali Life,Generali,Generali Life Assurance (Thailand) PCL,disaggregated,Baht,Thousand Baht,yes
+Ocean Life,Ocean Life,Ocean Life,Ocean Life Insurance PCL,disaggregated,Thousand Baht,Thousand Baht,yes
+CHUBB Life,CHUBB Life,CHUBB,Chubb Life Assurance PCL,not_disaggregated,Baht,Baht,yes
+Tokio Marine Life,Tokio Marine Life,Tokio Marine,Tokio Marine Life Insurance (Thailand) PCL,disaggregated,Baht,Baht,yes
+Dhipaya Life,Dhipaya Life,Dhipaya,Dhipaya Life Assurance PCL,not_disaggregated,Baht,Baht,yes
+Southeast Life,Southeast Life,Southeast,Southeast Life Insurance PCL,disaggregated,Thousand Baht,Thousand Baht,yes
+Samsung Life,Samsung Life,Samsung,Samsung Life Insurance (Thailand) PCL,disaggregated,Baht,Thousand Baht,yes
+T Life,T Life,T Life,T Life Assurance PCL,disaggregated,Baht,Thousand Baht,yes
+Rabbit Life,Rabbit Life,Rabbit,Rabbit Life Assurance PCL,disaggregated,Baht,Thousand Baht,yes
+BUI Life,BUI Life,BUI,BUI Life Insurance PCL,not_disaggregated,Baht,Baht,no
+Phillip Life,Phillip Life,Phillip,Phillip Life Assurance PCL,disaggregated,Baht,Thousand Baht,no
+Saha Life,Saha Life,Saha,Saha Life Insurance PCL,disaggregated,Baht,Baht,no

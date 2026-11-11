@@ -7,24 +7,28 @@
   },
   {
     "id": "transition",
+    "periods": ["FY2025"],
     "title": "FY2024 figures are transition comparatives",
     "companies": [],
     "body": "TFRS 17 took effect on 1 January 2025 with transition on 1 January 2024. FY2024 figures are the restated comparatives in the FY2025 statements, not previously reported results, and the transition approach chosen by each insurer shapes its FY2024 CSM. Year-on-year changes are shown, but a large move can come from transition mechanics rather than from performance."
   },
   {
     "id": "chubb_rabbit",
+    "periods": ["FY2025"],
     "title": "CHUBB and Rabbit Life sit above the replacement scale",
     "companies": ["CHUBB Life", "Rabbit Life"],
     "body": "Both took heavy onerous-contract charges in the FY2024 transition comparative, which left a small CSM and a small FY2025 release. A small denominator inflates new business / release, so their position in the quadrant reflects transition mechanics rather than unusually strong new business."
   },
   {
     "id": "t_life_accretion",
+    "periods": ["FY2025"],
     "title": "T Life's CSM interest accretion is negative in FY2025",
     "companies": ["T Life"],
     "body": "Accretion at locked-in rates on a positive CSM should be positive; the likely explanation is that another movement is netted into that row. The roll-forward closes exactly with the row as printed, so it is carried unchanged."
   },
   {
     "id": "rabbit_scale",
+    "periods": ["FY2025"],
     "title": "Ratios to insurance revenue stop being meaningful for Rabbit Life",
     "companies": ["Rabbit Life"],
     "body": "Its investment book is very large relative to a small insurance operation, so the investment result and other expenses run far past the scale of the profit bridge. Its bars are clipped at the axis; the net-profit margin shown is the true figure."

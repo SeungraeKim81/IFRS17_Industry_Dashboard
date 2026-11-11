@@ -1,0 +1,473 @@
+{
+ "company": "Krungthai-AXA Life",
+ "company_id": "krungthai-axa-life",
+ "period": "2026Q2",
+ "source": {
+  "drive_file_id": "1dYDmCcnvauMxEV5WJ3r7TxW1G1Bv9-dk",
+  "original_name": "02_FS_AXA_2Q2026.pdf",
+  "sha256": "80e81c9bea91e7e6137eba55d7543c2abd8c92e5193c237f634cf078ce83e25c",
+  "doc_type": "Reviewed condensed interim financial statements 2Q2026 (Thai)",
+  "pages": 75,
+  "text_layer": "no (scanned)"
+ },
+ "notes": "Quarterly (6 months to 30 June 2026 = year to date). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (EY). Thousand Baht. SCI three months p.5, six months p.7. Note 3 six-month total columns give revenue (p.18) and expenses (p.19; incurred claims include PAA). The insurance-contract notes are split by product group: 4 non-participating, 5 participating (indirect), 6 universal life, 7 participating (direct) / unit-linked. CSM roll-forward = sum of the CSM columns of 4.2 + 5.2 + 6.2 + 7.2 (p.26, 31, 36, 40; six months); new business = 4.3 + 5.3 + 7.3 (p.28, 33, 42; universal life wrote none). Each summed item records the group 4 page. Future-service change = change in estimates + experience adjustment (CSM columns). Accretion = the profit-or-loss part of the insurance-finance row (CSM column; '-' for group 7). Other revenue = รายการอื่น (negative year to date). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 June 2569 (p.5).",
+ "ytd_months": 6,
+ "items": {
+  "ra_release": {
+   "2026Q2": {
+    "page": 18,
+    "printed": "223,718",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total",
+    "heading_seen": "3. รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569, revenue)"
+   }
+  },
+  "bel_release": {
+   "2026Q2": {
+    "page": 18,
+    "printed": "7,200,057",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total",
+    "heading_seen": "3. รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569, revenue)"
+   }
+  },
+  "paa_revenue": {
+   "2026Q2": {
+    "page": 18,
+    "printed": "1,164,518",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total (group PAA)",
+    "heading_seen": "3. รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569, revenue)"
+   }
+  },
+  "other_revenue": {
+   "2026Q2": {
+    "page": 18,
+    "printed": "(5,906)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 รายการอื่น",
+    "heading_seen": "3. รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569, revenue)"
+   }
+  },
+  "incurred_claims": {
+   "2026Q2": {
+    "page": 19,
+    "printed": "(7,190,022)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total (includes PAA)",
+    "heading_seen": "3. continued (หกเดือน 30 มิถุนายน 2569, insurance service expenses and reinsurance)"
+   }
+  },
+  "past_service": {
+   "2026Q2": {
+    "page": 19,
+    "printed": "6,912",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total",
+    "heading_seen": "3. continued (หกเดือน 30 มิถุนายน 2569, insurance service expenses and reinsurance)"
+   }
+  },
+  "loss_component": {
+   "2026Q2": {
+    "page": 19,
+    "printed": "(62,395)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total",
+    "heading_seen": "3. continued (หกเดือน 30 มิถุนายน 2569, insurance service expenses and reinsurance)"
+   }
+  },
+  "acq_recovery": {
+   "2026Q2": {
+    "page": 18,
+    "printed": "1,025,399",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total",
+    "heading_seen": "3. รายได้และผลการดำเนินงานการบริการประกันภัย (สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569, revenue)"
+   }
+  },
+  "acq_amortisation": {
+   "2026Q2": {
+    "page": 19,
+    "printed": "(1,167,481)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "3 total (includes PAA)",
+    "heading_seen": "3. continued (หกเดือน 30 มิถุนายน 2569, insurance service expenses and reinsurance)"
+   }
+  },
+  "net_investment_income": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "5,542,873",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(4,065,482)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2026Q2": {
+    "page": 7,
+    "printed": [
+     "(191,244)",
+     "(275,806)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "5,306",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(976,246)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "4,094,738",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(27,453)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "csm_nb": {
+   "2026Q2": {
+    "page": 26,
+    "printed": [
+     "2,648,669",
+     "706,522",
+     "-",
+     "53,495"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "sum of groups 4, 5, 6, 7 (CSM column)",
+    "heading_seen": "4.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.2 p.31, 6.2 p.36, 7.2 p.40)"
+   }
+  },
+  "csm_accretion": {
+   "2026Q2": {
+    "page": 26,
+    "printed": [
+     "518,227",
+     "144,426",
+     "820",
+     "-"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "sum of groups 4, 5, 6, 7 (CSM column), finance row recognised in profit or loss",
+    "heading_seen": "4.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.2 p.31, 6.2 p.36, 7.2 p.40)"
+   }
+  },
+  "csm_future_service": {
+   "2026Q2": {
+    "page": 26,
+    "printed": [
+     "(1,755,289)",
+     "(50,858)",
+     "(24,684)",
+     "45,275",
+     "(912)",
+     "(8,224)",
+     "(84,022)",
+     "51,921"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "sum of groups 4, 5, 6, 7 (CSM column), change in estimates + experience adjustment",
+    "heading_seen": "4.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.2 p.31, 6.2 p.36, 7.2 p.40)"
+   }
+  },
+  "csm_release": {
+   "2026Q2": {
+    "page": 26,
+    "printed": [
+     "(2,190,420)",
+     "(640,887)",
+     "(3,048)",
+     "(53,635)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "sum of groups 4, 5, 6, 7 (CSM column) (equals 3)",
+    "heading_seen": "4.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.2 p.31, 6.2 p.36, 7.2 p.40)"
+   }
+  },
+  "nb_pv_premium": {
+   "2026Q2": {
+    "page": 28,
+    "printed": [
+     "(22,638,569)",
+     "(4,925,931)",
+     "(1,004,358)"
+    ],
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "groups 4, 5, 7 totals",
+    "heading_seen": "4.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.3 p.33, 7.3 p.42)"
+   }
+  },
+  "nb_pv_acq": {
+   "2026Q2": {
+    "page": 28,
+    "printed": [
+     "2,958,156",
+     "457,444",
+     "142,785"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "groups 4, 5, 7 totals",
+    "heading_seen": "4.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.3 p.33, 7.3 p.42)"
+   }
+  },
+  "nb_pv_claims": {
+   "2026Q2": {
+    "page": 28,
+    "printed": [
+     "16,792,169",
+     "3,718,942",
+     "784,441"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "groups 4, 5, 7 totals",
+    "heading_seen": "4.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.3 p.33, 7.3 p.42)"
+   }
+  },
+  "nb_ra": {
+   "2026Q2": {
+    "page": 28,
+    "printed": [
+     "254,493",
+     "43,023",
+     "23,637"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "groups 4, 5, 7 totals",
+    "heading_seen": "4.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.3 p.33, 7.3 p.42)"
+   }
+  },
+  "nb_csm": {
+   "2026Q2": {
+    "page": 28,
+    "printed": [
+     "2,648,669",
+     "706,522",
+     "53,495"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "groups 4, 5, 7 totals",
+    "heading_seen": "4.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.3 p.33, 7.3 p.42)"
+   }
+  },
+  "csm_open": {
+   "2026Q2": {
+    "page": 26,
+    "printed": [
+     "33,147,373",
+     "8,705,672",
+     "49,679",
+     "756,752"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "sum of groups 4, 5, 6, 7 (CSM column), net opening",
+    "heading_seen": "4.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.2 p.31, 6.2 p.36, 7.2 p.40)"
+   }
+  },
+  "csm_close": {
+   "2026Q2": {
+    "page": 26,
+    "printed": [
+     "32,317,702",
+     "8,936,324",
+     "38,315",
+     "724,511"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "sum of groups 4, 5, 6, 7 (CSM column), net closing",
+    "heading_seen": "4.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.2 p.31, 6.2 p.36, 7.2 p.40)"
+   }
+  },
+  "nb_loss_component": {
+   "2026Q2": {
+    "page": 28,
+    "printed": [
+     "14,918",
+     "-",
+     "-"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "groups 4, 5, 7 totals",
+    "heading_seen": "4.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (หกเดือน 30 มิถุนายน 2569; non-participating; with 5.3 p.33, 7.3 p.42)"
+   }
+  },
+  "insurance_revenue": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "12,495,776",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI (equals 3)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(8,412,986)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI (equals 3)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  }
+ },
+ "items_3m": {
+  "insurance_revenue": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "5,991,458",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "(4,186,351)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "(17,387)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "net_investment_income": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "3,612,464",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "ifie": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "(2,470,587)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2026Q2": {
+    "page": 5,
+    "printed": [
+     "(89,870)",
+     "(151,512)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months, other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "other_income": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "3,804",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "(531,116)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2026Q2": {
+    "page": 5,
+    "printed": "2,160,903",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  }
+ }
+}

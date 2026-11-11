@@ -44,11 +44,17 @@ header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;just
 h1{font-weight:650;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
 .lede{color:var(--ink-2);max-width:72ch;margin:0}
 .units{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
+nav.periods{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:8px;font-size:13px}
+nav.periods .lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+nav.periods a{color:var(--ink-2)}
+nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decoration:none}
+.q3{margin-top:24px}
+.q3 h3{margin:0 0 4px}
 .controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .lang-pick{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .lang-pick .seg button{text-transform:none;letter-spacing:0}
 :lang(ko) body{word-break:keep-all;overflow-wrap:anywhere}
-:lang(ko) .units,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
+:lang(ko) .units,:lang(ko) nav.periods .lab,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
 @media(max-width:620px){.controls{align-items:stretch;width:100%}.lang-pick{justify-content:space-between}}
 .focus-pick{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .focus-pick select{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--surface);
@@ -142,6 +148,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     <h1 id="title"></h1>
     <p class="lede" id="lede"></p>
     <div class="units" id="units"></div>
+    <nav class="periods" id="periods"></nav>
   </div>
   <div class="controls">
     <div class="lang-pick"><span data-t="langLabel"></span>
@@ -234,6 +241,8 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     <button class="dl" id="dlBtn" type="button" data-t="download"></button>
   </div>
   <div class="tbl-wrap"><table class="data" id="all"></table></div>
+  <div class="q3" id="q3" hidden><h3 id="q3h"></h3><p class="sec-note" data-t="note3m"></p>
+    <div class="tbl-wrap"><table class="data" id="q3t"></table></div></div>
 </section>
 
 <section id="s-dq">
@@ -262,6 +271,8 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 "use strict";
 const DATA = JSON.parse(document.getElementById("data").textContent);
 const M = DATA.meta, CUR = M.period, CMP = M.comparative, COS = DATA.companies;
+const CURL = M.period_label || CUR, CMPL = M.comparative_label || CMP, QTR = M.kind === "quarter";
+const fyL = fy => fy === CUR ? CURL : fy === CMP ? CMPL : fy;
 const DEF = Object.fromEntries(DATA.metric_defs.map(d => [d.code, d]));
 const NS = "http://www.w3.org/2000/svg";
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
@@ -324,6 +335,19 @@ const UI = {
     defArea: "Area", defInd: "Indicator", defDef: "Definition",
     foot: "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), extracted page by page from each filed statement (files used: <code>{wb}</code>). Built {gen}{git}. Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.",
     footGit: " from commit {git}", reviewFlag: "Review flag {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    periodsLabel: "Period",
+    ledeQ: "{n} Thai life insurers under {std}, {cur}, year to date. Every figure is taken from the filed interim statements and tied back to their printed subtotals before it reaches this page.",
+    unitsQ: "{unit} · {mo} months to {pe} · comparative {cmp} · {n} insurers", unitsQnoCmp: "{unit} · {mo} months to {pe} · no comparative · {n} insurers",
+    qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (ann.)",
+    noteAllQ: " Figures are year to date. The industry change compares the {k} insurers present in both periods.",
+    industryAggCommon: "Industry, like for like ({k} insurers)",
+    h3m: "The quarter alone: three months to {pe}",
+    note3m: "From the three-month profit or loss in the interim statements, against the same quarter a year earlier. The industry change compares the insurers present in both quarters.",
+    dqNoteQ: "<b>{ok} of {total}</b> reconciliations pass within {tol}m on the year-to-date figures shown ({n} insurers, {c} checks per period). The build stops if any one fails. Hover a tick for the difference.",
+    dqNoteAcc: " ✓* ({a}) marks a break the statement itself contains, accepted at the recorded difference.",
+    dqNoteNa: " n/a ({na}) marks a check that needs an item the statement does not disclose; it was tied to the printed total at extraction.",
+    industry3m: "Industry · change over the {k} insurers with both quarters",
+    dqAccepted: "accepted break, difference {v}m: {r}", dqNa: "not disclosed; tied to the printed total at extraction",
     cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
       csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
       acq_cost_ratio: "Acq. cost ratio", onerous_ratio: "Onerous NB" },
@@ -332,10 +356,11 @@ const UI = {
     headlines: p => [
       p.short + " is the " + p.ord(p.sizeRank) + " largest of " + p.n + " by insurance revenue (" + p.revShare + " share), " +
         p.ord(p.csmRank) + " by closing CSM and " + p.ord(p.nbRank) + " by new-business CSM.",
-      "CSM " + p.chg(p.csmG, "grew", "fell") + " over the year to " + p.csmClose + "m (industry " + p.csmGi + "); new business replaced " +
+      "CSM " + p.chg(p.csmG, "grew", "fell") + " " + (p.q ? "since 1 January" : "over the year") + " to " + p.csmClose + "m (industry " + p.csmGi + "); new business replaced " +
         p.nbr + " the release (industry median " + p.nbrMed + ").",
-      "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
-        (p.taxBig ? "; income tax went from " + p.taxPrev + "m to " + p.taxNow + "m." : "."),
+      p.hasCmp ? "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
+        (p.taxBig ? "; income tax went from " + p.taxPrev + "m to " + p.taxNow + "m." : ".")
+        : "Net profit was " + p.np + "m and the insurance service result " + p.isr + "m (no comparative period on this page).",
       "New-business CSM margin of " + p.nbm + " ranks " + p.ord(p.nbmRank) + " of " + p.n + "; acquisition cost takes " + p.acq +
         " of new-business premium (median " + p.acqMed + ").",
     ],
@@ -391,6 +416,19 @@ const UI = {
     defArea: "구분", defInd: "지표", defDef: "정의",
     foot: "출처: 각 보험사가 공시한 TFRS 17 재무제표(SET 공시, OIC 연차 공시, 회사 홈페이지)의 원문에서 쪽 단위로 추출(사용한 원문 목록: <code>{wb}</code>). 빌드 {gen}{git}. 대시보드 작성자가 공개 정보로 정리한 자료로, 추출 오류가 있을 수 있으므로 공시된 재무제표가 최종 기준이다. 투자 권유가 아니다.",
     footGit: " (커밋 {git})", reviewFlag: "{fy} 검토 플래그", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    periodsLabel: "기간",
+    ledeQ: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 누적 실적. 모든 수치는 공시된 중간재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
+    unitsQ: "단위 {unit} · {pe}까지 {mo}개월 누적 · 비교기간 {cmp} · {n}개사", unitsQnoCmp: "단위 {unit} · {pe}까지 {mo}개월 누적 · 비교기간 없음 · {n}개사",
+    qXQ: "CSM 상각률, 연환산 (상각 ÷ 상각 전 CSM, × 12 ÷ 경과월수)", ann: " (연환산)",
+    noteAllQ: " 수치는 누적 기준이다. 업계 변동은 두 기간에 모두 있는 {k}개사끼리 비교한다.",
+    industryAggCommon: "업계, 동일 회사 기준 ({k}개사)",
+    h3m: "해당 분기만: {pe}까지 3개월",
+    note3m: "중간재무제표의 3개월 손익계산서 값이며 전년 같은 분기와 비교한다. 업계 변동은 두 분기에 모두 있는 보험사끼리 비교한다.",
+    dqNoteQ: "표시한 누적 수치 기준으로 대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사, 기간마다 {c}개 점검). 하나라도 어긋나면 빌드가 멈춘다. 체크 표시에 마우스를 올리면 차이가 보인다.",
+    dqNoteAcc: " ✓*({a}건)는 재무제표 자체에 있는 불일치를 기록한 차이에서 수용한 것이다.",
+    dqNoteNa: " n/a({na}건)는 공시하지 않은 항목이 필요한 점검으로, 추출 때 인쇄된 합계와 대사했다.",
+    industry3m: "업계 · 변동은 두 분기 모두 있는 {k}개사 기준",
+    dqAccepted: "수용한 불일치, 차이 {v}백만: {r}", dqNa: "미공시 항목, 추출 때 인쇄된 합계와 대사",
     cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
       csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
       acq_cost_ratio: "신계약비율", onerous_ratio: "손실부담 비율" },
@@ -399,10 +437,11 @@ const UI = {
     headlines: p => [
       "보험수익 기준 " + p.n + "개사 중 " + p.ord(p.sizeRank) + "(점유율 " + p.revShare + "), 기말 CSM 기준 " + p.ord(p.csmRank) +
         ", 신계약 CSM 기준 " + p.ord(p.nbRank) + ".",
-      "CSM은 연간 " + p.chg(p.csmG, "증가", "감소") + "해 " + p.csmClose + "백만 바트가 됐다(업계 " + p.csmGi + "). 신계약 CSM이 상각액의 " +
+      "CSM은 " + (p.q ? "연초 대비 " : "연간 ") + p.chg(p.csmG, "증가", "감소") + "해 " + p.csmClose + "백만 바트가 됐다(업계 " + p.csmGi + "). 신계약 CSM이 상각액의 " +
         p.nbr + "를 채웠다(업계 중앙값 " + p.nbrMed + ").",
-      "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
-        (p.taxBig ? ". 법인세는 " + p.taxPrev + "백만에서 " + p.taxNow + "백만 바트로 바뀌었다." : "."),
+      p.hasCmp ? "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
+        (p.taxBig ? ". 법인세는 " + p.taxPrev + "백만에서 " + p.taxNow + "백만 바트로 바뀌었다." : ".")
+        : "당기순이익은 " + p.np + "백만 바트, 보험서비스결과는 " + p.isr + "백만 바트다(이 페이지에는 비교기간이 없다).",
       "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq +
         "를 차지한다(중앙값 " + p.acqMed + ").",
     ],
@@ -434,6 +473,9 @@ const g = (c, k, fy = CUR) => { const y = c.y[fy]; return y && y.m[k] ? y.m[k].v
 const raw = (c, k, fy = CUR) => { const y = c.y[fy]; return y ? y.raw[k] : null; };
 const rk = (c, k, fy = CUR) => { const y = c.y[fy]; return y && y.m[k] ? y.m[k] : null; };
 const ind = (k, fy = CUR) => (DATA.industry[fy] || {})[k] || {};
+// like for like: both years over the insurers present in both (quarterly pages whose two years differ)
+const LFL = Object.keys(DATA.industry_common || {}).length > 0;
+const indC = (k, fy = CUR) => LFL ? ((DATA.industry_common[fy] || {})[k] || {}) : ind(k, fy);
 const byName = n => COS.find(c => c.name === n);
 const isF = c => c.name === F;
 const colr = c => isF(c) ? "var(--focus)" : "var(--peer)";
@@ -456,7 +498,7 @@ function coTip(c, extra = []) {
   return tipTable(c.name, [
     [t("tipRev"), fM(raw(c, "insurance_revenue"))], [t("tipNp"), fM(raw(c, "net_profit"))],
     [t("tipCsm"), fM(raw(c, "csm_close"))], [t("tipIsm"), fP(g(c, "ism_gross"))],
-    [t("tipRel"), fP(g(c, "release_ratio"))], [t("tipNbr"), fX(g(c, "nb_to_release"))],
+    [t("tipRel") + (QTR ? t("ann") : ""), fP(g(c, "release_ratio"))], [t("tipNbr"), fX(g(c, "nb_to_release"))],
     [t("tipNbm"), fP(g(c, "nb_csm_margin"))], [t("tipNpm"), fP(g(c, "npm"))],
     [t("tipRa"), raLabel(c)], ...extra]);
 }
@@ -476,12 +518,14 @@ function niceTicks(lo, hi, n = 5) {
 function staticText() {
   document.documentElement.lang = LANG;
   document.title = metaT("title");
-  const p = { n: COS.length, nLarge: M.large_insurer_count, cur: CUR, cmp: CMP };
+  const p = { n: COS.length, nLarge: M.large_insurer_count, cur: CURL, cmp: CMPL };
   $$("[data-t]").forEach(e => e.innerHTML = t(e.dataset.t, p));
   $$("[data-t-aria]").forEach(e => e.setAttribute("aria-label", t(e.dataset.tAria, p)));
   $("#title").textContent = metaT("title");
-  $("#lede").textContent = t("lede", { n: COS.length, std: metaT("standard"), cur: CUR });
-  $("#units").textContent = t("units", { unit: metaT("unit"), pe: metaT("period_end"), cmp: CMP, n: COS.length });
+  $("#lede").textContent = t(QTR ? "ledeQ" : "lede", { n: COS.length, std: metaT("standard"), cur: CURL });
+  $("#units").textContent = t(QTR ? (M.has_comparative ? "unitsQ" : "unitsQnoCmp") : "units",
+    { unit: metaT("unit"), pe: metaT("period_end"), cmp: CMPL, n: COS.length, mo: M.ytd_months });
+  periodLinks();
   const ids = ["s-focus", "s-market", "s-csm", "s-nb", "s-ism", "s-bridge", "s-all", "s-dq", "s-method"];
   $("#toc").innerHTML = t("toc").map((lab, i) => '<a href="#' + ids[i] + '">' + (i + 1) + " " + esc(lab) + "</a>").join("");
   $("#toc").setAttribute("aria-label", t("toc")[0]);
@@ -491,7 +535,16 @@ function staticText() {
   sel.value = F; sel.setAttribute("aria-label", t("focusPick"));
   $("#langSeg").setAttribute("aria-label", t("langLabel"));
   $("#langSeg").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
-  $$(".p-cur").forEach(e => e.textContent = CUR); $$(".p-cmp").forEach(e => e.textContent = CMP);
+  $$(".p-cur").forEach(e => e.textContent = CURL); $$(".p-cmp").forEach(e => e.textContent = CMPL);
+}
+function periodLinks() {
+  // pages sit in <period>/ folders (output/ and the published site); the site root is the default period's page
+  const inFolder = location.pathname.split("/").includes(CUR);
+  const href = id => (inFolder ? ".." : ".") + "/" + id + "/Thai_Life_IFRS17_Dashboard_" + id + ".html" + location.hash;
+  const list = M.periods || [];
+  $("#periods").innerHTML = list.length < 2 ? "" : '<span class="lab">' + t("periodsLabel") + "</span>" + list.map(p =>
+    p.id === CUR ? '<a aria-current="page">' + esc(p.label) + "</a>" : '<a href="' + esc(href(p.id)) + '">' + esc(p.label) + "</a>").join("");
+  $("#periods").setAttribute("aria-label", t("periodsLabel"));
 }
 function writeHash() {
   const parts = [];
@@ -514,13 +567,13 @@ function controls() {
 function deltaHtml(kind, cur, prev, better) {
   if (cur == null || prev == null) return '<span class="flat">' + t("noCmp") + "</span>";
   let d, txt;
-  if (kind === "growth") { d = growth(cur, prev); if (d == null) return '<span class="flat">' + t("nmBase", { cmp: CMP }) + "</span>"; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
+  if (kind === "growth") { d = growth(cur, prev); if (d == null) return '<span class="flat">' + t("nmBase", { cmp: CMPL }) + "</span>"; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
   else if (kind === "pp") { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
   else { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d, 2) + "×"; }
   const dir = Math.abs(d) < 1e-9 ? "flat" : d > 0 ? "up" : "down";
   const cls = dir === "flat" || better == null ? "flat" : ((dir === "up") === better ? dir + "-good" : dir + "-bad");
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "◆";
-  return '<span class="' + cls + '">' + arrow + " " + txt + '</span> <span class="flat">' + t("vs", { cmp: CMP }) + "</span>";
+  return '<span class="' + cls + '">' + arrow + " " + txt + '</span> <span class="flat">' + t("vs", { cmp: CMPL }) + "</span>";
 }
 function focusSection() {
   const c = byName(F), n = COS.length;
@@ -549,8 +602,9 @@ function focusSection() {
   const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
   const L = t("headlines")({
     short: c.short, n, ord, chg: t("chg"), sizeRank: c.size_rank, revShare: fP(g(c, "rev_share")),
+    q: QTR, hasCmp: M.has_comparative !== false, isr: fM(g(c, "isr_gross")),
     csmRank: rk(c, "csm_close").rank, nbRank: rk(c, "nb_csm").rank,
-    csmG: g(c, "csm_growth"), csmClose: fM(raw(c, "csm_close")), csmGi: fP(growth(ind("csm_close").agg, ind("csm_close", CMP).agg)),
+    csmG: g(c, "csm_growth"), csmClose: fM(raw(c, "csm_close")), csmGi: fP(QTR ? ind("csm_growth").agg : growth(ind("csm_close").agg, ind("csm_close", CMP).agg)),
     nbr: fX(g(c, "nb_to_release")), nbrMed: fX(ind("nb_to_release").median),
     npG: growth(raw(c, "net_profit"), raw(c, "net_profit", CMP)), np: fM(raw(c, "net_profit")),
     isrG: growth(g(c, "isr_gross"), g(c, "isr_gross", CMP)),
@@ -561,7 +615,7 @@ function focusSection() {
   const notes = DATA.commentary.filter(x => x.companies.includes(F));
   const flags = DATA.flags.filter(f => f.company === F);
   $("#callouts").innerHTML = notes.map(x => '<div class="callout"><b>' + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</div>").join("") +
-    flags.map(f => '<div class="callout"><b>' + t("reviewFlag", { fy: f.fiscal_year }) + ".</b> " + esc(flagMsg(f)) + "</div>").join("");
+    flags.map(f => '<div class="callout"><b>' + t("reviewFlag", { fy: fyL(f.fiscal_year) }) + ".</b> " + esc(flagMsg(f)) + "</div>").join("");
 }
 
 /* ---------- 2 market ---------- */
@@ -600,7 +654,7 @@ function waterfall() {
   const hi = Math.max(...series.flatMap(s => s.bars.map(b => Math.max(b.y0, b.y1)))) * 1.1;
   const W = 900, H = 320, T = 34, B = 46, gap = 40, pw = (W - gap) / 2, L = 40;
   const py = v => T + (1 - v / hi) * (H - T - B);
-  $("#wfSub").textContent = t("wfSub", { cur: CUR, co: c.short, v: fM(raw(c, "csm_open")) });
+  $("#wfSub").textContent = t("wfSub", { cur: CURL, co: c.short, v: fM(raw(c, "csm_open")) });
   const { ticks } = niceTicks(0, hi, 5);
   series.forEach((s, si) => {
     const x0 = si * (pw + gap), slot = (pw - L) / s.bars.length, bw = Math.min(34, slot * 0.5);
@@ -632,7 +686,7 @@ function quadrant() {
   const px = v => L + v / x1 * (W - L - R), py = v => H - B - Math.min(v, CAP) / CAP * (H - T - B);
   const maxC = Math.max(...COS.map(c => raw(c, "csm_close")));
   const rad = v => 4.5 + 19 * Math.sqrt(v / maxC);
-  $("#qSub").textContent = t("qSub", { cur: CUR, lo: fM(Math.min(...COS.map(c => raw(c, "csm_close")))), hi: fM(maxC) });
+  $("#qSub").textContent = t("qSub", { cur: CURL, lo: fM(Math.min(...COS.map(c => raw(c, "csm_close")))), hi: fM(maxC) });
   for (let v = 0; v <= CAP; v += 0.5) {
     svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(v), y2: py(v), stroke: "var(--grid)" }));
     svg.appendChild(el("text", { x: L - 9, y: py(v) + 4, "text-anchor": "end", fill: "var(--muted)", "font-size": 11 }, v.toFixed(1) + "×"));
@@ -641,7 +695,7 @@ function quadrant() {
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: "var(--axis)" }));
   svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(1), y2: py(1), stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "5 4" }));
   svg.appendChild(el("text", { x: W - R - 4, y: py(1) - 7, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, t("qThreshold")));
-  svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, t("qX")));
+  svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, t(QTR ? "qXQ" : "qX")));
   svg.appendChild(el("text", { x: 0, y: 0, fill: "var(--ink-2)", "font-size": 12, "text-anchor": "middle", transform: "translate(13," + ((T + H - B) / 2) + ") rotate(-90)" }, t("qY")));
 
   const pts = COS.map(c => ({ c, x: px(g(c, "release_ratio") * 100), y: py(g(c, "nb_to_release")), rad: rad(raw(c, "csm_close")), over: g(c, "nb_to_release") > CAP, txt: c.short }))
@@ -698,7 +752,7 @@ function strips() {
     svg.appendChild(el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "var(--axis)" }));
     const med = ind(k).median;
     if (med != null) svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: cy - 16, y2: cy + 16, stroke: "var(--ink-2)", "stroke-width": 2 }));
-    const dotTip = (c, extra = []) => tipTable(c.name, [[mLabel(k) + " " + CUR, fmtU(d.unit, g(c, k))], [CMP, fmtU(d.unit, g(c, k, CMP))], ...extra]);
+    const dotTip = (c, extra = []) => tipTable(c.name, [[mLabel(k) + " " + CURL, fmtU(d.unit, g(c, k))], [CMPL, fmtU(d.unit, g(c, k, CMP))], ...extra]);
     COS.filter(c => !isF(c)).forEach(c => {
       const v = g(c, k); if (v == null) return;
       const dot = el("circle", { cx: px(v), cy, r: 5, fill: "var(--peer)", "fill-opacity": .55, stroke: "var(--surface)", "stroke-width": 1.5 });
@@ -706,6 +760,10 @@ function strips() {
       if (cap && v > cap) svg.appendChild(el("text", { x: px(v) + 7, y: cy + 4, "font-size": 10, fill: "var(--muted)" }, "›"));
     });
     const c = byName(F), v = g(c, k), vp = g(c, k, CMP);
+    if (v == null) {  // the highlighted insurer does not disclose this measure
+      if (med != null) svg.appendChild(el("text", { x: px(med), y: cy + 44, "text-anchor": "middle", "font-size": 10.5, fill: "var(--ink-2)" }, t("median", { v: fmtU(d.unit, med) })));
+      return;
+    }
     if (vp != null) {
       svg.appendChild(el("line", { x1: px(vp), x2: px(v), y1: cy, y2: cy, stroke: "var(--focus)", "stroke-width": 2 }));
       svg.appendChild(el("circle", { cx: px(vp), cy, r: 6, fill: "var(--surface)", stroke: "var(--focus)", "stroke-width": 2 }));
@@ -734,7 +792,7 @@ function lolli(sel, subSel, list, slots) {
   const sorted = list.slice().sort((a, b) => g(b, "ism_gross") - g(a, "ism_gross"));
   const v = sorted.map(c => g(c, "ism_gross")).sort((a, b) => a - b), n = v.length;
   const med = n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2;
-  $(subSel).textContent = t("groupSub", { n, cur: CUR, v: fP(med) });
+  $(subSel).textContent = t("groupSub", { n, cur: CURL, v: fP(med) });
   svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: T - 4, y2: T + n * step, stroke: "var(--ink-2)", "stroke-width": 1.5 }));
   sorted.forEach((c, i) => {
     const y = T + i * step + step / 2, col = colr(c), xv = px(g(c, "ism_gross")), gg = el("g");
@@ -744,7 +802,7 @@ function lolli(sel, subSel, list, slots) {
     gg.appendChild(el("text", { x: L - 10, y: y + 4, "text-anchor": "end", fill: "var(--ink)", "font-size": 12.5, "font-weight": isF(c) ? 650 : 400 }, c.name));
     gg.appendChild(el("text", { x: W - R + 10, y: y + 4, fill: "var(--ink-2)", "font-size": 11.5 }, fP(g(c, "ism_gross"))));
     const hit = el("rect", { x: 0, y: y - step / 2, width: W, height: step, fill: "transparent" });
-    hover(hit, () => coTip(c, [[t("tipIsmNet"), fP(g(c, "ism_net"))], [t("tipIsmCmp", { cmp: CMP }), fP(g(c, "ism_gross", CMP))]]));
+    hover(hit, () => coTip(c, [[t("tipIsmNet"), fP(g(c, "ism_net"))], [t("tipIsmCmp", { cmp: CMPL }), fP(g(c, "ism_gross", CMP))]]));
     gg.appendChild(hit); svg.appendChild(gg);
   });
 }
@@ -820,7 +878,7 @@ function table() {
     $("#dlBtn").addEventListener("click", downloadCsv);
   }
   seg.setAttribute("aria-label", t("tableView"));
-  seg.querySelectorAll("button").forEach(b => { b.textContent = b.dataset.v === "cur" ? CUR : b.dataset.v === "cmp" ? CMP : t("viewChange"); b.setAttribute("aria-pressed", b.dataset.v === VIEW); });
+  seg.querySelectorAll("button").forEach(b => { b.textContent = b.dataset.v === "cur" ? CURL : b.dataset.v === "cmp" ? CMPL : t("viewChange"); b.setAttribute("aria-pressed", b.dataset.v === VIEW); });
   const rows = COS.slice().sort((a, b) => {
     if (SORT.k === "name") return SORT.dir * a.name.localeCompare(b.name);
     const kind = (COLS.find(x => x[0] === SORT.k) || [])[1];
@@ -829,22 +887,58 @@ function table() {
   });
   const arr = k => SORT.k === k ? (SORT.dir < 0 ? "▼" : "▲") : "";
   let h = "<thead><tr><th class='l sortable' data-k='name'>" + t("insurer") + " <span class='arr'>" + arr("name") + "</span></th><th class='l' title='" + esc(t("raSplitTitle")) + "'>" + t("raSplit") + "</th>" +
-    COLS.map(([k]) => "<th class='sortable' data-k='" + k + "' title='" + esc(mFormula(k)) + "'>" + esc(t("cols")[k]) + " <span class='arr'>" + arr(k) + "</span></th>").join("") + "</tr></thead><tbody>";
+    COLS.map(([k]) => "<th class='sortable' data-k='" + k + "' title='" + esc(mFormula(k)) + "'>" + esc(t("cols")[k] + (QTR && k === "release_ratio" ? t("ann") : "")) + " <span class='arr'>" + arr(k) + "</span></th>").join("") + "</tr></thead><tbody>";
   const defaultOrder = SORT.k === "insurance_revenue" && SORT.dir < 0 && VIEW === "cur";
   rows.forEach((c, i) => {
     const cls = [isF(c) ? "focus" : "", defaultOrder && i > 0 && c.tier !== rows[i - 1].tier ? "tier-break" : ""].join(" ");
     h += "<tr class='" + cls + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td><td class='l'>" + (c.ra === "disaggregated" ? t("raYes") : t("raNo")) + "</td>" +
       COLS.map(([k, kind]) => "<td>" + cellTxt(k, kind, cellVal(c, k, kind)) + "</td>").join("") + "</tr>";
   });
-  h += "<tr><td class='l'><b>" + t("industryAgg") + "</b></td><td class='l'></td>" + COLS.map(([k, kind]) => {
-    const a = ind(k, CUR).agg, b = ind(k, CMP).agg;
-    const v = VIEW === "cur" ? a : VIEW === "cmp" ? b : (a == null || b == null ? null : kind === "growth" ? growth(a, b) : a - b);
+  const aggLab = VIEW === "chg" && LFL ? t("industryAggCommon", { k: M.common_n }) : t("industryAgg");
+  h += "<tr><td class='l'><b>" + esc(aggLab) + "</b></td><td class='l'></td>" + COLS.map(([k, kind]) => {
+    const a = ind(k, CUR).agg, b = ind(k, CMP).agg, ac = indC(k, CUR).agg, bc = indC(k, CMP).agg;
+    const v = VIEW === "cur" ? a : VIEW === "cmp" ? b : (ac == null || bc == null ? null : kind === "growth" ? growth(ac, bc) : ac - bc);
     return "<td><b>" + cellTxt(k, kind, v) + "</b></td>";
   }).join("") + "</tr></tbody>";
   const tb = $("#all"); tb.innerHTML = h;
+  if (QTR) $("#s-all .sec-note").innerHTML = t("noteAll") + t("noteAllQ", { k: LFL ? M.common_n : COS.length });
   tb.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
     const k = th.dataset.k; SORT = SORT.k === k ? { k, dir: -SORT.dir } : { k, dir: k === "name" ? 1 : -1 }; table();
   }));
+}
+function threeMonth() {
+  const box = $("#q3");
+  box.hidden = !QTR;
+  if (!QTR) return;
+  const q = DATA.three_month || {};
+  const v3 = (c, k, fy) => ((q[c.name] || {})[fy] || {})[k];
+  const calc = {
+    insurance_revenue: v => v.insurance_revenue, isr_gross: v => v.insurance_revenue + v.insurance_service_expense,
+    net_profit: v => v.net_profit, npm: v => v.insurance_revenue ? v.net_profit / v.insurance_revenue : null };
+  const kinds = { insurance_revenue: "growth", isr_gross: "growth", net_profit: "growth", npm: "pp" };
+  const val = (c, k, fy) => { const r = (q[c.name] || {})[fy]; return r && r.insurance_revenue != null ? calc[k](r) : null; };
+  const chgTxt = (k, a, b) => {
+    if (a == null || b == null) return t("noCmp");
+    if (kinds[k] === "pp") { const d = a - b; return (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
+    const d = growth(a, b); return d == null ? t("nm") : (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%";
+  };
+  $("#q3h").textContent = t("h3m", { pe: metaT("period_end") });
+  const keys = Object.keys(calc);
+  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + keys.map(k => "<th>" + esc(mLabel(k)) + (DEF[k].unit === "thb_m" ? " (" + t("m") + ")" : "") +
+    "</th><th>" + esc(t("vs", { cmp: CMPL })) + "</th>").join("") + "</tr></thead><tbody>";
+  const rows = COS.slice().sort((a, b) => (val(b, "insurance_revenue", CUR) ?? -1e18) - (val(a, "insurance_revenue", CUR) ?? -1e18));
+  rows.forEach(c => {
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+      keys.map(k => "<td>" + fmtU(DEF[k].unit, val(c, k, CUR)) + "</td><td>" + chgTxt(k, val(c, k, CUR), val(c, k, CMP)) + "</td>").join("") + "</tr>";
+  });
+  // industry: the current quarter over every insurer shown; the change over the insurers with both quarters
+  const sum = (list, fy) => { const s = {}; list.forEach(c => { const r = (q[c.name] || {})[fy]; if (!r) return;
+    Object.keys(r).forEach(k => { s[k] = (s[k] || 0) + (r[k] || 0); }); }); return Object.keys(s).length ? s : null; };
+  const both = COS.filter(c => v3(c, "insurance_revenue", CUR) != null && v3(c, "insurance_revenue", CMP) != null);
+  const tot = sum(COS, CUR), tc = sum(both, CUR), tp = sum(both, CMP);
+  h += "<tr><td class='l'><b>" + esc(both.length && both.length < COS.length ? t("industry3m", { k: both.length }) : t("industryAgg")) + "</b></td>" +
+    keys.map(k => "<td><b>" + fmtU(DEF[k].unit, tot ? calc[k](tot) : null) + "</b></td><td><b>" + chgTxt(k, tc ? calc[k](tc) : null, tp ? calc[k](tp) : null) + "</b></td>").join("") + "</tr></tbody>";
+  $("#q3t").innerHTML = h;
 }
 function downloadCsv() {
   const codes = DATA.metric_defs.map(d => d.code);
@@ -858,17 +952,22 @@ function downloadCsv() {
 /* ---------- 8 data quality ---------- */
 function dataQuality() {
   const defs = DATA.check_defs;
-  let total = 0, ok = 0;
-  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + DATA.years.map(fy => defs.map(d => "<th title='" + esc(chk(d.id, "label")) + "'>" + esc(chk(d.id, "short")) + "<br>" + fy + "</th>").join("")).join("") + "<th>" + t("dqFlags") + "</th></tr></thead><tbody>";
+  let total = 0, ok = 0, nAcc = 0, nNa = 0;
+  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + DATA.years.map(fy => defs.map(d => "<th title='" + esc(chk(d.id, "label")) + "'>" + esc(chk(d.id, "short")) + "<br>" + esc(fyL(fy)) + "</th>").join("")).join("") + "<th>" + t("dqFlags") + "</th></tr></thead><tbody>";
   COS.forEach(c => {
     h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + "</td>" + DATA.years.map(fy => defs.map(d => {
-      const r = ((DATA.checks[c.name] || {})[fy] || {})[d.id]; total++; if (r && r.ok) ok++;
-      return r ? "<td class='" + (r.ok ? "ok" : "fail") + "' title='" + esc(t("diff", { v: nf(r.diff, 3) })) + "'>" + (r.ok ? "✓" : "✗") + "</td>" : "<td>–</td>";
+      const r = ((DATA.checks[c.name] || {})[fy] || {})[d.id];
+      if (!r) return "<td>–</td>";
+      total++; if (r.ok) ok++;
+      if (r.status === "ACCEPTED") { nAcc++; return "<td class='ok' title='" + esc(t("dqAccepted", { v: nf(r.diff, 3), r: r.reason || "" })) + "'>✓*</td>"; }
+      if (r.status === "N/A") { nNa++; return "<td title='" + esc(t("dqNa")) + "'>" + t("na") + "</td>"; }
+      return "<td class='" + (r.ok ? "ok" : "fail") + "' title='" + esc(t("diff", { v: nf(r.diff, 3) })) + "'>" + (r.ok ? "✓" : "✗") + "</td>";
     }).join("")).join("") + "<td>" + (DATA.flags.filter(f => f.company === c.name).length || "") + "</td></tr>";
   });
   $("#dq").innerHTML = h + "</tbody>";
-  $("#dqNote").innerHTML = t("dqNote", { ok, total, tol: M.tolerance_thb_m, n: COS.length, y: DATA.years.length, c: defs.length });
-  $("#flags").innerHTML = DATA.flags.map(f => "<li><b>" + esc(f.company) + "</b> " + f.fiscal_year + ": " + esc(flagMsg(f)) + "</li>").join("") || "<li>" + t("none") + "</li>";
+  $("#dqNote").innerHTML = t(QTR ? "dqNoteQ" : "dqNote", { ok, total, tol: M.tolerance_thb_m, n: COS.length, y: DATA.years.length, c: defs.length }) +
+    (nAcc ? t("dqNoteAcc", { a: nAcc }) : "") + (nNa ? t("dqNoteNa", { na: nNa }) : "");
+  $("#flags").innerHTML = DATA.flags.map(f => "<li><b>" + esc(f.company) + "</b> " + esc(fyL(f.fiscal_year)) + ": " + esc(flagMsg(f)) + "</li>").join("") || "<li>" + t("none") + "</li>";
 }
 
 /* ---------- 9 method ---------- */
@@ -891,7 +990,7 @@ function method() {
 function renderAll() {
   staticText();
   $$(".f-name").forEach(e => e.textContent = F);
-  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); dataQuality(); method();
+  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); threeMonth(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));

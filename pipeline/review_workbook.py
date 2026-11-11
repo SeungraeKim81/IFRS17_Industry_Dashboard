@@ -15,7 +15,8 @@ import openpyxl
 from openpyxl.styles import Font, PatternFill
 
 from .common import ROOT, load_line_items
-from .verify_extract import compare_pilot, load, reconcile
+from .common import quarter_info
+from .verify_extract import compare_pilot, load, reconcile, reconcile_3m
 
 BOLD = Font(bold=True)
 FLAG = PatternFill("solid", fgColor="FCE4D6")
@@ -44,8 +45,13 @@ def build(period: str, out: Path | None = None) -> Path:
     recs.append(["Company", "Fiscal year", "Check", "Computed", "As printed", "Difference", "Result"])
     for c in check[1] + recs[1]:
         c.font = BOLD
-    fy_cur = "FY" + period[:4]
-    fy_cmp = "FY" + str(int(period[:4]) - 1)
+    q = quarter_info(period)
+    if q:  # one year-to-date column; the three-month profit or loss beside it
+        cols = [(period, f"{q['ytd_months']} months to date {q['year']}")]
+        heads3 = [f"3 months Q{q['quarter']} {q['year']}"]
+    else:
+        cols = [("FY" + period[:4], f"31 Dec {period[:4]}"), ("FY" + str(int(period[:4]) - 1), f"31 Dec {int(period[:4]) - 1}")]
+        heads3 = []
     for f in files:
         ex = load(f)
         ws = wb.create_sheet(ex["company"][:31], 0)
@@ -55,15 +61,17 @@ def build(period: str, out: Path | None = None) -> Path:
         ws["A2"] = (f"Drive file {src.get('drive_file_id', '')} · SHA-256 {src['sha256']} · {src.get('pages', '')} pages · "
                     f"text layer: {src.get('text_layer', '')}")
         ws.append([])
-        ws.append(["#", "Line item", f"31 Dec {period[:4]}", f"31 Dec {int(period[:4]) - 1}", "Status", "Source (file page)"])
+        ws.append(["#", "Line item", *(h for _, h in cols), *heads3, "Status", "Source (file page)"])
         for c in ws[4]:
             c.font = BOLD
         for i, it in enumerate(items, start=1):
             v = ex["items"][it["code"]]
-            how = {v[fy].get("read") for fy in (fy_cur, fy_cmp)}
-            ws.append([i, it["workbook_label"], v[fy_cur]["value"], v[fy_cmp]["value"],
+            how = {v[fy].get("read") for fy, _ in cols}
+            v3 = ex.get("items_3m", {}).get(it["code"], {}).get(period) if q else None
+            ws.append([i, it["workbook_label"], *(v[fy]["value"] for fy, _ in cols),
+                       *([v3["value"] if v3 else None] if q else []),
                        "Extracted (visual)" if "visual" in how else "Extracted",
-                       _source_text(v[fy_cur]) + " | " + _source_text(v[fy_cmp])])
+                       " | ".join(_source_text(v[fy]) for fy, _ in cols) + (f" | 3M: {_source_text(v3)}" if v3 else "")])
         ws.column_dimensions["B"].width = 34
         ws.column_dimensions["F"].width = 90
         for r in compare_pilot(ex):
@@ -72,7 +80,7 @@ def build(period: str, out: Path | None = None) -> Path:
             if r["status"] == "DIFFERENT":
                 for c in check[check.max_row]:
                     c.fill = FLAG
-        for r in reconcile(ex):
+        for r in reconcile(ex) + reconcile_3m(ex):
             recs.append([ex["company"], r["fiscal_year"], r["check"], r["computed"], r["printed"], r["difference"],
                          "OK" if r["ok"] else "FAIL"])
     out = out or ROOT / "extract" / period / f"review_{period}.xlsx"

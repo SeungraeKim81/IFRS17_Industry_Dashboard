@@ -66,6 +66,18 @@ the two figures come from different notes and must agree.
 4. Re-read `config/commentary.json`: retire notes that no longer apply, add new ones.
 5. Run steps 1 to 9. Earlier periods stay in `data/<old period>/` and `output/<old period>/`.
 
+### Adding a quarter
+
+1. Extract each insurer's interim statement into `extract/<YYYYQn>/` (specs in
+   `config/extraction/quarterly/<YYYYQn>/`; `verify-extract` checks the year-to-date identities, the three-month
+   bridge and continuity with the prior year-end). A break the statement itself contains is recorded in the
+   spec as an accepted break, with its difference and reason.
+2. Add the period to `periods` in `config/dashboard.json`. The comparative is found by itself: the same
+   quarter a year earlier, where it was extracted.
+3. An insurer new to the pipeline needs a row in `config/companies.csv` (`annual` = no keeps it off the
+   annual page until it is added there deliberately).
+4. Run `python -m pipeline all` and the tests; commit `data/<period>/` and `output/<period>/` with the change.
+
 Restated comparatives: the new period's column D holds the comparative **as restated** in the new statements.
 The previous period's folder keeps the figures as originally reported, so both remain on record.
 
@@ -84,7 +96,7 @@ The page is in English and Korean. English is the source; the build stops if any
 | Text | Where the Korean lives |
 |---|---|
 | Interface (headings, notes under headings, legends, buttons, tooltips, headlines) | `UI.ko` in `templates/dashboard.html`, next to `UI.en`; a test checks both have the same keys |
-| Indicator names and definitions, reconciliation names, period and unit text | `config/i18n/ko.json` |
+| Indicator names and definitions, reconciliation names, period and unit text | `config/i18n/ko.json` (the quarterly period end is written by the build; the quarterly caveat is `meta.quarterly_caveat`) |
 | Commentary | `config/i18n/ko.json` → `commentary.<id>`, one entry per note in `config/commentary.json` |
 | Review flags | `pipeline/validate.py` writes `message` and `message_ko` together |
 | Insurer names, extraction notes | Not translated: names are kept as published; extraction notes are the analyst's English originals |

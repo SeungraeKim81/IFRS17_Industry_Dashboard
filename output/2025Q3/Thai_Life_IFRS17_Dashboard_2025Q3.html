@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thai life insurance industry — IFRS 17 dashboard</title>
+<meta name="description" content="TFRS 17 (IFRS 17) figures and indicators for 19 Thai life insurers, 2025Q3, highlighting Samsung Life.">
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{
+  color-scheme:light;
+  --plane:#f9f9f7; --surface:#fcfcfb; --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+  --grid:#e1e0d9; --axis:#c3c2b7; --hair:rgba(11,11,11,.10);
+  --peer:#2a78d6; --focus:#eb6834; --focus-soft:rgba(235,104,52,.13);
+  --c1:#2a78d6; --c2:#1baf7a; --c3:#eda100; --c4:#6250d6;
+  --pos:#2a78d6; --neg:#e34948; --total:#898781;
+  --good:#006300; --bad:#d03b3b; --neutral-mid:#f0efec;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --plane:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --hair:rgba(255,255,255,.10);
+  --peer:#3987e5; --focus:#d95926; --focus-soft:rgba(217,89,38,.20);
+  --c1:#3987e5; --c2:#199e70; --c3:#c98500; --c4:#9085e9;
+  --pos:#3987e5; --neg:#e66767; --total:#898781;
+  --good:#0ca30c; --bad:#e66767; --neutral-mid:#383835;
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --plane:#0d0d0d; --surface:#1a1a19; --ink:#f0efec; --ink-2:#c3c2b7; --muted:#898781;
+  --grid:#2c2c2a; --axis:#383835; --hair:rgba(255,255,255,.10);
+  --peer:#3987e5; --focus:#d95926; --focus-soft:rgba(217,89,38,.20);
+  --c1:#3987e5; --c2:#199e70; --c3:#c98500; --c4:#9085e9;
+  --pos:#3987e5; --neg:#e66767; --total:#898781;
+  --good:#0ca30c; --bad:#e66767; --neutral-mid:#383835;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  -webkit-font-smoothing:antialiased;padding:32px 16px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
+.top-text{flex:1 1 560px;min-width:0}
+h1{font-weight:650;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
+.lede{color:var(--ink-2);max-width:72ch;margin:0}
+.units{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
+nav.periods{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:8px;font-size:13px}
+nav.periods .lab{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+nav.periods a{color:var(--ink-2)}
+nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decoration:none}
+.q3{margin-top:24px}
+.q3 h3{margin:0 0 4px}
+.controls{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.lang-pick{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.lang-pick .seg button{text-transform:none;letter-spacing:0}
+:lang(ko) body{word-break:keep-all;overflow-wrap:anywhere}
+:lang(ko) .units,:lang(ko) nav.periods .lab,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
+@media(max-width:620px){.controls{align-items:stretch;width:100%}.lang-pick{justify-content:space-between}}
+.focus-pick{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.focus-pick select{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--surface);
+  border:1px solid var(--axis);border-radius:6px;padding:7px 10px;min-width:220px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;margin:22px 0 0;padding:10px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:13px}
+nav.toc a{color:var(--ink-2);text-decoration:none}
+nav.toc a:hover{color:var(--ink);text-decoration:underline}
+section{margin-top:44px;scroll-margin-top:12px}
+h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
+.sec-note{color:var(--ink-2);font-size:14px;max-width:76ch;margin:6px 0 16px}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:16px}
+.panel h3{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+.panel .sub{font-size:12px;color:var(--muted);margin:3px 0 10px}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:860px){.panels{grid-template-columns:1fr}}
+svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif}
+.num{font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:8px 18px;align-items:center;flex-wrap:wrap;margin:12px 0 0;font-size:13px;color:var(--ink-2)}
+.key{display:inline-flex;align-items:center;gap:7px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.sq{width:12px;height:10px;border-radius:2px;display:inline-block}
+/* focus summary */
+.focus-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:12px}
+.focus-name{font-size:22px;font-weight:650}
+.chip{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--hair);color:var(--ink-2);background:var(--surface)}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:960px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.tiles{grid-template-columns:1fr}}
+.tile{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
+.tile .lab{font-size:13px;color:var(--ink-2)}
+.tile .val{font-size:26px;font-weight:620;line-height:1.25;margin-top:2px}
+.tile .delta{font-size:13px;margin-top:2px}
+.tile .ctx{font-size:12px;color:var(--muted);margin-top:4px}
+.up-good,.down-good{color:var(--good)} .up-bad,.down-bad{color:var(--bad)} .flat{color:var(--ink-2)}
+.headlines{margin:16px 0 0;padding:0 0 0 18px;color:var(--ink);max-width:90ch}
+.headlines li{margin:4px 0}
+.callouts{margin-top:14px;display:grid;gap:8px}
+.callout{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--axis);padding:4px 0 4px 12px}
+.callout b{color:var(--ink)}
+/* bar table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--hair);border-radius:8px;background:var(--surface)}
+table.data{border-collapse:collapse;width:100%;font-size:13px}
+table.data th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:550;text-align:right;
+  padding:10px 8px;border-bottom:1px solid var(--axis);white-space:nowrap;vertical-align:bottom}
+table.data th.l,table.data td.l{text-align:left}
+table.data td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap;font-variant-numeric:tabular-nums}
+table.data tr:last-child td{border-bottom:0}
+table.data tr.focus td{background:var(--focus-soft)}
+table.data tr.focus td.l{font-weight:600}
+table.data tr.tier-break td{border-top:2px solid var(--axis)}
+table#all th{white-space:normal;line-height:1.3}
+table.data th.sortable{cursor:pointer;user-select:none}
+table.data th.sortable:hover{color:var(--ink)}
+table.data th .arr{display:inline-block;width:10px;color:var(--ink-2)}
+.barcell{display:flex;align-items:center;gap:8px;justify-content:flex-end;min-width:200px}
+.barcell .track{flex:1;height:10px;position:relative}
+.barcell .fill{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0;background:var(--peer);opacity:.75}
+tr.focus .barcell .fill{background:var(--focus);opacity:1}
+.barcell .v{min-width:56px}
+.barcell .s{min-width:44px;color:var(--muted)}
+.flag{display:inline-block;font-size:10.5px;padding:0 5px;border-radius:3px;border:1px solid var(--hair);color:var(--ink-2);margin-left:6px;font-weight:400}
+.tbl-tools{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px;font-size:13px;color:var(--ink-2)}
+.seg{display:inline-flex;border:1px solid var(--axis);border-radius:6px;overflow:hidden}
+.seg button{font:inherit;font-size:13px;border:0;background:var(--surface);color:var(--ink-2);padding:5px 12px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--axis)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
+button.dl{font:inherit;font-size:13px;border:1px solid var(--axis);background:var(--surface);color:var(--ink);border-radius:6px;padding:5px 12px;cursor:pointer}
+.ok{color:var(--good)} .fail{color:var(--bad);font-weight:700}
+.notes{font-size:13.5px;color:var(--ink-2);max-width:82ch}
+.notes h4{color:var(--ink);font-size:14px;margin:18px 0 4px}
+.notes p{margin:0 0 8px}
+details{border-top:1px solid var(--grid);padding:6px 0}
+details summary{cursor:pointer;color:var(--ink);font-size:13.5px}
+details p{margin:6px 0 4px;font-size:13px;color:var(--ink-2)}
+ul.flags{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}
+footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted)}
+.tip{position:fixed;pointer-events:none;z-index:9;background:var(--surface);color:var(--ink);border:1px solid var(--hair);border-radius:6px;
+  padding:9px 11px;font-size:12.5px;box-shadow:0 6px 22px rgba(0,0,0,.16);opacity:0;transition:opacity .1s;max-width:290px}
+.tip b{font-size:13.5px;display:block;margin-bottom:5px}
+.tip table{border-collapse:collapse;width:100%}
+.tip td{padding:1px 0;font-size:12px;white-space:nowrap}
+.tip td:last-child{text-align:right;padding-left:16px;font-variant-numeric:tabular-nums}
+@media print{body{padding:0}.controls,nav.toc,.tbl-tools button{display:none}.tile,.panel{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="top-text">
+    <h1 id="title"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="units" id="units"></div>
+    <nav class="periods" id="periods"></nav>
+  </div>
+  <div class="controls">
+    <div class="lang-pick"><span data-t="langLabel"></span>
+      <div class="seg" role="group" id="langSeg"></div>
+    </div>
+    <label class="focus-pick"><span data-t="focusPick"></span>
+      <select id="focusSel"></select>
+    </label>
+  </div>
+</header>
+<nav class="toc" id="toc"></nav>
+
+<section id="s-focus">
+  <div class="focus-head"><span class="focus-name" id="fName"></span><span id="fChips"></span></div>
+  <div class="tiles" id="tiles"></div>
+  <ul class="headlines" id="headlines"></ul>
+  <div class="callouts" id="callouts"></div>
+</section>
+
+<section id="s-market">
+  <h2 data-t="h2market"></h2>
+  <p class="sec-note" data-t="noteMarket"></p>
+  <div class="tbl-wrap"><table class="data" id="mkt"></table></div>
+</section>
+
+<section id="s-csm">
+  <h2 data-t="h2csm"></h2>
+  <p class="sec-note" data-t="noteCsm"></p>
+  <div class="panel"><h3 data-t="h3wf"></h3><div class="sub" id="wfSub"></div>
+    <svg id="wf" viewBox="0 0 900 320" role="img" data-t-aria="ariaWf"></svg>
+    <div class="legend">
+      <span class="key"><i class="sq" style="background:var(--total)"></i><span data-t="lgOpenClose"></span></span>
+      <span class="key"><i class="sq" style="background:var(--pos)"></i><span data-t="lgIncrease"></span></span>
+      <span class="key"><i class="sq" style="background:var(--neg)"></i><span data-t="lgDecrease"></span></span>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px"><h3 data-t="h3quad"></h3><div class="sub" id="qSub"></div>
+    <svg id="quad" viewBox="0 0 900 470" role="img" data-t-aria="ariaQuad"></svg>
+    <div class="legend">
+      <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span></span>
+      <span class="key"><i class="dot" style="background:var(--peer)"></i><span data-t="lgOthers"></span></span>
+      <span class="key" style="color:var(--muted)">&#9650;&nbsp;<span data-t="lgCeiling"></span></span>
+      <span class="key" style="color:var(--muted)" data-t="lgBubble"></span>
+    </div>
+  </div>
+</section>
+
+<section id="s-nb">
+  <h2 data-t="h2nb"></h2>
+  <p class="sec-note" data-t="noteNb"></p>
+  <div class="panel"><svg id="strips" viewBox="0 0 900 380" role="img" data-t-aria="ariaStrips"></svg>
+    <div class="legend">
+      <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span> <span class="p-cur"></span></span>
+      <span class="key"><i class="dot" style="border:2px solid var(--focus);background:transparent"></i><span class="f-name"></span> <span class="p-cmp"></span></span>
+      <span class="key"><i class="dot" style="background:var(--peer);opacity:.6"></i><span data-t="lgOthers"></span></span>
+      <span class="key"><i class="sq" style="width:2px;height:12px;background:var(--ink-2)"></i><span data-t="lgMedian"></span></span>
+    </div>
+  </div>
+</section>
+
+<section id="s-ism">
+  <h2 data-t="h2ism"></h2>
+  <p class="sec-note" data-t="noteIsm"></p>
+  <div class="panels">
+    <div class="panel"><h3 data-t="h3dis"></h3><div class="sub" id="m1sub"></div><svg id="m1" viewBox="0 0 520 330" role="img" data-t-aria="h3dis"></svg></div>
+    <div class="panel"><h3 data-t="h3not"></h3><div class="sub" id="m2sub"></div><svg id="m2" viewBox="0 0 520 330" role="img" data-t-aria="h3not"></svg></div>
+  </div>
+</section>
+
+<section id="s-bridge">
+  <h2 data-t="h2bridge"></h2>
+  <p class="sec-note" data-t="noteBridge"></p>
+  <div class="panel"><svg id="br" viewBox="0 0 900 640" role="img" data-t-aria="ariaBridge"></svg>
+    <div class="legend">
+      <span class="key"><i class="sq" style="background:var(--c1)"></i><span data-t="lgIsr"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c2)"></i><span data-t="lgInv"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c3)"></i><span data-t="lgOther"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c4)"></i><span data-t="lgTax"></span></span>
+      <span class="key">&#9670;&nbsp;<span data-t="lgNpm"></span></span>
+      <span class="key" style="color:var(--muted)">&rsaquo;&rsaquo;&nbsp;<span data-t="lgClipped"></span></span>
+    </div>
+  </div>
+</section>
+
+<section id="s-all">
+  <h2 data-t="h2all"></h2>
+  <p class="sec-note" data-t="noteAll"></p>
+  <div class="tbl-tools">
+    <div class="seg" role="group" id="viewSeg"></div>
+    <button class="dl" id="dlBtn" type="button" data-t="download"></button>
+  </div>
+  <div class="tbl-wrap"><table class="data" id="all"></table></div>
+  <div class="q3" id="q3" hidden><h3 id="q3h"></h3><p class="sec-note" data-t="note3m"></p>
+    <div class="tbl-wrap"><table class="data" id="q3t"></table></div></div>
+</section>
+
+<section id="s-dq">
+  <h2 data-t="h2dq"></h2>
+  <p class="sec-note" id="dqNote"></p>
+  <div class="tbl-wrap"><table class="data" id="dq"></table></div>
+  <div class="notes" style="margin-top:16px"><h4 data-t="h4flags"></h4>
+    <p data-t="noteFlags"></p>
+    <ul class="flags" id="flags"></ul></div>
+</section>
+
+<section id="s-method">
+  <h2 data-t="h2method"></h2>
+  <div class="notes" id="commentary"></div>
+  <div class="notes"><h4 data-t="h4defs"></h4></div>
+  <div class="tbl-wrap" style="margin-top:8px"><table class="data" id="defs"></table></div>
+  <div class="notes" id="extract"></div>
+</section>
+
+<footer id="foot"></footer>
+</div>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script id="data" type="application/json">{"meta":{"title":"Thai life insurance industry — IFRS 17 dashboard","market":"Thailand · life insurance","standard":"TFRS 17 (IFRS 17)","period_end":"30 September 2025 (B.E. 2568)","unit":"THB million","large_insurer_count":10,"comparative_caveat":"Quarterly figures are year to date, taken from the reviewed (not audited) condensed interim statements. The CSM roll-forward and new business are cumulative since 1 January, and the CSM release ratio is annualised (x 12 / months to date) so that it reads on the same scale as a year. The comparative is the same period a year earlier from the prior-year interim statements; the 2025 interims have no comparative here, because 2024 quarters were not extracted. Industry changes are like for like over the insurers present in both periods. An insurer whose interim statement was not supplied for a period is left out of that period.","tolerance_thb_m":0.05,"ytd_months":9,"period":"2025Q3","comparative":"2024Q3","kind":"quarter","period_label":"3Q2025","comparative_label":"3Q2024","has_comparative":false,"common_n":null,"periods":[{"id":"FY2025","label":"FY2025"},{"id":"2026Q2","label":"2Q2026"},{"id":"2026Q1","label":"1Q2026"},{"id":"2025Q3","label":"3Q2025"},{"id":"2025Q2","label":"2Q2025"},{"id":"2025Q1","label":"1Q2025"}],"default_focus":"Samsung Life","source_ref":"sources/2025Q3/registry.csv","indexing":false,"languages":["en","ko"],"default_language":"en","generated":"2026-11-11 07:04 UTC","git":"55c3f1c"},"years":["2025Q3"],"companies":[{"name":"AIA Thailand","short":"AIA","legal":"AIA Company Limited - Thailand Branch","ra":"not_disaggregated","units":"face Million Baht, notes Million Baht","y":{"2025Q3":{"raw":{"ra_release":625.0,"bel_release":11886.0,"paa_revenue":43963.0,"other_revenue":0.0,"incurred_claims":-37241.0,"past_service":0.0,"loss_component":-16.0,"acq_recovery":2076.0,"acq_amortisation":-15396.0,"net_investment_income":26534.0,"ifie":-22119.0,"other_expense":-3693.0,"other_income":723.0,"income_tax":-2264.0,"net_profit":9121.0,"reinsurance_result":-5712.0,"csm_nb":14840.0,"csm_accretion":4552.0,"csm_future_service":2647.0,"csm_release":-9755.0,"nb_pv_premium":96349.0,"nb_pv_acq":18044.0,"nb_pv_claims":61644.0,"nb_ra":1846.0,"nb_csm":14840.0,"csm_open":182907.0,"csm_close":195191.0,"nb_loss_component":25.0,"insurance_revenue":68305.0,"insurance_service_expense":-52653.0},"m":{"insurance_revenue":{"v":68305.0,"rank":1,"n":19},"net_profit":{"v":9121.0,"rank":2,"n":19},"csm_close":{"v":195191.0,"rank":1,"n":19},"nb_csm":{"v":14840.0,"rank":1,"n":19},"nb_pv_premium":{"v":96349.0,"rank":1,"n":19},"isr_gross":{"v":15652.0,"rank":1,"n":19},"ism_gross":{"v":0.229149,"rank":14,"n":19},"ism_net":{"v":0.145524,"rank":14,"n":19},"inv_margin":{"v":0.064637,"rank":15,"n":19},"other_ratio":{"v":-0.043481,"rank":6,"n":19},"tax_ratio":{"v":-0.033145,"rank":9,"n":19},"npm":{"v":0.133533,"rank":13,"n":19},"current_loss_ratio":{"v":0.636055,"rank":12,"n":19},"csm_release_share":{"v":0.142815,"rank":14,"n":19},"csm_growth":{"v":0.06716,"rank":9,"n":19},"release_ratio":{"v":0.063464,"rank":18,"n":19},"nb_to_release":{"v":1.521271,"rank":7,"n":19},"nb_csm_margin":{"v":0.154023,"rank":1,"n":19},"acq_cost_ratio":{"v":0.187278,"rank":4,"n":18},"nb_claims_ratio":{"v":0.639799,"rank":17,"n":18},"onerous_ratio":{"v":0.001685,"rank":16,"n":19},"rev_share":{"v":0.306736,"rank":1,"n":19},"csm_share":{"v":0.314544,"rank":1,"n":19},"nb_csm_share":{"v":0.245196,"rank":1,"n":19}}}},"size_rank":1,"tier":1},{"name":"Thai Life","short":"Thai Life","legal":"Thai Life Insurance PCL","ra":"disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":1440.928,"bel_release":11984.581,"paa_revenue":1815.304,"other_revenue":-160.765,"incurred_claims":-13896.357,"past_service":0.0,"loss_component":-13.881,"acq_recovery":3108.758,"acq_amortisation":-3108.758,"net_investment_income":14446.947,"ifie":-11918.754,"other_expense":-1173.596,"other_income":67.267,"income_tax":-2240.811,"net_profit":9344.277,"reinsurance_result":24.872,"csm_nb":9514.229,"csm_accretion":2157.824,"csm_future_service":-233.779,"csm_release":-8968.542,"nb_pv_premium":63249.081,"nb_pv_acq":8637.449,"nb_pv_claims":42980.188,"nb_ra":2123.319,"nb_csm":9514.229,"csm_open":87975.522,"csm_close":90445.254,"nb_loss_component":6.104,"insurance_revenue":27157.348,"insurance_service_expense":-17018.996},"m":{"insurance_revenue":{"v":27157.348,"rank":2,"n":19},"net_profit":{"v":9344.277,"rank":1,"n":19},"csm_close":{"v":90445.254,"rank":2,"n":19},"nb_csm":{"v":9514.229,"rank":3,"n":19},"nb_pv_premium":{"v":63249.081,"rank":4,"n":19},"isr_gross":{"v":10138.352,"rank":2,"n":19},"ism_gross":{"v":0.373319,"rank":2,"n":19},"ism_net":{"v":0.374235,"rank":2,"n":19},"inv_margin":{"v":0.093094,"rank":14,"n":19},"other_ratio":{"v":-0.040738,"rank":5,"n":19},"tax_ratio":{"v":-0.082512,"rank":13,"n":19},"npm":{"v":0.344079,"rank":7,"n":19},"current_loss_ratio":{"v":0.764006,"rank":10,"n":19},"csm_release_share":{"v":0.330244,"rank":2,"n":19},"csm_growth":{"v":0.028073,"rank":12,"n":19},"release_ratio":{"v":0.120286,"rank":10,"n":19},"nb_to_release":{"v":1.060845,"rank":11,"n":19},"nb_csm_margin":{"v":0.150425,"rank":2,"n":19},"acq_cost_ratio":{"v":0.136562,"rank":11,"n":18},"nb_claims_ratio":{"v":0.679539,"rank":15,"n":18},"onerous_ratio":{"v":0.000642,"rank":17,"n":19},"rev_share":{"v":0.121955,"rank":2,"n":19},"csm_share":{"v":0.14575,"rank":2,"n":19},"nb_csm_share":{"v":0.1572,"rank":3,"n":19}}}},"size_rank":2,"tier":1},{"name":"Muang Thai Life","short":"Muang Thai","legal":"Muang Thai Life Assurance PCL","ra":"disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":919.929,"bel_release":10681.526,"paa_revenue":5189.316,"other_revenue":0.0,"incurred_claims":-14579.991,"past_service":31.464,"loss_component":-671.987,"acq_recovery":1111.367,"acq_amortisation":-1313.38,"net_investment_income":18151.874,"ifie":-12129.058,"other_expense":-2707.972,"other_income":93.845,"income_tax":-1852.199,"net_profit":7608.975,"reinsurance_result":-366.451,"csm_nb":6408.919,"csm_accretion":1643.898,"csm_future_service":688.668,"csm_release":-5050.692,"nb_pv_premium":65046.097,"nb_pv_acq":6814.272,"nb_pv_claims":50423.788,"nb_ra":2014.094,"nb_csm":6408.919,"csm_open":64606.237,"csm_close":68297.03,"nb_loss_component":614.976,"insurance_revenue":22952.83,"insurance_service_expense":-16533.894},"m":{"insurance_revenue":{"v":22952.83,"rank":3,"n":19},"net_profit":{"v":7608.975,"rank":3,"n":19},"csm_close":{"v":68297.03,"rank":4,"n":19},"nb_csm":{"v":6408.919,"rank":4,"n":19},"nb_pv_premium":{"v":65046.097,"rank":3,"n":19},"isr_gross":{"v":6418.936,"rank":4,"n":19},"ism_gross":{"v":0.279658,"rank":11,"n":19},"ism_net":{"v":0.263692,"rank":10,"n":19},"inv_margin":{"v":0.2624,"rank":7,"n":19},"other_ratio":{"v":-0.113891,"rank":13,"n":19},"tax_ratio":{"v":-0.080696,"rank":12,"n":19},"npm":{"v":0.331505,"rank":9,"n":19},"current_loss_ratio":{"v":0.81267,"rank":2,"n":19},"csm_release_share":{"v":0.220047,"rank":9,"n":19},"csm_growth":{"v":0.057128,"rank":10,"n":19},"release_ratio":{"v":0.091813,"rank":15,"n":19},"nb_to_release":{"v":1.268919,"rank":8,"n":19},"nb_csm_margin":{"v":0.098529,"rank":9,"n":19},"acq_cost_ratio":{"v":0.104761,"rank":16,"n":18},"nb_claims_ratio":{"v":0.775201,"rank":5,"n":18},"onerous_ratio":{"v":0.095956,"rank":7,"n":19},"rev_share":{"v":0.103074,"rank":3,"n":19},"csm_share":{"v":0.110059,"rank":4,"n":19},"nb_csm_share":{"v":0.105892,"rank":4,"n":19}}}},"size_rank":3,"tier":1},{"name":"Allianz Ayudhya","short":"Allianz Ayudhya","legal":"Allianz Ayudhya Assurance PCL","ra":"disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":463.143,"bel_release":5118.354,"paa_revenue":3751.885,"other_revenue":-28.458,"incurred_claims":-7197.94,"past_service":10.843,"loss_component":1.533,"acq_recovery":3602.134,"acq_amortisation":-4608.518,"net_investment_income":5237.144,"ifie":-5326.024,"other_expense":-743.348,"other_income":63.465,"income_tax":-1492.073,"net_profit":6097.945,"reinsurance_result":-160.494,"csm_nb":5649.772,"csm_accretion":1935.295,"csm_future_service":-1813.031,"csm_release":-7406.299,"nb_pv_premium":43406.628,"nb_pv_acq":6349.454,"nb_pv_claims":29895.476,"nb_ra":1511.926,"nb_csm":5649.772,"csm_open":74348.041,"csm_close":72713.778,"nb_loss_component":0.0,"insurance_revenue":20313.357,"insurance_service_expense":-11794.082},"m":{"insurance_revenue":{"v":20313.357,"rank":4,"n":19},"net_profit":{"v":6097.945,"rank":6,"n":19},"csm_close":{"v":72713.778,"rank":3,"n":19},"nb_csm":{"v":5649.772,"rank":5,"n":19},"nb_pv_premium":{"v":43406.628,"rank":5,"n":19},"isr_gross":{"v":8519.275,"rank":3,"n":19},"ism_gross":{"v":0.419393,"rank":1,"n":19},"ism_net":{"v":0.411492,"rank":1,"n":19},"inv_margin":{"v":-0.004375,"rank":18,"n":19},"other_ratio":{"v":-0.03347,"rank":3,"n":19},"tax_ratio":{"v":-0.073453,"rank":10,"n":19},"npm":{"v":0.300194,"rank":11,"n":19},"current_loss_ratio":{"v":0.556835,"rank":15,"n":19},"csm_release_share":{"v":0.364602,"rank":1,"n":19},"csm_growth":{"v":-0.021981,"rank":15,"n":19},"release_ratio":{"v":0.123253,"rank":9,"n":19},"nb_to_release":{"v":0.762833,"rank":15,"n":19},"nb_csm_margin":{"v":0.130159,"rank":5,"n":19},"acq_cost_ratio":{"v":0.146278,"rank":10,"n":18},"nb_claims_ratio":{"v":0.688731,"rank":13,"n":18},"onerous_ratio":{"v":0.0,"rank":19,"n":19},"rev_share":{"v":0.091221,"rank":4,"n":19},"csm_share":{"v":0.117176,"rank":3,"n":19},"nb_csm_share":{"v":0.093349,"rank":5,"n":19}}}},"size_rank":4,"tier":1},{"name":"FWD Thailand","short":"FWD","legal":"FWD Insurance (Thailand) PCL","ra":"not_disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":447.015,"bel_release":7878.353,"paa_revenue":817.025,"other_revenue":0.0,"incurred_claims":-8554.272,"past_service":307.514,"loss_component":-84.796,"acq_recovery":5764.464,"acq_amortisation":-5824.965,"net_investment_income":16023.095,"ifie":-11450.616,"other_expense":-967.051,"other_income":6.536,"income_tax":-1925.163,"net_profit":7412.796,"reinsurance_result":-142.561,"csm_nb":10244.091,"csm_accretion":1035.466,"csm_future_service":505.687,"csm_release":-5118.218,"nb_pv_premium":77636.691,"nb_pv_acq":10368.196,"nb_pv_claims":56161.092,"nb_ra":891.427,"nb_csm":10244.091,"csm_open":45123.703,"csm_close":51790.729,"nb_loss_component":28.115,"insurance_revenue":20025.075,"insurance_service_expense":-14156.519},"m":{"insurance_revenue":{"v":20025.075,"rank":5,"n":19},"net_profit":{"v":7412.796,"rank":4,"n":19},"csm_close":{"v":51790.729,"rank":5,"n":19},"nb_csm":{"v":10244.091,"rank":2,"n":19},"nb_pv_premium":{"v":77636.691,"rank":2,"n":19},"isr_gross":{"v":5868.556,"rank":6,"n":19},"ism_gross":{"v":0.29306,"rank":9,"n":19},"ism_net":{"v":0.285941,"rank":8,"n":19},"inv_margin":{"v":0.228338,"rank":8,"n":19},"other_ratio":{"v":-0.047966,"rank":10,"n":19},"tax_ratio":{"v":-0.096138,"rank":17,"n":19},"npm":{"v":0.370176,"rank":5,"n":19},"current_loss_ratio":{"v":0.553219,"rank":16,"n":19},"csm_release_share":{"v":0.25559,"rank":6,"n":19},"csm_growth":{"v":0.14775,"rank":4,"n":19},"release_ratio":{"v":0.119916,"rank":11,"n":19},"nb_to_release":{"v":2.001496,"rank":5,"n":19},"nb_csm_margin":{"v":0.131949,"rank":4,"n":19},"acq_cost_ratio":{"v":0.133548,"rank":12,"n":18},"nb_claims_ratio":{"v":0.723383,"rank":11,"n":18},"onerous_ratio":{"v":0.002745,"rank":14,"n":19},"rev_share":{"v":0.089926,"rank":5,"n":19},"csm_share":{"v":0.083459,"rank":5,"n":19},"nb_csm_share":{"v":0.169259,"rank":2,"n":19}}}},"size_rank":5,"tier":1},{"name":"Krungthai-AXA Life","short":"KTAXA","legal":"Krungthai-AXA Life Insurance PCL","ra":"not_disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":339.4,"bel_release":10666.272,"paa_revenue":1716.253,"other_revenue":-50.5,"incurred_claims":-11060.392,"past_service":38.392,"loss_component":-59.291,"acq_recovery":1096.761,"acq_amortisation":-1096.761,"net_investment_income":7977.751,"ifie":-5335.487,"other_expense":-683.678,"other_income":12.06,"income_tax":-1528.825,"net_profit":6438.45,"reinsurance_result":-140.365,"csm_nb":3623.379,"csm_accretion":679.488,"csm_future_service":-206.004,"csm_release":-4546.86,"nb_pv_premium":40788.973,"nb_pv_acq":5132.794,"nb_pv_claims":31577.764,"nb_ra":492.178,"nb_csm":3623.379,"csm_open":39803.473,"csm_close":39353.476,"nb_loss_component":37.142,"insurance_revenue":18315.046,"insurance_service_expense":-12178.052},"m":{"insurance_revenue":{"v":18315.046,"rank":6,"n":19},"net_profit":{"v":6438.45,"rank":5,"n":19},"csm_close":{"v":39353.476,"rank":7,"n":19},"nb_csm":{"v":3623.379,"rank":6,"n":19},"nb_pv_premium":{"v":40788.973,"rank":6,"n":19},"isr_gross":{"v":6136.994,"rank":5,"n":19},"ism_gross":{"v":0.335079,"rank":5,"n":19},"ism_net":{"v":0.327415,"rank":5,"n":19},"inv_margin":{"v":0.144267,"rank":11,"n":19},"other_ratio":{"v":-0.03667,"rank":4,"n":19},"tax_ratio":{"v":-0.083474,"rank":14,"n":19},"npm":{"v":0.351539,"rank":6,"n":19},"current_loss_ratio":{"v":0.800541,"rank":5,"n":19},"csm_release_share":{"v":0.248258,"rank":7,"n":19},"csm_growth":{"v":-0.011305,"rank":14,"n":19},"release_ratio":{"v":0.138096,"rank":6,"n":19},"nb_to_release":{"v":0.796897,"rank":14,"n":19},"nb_csm_margin":{"v":0.088832,"rank":12,"n":19},"acq_cost_ratio":{"v":0.125838,"rank":13,"n":18},"nb_claims_ratio":{"v":0.774174,"rank":6,"n":18},"onerous_ratio":{"v":0.010251,"rank":12,"n":19},"rev_share":{"v":0.082247,"rank":6,"n":19},"csm_share":{"v":0.063417,"rank":7,"n":19},"nb_csm_share":{"v":0.059868,"rank":6,"n":19}}}},"size_rank":6,"tier":1},{"name":"Bangkok Life","short":"Bangkok Life","legal":"Bangkok Life Assurance PCL","ra":"not_disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":227.89,"bel_release":4287.136,"paa_revenue":1739.878,"other_revenue":0.0,"incurred_claims":-5530.194,"past_service":-186.736,"loss_component":-84.938,"acq_recovery":829.645,"acq_amortisation":-829.644,"net_investment_income":9962.685,"ifie":-6471.127,"other_expense":-311.781,"other_income":114.462,"income_tax":-742.739,"net_profit":5622.625,"reinsurance_result":-85.172,"csm_nb":2666.986,"csm_accretion":979.04,"csm_future_service":-1187.616,"csm_release":-2703.26,"nb_pv_premium":29656.33,"nb_pv_acq":2470.13,"nb_pv_claims":23998.984,"nb_ra":592.613,"nb_csm":2666.986,"csm_open":41298.872,"csm_close":41054.022,"nb_loss_component":72.383,"insurance_revenue":9787.809,"insurance_service_expense":-6631.512},"m":{"insurance_revenue":{"v":9787.809,"rank":7,"n":19},"net_profit":{"v":5622.625,"rank":7,"n":19},"csm_close":{"v":41054.022,"rank":6,"n":19},"nb_csm":{"v":2666.986,"rank":7,"n":19},"nb_pv_premium":{"v":29656.33,"rank":8,"n":19},"isr_gross":{"v":3156.297,"rank":7,"n":19},"ism_gross":{"v":0.322472,"rank":7,"n":19},"ism_net":{"v":0.31377,"rank":7,"n":19},"inv_margin":{"v":0.356725,"rank":4,"n":19},"other_ratio":{"v":-0.02016,"rank":2,"n":19},"tax_ratio":{"v":-0.075884,"rank":11,"n":19},"npm":{"v":0.574452,"rank":2,"n":19},"current_loss_ratio":{"v":0.806958,"rank":4,"n":19},"csm_release_share":{"v":0.276186,"rank":5,"n":19},"csm_growth":{"v":-0.005929,"rank":13,"n":19},"release_ratio":{"v":0.082371,"rank":17,"n":19},"nb_to_release":{"v":0.986581,"rank":13,"n":19},"nb_csm_margin":{"v":0.08993,"rank":11,"n":19},"acq_cost_ratio":{"v":0.083292,"rank":18,"n":18},"nb_claims_ratio":{"v":0.809236,"rank":4,"n":18},"onerous_ratio":{"v":0.02714,"rank":11,"n":19},"rev_share":{"v":0.043954,"rank":7,"n":19},"csm_share":{"v":0.066157,"rank":6,"n":19},"nb_csm_share":{"v":0.044066,"rank":7,"n":19}}}},"size_rank":7,"tier":1},{"name":"Prudential Life","short":"Prudential","legal":"Prudential Life Assurance (Thailand) PCL","ra":"disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":278.025,"bel_release":3399.453,"paa_revenue":0.0,"other_revenue":13.671,"incurred_claims":-3553.647,"past_service":-187.631,"loss_component":-334.832,"acq_recovery":3878.055,"acq_amortisation":-3878.055,"net_investment_income":4069.667,"ifie":-5721.347,"other_expense":-129.975,"other_income":26.068,"income_tax":-9.682,"net_profit":-366.799,"reinsurance_result":-243.744,"csm_nb":2100.069,"csm_accretion":370.445,"csm_future_service":106.149,"csm_release":-2027.175,"nb_pv_premium":37769.108,"nb_pv_acq":6399.988,"nb_pv_claims":28905.597,"nb_ra":457.106,"nb_csm":2100.069,"csm_open":18958.809,"csm_close":19508.297,"nb_loss_component":93.652,"insurance_revenue":9596.379,"insurance_service_expense":-7954.165},"m":{"insurance_revenue":{"v":9596.379,"rank":8,"n":19},"net_profit":{"v":-366.799,"rank":19,"n":19},"csm_close":{"v":19508.297,"rank":8,"n":19},"nb_csm":{"v":2100.069,"rank":8,"n":19},"nb_pv_premium":{"v":37769.108,"rank":7,"n":19},"isr_gross":{"v":1642.214,"rank":8,"n":19},"ism_gross":{"v":0.171129,"rank":15,"n":19},"ism_net":{"v":0.145729,"rank":13,"n":19},"inv_margin":{"v":-0.172115,"rank":19,"n":19},"other_ratio":{"v":-0.010828,"rank":1,"n":19},"tax_ratio":{"v":-0.001009,"rank":3,"n":19},"npm":{"v":-0.038223,"rank":19,"n":19},"current_loss_ratio":{"v":0.494276,"rank":17,"n":19},"csm_release_share":{"v":0.211244,"rank":10,"n":19},"csm_growth":{"v":0.028983,"rank":11,"n":19},"release_ratio":{"v":0.125509,"rank":8,"n":19},"nb_to_release":{"v":1.035958,"rank":12,"n":19},"nb_csm_margin":{"v":0.055603,"rank":16,"n":19},"acq_cost_ratio":{"v":0.16945,"rank":7,"n":18},"nb_claims_ratio":{"v":0.765324,"rank":8,"n":18},"onerous_ratio":{"v":0.044595,"rank":10,"n":19},"rev_share":{"v":0.043094,"rank":8,"n":19},"csm_share":{"v":0.031437,"rank":8,"n":19},"nb_csm_share":{"v":0.034699,"rank":8,"n":19}}}},"size_rank":8,"tier":1},{"name":"Generali Life","short":"Generali","legal":"Generali Life Assurance (Thailand) PCL","ra":"disaggregated","units":"face Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":28.818,"bel_release":915.247,"paa_revenue":3269.743,"other_revenue":0.0,"incurred_claims":-3035.196,"past_service":75.473,"loss_component":-42.161,"acq_recovery":836.858,"acq_amortisation":-1598.911,"net_investment_income":749.969336,"ifie":-633.746902,"other_expense":-268.862662,"other_income":5.258227,"income_tax":5.867333,"net_profit":572.157022,"reinsurance_result":-202.665869,"csm_nb":586.153,"csm_accretion":320.233,"csm_future_service":-131.87,"csm_release":-466.467,"nb_pv_premium":7926.879,"nb_pv_acq":2899.049,"nb_pv_claims":4375.725,"nb_ra":66.119,"nb_csm":586.153,"csm_open":3140.27,"csm_close":3448.319,"nb_loss_component":0.167,"insurance_revenue":5517.132823,"insurance_service_expense":-4600.795264},"m":{"insurance_revenue":{"v":5517.132823,"rank":9,"n":19},"net_profit":{"v":572.157022,"rank":11,"n":19},"csm_close":{"v":3448.319,"rank":14,"n":19},"nb_csm":{"v":586.153,"rank":13,"n":19},"nb_pv_premium":{"v":7926.879,"rank":12,"n":19},"isr_gross":{"v":916.337559,"rank":12,"n":19},"ism_gross":{"v":0.166089,"rank":16,"n":19},"ism_net":{"v":0.129356,"rank":15,"n":19},"inv_margin":{"v":0.021066,"rank":17,"n":19},"other_ratio":{"v":-0.047779,"rank":9,"n":19},"tax_ratio":{"v":0.001063,"rank":2,"n":19},"npm":{"v":0.103706,"rank":16,"n":19},"current_loss_ratio":{"v":0.586006,"rank":14,"n":19},"csm_release_share":{"v":0.084549,"rank":17,"n":19},"csm_growth":{"v":0.098096,"rank":7,"n":19},"release_ratio":{"v":0.158874,"rank":4,"n":19},"nb_to_release":{"v":1.25658,"rank":9,"n":19},"nb_csm_margin":{"v":0.073945,"rank":15,"n":19},"acq_cost_ratio":{"v":0.365724,"rank":1,"n":18},"nb_claims_ratio":{"v":0.552011,"rank":18,"n":18},"onerous_ratio":{"v":0.000285,"rank":18,"n":19},"rev_share":{"v":0.024776,"rank":9,"n":19},"csm_share":{"v":0.005557,"rank":14,"n":19},"nb_csm_share":{"v":0.009685,"rank":13,"n":19}}}},"size_rank":9,"tier":1},{"name":"Ocean Life","short":"Ocean Life","legal":"Ocean Life Insurance PCL","ra":"disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":130.971,"bel_release":1736.666,"paa_revenue":1431.907,"other_revenue":0.0,"incurred_claims":-2758.742,"past_service":26.051,"loss_component":-5.634,"acq_recovery":74.519,"acq_amortisation":-74.519,"net_investment_income":3049.133,"ifie":-1541.985,"other_expense":-623.458,"other_income":58.95,"income_tax":-370.147,"net_profit":2168.208,"reinsurance_result":23.283,"csm_nb":465.627,"csm_accretion":266.905,"csm_future_service":-619.918,"csm_release":-1011.213,"nb_pv_premium":4620.016,"nb_pv_acq":442.767,"nb_pv_claims":3553.305,"nb_ra":161.851,"nb_csm":465.627,"csm_open":11936.368,"csm_close":11037.769,"nb_loss_component":3.534,"insurance_revenue":4385.276,"insurance_service_expense":-2812.844},"m":{"insurance_revenue":{"v":4385.276,"rank":10,"n":19},"net_profit":{"v":2168.208,"rank":8,"n":19},"csm_close":{"v":11037.769,"rank":9,"n":19},"nb_csm":{"v":465.627,"rank":15,"n":19},"nb_pv_premium":{"v":4620.016,"rank":15,"n":19},"isr_gross":{"v":1572.432,"rank":9,"n":19},"ism_gross":{"v":0.358571,"rank":3,"n":19},"ism_net":{"v":0.36388,"rank":3,"n":19},"inv_margin":{"v":0.343684,"rank":5,"n":19},"other_ratio":{"v":-0.128728,"rank":15,"n":19},"tax_ratio":{"v":-0.084407,"rank":15,"n":19},"npm":{"v":0.494429,"rank":3,"n":19},"current_loss_ratio":{"v":0.809911,"rank":3,"n":19},"csm_release_share":{"v":0.230593,"rank":8,"n":19},"csm_growth":{"v":-0.075282,"rank":18,"n":19},"release_ratio":{"v":0.1119,"rank":12,"n":19},"nb_to_release":{"v":0.460464,"rank":17,"n":19},"nb_csm_margin":{"v":0.100785,"rank":7,"n":19},"acq_cost_ratio":{"v":0.095837,"rank":17,"n":18},"nb_claims_ratio":{"v":0.769111,"rank":7,"n":18},"onerous_ratio":{"v":0.00759,"rank":13,"n":19},"rev_share":{"v":0.019693,"rank":10,"n":19},"csm_share":{"v":0.017787,"rank":9,"n":19},"nb_csm_share":{"v":0.007693,"rank":15,"n":19}}}},"size_rank":10,"tier":1},{"name":"Tokio Marine Life","short":"Tokio Marine","legal":"Tokio Marine Life Insurance (Thailand) PCL","ra":"disaggregated","units":"face Baht, notes Baht","y":{"2025Q3":{"raw":{"ra_release":135.963723,"bel_release":1408.932551,"paa_revenue":1833.748332,"other_revenue":-30.596212,"incurred_claims":-2898.362481,"past_service":158.491913,"loss_component":-17.845422,"acq_recovery":99.320732,"acq_amortisation":-256.531262,"net_investment_income":1163.597139,"ifie":-1046.454238,"other_expense":-599.09813,"other_income":29.169648,"income_tax":-94.753664,"net_profit":465.376063,"reinsurance_result":-121.819371,"csm_nb":857.172323,"csm_accretion":244.138476,"csm_future_service":1130.516152,"csm_release":-701.612805,"nb_pv_premium":6309.256397,"nb_pv_acq":684.26289,"nb_pv_claims":4599.32577,"nb_ra":170.705395,"nb_csm":857.172323,"csm_open":7589.576267,"csm_close":9119.790413,"nb_loss_component":2.209981,"insurance_revenue":4148.981931,"insurance_service_expense":-3014.247252},"m":{"insurance_revenue":{"v":4148.981931,"rank":11,"n":19},"net_profit":{"v":465.376063,"rank":13,"n":19},"csm_close":{"v":9119.790413,"rank":10,"n":19},"nb_csm":{"v":857.172323,"rank":11,"n":19},"nb_pv_premium":{"v":6309.256397,"rank":14,"n":19},"isr_gross":{"v":1134.734679,"rank":10,"n":19},"ism_gross":{"v":0.273497,"rank":12,"n":19},"ism_net":{"v":0.244136,"rank":11,"n":19},"inv_margin":{"v":0.028234,"rank":16,"n":19},"other_ratio":{"v":-0.137366,"rank":16,"n":19},"tax_ratio":{"v":-0.022838,"rank":5,"n":19},"npm":{"v":0.112166,"rank":14,"n":19},"current_loss_ratio":{"v":0.794771,"rank":6,"n":19},"csm_release_share":{"v":0.169105,"rank":12,"n":19},"csm_growth":{"v":0.20162,"rank":3,"n":19},"release_ratio":{"v":0.095249,"rank":14,"n":19},"nb_to_release":{"v":1.221717,"rank":10,"n":19},"nb_csm_margin":{"v":0.135859,"rank":3,"n":19},"acq_cost_ratio":{"v":0.108454,"rank":14,"n":18},"nb_claims_ratio":{"v":0.728981,"rank":10,"n":18},"onerous_ratio":{"v":0.002578,"rank":15,"n":19},"rev_share":{"v":0.018632,"rank":11,"n":19},"csm_share":{"v":0.014696,"rank":10,"n":19},"nb_csm_share":{"v":0.014163,"rank":11,"n":19}}}},"size_rank":11,"tier":2},{"name":"CHUBB Life","short":"CHUBB","legal":"Chubb Life Assurance PCL","ra":"not_disaggregated","units":"face Baht, notes Baht","y":{"2025Q3":{"raw":{"ra_release":187.785059,"bel_release":2990.374146,"paa_revenue":0.0,"other_revenue":0.001503,"incurred_claims":-2954.747887,"past_service":-2.652707,"loss_component":583.072366,"acq_recovery":627.458149,"acq_amortisation":-627.458149,"net_investment_income":539.60865,"ifie":-139.266006,"other_expense":-259.889064,"other_income":3.160276,"income_tax":-108.4498,"net_profit":295.754492,"reinsurance_result":-676.899904,"csm_nb":1155.032082,"csm_accretion":52.190112,"csm_future_service":-726.500048,"csm_release":-133.65786,"nb_pv_premium":9058.280848,"nb_pv_acq":1662.764304,"nb_pv_claims":6001.924623,"nb_ra":379.944751,"nb_csm":1155.032082,"csm_open":1638.795671,"csm_close":1985.859957,"nb_loss_component":141.384912,"insurance_revenue":3939.276717,"insurance_service_expense":-3001.786377},"m":{"insurance_revenue":{"v":3939.276717,"rank":12,"n":19},"net_profit":{"v":295.754492,"rank":14,"n":19},"csm_close":{"v":1985.859957,"rank":15,"n":19},"nb_csm":{"v":1155.032082,"rank":9,"n":19},"nb_pv_premium":{"v":9058.280848,"rank":11,"n":19},"isr_gross":{"v":937.49034,"rank":11,"n":19},"ism_gross":{"v":0.237985,"rank":13,"n":19},"ism_net":{"v":0.066152,"rank":16,"n":19},"inv_margin":{"v":0.101628,"rank":13,"n":19},"other_ratio":{"v":-0.065172,"rank":12,"n":19},"tax_ratio":{"v":-0.02753,"rank":8,"n":19},"npm":{"v":0.075078,"rank":18,"n":19},"current_loss_ratio":{"v":0.777114,"rank":8,"n":19},"csm_release_share":{"v":0.03393,"rank":18,"n":19},"csm_growth":{"v":0.21178,"rank":2,"n":19},"release_ratio":{"v":0.084081,"rank":16,"n":19},"nb_to_release":{"v":8.641707,"rank":1,"n":19},"nb_csm_margin":{"v":0.127511,"rank":6,"n":19},"acq_cost_ratio":{"v":0.183563,"rank":5,"n":18},"nb_claims_ratio":{"v":0.66259,"rank":16,"n":18},"onerous_ratio":{"v":0.122408,"rank":6,"n":19},"rev_share":{"v":0.01769,"rank":12,"n":19},"csm_share":{"v":0.0032,"rank":15,"n":19},"nb_csm_share":{"v":0.019084,"rank":9,"n":19}}}},"size_rank":12,"tier":2},{"name":"Dhipaya Life","short":"Dhipaya","legal":"Dhipaya Life Assurance PCL","ra":"not_disaggregated","units":"face Baht, notes Baht","y":{"2025Q3":{"raw":{"ra_release":105.116048,"bel_release":2058.416071,"paa_revenue":0.0,"other_revenue":-0.043447,"incurred_claims":-2256.512274,"past_service":27.042168,"loss_component":-231.411935,"acq_recovery":314.907948,"acq_amortisation":-314.907948,"net_investment_income":1096.461217,"ifie":-688.445033,"other_expense":-129.341902,"other_income":0.165734,"income_tax":-65.556107,"net_profit":261.516382,"reinsurance_result":-2.19095,"csm_nb":708.342983,"csm_accretion":110.642055,"csm_future_service":-70.690425,"csm_release":-347.816791,"nb_pv_premium":9363.443555,"nb_pv_acq":981.878994,"nb_pv_claims":7674.972937,"nb_ra":167.83286,"nb_csm":708.342983,"csm_open":3689.481613,"csm_close":4089.959435,"nb_loss_component":169.584219,"insurance_revenue":2826.213412,"insurance_service_expense":-2775.789989},"m":{"insurance_revenue":{"v":2826.213412,"rank":13,"n":19},"net_profit":{"v":261.516382,"rank":15,"n":19},"csm_close":{"v":4089.959435,"rank":13,"n":19},"nb_csm":{"v":708.342983,"rank":12,"n":19},"nb_pv_premium":{"v":9363.443555,"rank":10,"n":19},"isr_gross":{"v":50.423423,"rank":17,"n":19},"ism_gross":{"v":0.017841,"rank":19,"n":19},"ism_net":{"v":0.017066,"rank":19,"n":19},"inv_margin":{"v":0.144368,"rank":10,"n":19},"other_ratio":{"v":-0.045706,"rank":7,"n":19},"tax_ratio":{"v":-0.023196,"rank":7,"n":19},"npm":{"v":0.092532,"rank":17,"n":19},"current_loss_ratio":{"v":0.899561,"rank":1,"n":19},"csm_release_share":{"v":0.123068,"rank":15,"n":19},"csm_growth":{"v":0.108546,"rank":6,"n":19},"release_ratio":{"v":0.104502,"rank":13,"n":19},"nb_to_release":{"v":2.036541,"rank":4,"n":19},"nb_csm_margin":{"v":0.07565,"rank":14,"n":19},"acq_cost_ratio":{"v":0.104863,"rank":15,"n":18},"nb_claims_ratio":{"v":0.819674,"rank":3,"n":18},"onerous_ratio":{"v":0.23941,"rank":5,"n":19},"rev_share":{"v":0.012692,"rank":13,"n":19},"csm_share":{"v":0.006591,"rank":13,"n":19},"nb_csm_share":{"v":0.011704,"rank":12,"n":19}}}},"size_rank":13,"tier":2},{"name":"Southeast Life","short":"Southeast","legal":"Southeast Life Insurance PCL","ra":"disaggregated","units":"face Thousand Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":171.832,"bel_release":1496.359,"paa_revenue":0.0,"other_revenue":0.0,"incurred_claims":-1622.99,"past_service":149.49,"loss_component":-76.484,"acq_recovery":208.573,"acq_amortisation":-208.573,"net_investment_income":2152.359,"ifie":-1068.452,"other_expense":-514.625,"other_income":3.377,"income_tax":-265.169,"net_profit":1207.994,"reinsurance_result":-8.293,"csm_nb":494.742,"csm_accretion":157.667,"csm_future_service":-27.052,"csm_release":-790.59,"nb_pv_premium":6471.734,"nb_pv_acq":1042.895,"nb_pv_claims":4890.688,"nb_ra":174.87,"nb_csm":494.742,"csm_open":6512.361,"csm_close":6347.128,"nb_loss_component":131.461,"insurance_revenue":2667.354,"insurance_service_expense":-1758.557},"m":{"insurance_revenue":{"v":2667.354,"rank":14,"n":19},"net_profit":{"v":1207.994,"rank":9,"n":19},"csm_close":{"v":6347.128,"rank":11,"n":19},"nb_csm":{"v":494.742,"rank":14,"n":19},"nb_pv_premium":{"v":6471.734,"rank":13,"n":19},"isr_gross":{"v":908.797,"rank":13,"n":19},"ism_gross":{"v":0.340711,"rank":4,"n":19},"ism_net":{"v":0.337602,"rank":4,"n":19},"inv_margin":{"v":0.40636,"rank":3,"n":19},"other_ratio":{"v":-0.191669,"rank":18,"n":19},"tax_ratio":{"v":-0.099413,"rank":18,"n":19},"npm":{"v":0.452881,"rank":4,"n":19},"current_loss_ratio":{"v":0.785128,"rank":7,"n":19},"csm_release_share":{"v":0.296395,"rank":4,"n":19},"csm_growth":{"v":-0.025372,"rank":16,"n":19},"release_ratio":{"v":0.147683,"rank":5,"n":19},"nb_to_release":{"v":0.625788,"rank":16,"n":19},"nb_csm_margin":{"v":0.076447,"rank":13,"n":19},"acq_cost_ratio":{"v":0.161146,"rank":8,"n":18},"nb_claims_ratio":{"v":0.7557,"rank":9,"n":18},"onerous_ratio":{"v":0.265716,"rank":4,"n":19},"rev_share":{"v":0.011978,"rank":14,"n":19},"csm_share":{"v":0.010228,"rank":11,"n":19},"nb_csm_share":{"v":0.008174,"rank":14,"n":19}}}},"size_rank":14,"tier":2},{"name":"Samsung Life","short":"Samsung","legal":"Samsung Life Insurance (Thailand) PCL","ra":"disaggregated","units":"face Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":37.777,"bel_release":586.467,"paa_revenue":0.0,"other_revenue":0.0,"incurred_claims":-620.528,"past_service":87.644,"loss_component":-81.714,"acq_recovery":510.932,"acq_amortisation":-510.932,"net_investment_income":668.442,"ifie":-461.961,"other_expense":-93.766,"other_income":14.361,"income_tax":-141.524,"net_profit":521.487,"reinsurance_result":-12.529,"csm_nb":1060.726,"csm_accretion":92.579,"csm_future_service":272.601,"csm_release":-538.818,"nb_pv_premium":10564.704,"nb_pv_acq":2278.915,"nb_pv_claims":7224.386,"nb_ra":96.731,"nb_csm":1060.726,"csm_open":4155.074,"csm_close":5042.162,"nb_loss_component":96.054,"insurance_revenue":1673.994,"insurance_service_expense":-1125.53},"m":{"insurance_revenue":{"v":1673.994,"rank":15,"n":19},"net_profit":{"v":521.487,"rank":12,"n":19},"csm_close":{"v":5042.162,"rank":12,"n":19},"nb_csm":{"v":1060.726,"rank":10,"n":19},"nb_pv_premium":{"v":10564.704,"rank":9,"n":19},"isr_gross":{"v":548.464,"rank":14,"n":19},"ism_gross":{"v":0.327638,"rank":6,"n":19},"ism_net":{"v":0.320153,"rank":6,"n":19},"inv_margin":{"v":0.123346,"rank":12,"n":19},"other_ratio":{"v":-0.047434,"rank":8,"n":19},"tax_ratio":{"v":-0.084543,"rank":16,"n":19},"npm":{"v":0.311523,"rank":10,"n":19},"current_loss_ratio":{"v":0.469429,"rank":19,"n":19},"csm_release_share":{"v":0.321876,"rank":3,"n":19},"csm_growth":{"v":0.213495,"rank":1,"n":19},"release_ratio":{"v":0.128727,"rank":7,"n":19},"nb_to_release":{"v":1.968616,"rank":6,"n":19},"nb_csm_margin":{"v":0.100403,"rank":8,"n":19},"acq_cost_ratio":{"v":0.21571,"rank":3,"n":18},"nb_claims_ratio":{"v":0.683823,"rank":14,"n":18},"onerous_ratio":{"v":0.090555,"rank":8,"n":19},"rev_share":{"v":0.007517,"rank":15,"n":19},"csm_share":{"v":0.008125,"rank":12,"n":19},"nb_csm_share":{"v":0.017526,"rank":10,"n":19}}}},"size_rank":15,"tier":2},{"name":"Phillip Life","short":"Phillip","legal":"Phillip Life Assurance PCL","ra":"disaggregated","units":"face Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":5.491,"bel_release":285.246,"paa_revenue":5.625,"other_revenue":0.0,"incurred_claims":-272.192,"past_service":25.471,"loss_component":-68.705,"acq_recovery":24.664,"acq_amortisation":-26.384,"net_investment_income":941.715047,"ifie":-185.786231,"other_expense":-19.158081,"other_income":1.868045,"income_tax":-121.672676,"net_profit":623.802782,"reinsurance_result":-4.754318,"csm_nb":130.607,"csm_accretion":21.301,"csm_future_service":-278.368,"csm_release":-32.375,"nb_pv_premium":1416.904,"nb_pv_acq":256.988,"nb_pv_claims":983.193,"nb_ra":53.526,"nb_csm":130.607,"csm_open":870.313,"csm_close":711.478,"nb_loss_component":7.41,"insurance_revenue":353.401263,"insurance_service_expense":-341.810267},"m":{"insurance_revenue":{"v":353.401263,"rank":16,"n":19},"net_profit":{"v":623.802782,"rank":10,"n":19},"csm_close":{"v":711.478,"rank":16,"n":19},"nb_csm":{"v":130.607,"rank":16,"n":19},"nb_pv_premium":{"v":1416.904,"rank":16,"n":19},"isr_gross":{"v":11.590996,"rank":18,"n":19},"ism_gross":{"v":0.032798,"rank":18,"n":19},"ism_net":{"v":0.019345,"rank":18,"n":19},"inv_margin":{"v":2.13901,"rank":1,"n":19},"other_ratio":{"v":-0.048925,"rank":11,"n":19},"tax_ratio":{"v":-0.34429,"rank":19,"n":19},"npm":{"v":1.76514,"rank":1,"n":19},"current_loss_ratio":{"v":0.768539,"rank":9,"n":19},"csm_release_share":{"v":0.09161,"rank":16,"n":19},"csm_growth":{"v":-0.182503,"rank":19,"n":19},"release_ratio":{"v":0.058031,"rank":19,"n":19},"nb_to_release":{"v":4.034193,"rank":2,"n":19},"nb_csm_margin":{"v":0.092178,"rank":10,"n":19},"acq_cost_ratio":{"v":0.181373,"rank":6,"n":18},"nb_claims_ratio":{"v":0.693902,"rank":12,"n":18},"onerous_ratio":{"v":0.056735,"rank":9,"n":19},"rev_share":{"v":0.001587,"rank":16,"n":19},"csm_share":{"v":0.001147,"rank":16,"n":19},"nb_csm_share":{"v":0.002158,"rank":16,"n":19}}}},"size_rank":16,"tier":2},{"name":"Saha Life","short":"Saha","legal":"Saha Life Insurance PCL","ra":"disaggregated","units":"face Baht, notes Baht","y":{"2025Q3":{"raw":{"ra_release":25.248502,"bel_release":244.111586,"paa_revenue":0.0,"other_revenue":0.0,"incurred_claims":-188.072643,"past_service":12.676846,"loss_component":-46.688489,"acq_recovery":14.791365,"acq_amortisation":-14.791365,"net_investment_income":163.853063,"ifie":-91.080972,"other_expense":-43.455376,"other_income":0.071797,"income_tax":-7.963508,"net_profit":115.807767,"reinsurance_result":-13.719602,"csm_nb":3.522123,"csm_accretion":4.715777,"csm_future_service":83.749271,"csm_release":-60.826563,"nb_pv_premium":564.025896,"nb_pv_acq":142.736486,"nb_pv_claims":484.030372,"nb_ra":42.571586,"nb_csm":3.522123,"csm_open":250.261718,"csm_close":281.422324,"nb_loss_component":108.834671,"insurance_revenue":344.978017,"insurance_service_expense":-236.875652},"m":{"insurance_revenue":{"v":344.978017,"rank":17,"n":19},"net_profit":{"v":115.807767,"rank":16,"n":19},"csm_close":{"v":281.422324,"rank":17,"n":19},"nb_csm":{"v":3.522123,"rank":18,"n":19},"nb_pv_premium":{"v":564.025896,"rank":18,"n":19},"isr_gross":{"v":108.102365,"rank":15,"n":19},"ism_gross":{"v":0.31336,"rank":8,"n":19},"ism_net":{"v":0.273591,"rank":9,"n":19},"inv_margin":{"v":0.210947,"rank":9,"n":19},"other_ratio":{"v":-0.125758,"rank":14,"n":19},"tax_ratio":{"v":-0.023084,"rank":6,"n":19},"npm":{"v":0.335696,"rank":8,"n":19},"current_loss_ratio":{"v":0.617262,"rank":13,"n":19},"csm_release_share":{"v":0.17632,"rank":11,"n":19},"csm_growth":{"v":0.124512,"rank":5,"n":19},"release_ratio":{"v":0.236968,"rank":2,"n":19},"nb_to_release":{"v":0.057904,"rank":19,"n":19},"nb_csm_margin":{"v":0.006245,"rank":19,"n":19},"acq_cost_ratio":{"v":0.253067,"rank":2,"n":18},"nb_claims_ratio":{"v":0.85817,"rank":1,"n":18},"onerous_ratio":{"v":30.900304,"rank":1,"n":19},"rev_share":{"v":0.001549,"rank":17,"n":19},"csm_share":{"v":0.000454,"rank":17,"n":19},"nb_csm_share":{"v":5.8e-05,"rank":18,"n":19}}}},"size_rank":17,"tier":2},{"name":"T Life","short":"T Life","legal":"T Life Assurance PCL","ra":"disaggregated","units":"face Baht, notes Thousand Baht","y":{"2025Q3":{"raw":{"ra_release":26.662,"bel_release":183.209,"paa_revenue":0.0,"other_revenue":0.0,"incurred_claims":-157.255,"past_service":17.722,"loss_component":-21.729,"acq_recovery":79.649,"acq_amortisation":-79.649,"net_investment_income":226.154726,"ifie":-131.118543,"other_expense":-50.825237,"other_income":0.007272,"income_tax":-3.971114,"net_profit":99.382942,"reinsurance_result":-38.537742,"csm_nb":10.55,"csm_accretion":-1.433,"csm_future_service":31.458,"csm_release":-49.065,"nb_pv_premium":1272.158,"nb_pv_acq":186.47,"nb_pv_claims":1086.111,"nb_ra":32.542,"nb_csm":10.55,"csm_open":138.287,"csm_close":129.797,"nb_loss_component":43.515,"insurance_revenue":338.584265,"insurance_service_expense":-240.910685},"m":{"insurance_revenue":{"v":338.584265,"rank":18,"n":19},"net_profit":{"v":99.382942,"rank":17,"n":19},"csm_close":{"v":129.797,"rank":18,"n":19},"nb_csm":{"v":10.55,"rank":17,"n":19},"nb_pv_premium":{"v":1272.158,"rank":17,"n":19},"isr_gross":{"v":97.67358,"rank":16,"n":19},"ism_gross":{"v":0.288476,"rank":10,"n":19},"ism_net":{"v":0.174656,"rank":12,"n":19},"inv_margin":{"v":0.280687,"rank":6,"n":19},"other_ratio":{"v":-0.15009,"rank":17,"n":19},"tax_ratio":{"v":-0.011729,"rank":4,"n":19},"npm":{"v":0.293525,"rank":12,"n":19},"current_loss_ratio":{"v":0.481946,"rank":18,"n":19},"csm_release_share":{"v":0.144912,"rank":13,"n":19},"csm_growth":{"v":-0.061394,"rank":17,"n":19},"release_ratio":{"v":0.365757,"rank":1,"n":19},"nb_to_release":{"v":0.215021,"rank":18,"n":19},"nb_csm_margin":{"v":0.008293,"rank":18,"n":19},"acq_cost_ratio":{"v":0.146578,"rank":9,"n":18},"nb_claims_ratio":{"v":0.853755,"rank":2,"n":18},"onerous_ratio":{"v":4.124645,"rank":2,"n":19},"rev_share":{"v":0.00152,"rank":18,"n":19},"csm_share":{"v":0.000209,"rank":18,"n":19},"nb_csm_share":{"v":0.000174,"rank":17,"n":19}}}},"size_rank":18,"tier":2},{"name":"BUI Life","short":"BUI","legal":"BUI Life Insurance PCL","ra":"not_disaggregated","units":"face Baht, notes Baht","y":{"2025Q3":{"raw":{"ra_release":4.965838,"bel_release":29.617034,"paa_revenue":0.0,"other_revenue":-1.043516,"incurred_claims":-25.426354,"past_service":-0.405464,"loss_component":-6.918377,"acq_recovery":0.70202,"acq_amortisation":-0.70202,"net_investment_income":30.092383,"ifie":-1.653471,"other_expense":-26.574978,"other_income":0.000781,"income_tax":0.058231,"net_profit":3.661624,"reinsurance_result":0.0,"csm_nb":3.193234,"csm_accretion":0.071109,"csm_future_service":-1.94007,"csm_release":-0.941748,"nb_pv_premium":99.776843,"nb_pv_acq":null,"nb_pv_claims":null,"nb_ra":10.834416,"nb_csm":3.193234,"csm_open":4.402524,"csm_close":4.785048,"nb_loss_component":6.053491,"insurance_revenue":35.190894,"insurance_service_expense":-33.452216},"m":{"insurance_revenue":{"v":35.190894,"rank":19,"n":19},"net_profit":{"v":3.661624,"rank":18,"n":19},"csm_close":{"v":4.785048,"rank":19,"n":19},"nb_csm":{"v":3.193234,"rank":19,"n":19},"nb_pv_premium":{"v":99.776843,"rank":19,"n":19},"isr_gross":{"v":1.738678,"rank":19,"n":19},"ism_gross":{"v":0.049407,"rank":17,"n":19},"ism_net":{"v":0.049407,"rank":17,"n":19},"inv_margin":{"v":0.808133,"rank":2,"n":19},"other_ratio":{"v":-0.755144,"rank":19,"n":19},"tax_ratio":{"v":0.001655,"rank":1,"n":19},"npm":{"v":0.10405,"rank":15,"n":19},"current_loss_ratio":{"v":0.754404,"rank":11,"n":19},"csm_release_share":{"v":0.026761,"rank":19,"n":19},"csm_growth":{"v":0.086887,"rank":8,"n":19},"release_ratio":{"v":0.219261,"rank":3,"n":19},"nb_to_release":{"v":3.390752,"rank":3,"n":19},"nb_csm_margin":{"v":0.032004,"rank":17,"n":19},"onerous_ratio":{"v":1.895724,"rank":3,"n":19},"rev_share":{"v":0.000158,"rank":19,"n":19},"csm_share":{"v":8e-06,"rank":19,"n":19},"nb_csm_share":{"v":5.3e-05,"rank":19,"n":19}}}},"size_rank":19,"tier":2}],"industry":{"2025Q3":{"insurance_revenue":{"agg":222683.227322,"median":4385.276,"n":19},"net_profit":{"agg":57614.417074,"median":623.802782,"n":19},"csm_close":{"agg":620552.056177,"median":9119.790413,"n":19},"nb_csm":{"agg":60523.112745,"median":1060.726,"n":19},"nb_pv_premium":{"agg":511569.086539,"median":9363.443555,"n":19},"isr_gross":{"agg":63820.40862,"median":1134.734679,"n":19},"ism_gross":{"agg":0.286597,"median":0.288476,"n":19},"ism_net":{"agg":0.251193,"median":0.263692,"n":19},"inv_margin":{"agg":0.120005,"median":0.144368,"n":19},"other_ratio":{"agg":-0.053064,"median":-0.047966,"n":19},"tax_ratio":{"agg":-0.059406,"median":-0.073453,"n":19},"npm":{"agg":0.258728,"median":0.311523,"n":19},"current_loss_ratio":{"agg":0.681103,"median":0.764006,"n":19},"csm_release_share":{"agg":0.223229,"median":0.211244,"n":19},"csm_growth":{"agg":0.043038,"median":0.057128,"n":19},"release_ratio":{"agg":0.098886,"median":0.120286,"n":19},"nb_to_release":{"agg":1.217538,"median":1.221717,"n":19},"nb_csm_margin":{"agg":0.118309,"median":0.092178,"n":19},"acq_cost_ratio":{"agg":0.146236,"median":0.146428,"n":18},"nb_claims_ratio":{"agg":0.716486,"median":0.74234,"n":18},"onerous_ratio":{"agg":0.026231,"median":0.044595,"n":19},"sum_csm_open":{"agg":594946.847793,"median":null,"n":19},"sum_csm_nb":{"agg":60523.112745,"median":null,"n":19},"sum_csm_accretion":{"agg":14622.465529,"median":null,"n":19},"sum_csm_future_service":{"agg":169.05988,"median":null,"n":19},"sum_csm_release":{"agg":-49709.429767,"median":null,"n":19},"sum_csm_close":{"agg":620552.056177,"median":null,"n":19}}},"industry_common":{},"three_month":{"AIA Thailand":{"2025Q3":{"insurance_revenue":22789.0,"insurance_service_expense":-17736.0,"reinsurance_result":-1721.0,"net_investment_income":14036.0,"ifie":-12034.0,"other_expense":-1193.0,"other_income":224.0,"income_tax":-885.0,"net_profit":3480.0}},"Thai Life":{"2025Q3":{"insurance_revenue":9196.132,"insurance_service_expense":-5890.151,"reinsurance_result":-119.694,"net_investment_income":4994.632,"ifie":-4000.646,"other_expense":-427.428,"other_income":22.816,"income_tax":-739.392,"net_profit":3036.269}},"Muang Thai Life":{"2025Q3":{"insurance_revenue":7751.168,"insurance_service_expense":-6126.857,"reinsurance_result":-126.178,"net_investment_income":6151.683,"ifie":-4113.303,"other_expense":-896.203,"other_income":39.892,"income_tax":-518.543,"net_profit":2161.659}},"Allianz Ayudhya":{"2025Q3":{"insurance_revenue":7061.685,"insurance_service_expense":-4279.888,"reinsurance_result":-59.43,"net_investment_income":2009.29,"ifie":-2086.928,"other_expense":-263.901,"other_income":24.187,"income_tax":-549.959,"net_profit":1855.056}},"FWD Thailand":{"2025Q3":{"insurance_revenue":6618.071,"insurance_service_expense":-4422.116,"reinsurance_result":-110.624,"net_investment_income":6468.423,"ifie":-4636.789,"other_expense":-305.87,"other_income":1.044,"income_tax":-781.639,"net_profit":2830.5}},"Krungthai-AXA Life":{"2025Q3":{"insurance_revenue":6301.855,"insurance_service_expense":-4223.042,"reinsurance_result":-106.173,"net_investment_income":3538.042,"ifie":-2152.484,"other_expense":-239.933,"other_income":9.645,"income_tax":-602.337,"net_profit":2525.573}},"Bangkok Life":{"2025Q3":{"insurance_revenue":3354.619,"insurance_service_expense":-2256.04,"reinsurance_result":-35.336,"net_investment_income":3892.673,"ifie":-2108.378,"other_expense":-98.119,"other_income":20.251,"income_tax":-464.459,"net_profit":2305.211}},"Prudential Life":{"2025Q3":{"insurance_revenue":3235.657,"insurance_service_expense":-2735.846,"reinsurance_result":-65.956,"net_investment_income":1972.027,"ifie":-3534.738,"other_expense":-42.056,"other_income":7.45,"income_tax":191.276,"net_profit":-972.186}},"Generali Life":{"2025Q3":{"insurance_revenue":1952.100476,"insurance_service_expense":-1708.475881,"reinsurance_result":-55.124114,"net_investment_income":298.918459,"ifie":-255.554418,"other_expense":-104.135101,"other_income":0.376213,"income_tax":5.598363,"net_profit":133.703997}},"Ocean Life":{"2025Q3":{"insurance_revenue":1401.56,"insurance_service_expense":-912.903,"reinsurance_result":1.372,"net_investment_income":1057.177,"ifie":-520.362,"other_expense":-200.099,"other_income":22.028,"income_tax":-127.389,"net_profit":721.384}},"CHUBB Life":{"2025Q3":{"insurance_revenue":1436.447632,"insurance_service_expense":-884.56107,"reinsurance_result":-614.832782,"net_investment_income":207.475561,"ifie":-69.714275,"other_expense":-85.156828,"other_income":1.57338,"income_tax":-14.987933,"net_profit":-23.756315}},"Tokio Marine Life":{"2025Q3":{"insurance_revenue":1442.291922,"insurance_service_expense":-1056.315156,"reinsurance_result":-48.122537,"net_investment_income":402.940357,"ifie":-362.579267,"other_expense":-205.115018,"other_income":9.6563,"income_tax":-38.166439,"net_profit":144.590162}},"Dhipaya Life":{"2025Q3":{"insurance_revenue":958.20052,"insurance_service_expense":-972.990863,"reinsurance_result":-15.919052,"net_investment_income":415.108981,"ifie":-243.775746,"other_expense":-43.629885,"other_income":0.02827,"income_tax":-19.448807,"net_profit":77.573418}},"Southeast Life":{"2025Q3":{"insurance_revenue":946.455,"insurance_service_expense":-589.944,"reinsurance_result":-18.219,"net_investment_income":899.901,"ifie":-369.681,"other_expense":-204.729,"other_income":1.355,"income_tax":-119.725,"net_profit":545.413}},"Samsung Life":{"2025Q3":{"insurance_revenue":611.954,"insurance_service_expense":-419.087,"reinsurance_result":-5.178,"net_investment_income":229.348,"ifie":-159.293,"other_expense":-35.081,"other_income":6.64,"income_tax":-53.651,"net_profit":175.652}},"T Life":{"2025Q3":{"insurance_revenue":124.162153,"insurance_service_expense":-44.009645,"reinsurance_result":-23.793892,"net_investment_income":72.054094,"ifie":-42.300792,"other_expense":-15.839557,"other_income":0.002895,"income_tax":-3.971114,"net_profit":66.304142}},"BUI Life":{"2025Q3":{"insurance_revenue":14.794311,"insurance_service_expense":-9.309124,"reinsurance_result":0.0,"net_investment_income":14.647332,"ifie":-0.39635,"other_expense":-5.431702,"other_income":0.000156,"income_tax":0.292849,"net_profit":14.597472}},"Phillip Life":{"2025Q3":{"insurance_revenue":118.742517,"insurance_service_expense":-102.124162,"reinsurance_result":-0.746563,"net_investment_income":646.419397,"ifie":-55.694057,"other_expense":-6.388131,"other_income":0.984986,"income_tax":-109.702788,"net_profit":491.491199}},"Saha Life":{"2025Q3":{"insurance_revenue":132.425823,"insurance_service_expense":-49.879635,"reinsurance_result":-8.483272,"net_investment_income":193.797565,"ifie":-59.507507,"other_expense":-35.837228,"other_income":-2.686656,"income_tax":-15.720664,"net_profit":154.108426}}},"metric_defs":[{"code":"insurance_revenue","label":"Insurance revenue","unit":"thb_m","better":true,"group":"scale","formula":"Total insurance revenue"},{"code":"net_profit","label":"Net profit","unit":"thb_m","better":true,"group":"scale","formula":"Net profit for the year"},{"code":"csm_close","label":"CSM closing","unit":"thb_m","better":true,"group":"scale","formula":"Contractual service margin at year end"},{"code":"nb_csm","label":"New-business CSM","unit":"thb_m","better":true,"group":"scale","formula":"CSM from contracts initially recognised in the year"},{"code":"nb_pv_premium","label":"New-business PV premium","unit":"thb_m","better":true,"group":"scale","formula":"PV of future inflows on new business"},{"code":"isr_gross","label":"Insurance service result","unit":"thb_m","better":true,"group":"profitability","formula":"Insurance revenue + insurance service expense"},{"code":"ism_gross","label":"Insurance service margin","unit":"pct","better":true,"group":"profitability","formula":"(Insurance revenue + insurance service expense) / insurance revenue"},{"code":"ism_net","label":"Insurance service margin after reinsurance","unit":"pct","better":true,"group":"profitability","formula":"(Insurance service result + reinsurance result) / insurance revenue"},{"code":"inv_margin","label":"Investment result net of IFIE","unit":"pct","better":true,"group":"profitability","formula":"(Net investment income + net insurance finance expense) / insurance revenue"},{"code":"other_ratio","label":"Other expense, net","unit":"pct","better":true,"group":"profitability","formula":"(Other expense + other income) / insurance revenue"},{"code":"tax_ratio","label":"Income tax","unit":"pct","better":true,"group":"profitability","formula":"Income tax / insurance revenue"},{"code":"npm","label":"Net profit margin","unit":"pct","better":true,"group":"profitability","formula":"Net profit / insurance revenue"},{"code":"current_loss_ratio","label":"Current-service loss ratio","unit":"pct","better":false,"group":"profitability","formula":"-(Incurred claims + past service) / (BEL release + RA release + PAA revenue + other revenue + acquisition recovery)"},{"code":"csm_release_share","label":"CSM release in revenue","unit":"pct","better":null,"group":"profitability","formula":"CSM release / insurance revenue"},{"code":"csm_growth","label":"CSM growth","unit":"pct","better":true,"group":"csm","formula":"CSM closing / CSM opening - 1"},{"code":"release_ratio","label":"CSM release ratio","unit":"pct","better":null,"group":"csm","formula":"CSM release / (opening CSM + new business + accretion + future-service changes); quarterly pages annualise it (x 12 / months to date)"},{"code":"nb_to_release","label":"New business / release","unit":"x","better":true,"group":"csm","formula":"CSM from new business / CSM release"},{"code":"nb_csm_margin","label":"New-business CSM margin","unit":"pct","better":true,"group":"new_business","formula":"CSM from new business / PV premium of new business"},{"code":"acq_cost_ratio","label":"Acquisition cost ratio","unit":"pct","better":false,"group":"new_business","formula":"PV acquisition cost / PV premium of new business"},{"code":"nb_claims_ratio","label":"Claims & benefits ratio (NB)","unit":"pct","better":false,"group":"new_business","formula":"PV claim outgo / PV premium of new business"},{"code":"onerous_ratio","label":"Onerous new business","unit":"pct","better":false,"group":"new_business","formula":"Loss component on new business / CSM from new business"},{"code":"rev_share","label":"Share of insurance revenue","unit":"pct","better":true,"group":"scale","formula":"Company insurance revenue / sum over all insurers covered"},{"code":"csm_share","label":"Share of closing CSM","unit":"pct","better":true,"group":"scale","formula":"Company closing CSM / sum over all insurers covered"},{"code":"nb_csm_share","label":"Share of new-business CSM","unit":"pct","better":true,"group":"scale","formula":"Company new-business CSM / sum over all insurers covered"}],"check_defs":[{"id":"revenue_split","label":"Revenue split = total insurance revenue"},{"id":"expense_split","label":"Expense breakdown = total insurance service expense"},{"id":"net_profit","label":"Net profit bridge = net profit as printed"},{"id":"csm_rollforward","label":"CSM roll-forward = closing CSM"},{"id":"nb_csm","label":"New business: PV inflow - acquisition - claims - RA + loss component = CSM"},{"id":"nb_consistency","label":"CSM roll-forward new business = new-business note"}],"checks":{"AIA Thailand":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Allianz Ayudhya":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"BUI Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":-0.00777},"expense_split":{"ok":true,"status":"OK","diff":1e-06},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":1e-06},"nb_csm":{"ok":true,"status":"N/A","diff":null},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Bangkok Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"CHUBB Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Dhipaya Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":-1e-06},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"FWD Thailand":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Generali Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.000177},"expense_split":{"ok":true,"status":"OK","diff":0.000264},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Krungthai-AXA Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Muang Thai Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Ocean Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Phillip Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":-0.000263},"expense_split":{"ok":true,"status":"OK","diff":0.000267},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Prudential Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Saha Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":-1e-06},"expense_split":{"ok":true,"status":"OK","diff":1e-06},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":2e-06},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Samsung Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Southeast Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"T Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.000735},"expense_split":{"ok":true,"status":"OK","diff":-0.000315},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Thai Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}},"Tokio Marine Life":{"2025Q3":{"revenue_split":{"ok":true,"status":"OK","diff":0.0},"expense_split":{"ok":true,"status":"OK","diff":0.0},"net_profit":{"ok":true,"status":"OK","diff":0.0},"csm_rollforward":{"ok":true,"status":"OK","diff":0.0},"nb_csm":{"ok":true,"status":"OK","diff":0.0},"nb_consistency":{"ok":true,"status":"OK","diff":0.0}}}},"flags":[{"company":"BUI Life","fiscal_year":"2025Q3","flag":"release_ratio","message":"CSM release ratio 21.9% is outside 5%-20%","message_ko":"CSM 상각률 21.9%가 5%~20% 범위를 벗어남"},{"company":"BUI Life","fiscal_year":"2025Q3","flag":"nb_to_release","message":"New business / release 3.4x is above 3.0x","message_ko":"신계약 CSM ÷ 상각 3.4배로 3.0배 초과"},{"company":"BUI Life","fiscal_year":"2025Q3","flag":"onerous_nb","message":"Losses on onerous new business (6.1m) exceed new-business CSM (3.2m)","message_ko":"손실부담 신계약 손실(6.1백만)이 신계약 CSM(3.2백만)보다 큼"},{"company":"CHUBB Life","fiscal_year":"2025Q3","flag":"nb_to_release","message":"New business / release 8.6x is above 3.0x","message_ko":"신계약 CSM ÷ 상각 8.6배로 3.0배 초과"},{"company":"Phillip Life","fiscal_year":"2025Q3","flag":"nb_to_release","message":"New business / release 4.0x is above 3.0x","message_ko":"신계약 CSM ÷ 상각 4.0배로 3.0배 초과"},{"company":"Prudential Life","fiscal_year":"2025Q3","flag":"loss_year","message":"Net loss of -366.8m","message_ko":"당기순손실 -366.8백만"},{"company":"Saha Life","fiscal_year":"2025Q3","flag":"release_ratio","message":"CSM release ratio 23.7% is outside 5%-20%","message_ko":"CSM 상각률 23.7%가 5%~20% 범위를 벗어남"},{"company":"Saha Life","fiscal_year":"2025Q3","flag":"onerous_nb","message":"Losses on onerous new business (108.8m) exceed new-business CSM (3.5m)","message_ko":"손실부담 신계약 손실(108.8백만)이 신계약 CSM(3.5백만)보다 큼"},{"company":"T Life","fiscal_year":"2025Q3","flag":"negative_accretion","message":"CSM interest accretion is negative (-1.4m) on a positive opening CSM","message_ko":"기초 CSM이 양수인데 CSM 이자부리가 음수(-1.4백만)"},{"company":"T Life","fiscal_year":"2025Q3","flag":"release_ratio","message":"CSM release ratio 36.6% is outside 5%-20%","message_ko":"CSM 상각률 36.6%가 5%~20% 범위를 벗어남"},{"company":"T Life","fiscal_year":"2025Q3","flag":"onerous_nb","message":"Losses on onerous new business (43.5m) exceed new-business CSM (10.6m)","message_ko":"손실부담 신계약 손실(43.5백만)이 신계약 CSM(10.6백만)보다 큼"}],"company_notes":[{"company":"AIA Thailand","sheet_title":"AIA Thailand - extracted from 21_FS-AIA_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (PwC). Million Baht. SCI three months p.5, nine months p.7: the insurance finance expense and the tax expense are printed as positive figures (the subtotals show they are deducted); they are turned negative. Revenue 15.1 p.70 (three and nine months; non-PAA components + PAA revenue) and expenses 15.2 p.71 (printed positive, turned negative; incurred claims = claims and benefits + other insurance service expenses; no past-service line). CSM roll-forward of issued non-PAA contracts p.75 (สิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568); future-service change = change in estimates (CSM column; the onerous line has none). New business 15.4 p.85 (issued contracts; the reinsurance table is p.86). RA release uses 15.1 (625), not the AOC RA (519). Other expense = finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).","extraction_note":"Source: 21_FS-AIA_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 103 pages, text layer: no (scanned), SHA-256 3ed5fe78da0e8ac9279bf0333f4dc71cf84a07b09b3b6547360aa6baf48a75fc (sources/2025Q3/registry.csv)."},{"company":"Thai Life","sheet_title":"Thai Life - extracted from 09_FS_THAILIFE_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (KPMG). Thousand Baht. The SCI (three months p.6, nine months p.8) has equity-method and separate columns; the separate columns are used (owner decision). Note 12.1 1) (p.109, nine months, both years) prints expenses as positive figures; they are turned negative; incurred claims = non-PAA claims + PAA insurance service expense; no past-service line. Other revenue = experience adjustment. CSM roll-forward 9.1 2) p.82 (measurement components, 30 กันยายน 2568). Future-service change = change in estimates (CSM column). New business 9.1 4) p.86. RA release uses 12.1 (1,440,928), not the AOC RA (1,434,372). The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 09_FS_THAILIFE_3Q2025.pdf (Reviewed interim financial statements 3Q2025 (Thai)), 127 pages, text layer: no (scanned), SHA-256 5ebea79a7c7512a1369529282c03297201fcf6eab33eb25ca5c2d0b9ef4977c7 (sources/2025Q3/registry.csv)."},{"company":"Muang Thai Life","sheet_title":"Muang Thai Life - extracted from 15_FS_MTL_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers; printed folio + 1 = file page). Reviewed, not audited (KPMG). Thousand Baht. The SCI (three months p.6, nine months p.7) has equity-method and separate columns; the separate columns are used (owner decision). Note 13.1 (p.62, three and nine months, both years) prints expenses as positive figures; they are turned negative (the bracketed past-service figure becomes positive). Acquisition amortisation (1,313,380) covers PAA too. CSM roll-forward 12.1 ข. p.51 (nine months); future-service change = change in estimates (CSM column). New business 12.1 ค. p.53 (nine months). RA release uses 13.1 (919,929), not the AOC RA (922,576). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 15_FS_MTL_3Q2025.pdf (Reviewed interim financial statements 3Q2025 (Thai)), 73 pages, text layer: no (scanned), SHA-256 46f76c57a889f70aad8bd71008fd68d396c8a1109946a4a6bad27d5f5a053d4d (sources/2025Q3/registry.csv)."},{"company":"Allianz Ayudhya","sheet_title":"Allianz Ayudhya - extracted from 20_FS_CAR_AYU_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). CAR disclosure p.1-3, reviewed interim statements from p.4 (auditor PwC). Thousand Baht. SCI three months p.7, nine months p.9. Revenue and expenses 24.1 (p.82, printed sideways; columns non-PAA / PAA / total, nine months, both years): incurred claims and acquisition amortisation include PAA. This edition adds a row 'impairment of the insurance acquisition cash flow asset' ((40,851), PAA), which has no line item; it is added to acquisition amortisation so that the expense total closes (owner decision 2026-11-11). CSM roll-forward 19.1.2 p.72 (ยอดสุทธิ ณ วันที่ 30 กันยายน พ.ศ. 2568); future-service change = change in estimates + onerous line (7) + experience adjustment (CSM column). New business 19.1.3 p.74: no total column; the onerous column is nil, so the non-onerous column is the total. The opening CSM is 74,348,041 (as in 2Q2025; 1Q2025 printed 74,722,569). Other revenue = อื่นๆ (24.1). RA release uses 24.1 (463,143), not the AOC RA (462,769). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.7).","extraction_note":"Source: 20_FS_CAR_AYU_3Q2025.pdf (CAR disclosure with reviewed condensed interim financial statements 3Q2025 (Thai)), 91 pages, text layer: no (scanned), SHA-256 13e7979454d31ec2dac1b66a6eec9173afaf2abd7782fa99c2ec26e33c98446b (sources/2025Q3/registry.csv)."},{"company":"FWD Thailand","sheet_title":"FWD Thailand - extracted from 19_FS_FWD_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (EY). Thousand Baht. SCI three months p.5, nine months p.7. Note 6 nine months 2568: revenue, expenses and reinsurance p.53 (columns non-PAA / PAA / total). FWD presents insurance contract balances as negative, so note 7.2 (CSM roll-forward, p.57) and 7.3 (new business, p.59) print every CSM and new-business figure with the opposite sign: those rules carry sign -1 (the PV inflow of new business, printed positive, keeps +1). Future-service change = change in estimates + onerous line (nil in the CSM column) + experience adjustment (CSM column). Accretion = the finance row recognised in profit or loss. RA release uses note 6 (447,015), not the AOC RA (544,899). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).","extraction_note":"Source: 19_FS_FWD_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 93 pages, text layer: no (scanned), SHA-256 8221aad58c4a50d9f5e8a8bab96f8415530dea11350640e05f386fbe9039516f (sources/2025Q3/registry.csv)."},{"company":"Krungthai-AXA Life","sheet_title":"Krungthai-AXA Life - extracted from 02_FS_AXA_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (EY). Thousand Baht. SCI three months p.5, nine months p.7. Note 6 nine months, total columns: revenue p.50, expenses and reinsurance p.51 (incurred claims include PAA). The insurance-contract notes are split by product group: 7 non-participating, 8 participating (indirect), 9 universal life, 10 participating (direct) / unit-linked. CSM roll-forward = sum of the CSM columns of 7.2 + 8.2 + 9.2 + 10.2 (p.58, 63, 68, 72; nine months); new business = 7.3 + 8.3 + 10.3 (p.60, 65, 74; universal life wrote none). Each summed item records the group 7 page. Movements are printed with the balance sign (as in 2Q2025). Future-service change = change in estimates + experience adjustment (CSM columns). Accretion: in this edition the CSM columns of 7.2 and 8.2 split the insurance-finance row into a profit-or-loss part (741,032 and 223,574) and an other-comprehensive-income part (18,880 and (305,358)); both parts are taken into accretion so that the roll-forward closes (owner decision 2026-11-11; the profit-or-loss part alone would be 965,966). Group 10 has no finance row in the CSM column. Other revenue = รายการอื่น. Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).","extraction_note":"Source: 02_FS_AXA_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 108 pages, text layer: no (scanned), SHA-256 989806986a583b46cab3fc18a633c9b134824835378be7fbcbf6b39fb834fce8 (sources/2025Q3/registry.csv)."},{"company":"Bangkok Life","sheet_title":"Bangkok Life - extracted from 01_FS_BANGKOK_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (Deloitte). Thousand Baht. The SCI has consolidated and separate columns; the separate columns are used (owner decision): three months p.6, nine months p.8. Its tax line is an expense printed positive (profit before tax - tax = net profit), turned negative. Note 21.1 nine months is printed once for the consolidated and separate statements (p.98 revenue and expenses; columns GMM 7.1 / PAA 7.2 / VFA 7.3 / total); expenses are printed positive (turned negative). CSM roll-forward = GMM (p.59, closing p.60) + VFA (p.74), CSM columns; new business = GMM p.62 + VFA p.76 totals. Each summed item records the GMM page. Future-service change = change in estimates + experience adjustment. VFA accretion is nil. Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 01_FS_BANGKOK_3Q2025.pdf (Reviewed condensed consolidated and separate interim financial statements 3Q2025 (Thai)), 115 pages, text layer: no (scanned), SHA-256 98e5294822e7f7f2500f296e86b0766157063729118368b249ede359362ed2f2 (sources/2025Q3/registry.csv)."},{"company":"Prudential Life","sheet_title":"Prudential Life - extracted from 13_FS-PRUDENTIAL_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (EY). Thousand Baht. SCI three months p.5, nine months p.7. Unlike 1Q and 2Q2025 (notes 7 non-participating and 8 participating), this edition reports issued contracts in one note 7 (as the 2026 interims do); its opening CSM (18,958,809) equals the 2Q2025 sum of the two groups. Revenue and expenses from note 6, nine months (p.32). CSM roll-forward 7.2 p.36; new business 7.3 p.38. Future-service change = change in estimates + experience adjustment (CSM column). RA release uses note 6 (278,025), not the AOC RA (283,840). Other revenue = รายการอื่น. The three-month tax line, 'add (less): income (expense)', is a credit (191,276), kept positive; the quarter is a net loss. Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).","extraction_note":"Source: 13_FS-PRUDENTIAL_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 59 pages, text layer: no (scanned), SHA-256 98e2fa9fee403b58239999a715f875d97cf90bb28cc027e7a3596aa6811b197f (sources/2025Q3/registry.csv)."},{"company":"Generali Life","sheet_title":"Generali Life - extracted from 04_FS_GENERALI_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated); the insurance notes repeat the tables per portfolio after the totals. Text layer; figures read from the page text (file page numbers; printed folio + 1 = file page). Reviewed, not audited (KPMG). Units differ: the SCI (three months p.6, nine months p.8) is in Baht, the notes in thousand Baht. Revenue 9.1.1 nine months p.148 and PAA revenue and expenses p.149 (columns non-participating / participating / PAA / total). The total CSM roll-forward 'กระทบยอดการวัดมูลค่าองค์ประกอบ... - ไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย' (30 กันยายน 2568) runs over p.76-78; new business p.82. The opening CSM is printed 3,140,270 here (1Q2025: 3,140,271). Future-service change = change in estimates (the onerous-contract line has no CSM). The CSM insurance-finance row is 320,233 for the nine months (1Q2025: (57,769)): recorded as printed. The income tax line, labelled 'expense (income)', prints both the nine-month and the three-month credit in brackets (profit before tax -/+ the line = net profit); both take sign -1. RA release uses 9.1.1 (28,818), equal to the AOC RA. Other revenue = อื่นๆ (9.1.1, nil). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 04_FS_GENERALI_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 171 pages, text layer: yes (statements and notes; Thai glyphs partly garbled, figures intact), SHA-256 37c8ac582a58476938ebb2fd53ae7419cee521d160cd1033367a4a28d2172515 (sources/2025Q3/registry.csv)."},{"company":"Ocean Life","sheet_title":"Ocean Life - extracted from 11_FS_OCEAN_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (KPMG). Thousand Baht. SCI three months p.6, nine months p.7. Revenue and expenses 10.1 nine months p.62 (columns non-PAA / PAA / total). CSM roll-forward 9.1.2 (non-PAA contracts) p.50 (30 กันยายน 2568); new business 9.1.3 p.52. Future-service change = change in estimates adjusting the CSM (the onerous line has no CSM entry). RA release uses 10.1 (130,971), not the AOC RA (131,062). New-business PV inflows are printed negative and turned positive. Other expense = other operating expenses (no separate other finance cost line). The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 11_FS_OCEAN_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 75 pages, text layer: no (scanned), SHA-256 60ce13e3a04b1c4f92dfacf78d406e2cad63e758ad2bdfbdde5a04102a5ffe74 (sources/2025Q3/registry.csv)."},{"company":"CHUBB Life","sheet_title":"CHUBB Life - extracted from 05_FS_CHUBB_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (PwC). Baht, face and notes. SCI three months p.5, nine months p.7. No PAA business. Revenue and expenses from 21.1 (p.65, nine months, both years). 15.1.2 (CSM roll-forward, p.54, nine months) and 15.1.3 (new business, p.56, 30 กันยายน 2568 total column) print the normal sign (as in 2Q2025). Future-service change = change in estimates + the onerous-contract estimate line (nil in the CSM column for the nine months, though 2Q2025 printed 142,572,994 there). The loss component is a net reversal (583,072,366). The nine-month SCI prints one net line 'รายได้(ค่าใช้จ่าย)อื่น' (3,160,276) and the three-month SCI 'รายได้อื่น' (1,573,380); both are recorded as other income (as in 2Q2025). Other revenue = รายการอื่น (1,503). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).","extraction_note":"Source: 05_FS_CHUBB_3Q2025.pdf (Reviewed condensed interim financial information 3Q2025 (Thai)), 72 pages, text layer: no (scanned), SHA-256 a73a76cd1a96f5253eac287d974fc1dd0b58a668d8843a7e766694a22ded9ca6 (sources/2025Q3/registry.csv)."},{"company":"Tokio Marine Life","sheet_title":"Tokio Marine Life - extracted from 07_FS-TOKIO_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (PwC). Face and notes in Baht. SCI three months p.5, nine months p.7. Note 16 nine months (landscape, p.71 revenue and p.72 expenses, read turned -90; columns non-PAA / PAA / total, both years) carries the insurance revenue and expense analysis; the three-month tables are p.67-70. Other revenue = experience adjustment (note 16). CSM roll-forward 14.1.2 p.54 (30 กันยายน พ.ศ. 2568); future-service change = change in estimates + experience adjustment in the CSM column (new business excluded). New business 14.1.3 p.56. The CSM release now agrees between 14.1.2 and note 16 (701,612,805). The opening CSM (7,589,576,267, as in 1Q2025) differs from the 1 January 2568 CSM in the FY2025 annual statements (7,582,675,619). RA release uses note 16 (135,963,723), not the AOC RA (137,534,297). Other expense = operating expenses + other finance costs. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).","extraction_note":"Source: 07_FS-TOKIO_3Q2025.pdf (Reviewed condensed interim financial information 3Q2025 (Thai)), 80 pages, text layer: no (scanned), SHA-256 ad0b3310acd0783ffcc66c469e0c5ee39d8c2a51252a74b42bae616a32756546 (sources/2025Q3/registry.csv)."},{"company":"Dhipaya Life","sheet_title":"Dhipaya Life - extracted from 08_FS_CAR_TIPLIFE_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Dhipaya Life Assurance. CAR disclosure p.1-3, reviewed statements (EY) from p.4; scanned, read locally, pages located by their headings (file page numbers). Baht, face and notes. No PAA business. SCI three months p.8, nine months p.10. Issued contracts are reported in two portfolio groups: note 7 (ordinary and others) and note 8 (credit group). Revenue and expenses from note 6 total column (p.51, nine months). CSM roll-forward = sum of the CSM columns of 7.2 (p.55) and 8.2 (p.60); new business = 7.3 (p.57) + 8.3 (p.62) totals. Each summed item records the note 7 page; the heading names the note 8 page. Future-service change = change in estimates + experience adjustment (CSM column). Other revenue = รายการอื่น (note 6). Other expense = other operating expenses (no separate other finance cost line). The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.8).","extraction_note":"Source: 08_FS_CAR_TIPLIFE_3Q2025.pdf (CAR disclosure with reviewed condensed interim financial statements 3Q2025 (Thai)), 88 pages, text layer: no (scanned; text only on one CAR page), SHA-256 be615c594affaadd128753eb8abd68ca0c44500e9c2889c63faff47c33412585 (sources/2025Q3/registry.csv)."},{"company":"Southeast Life","sheet_title":"Southeast Life - extracted from 18_FS_SE_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Text layer (the 2Q2025 edition was a scan); figures read from the page text and checked against the page totals (file page numbers). Reviewed, not audited. Thousand Baht. SCI three months p.6, nine months p.7; both print the tax expense as a positive figure; it is turned negative. Note 11.1 nine months (p.62; columns ordinary / group / annuity / personal accident / total) - the total column is used. No PAA business. CSM roll-forward 9.1.1.2 p.47 (30 กันยายน 2568); future-service change = change in estimates + experience adjustment (CSM column). New business 9.1.1.3 p.49; totals used. RA release uses note 11.1 (171,832), equal to the AOC RA. Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 18_FS_SE_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 76 pages, text layer: yes, SHA-256 3057d54d3fe2844ce50d1525784342de5f272dc4869a967e86529ebc0eaf67ec (sources/2025Q3/registry.csv)."},{"company":"Samsung Life","sheet_title":"Samsung Life - extracted from 06_FS_SAMSUNG_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated); the insurance notes repeat each table for the total (ทั้งหมด) and per portfolio; the total tables are used. Text layer; figures read from the page text (file page numbers). Reviewed, not audited. Thousand Baht, face and notes. SCI three months p.6, nine months p.8. Revenue and expenses 15.1 nine months p.130 (total column). CSM roll-forward 1.2 total p.56-57 (nine months to 30 กันยายน 2568); future-service change = change in estimates (CSM column; the onerous line has none). New business 1.3 total p.76. The opening CSM is printed 4,155,074 (1Q2025: 4,155,073). RA release uses 15.1 (37,777), not the AOC RA (25,464). Other expense = other operating expenses. No PAA business, no other revenue line. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.6).","extraction_note":"Source: 06_FS_SAMSUNG_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 139 pages, text layer: yes (statements and notes), SHA-256 00a81800f8971bc46d477e51eb915976d29be2bf6dc3f1870bd55d1c919adb91 (sources/2025Q3/registry.csv)."},{"company":"T Life","sheet_title":"T Life - extracted from 20_FS_CAR_TLIFE_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). CAR disclosure first, then the review report (Forvis Mazars). Units differ: the statement of profit or loss (p.8, three-month and nine-month columns side by side) is in Baht, the notes in thousand Baht. No PAA business, one portfolio (non-participating). Revenue 4.2.1 p.38 and expenses and reinsurance p.39 (three and nine months, both years). CSM roll-forward 4.3.1.2 p.44-45 (30 กันยายน 2568); new business 4.3.1.3 p.48 (totals used). Future-service change = change in estimates + experience adjustment (CSM column). The CSM insurance-finance row is negative for the nine months ((1,433); 2Q2025: 693): recorded as printed. A tax expense is recognised for the first time in the third quarter (3,971,114 Baht). RA release uses 4.2.1 (LRC basis, 26,662), not the AOC RA (29,982). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the three-month column (p.8).","extraction_note":"Source: 20_FS_CAR_TLIFE_3Q2025.pdf (CAR disclosure with reviewed interim financial information 3Q2025 (Thai)), 73 pages, text layer: no (scanned), SHA-256 506862b15d5fb6ef44dfe86f757595eee55df7fda64b6cd1317e43290a447486 (sources/2025Q3/registry.csv)."},{"company":"BUI Life","sheet_title":"BUI Life - extracted from 12_FS_builife_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). The cover reads บริษัท บางกอกสหประกันชีวิต จำกัด (มหาชน); the name 'BUI Life' is taken from the file name. Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited. Baht with satang, face and notes. The SCI (p.4, three-month and nine-month columns side by side) mixes signs: insurance service expenses are bracketed, but the insurance finance expense, other finance costs and other operating expenses are printed positive (turned negative). The tax line, now labelled 'income (expense)', prints credits for both the nine months (58,231.11) and the three months (292,849.25); kept positive. No reinsurance line. Note 8 nine months (p.63; columns group / ordinary / total) prints expenses positive (turned negative). No PAA business; other revenue = รายการอื่น. CSM roll-forward 9.2 total p.70 (one page in this edition); new business 9.3 p.76 prints only the total of future cash outflows (owner decision: not disclosed, no estimate; the total is the memo figure nb_pv_outflows and reconciles). The nine months are a small profit after a third-quarter profit, with large onerous losses (6,918,377.49). The CSM release is printed 941,748.50 in 9.2 (used) and 949,517.42 in note 8 (7,768.92 Baht apart, within tolerance). RA release uses note 8 (4,965,837.98), not the AOC RA (4,304,589.55). Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI three-month column (p.4).","extraction_note":"Source: 12_FS_builife_3Q2025.pdf (Reviewed condensed interim financial statements 3Q2025 (Thai)), 94 pages, text layer: no (scanned), SHA-256 aac879564af657f5eab4753e5b7283d08b4835b88cb2e1bc61c55e2abc07fbfa (sources/2025Q3/registry.csv)."},{"company":"Phillip Life","sheet_title":"Phillip Life - extracted from 14_FS_CAR_PHILLIP_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Phillip Life Assurance. No 2Q2025 statement was supplied, so there is no previous-quarter extraction to compare with. Scanned; read locally, pages located by their headings (file page numbers; printed folio + 14 = file page). Units differ: the SCI (three months p.8, nine months p.10) is in Baht, the notes in thousand Baht. The SCI has consolidated and separate columns; the separate columns are used (owner decision: separate statements); the subsidiary's share of profit (equity method) is included in other income, as in FY2025 and 1Q2025. Note 6 nine months 2568 (columns non-PAA 7.1 / PAA 7.2 / total): revenue and expenses p.57, reinsurance p.58; incurred claims and acquisition amortisation include PAA. CSM roll-forward (note 7.1.1, reconciliation by measurement component, ณ วันที่ 30 กันยายน 2568) p.63-64; future-service change = change in estimates + experience adjustment (CSM column). New business p.67; totals used (the onerous column shows a CSM of 12,777). RA release uses note 6 (5,491), equal to the AOC RA. Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.8).","extraction_note":"Source: 14_FS_CAR_PHILLIP_3Q2025.pdf (CAR disclosure with reviewed consolidated and separate interim financial statements 3Q2025 (Thai)), 100 pages, text layer: no (scanned), SHA-256 d84c0d1939fabbd725dd609b16abd7a14e2dc5b59a190d4f1bc3fc9fc5044e85 (sources/2025Q3/registry.csv)."},{"company":"Saha Life","sheet_title":"Saha Life - extracted from 16_FS_SAHA_3Q2025.pdf (THB million)","header_note":"Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Saha Life Insurance. Scanned (low-resolution image); read locally, pages located by their headings (file page numbers). Reviewed, not audited. Baht with satang, face and notes. SCI p.4 prints the three-month and nine-month columns side by side; the tax line, labelled 'expense (income)', prints amounts with the profit-or-loss sign (1Q and 2Q2025: a credit printed positive), so it is kept as printed. Note 8 nine months (p.45 revenue and incurred claims, p.46 other expenses and reinsurance, p.47 reinsurance total; columns ordinary / industrial / credit group / group / total; no PAA business) prints expenses positive (turned negative; the bracketed past-service figure becomes positive). CSM roll-forward 9.1.2 (ณ วันที่ 30 กันยายน 2568) p.55, closing p.56; future-service change = change in estimates + experience adjustment relating to future service (CSM column). New business 9.1.3 p.58: unlike 1Q2025 the 2568 inflows are printed without brackets (kept positive, as in 2Q2025). The nine months turn to a profit after a third-quarter profit; the tax line, labelled 'expense (income)', now prints an expense in brackets (profit before tax - expense = net profit), kept as printed. The opening CSM (250,261,717.61, as in 1Q2025) differs from the 1 January 2568 CSM in the FY2025 annual statements (246,228,997.42). The three-month profit or loss is the SCI three-month column (p.4).","extraction_note":"Source: 16_FS_SAHA_3Q2025.pdf (Reviewed interim financial statements 3Q2025 (Thai)), 89 pages, text layer: no (scanned), SHA-256 b21de4a31079b7a14fc992f7a6d6a0dbf3c18e3ec218f203199e5ab307fe8842 (sources/2025Q3/registry.csv)."}],"commentary":[{"id":"ra_policy","title":"Risk-adjustment disaggregation limits margin comparisons","companies":[],"body":"An insurer that does not split the change in the risk adjustment between the insurance service result and insurance finance income or expense carries the whole RA change, including the effect of discount-rate movements, in the insurance service result. Service margins are therefore compared only within each policy group. Restating to a common basis would need the P&L/OCI split of the RA finance effect, which the statements do not disclose, so no restated margin is shown. Net profit is not affected by the choice."},{"id":"release_ratio","title":"Reading the CSM quadrant","companies":[],"body":"A release ratio of roughly 8-13% is the normal run-off pace for a stable book. Far above it, the store is drawn down quickly relative to what remains; far below it, the runway is long. New business below 1.0x the release for more than a year or two is the early warning on future earnings."}],"i18n":{"ko":{"meta":{"title":"태국 생명보험업계 IFRS 17 대시보드","market":"태국 · 생명보험","standard":"TFRS 17 (IFRS 17)","period_end":"2025년 9월 30일 (불기 2568년)","unit":"백만 바트","quarterly_caveat":"분기 수치는 검토(감사 아님)를 받은 요약 중간재무제표의 누적(연초부터) 값이다. CSM 변동표와 신계약은 1월 1일부터의 누적이고, CSM 상각률은 연간 값과 같은 척도로 읽히도록 연환산(× 12 ÷ 경과월수)했다. 비교기간은 전년 중간재무제표의 같은 기간이다. 2025년 분기는 2024년 분기를 추출하지 않아 비교기간이 없다. 업계 변동은 두 기간에 모두 있는 보험사끼리만 계산했다. 어느 기간의 중간재무제표를 받지 못한 보험사는 그 기간에서 빠진다.","comparative_caveat":"분기 수치는 검토(감사 아님)를 받은 요약 중간재무제표의 누적(연초부터) 값이다. CSM 변동표와 신계약은 1월 1일부터의 누적이고, CSM 상각률은 연간 값과 같은 척도로 읽히도록 연환산(× 12 ÷ 경과월수)했다. 비교기간은 전년 중간재무제표의 같은 기간이다. 2025년 분기는 2024년 분기를 추출하지 않아 비교기간이 없다. 업계 변동은 두 기간에 모두 있는 보험사끼리만 계산했다. 어느 기간의 중간재무제표를 받지 못한 보험사는 그 기간에서 빠진다."},"groups":{"scale":"규모","profitability":"수익성","csm":"CSM","new_business":"신계약"},"metrics":{"insurance_revenue":{"label":"보험수익","formula":"보험수익 합계"},"net_profit":{"label":"당기순이익","formula":"당기순이익"},"csm_close":{"label":"기말 CSM","formula":"기말 보험계약마진(CSM)"},"nb_csm":{"label":"신계약 CSM","formula":"당기에 최초 인식한 계약에서 발생한 CSM"},"nb_pv_premium":{"label":"신계약 PV 보험료","formula":"신계약 미래 현금유입의 현재가치"},"isr_gross":{"label":"보험서비스결과","formula":"보험수익 + 보험서비스비용"},"ism_gross":{"label":"보험서비스이익률","formula":"(보험수익 + 보험서비스비용) ÷ 보험수익"},"ism_net":{"label":"재보험 후 보험서비스이익률","formula":"(보험서비스결과 + 재보험손익) ÷ 보험수익"},"inv_margin":{"label":"투자손익(보험금융비용 차감 후)","formula":"(순투자수익 + 순보험금융비용) ÷ 보험수익"},"other_ratio":{"label":"기타비용(순)","formula":"(기타비용 + 기타수익) ÷ 보험수익"},"tax_ratio":{"label":"법인세","formula":"법인세 ÷ 보험수익"},"npm":{"label":"순이익률","formula":"당기순이익 ÷ 보험수익"},"current_loss_ratio":{"label":"당기 서비스 손해율","formula":"−(발생사고 + 과거서비스 관련 변동) ÷ (BEL 해제 + RA 해제 + PAA 보험수익 + 기타 보험수익 + 보험취득현금흐름 회수)"},"csm_release_share":{"label":"보험수익 중 CSM 상각 비중","formula":"CSM 상각 ÷ 보험수익"},"csm_growth":{"label":"CSM 증가율","formula":"기말 CSM ÷ 기초 CSM − 1"},"release_ratio":{"label":"CSM 상각률","formula":"CSM 상각 ÷ (기초 CSM + 신계약 + 이자부리 + 미래서비스 관련 변동). 분기 페이지는 연환산(× 12 ÷ 경과월수)"},"nb_to_release":{"label":"신계약 CSM ÷ 상각","formula":"신계약 CSM ÷ CSM 상각"},"nb_csm_margin":{"label":"신계약 CSM 마진율","formula":"신계약 CSM ÷ 신계약 PV 보험료"},"acq_cost_ratio":{"label":"신계약비율","formula":"신계약 PV 보험취득현금흐름 ÷ 신계약 PV 보험료"},"nb_claims_ratio":{"label":"신계약 보험금·급부 비율","formula":"신계약 PV 보험금 유출 ÷ 신계약 PV 보험료"},"onerous_ratio":{"label":"신계약 손실부담 비율","formula":"신계약 손실요소 ÷ 신계약 CSM"},"rev_share":{"label":"보험수익 점유율","formula":"회사 보험수익 ÷ 대상 보험사 전체 합계"},"csm_share":{"label":"기말 CSM 점유율","formula":"회사 기말 CSM ÷ 대상 보험사 전체 합계"},"nb_csm_share":{"label":"신계약 CSM 점유율","formula":"회사 신계약 CSM ÷ 대상 보험사 전체 합계"}},"checks":{"revenue_split":{"label":"보험수익 구성 합계 = 보험수익 총액","short":"수익"},"expense_split":{"label":"비용 구성 합계 = 보험서비스비용 총액","short":"비용"},"net_profit":{"label":"순이익 브리지 = 공시 당기순이익","short":"순이익"},"csm_rollforward":{"label":"CSM 변동표 = 기말 CSM","short":"CSM 변동"},"nb_csm":{"label":"신계약: PV 유입 − 취득비용 − 보험금 − RA + 손실요소 = CSM","short":"신계약 CSM"},"nb_consistency":{"label":"CSM 변동표의 신계약 = 신계약 주석","short":"신계약 일치"}},"commentary":{"ra_policy":{"title":"위험조정(RA) 분리 여부에 따라 이익률 비교가 제한된다","body":"위험조정 변동을 보험서비스결과와 보험금융손익으로 나누지 않는 보험사는 할인율 변동 효과를 포함한 RA 변동 전체를 보험서비스결과에 반영한다. 그래서 보험서비스이익률은 같은 정책 그룹 안에서만 비교한다. 공통 기준으로 재계산하려면 RA 금융효과의 당기손익/기타포괄손익 구분이 필요한데 재무제표에 공시되지 않으므로, 재계산한 이익률은 보여 주지 않는다. 당기순이익은 이 선택의 영향을 받지 않는다."},"transition":{"title":"FY2024 수치는 전환 비교기간 수치다","body":"TFRS 17은 2025년 1월 1일 시행, 전환일은 2024년 1월 1일이다. FY2024 수치는 FY2025 재무제표에 재작성되어 실린 비교기간 수치이며, 보험사별로 선택한 전환 방법이 FY2024 CSM에 영향을 준다. 전년 대비 변동을 표시하지만, 큰 변동은 실적보다 전환 방식에서 비롯될 수 있다."},"chubb_rabbit":{"title":"CHUBB와 Rabbit Life는 신계약 대체 배수 눈금 밖에 있다","body":"두 회사 모두 FY2024 전환 비교기간에 손실부담계약 비용을 크게 인식해 CSM과 FY2025 상각액이 작다. 분모가 작아 신계약 CSM ÷ 상각 배수가 부풀려지므로, 사분면에서의 위치는 신계약이 특별히 강해서가 아니라 전환 방식의 결과로 읽어야 한다."},"t_life_accretion":{"title":"T Life의 FY2025 CSM 이자부리는 음수다","body":"양(+)의 CSM에 최초 인식 시점 이율로 부리하는 이자는 양수여야 한다. 다른 변동이 해당 행에 상계되어 있을 가능성이 크다. 공시된 그대로 CSM 변동표가 정확히 맞으므로 수정하지 않고 반영했다."},"rabbit_scale":{"title":"Rabbit Life는 보험수익 대비 비율의 의미가 약하다","body":"보험 영업 규모에 비해 투자 자산이 매우 커서, 투자손익과 기타비용이 이익 브리지 눈금을 크게 벗어난다. 막대는 축에서 잘라 표시했고, 순이익률은 실제 값이다."},"release_ratio":{"title":"CSM 사분면 읽는 법","body":"CSM 상각률이 대략 8~13%이면 안정적인 보유계약의 일반적인 상각 속도다. 그보다 훨씬 높으면 남은 CSM 대비 빠르게 소진되는 것이고, 훨씬 낮으면 이익 실현 기간이 길다는 뜻이다. 신계약 CSM이 상각액의 1.0배에 못 미치는 상태가 1~2년 넘게 이어지면 미래 이익에 대한 조기 경고 신호다."}},"notes_language_label":"추출 메모는 추출 규격에 기록한 영문 원문 그대로 표시한다."}}}</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const M = DATA.meta, CUR = M.period, CMP = M.comparative, COS = DATA.companies;
+const CURL = M.period_label || CUR, CMPL = M.comparative_label || CMP, QTR = M.kind === "quarter";
+const fyL = fy => fy === CUR ? CURL : fy === CMP ? CMPL : fy;
+const DEF = Object.fromEntries(DATA.metric_defs.map(d => [d.code, d]));
+const NS = "http://www.w3.org/2000/svg";
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const tip = $("#tip");
+let F = M.default_focus;
+let LANG = M.default_language || "en";
+
+/* ---------- interface text ----------
+   Every visible string lives here, per language. Data-driven text (indicator names,
+   definitions, checks, commentary, review flags) comes from config/i18n/<lang>.json. */
+const UI = {
+  en: {
+    langName: "English", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
+    lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
+    units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
+    toc: ["Focus", "Market position", "CSM engine", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
+    h2market: "2&nbsp; Market position",
+    noteMarket: "Size on three measures: what the insurer earns this year (insurance revenue), the profit stored for future years (closing CSM) and the profit added by this year's sales (new-business CSM). Share is of the {n} insurers covered.",
+    h2csm: "3&nbsp; The CSM engine",
+    noteCsm: "How the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total. The quadrant then sets the release pace against how much new business replaces what was released.",
+    h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
+    lgOpenClose: "Opening / closing", lgIncrease: "Increase", lgDecrease: "Decrease",
+    h3quad: "CSM sustainability quadrant", ariaQuad: "Scatter of CSM release ratio against new business divided by release",
+    lgOthers: "Other insurers", lgCeiling: "plotted at the ceiling, true value labelled", lgBubble: "bubble area = closing CSM",
+    h2nb: "4&nbsp; New-business quality",
+    noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median.",
+    ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
+    h2ism: "5&nbsp; Insurance service margin, split by RA policy",
+    noteIsm: "An insurer that does <b>not</b> disaggregate the risk-adjustment change carries its financial effect inside the insurance service result, which lifts the margin. The two groups are on different bases and are compared only within each group; the tick marks each group's median.",
+    h3dis: "Disaggregates the RA", h3not: "Does not disaggregate",
+    h2bridge: "6&nbsp; What happens to a hundred baht of insurance revenue",
+    noteBridge: "Every driver between the insurance service result and net profit, as a share of the insurer's own insurance revenue. Contributions sit right of zero, drags left of it; the diamond marks the net-profit margin. Investment income is shown <b>net of insurance finance expense</b>: the two move together with rates and mislead apart. The rule marks the break after the {nLarge} largest insurers.",
+    ariaBridge: "Contribution chart from insurance service result to net profit margin",
+    lgIsr: "Insurance service result after reinsurance", lgInv: "Investment result net of IFIE", lgOther: "Other expense, net",
+    lgTax: "Income tax", lgNpm: "Net profit margin", lgClipped: "clipped at the axis",
+    h2all: "7&nbsp; All insurers",
+    noteAll: "Click a column heading to sort. The view switch shows the current year, the comparative year or the change between them (percentage-point change for ratios). The download gives the full indicator set as CSV.",
+    download: "Download CSV", viewChange: "Change", tableView: "Table view",
+    h2dq: "8&nbsp; Data quality", h4flags: "Plausibility flags",
+    noteFlags: "Raised automatically for review; they do not stop the build. Each one is either explained in section 9 or followed up with the source.",
+    h2method: "9&nbsp; Method &amp; notes", h4defs: "Indicator definitions", h4comp: "Comparability notes", compYear: "Comparative year",
+    h4extract: "Extraction notes by insurer", notesLang: "",
+    na: "n/a", nm: "n.m.", noCmp: "no comparative", nmBase: "n.m. vs {cmp} (base ≤ 0)", vs: "vs {cmp}", pp: "pp", m: "m",
+    rankOf: "{r} of {n} by revenue", raChip: "RA {p}", raDis: "disaggregated", raNot: "not disagg.", raYes: "Yes", raNo: "No",
+    focusFlag: "focus", industry: "Industry", industryAgg: "Industry aggregate", industryN: "Industry ({n} insurers)",
+    insurer: "Insurer", shareCol: "{x} · share", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
+    tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy", tipIsmNet: "Margin after reinsurance",
+    tipIsmCmp: "Service margin {cmp}", tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
+    ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
+    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}", ctxRel: "Release ratio {r} · median {v}",
+    wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
+    wf: ["Opening", "New business", "Accretion", "Future service", "Release", "Closing"],
+    qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
+    qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
+    better: "higher is better", worse: "lower is better", median: "median {v}",
+    groupSub: "{n} insurers · {cur} · group median {v}",
+    dqNote: "<b>{ok} of {total}</b> reconciliations pass within {tol}m ({n} insurers × {y} years × {c} checks). The build stops if any one fails, so a published dashboard always ties to the printed subtotals. Hover a tick for the difference.",
+    dqFlags: "Flags", diff: "difference {v}m", none: "None.",
+    defArea: "Area", defInd: "Indicator", defDef: "Definition",
+    foot: "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), extracted page by page from each filed statement (files used: <code>{wb}</code>). Built {gen}{git}. Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.",
+    footGit: " from commit {git}", reviewFlag: "Review flag {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    periodsLabel: "Period",
+    ledeQ: "{n} Thai life insurers under {std}, {cur}, year to date. Every figure is taken from the filed interim statements and tied back to their printed subtotals before it reaches this page.",
+    unitsQ: "{unit} · {mo} months to {pe} · comparative {cmp} · {n} insurers", unitsQnoCmp: "{unit} · {mo} months to {pe} · no comparative · {n} insurers",
+    qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (ann.)",
+    noteAllQ: " Figures are year to date. The industry change compares the {k} insurers present in both periods.",
+    industryAggCommon: "Industry, like for like ({k} insurers)",
+    h3m: "The quarter alone: three months to {pe}",
+    note3m: "From the three-month profit or loss in the interim statements, against the same quarter a year earlier. The industry change compares the insurers present in both quarters.",
+    dqNoteQ: "<b>{ok} of {total}</b> reconciliations pass within {tol}m on the year-to-date figures shown ({n} insurers, {c} checks per period). The build stops if any one fails. Hover a tick for the difference.",
+    dqNoteAcc: " ✓* ({a}) marks a break the statement itself contains, accepted at the recorded difference.",
+    dqNoteNa: " n/a ({na}) marks a check that needs an item the statement does not disclose; it was tied to the printed total at extraction.",
+    industry3m: "Industry · change over the {k} insurers with both quarters",
+    dqAccepted: "accepted break, difference {v}m: {r}", dqNa: "not disclosed; tied to the printed total at extraction",
+    cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
+      csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
+      acq_cost_ratio: "Acq. cost ratio", onerous_ratio: "Onerous NB" },
+    ord: n => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] || ["th", "st", "nd", "rd"][n % 100] || "th"),
+    chg: (x, up, down) => x == null ? "moved (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
+    headlines: p => [
+      p.short + " is the " + p.ord(p.sizeRank) + " largest of " + p.n + " by insurance revenue (" + p.revShare + " share), " +
+        p.ord(p.csmRank) + " by closing CSM and " + p.ord(p.nbRank) + " by new-business CSM.",
+      "CSM " + p.chg(p.csmG, "grew", "fell") + " " + (p.q ? "since 1 January" : "over the year") + " to " + p.csmClose + "m (industry " + p.csmGi + "); new business replaced " +
+        p.nbr + " the release (industry median " + p.nbrMed + ").",
+      p.hasCmp ? "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
+        (p.taxBig ? "; income tax went from " + p.taxPrev + "m to " + p.taxNow + "m." : ".")
+        : "Net profit was " + p.np + "m and the insurance service result " + p.isr + "m (no comparative period on this page).",
+      "New-business CSM margin of " + p.nbm + " ranks " + p.ord(p.nbmRank) + " of " + p.n + "; acquisition cost takes " + p.acq +
+        " of new-business premium (median " + p.acqMed + ").",
+    ],
+  },
+  ko: {
+    langName: "한국어", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
+    lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
+    units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
+    toc: ["강조 보험사", "시장 지위", "CSM 엔진", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
+    h2market: "2&nbsp; 시장 지위",
+    noteMarket: "세 가지 기준의 규모: 올해 벌어들인 이익의 원천(보험수익), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 판매로 새로 더한 이익(신계약 CSM). 점유율은 대상 {n}개사 합계 기준이다.",
+    h2csm: "3&nbsp; CSM 엔진",
+    noteCsm: "강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다. 이어서 사분면에서 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다.",
+    h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
+    lgOpenClose: "기초 / 기말", lgIncrease: "증가", lgDecrease: "감소",
+    h3quad: "CSM 지속가능성 사분면", ariaQuad: "CSM 상각률과 신계약 CSM ÷ 상각 배수의 산점도",
+    lgOthers: "다른 보험사", lgCeiling: "상한선에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
+    h2nb: "4&nbsp; 신계약 품질",
+    noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다.",
+    ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
+    h2ism: "5&nbsp; 보험서비스이익률 (RA 분리 정책별)",
+    noteIsm: "위험조정 변동을 <b>분리하지 않는</b> 보험사는 RA의 금융효과까지 보험서비스결과에 포함하므로 이익률이 높게 나온다. 두 그룹은 기준이 달라 그룹 안에서만 비교하며, 세로선은 그룹별 중앙값이다.",
+    h3dis: "RA 분리", h3not: "RA 미분리",
+    h2bridge: "6&nbsp; 보험수익 100바트는 어디로 가나",
+    noteBridge: "보험서비스결과부터 당기순이익까지의 각 요인을 해당 보험사 보험수익 대비 비율로 표시한다. 0 오른쪽은 이익에 더하는 요인, 왼쪽은 빼는 요인이고, 마름모는 순이익률이다. 투자수익은 <b>보험금융비용을 차감한 순액</b>으로 보여 준다. 둘은 금리와 함께 움직여서 따로 보면 오해를 낳는다. 가로선은 상위 {nLarge}개사 다음의 구분선이다.",
+    ariaBridge: "보험서비스결과에서 순이익률까지의 기여도 차트",
+    lgIsr: "재보험 후 보험서비스결과", lgInv: "투자손익(보험금융비용 차감 후)", lgOther: "기타비용(순)",
+    lgTax: "법인세", lgNpm: "순이익률", lgClipped: "축에서 잘림",
+    h2all: "7&nbsp; 전체 보험사",
+    noteAll: "열 이름을 누르면 정렬된다. 보기 전환으로 당기, 비교기간, 두 기간의 차이(비율은 %p 변동)를 볼 수 있다. 다운로드하면 전체 지표를 CSV로 받는다.",
+    download: "CSV 다운로드", viewChange: "변동", tableView: "표 보기",
+    h2dq: "8&nbsp; 데이터 품질", h4flags: "검토 플래그",
+    noteFlags: "검토용으로 자동 생성되며 빌드를 멈추지 않는다. 각 항목은 9장에서 설명하거나 원천 자료로 확인한다.",
+    h2method: "9&nbsp; 방법론 및 주석", h4defs: "지표 정의", h4comp: "비교 가능성 관련 주석", compYear: "비교기간",
+    h4extract: "보험사별 추출 메모", notesLang: "",
+    na: "없음", nm: "산출 불가", noCmp: "비교기간 없음", nmBase: "{cmp} 대비 산출 불가 (기준값 ≤ 0)", vs: "{cmp} 대비", pp: "%p", m: "백만",
+    rankOf: "보험수익 {n}개사 중 {r}위", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
+    focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
+    insurer: "보험사", shareCol: "{x} · 점유율", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
+    tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스이익률", tipRel: "CSM 상각률",
+    tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책", tipIsmNet: "재보험 후 이익률",
+    tipIsmCmp: "{cmp} 보험서비스이익률", tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
+    ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
+    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}", ctxRel: "CSM 상각률 {r} · 중앙값 {v}",
+    wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
+    wf: ["기초", "신계약", "이자부리", "미래서비스", "상각", "기말"],
+    qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
+    qX: "CSM 상각률 (상각 ÷ 상각 전 CSM)", qY: "신계약 CSM ÷ 상각",
+    better: "높을수록 좋음", worse: "낮을수록 좋음", median: "중앙값 {v}",
+    groupSub: "{n}개사 · {cur} · 그룹 중앙값 {v}",
+    dqNote: "대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사 × {y}개 연도 × {c}개 점검). 하나라도 어긋나면 빌드가 멈추므로, 게시된 대시보드는 항상 재무제표의 소계와 맞는다. 체크 표시에 마우스를 올리면 차이가 보인다.",
+    dqFlags: "플래그", diff: "차이 {v}백만", none: "없음.",
+    defArea: "구분", defInd: "지표", defDef: "정의",
+    foot: "출처: 각 보험사가 공시한 TFRS 17 재무제표(SET 공시, OIC 연차 공시, 회사 홈페이지)의 원문에서 쪽 단위로 추출(사용한 원문 목록: <code>{wb}</code>). 빌드 {gen}{git}. 대시보드 작성자가 공개 정보로 정리한 자료로, 추출 오류가 있을 수 있으므로 공시된 재무제표가 최종 기준이다. 투자 권유가 아니다.",
+    footGit: " (커밋 {git})", reviewFlag: "{fy} 검토 플래그", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    periodsLabel: "기간",
+    ledeQ: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 누적 실적. 모든 수치는 공시된 중간재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
+    unitsQ: "단위 {unit} · {pe}까지 {mo}개월 누적 · 비교기간 {cmp} · {n}개사", unitsQnoCmp: "단위 {unit} · {pe}까지 {mo}개월 누적 · 비교기간 없음 · {n}개사",
+    qXQ: "CSM 상각률, 연환산 (상각 ÷ 상각 전 CSM, × 12 ÷ 경과월수)", ann: " (연환산)",
+    noteAllQ: " 수치는 누적 기준이다. 업계 변동은 두 기간에 모두 있는 {k}개사끼리 비교한다.",
+    industryAggCommon: "업계, 동일 회사 기준 ({k}개사)",
+    h3m: "해당 분기만: {pe}까지 3개월",
+    note3m: "중간재무제표의 3개월 손익계산서 값이며 전년 같은 분기와 비교한다. 업계 변동은 두 분기에 모두 있는 보험사끼리 비교한다.",
+    dqNoteQ: "표시한 누적 수치 기준으로 대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사, 기간마다 {c}개 점검). 하나라도 어긋나면 빌드가 멈춘다. 체크 표시에 마우스를 올리면 차이가 보인다.",
+    dqNoteAcc: " ✓*({a}건)는 재무제표 자체에 있는 불일치를 기록한 차이에서 수용한 것이다.",
+    dqNoteNa: " n/a({na}건)는 공시하지 않은 항목이 필요한 점검으로, 추출 때 인쇄된 합계와 대사했다.",
+    industry3m: "업계 · 변동은 두 분기 모두 있는 {k}개사 기준",
+    dqAccepted: "수용한 불일치, 차이 {v}백만: {r}", dqNa: "미공시 항목, 추출 때 인쇄된 합계와 대사",
+    cols: { insurance_revenue: "보험수익", net_profit: "당기순이익", ism_gross: "보험서비스이익률", npm: "순이익률", csm_close: "기말 CSM",
+      csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
+      acq_cost_ratio: "신계약비율", onerous_ratio: "손실부담 비율" },
+    ord: n => n + "위",
+    chg: (x, up, down) => x == null ? "변동(산출 불가)" : nf(Math.abs(x) * 100, 1) + "% " + (x >= 0 ? up : down),
+    headlines: p => [
+      "보험수익 기준 " + p.n + "개사 중 " + p.ord(p.sizeRank) + "(점유율 " + p.revShare + "), 기말 CSM 기준 " + p.ord(p.csmRank) +
+        ", 신계약 CSM 기준 " + p.ord(p.nbRank) + ".",
+      "CSM은 " + (p.q ? "연초 대비 " : "연간 ") + p.chg(p.csmG, "증가", "감소") + "해 " + p.csmClose + "백만 바트가 됐다(업계 " + p.csmGi + "). 신계약 CSM이 상각액의 " +
+        p.nbr + "를 채웠다(업계 중앙값 " + p.nbrMed + ").",
+      p.hasCmp ? "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
+        (p.taxBig ? ". 법인세는 " + p.taxPrev + "백만에서 " + p.taxNow + "백만 바트로 바뀌었다." : ".")
+        : "당기순이익은 " + p.np + "백만 바트, 보험서비스결과는 " + p.isr + "백만 바트다(이 페이지에는 비교기간이 없다).",
+      "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq +
+        "를 차지한다(중앙값 " + p.acqMed + ").",
+    ],
+  },
+};
+const TR = () => (DATA.i18n || {})[LANG] || null;
+function t(key, p = {}) {
+  const v = (UI[LANG] && UI[LANG][key] != null) ? UI[LANG][key] : UI.en[key];
+  return typeof v === "string" ? v.replace(/\{(\w+)\}/g, (_, k) => p[k] != null ? p[k] : "{" + k + "}") : v;
+}
+const metaT = k => { const tr = TR(); return (tr && tr.meta && tr.meta[k]) || M[k]; };
+const mLabel = code => { const tr = TR(); return (tr && tr.metrics[code] && tr.metrics[code].label) || DEF[code].label; };
+const mFormula = code => { const tr = TR(); return (tr && tr.metrics[code] && tr.metrics[code].formula) || DEF[code].formula; };
+const chk = (id, f) => { const tr = TR(); const d = DATA.check_defs.find(c => c.id === id); return (tr && tr.checks[id] && tr.checks[id][f]) || (f === "short" ? EN_CHECK_SHORT[id] : d.label); };
+const EN_CHECK_SHORT = { revenue_split: "Revenue", expense_split: "Expense", net_profit: "Net profit", csm_rollforward: "CSM roll", nb_csm: "NB CSM", nb_consistency: "NB = roll" };
+const noteT = (n, f) => { const tr = TR(); return (tr && tr.commentary[n.id] && tr.commentary[n.id][f]) || n[f]; };
+const flagMsg = f => (LANG === "ko" && f.message_ko) ? f.message_ko : f.message;
+const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business" }[gname]); };
+
+/* ---------- helpers ---------- */
+const el = (n, a = {}, txt) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
+const nf = (v, d) => v.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+const fM = v => v == null ? t("na") : nf(v, Math.abs(v) >= 100 ? 0 : 1);
+const fP = (v, d = 1) => v == null ? t("na") : nf(v * 100, d) + "%";
+const fX = (v, d = 2) => v == null ? t("na") : nf(v, d) + "×";
+const fmtU = (u, v) => u === "pct" ? fP(v) : u === "x" ? fX(v) : fM(v);
+const ord = n => t("ord")(n);
+const g = (c, k, fy = CUR) => { const y = c.y[fy]; return y && y.m[k] ? y.m[k].v : null; };
+const raw = (c, k, fy = CUR) => { const y = c.y[fy]; return y ? y.raw[k] : null; };
+const rk = (c, k, fy = CUR) => { const y = c.y[fy]; return y && y.m[k] ? y.m[k] : null; };
+const ind = (k, fy = CUR) => (DATA.industry[fy] || {})[k] || {};
+// like for like: both years over the insurers present in both (quarterly pages whose two years differ)
+const LFL = Object.keys(DATA.industry_common || {}).length > 0;
+const indC = (k, fy = CUR) => LFL ? ((DATA.industry_common[fy] || {})[k] || {}) : ind(k, fy);
+const byName = n => COS.find(c => c.name === n);
+const isF = c => c.name === F;
+const colr = c => isF(c) ? "var(--focus)" : "var(--peer)";
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]));
+const raLabel = c => c.ra === "disaggregated" ? t("raDis") : t("raNot");
+const growth = (a, b) => (a == null || b == null || b <= 0) ? null : a / b - 1;
+const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
+
+function showTip(ev, html) {
+  tip.innerHTML = html; tip.style.opacity = 1;
+  const w = tip.offsetWidth || 260, h = tip.offsetHeight || 120;
+  let x = ev.clientX + 16, y = ev.clientY - 20;
+  if (x + w > innerWidth - 10) x = ev.clientX - w - 16;
+  if (y + h > innerHeight - 10) y = innerHeight - h - 10;
+  tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
+}
+const hideTip = () => tip.style.opacity = 0;
+const tipTable = (title, rows) => "<b>" + esc(title) + "</b><table>" + rows.map(r => "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td></tr>").join("") + "</table>";
+function coTip(c, extra = []) {
+  return tipTable(c.name, [
+    [t("tipRev"), fM(raw(c, "insurance_revenue"))], [t("tipNp"), fM(raw(c, "net_profit"))],
+    [t("tipCsm"), fM(raw(c, "csm_close"))], [t("tipIsm"), fP(g(c, "ism_gross"))],
+    [t("tipRel") + (QTR ? t("ann") : ""), fP(g(c, "release_ratio"))], [t("tipNbr"), fX(g(c, "nb_to_release"))],
+    [t("tipNbm"), fP(g(c, "nb_csm_margin"))], [t("tipNpm"), fP(g(c, "npm"))],
+    [t("tipRa"), raLabel(c)], ...extra]);
+}
+function hover(node, html) {
+  node.addEventListener("mousemove", e => showTip(e, typeof html === "function" ? html() : html));
+  node.addEventListener("mouseleave", hideTip);
+  node.style.cursor = "default";
+}
+function niceTicks(lo, hi, n = 5) {
+  const span = hi - lo, step0 = span / n, mag = Math.pow(10, Math.floor(Math.log10(step0)));
+  const step = [1, 2, 2.5, 5, 10].map(s => s * mag).find(s => span / s <= n) || 10 * mag;
+  const out = []; for (let x = Math.ceil(lo / step - 1e-9) * step; x <= hi + 1e-9; x += step) out.push(+x.toFixed(10));
+  return { ticks: out, step };
+}
+
+/* ---------- header, language, static text ---------- */
+function staticText() {
+  document.documentElement.lang = LANG;
+  document.title = metaT("title");
+  const p = { n: COS.length, nLarge: M.large_insurer_count, cur: CURL, cmp: CMPL };
+  $$("[data-t]").forEach(e => e.innerHTML = t(e.dataset.t, p));
+  $$("[data-t-aria]").forEach(e => e.setAttribute("aria-label", t(e.dataset.tAria, p)));
+  $("#title").textContent = metaT("title");
+  $("#lede").textContent = t(QTR ? "ledeQ" : "lede", { n: COS.length, std: metaT("standard"), cur: CURL });
+  $("#units").textContent = t(QTR ? (M.has_comparative ? "unitsQ" : "unitsQnoCmp") : "units",
+    { unit: metaT("unit"), pe: metaT("period_end"), cmp: CMPL, n: COS.length, mo: M.ytd_months });
+  periodLinks();
+  const ids = ["s-focus", "s-market", "s-csm", "s-nb", "s-ism", "s-bridge", "s-all", "s-dq", "s-method"];
+  $("#toc").innerHTML = t("toc").map((lab, i) => '<a href="#' + ids[i] + '">' + (i + 1) + " " + esc(lab) + "</a>").join("");
+  $("#toc").setAttribute("aria-label", t("toc")[0]);
+  const sel = $("#focusSel");
+  sel.innerHTML = "";
+  COS.forEach(c => sel.appendChild(new Option(c.name + (c.name === M.default_focus ? "  " + t("deflt") : ""), c.name)));
+  sel.value = F; sel.setAttribute("aria-label", t("focusPick"));
+  $("#langSeg").setAttribute("aria-label", t("langLabel"));
+  $("#langSeg").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === LANG));
+  $$(".p-cur").forEach(e => e.textContent = CURL); $$(".p-cmp").forEach(e => e.textContent = CMPL);
+}
+function periodLinks() {
+  // pages sit in <period>/ folders (output/ and the published site); the site root is the default period's page
+  const inFolder = location.pathname.split("/").includes(CUR);
+  const href = id => (inFolder ? ".." : ".") + "/" + id + "/Thai_Life_IFRS17_Dashboard_" + id + ".html" + location.hash;
+  const list = M.periods || [];
+  $("#periods").innerHTML = list.length < 2 ? "" : '<span class="lab">' + t("periodsLabel") + "</span>" + list.map(p =>
+    p.id === CUR ? '<a aria-current="page">' + esc(p.label) + "</a>" : '<a href="' + esc(href(p.id)) + '">' + esc(p.label) + "</a>").join("");
+  $("#periods").setAttribute("aria-label", t("periodsLabel"));
+}
+function writeHash() {
+  const parts = [];
+  if (F !== M.default_focus) parts.push("focus=" + encodeURIComponent(F));
+  if (LANG !== (M.default_language || "en")) parts.push("lang=" + LANG);
+  try { history.replaceState(null, "", parts.length ? "#" + parts.join("&") : location.pathname + location.search); } catch (e) {}
+}
+function controls() {
+  const seg = $("#langSeg");
+  (M.languages || ["en"]).forEach(code => {
+    const b = document.createElement("button"); b.type = "button"; b.dataset.lang = code;
+    b.textContent = (UI[code] || UI.en).langName; b.lang = code;
+    b.addEventListener("click", () => { if (LANG === code) return; LANG = code; store.set("ifrs17-dash-lang", code); writeHash(); renderAll(); });
+    seg.appendChild(b);
+  });
+  $("#focusSel").addEventListener("change", e => { F = e.target.value; writeHash(); renderAll(); });
+}
+
+/* ---------- 1 focus ---------- */
+function deltaHtml(kind, cur, prev, better) {
+  if (cur == null || prev == null) return '<span class="flat">' + t("noCmp") + "</span>";
+  let d, txt;
+  if (kind === "growth") { d = growth(cur, prev); if (d == null) return '<span class="flat">' + t("nmBase", { cmp: CMPL }) + "</span>"; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
+  else if (kind === "pp") { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
+  else { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d, 2) + "×"; }
+  const dir = Math.abs(d) < 1e-9 ? "flat" : d > 0 ? "up" : "down";
+  const cls = dir === "flat" || better == null ? "flat" : ((dir === "up") === better ? dir + "-good" : dir + "-bad");
+  const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "◆";
+  return '<span class="' + cls + '">' + arrow + " " + txt + '</span> <span class="flat">' + t("vs", { cmp: CMPL }) + "</span>";
+}
+function focusSection() {
+  const c = byName(F), n = COS.length;
+  $("#fName").textContent = c.name;
+  $("#fChips").innerHTML = ['<span class="chip">' + t("rankOf", { r: ord(c.size_rank), n }) + "</span>",
+    '<span class="chip">' + t("raChip", { p: raLabel(c) }) + "</span>", '<span class="chip">' + esc(c.legal) + "</span>"].join(" ");
+  const sameRA = COS.filter(x => x.ra === c.ra);
+  const medOf = (list, k) => { const v = list.map(x => g(x, k)).filter(v => v != null).sort((a, b) => a - b); const m = v.length; return m ? (m % 2 ? v[(m - 1) / 2] : (v[m / 2 - 1] + v[m / 2]) / 2) : null; };
+  const rankIn = (list, k) => 1 + list.filter(x => g(x, k) > g(c, k)).length;
+  const T = [
+    { k: "insurance_revenue", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "insurance_revenue").rank, n, s: fP(g(c, "rev_share")) }) },
+    { k: "net_profit", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_profit").rank, n, v: fM(ind("net_profit").agg) }) },
+    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
+    { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
+    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
+    { k: "npm", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "npm").rank, n, v: fP(ind("npm").median) }) },
+    { k: "nb_csm_margin", kind: "pp", ctx: () => t("ctxRankMed", { r: rk(c, "nb_csm_margin").rank, n, v: fP(ind("nb_csm_margin").median) }) },
+    { k: "nb_to_release", kind: "x", ctx: () => t("ctxRel", { r: fP(g(c, "release_ratio")), v: fX(ind("nb_to_release").median) }) },
+  ];
+  $("#tiles").innerHTML = T.map(x => {
+    const d = DEF[x.k];
+    return '<div class="tile"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
+      '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div></div>";
+  }).join("");
+
+  const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
+  const L = t("headlines")({
+    short: c.short, n, ord, chg: t("chg"), sizeRank: c.size_rank, revShare: fP(g(c, "rev_share")),
+    q: QTR, hasCmp: M.has_comparative !== false, isr: fM(g(c, "isr_gross")),
+    csmRank: rk(c, "csm_close").rank, nbRank: rk(c, "nb_csm").rank,
+    csmG: g(c, "csm_growth"), csmClose: fM(raw(c, "csm_close")), csmGi: fP(QTR ? ind("csm_growth").agg : growth(ind("csm_close").agg, ind("csm_close", CMP).agg)),
+    nbr: fX(g(c, "nb_to_release")), nbrMed: fX(ind("nb_to_release").median),
+    npG: growth(raw(c, "net_profit"), raw(c, "net_profit", CMP)), np: fM(raw(c, "net_profit")),
+    isrG: growth(g(c, "isr_gross"), g(c, "isr_gross", CMP)),
+    taxBig: Math.abs(taxNow - taxPrev) > 0.2 * Math.abs(raw(c, "net_profit")), taxNow: fM(taxNow), taxPrev: fM(taxPrev),
+    nbm: fP(g(c, "nb_csm_margin")), nbmRank: rk(c, "nb_csm_margin").rank, acq: fP(g(c, "acq_cost_ratio")), acqMed: fP(ind("acq_cost_ratio").median),
+  });
+  $("#headlines").innerHTML = L.map(s => "<li>" + esc(s) + "</li>").join("");
+  const notes = DATA.commentary.filter(x => x.companies.includes(F));
+  const flags = DATA.flags.filter(f => f.company === F);
+  $("#callouts").innerHTML = notes.map(x => '<div class="callout"><b>' + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</div>").join("") +
+    flags.map(f => '<div class="callout"><b>' + t("reviewFlag", { fy: fyL(f.fiscal_year) }) + ".</b> " + esc(flagMsg(f)) + "</div>").join("");
+}
+
+/* ---------- 2 market ---------- */
+function market() {
+  const cols = [["insurance_revenue", "rev_share"], ["csm_close", "csm_share"], ["nb_csm", "nb_csm_share"]];
+  const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
+  let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
+  COS.forEach((c, i) => {
+    const cls = [isF(c) ? "focus" : "", i > 0 && c.tier !== COS[i - 1].tier ? "tier-break" : ""].join(" ");
+    h += "<tr class='" + cls + "' data-co='" + esc(c.name) + "'><td class='l'>" + c.size_rank + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+      cols.map(([k, s]) => "<td><div class='barcell'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, k)) / max[k]).toFixed(2) + "%'></div></div><span class='v'>" +
+        fM(g(c, k)) + "</span><span class='s'>" + fP(g(c, s)) + "</span></div></td>").join("") + "</tr>";
+  });
+  h += "<tr><td class='l'></td><td class='l'><b>" + t("industry") + "</b></td>" + cols.map(([k]) => "<td><div class='barcell'><span class='v'><b>" + fM(ind(k).agg) + "</b></span><span class='s'>100%</span></div></td>").join("") + "</tr></tbody>";
+  const tb = $("#mkt"); tb.innerHTML = h;
+  tb.querySelectorAll("tr[data-co]").forEach(tr => hover(tr, () => coTip(byName(tr.dataset.co))));
+}
+
+/* ---------- 3a waterfall ---------- */
+function waterfall() {
+  const svg = $("#wf"); svg.textContent = "";
+  const c = byName(F);
+  const keys = ["csm_open", "csm_nb", "csm_accretion", "csm_future_service", "csm_release", "csm_close"], labs = t("wf");
+  const series = [
+    { title: c.name, val: k => raw(c, k) },
+    { title: t("industryN", { n: COS.length }), val: k => ind("sum_" + k).agg },
+  ].map(s => {
+    const o = s.val("csm_open"); let run = 0;
+    s.bars = keys.map((k, i) => {
+      const v = s.val(k) / o * 100, lab = labs[i];
+      if (i === 0 || i === keys.length - 1) { run = v; return { lab, v, y0: 0, y1: v, total: true, abs: s.val(k) }; }
+      const b = { lab, v, y0: run, y1: run + v, total: false, abs: s.val(k) }; run += v; return b;
+    });
+    return s;
+  });
+  const hi = Math.max(...series.flatMap(s => s.bars.map(b => Math.max(b.y0, b.y1)))) * 1.1;
+  const W = 900, H = 320, T = 34, B = 46, gap = 40, pw = (W - gap) / 2, L = 40;
+  const py = v => T + (1 - v / hi) * (H - T - B);
+  $("#wfSub").textContent = t("wfSub", { cur: CURL, co: c.short, v: fM(raw(c, "csm_open")) });
+  const { ticks } = niceTicks(0, hi, 5);
+  series.forEach((s, si) => {
+    const x0 = si * (pw + gap), slot = (pw - L) / s.bars.length, bw = Math.min(34, slot * 0.5);
+    svg.appendChild(el("text", { x: x0 + L, y: 14, "font-size": 13, "font-weight": 600, fill: si === 0 ? "var(--ink)" : "var(--ink-2)" }, s.title));
+    ticks.forEach(tk => {
+      svg.appendChild(el("line", { x1: x0 + L, x2: x0 + pw, y1: py(tk), y2: py(tk), stroke: tk === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": 1 }));
+      svg.appendChild(el("text", { x: x0 + L - 6, y: py(tk) + 4, "text-anchor": "end", "font-size": 10.5, fill: "var(--muted)" }, String(tk)));
+    });
+    s.bars.forEach((b, i) => {
+      const cx = x0 + L + slot * i + slot / 2, top = py(Math.max(b.y0, b.y1)), bot = py(Math.min(b.y0, b.y1));
+      const fill = b.total ? "var(--total)" : b.v >= 0 ? "var(--pos)" : "var(--neg)";
+      const r = el("rect", { x: cx - bw / 2, y: top, width: bw, height: Math.max(1, bot - top), fill, rx: 3 });
+      hover(r, tipTable(s.title, [[b.lab, fM(b.abs) + " " + t("m")], [t("tipIndex"), nf(b.v, 1)]]));
+      svg.appendChild(r);
+      if (i < s.bars.length - 1) { const yy = py(b.y1); svg.appendChild(el("line", { x1: cx + bw / 2, x2: cx + slot - bw / 2, y1: yy, y2: yy, stroke: "var(--axis)", "stroke-width": 1 })); }
+      const lab = b.total ? nf(b.v, 0) : (b.v >= 0 ? "+" : "−") + nf(Math.abs(b.v), 1);
+      svg.appendChild(el("text", { x: cx, y: top - 6, "text-anchor": "middle", "font-size": 11.5, fill: "var(--ink)", "font-weight": b.total ? 600 : 400 }, lab));
+      b.lab.split(" ").forEach((w, wi) => svg.appendChild(el("text", { x: cx, y: H - B + 16 + wi * 13, "text-anchor": "middle", "font-size": 11, fill: "var(--ink-2)" }, w)));
+    });
+  });
+}
+
+/* ---------- 3b quadrant ---------- */
+function quadrant() {
+  const svg = $("#quad"); svg.textContent = "";
+  const W = 900, H = 470, L = 56, R = 20, T = 20, B = 46, CAP = 3;
+  const xs = COS.map(c => g(c, "release_ratio") * 100);
+  const x1 = Math.max(25, Math.ceil(Math.max(...xs) / 5) * 5);
+  const px = v => L + v / x1 * (W - L - R), py = v => H - B - Math.min(v, CAP) / CAP * (H - T - B);
+  const maxC = Math.max(...COS.map(c => raw(c, "csm_close")));
+  const rad = v => 4.5 + 19 * Math.sqrt(v / maxC);
+  $("#qSub").textContent = t("qSub", { cur: CURL, lo: fM(Math.min(...COS.map(c => raw(c, "csm_close")))), hi: fM(maxC) });
+  for (let v = 0; v <= CAP; v += 0.5) {
+    svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(v), y2: py(v), stroke: "var(--grid)" }));
+    svg.appendChild(el("text", { x: L - 9, y: py(v) + 4, "text-anchor": "end", fill: "var(--muted)", "font-size": 11 }, v.toFixed(1) + "×"));
+  }
+  for (let v = 0; v <= x1; v += 5) svg.appendChild(el("text", { x: px(v), y: H - B + 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, v + "%"));
+  svg.appendChild(el("line", { x1: L, x2: W - R, y1: H - B, y2: H - B, stroke: "var(--axis)" }));
+  svg.appendChild(el("line", { x1: L, x2: W - R, y1: py(1), y2: py(1), stroke: "var(--ink-2)", "stroke-width": 1.5, "stroke-dasharray": "5 4" }));
+  svg.appendChild(el("text", { x: W - R - 4, y: py(1) - 7, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11, "font-weight": 600 }, t("qThreshold")));
+  svg.appendChild(el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", fill: "var(--ink-2)", "font-size": 12 }, t(QTR ? "qXQ" : "qX")));
+  svg.appendChild(el("text", { x: 0, y: 0, fill: "var(--ink-2)", "font-size": 12, "text-anchor": "middle", transform: "translate(13," + ((T + H - B) / 2) + ") rotate(-90)" }, t("qY")));
+
+  const pts = COS.map(c => ({ c, x: px(g(c, "release_ratio") * 100), y: py(g(c, "nb_to_release")), rad: rad(raw(c, "csm_close")), over: g(c, "nb_to_release") > CAP, txt: c.short }))
+    .sort((a, b) => (isF(b.c) - isF(a.c)) || (b.rad - a.rad));
+  const boxes = [], LH = 13;
+  const overlap = (a, b) => !(a.x2 < b.x1 || b.x2 < a.x1 || a.y2 < b.y1 || b.y2 < a.y1);
+  pts.forEach(p => {
+    const w = p.txt.length * (isF(p.c) ? 7 : 6.2), h = p.over ? LH + 11 : LH;
+    let best = null;
+    for (const side of [1, -1]) for (const dy of [0, -14, 14, -28, 28, -42, 42, -56, 56]) {
+      const lx = p.x + side * (p.rad + 6), ly = p.y + 4 + dy;
+      const bx1 = side > 0 ? lx : lx - w, bx2 = side > 0 ? lx + w : lx;
+      const box = { x1: bx1 - 2, x2: bx2 + 2, y1: ly - 11, y2: ly - 11 + h + 3 };
+      if (bx1 < L + 2 || bx2 > W - R - 2 || box.y1 < T - 4 || box.y2 > H - B - 2) continue;
+      const hitL = boxes.some(b => overlap(box, b));
+      const hitB = pts.some(q => q !== p && !(box.x2 < q.x - q.rad || box.x1 > q.x + q.rad || box.y2 < q.y - q.rad || box.y1 > q.y + q.rad));
+      if (!hitL && !hitB) { best = { side, dy, lx, ly, box }; break; }
+      if (!best && !hitL) best = { side, dy, lx, ly, box };
+    }
+    if (!best) { const lx = p.x + p.rad + 6; best = { side: 1, dy: 0, lx, ly: p.y + 4, box: { x1: lx, x2: lx + w, y1: p.y - 7, y2: p.y + 7 } }; }
+    Object.assign(p, best); boxes.push(best.box);
+  });
+  pts.slice().sort((a, b) => isF(a.c) - isF(b.c) || b.rad - a.rad).forEach(p => {
+    const c = colr(p.c), gg = el("g");
+    if (Math.abs(p.dy) > 8) gg.appendChild(el("line", { x1: p.x + p.side * p.rad, y1: p.y, x2: p.side > 0 ? p.lx - 3 : p.lx + 3, y2: p.ly - 4, stroke: "var(--axis)" }));
+    gg.appendChild(el("circle", { cx: p.x, cy: p.y, r: p.rad, fill: c, "fill-opacity": isF(p.c) ? .45 : .22, stroke: c, "stroke-width": 2 }));
+    if (p.over) gg.appendChild(el("path", { d: "M" + (p.x - 6) + "," + (p.y - p.rad - 4) + " L" + (p.x + 6) + "," + (p.y - p.rad - 4) + " L" + p.x + "," + (p.y - p.rad - 13) + " Z", fill: c }));
+    gg.appendChild(el("text", { x: p.lx, y: p.ly, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--ink)", "font-size": isF(p.c) ? 13 : 11.5, "font-weight": isF(p.c) ? 650 : 400 }, p.txt));
+    if (p.over) gg.appendChild(el("text", { x: p.lx, y: p.ly + 12, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--muted)", "font-size": 10.5 }, fX(g(p.c, "nb_to_release"), 1)));
+    const hit = el("circle", { cx: p.x, cy: p.y, r: Math.max(p.rad, 12), fill: "transparent" });
+    hover(hit, () => coTip(p.c)); gg.appendChild(hit); svg.appendChild(gg);
+  });
+}
+
+/* ---------- 4 strips ---------- */
+function strips() {
+  const svg = $("#strips"); svg.textContent = "";
+  const rows = ["nb_csm_margin", "acq_cost_ratio", "onerous_ratio", "nb_to_release"];
+  const W = 900, L = 200, R = 40, rowH = 88, T = 10, H = T + rows.length * rowH + 4;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  rows.forEach((k, ri) => {
+    const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34;
+    const all = COS.flatMap(c => [g(c, k), g(c, k, CMP)]).filter(v => v != null);
+    const cap = { nb_to_release: 3, onerous_ratio: 0.6 }[k] || null;
+    let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
+    const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
+    const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
+    svg.appendChild(el("text", { x: 0, y: cy - 4, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
+    svg.appendChild(el("text", { x: 0, y: cy + 12, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
+    ticks.forEach(tk => {
+      svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
+      svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(tk * 100, 0) + "%" : nf(tk, 1) + "×"));
+    });
+    svg.appendChild(el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "var(--axis)" }));
+    const med = ind(k).median;
+    if (med != null) svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: cy - 16, y2: cy + 16, stroke: "var(--ink-2)", "stroke-width": 2 }));
+    const dotTip = (c, extra = []) => tipTable(c.name, [[mLabel(k) + " " + CURL, fmtU(d.unit, g(c, k))], [CMPL, fmtU(d.unit, g(c, k, CMP))], ...extra]);
+    COS.filter(c => !isF(c)).forEach(c => {
+      const v = g(c, k); if (v == null) return;
+      const dot = el("circle", { cx: px(v), cy, r: 5, fill: "var(--peer)", "fill-opacity": .55, stroke: "var(--surface)", "stroke-width": 1.5 });
+      hover(dot, () => dotTip(c)); svg.appendChild(dot);
+      if (cap && v > cap) svg.appendChild(el("text", { x: px(v) + 7, y: cy + 4, "font-size": 10, fill: "var(--muted)" }, "›"));
+    });
+    const c = byName(F), v = g(c, k), vp = g(c, k, CMP);
+    if (v == null) {  // the highlighted insurer does not disclose this measure
+      if (med != null) svg.appendChild(el("text", { x: px(med), y: cy + 44, "text-anchor": "middle", "font-size": 10.5, fill: "var(--ink-2)" }, t("median", { v: fmtU(d.unit, med) })));
+      return;
+    }
+    if (vp != null) {
+      svg.appendChild(el("line", { x1: px(vp), x2: px(v), y1: cy, y2: cy, stroke: "var(--focus)", "stroke-width": 2 }));
+      svg.appendChild(el("circle", { cx: px(vp), cy, r: 6, fill: "var(--surface)", stroke: "var(--focus)", "stroke-width": 2 }));
+    }
+    const fd = el("circle", { cx: px(v), cy, r: 7, fill: "var(--focus)", stroke: "var(--surface)", "stroke-width": 2 });
+    hover(fd, () => dotTip(c, [[t("tipMedian"), fmtU(d.unit, med)], [t("tipRank"), rk(c, k).rank + " / " + rk(c, k).n]]));
+    svg.appendChild(fd);
+    svg.appendChild(el("text", { x: px(v), y: cy - 14, "text-anchor": "middle", "font-size": 12, "font-weight": 650, fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 4, "paint-order": "stroke" }, c.short + " " + fmtU(d.unit, v) + (cap && v > cap ? " ›" : "")));
+    if (med != null) svg.appendChild(el("text", { x: px(med), y: cy + 44, "text-anchor": "middle", "font-size": 10.5, fill: "var(--ink-2)" }, t("median", { v: fmtU(d.unit, med) })));
+  });
+}
+
+/* ---------- 5 margin lollipops ---------- */
+function lolli(sel, subSel, list, slots) {
+  const svg = $(sel); svg.textContent = "";
+  const W = 520, L = 150, R = 56, T = 12, B = 30, step = 25, H = T + slots * step + B;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  const vals = COS.map(c => g(c, "ism_gross"));
+  const lo = Math.min(0, Math.floor(Math.min(...vals) * 20) / 20), hi = Math.max(0.45, Math.ceil(Math.max(...vals) * 20) / 20);
+  const px = v => L + (v - lo) / (hi - lo) * (W - L - R);
+  const { ticks } = niceTicks(lo, hi, 4);
+  ticks.forEach(tk => {
+    svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: T - 4, y2: H - B + 4, stroke: tk === 0 ? "var(--axis)" : "var(--grid)" }));
+    svg.appendChild(el("text", { x: px(tk), y: H - B + 20, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, nf(tk * 100, 0) + "%"));
+  });
+  const sorted = list.slice().sort((a, b) => g(b, "ism_gross") - g(a, "ism_gross"));
+  const v = sorted.map(c => g(c, "ism_gross")).sort((a, b) => a - b), n = v.length;
+  const med = n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2;
+  $(subSel).textContent = t("groupSub", { n, cur: CURL, v: fP(med) });
+  svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: T - 4, y2: T + n * step, stroke: "var(--ink-2)", "stroke-width": 1.5 }));
+  sorted.forEach((c, i) => {
+    const y = T + i * step + step / 2, col = colr(c), xv = px(g(c, "ism_gross")), gg = el("g");
+    if (isF(c)) gg.appendChild(el("rect", { x: 0, y: y - step / 2 + 1, width: W, height: step - 2, rx: 3, fill: "var(--focus-soft)" }));
+    gg.appendChild(el("line", { x1: px(Math.max(0, lo)), x2: xv, y1: y, y2: y, stroke: col, "stroke-width": 2, "stroke-opacity": isF(c) ? 1 : .45 }));
+    gg.appendChild(el("circle", { cx: xv, cy: y, r: isF(c) ? 6.5 : 5.5, fill: col, stroke: "var(--surface)", "stroke-width": 2 }));
+    gg.appendChild(el("text", { x: L - 10, y: y + 4, "text-anchor": "end", fill: "var(--ink)", "font-size": 12.5, "font-weight": isF(c) ? 650 : 400 }, c.name));
+    gg.appendChild(el("text", { x: W - R + 10, y: y + 4, fill: "var(--ink-2)", "font-size": 11.5 }, fP(g(c, "ism_gross"))));
+    const hit = el("rect", { x: 0, y: y - step / 2, width: W, height: step, fill: "transparent" });
+    hover(hit, () => coTip(c, [[t("tipIsmNet"), fP(g(c, "ism_net"))], [t("tipIsmCmp", { cmp: CMPL }), fP(g(c, "ism_gross", CMP))]]));
+    gg.appendChild(hit); svg.appendChild(gg);
+  });
+}
+function margins() {
+  const dis = COS.filter(c => c.ra === "disaggregated"), not = COS.filter(c => c.ra !== "disaggregated");
+  const slots = Math.max(dis.length, not.length);
+  lolli("#m1", "#m1sub", dis, slots); lolli("#m2", "#m2sub", not, slots);
+}
+
+/* ---------- 6 bridge ---------- */
+function bridge() {
+  const svg = $("#br"); svg.textContent = "";
+  const W = 900, L = 140, R = 78, T = 34, step = 31, B = 20, H = T + COS.length * step + B;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  const lo = -30, hi = 70;
+  const px = v => L + (Math.max(lo, Math.min(hi, v)) - lo) / (hi - lo) * (W - L - R);
+  const parts = [["ism_net", "var(--c1)", "lgIsr"], ["inv_margin", "var(--c2)", "lgInv"], ["other_ratio", "var(--c3)", "lgOther"], ["tax_ratio", "var(--c4)", "lgTax"]];
+  for (let v = lo; v <= hi; v += 10) {
+    svg.appendChild(el("line", { x1: px(v), x2: px(v), y1: T - 12, y2: H - B + 4, stroke: v === 0 ? "var(--axis)" : "var(--grid)", "stroke-width": v === 0 ? 1.5 : 1 }));
+    svg.appendChild(el("text", { x: px(v), y: T - 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, (v > 0 ? "+" : "") + v + "%"));
+  }
+  COS.forEach((c, i) => {
+    const y = T + i * step + step / 2, h = 14, gg = el("g");
+    if (isF(c)) gg.appendChild(el("rect", { x: 4, y: y - step / 2 + 2, width: W - 8, height: step - 4, fill: "var(--focus-soft)", rx: 3 }));
+    if (i > 0 && c.tier !== COS[i - 1].tier) gg.appendChild(el("line", { x1: 4, x2: W - 4, y1: y - step / 2, y2: y - step / 2, stroke: "var(--axis)", "stroke-width": 1.5 }));
+    let cp = 0, cn = 0, clipped = false;
+    const tipHtml = () => tipTable(c.name, [...parts.map(p => [t(p[2]), fP(g(c, p[0]))]), ["<b>" + t("lgNpm") + "</b>", "<b>" + fP(g(c, "npm")) + "</b>"],
+      [t("tipRev"), fM(raw(c, "insurance_revenue")) + " " + t("m")]]);
+    parts.forEach(([k, col]) => {
+      const v = g(c, k) * 100; if (Math.abs(v) < 0.05) return;
+      let x1, x2;
+      if (v > 0) { x1 = px(cp); x2 = px(cp + v); cp += v; } else { x1 = px(cn + v); x2 = px(cn); cn += v; }
+      if (cp > hi || cn < lo) clipped = true;
+      const w = Math.max(0, x2 - x1 - 2); if (w <= 0) return;
+      gg.appendChild(el("rect", { x: x1 + 1, y: y - h / 2, width: w, height: h, fill: col, rx: 2 }));
+    });
+    gg.appendChild(el("text", { x: L - 12, y: y + 4, "text-anchor": "end", "font-size": 12.5, fill: "var(--ink)", "font-weight": isF(c) ? 650 : 400 }, c.name));
+    const mx = px(g(c, "npm") * 100), m = 6.5;
+    gg.appendChild(el("path", { d: "M" + mx + "," + (y - m) + " L" + (mx + m) + "," + y + " L" + mx + "," + (y + m) + " L" + (mx - m) + "," + y + " Z", fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 2 }));
+    gg.appendChild(el("text", { x: W - R + 24, y: y + 4, fill: "var(--ink-2)", "font-size": 11.5 }, fP(g(c, "npm"))));
+    if (clipped) gg.appendChild(el("text", { x: W - R + 4, y: y + 4, fill: "var(--ink-2)", "font-size": 13, "font-weight": 700 }, "››"));
+    const hit = el("rect", { x: 0, y: y - step / 2, width: W, height: step, fill: "transparent" }); hover(hit, tipHtml); gg.appendChild(hit);
+    svg.appendChild(gg);
+  });
+}
+
+/* ---------- 7 table ---------- */
+const COLS = [
+  ["insurance_revenue", "growth"], ["net_profit", "growth"], ["ism_gross", "pp"], ["npm", "pp"], ["csm_close", "growth"], ["csm_growth", "pp"],
+  ["release_ratio", "pp"], ["nb_to_release", "x"], ["nb_csm", "growth"], ["nb_csm_margin", "pp"], ["acq_cost_ratio", "pp"], ["onerous_ratio", "pp"]];
+let VIEW = "cur", SORT = { k: "insurance_revenue", dir: -1 };
+function cellVal(c, k, kind) {
+  if (VIEW === "cur") return g(c, k);
+  if (VIEW === "cmp") return g(c, k, CMP);
+  const a = g(c, k), b = g(c, k, CMP);
+  if (a == null || b == null) return null;
+  return kind === "growth" ? growth(a, b) : a - b;
+}
+function cellTxt(k, kind, v) {
+  if (v == null) return t("nm");
+  if (VIEW !== "chg") return fmtU(DEF[k].unit, v);
+  if (kind === "growth") return (v >= 0 ? "+" : "") + nf(v * 100, 1) + "%";
+  if (kind === "pp") return (v >= 0 ? "+" : "") + nf(v * 100, 1) + " " + t("pp");
+  return (v >= 0 ? "+" : "") + nf(v, 2) + "×";
+}
+function table() {
+  const seg = $("#viewSeg");
+  if (!seg.childElementCount) {
+    ["cur", "cmp", "chg"].forEach(id => {
+      const b = document.createElement("button"); b.type = "button"; b.dataset.v = id;
+      b.addEventListener("click", () => { VIEW = id; table(); }); seg.appendChild(b);
+    });
+    $("#dlBtn").addEventListener("click", downloadCsv);
+  }
+  seg.setAttribute("aria-label", t("tableView"));
+  seg.querySelectorAll("button").forEach(b => { b.textContent = b.dataset.v === "cur" ? CURL : b.dataset.v === "cmp" ? CMPL : t("viewChange"); b.setAttribute("aria-pressed", b.dataset.v === VIEW); });
+  const rows = COS.slice().sort((a, b) => {
+    if (SORT.k === "name") return SORT.dir * a.name.localeCompare(b.name);
+    const kind = (COLS.find(x => x[0] === SORT.k) || [])[1];
+    const va = cellVal(a, SORT.k, kind), vb = cellVal(b, SORT.k, kind);
+    return (va == null) - (vb == null) || SORT.dir * ((va ?? 0) - (vb ?? 0));
+  });
+  const arr = k => SORT.k === k ? (SORT.dir < 0 ? "▼" : "▲") : "";
+  let h = "<thead><tr><th class='l sortable' data-k='name'>" + t("insurer") + " <span class='arr'>" + arr("name") + "</span></th><th class='l' title='" + esc(t("raSplitTitle")) + "'>" + t("raSplit") + "</th>" +
+    COLS.map(([k]) => "<th class='sortable' data-k='" + k + "' title='" + esc(mFormula(k)) + "'>" + esc(t("cols")[k] + (QTR && k === "release_ratio" ? t("ann") : "")) + " <span class='arr'>" + arr(k) + "</span></th>").join("") + "</tr></thead><tbody>";
+  const defaultOrder = SORT.k === "insurance_revenue" && SORT.dir < 0 && VIEW === "cur";
+  rows.forEach((c, i) => {
+    const cls = [isF(c) ? "focus" : "", defaultOrder && i > 0 && c.tier !== rows[i - 1].tier ? "tier-break" : ""].join(" ");
+    h += "<tr class='" + cls + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td><td class='l'>" + (c.ra === "disaggregated" ? t("raYes") : t("raNo")) + "</td>" +
+      COLS.map(([k, kind]) => "<td>" + cellTxt(k, kind, cellVal(c, k, kind)) + "</td>").join("") + "</tr>";
+  });
+  const aggLab = VIEW === "chg" && LFL ? t("industryAggCommon", { k: M.common_n }) : t("industryAgg");
+  h += "<tr><td class='l'><b>" + esc(aggLab) + "</b></td><td class='l'></td>" + COLS.map(([k, kind]) => {
+    const a = ind(k, CUR).agg, b = ind(k, CMP).agg, ac = indC(k, CUR).agg, bc = indC(k, CMP).agg;
+    const v = VIEW === "cur" ? a : VIEW === "cmp" ? b : (ac == null || bc == null ? null : kind === "growth" ? growth(ac, bc) : ac - bc);
+    return "<td><b>" + cellTxt(k, kind, v) + "</b></td>";
+  }).join("") + "</tr></tbody>";
+  const tb = $("#all"); tb.innerHTML = h;
+  if (QTR) $("#s-all .sec-note").innerHTML = t("noteAll") + t("noteAllQ", { k: LFL ? M.common_n : COS.length });
+  tb.querySelectorAll("th.sortable").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.k; SORT = SORT.k === k ? { k, dir: -SORT.dir } : { k, dir: k === "name" ? 1 : -1 }; table();
+  }));
+}
+function threeMonth() {
+  const box = $("#q3");
+  box.hidden = !QTR;
+  if (!QTR) return;
+  const q = DATA.three_month || {};
+  const v3 = (c, k, fy) => ((q[c.name] || {})[fy] || {})[k];
+  const calc = {
+    insurance_revenue: v => v.insurance_revenue, isr_gross: v => v.insurance_revenue + v.insurance_service_expense,
+    net_profit: v => v.net_profit, npm: v => v.insurance_revenue ? v.net_profit / v.insurance_revenue : null };
+  const kinds = { insurance_revenue: "growth", isr_gross: "growth", net_profit: "growth", npm: "pp" };
+  const val = (c, k, fy) => { const r = (q[c.name] || {})[fy]; return r && r.insurance_revenue != null ? calc[k](r) : null; };
+  const chgTxt = (k, a, b) => {
+    if (a == null || b == null) return t("noCmp");
+    if (kinds[k] === "pp") { const d = a - b; return (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
+    const d = growth(a, b); return d == null ? t("nm") : (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%";
+  };
+  $("#q3h").textContent = t("h3m", { pe: metaT("period_end") });
+  const keys = Object.keys(calc);
+  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + keys.map(k => "<th>" + esc(mLabel(k)) + (DEF[k].unit === "thb_m" ? " (" + t("m") + ")" : "") +
+    "</th><th>" + esc(t("vs", { cmp: CMPL })) + "</th>").join("") + "</tr></thead><tbody>";
+  const rows = COS.slice().sort((a, b) => (val(b, "insurance_revenue", CUR) ?? -1e18) - (val(a, "insurance_revenue", CUR) ?? -1e18));
+  rows.forEach(c => {
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+      keys.map(k => "<td>" + fmtU(DEF[k].unit, val(c, k, CUR)) + "</td><td>" + chgTxt(k, val(c, k, CUR), val(c, k, CMP)) + "</td>").join("") + "</tr>";
+  });
+  // industry: the current quarter over every insurer shown; the change over the insurers with both quarters
+  const sum = (list, fy) => { const s = {}; list.forEach(c => { const r = (q[c.name] || {})[fy]; if (!r) return;
+    Object.keys(r).forEach(k => { s[k] = (s[k] || 0) + (r[k] || 0); }); }); return Object.keys(s).length ? s : null; };
+  const both = COS.filter(c => v3(c, "insurance_revenue", CUR) != null && v3(c, "insurance_revenue", CMP) != null);
+  const tot = sum(COS, CUR), tc = sum(both, CUR), tp = sum(both, CMP);
+  h += "<tr><td class='l'><b>" + esc(both.length && both.length < COS.length ? t("industry3m", { k: both.length }) : t("industryAgg")) + "</b></td>" +
+    keys.map(k => "<td><b>" + fmtU(DEF[k].unit, tot ? calc[k](tot) : null) + "</b></td><td><b>" + chgTxt(k, tc ? calc[k](tc) : null, tp ? calc[k](tp) : null) + "</b></td>").join("") + "</tr></tbody>";
+  $("#q3t").innerHTML = h;
+}
+function downloadCsv() {
+  const codes = DATA.metric_defs.map(d => d.code);
+  const lines = [["company", "fiscal_year", "ra_policy", ...codes].join(",")];
+  COS.forEach(c => DATA.years.forEach(fy => { if (c.y[fy]) lines.push(['"' + c.name + '"', fy, c.ra, ...codes.map(k => g(c, k, fy) ?? "")].join(",")); }));
+  const blob = new Blob([lines.join("\n")], { type: "text/csv" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = t("csvName", { cur: CUR });
+  document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
+}
+
+/* ---------- 8 data quality ---------- */
+function dataQuality() {
+  const defs = DATA.check_defs;
+  let total = 0, ok = 0, nAcc = 0, nNa = 0;
+  let h = "<thead><tr><th class='l'>" + t("insurer") + "</th>" + DATA.years.map(fy => defs.map(d => "<th title='" + esc(chk(d.id, "label")) + "'>" + esc(chk(d.id, "short")) + "<br>" + esc(fyL(fy)) + "</th>").join("")).join("") + "<th>" + t("dqFlags") + "</th></tr></thead><tbody>";
+  COS.forEach(c => {
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "'><td class='l'>" + esc(c.name) + "</td>" + DATA.years.map(fy => defs.map(d => {
+      const r = ((DATA.checks[c.name] || {})[fy] || {})[d.id];
+      if (!r) return "<td>–</td>";
+      total++; if (r.ok) ok++;
+      if (r.status === "ACCEPTED") { nAcc++; return "<td class='ok' title='" + esc(t("dqAccepted", { v: nf(r.diff, 3), r: r.reason || "" })) + "'>✓*</td>"; }
+      if (r.status === "N/A") { nNa++; return "<td title='" + esc(t("dqNa")) + "'>" + t("na") + "</td>"; }
+      return "<td class='" + (r.ok ? "ok" : "fail") + "' title='" + esc(t("diff", { v: nf(r.diff, 3) })) + "'>" + (r.ok ? "✓" : "✗") + "</td>";
+    }).join("")).join("") + "<td>" + (DATA.flags.filter(f => f.company === c.name).length || "") + "</td></tr>";
+  });
+  $("#dq").innerHTML = h + "</tbody>";
+  $("#dqNote").innerHTML = t(QTR ? "dqNoteQ" : "dqNote", { ok, total, tol: M.tolerance_thb_m, n: COS.length, y: DATA.years.length, c: defs.length }) +
+    (nAcc ? t("dqNoteAcc", { a: nAcc }) : "") + (nNa ? t("dqNoteNa", { na: nNa }) : "");
+  $("#flags").innerHTML = DATA.flags.map(f => "<li><b>" + esc(f.company) + "</b> " + esc(fyL(f.fiscal_year)) + ": " + esc(flagMsg(f)) + "</li>").join("") || "<li>" + t("none") + "</li>";
+}
+
+/* ---------- 9 method ---------- */
+function method() {
+  $("#commentary").innerHTML = "<h4>" + t("h4comp") + "</h4><p><b>" + t("compYear") + ".</b> " + esc(metaT("comparative_caveat")) + "</p>" +
+    DATA.commentary.filter(x => x.id !== "transition").map(x => "<p><b>" + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</p>").join("");
+  $("#defs").innerHTML = "<thead><tr><th class='l'>" + t("defArea") + "</th><th class='l'>" + t("defInd") + "</th><th class='l'>" + t("defDef") + "</th></tr></thead><tbody>" +
+    DATA.metric_defs.map(d => "<tr><td class='l'>" + esc(groupT(d.group)) + "</td><td class='l'>" + esc(mLabel(d.code)) + "</td><td class='l' style='white-space:normal'>" + esc(mFormula(d.code)) + "</td></tr>").join("") + "</tbody>";
+  const tr = TR(), ex = $("#extract");
+  ex.innerHTML = "<h4>" + t("h4extract") + "</h4>" + (tr && tr.notes_language_label ? "<p>" + esc(tr.notes_language_label) + "</p>" : "");
+  COS.forEach(c => {
+    const n = DATA.company_notes.find(x => x.company === c.name) || {};
+    const d = document.createElement("details");
+    d.innerHTML = "<summary>" + esc(c.name) + " — " + esc(c.units) + "</summary><p lang='en'>" + esc(n.header_note || "") + "</p><p lang='en'>" + esc(n.extraction_note || "") + "</p>";
+    ex.appendChild(d);
+  });
+  $("#foot").innerHTML = t("foot", { wb: esc(M.source_ref), gen: esc(M.generated), git: M.git ? t("footGit", { git: esc(M.git) }) : "" });
+}
+
+function renderAll() {
+  staticText();
+  $$(".f-name").forEach(e => e.textContent = F);
+  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); threeMonth(); dataQuality(); method();
+}
+(function init() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  const langs = M.languages || ["en"];
+  const want = h.get("lang") || store.get("ifrs17-dash-lang");
+  if (want && langs.includes(want) && (want === "en" || (DATA.i18n || {})[want])) LANG = want;
+  if (h.get("focus") && byName(h.get("focus"))) F = h.get("focus");
+  controls(); renderAll();
+})();
+</script>
+</body>
+</html>

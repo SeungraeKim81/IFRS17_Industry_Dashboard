@@ -6,11 +6,18 @@ consistency check between the CSM roll-forward and the new-business note.
 
 Soft checks (reported, never blocking): plausibility flags that point the
 reviewer at figures worth a second look.
+
+A reconciliation that needs a line item the statement does not disclose is reported as "N/A"
+(not failed): the extraction check (`verify-extract`) already tied it against the printed total.
+A break the statement itself contains, recorded in its extraction as an accepted break
+(data/<period>/accepted_breaks.csv, written by ingest), is reported as "ACCEPTED" while the
+difference stays what was recorded. On a quarterly page the plausibility range applies to the
+annualised release ratio.
 """
 from __future__ import annotations
 
-from .common import fmt_num, load_settings, period_dir, write_csv
-from .metrics import METRIC_INDEX, load_values
+from .common import comparative_period, fmt_num, load_settings, period_dir, read_csv, write_csv
+from .metrics import evaluate, load_values, metric_value
 
 # id, label, left side (computed), right side (as printed)
 RECONCILIATIONS = [
@@ -36,7 +43,7 @@ RECONCILIATIONS = [
 
 
 def _plausibility(c: str, fy: str, v: dict, prev: dict | None, p: dict) -> list[dict]:
-    m = {k: METRIC_INDEX[k][6](v) for k in ("release_ratio", "nb_to_release", "nb_csm_margin")}
+    m = {k: metric_value(k, v, fy) for k in ("release_ratio", "nb_to_release", "nb_csm_margin")}
     flags = []
 
     def add(fid, msg, msg_ko):
@@ -67,20 +74,39 @@ def _plausibility(c: str, fy: str, v: dict, prev: dict | None, p: dict) -> list[
     return flags
 
 
+def accepted_breaks(period: str) -> dict[tuple[str, str, str], dict]:
+    path = period_dir(period) / "accepted_breaks.csv"
+    if not path.exists():
+        return {}
+    return {(r["company"], r["fiscal_year"], r["check"]): r for r in read_csv(path)}
+
+
 def validate(period: str) -> tuple[list[dict], list[dict]]:
     s = load_settings()
     tol = s["tolerance_thb_m"]
     vals = load_values(period)
+    accepted = accepted_breaks(period)
     checks, flags = [], []
     for (c, fy), v in sorted(vals.items()):
         for cid, label, lhs, rhs in RECONCILIATIONS:
-            a, b = lhs(v), rhs(v)
+            a, b = evaluate(lhs, v), evaluate(rhs, v)
+            if a is None or b is None:
+                checks.append({"company": c, "fiscal_year": fy, "check": cid, "label": label, "computed": "",
+                               "printed": "", "difference": "", "result": "N/A"})
+                continue
             checks.append({"company": c, "fiscal_year": fy, "check": cid, "label": label,
                            "computed": fmt_num(round(a, 6)), "printed": fmt_num(round(b, 6)),
-                           "difference": fmt_num(round(a - b, 6)), "result": "OK" if abs(a - b) <= tol else "FAIL"})
-        prev_fy = "FY" + str(int(fy[2:]) - 1)
-        flags += _plausibility(c, fy, v, vals.get((c, prev_fy)), s["plausibility"])
+                           "difference": fmt_num(round(a - b, 6)), "result": _result(a - b, accepted.get((c, fy, cid)), tol)})
+        flags += _plausibility(c, fy, v, vals.get((c, comparative_period(fy))), s["plausibility"])
     return checks, flags
+
+
+def _result(diff: float, accepted: dict | None, tol: float) -> str:
+    if abs(diff) <= tol:
+        return "OK"
+    if accepted and abs(diff - float(accepted["difference"])) <= tol:
+        return "ACCEPTED"
+    return "FAIL"
 
 
 def run(period: str, strict: bool = True) -> bool:
@@ -88,8 +114,12 @@ def run(period: str, strict: bool = True) -> bool:
     write_csv(period_dir(period) / "validation.csv", checks,
               ["company", "fiscal_year", "check", "label", "computed", "printed", "difference", "result"])
     write_csv(period_dir(period) / "flags.csv", flags, ["company", "fiscal_year", "flag", "message", "message_ko"])
-    fails = [c for c in checks if c["result"] != "OK"]
-    print(f"validate: {len(checks) - len(fails)}/{len(checks)} reconciliations OK, {len(flags)} plausibility flags")
+    fails = [c for c in checks if c["result"] == "FAIL"]
+    n_acc = sum(c["result"] == "ACCEPTED" for c in checks)
+    n_na = sum(c["result"] == "N/A" for c in checks)
+    print(f"validate: {len(checks) - len(fails)}/{len(checks)} reconciliations OK"
+          + (f" ({n_acc} accepted breaks, {n_na} not disclosed)" if n_acc or n_na else "")
+          + f", {len(flags)} plausibility flags")
     for f in fails:
         print(f"  FAIL {f['company']} {f['fiscal_year']} {f['check']}: computed {f['computed']} vs printed "
               f"{f['printed']} (diff {f['difference']})")

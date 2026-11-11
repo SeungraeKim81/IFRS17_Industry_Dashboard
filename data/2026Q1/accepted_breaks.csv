@@ -1,0 +1,3 @@
+company,fiscal_year,check,difference,reason
+Allianz Ayudhya,2025Q1,csm_rollforward,110.496,"the 19.1.2 CSM column carries 'other changes affecting the contract balances' of (110,496) thousand Baht, which has no line item; left out"
+Tokio Marine Life,2025Q1,revenue_split,0.328701,"the interim prints two CSM releases: 212,878,040 Baht in the 14.1.2 roll-forward (used, so the CSM roll-forward closes) and 212,549,339 Baht in note 16 (which closes the revenue split)"

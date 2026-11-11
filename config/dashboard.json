@@ -3,6 +3,8 @@
   "market": "Thailand · life insurance",
   "standard": "TFRS 17 (IFRS 17)",
   "period": "FY2025",
+  "site_root": "2026Q2",
+  "periods": ["FY2025", "2026Q2", "2026Q1", "2025Q3", "2025Q2", "2025Q1"],
   "comparative": "FY2024",
   "period_end": "31 December 2025 (B.E. 2568)",
   "unit": "THB million",
@@ -21,5 +23,6 @@
     "yoy_revenue_abs_max": 0.5,
     "nb_csm_margin_max": 0.30
   },
+  "quarterly_caveat": "Quarterly figures are year to date, taken from the reviewed (not audited) condensed interim statements. The CSM roll-forward and new business are cumulative since 1 January, and the CSM release ratio is annualised (x 12 / months to date) so that it reads on the same scale as a year. The comparative is the same period a year earlier from the prior-year interim statements; the 2025 interims have no comparative here, because 2024 quarters were not extracted. Industry changes are like for like over the insurers present in both periods. An insurer whose interim statement was not supplied for a period is left out of that period.",
   "comparative_caveat": "TFRS 17 became effective in Thailand on 1 January 2025 with transition on 1 January 2024, so FY2024 figures are restated transition comparatives, not previously reported performance. Year-on-year changes should be read with that in mind."
 }

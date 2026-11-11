@@ -1,0 +1,418 @@
+{
+ "company": "Prudential Life",
+ "company_id": "prudential-life",
+ "period": "2025Q3",
+ "source": {
+  "drive_file_id": "1oA9rs-qKSDBGs_m6Te2iDg37S_4s38iZ",
+  "original_name": "13_FS-PRUDENTIAL_3Q2025.pdf",
+  "sha256": "98e2fa9fee403b58239999a715f875d97cf90bb28cc027e7a3596aa6811b197f",
+  "doc_type": "Reviewed condensed interim financial statements 3Q2025 (Thai)",
+  "pages": 59,
+  "text_layer": "no (scanned)"
+ },
+ "notes": "Quarterly (9 months to 30 September 2025 = year to date). First IFRS 17 interim year (2567 comparatives restated). Scanned; read locally, pages located by their headings (file page numbers). Reviewed, not audited (EY). Thousand Baht. SCI three months p.5, nine months p.7. Unlike 1Q and 2Q2025 (notes 7 non-participating and 8 participating), this edition reports issued contracts in one note 7 (as the 2026 interims do); its opening CSM (18,958,809) equals the 2Q2025 sum of the two groups. Revenue and expenses from note 6, nine months (p.32). CSM roll-forward 7.2 p.36; new business 7.3 p.38. Future-service change = change in estimates + experience adjustment (CSM column). RA release uses note 6 (278,025), not the AOC RA (283,840). Other revenue = รายการอื่น. The three-month tax line, 'add (less): income (expense)', is a credit (191,276), kept positive; the quarter is a net loss. Other expense = other finance costs + other operating expenses. The three-month profit or loss is the SCI for the three months to 30 September 2568 (p.5).",
+ "ytd_months": 9,
+ "items": {
+  "ra_release": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "278,025",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "bel_release": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "3,399,453",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "paa_revenue": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "-",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6 (no PAA revenue this year)",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "other_revenue": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "13,671",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6, รายการอื่น",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "incurred_claims": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "(3,553,647)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "past_service": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "(187,631)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "loss_component": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "(334,832)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "acq_recovery": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "3,878,055",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "acq_amortisation": {
+   "2025Q3": {
+    "page": 32,
+    "printed": "(3,878,055)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "6",
+    "heading_seen": "6. รายได้และค่าใช้จ่ายจากการประกันภัย (เก้าเดือน 30 กันยายน 2568, revenue and ค่าใช้จ่ายในการบริการประกันภัย)"
+   }
+  },
+  "net_investment_income": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "4,069,667",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "ifie": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "(5,721,347)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2025Q3": {
+    "page": 7,
+    "printed": [
+     "(5,254)",
+     "(124,721)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months, other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "other_income": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "26,068",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "(9,682)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months (note 14.2)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "(366,799)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months, net loss",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "(243,744)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "csm_nb": {
+   "2025Q3": {
+    "page": 36,
+    "printed": "2,100,069",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.2 CSM column, contracts initially recognised",
+    "heading_seen": "7.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย โดยไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "csm_accretion": {
+   "2025Q3": {
+    "page": 36,
+    "printed": "370,445",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.2 CSM column, insurance finance row",
+    "heading_seen": "7.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย โดยไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "csm_future_service": {
+   "2025Q3": {
+    "page": 36,
+    "printed": [
+     "(652,281)",
+     "758,430"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.2 CSM column, change in estimates + experience adjustment",
+    "heading_seen": "7.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย โดยไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "csm_release": {
+   "2025Q3": {
+    "page": 36,
+    "printed": "(2,027,175)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.2 CSM column (equals 6)",
+    "heading_seen": "7.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย โดยไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "nb_pv_premium": {
+   "2025Q3": {
+    "page": 38,
+    "printed": "(37,769,108)",
+    "unit": "thousand_baht",
+    "sign": -1,
+    "note": "7.3 total",
+    "heading_seen": "7.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "nb_pv_acq": {
+   "2025Q3": {
+    "page": 38,
+    "printed": "6,399,988",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.3 total",
+    "heading_seen": "7.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "nb_pv_claims": {
+   "2025Q3": {
+    "page": 38,
+    "printed": "28,905,597",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.3 total",
+    "heading_seen": "7.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "nb_ra": {
+   "2025Q3": {
+    "page": 38,
+    "printed": "457,106",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.3 total",
+    "heading_seen": "7.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "nb_csm": {
+   "2025Q3": {
+    "page": 38,
+    "printed": "2,100,069",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.3 total",
+    "heading_seen": "7.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "csm_open": {
+   "2025Q3": {
+    "page": 36,
+    "printed": "18,958,809",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.2 CSM column, net opening",
+    "heading_seen": "7.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย โดยไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "csm_close": {
+   "2025Q3": {
+    "page": 36,
+    "printed": "19,508,297",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.2 CSM column, net closing",
+    "heading_seen": "7.2 กระทบยอดการวัดมูลค่าองค์ประกอบของยอดคงเหลือในสัญญาประกันภัย โดยไม่รวมสัญญาที่วัดมูลค่าภายใต้วิธีการปันส่วนเบี้ยประกันภัย (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "nb_loss_component": {
+   "2025Q3": {
+    "page": 38,
+    "printed": "93,652",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "7.3 total, onerous contracts",
+    "heading_seen": "7.3 ผลกระทบของสัญญาที่รับรู้ในรอบระยะเวลา (เก้าเดือน 30 กันยายน 2568)"
+   }
+  },
+  "insurance_revenue": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "9,596,379",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months (equals 6)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2025Q3": {
+    "page": 7,
+    "printed": "(7,954,165)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI nine months (equals 6)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  }
+ },
+ "items_3m": {
+  "insurance_revenue": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "3,235,657",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "insurance_service_expense": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "(2,735,846)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "reinsurance_result": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "(65,956)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "net_investment_income": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "1,972,027",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "ifie": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "(3,534,738)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "other_expense": {
+   "2025Q3": {
+    "page": 5,
+    "printed": [
+     "(1,772)",
+     "(40,284)"
+    ],
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months, other finance costs + other operating expenses",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "other_income": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "7,450",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "income_tax": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "191,276",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months, income (expense): a credit",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "net_profit": {
+   "2025Q3": {
+    "page": 5,
+    "printed": "(972,186)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI three months, net loss",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  }
+ }
+}
