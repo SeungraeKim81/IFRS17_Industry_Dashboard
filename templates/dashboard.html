@@ -39,7 +39,7 @@ __ROBOTS__
    of the digit 0, about half a Korean character, so ch-based widths wrapped Korean text early. */
 :root{--measure:60rem}
 html,body{margin:0}
-body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Thonburi","Leelawadee UI","Noto Sans Thai",sans-serif;
   -webkit-font-smoothing:antialiased;padding:32px 16px 64px}
 .wrap{max-width:1180px;margin:0 auto}
 header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
@@ -56,6 +56,9 @@ nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decorat
 .lang-pick .seg button{text-transform:none;letter-spacing:0}
 :lang(ko) body{word-break:keep-all;overflow-wrap:anywhere}
 :lang(ko) .units,:lang(ko) nav.periods .lab,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
+/* Thai: taller line for stacked vowel and tone marks; no capitals, so no tracking on the small caps labels */
+:lang(th) body{line-height:1.7}
+:lang(th) .units,:lang(th) nav.periods .lab,:lang(th) .lang-pick,:lang(th) .focus-pick,:lang(th) .panel h3,:lang(th) table.data th{letter-spacing:0}
 @media(max-width:620px){.controls{align-items:stretch;width:100%}.lang-pick{justify-content:space-between}}
 .focus-pick{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .focus-pick select{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--surface);
@@ -72,7 +75,7 @@ h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:860px){.panels{grid-template-columns:1fr}}
 svg{display:block;width:100%;height:auto;overflow:visible}
-svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif}
+svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Thonburi","Leelawadee UI","Noto Sans Thai",sans-serif}
 .num{font-variant-numeric:tabular-nums}
 .legend{display:flex;gap:8px 18px;align-items:center;flex-wrap:wrap;margin:12px 0 0;font-size:13px;color:var(--ink-2)}
 .key{display:inline-flex;align-items:center;gap:7px}
@@ -451,6 +454,87 @@ const UI = {
       "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + (p.acqNa
         ? "이다. 재무제표가 신계약 현금유출을 보험취득비용과 보험금으로 나누어 공시하지 않는다."
         : "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq + "를 차지한다(중앙값 " + p.acqMed + ")."),
+    ],
+  },
+  // Thai: indicator names and IFRS 17 terms stay in English (owner decision); sentences and interface text in Thai
+  th: {
+    langName: "ไทย", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
+    lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ในงบการเงินก่อนนำมาแสดงบนหน้านี้",
+    units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
+    toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "การเปลี่ยนแปลง CSM", "ธุรกิจใหม่", "Service margin", "องค์ประกอบกำไร", "บริษัททั้งหมด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
+    h2market: "2&nbsp; สถานะทางการตลาด",
+    noteMarket: "ขนาดตามสามมิติ: กำไรในอนาคตที่เพิ่มขึ้นจากการขายในปีนี้ (New-business CSM) กำไรที่สะสมไว้สำหรับปีต่อ ๆ ไป (CSM closing) และรายได้ที่บริษัทได้รับในปีนี้ (Insurance revenue) เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม",
+    h2csm: "3&nbsp; การวิเคราะห์การเปลี่ยนแปลง CSM",
+    noteCsm: "การเปลี่ยนแปลงของ CSM ในรอบงวด ปรับเป็นดัชนีโดยให้ CSM ต้นงวด&nbsp;=&nbsp;100 เปรียบเทียบบริษัทที่เน้นกับยอดรวมของอุตสาหกรรม จากนั้นแผนภาพสี่ส่วนเปรียบเทียบความเร็วในการรับรู้ CSM กับปริมาณธุรกิจใหม่ที่เข้ามาทดแทนส่วนที่รับรู้ไป",
+    h3wf: "การเปลี่ยนแปลง CSM (ต้นงวด = 100)", ariaWf: "แผนภูมิน้ำตกการเปลี่ยนแปลง CSM ของบริษัทที่เน้นและอุตสาหกรรม",
+    lgOpenClose: "Opening / closing", lgIncrease: "เพิ่มขึ้น", lgDecrease: "ลดลง",
+    h3quad: "แผนภาพสี่ส่วนความยั่งยืนของ CSM", ariaQuad: "แผนภาพการกระจายของ CSM release ratio เทียบกับ New business / release",
+    lgOthers: "บริษัทอื่น", lgCeiling: "แสดงที่ขอบแกน พร้อมป้ายค่าจริง", lgBubble: "ขนาดวงกลม = CSM closing",
+    h2nb: "4&nbsp; คุณภาพธุรกิจใหม่",
+    noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม",
+    ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
+    h2ism: "5&nbsp; Insurance service margin แยกตามนโยบาย RA",
+    noteIsmDef: "Insurance service margin คือ insurance service result (insurance revenue บวก insurance service expense) หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน",
+    noteIsm: "บริษัทที่<b>ไม่</b>แยกการเปลี่ยนแปลงของ risk adjustment จะรวมผลทางการเงินของ RA ไว้ใน insurance service result ทำให้อัตรากำไรสูงขึ้น สองกลุ่มนี้มีเกณฑ์ต่างกัน จึงเปรียบเทียบเฉพาะภายในกลุ่มเดียวกัน ขีดแนวตั้งคือค่ามัธยฐานของแต่ละกลุ่ม",
+    h3dis: "แยก RA", h3not: "ไม่แยก RA",
+    h2bridge: "6&nbsp; Insurance revenue 100 บาท ไปอยู่ที่ไหน",
+    noteBridge: "ทุกปัจจัยระหว่าง insurance service result กับ net profit แสดงเป็นสัดส่วนของ insurance revenue ของบริษัทนั้นเอง ปัจจัยที่เพิ่มกำไรอยู่ทางขวาของศูนย์ ปัจจัยที่ลดกำไรอยู่ทางซ้าย รูปข้าวหลามตัดคือ net profit margin ผลการลงทุนแสดงเป็น<b>ยอดสุทธิหลังหักค่าใช้จ่ายทางการเงินจากการประกันภัย (IFIE)</b> เพราะทั้งสองรายการเคลื่อนไหวไปพร้อมกับอัตราดอกเบี้ย หากดูแยกกันอาจเข้าใจผิดได้ เรียงบริษัทตาม net profit margin จากสูงไปต่ำ",
+    ariaBridge: "แผนภูมิองค์ประกอบจาก insurance service result ถึง net profit margin",
+    lgIsr: "Insurance service result after reinsurance", lgInv: "Investment result net of IFIE", lgOther: "Other expense, net",
+    lgTax: "Income tax", lgNpm: "Net profit margin", lgClipped: "ถูกตัดที่ขอบแกน",
+    h2all: "7&nbsp; บริษัททั้งหมด",
+    noteAll: "คลิกหัวคอลัมน์เพื่อเรียงลำดับ ปุ่มสลับมุมมองแสดงงวดปัจจุบัน งวดเปรียบเทียบ หรือการเปลี่ยนแปลงระหว่างสองงวด (อัตราส่วนแสดงเป็นจุดร้อยละ) ปุ่มดาวน์โหลดให้ตัวชี้วัดทั้งหมดเป็นไฟล์ CSV",
+    download: "ดาวน์โหลด CSV", viewChange: "การเปลี่ยนแปลง", tableView: "มุมมองตาราง",
+    h2dq: "8&nbsp; คุณภาพข้อมูล", h4flags: "ข้อสังเกตด้านความสมเหตุสมผล",
+    noteFlags: "สร้างขึ้นอัตโนมัติเพื่อการตรวจทาน และไม่หยุดการสร้างหน้า แต่ละรายการจะอธิบายไว้ในส่วนที่ 9 หรือตรวจสอบกับแหล่งข้อมูลต้นทาง",
+    h2method: "9&nbsp; วิธีการและหมายเหตุ", h4defs: "นิยามตัวชี้วัด", h4comp: "หมายเหตุด้านการเปรียบเทียบ", compYear: "งวดเปรียบเทียบ",
+    h4extract: "บันทึกการดึงข้อมูลรายบริษัท", notesLang: "",
+    na: "n/a", nm: "n.m.", noCmp: "ไม่มีงวดเปรียบเทียบ", nmBase: "n.m. เทียบกับ {cmp} (ฐาน ≤ 0)", vs: "เทียบกับ {cmp}", pp: "pp", m: "ล้าน",
+    rankOf: "{r} จาก {n} บริษัท ตาม Insurance revenue", raChip: "RA {p}", raDis: "แยก", raNot: "ไม่แยก", raYes: "แยก", raNo: "ไม่แยก",
+    focusFlag: "เน้น", industry: "อุตสาหกรรม", industryAgg: "ยอดรวมอุตสาหกรรม", industryN: "อุตสาหกรรม ({n} บริษัท)",
+    insurer: "บริษัท", shareCol: "{x} · ส่วนแบ่ง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
+    tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "นโยบาย RA", tipIsmNet: "Margin after reinsurance",
+    tipIsmCmp: "Service margin {cmp}", tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
+    ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
+    ctxRaGroup: "อันดับ {r} จาก {k} ในกลุ่ม RA · ค่ามัธยฐานกลุ่ม {v}", ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
+    wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
+    wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
+    qSub: "{cur} · ขนาดวงกลม = CSM closing, {lo} ถึง {hi} ล้าน", qThreshold: "1.0× — เหนือเส้นคือเติม CSM ได้ ใต้เส้นคือ CSM ลดลง",
+    qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
+    better: "ยิ่งสูงยิ่งดี", worse: "ยิ่งต่ำยิ่งดี", median: "ค่ามัธยฐาน {v}",
+    groupSub: "{n} บริษัท · {cur} · ค่ามัธยฐานกลุ่ม {v}",
+    dqNote: "การกระทบยอด <b>{ok} จาก {total}</b> รายการตรงกันภายใน {tol} ล้าน ({n} บริษัท × {y} ปี × {c} รายการตรวจ) หากมีรายการใดไม่ผ่าน การสร้างหน้าจะหยุด แดชบอร์ดที่เผยแพร่จึงตรงกับยอดรวมย่อยที่พิมพ์ในงบการเงินเสมอ ชี้ที่เครื่องหมายเพื่อดูผลต่าง",
+    dqFlags: "ข้อสังเกต", diff: "ผลต่าง {v} ล้าน", none: "ไม่มี",
+    defArea: "หมวด", defInd: "ตัวชี้วัด", defDef: "นิยาม",
+    foot: "แหล่งที่มา: งบการเงินตาม TFRS 17 ที่แต่ละบริษัทเปิดเผย (เอกสารที่ยื่นต่อ SET การเปิดเผยข้อมูลประจำปีต่อ คปภ. และเว็บไซต์บริษัท) ดึงข้อมูลทีละหน้าจากงบการเงินที่ยื่นแต่ละฉบับ (ไฟล์ที่ใช้: <code>{wb}</code>) สร้างเมื่อ {gen}{git} ผู้จัดทำแดชบอร์ดรวบรวมจากข้อมูลสาธารณะ อาจมีข้อผิดพลาดในการดึงข้อมูล งบการเงินที่ยื่นจึงเป็นแหล่งอ้างอิงหลัก ไม่ใช่คำแนะนำการลงทุน",
+    footGit: " จาก commit {git}", reviewFlag: "ข้อสังเกตเพื่อตรวจทาน {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
+    periodsLabel: "งวด",
+    ledeQ: "ผลการดำเนินงานสะสมตั้งแต่ต้นปีถึง {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินระหว่างกาลที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ก่อนนำมาแสดงบนหน้านี้",
+    unitsQ: "{unit} · {mo} เดือนถึง {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท", unitsQnoCmp: "{unit} · {mo} เดือนถึง {pe} · ไม่มีงวดเปรียบเทียบ · {n} บริษัท",
+    qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (รายปี)",
+    noteAllQ: " ตัวเลขเป็นยอดสะสมตั้งแต่ต้นปี การเปลี่ยนแปลงของอุตสาหกรรมเปรียบเทียบเฉพาะ {k} บริษัทที่มีข้อมูลทั้งสองงวด",
+    industryAggCommon: "อุตสาหกรรม เฉพาะบริษัทเดียวกัน ({k} บริษัท)",
+    dqNoteQ: "จากตัวเลขสะสมที่แสดง การกระทบยอด <b>{ok} จาก {total}</b> รายการตรงกันภายใน {tol} ล้าน ({n} บริษัท, {c} รายการตรวจต่องวด) หากมีรายการใดไม่ผ่าน การสร้างหน้าจะหยุด ชี้ที่เครื่องหมายเพื่อดูผลต่าง",
+    dqNoteAcc: " ✓* ({a}) คือผลต่างที่มีอยู่ในงบการเงินเอง ยอมรับไว้ที่ผลต่างที่บันทึก",
+    dqNoteNa: " n/a ({na}) คือรายการตรวจที่ต้องใช้รายการที่งบการเงินไม่ได้เปิดเผย ซึ่งกระทบยอดกับยอดรวมที่พิมพ์ไว้แล้วตอนดึงข้อมูล",
+    dqAccepted: "ผลต่างที่ยอมรับ {v} ล้าน: {r}", dqNa: "ไม่ได้เปิดเผย กระทบยอดกับยอดรวมที่พิมพ์ไว้แล้วตอนดึงข้อมูล",
+    cols: { insurance_revenue: "Revenue", net_profit: "Net profit", ism_gross: "Service margin", npm: "NP margin", csm_close: "CSM closing",
+      csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
+      acq_cost_ratio: "Acq. cost ratio", onerous_ratio: "Onerous NB" },
+    ord: n => "อันดับ " + n,
+    chg: (x, up, down) => x == null ? "เปลี่ยนแปลง (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
+    headlines: p => [
+      p.short + " อยู่" + p.ord(p.sizeRank) + " จาก " + p.n + " บริษัทตาม Insurance revenue (ส่วนแบ่ง " + p.revShare + ") " +
+        p.ord(p.csmRank) + " ตาม CSM closing และ" + p.ord(p.nbRank) + " ตาม New-business CSM",
+      "CSM " + p.chg(p.csmG, "เพิ่มขึ้น", "ลดลง") + " " + (p.q ? "นับจาก 1 มกราคม" : "ในรอบปี") + " เป็น " + p.csmClose + " ล้านบาท (อุตสาหกรรม " + p.csmGi + ") ธุรกิจใหม่ทดแทนได้ " +
+        p.nbr + " ของ CSM release (ค่ามัธยฐานอุตสาหกรรม " + p.nbrMed + ")",
+      p.hasCmp ? "Net profit " + p.chg(p.npG, "เพิ่มขึ้น", "ลดลง") + " เป็น " + p.np + " ล้านบาท ขณะที่ insurance service result " + p.chg(p.isrG, "เพิ่มขึ้น", "ลดลง") +
+        (p.taxBig ? " income tax เปลี่ยนจาก " + p.taxPrev + " ล้าน เป็น " + p.taxNow + " ล้านบาท" : "")
+        : "Net profit เท่ากับ " + p.np + " ล้านบาท และ insurance service result " + p.isr + " ล้านบาท (หน้านี้ไม่มีงวดเปรียบเทียบ)",
+      "New-business CSM margin " + p.nbm + " อยู่" + p.ord(p.nbmRank) + " จาก " + p.n + " บริษัท" + (p.acqNa
+        ? " งบการเงินไม่ได้แยกกระแสเงินสดจ่ายของธุรกิจใหม่เป็น acquisition cost และ claims"
+        : " acquisition cost คิดเป็น " + p.acq + " ของ new-business premium (ค่ามัธยฐาน " + p.acqMed + ")"),
     ],
   },
 };
