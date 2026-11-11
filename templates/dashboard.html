@@ -103,9 +103,9 @@ nav.toc a:hover{color:var(--ink);text-decoration:underline}
 #s-focus{margin-top:-56px;position:relative}
 @media(max-width:620px){.mast{padding:20px 0 76px}.mast .r2{display:none}}
 section{margin-top:44px;scroll-margin-top:12px}
-h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
+h2{font-weight:700;font-size:20px;margin:0;letter-spacing:-.005em;color:var(--title);display:inline-block;padding-bottom:5px;border-bottom:2px solid var(--focus)}
 .sec-note{color:var(--ink-2);font-size:14px;max-width:var(--measure);margin:6px 0 16px}
-.panel{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:16px}
+.panel{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:16px}
 .panel h3{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
 .panel .sub{font-size:12px;color:var(--muted);margin:3px 0 10px}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -126,13 +126,16 @@ svg text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic 
 @media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.tiles{grid-template-columns:1fr}}
-.tile{background:var(--surface);border:1px solid var(--hair);border-radius:8px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
+.tile{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
 .tile .lab{font-size:13px;color:var(--ink-2)}
-.tile .val{font-size:26px;font-weight:620;line-height:1.25;margin-top:2px}
+.tile .val{font-size:26px;font-weight:700;line-height:1.25;margin-top:2px;color:var(--title);font-variant-numeric:tabular-nums}
 .tile .delta{font-size:13px;margin-top:2px}
 .tile .ctx{font-size:12px;color:var(--muted);margin-top:4px}
 .up-good,.down-good{color:var(--good)} .up-bad,.down-bad{color:var(--bad)} .flat{color:var(--ink-2)}
-.headlines{margin:16px 0 0;padding:0 0 0 18px;color:var(--ink);max-width:var(--measure)}
+.keymsg{margin-top:16px;padding:14px 20px 12px;border-radius:6px;background:var(--band);color:var(--band-ink)}
+.keymsg .eyebrow{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--focus)}
+:lang(ko) .keymsg .eyebrow,:lang(th) .keymsg .eyebrow{letter-spacing:.04em}
+.headlines{margin:0;padding:0 0 0 18px;color:var(--band-ink);max-width:var(--measure)}
 .headlines li{margin:4px 0}
 .callouts{margin-top:14px;display:grid;gap:8px}
 .callout{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--axis);padding:4px 0 4px 12px}
@@ -216,7 +219,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 <section id="s-focus">
   <div class="tiles" id="tiles1"></div>
   <div class="tiles" id="tiles2"></div>
-  <ul class="headlines" id="headlines"></ul>
+  <div class="keymsg"><p class="eyebrow" data-t="keyMessages"></p><ul class="headlines" id="headlines"></ul></div>
   <div class="callouts" id="callouts"></div>
 </section>
 
@@ -336,7 +339,7 @@ let LANG = M.default_language || "en";
    definitions, checks, commentary, review flags) comes from config/i18n/<lang>.json. */
 const UI = {
   en: {
-    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
+    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", keyMessages: "Key messages", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
     lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "CSM movement", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
@@ -416,7 +419,7 @@ const UI = {
     ],
   },
   ko: {
-    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
+    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", keyMessages: "핵심 메시지", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
     lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "CSM 변동분석", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
@@ -497,7 +500,7 @@ const UI = {
   },
   // Thai: indicator names and IFRS 17 terms stay in English (owner decision); sentences and interface text in Thai
   th: {
-    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
+    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", keyMessages: "ประเด็นสำคัญ", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
     lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ในงบการเงินก่อนนำมาแสดงบนหน้านี้",
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "การเปลี่ยนแปลง CSM", "ธุรกิจใหม่", "Service margin", "องค์ประกอบกำไร", "บริษัททั้งหมด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
