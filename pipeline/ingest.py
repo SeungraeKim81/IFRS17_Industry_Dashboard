@@ -15,7 +15,8 @@ Two sources, chosen by "source" in config/dashboard.json:
 
 The capture workbook layout:
 
-The capture workbook has one sheet per insurer with a fixed layout:
+The capture workbook has one sheet per insurer (the 17 pilot insurers; a company with no "sheet" in
+config/companies.csv is not in it) with a fixed layout:
 column B = line item label, C = current year, D = comparative year,
 E = status, F = source reference. Rows are matched by label (not by row
 number) against config/line_items.csv, so a moved row is still read and an
@@ -86,6 +87,8 @@ def ingest(workbook: Path, period: str) -> tuple[list[dict], list[dict]]:
 
     for co in annual_companies():
         sheet = co["sheet"]
+        if not sheet:  # not in the pilot workbook (added with the extractions)
+            continue
         if sheet not in wb_raw.sheetnames:
             errors.append(f"{co['company']}: sheet {sheet!r} not found in workbook")
             continue
@@ -192,9 +195,6 @@ def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict],
                 rec = src["items"].get(code, {}).get(fy)
                 if rec is None:
                     errors.append(f"{name}: {code} {fy} missing from the extraction")
-                elif rec["value"] is None and not quarterly:
-                    errors.append(f"{name}: {code} {fy} is not disclosed; the annual dashboard does not handle "
-                                  "not-disclosed values yet")
                 else:
                     rows.append(_row(period, fy, name, code, rec, _source_text))
         for fy, src in ((period, ex), (fy_cmp, cmp_ex)) if quarterly else ((period, ex),):

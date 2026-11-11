@@ -11,7 +11,7 @@ command line.
 | Objective | A Thailand life-industry dashboard in HTML, rebuilt the same way every reporting period |
 | Scope | IFRS 17 figures and indicators: insurance revenue and service result, CSM roll-forward, new business, profit bridge |
 | Source | Public information, mainly the audited financial statements (SET filings, OIC annual disclosures, company websites) |
-| Coverage | FY2025 with FY2024 comparatives (17 insurers), and the quarters 1Q2025 to 2Q2026 year to date (18 to 20 insurers, every insurer extracted), THB million |
+| Coverage | FY2025 with FY2024 comparatives (20 insurers), and the quarters 1Q2025 to 2Q2026 year to date (18 to 20 insurers, every insurer extracted), THB million |
 | Output | One page per period, `output/<period>/Thai_Life_IFRS17_Dashboard_<period>.html` (FY2025, 2026Q2 ...): each a single file that works offline and can be emailed, linked to the other periods |
 | Published | <https://seungraekim81.github.io/IFRS17_Industry_Dashboard/> (see `docs/DEPLOY.md`) |
 | Languages | English and Korean (한국어), switched with the button at the top right; the choice is remembered in the browser |
@@ -52,7 +52,7 @@ python -m unittest discover -s tests -v
         │  1 ingest    the insurers in config/companies.csv; fail on a missing extraction or item
         ▼
  data/FY2025/line_items.csv                          tidy: company × year × line item
-        │  2 validate  6 reconciliations × 2 years × 17 insurers must tie (0.05m)
+        │  2 validate  6 reconciliations × 2 years × 20 insurers must tie (0.05m)
         ▼               + plausibility flags for reviewer follow-up
  data/FY2025/validation.csv, flags.csv
         │  3 metrics   22 indicators, ranks, shares, industry aggregate & median
@@ -120,4 +120,5 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.0 | 2026-11 | First pipeline release: FY2025 + FY2024, 17 insurers, Samsung Life focus. Reproduces every figure on the benchmark board. |
 | v1.1 | 2026-11 | GitHub Pages publishing: validation workflow, `site` step, per-period addresses, `noindex` by default |
 | v1.2 | 2026-11 | Korean version: language switch at the top right (English / 한국어), remembered per browser and settable by `#lang=ko`; Korean review flags; translation completeness tests |
+| v1.4 | 2026-11 | Annual page covers all 20 insurers extracted for FY2025 (adds BUI, Phillip, Saha); benchmark expectations regenerated |
 | v1.3 | 2026-11 | Quarterly pages 1Q2025 to 2Q2026 (year to date, every insurer extracted, annualised release ratio, like-for-like industry change, three-month table); period links on every page; not-disclosed values shown as n/a |
