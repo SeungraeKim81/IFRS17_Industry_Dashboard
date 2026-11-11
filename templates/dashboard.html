@@ -50,11 +50,11 @@ __ROBOTS__
 :root{--measure:60rem}
 html,body{margin:0}
 body{background:var(--plane);color:var(--ink);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Thonburi","Leelawadee UI","Noto Sans Thai",sans-serif;
-  -webkit-font-smoothing:antialiased;padding:32px 16px 64px}
-.wrap{max-width:1180px;margin:0 auto}
-header.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
+  -webkit-font-smoothing:antialiased;padding:0 0 64px}
+.wrap{max-width:1212px;margin:0 auto;padding:0 16px}
+.top{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-start;justify-content:space-between}
 .top-text{flex:1 1 560px;min-width:0}
-h1{font-weight:650;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
+h1{font-weight:700;font-size:28px;line-height:1.2;margin:0 0 6px;letter-spacing:-.01em;text-wrap:balance}
 .lede{color:var(--ink-2);max-width:var(--measure);margin:0}
 .units{font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:10px}
 nav.periods{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-top:8px;font-size:13px}
@@ -65,10 +65,10 @@ nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decorat
 .lang-pick{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .lang-pick .seg button{text-transform:none;letter-spacing:0}
 :lang(ko) body{word-break:keep-all;overflow-wrap:anywhere}
-:lang(ko) .units,:lang(ko) nav.periods .lab,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
+:lang(ko) .brand-label,:lang(ko) .units,:lang(ko) nav.periods .lab,:lang(ko) .lang-pick,:lang(ko) .focus-pick,:lang(ko) .panel h3,:lang(ko) table.data th{letter-spacing:0}
 /* Thai: taller line for stacked vowel and tone marks; no capitals, so no tracking on the small caps labels */
 :lang(th) body{line-height:1.7}
-:lang(th) .units,:lang(th) nav.periods .lab,:lang(th) .lang-pick,:lang(th) .focus-pick,:lang(th) .panel h3,:lang(th) table.data th{letter-spacing:0}
+:lang(th) .brand-label,:lang(th) .units,:lang(th) nav.periods .lab,:lang(th) .lang-pick,:lang(th) .focus-pick,:lang(th) .panel h3,:lang(th) table.data th{letter-spacing:0}
 @media(max-width:620px){.controls{align-items:stretch;width:100%}.lang-pick{justify-content:space-between}}
 .focus-pick{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
 .focus-pick select{font:inherit;font-size:15px;text-transform:none;letter-spacing:0;color:var(--ink);background:var(--surface);
@@ -76,6 +76,32 @@ nav.periods a[aria-current="page"]{color:var(--ink);font-weight:650;text-decorat
 nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;margin:22px 0 0;padding:10px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);font-size:13px}
 nav.toc a{color:var(--ink-2);text-decoration:none}
 nav.toc a:hover{color:var(--ink);text-decoration:underline}
+/* masthead: the blue band of the company's cover slide (no logo, owner decision); two translucent rings as on its break slide */
+.mast{background:var(--mast);color:var(--mast-ink);position:relative;overflow:hidden;padding:28px 0 84px;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.mast .wrap{position:relative}
+.mast .ring{position:absolute;border-radius:50%;border:44px solid rgba(255,255,255,.12);pointer-events:none}
+.mast .r1{width:420px;height:420px;right:-140px;top:-170px}
+.mast .r2{width:240px;height:240px;right:24%;bottom:-170px}
+.brand-label{margin:0 0 10px;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mast-ink)}
+.mast h1{color:var(--mast-ink)}
+.mast .lede{color:var(--mast-ink-2)}
+.mast .units,.mast nav.periods .lab,.mast .lang-pick,.mast .focus-pick{color:var(--mast-muted)}
+.mast nav.periods a{color:var(--mast-ink-2)}
+.mast nav.periods a[aria-current="page"]{color:var(--mast-ink);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+.mast .seg{border-color:rgba(255,255,255,.45)}
+.mast .seg button{background:transparent;color:var(--mast-ink-2)}
+.mast .seg button+button{border-left-color:rgba(255,255,255,.3)}
+.mast .seg button[aria-pressed="true"]{background:#ffffff;color:var(--mast)}
+.mast .focus-pick select{background:#ffffff;color:#0b3267;border-color:transparent}
+.mast nav.toc{border-color:rgba(255,255,255,.22)}
+.mast nav.toc a{color:var(--mast-ink-2)}
+.mast nav.toc a:hover{color:var(--mast-ink)}
+.mast .focus-head{margin:22px 0 0}
+.mast .focus-name{color:var(--mast-ink)}
+.mast .chip{background:rgba(255,255,255,.14);border-color:transparent;color:var(--mast-ink)}
+#s-focus{margin-top:-56px;position:relative}
+@media(max-width:620px){.mast{padding:20px 0 76px}.mast .r2{display:none}}
 section{margin-top:44px;scroll-margin-top:12px}
 h2{font-weight:650;font-size:20px;margin:0;letter-spacing:-.005em}
 .sec-note{color:var(--ink-2);font-size:14px;max-width:var(--measure);margin:6px 0 16px}
@@ -164,8 +190,9 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 </style>
 </head>
 <body>
-<div class="wrap">
-<header class="top">
+<header class="mast"><i class="ring r1"></i><i class="ring r2"></i><div class="wrap">
+<p class="brand-label" data-t="brandLabel"></p>
+<div class="top">
   <div class="top-text">
     <h1 id="title"></h1>
     <p class="lede" id="lede"></p>
@@ -180,11 +207,13 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
       <select id="focusSel"></select>
     </label>
   </div>
-</header>
+</div>
 <nav class="toc" id="toc"></nav>
+<div class="focus-head"><span class="focus-name" id="fName"></span><span id="fChips"></span></div>
+</div></header>
+<div class="wrap">
 
 <section id="s-focus">
-  <div class="focus-head"><span class="focus-name" id="fName"></span><span id="fChips"></span></div>
   <div class="tiles" id="tiles1"></div>
   <div class="tiles" id="tiles2"></div>
   <ul class="headlines" id="headlines"></ul>
@@ -307,7 +336,7 @@ let LANG = M.default_language || "en";
    definitions, checks, commentary, review flags) comes from config/i18n/<lang>.json. */
 const UI = {
   en: {
-    langName: "English", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
+    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
     lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "CSM movement", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
@@ -387,7 +416,7 @@ const UI = {
     ],
   },
   ko: {
-    langName: "한국어", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
+    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
     lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "CSM 변동분석", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
@@ -468,7 +497,7 @@ const UI = {
   },
   // Thai: indicator names and IFRS 17 terms stay in English (owner decision); sentences and interface text in Thai
   th: {
-    langName: "ไทย", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
+    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
     lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ในงบการเงินก่อนนำมาแสดงบนหน้านี้",
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "การเปลี่ยนแปลง CSM", "ธุรกิจใหม่", "Service margin", "องค์ประกอบกำไร", "บริษัททั้งหมด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
