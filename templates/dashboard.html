@@ -130,9 +130,15 @@ button.dl{font:inherit;font-size:13px;border:1px solid var(--axis);background:va
 .notes{font-size:13.5px;color:var(--ink-2);max-width:var(--measure)}
 .notes h4{color:var(--ink);font-size:14px;margin:18px 0 4px}
 .notes p{margin:0 0 8px}
-details{border-top:1px solid var(--grid);padding:6px 0}
-details summary{cursor:pointer;color:var(--ink);font-size:13.5px}
-details p{margin:6px 0 4px;font-size:13px;color:var(--ink-2)}
+details:not(.sec-fold){border-top:1px solid var(--grid);padding:6px 0}
+details:not(.sec-fold) summary{cursor:pointer;color:var(--ink);font-size:13.5px}
+details:not(.sec-fold) p{margin:6px 0 4px;font-size:13px;color:var(--ink-2)}
+/* a section that opens on request: its heading is the summary */
+.sec-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:baseline;gap:8px}
+.sec-fold>summary::-webkit-details-marker{display:none}
+.sec-fold>summary::before{content:"\25B8";color:var(--muted);font-size:16px;display:inline-block;transition:transform .15s}
+.sec-fold[open]>summary::before{transform:rotate(90deg)}
+.sec-fold>summary:hover h2{text-decoration:underline;text-decoration-color:var(--axis)}
 ul.flags{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--ink-2)}
 footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-size:12px;color:var(--muted)}
 .tip{position:fixed;pointer-events:none;z-index:9;background:var(--surface);color:var(--ink);border:1px solid var(--hair);border-radius:6px;
@@ -248,22 +254,22 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
   <div class="tbl-wrap"><table class="data" id="all"></table></div>
 </section>
 
-<section id="s-dq">
-  <h2 data-t="h2dq"></h2>
+<section id="s-dq"><details class="sec-fold">
+  <summary><h2 data-t="h2dq"></h2></summary>
   <p class="sec-note" id="dqNote"></p>
   <div class="tbl-wrap"><table class="data" id="dq"></table></div>
   <div class="notes" style="margin-top:16px"><h4 data-t="h4flags"></h4>
     <p data-t="noteFlags"></p>
     <ul class="flags" id="flags"></ul></div>
-</section>
+</details></section>
 
-<section id="s-method">
-  <h2 data-t="h2method"></h2>
+<section id="s-method"><details class="sec-fold">
+  <summary><h2 data-t="h2method"></h2></summary>
   <div class="notes" id="commentary"></div>
   <div class="notes"><h4 data-t="h4defs"></h4></div>
   <div class="tbl-wrap" style="margin-top:8px"><table class="data" id="defs"></table></div>
   <div class="notes" id="extract"></div>
-</section>
+</details></section>
 
 <footer id="foot"></footer>
 </div>
@@ -996,6 +1002,11 @@ function renderAll() {
   if (want && langs.includes(want) && (want === "en" || (DATA.i18n || {})[want])) LANG = want;
   if (h.get("focus") && byName(h.get("focus"))) F = h.get("focus");
   controls(); renderAll();
+  // a link to a folded section (table of contents, or a #s-dq address) opens it; printing opens them all
+  const unfold = id => { const s = document.getElementById(id), d = s && s.querySelector(".sec-fold"); if (d) d.open = true; };
+  $("#toc").addEventListener("click", e => { const a = e.target.closest("a[href^='#']"); if (a) unfold(a.getAttribute("href").slice(1)); });
+  if (/^#s-/.test(location.hash)) unfold(location.hash.slice(1));
+  window.addEventListener("beforeprint", () => $$(".sec-fold").forEach(d => { d.open = true; }));
 })();
 </script>
 </body>
