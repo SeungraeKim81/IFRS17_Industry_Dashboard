@@ -78,7 +78,8 @@ def main() -> None:
     spec = {"company": d["COMPANY"], "company_id": d["COMPANY_ID"], "period": a.period, "source": d["SOURCE"],
             "notes": d["NOTES"], **({"ytd_months": 3 * int(quarter.group(1))} if quarter else {}), "items": items,
             **({"memo": rules(d["MEMO"])} if d.get("MEMO") else {}),
-            **({"items_3m": rules(d["ITEMS_3M"])} if d.get("ITEMS_3M") else {})}
+            **({"items_3m": rules(d["ITEMS_3M"])} if d.get("ITEMS_3M") else {}),
+            **({"accepted_breaks": d["ACCEPTED_BREAKS"]} if d.get("ACCEPTED_BREAKS") else {})}
     with open(a.out, "w", encoding="utf-8") as f:
         f.write(json.dumps(spec, ensure_ascii=False, indent=1) + "\n")
     print(f"spec written: {a.out} ({len(items)} line items)")

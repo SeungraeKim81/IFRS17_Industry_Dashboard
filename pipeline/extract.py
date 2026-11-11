@@ -164,7 +164,8 @@ def extract(spec_path: Path, pdf: Path | None) -> dict:
     return {"company": spec["company"], "company_id": spec["company_id"], "period": spec["period"],
             "source": {**spec["source"], "sha256": digest}, "tables_found": found, "items": sections["items"],
             **({"ytd_months": spec["ytd_months"]} if "ytd_months" in spec else {}),
-            **{k: sections[k] for k in ("memo", "items_3m") if sections[k]}}
+            **{k: sections[k] for k in ("memo", "items_3m") if sections[k]},
+            **({"accepted_breaks": spec["accepted_breaks"]} if spec.get("accepted_breaks") else {})}
 
 
 def run(spec: str, pdf: str | None, out: str | None = None) -> Path:

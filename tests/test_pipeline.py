@@ -166,6 +166,11 @@ class TestExtractions(unittest.TestCase):
         self.assertIn("comparative in 2025FY", result["note"])
         q["items"]["csm_open"]["2025Q1"]["value"] = close24 + 1.0
         self.assertFalse(verify_extract.continuity(q)["ok"])
+        # an accepted break passes only at the recorded difference
+        q["accepted_breaks"] = [{"check": "continuity", "difference": 1.0, "reason": "restated opening"}]
+        self.assertTrue(verify_extract.continuity(q)["ok"])
+        q["items"]["csm_open"]["2025Q1"]["value"] = close24 + 2.0
+        self.assertFalse(verify_extract.continuity(q)["ok"])
 
     def test_not_disclosed_items_use_the_memo_total(self):
         """Acquisition and other outflows not split: the printed total stands in; without it the check fails."""

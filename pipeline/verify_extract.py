@@ -15,6 +15,10 @@ and two more checks apply:
 4. Continuity: the year-to-date opening CSM equals the closing CSM of the prior year-end extraction
    (extract/<year-1>FY/<company_id>.json). A missing prior extraction is reported, not passed.
 
+A break the statement itself contains (two printed figures that do not agree) can be recorded in the spec as an
+accepted break: {"check": <reconciliation id or "continuity">, "difference": <THB million>, "reason": ...}. It passes
+only while the difference stays what was recorded (within tolerance), so a new reading error still fails.
+
   python -m pipeline verify-extract extract/2025FY/samsung-life.json
 """
 from __future__ import annotations
@@ -60,6 +64,15 @@ def _with_memo(ex: dict, fy: str, v: dict) -> dict:
     return v
 
 
+def _accepted(ex: dict, check: str, difference: float | None) -> str | None:
+    """The reason of an accepted break that matches this check and difference, else None."""
+    tol = load_settings()["tolerance_thb_m"]
+    for b in ex.get("accepted_breaks", []):
+        if b["check"] == check and difference is not None and abs(difference - b["difference"]) <= tol:
+            return b["reason"]
+    return None
+
+
 def reconcile(ex: dict) -> list[dict]:
     tol = load_settings()["tolerance_thb_m"]
     rows = []
@@ -72,8 +85,11 @@ def reconcile(ex: dict) -> list[dict]:
                 rows.append({"fiscal_year": fy, "check": cid, "label": label, "computed": None, "printed": None,
                              "difference": None, "ok": False})
                 continue
+            ok = abs(a - b) <= tol
+            accepted = None if ok else _accepted(ex, cid, a - b)
             rows.append({"fiscal_year": fy, "check": cid, "label": label, "computed": a, "printed": b,
-                         "difference": a - b, "ok": abs(a - b) <= tol})
+                         "difference": a - b, "ok": ok or accepted is not None,
+                         **({"accepted": accepted} if accepted else {})})
     return rows
 
 
@@ -124,8 +140,10 @@ def continuity(ex: dict) -> dict | None:
         return {"opening": opening, "prior_close": None, "difference": None, "ok": False,
                 "note": f"no {q['prior_annual']} extraction to compare with"}
     tol = load_settings()["tolerance_thb_m"]
-    return {"opening": opening, "prior_close": prior, "difference": opening - prior, "ok": abs(opening - prior) <= tol,
-            "note": note}
+    ok = abs(opening - prior) <= tol
+    accepted = None if ok else _accepted(ex, "continuity", opening - prior)
+    return {"opening": opening, "prior_close": prior, "difference": opening - prior, "ok": ok or accepted is not None,
+            "note": note, **({"accepted": accepted} if accepted else {})}
 
 
 def compare_pilot(ex: dict, pilot_csv: Path | None = None) -> list[dict]:
@@ -157,6 +175,8 @@ def run(path: str) -> bool:
     print(f"{ex['company']} ({ex['period']}), source {ex['source']['original_name']} sha256 {ex['source']['sha256'][:12]}…")
     print(f"  reconciliations: {sum(r['ok'] for r in rec)}/{len(rec)} OK")
     for r in rec:
+        if r.get("accepted"):
+            print(f"    ACCEPTED {r['fiscal_year']} {r['check']}: difference {r['difference']:.3f} ({r['accepted']})")
         if not r["ok"]:
             print(f"    FAIL {r['fiscal_year']} {r['check']}: " + ("a value is not disclosed" if r["computed"] is None
                   else f"{r['computed']:.3f} vs {r['printed']:.3f}"))
@@ -179,6 +199,7 @@ def run(path: str) -> bool:
     if cont:
         print(f"  continuity: opening CSM {cont['opening']:.3f} vs {cont['note']} "
               + ("(none)" if cont["prior_close"] is None else f"{cont['prior_close']:.3f}")
-              + (" OK" if cont["ok"] else " MISMATCH"))
+              + (" OK" if cont["ok"] else " MISMATCH")
+              + (f" (ACCEPTED: difference {cont['difference']:.3f}, {cont['accepted']})" if cont.get("accepted") else ""))
     return (all(r["ok"] for r in rec) and not any(r["status"] == "DIFFERENT" for r in cmp_)
             and all(r["ok"] for r in rec3) and (cont is None or cont["ok"]))
