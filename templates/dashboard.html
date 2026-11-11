@@ -361,8 +361,9 @@ const UI = {
       p.hasCmp ? "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
         (p.taxBig ? "; income tax went from " + p.taxPrev + "m to " + p.taxNow + "m." : ".")
         : "Net profit was " + p.np + "m and the insurance service result " + p.isr + "m (no comparative period on this page).",
-      "New-business CSM margin of " + p.nbm + " ranks " + p.ord(p.nbmRank) + " of " + p.n + "; acquisition cost takes " + p.acq +
-        " of new-business premium (median " + p.acqMed + ").",
+      "New-business CSM margin of " + p.nbm + " ranks " + p.ord(p.nbmRank) + " of " + p.n + (p.acqNa
+        ? "; the statements do not split new-business outflows into acquisition cost and claims."
+        : "; acquisition cost takes " + p.acq + " of new-business premium (median " + p.acqMed + ")."),
     ],
   },
   ko: {
@@ -442,8 +443,9 @@ const UI = {
       p.hasCmp ? "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
         (p.taxBig ? ". 법인세는 " + p.taxPrev + "백만에서 " + p.taxNow + "백만 바트로 바뀌었다." : ".")
         : "당기순이익은 " + p.np + "백만 바트, 보험서비스결과는 " + p.isr + "백만 바트다(이 페이지에는 비교기간이 없다).",
-      "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq +
-        "를 차지한다(중앙값 " + p.acqMed + ").",
+      "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + (p.acqNa
+        ? "이다. 재무제표가 신계약 현금유출을 보험취득비용과 보험금으로 나누어 공시하지 않는다."
+        : "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq + "를 차지한다(중앙값 " + p.acqMed + ")."),
     ],
   },
 };
@@ -609,7 +611,7 @@ function focusSection() {
     npG: growth(raw(c, "net_profit"), raw(c, "net_profit", CMP)), np: fM(raw(c, "net_profit")),
     isrG: growth(g(c, "isr_gross"), g(c, "isr_gross", CMP)),
     taxBig: Math.abs(taxNow - taxPrev) > 0.2 * Math.abs(raw(c, "net_profit")), taxNow: fM(taxNow), taxPrev: fM(taxPrev),
-    nbm: fP(g(c, "nb_csm_margin")), nbmRank: rk(c, "nb_csm_margin").rank, acq: fP(g(c, "acq_cost_ratio")), acqMed: fP(ind("acq_cost_ratio").median),
+    nbm: fP(g(c, "nb_csm_margin")), nbmRank: rk(c, "nb_csm_margin").rank, acq: fP(g(c, "acq_cost_ratio")), acqNa: g(c, "acq_cost_ratio") == null, acqMed: fP(ind("acq_cost_ratio").median),
   });
   $("#headlines").innerHTML = L.map(s => "<li>" + esc(s) + "</li>").join("");
   const notes = DATA.commentary.filter(x => x.companies.includes(F));
