@@ -122,13 +122,11 @@ svg text{font-family:"Neue Haas Grotesk Text Pro",system-ui,-apple-system,"Segoe
 .focus-name{font-size:22px;font-weight:650}
 .chip{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--hair);color:var(--ink-2);background:var(--surface)}
 .tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.tiles + .tiles{margin-top:12px}
 @media(max-width:1000px){.tiles{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}}
 /* phones: two compact cards per row; every line stays, in smaller type (owner decision) */
 @media(max-width:480px){
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-  .tiles + .tiles{margin-top:8px}
   .tile{padding:9px 10px 9px}
   .tile .lab{font-size:12px;line-height:1.3}
   .tile .val{font-size:20px;margin-top:3px}
@@ -226,8 +224,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 <div class="wrap">
 
 <section id="s-focus">
-  <div class="tiles" id="tiles1"></div>
-  <div class="tiles" id="tiles2"></div>
+  <div class="tiles" id="tiles"></div>
   <div class="keymsg"><p class="eyebrow" data-t="keyMessages"></p><ul class="headlines" id="headlines"></ul></div>
   <div class="callouts" id="callouts"></div>
 </section>
@@ -746,8 +743,8 @@ function focusSection() {
     return '<div class="tile"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
       '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div></div>";
   };
-  $("#tiles1").innerHTML = T1.map(tile).join("");
-  $("#tiles2").innerHTML = T2.map(tile).join("");
+  // one grid in reading order: 5 + 5 on a wide screen; narrower screens refill the rows in the same order (owner decision)
+  $("#tiles").innerHTML = [...T1, ...T2].map(tile).join("");
 
   const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
   const L = t("headlines")({
