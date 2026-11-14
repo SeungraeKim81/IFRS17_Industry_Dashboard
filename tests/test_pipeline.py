@@ -347,5 +347,18 @@ class TestBuild(unittest.TestCase):
             build.payload(PERIOD, "Not An Insurer")
 
 
+class TestPreviewTool(unittest.TestCase):
+    def test_build_stamp_is_ignored_but_content_is_not(self):
+        """tools/preview_pr.py compares a pull request's site with the live one, ignoring only the build stamp."""
+        import importlib.util
+        spec = importlib.util.spec_from_file_location("preview_pr", ROOT / "tools" / "preview_pr.py")
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)
+        a = '{"meta":{"title":"T","generated":"2026-11-12 01:10 UTC","git":"b7bacb0"},"x":1}'
+        b = '{"meta":{"title":"T","generated":"2026-11-14 01:00 UTC","git":"4ef34ca"},"x":1}'
+        self.assertEqual(m.strip_stamp(a), m.strip_stamp(b))
+        self.assertNotEqual(m.strip_stamp(a), m.strip_stamp(b.replace('"x":1', '"x":2')))
+
+
 if __name__ == "__main__":
     unittest.main()
