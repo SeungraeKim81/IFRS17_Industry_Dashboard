@@ -8,3 +8,4 @@ sources/**/*.pdf
 sources/**/*.xlsx
 sources/**/*.docx
 *.pdf
+_preview/

@@ -110,6 +110,7 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | `config/extraction/` | Per-insurer extraction specs: page, row, column, unit and sign for every line item |
 | `extract/<period>/` | Values extracted from the statements, with provenance, and a review workbook in the capture layout |
 | `tools/split_pdf.py` | Run on your own computer: split a large statement PDF into parts under 5 MB for the Drive connector, keeping the page ranges in the names |
+| `tools/preview_pr.py` | Run on your own computer (needs `gh`): download the site a pull request would publish into `_preview/` and, with `--compare`, list the pages that differ from the live site. See `docs/DEPLOY.md` section 5 |
 | `tools/pdf_pages.py`, `tools/visual_spec.py`, `tools/pilot_values.py` | Extraction helpers: page sheets and page renders for scanned statements, spec builder for transcribed figures, pilot reference values |
 | `docs/DEPLOY.md` | Publishing on GitHub Pages: routes, one-off setup, troubleshooting |
 | `.github/workflows/pages.yml` | Validate on every push; publish to GitHub Pages from `main` |
