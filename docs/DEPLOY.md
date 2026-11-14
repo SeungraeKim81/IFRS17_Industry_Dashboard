@@ -75,8 +75,11 @@ Later changes go through a pull request into `main`. Merging it publishes automa
   merge into `main`. The site updates in one to two minutes.
 - Check the preview before merging, because merging publishes. Every pull request's
   *Validate and publish / validate* run uploads the built site as the `dashboard-site`
-  artifact (kept 14 days): open the run's Summary, download it under Artifacts, unzip
-  and open `index.html`. It is the same site that merging will publish. The pull
+  artifact (kept 14 days): on the pull request's **Checks** tab click *Validate and
+  publish* (on: pull_request), download it under Artifacts, unzip and open `index.html`.
+  It is the same site that merging will publish. On your own computer,
+  `python3 tools/preview_pr.py <number> --compare` downloads it into `_preview/` and lists
+  the pages that differ from the live site. The pull
   request template (`.github/pull_request_template.md`) lists what to look at. If
   something is wrong, comment on the pull request and fix it on the same branch; the
   preview is rebuilt with each push.
