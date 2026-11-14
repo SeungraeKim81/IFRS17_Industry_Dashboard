@@ -73,6 +73,13 @@ Later changes go through a pull request into `main`. Merging it publishes automa
 - New figures or commentary: correct the extraction spec (`config/extraction/`) and re-run `python -m pipeline extract`,
   or edit the config; run `python -m pipeline all` and the tests, commit,
   merge into `main`. The site updates in one to two minutes.
+- Check the preview before merging, because merging publishes. Every pull request's
+  *Validate and publish / validate* run uploads the built site as the `dashboard-site`
+  artifact (kept 14 days): open the run's Summary, download it under Artifacts, unzip
+  and open `index.html`. It is the same site that merging will publish. The pull
+  request template (`.github/pull_request_template.md`) lists what to look at. If
+  something is wrong, comment on the pull request and fix it on the same branch; the
+  preview is rebuilt with each push.
 - New period: follow "Rolling to a new period" in `docs/WORKFLOW.md`. The previous period stays at its own address.
 - If the site looks unchanged, do a hard refresh (Windows `Ctrl+Shift+R`, Mac `Cmd+Shift+R`).
 
