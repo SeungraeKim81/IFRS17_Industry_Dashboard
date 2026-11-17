@@ -245,12 +245,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q1,2025Q1,Bangkok Life,nb_loss_component,24.518,Extracted,"file p.59 new-business total, onerous contracts (GMM + VFA) printed ['24,485', '33'] (thousand_baht, read from page image)"
 2025Q1,2025Q1,Bangkok Life,insurance_revenue,3178.878,Extracted,"file p.6 SCI separate (equals 21.1) printed 3,178,878 (thousand_baht, read from page image)"
 2025Q1,2025Q1,Bangkok Life,insurance_service_expense,-2235.082,Extracted,"file p.6 SCI separate (equals 21.1) printed (2,235,082) (thousand_baht, read from page image)"
-2025Q1,2025Q1,Bangkok Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Bangkok Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Bangkok Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Bangkok Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Bangkok Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Bangkok Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q1,2025Q1,Bangkok Life,oci_debt_fvoci,5110.257,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 5,110,257 (thousand_baht, read from page image)"
+2025Q1,2025Q1,Bangkok Life,oci_ins_finance,-4737.52,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed (4,737,520) (thousand_baht, read from page image)"
+2025Q1,2025Q1,Bangkok Life,oci_reins_finance,-53.352,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed (53,352) (thousand_baht, read from page image)"
+2025Q1,2025Q1,Bangkok Life,oci_equity_fvoci,-1923.155,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed (1,923,155) (thousand_baht, read from page image)"
+2025Q1,2025Q1,Bangkok Life,oci_total,-1499.626,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed (1,499,626) (thousand_baht, read from page image)"
+2025Q1,2025Q1,Bangkok Life,equity_open,48057.17,Extracted,"file p.11 SOCE total equity at 1 January; separate statements; restated balance printed 48,057,170 (thousand_baht, read from page image)"
 2025Q1,2025Q1,Prudential Life,ra_release,90.812,Extracted,"file p.30 6 total printed 90,812 (thousand_baht, read from page image)"
 2025Q1,2025Q1,Prudential Life,bel_release,1161.198,Extracted,"file p.30 6 total printed 1,161,198 (thousand_baht, read from page image)"
 2025Q1,2025Q1,Prudential Life,paa_revenue,0,Extracted,"file p.30 6 (no PAA revenue) printed - (thousand_baht, read from page image)"

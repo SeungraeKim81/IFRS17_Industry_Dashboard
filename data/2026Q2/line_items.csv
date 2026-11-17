@@ -491,18 +491,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2025Q2,Bangkok Life,insurance_revenue,6433.19,Extracted,"file p.8 SCI separate, six months (equals 21.1) printed 6,433,190 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Bangkok Life,insurance_service_expense,-4009.152,Extracted,"file p.8 SCI separate (equals 20.1) printed (4,009,152) (thousand_baht, read from page image)"
 2026Q2,2025Q2,Bangkok Life,insurance_service_expense,-4375.472,Extracted,"file p.8 SCI separate, six months (equals 21.1) printed (4,375,472) (thousand_baht, read from page image)"
-2026Q2,2026Q2,Bangkok Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Bangkok Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Bangkok Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Bangkok Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Bangkok Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Bangkok Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Bangkok Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Bangkok Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Bangkok Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Bangkok Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Bangkok Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Bangkok Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,Bangkok Life,oci_debt_fvoci,-13050.975,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (13,050,975) (thousand_baht, read from page image)"
+2026Q2,2025Q2,Bangkok Life,oci_debt_fvoci,14647.5,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 14,647,500 (thousand_baht, read from page image)"
+2026Q2,2026Q2,Bangkok Life,oci_ins_finance,9345.548,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed 9,345,548 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Bangkok Life,oci_ins_finance,-13586.276,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (13,586,276) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Bangkok Life,oci_reins_finance,126.21,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed 126,210 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Bangkok Life,oci_reins_finance,-133.698,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (133,698) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Bangkok Life,oci_equity_fvoci,2687.569,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed 2,687,569 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Bangkok Life,oci_equity_fvoci,-3360.737,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed (3,360,737) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Bangkok Life,oci_total,-1817.523,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (1,817,523) (thousand_baht, read from page image)"
+2026Q2,2025Q2,Bangkok Life,oci_total,-2238.749,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (2,238,749) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Bangkok Life,equity_open,55188.937,Extracted,"file p.13 SOCE total equity at 1 January; separate statements printed 55,188,937 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Bangkok Life,equity_open,48057.17,Extracted,"file p.13 SOCE total equity at 1 January; separate statements; restated balance printed 48,057,170 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Prudential Life,ra_release,151.618,Extracted,"file p.15 4 printed 151,618 (thousand_baht, read from page image)"
 2026Q2,2025Q2,Prudential Life,ra_release,181.127,Extracted,"file p.37 6 total printed 181,127 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Prudential Life,bel_release,2385.02,Extracted,"file p.15 4 printed 2,385,020 (thousand_baht, read from page image)"
