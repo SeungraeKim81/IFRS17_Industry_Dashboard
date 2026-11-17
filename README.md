@@ -81,7 +81,7 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
    rank and industry benchmark, plus auto-generated headlines and any notes or review flags that apply to it
 2. **Market position**: new-business CSM, closing CSM and insurance revenue with market shares, ordered by new-business CSM
 3. **New-business quality**: NB CSM margin, acquisition cost ratio, onerous share and NB / release, each with its definition; focus vs comparative against all insurers
-   (axes capped at 30% for the cost and onerous ratios and 3x for NB / release; points beyond sit on the edge with their true value)
+   (axes centred on the industry median, the onerous ratio fixed at 0-10%; points beyond sit on the edge; the tooltip lists every insurer at the spot with the numerator and denominator)
 4. **CSM movement analysis**: the CSM sustainability quadrant, then the roll-forward waterfall (focus vs industry, opening = 100)
    (quadrant axes capped at a 30% release ratio and 3x new business / release; points beyond sit on the edge with their true value)
 5. **Insurance service margin by RA policy**: compared only within each risk-adjustment disaggregation group
@@ -131,3 +131,4 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.6 | 2026-11 | Thai version (ไทย): Thai interface and data text with indicator names kept in English, Buddhist Era dates, Thai review flags and fonts |
 | v1.7 | 2026-11 | Samsung Life (SLI) look, no logo: full-width blue masthead, highlighted insurer in brand blue, chart colours from the company template, cards overlapping the band, key-messages box, brand typeface where installed |
 | v1.8 | 2026-11 | Section order: new-business quality 3, CSM movement 4 (quadrant first); new-business axes capped at 30% (cost, onerous) and 3x; table headers centred; indicator definitions as their own open section 8, data quality 9 and method 10 folded |
+| v1.9 | 2026-11 | New-business quality: axes centred on the industry median (onerous ratio 0-10%), edge marks with counts, and a tooltip listing every overlapping insurer with each measure's numerator and denominator |
