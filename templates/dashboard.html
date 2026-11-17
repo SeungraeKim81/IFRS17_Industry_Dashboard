@@ -320,6 +320,18 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     </div>
   </div>
   <p class="sec-note" id="policyNote" style="margin:12px 0 0"></p>
+  <p class="sec-note" data-t="noteOci" style="margin:22px 0 12px"></p>
+  <div class="panel"><h3 data-t="h3oci"></h3><div class="sub" id="ociSub"></div>
+    <svg id="oci" viewBox="0 0 900 640" role="img" data-t-aria="ariaOci"></svg>
+    <div class="legend">
+      <span class="key"><i class="sq" style="background:var(--c1)"></i><span data-t="lgOciDebt"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c2)"></i><span data-t="lgOciLiab"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c3)"></i><span data-t="lgOciEq"></span></span>
+      <span class="key"><i class="sq" style="background:var(--c4)"></i><span data-t="lgOciRest"></span></span>
+      <span class="key">&#9670;&nbsp;<span data-t="lgOciNet"></span></span>
+      <span class="key oci-prior"><i class="sq" style="width:3px;height:14px;background:var(--ink-2)"></i><span data-t="lgOciNet"></span> <span class="p-cmp"></span></span>
+    </div>
+  </div>
 </section>
 
 <section id="s-bridge">
@@ -406,7 +418,7 @@ const UI = {
     noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median. Each axis is centred on that median; insurers beyond its range sit at the end with ‹ or › (the onerous ratio has a fixed 0–10% axis).",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Subsequent measurement & financial indicators",
-    noteInforce: "The insurance service margin is the insurance service result divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results. The CSM adjustment ratio is the CSM adjustment divided by the CSM before release: the rate of change in the CSM from assumption and experience adjustments. The net investment ratio is the share of net investment income left after the insurance finance expense. OCI / opening equity is other comprehensive income for the year to date, net of tax, as a share of total equity at 1 January. The liability OCI offset is the share of the OCI on debt instruments at FVOCI that the insurance and reinsurance finance OCI cancels out (100% = fully offset), both before tax.",
+    noteInforce: "The insurance service margin is the insurance service result divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results. The CSM adjustment ratio is the CSM adjustment divided by the CSM before release: the rate of change in the CSM from assumption and experience adjustments. The net investment ratio is the share of net investment income left after the insurance finance expense.",
     noteAxis: "Under the VFA the finance expense follows the underlying items, so an insurer with much VFA business shows a structurally low ratio. On quarterly pages all three measures are year to date. Each axis is centred on the industry median; insurers beyond its range sit at the end with ‹ or ›.",
     notePolicy: "Accounting policy choices differ by insurer. {k} of {n} insurers do not disaggregate the risk-adjustment change ({names}), so their insurance service margin also carries the RA finance effect. See section 10.",
     ariaStrips5: "Strip plots of subsequent-measurement indicators",
@@ -431,7 +443,7 @@ const UI = {
     tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
-    ndOci: "OCI, net of tax", ndEqOpen: "Opening equity", ndLiabOci: "Liability OCI (sign reversed)", ndDebtOci: "Debt FVOCI OCI",
+    ndEqOpen: "Opening equity", h3oci: "OCI composition, % of opening equity", ariaOci: "Other comprehensive income of each insurer by component, as a share of opening equity", ociSub: "{cur} · {n} insurers · ordered by total OCI, highest first · right: total OCI · liability OCI offset", lgOciDebt: "Debt FVOCI (assets)", lgOciLiab: "Insurance & reinsurance finance OCI (liabilities)", lgOciEq: "Equity FVOCI", lgOciRest: "Income tax & other", lgOciNet: "Total OCI, net of tax", ociColHead: "OCI · offset", tipOciIns: "Insurance contracts OCI", tipOciReins: "Reinsurance contracts OCI", tipOffset: "Liability OCI offset", noteOci: "The OCI chart splits each insurer's other comprehensive income for the year to date, as a share of total equity at 1 January, into the fair-value change on debt instruments at FVOCI (assets), the insurance and reinsurance finance OCI that offsets it (liabilities), equity instruments at FVOCI, and income tax and other items (reclassifications to profit or loss, hedging); the bars add up to total OCI after tax, the diamond. The liability OCI offset on the right is the share of the debt FVOCI change that the liability OCI cancels out, both before tax (100% = fully offset); it is n/a when the debt FVOCI change is under 5% of opening equity.",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
     ctxRankMed: "Rank {r} of {n} · median {v}",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
@@ -489,7 +501,7 @@ const UI = {
     noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다. 각 축은 이 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다(신계약 손실부담 비율은 0–10% 고정).",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 후속측정 · 재무 지표",
-    noteInforce: "보험서비스이익률은 보험서비스결과를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다. CSM 조정률은 CSM 조정액을 상각 전 CSM으로 나눈 값으로, 가정·경험 조정에 의한 CSM의 변동 비율이다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다. OCI ÷ 기초 자본은 연초 이후 기타포괄손익(세후)을 1월 1일 자본총계로 나눈 값이다. 부채 OCI 상쇄율은 채무상품 FVOCI 평가손익을 보험·재보험 금융손익 OCI가 상쇄하는 비율로(100% = 전부 상쇄), 둘 다 세전 기준이다.",
+    noteInforce: "보험서비스이익률은 보험서비스결과를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다. CSM 조정률은 CSM 조정액을 상각 전 CSM으로 나눈 값으로, 가정·경험 조정에 의한 CSM의 변동 비율이다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다.",
     noteAxis: "VFA 계약은 보험금융손익이 기초항목을 따라가므로, VFA 비중이 큰 회사는 구조적으로 낮게 나온다. 분기 페이지는 세 지표 모두 연초 이후 누적값이다. 각 축은 업계 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다.",
     notePolicy: "회계정책 선택은 회사마다 다르다. {n}개사 중 {k}개사({names})는 위험조정 변동을 분리하지 않아 보험서비스이익률에 RA 금융효과가 함께 들어간다. 10번 참고.",
     ariaStrips5: "후속측정 지표 스트립 차트",
@@ -514,7 +526,7 @@ const UI = {
     tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
     ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
-    ndOci: "기타포괄손익(세후)", ndEqOpen: "기초 자본", ndLiabOci: "부채 OCI(부호 반대)", ndDebtOci: "채무상품 FVOCI OCI",
+    ndEqOpen: "기초 자본", h3oci: "OCI 구성, 기초 자본 대비 %", ariaOci: "회사별 기타포괄손익의 구성, 기초 자본 대비 비율", ociSub: "{cur} · {n}개사 · OCI 합계가 높은 순 · 오른쪽: OCI 합계 · 부채 OCI 상쇄율", lgOciDebt: "채무상품 FVOCI (자산)", lgOciLiab: "보험·재보험 금융손익 OCI (부채)", lgOciEq: "지분상품 FVOCI", lgOciRest: "법인세 및 기타", lgOciNet: "OCI 합계(세후)", ociColHead: "OCI · 상쇄율", tipOciIns: "보험계약 OCI", tipOciReins: "재보험계약 OCI", tipOffset: "부채 OCI 상쇄율", noteOci: "OCI 차트는 회사별 연초 이후 기타포괄손익을 1월 1일 자본총계 대비 비율로 나타내며, 채무상품 FVOCI 평가손익(자산), 이를 상쇄하는 보험·재보험 금융손익 OCI(부채), 지분상품 FVOCI, 법인세 및 기타(당기손익 재분류, 위험회피)로 나눈다. 막대를 합하면 세후 OCI 합계(◆)가 된다. 오른쪽의 부채 OCI 상쇄율은 채무상품 FVOCI 평가손익을 부채 OCI가 상쇄하는 비율로(100% = 전부 상쇄), 둘 다 세전 기준이며, 채무상품 평가손익이 기초 자본의 5% 미만이면 n/a로 표시한다.",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
     ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
@@ -573,7 +585,7 @@ const UI = {
     noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม แต่ละแกนมีค่ามัธยฐานนี้อยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › (Onerous new business ใช้แกนคงที่ 0–10%)",
     ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
     h2ism: "5&nbsp; Subsequent measurement และตัวชี้วัดทางการเงิน",
-    noteInforce: "Insurance service margin คือ insurance service result หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน CSM adjustment ratio คือการปรับ CSM หารด้วย CSM ก่อน release เป็นอัตราการเปลี่ยนแปลงของ CSM จากการปรับข้อสมมติและประสบการณ์ Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense OCI / opening equity คือกำไรขาดทุนเบ็ดเสร็จอื่นสะสมตั้งแต่ต้นปี สุทธิจากภาษี หารด้วยส่วนของเจ้าของรวม ณ วันที่ 1 มกราคม Liability OCI offset คือสัดส่วนที่ OCI ทางการเงินของสัญญาประกันภัยและสัญญาประกันภัยต่อหักล้าง OCI ของตราสารหนี้ที่วัดมูลค่า FVOCI (100% = หักล้างทั้งหมด) ทั้งสองรายการก่อนภาษี",
+    noteInforce: "Insurance service margin คือ insurance service result หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน CSM adjustment ratio คือการปรับ CSM หารด้วย CSM ก่อน release เป็นอัตราการเปลี่ยนแปลงของ CSM จากการปรับข้อสมมติและประสบการณ์ Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense",
     noteAxis: "ภายใต้ VFA ค่า finance expense เคลื่อนไหวตาม underlying items บริษัทที่มีธุรกิจ VFA มากจึงมีอัตรานี้ต่ำโดยโครงสร้าง หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปีทั้งสามตัวชี้วัด แต่ละแกนมีค่ามัธยฐานของอุตสาหกรรมอยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ ›",
     notePolicy: "ทางเลือกนโยบายการบัญชีแตกต่างกันในแต่ละบริษัท {k} จาก {n} บริษัท ({names}) ไม่แยกการเปลี่ยนแปลงของ risk adjustment insurance service margin ของบริษัทเหล่านี้จึงรวมผลทางการเงินของ RA ด้วย ดูส่วนที่ 10",
     ariaStrips5: "แผนภูมิแถบของตัวชี้วัดการวัดมูลค่าภายหลัง",
@@ -598,7 +610,7 @@ const UI = {
     tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
-    ndOci: "OCI, net of tax", ndEqOpen: "Opening equity", ndLiabOci: "Liability OCI (sign reversed)", ndDebtOci: "Debt FVOCI OCI",
+    ndEqOpen: "Opening equity", h3oci: "องค์ประกอบของ OCI, % ของส่วนของเจ้าของต้นงวด", ariaOci: "กำไรขาดทุนเบ็ดเสร็จอื่นของแต่ละบริษัทแยกตามองค์ประกอบ เป็นสัดส่วนของส่วนของเจ้าของต้นงวด", ociSub: "{cur} · {n} บริษัท · เรียงตาม OCI รวมจากมากไปน้อย · ด้านขวา: OCI รวม · liability OCI offset", lgOciDebt: "ตราสารหนี้ FVOCI (สินทรัพย์)", lgOciLiab: "OCI ทางการเงินของสัญญาประกันภัยและประกันภัยต่อ (หนี้สิน)", lgOciEq: "ตราสารทุน FVOCI", lgOciRest: "ภาษีเงินได้และอื่น ๆ", lgOciNet: "OCI รวม สุทธิจากภาษี", ociColHead: "OCI · offset", tipOciIns: "OCI สัญญาประกันภัย", tipOciReins: "OCI สัญญาประกันภัยต่อ", tipOffset: "Liability OCI offset", noteOci: "แผนภูมิ OCI แสดงกำไรขาดทุนเบ็ดเสร็จอื่นสะสมตั้งแต่ต้นปีของแต่ละบริษัท เป็นสัดส่วนของส่วนของเจ้าของรวม ณ วันที่ 1 มกราคม แยกเป็นการเปลี่ยนแปลงมูลค่ายุติธรรมของตราสารหนี้ที่วัดมูลค่า FVOCI (สินทรัพย์) OCI ทางการเงินของสัญญาประกันภัยและสัญญาประกันภัยต่อที่หักล้างรายการนั้น (หนี้สิน) ตราสารทุนที่วัดมูลค่า FVOCI และภาษีเงินได้และรายการอื่น (การจัดประเภทใหม่เข้ากำไรขาดทุน การป้องกันความเสี่ยง) แท่งทั้งหมดรวมกันเท่ากับ OCI รวมสุทธิจากภาษี (◆) Liability OCI offset ด้านขวาคือสัดส่วนที่ OCI ของหนี้สินหักล้างการเปลี่ยนแปลงของตราสารหนี้ FVOCI ทั้งสองรายการก่อนภาษี (100% = หักล้างทั้งหมด) และแสดงเป็น n/a เมื่อการเปลี่ยนแปลงของตราสารหนี้ FVOCI น้อยกว่า 5% ของส่วนของเจ้าของต้นงวด",
     ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
     ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
     wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
@@ -982,12 +994,10 @@ const STRIP_ND = { nb_csm_margin: [["nb_csm"], ["nb_pv_premium"], "ndNbCsm", "nd
   onerous_ratio: [["nb_loss_component"], ["nb_csm"], "ndLoss", "ndNbCsm"], nb_to_release: [["nb_csm"], ["-csm_release"], "ndNbCsm", "ndRel"],
   csm_adj_ratio: [["csm_future_service"], ["csm_open", "csm_nb", "csm_accretion"], "ndAdj", "ndAdjBase"],
   net_inv_ratio: [["net_investment_income", "ifie"], ["net_investment_income"], "ndNetInv", "ndInv"],
-  ism_gross: [["insurance_revenue", "insurance_service_expense"], ["insurance_revenue"], "ndIsr", "ndRev"],
-  oci_ratio: [["oci_total"], ["equity_open"], "ndOci", "ndEqOpen"],
-  oci_offset: [["-oci_ins_finance", "-oci_reins_finance"], ["oci_debt_fvoci"], "ndLiabOci", "ndDebtOci"] };
+  ism_gross: [["insurance_revenue", "insurance_service_expense"], ["insurance_revenue"], "ndIsr", "ndRev"] };
 const ndAmt = (c, codes) => codes.reduce((s, f) => { const neg = f[0] === "-", v = raw(c, neg ? f.slice(1) : f); return s == null || v == null ? null : s + (neg ? -v : v); }, 0);
 // measures that can fall below zero: their axis is centred on the median without the zero floor
-const STRIP_SIGNED = new Set(["ism_gross", "csm_adj_ratio", "net_inv_ratio", "oci_ratio", "oci_offset"]);
+const STRIP_SIGNED = new Set(["ism_gross", "csm_adj_ratio", "net_inv_ratio"]);
 const pctl = (v, p) => { const s = v.slice().sort((a, b) => a - b), k = (s.length - 1) * p, f = Math.floor(k), c = Math.min(f + 1, s.length - 1); return s[f] + (s[c] - s[f]) * (k - f); };
 // Axis of one strip (owner decision): centred on the industry median, half-width 1.25 times the farther of the
 // 10th and 90th percentiles from it, and never below zero (half-width at most the median). The onerous ratio is
@@ -1077,6 +1087,97 @@ function strips(sel, rows) {
 function policyNote() {
   const not = COS.filter(c => c.ra !== "disaggregated");
   $("#policyNote").textContent = t("noteAxis") + (not.length ? " " + t("notePolicy", { k: not.length, n: COS.length, names: not.map(c => c.name).join(", ") }) : "");
+}
+
+/* ---------- 5 OCI composition ---------- */
+// Owner decision (v1.12): bars replace the two OCI strips. Each insurer's OCI for the year to date as a share
+// of its opening equity: the fair-value change on debt instruments at FVOCI (assets), the insurance and
+// reinsurance finance OCI that offsets it (liabilities), equity instruments at FVOCI, and the rest (income tax,
+// reclassifications to profit or loss, hedging), taken as the difference so that the bars add up to the OCI
+// after tax, which the diamond marks. The short bar is the same insurer's OCI a year earlier.
+const OCI_CODES = ["oci_debt_fvoci", "oci_ins_finance", "oci_reins_finance", "oci_equity_fvoci", "oci_total", "equity_open"];
+const OCI_PARTS = [["debt", "var(--c1)", "lgOciDebt"], ["liab", "var(--c2)", "lgOciLiab"], ["eq", "var(--c3)", "lgOciEq"], ["rest", "var(--c4)", "lgOciRest"]];
+// amounts summed over insurers (one insurer, or the industry); null when any is missing or equity is not positive
+function ociAmts(cs, fy = CUR) {
+  const s = {};
+  for (const k of OCI_CODES) {
+    let v = 0;
+    for (const c of cs) { const x = raw(c, k, fy); if (x == null) return null; v += x; }
+    s[k] = v;
+  }
+  if (!(s.equity_open > 0)) return null;
+  const debt = s.oci_debt_fvoci, liab = s.oci_ins_finance + s.oci_reins_finance, eq = s.oci_equity_fvoci, tot = s.oci_total;
+  return { s, debt, liab, eq, rest: tot - debt - liab - eq, tot, e: s.equity_open };
+}
+function ociBars() {
+  const svg = $("#oci"); svg.textContent = "";
+  const cos = COS.map(c => ({ c, o: ociAmts([c]), p: ociAmts([c], CMP) })).filter(r => r.o);
+  if (!cos.length) return;
+  // industry: sum over the insurers shown; its comparative is like for like (insurers present in both periods)
+  const both = cos.filter(r => r.p).map(r => r.c);
+  const indO = ociAmts(cos.map(r => r.c));
+  // the offset rule of pipeline/metrics.py (n/a when the debt OCI is under 5% of opening equity), on the sums
+  const indRow = { ind: true, name: t("industryAgg"), o: indO, p: both.length ? ociAmts(both, CMP) : null,
+    off: Math.abs(indO.debt) < 0.05 * indO.e ? null : -indO.liab / indO.debt };
+  cos.forEach(r => r.off = g(r.c, "oci_offset"));
+  const sh = (o, k) => o[k] / o.e * 100;
+  cos.sort((a, b) => sh(b.o, "tot") - sh(a.o, "tot"));  // total OCI, highest first
+  const rows = [indRow, ...cos];
+  const W = 900, L = 140, R = 132, T = 34, step = 27, GAP = 10, B = 12;
+  const H = T + rows.length * step + GAP + B;
+  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+  // axis: every stacked end of the current period and every comparative total (the marks drawn), so nothing is clipped
+  let lo = 0, hi = 0;
+  rows.forEach(r => {
+    const parts = OCI_PARTS.map(([k]) => sh(r.o, k)), pt = r.p ? [sh(r.p, "tot")] : [];
+    lo = Math.min(lo, parts.filter(v => v < 0).reduce((a, b) => a + b, 0), sh(r.o, "tot"), ...pt);
+    hi = Math.max(hi, parts.filter(v => v > 0).reduce((a, b) => a + b, 0), sh(r.o, "tot"), ...pt);
+  });
+  const { ticks, step: ts } = niceTicks(lo, hi, 9);
+  if (ticks[0] > lo + 1e-9) ticks.unshift(+(ticks[0] - ts).toFixed(10));
+  if (ticks[ticks.length - 1] < hi - 1e-9) ticks.push(+(ticks[ticks.length - 1] + ts).toFixed(10));
+  lo = ticks[0]; hi = ticks[ticks.length - 1];
+  const px = v => L + (v - lo) / (hi - lo) * (W - L - R);
+  const yOf = i => T + i * step + (i ? GAP : 0) + step / 2;
+  ticks.forEach(v => {
+    svg.appendChild(el("line", { x1: px(v), x2: px(v), y1: T - 12, y2: H - B + 4, stroke: Math.abs(v) < 1e-9 ? "var(--axis)" : "var(--grid)", "stroke-width": Math.abs(v) < 1e-9 ? 1.5 : 1 }));
+    svg.appendChild(el("text", { x: px(v), y: T - 18, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, (v > 0 ? "+" : "") + nf(v, 0) + "%"));
+  });
+  svg.appendChild(el("text", { x: W - 4, y: T - 18, "text-anchor": "end", fill: "var(--muted)", "font-size": 11 }, t("ociColHead")));
+  const pct = v => (v > 0 ? "+" : "") + nf(v, 1) + "%";
+  rows.forEach((r, i) => {
+    const y = yOf(i), h = 14, gg = el("g"), o = r.o, focus = !r.ind && isF(r.c);
+    if (focus) gg.appendChild(el("rect", { x: 4, y: y - step / 2 + 2, width: W - 8, height: step - 4, fill: "var(--focus-soft)", rx: 3 }));
+    if (r.ind) gg.appendChild(el("rect", { x: 4, y: y - step / 2 + 2, width: W - 8, height: step - 4, fill: "var(--band)", rx: 3 }));
+    let cp = 0, cn = 0;
+    OCI_PARTS.forEach(([k, col]) => {
+      const v = sh(o, k); if (Math.abs(v) < 0.05) return;
+      let x1, x2;
+      if (v > 0) { x1 = px(cp); x2 = px(cp + v); cp += v; } else { x1 = px(cn + v); x2 = px(cn); cn += v; }
+      const w = Math.max(1, x2 - x1 - 1);
+      gg.appendChild(el("rect", { x: x1 + 0.5, y: y - h / 2, width: w, height: h, fill: col, rx: 2 }));
+    });
+    if (r.p) {  // the same insurer's total OCI a year earlier
+      const xp = px(sh(r.p, "tot"));
+      gg.appendChild(el("line", { x1: xp, x2: xp, y1: y - 10, y2: y + 10, stroke: "var(--ink-2)", "stroke-width": 2.5, "stroke-linecap": "round" }));
+    }
+    const name = r.ind ? r.name : r.c.name;
+    gg.appendChild(el("text", { x: L - 12, y: y + 4, "text-anchor": "end", "font-size": 12.5, fill: "var(--ink)", "font-weight": focus || r.ind ? 650 : 400 }, name));
+    const mx = px(sh(o, "tot")), m = 6.5;
+    gg.appendChild(el("path", { d: "M" + mx + "," + (y - m) + " L" + (mx + m) + "," + y + " L" + mx + "," + (y + m) + " L" + (mx - m) + "," + y + " Z", fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 2 }));
+    gg.appendChild(el("text", { x: W - 4, y: y + 4, "text-anchor": "end", fill: "var(--ink-2)", "font-size": 11.5, "font-weight": focus ? 650 : 400 },
+      pct(sh(o, "tot")) + " · " + (r.off == null ? t("na") : nf(r.off * 100, 0) + "%")));
+    const cell = a => fM(a) + " <span class='tipnote'>(" + pct(a / o.e * 100) + ")</span>";
+    const tipHtml = () => tipTable(name + " · " + CURL, [
+      [t("lgOciDebt"), cell(o.debt)], [t("tipOciIns"), cell(o.s.oci_ins_finance)], [t("tipOciReins"), cell(o.s.oci_reins_finance)],
+      [t("lgOciEq"), cell(o.eq)], [t("lgOciRest"), cell(o.rest)], ["<b>" + t("lgOciNet") + "</b>", "<b>" + cell(o.tot) + "</b>"],
+      [t("ndEqOpen"), fM(o.e)], [t("tipOffset"), r.off == null ? t("na") : fP(r.off)],
+      ...(r.p ? [[t("lgOciNet") + " " + esc(CMPL), pct(sh(r.p, "tot"))]] : [])]) + "<div class='tipnote'>" + t("tipAmounts", { cur: CURL }) + "</div>";
+    const hit = el("rect", { x: 0, y: y - step / 2, width: W, height: step, fill: "transparent" }); hover(hit, tipHtml); gg.appendChild(hit);
+    svg.appendChild(gg);
+  });
+  $("#ociSub").textContent = t("ociSub", { cur: CURL, n: cos.length });
+  $$(".oci-prior").forEach(e => e.style.display = cos.some(r => r.p) ? "" : "none");
 }
 
 /* ---------- 6 bridge ---------- */
@@ -1229,7 +1330,7 @@ function renderAll() {
   $$(".f-name").forEach(e => e.textContent = F);
   focusSection(); market(); waterfall(); quadrant();
   strips("#strips", ["nb_csm_margin", "acq_cost_ratio", "nb_to_release", "onerous_ratio"]);
-  strips("#strips5", ["ism_gross", "csm_adj_ratio", "net_inv_ratio", "oci_ratio", "oci_offset"]); policyNote(); bridge(); table(); defs(); dataQuality(); method();
+  strips("#strips5", ["ism_gross", "csm_adj_ratio", "net_inv_ratio"]); policyNote(); ociBars(); bridge(); table(); defs(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));
