@@ -425,12 +425,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q1,2025Q1,Tokio Marine Life,nb_loss_component,0.071555,Extracted,"file p.63 14.1.3 total, onerous contracts printed 71,555 (baht, read from page image)"
 2025Q1,2025Q1,Tokio Marine Life,insurance_revenue,1314.835199,Extracted,"file p.5 SCI (equals 16) printed 1,314,835,199 (baht, read from page image)"
 2025Q1,2025Q1,Tokio Marine Life,insurance_service_expense,-987.776492,Extracted,"file p.5 SCI (equals 16) printed (987,776,492) (baht, read from page image)"
-2025Q1,2025Q1,Tokio Marine Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Tokio Marine Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Tokio Marine Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Tokio Marine Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Tokio Marine Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Tokio Marine Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q1,2025Q1,Tokio Marine Life,oci_debt_fvoci,1128.261347,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,128,261,347 (baht, read from page image)"
+2025Q1,2025Q1,Tokio Marine Life,oci_ins_finance,-1001.521797,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed (1,001,521,797) (baht, read from page image)"
+2025Q1,2025Q1,Tokio Marine Life,oci_reins_finance,-0.172361,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed (172,361) (baht, read from page image)"
+2025Q1,2025Q1,Tokio Marine Life,oci_equity_fvoci,-149.417291,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (149,417,291) (baht, read from page image)"
+2025Q1,2025Q1,Tokio Marine Life,oci_total,180.513407,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed 180,513,407 (baht, read from page image)"
+2025Q1,2025Q1,Tokio Marine Life,equity_open,5637.718365,Extracted,"file p.7 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 5,637,718,365 (baht, read from page image)"
 2025Q1,2025Q1,Dhipaya Life,ra_release,27.684202,Extracted,"file p.44 6 total printed 27,684,202 (baht, read from page image)"
 2025Q1,2025Q1,Dhipaya Life,bel_release,667.342108,Extracted,"file p.44 6 total printed 667,342,108 (baht, read from page image)"
 2025Q1,2025Q1,Dhipaya Life,paa_revenue,0,Extracted,"file p.44 no PAA business printed - (baht, read from page image)"

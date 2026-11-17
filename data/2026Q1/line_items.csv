@@ -851,18 +851,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,Tokio Marine Life,insurance_revenue,1314.835199,Extracted,"file p.5 SCI (equals 16) printed 1,314,835,199 (baht, read from page image)"
 2026Q1,2026Q1,Tokio Marine Life,insurance_service_expense,-1009.874812,Extracted,"file p.5 SCI (equals 14) printed (1,009,874,812) (baht, read from page image)"
 2026Q1,2025Q1,Tokio Marine Life,insurance_service_expense,-987.776492,Extracted,"file p.5 SCI (equals 16) printed (987,776,492) (baht, read from page image)"
-2026Q1,2026Q1,Tokio Marine Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Tokio Marine Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Tokio Marine Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Tokio Marine Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Tokio Marine Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Tokio Marine Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Tokio Marine Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Tokio Marine Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Tokio Marine Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Tokio Marine Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Tokio Marine Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Tokio Marine Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,Tokio Marine Life,oci_debt_fvoci,-6563.593048,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (6,563,593,048) (baht, read from page image)"
+2026Q1,2025Q1,Tokio Marine Life,oci_debt_fvoci,1128.261347,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,128,261,347 (baht, read from page image)"
+2026Q1,2026Q1,Tokio Marine Life,oci_ins_finance,6162.50551,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed 6,162,505,510 (baht, read from page image)"
+2026Q1,2025Q1,Tokio Marine Life,oci_ins_finance,-1001.521797,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed (1,001,521,797) (baht, read from page image)"
+2026Q1,2026Q1,Tokio Marine Life,oci_reins_finance,1.480312,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed 1,480,312 (baht, read from page image)"
+2026Q1,2025Q1,Tokio Marine Life,oci_reins_finance,-0.172361,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed (172,361) (baht, read from page image)"
+2026Q1,2026Q1,Tokio Marine Life,oci_equity_fvoci,145.515455,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed 145,515,455 (baht, read from page image)"
+2026Q1,2025Q1,Tokio Marine Life,oci_equity_fvoci,-149.417291,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (149,417,291) (baht, read from page image)"
+2026Q1,2026Q1,Tokio Marine Life,oci_total,-1449.323981,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (1,449,323,981) (baht, read from page image)"
+2026Q1,2025Q1,Tokio Marine Life,oci_total,180.513407,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed 180,513,407 (baht, read from page image)"
+2026Q1,2026Q1,Tokio Marine Life,equity_open,10054.447083,Extracted,"file p.7 SOCE total equity at 1 January printed 10,054,447,083 (baht, read from page image)"
+2026Q1,2025Q1,Tokio Marine Life,equity_open,5637.718365,Extracted,"file p.7 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 5,637,718,365 (baht, read from page image)"
 2026Q1,2026Q1,Dhipaya Life,ra_release,51.661,Extracted,"file p.15 4 total printed 51,661 (thousand_baht, read from page image)"
 2026Q1,2025Q1,Dhipaya Life,ra_release,27.684202,Extracted,"file p.44 6 total printed 27,684,202 (baht, read from page image)"
 2026Q1,2026Q1,Dhipaya Life,bel_release,682.883,Extracted,"file p.15 4 total printed 682,883 (thousand_baht, read from page image)"
