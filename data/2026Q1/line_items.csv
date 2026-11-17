@@ -347,18 +347,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,FWD Thailand,insurance_revenue,6825.018,Extracted,"file p.5 SCI (equals 6) printed 6,825,018 (thousand_baht, read from page image)"
 2026Q1,2026Q1,FWD Thailand,insurance_service_expense,-4423.939,Extracted,"file p.5 SCI (equals 4) printed (4,423,939) (thousand_baht, read from page image)"
 2026Q1,2025Q1,FWD Thailand,insurance_service_expense,-5293.164,Extracted,"file p.5 SCI (equals 6) printed (5,293,164) (thousand_baht, read from page image)"
-2026Q1,2026Q1,FWD Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,FWD Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,FWD Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,FWD Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,FWD Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,FWD Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,FWD Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,FWD Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,FWD Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,FWD Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,FWD Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,FWD Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,FWD Thailand,oci_debt_fvoci,-36228.436,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (36,228,436) (thousand_baht, read from page image)"
+2026Q1,2025Q1,FWD Thailand,oci_debt_fvoci,11184.312,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 11,184,312 (thousand_baht, read from page image)"
+2026Q1,2026Q1,FWD Thailand,oci_ins_finance,19121.228,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed 19,121,228 (thousand_baht, read from page image)"
+2026Q1,2025Q1,FWD Thailand,oci_ins_finance,-11663.726,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed (11,663,726) (thousand_baht, read from page image)"
+2026Q1,2026Q1,FWD Thailand,oci_reins_finance,0,Extracted,p.6 one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+2026Q1,2025Q1,FWD Thailand,oci_reins_finance,0,Extracted,p.6 no separate reinsurance OCI line
+2026Q1,2026Q1,FWD Thailand,oci_equity_fvoci,144.893,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed 144,893 (thousand_baht, read from page image)"
+2026Q1,2025Q1,FWD Thailand,oci_equity_fvoci,-183.305,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (183,305) (thousand_baht, read from page image)"
+2026Q1,2026Q1,FWD Thailand,oci_total,-15841.403,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (15,841,403) (thousand_baht, read from page image)"
+2026Q1,2025Q1,FWD Thailand,oci_total,76.791,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed 76,791 (thousand_baht, read from page image)"
+2026Q1,2026Q1,FWD Thailand,equity_open,72921.844,Extracted,"file p.7 SOCE total equity at 1 January printed 72,921,844 (thousand_baht, read from page image)"
+2026Q1,2025Q1,FWD Thailand,equity_open,77469.774,Extracted,"file p.7 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 77,469,774 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Krungthai-AXA Life,ra_release,115.905,Extracted,"file p.13 3 total printed 115,905 (thousand_baht, read from page image)"
 2026Q1,2025Q1,Krungthai-AXA Life,ra_release,116.395,Extracted,"file p.45 6 total printed 116,395 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Krungthai-AXA Life,bel_release,3706.41,Extracted,"file p.13 3 total printed 3,706,410 (thousand_baht, read from page image)"
