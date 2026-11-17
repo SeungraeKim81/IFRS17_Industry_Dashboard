@@ -431,7 +431,7 @@ const UI = {
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
-    ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}",
+    ctxRankMed: "Rank {r} of {n} · median {v}",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
@@ -512,7 +512,7 @@ const UI = {
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
     ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
-    ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
+    ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
     wf: ["기초", "신계약", "이자부리", "CSM 조정", "상각", "기말"],
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
@@ -594,7 +594,7 @@ const UI = {
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
     ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
-    ctxRaGroup: "อันดับ {r} จาก {k} ในกลุ่ม RA · ค่ามัธยฐานกลุ่ม {v}", ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
+    ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
     wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · ขนาดวงกลม = CSM closing, {lo} ถึง {hi} ล้าน", qThreshold: "1.0× — เหนือเส้นคือเติม CSM ได้ ใต้เส้นคือ CSM ลดลง",
@@ -767,9 +767,6 @@ function focusSection() {
   $("#fName").textContent = c.name;
   $("#fChips").innerHTML = ['<span class="chip">' + t("rankOf", { r: ord(c.size_rank), n }) + "</span>",
     '<span class="chip">' + t("raChip", { p: raLabel(c) }) + "</span>", '<span class="chip">' + esc(c.legal) + "</span>"].join(" ");
-  const sameRA = COS.filter(x => x.ra === c.ra);
-  const medOf = (list, k) => { const v = list.map(x => g(x, k)).filter(v => v != null).sort((a, b) => a - b); const m = v.length; return m ? (m % 2 ? v[(m - 1) / 2] : (v[m / 2 - 1] + v[m / 2]) / 2) : null; };
-  const rankIn = (list, k) => 1 + list.filter(x => g(x, k) > g(c, k)).length;
   const rankMed = (k, fmt) => () => t("ctxRankMed", { r: rk(c, k).rank, n, v: fmt(ind(k).median) });
   // top row: amounts, CSM first; bottom row: the matching ratios
   const T1 = [
@@ -783,7 +780,7 @@ function focusSection() {
     { k: "nb_csm_margin", kind: "pp", ctx: rankMed("nb_csm_margin", fP) },
     { k: "nb_to_release", kind: "x", ctx: rankMed("nb_to_release", fX) },
     { k: "release_ratio", kind: "pp", ctx: rankMed("release_ratio", fP) },
-    { k: "ism_gross", kind: "pp", ctx: () => t("ctxRaGroup", { r: rankIn(sameRA, "ism_gross"), k: sameRA.length, v: fP(medOf(sameRA, "ism_gross")) }) },
+    { k: "ism_gross", kind: "pp", ctx: rankMed("ism_gross", fP) },
     { k: "npm", kind: "pp", ctx: rankMed("npm", fP) },
   ];
   const tile = x => {
