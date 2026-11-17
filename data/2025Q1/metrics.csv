@@ -416,25 +416,20 @@ T Life,2025Q1,oci_ratio,-0.058421,16,19
 BUI Life,2025Q1,oci_ratio,0.010315,7,19
 Phillip Life,2025Q1,oci_ratio,0.017143,6,19
 Saha Life,2025Q1,oci_ratio,0.018448,5,19
-AIA Thailand,2025Q1,oci_offset,1.225849,5,19
-Thai Life,2025Q1,oci_offset,0.160232,19,19
-Muang Thai Life,2025Q1,oci_offset,0.93571,13,19
-Allianz Ayudhya,2025Q1,oci_offset,1.097935,7,19
-FWD Thailand,2025Q1,oci_offset,1.042865,9,19
-Krungthai-AXA Life,2025Q1,oci_offset,0.751407,15,19
-Bangkok Life,2025Q1,oci_offset,0.937501,12,19
-Prudential Life,2025Q1,oci_offset,1.286188,4,19
-Generali Life,2025Q1,oci_offset,0.459544,16,19
-Ocean Life,2025Q1,oci_offset,1.677818,2,19
-CHUBB Life,2025Q1,oci_offset,1.026696,10,19
-Tokio Marine Life,2025Q1,oci_offset,0.887821,14,19
-Dhipaya Life,2025Q1,oci_offset,1.019695,11,19
-Southeast Life,2025Q1,oci_offset,1.169564,6,19
-Samsung Life,2025Q1,oci_offset,1.536511,3,19
-T Life,2025Q1,oci_offset,2.655019,1,19
-BUI Life,2025Q1,oci_offset,1.074879,8,19
-Phillip Life,2025Q1,oci_offset,0.350029,18,19
-Saha Life,2025Q1,oci_offset,0.380578,17,19
+AIA Thailand,2025Q1,oci_offset,1.225849,3,14
+Thai Life,2025Q1,oci_offset,0.160232,14,14
+Muang Thai Life,2025Q1,oci_offset,0.93571,10,14
+Allianz Ayudhya,2025Q1,oci_offset,1.097935,5,14
+FWD Thailand,2025Q1,oci_offset,1.042865,6,14
+Krungthai-AXA Life,2025Q1,oci_offset,0.751407,12,14
+Bangkok Life,2025Q1,oci_offset,0.937501,9,14
+Prudential Life,2025Q1,oci_offset,1.286188,2,14
+Generali Life,2025Q1,oci_offset,0.459544,13,14
+CHUBB Life,2025Q1,oci_offset,1.026696,7,14
+Tokio Marine Life,2025Q1,oci_offset,0.887821,11,14
+Dhipaya Life,2025Q1,oci_offset,1.019695,8,14
+Southeast Life,2025Q1,oci_offset,1.169564,4,14
+Samsung Life,2025Q1,oci_offset,1.536511,1,14
 AIA Thailand,2025Q1,nb_csm_margin,0.153936,2,19
 Thai Life,2025Q1,nb_csm_margin,0.176353,1,19
 Muang Thai Life,2025Q1,nb_csm_margin,0.13587,6,19

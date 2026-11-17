@@ -19,6 +19,17 @@ def _div(a: float, b: float):
     return None if b == 0 else a / b
 
 
+# The liability OCI offset is n/a when the debt FVOCI change is smaller than this share of opening equity:
+# a near-zero denominator gives ratios such as 790% that say nothing (owner decision, v1.12).
+OCI_OFFSET_MIN_SHARE = 0.05
+
+
+def _oci_offset(v):
+    if v["equity_open"] <= 0 or abs(v["oci_debt_fvoci"]) < OCI_OFFSET_MIN_SHARE * v["equity_open"]:
+        return None
+    return _div(-(v["oci_ins_finance"] + v["oci_reins_finance"]), v["oci_debt_fvoci"])
+
+
 # code, label, unit, higher_is_better (None = neutral), group, formula text, function
 METRICS = [
     ("insurance_revenue", "Insurance revenue", "thb_m", True, "scale",
@@ -76,8 +87,9 @@ METRICS = [
      "Other comprehensive income, net of tax / total equity at the beginning of the year; quarterly pages show the year to date",
      lambda v: _div(v["oci_total"], v["equity_open"])),
     ("oci_offset", "Liability OCI offset", "pct", None, "oci",
-     "-(Insurance + reinsurance finance OCI) / OCI on debt instruments at FVOCI, both before tax",
-     lambda v: _div(-(v["oci_ins_finance"] + v["oci_reins_finance"]), v["oci_debt_fvoci"])),
+     "-(Insurance + reinsurance finance OCI) / OCI on debt instruments at FVOCI, both before tax; "
+     "n/a when the debt OCI is under 5% of opening equity",
+     _oci_offset),
     ("nb_csm_margin", "New-business CSM margin", "pct", True, "new_business",
      "CSM from new business / PV premium of new business", lambda v: _div(v["nb_csm"], v["nb_pv_premium"])),
     ("acq_cost_ratio", "Acquisition cost ratio", "pct", False, "new_business",

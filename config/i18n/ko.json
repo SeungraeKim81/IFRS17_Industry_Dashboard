@@ -38,7 +38,7 @@
     "net_inv_ratio": {"label": "순투자손익률", "formula": "(투자손익 + 보험금융손익) ÷ 투자손익. 투자손익이 0 이하이면 n/a"},
     "oci_total": {"label": "기타포괄손익", "formula": "당기 기타포괄손익(세후)"},
     "oci_ratio": {"label": "OCI ÷ 기초 자본", "formula": "기타포괄손익(세후) ÷ 기초 자본총계. 분기 페이지는 연초 이후 누적값"},
-    "oci_offset": {"label": "부채 OCI 상쇄율", "formula": "−(보험계약 + 재보험 금융손익 OCI) ÷ FVOCI 채무상품 OCI, 모두 세전"},
+    "oci_offset": {"label": "부채 OCI 상쇄율", "formula": "−(보험계약 + 재보험 금융손익 OCI) ÷ FVOCI 채무상품 OCI, 모두 세전. 채무상품 OCI가 기초 자본의 5% 미만이면 n/a"},
     "nb_csm_margin": {"label": "신계약 CSM 마진율", "formula": "신계약 CSM ÷ 신계약 PV 보험료"},
     "acq_cost_ratio": {"label": "신계약비용률", "formula": "신계약 PV 보험취득현금흐름 ÷ 신계약 PV 보험료"},
     "nb_claims_ratio": {"label": "신계약 보험금·급부 비율", "formula": "신계약 PV 보험금 유출 ÷ 신계약 PV 보험료"},
