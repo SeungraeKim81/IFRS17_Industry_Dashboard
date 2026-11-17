@@ -319,6 +319,63 @@
     "note": "SCI six months (equals 3)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q2": {
+    "page": 11,
+    "printed": "(396,626,553)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q2": {
+    "page": 11,
+    "printed": "236,200,373",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q2": {
+    "page": 11,
+    "printed": "(2,671,260)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q2": {
+    "const": 0,
+    "page": 11,
+    "evidence": "no equity FVOCI line on the statement"
+   }
+  },
+  "oci_total": {
+   "2026Q2": {
+    "page": 11,
+    "printed": "(130,477,952)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q2": {
+    "page": 12,
+    "printed": "1,059,644,078",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
   }
  },
  "items_3m": {

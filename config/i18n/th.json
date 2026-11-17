@@ -12,7 +12,8 @@
     "scale": "ขนาด",
     "profitability": "ความสามารถในการทำกำไร",
     "csm": "CSM",
-    "new_business": "ธุรกิจใหม่"
+    "new_business": "ธุรกิจใหม่",
+    "oci": "OCI"
   },
   "metrics": {
     "insurance_revenue": {"label": "Insurance revenue", "formula": "Insurance revenue รวมทั้งหมด"},
@@ -35,6 +36,9 @@
     "nb_to_release": {"label": "New business / release", "formula": "CSM จากธุรกิจใหม่ / CSM release"},
     "csm_adj_ratio": {"label": "CSM adjustment ratio", "formula": "การปรับ CSM สำหรับบริการในอนาคต / (CSM ต้นงวด + ธุรกิจใหม่ + accretion) หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปี ไม่ปรับเป็นรายปี"},
     "net_inv_ratio": {"label": "Net investment ratio", "formula": "(Net investment income + net insurance finance expense) / net investment income ถ้า net investment income เป็นศูนย์หรือติดลบจะแสดง n/a"},
+    "oci_total": {"label": "Other comprehensive income", "formula": "กำไรขาดทุนเบ็ดเสร็จอื่นสำหรับงวด สุทธิจากภาษี"},
+    "oci_ratio": {"label": "OCI / opening equity", "formula": "กำไรขาดทุนเบ็ดเสร็จอื่นสุทธิจากภาษี / ส่วนของเจ้าของรวมต้นปี หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปี"},
+    "oci_offset": {"label": "Liability OCI offset", "formula": "−(OCI ทางการเงินของสัญญาประกันภัย + สัญญาประกันภัยต่อ) / OCI ของตราสารหนี้ที่วัดมูลค่า FVOCI ทั้งหมดก่อนภาษี"},
     "nb_csm_margin": {"label": "New-business CSM margin", "formula": "CSM จากธุรกิจใหม่ / PV premium ของธุรกิจใหม่"},
     "acq_cost_ratio": {"label": "Acquisition cost ratio", "formula": "PV acquisition cost / PV premium ของธุรกิจใหม่"},
     "nb_claims_ratio": {"label": "Claims & benefits ratio (NB)", "formula": "PV สินไหมและผลประโยชน์ / PV premium ของธุรกิจใหม่"},
@@ -55,6 +59,10 @@
     "ra_policy": {
       "title": "การแยก risk adjustment (RA) มีผลต่อการเปรียบเทียบอัตรากำไร",
       "body": "บริษัทที่ไม่แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับรายได้หรือค่าใช้จ่ายทางการเงินจากการประกันภัย จะรวมการเปลี่ยนแปลงของ RA ทั้งหมด รวมถึงผลจากการเปลี่ยนแปลงอัตราคิดลด ไว้ใน insurance service result ส่วนที่ 5 แสดงทุกบริษัทบนแกน Insurance service margin เดียวกัน และระบุบริษัทที่ไม่แยก RA ไว้ใต้แผนภูมิ การปรับให้เป็นเกณฑ์เดียวกันต้องใช้การแยกผลทางการเงินของ RA เป็นกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น ซึ่งงบการเงินไม่ได้เปิดเผย จึงไม่แสดงอัตรากำไรที่ปรับใหม่ Net profit ไม่ได้รับผลกระทบจากทางเลือกนี้"
+    },
+    "oci_policy": {
+      "title": "ตัวชี้วัด OCI ขึ้นกับนโยบายการบัญชีและการแยกรายการในงบการเงิน",
+      "body": "ทุกบริษัทรับรู้ส่วนหนึ่งของรายได้หรือค่าใช้จ่ายทางการเงินจากการประกันภัยในกำไรขาดทุนเบ็ดเสร็จอื่น (OCI option) ดังนั้น OCI ของสัญญาประกันภัยจึงเคลื่อนไหวสวนทางกับ OCI ของตราสารหนี้ที่วัดมูลค่า FVOCI Dhipaya Life, Krungthai-AXA Life และ FWD Thailand (ตั้งแต่ปี 2026) แสดง OCI ทางการเงินของสัญญาประกันภัยที่ออกและสัญญาประกันภัยต่อที่ถือไว้ในบรรทัดเดียว ซึ่งแสดงเป็น OCI ของสัญญาประกันภัย OCI ของตราสารหนี้ใช้เฉพาะบรรทัดการวัดมูลค่ายุติธรรม ไม่รวมรายการที่โอนไปกำไรขาดทุนและรายการป้องกันความเสี่ยง ผลรวมของส่วนประกอบจึงไม่เท่ากับ OCI รวม สำหรับ FY2024 AIA, FWD, Krungthai-AXA, Phillip และ Tokio Marine ยังไม่ได้ใช้ TFRS 9 OCI ของตราสารหนี้จึงเป็นการเปลี่ยนแปลงมูลค่ายุติธรรมของเงินลงทุน FVOCI ตามมาตรฐานเดิม ส่วนของเจ้าของต้นปีคือยอดคงเหลือที่ปรับปรุงใหม่ ณ วันที่ 1 มกราคม จากงบการเปลี่ยนแปลงส่วนของเจ้าของ (ใช้งบการเงินเฉพาะกิจการเมื่อบริษัทนำเสนองบการเงินรวมหรืองบการเงินตามวิธีส่วนได้เสียด้วย)"
     },
     "transition": {
       "title": "ตัวเลข FY2024 เป็นตัวเลขเปรียบเทียบ ณ วันเปลี่ยนแปลง",

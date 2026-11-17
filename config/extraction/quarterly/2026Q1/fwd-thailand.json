@@ -318,6 +318,63 @@
     "note": "SCI (equals 4)",
     "heading_seen": "งบกำไรขาดทุน สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 และ 2568 (หน่วย: พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q1": {
+    "page": 6,
+    "printed": "(36,228,436)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 และ 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q1": {
+    "page": 6,
+    "printed": "19,121,228",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 และ 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q1": {
+    "const": 0,
+    "page": 6,
+    "evidence": "one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q1": {
+    "page": 6,
+    "printed": "144,893",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 และ 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q1": {
+    "page": 6,
+    "printed": "(15,841,403)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 และ 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "72,921,844",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: พันบาท)"
+   }
   }
  },
  "items_3m": {

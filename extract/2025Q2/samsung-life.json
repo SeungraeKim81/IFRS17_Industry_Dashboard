@@ -371,6 +371,78 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q2": {
+    "value": 2679.161,
+    "printed": "2,679,161",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, debt instruments at FVOCI before tax; read from the text layer",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q2": {
+    "value": -2159.991,
+    "printed": "(2,159,991)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, insurance contracts issued before tax; read from the text layer",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q2": {
+    "value": 6.724,
+    "printed": "6,724",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, reinsurance contracts held before tax; read from the text layer",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q2": {
+    "value": -79.274,
+    "printed": "(79,274)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, equity instruments at FVOCI before tax; read from the text layer",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q2": {
+    "value": 356.66,
+    "printed": "356,660",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI other comprehensive income for the period, net of tax; read from the text layer",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q2": {
+    "value": 3601.567,
+    "printed": "3,601,567",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SOCE total equity at 1 January; read from the text layer; restated balance",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (พันบาท)"
+   }
   }
  },
  "ytd_months": 6,

@@ -38,7 +38,7 @@ import re
 import subprocess
 from pathlib import Path
 
-from .common import ROOT, load_line_items
+from .common import PHASED_IN, ROOT, load_line_items
 
 NUM = re.compile(r"\(?-?\d[\d,]*(?:\.\d+)?\)?|(?<=\s)-(?=\s|$)")
 DIVISOR = {"baht": 1_000_000, "thousand_baht": 1_000, "million_baht": 1}
@@ -121,6 +121,8 @@ def extract(spec_path: Path, pdf: Path | None) -> dict:
     sections: dict[str, dict] = {"items": {}, "memo": {}, "items_3m": {}}
     for section, code in codes:
         rule = spec[section].get(code)
+        if rule is None and section == "items" and code in PHASED_IN:
+            continue  # being added insurer by insurer (common.PHASED_IN)
         if rule is None:
             errors.append(f"{code}: no rule in spec")
             continue

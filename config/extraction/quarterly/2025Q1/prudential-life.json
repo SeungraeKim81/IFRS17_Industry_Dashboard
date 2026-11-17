@@ -353,6 +353,66 @@
     "note": "SCI (equals 6)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "3,223,990",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(4,136,409)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(10,248)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(844,957)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(893,101)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "25,902,534",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
   }
  },
  "items_3m": {

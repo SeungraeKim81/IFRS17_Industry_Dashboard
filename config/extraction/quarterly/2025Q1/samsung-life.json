@@ -312,6 +312,66 @@
     "note": "SCI (equals 15.1)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "707,279",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "(1,091,703)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "4,961",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "(29,501)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "(326,987)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q1": {
+    "page": 9,
+    "printed": "3,601,567",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; read from the text layer; restated balance",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
   }
  },
  "items_3m": {

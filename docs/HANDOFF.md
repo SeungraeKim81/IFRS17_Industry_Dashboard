@@ -573,3 +573,32 @@ Southeast는 2Q 스캔본, 3Q 텍스트 레이어. BUI·Saha는 3분기 이익�
 - **남은 2단계**(소유자 결정 대기): OCI 추출과 차트. 포괄손익계산서의 채무상품 FVOCI, 발행·출재 보험금융 OCI, 지분상품 FVOCI,
   OCI 합계(세후)와 자본변동표의 기초 자본을 새 항목으로 추가한다. 2Q2026 원문 20개 중 16개가 스캔본이다.
   표본 3개사(AIA, CHUBB, Samsung)에서 자산과 부채의 OCI가 반대로 움직여 부채가 자산 OCI의 55–77%를 상쇄했다.
+
+## 27. OCI 지표 (v1.11, 2026-11-17)
+
+소유자 결정(5번 2단계), 브랜치 `oci-v1.11`. 기존 수치 변동 없음. `data/`에는 새 항목과 새 지표의 행만 더해졌다.
+
+- **새 항목 6개** (`config/line_items.csv`, 블록 oci / equity):
+  `oci_debt_fvoci`(채무상품 FVOCI, 세전), `oci_ins_finance`(발행 보험계약 금융손익 OCI, 세전), `oci_reins_finance`(재보험, 세전),
+  `oci_equity_fvoci`(지분상품 FVOCI, 세전), `oci_total`(OCI 합계, 세후), `equity_open`(자본변동표의 1월 1일 자본총계).
+  20개사 × 6개 기간, 추출 116건 모두 채웠다. 회사마다 한 커밋.
+- **추출 규칙**
+  - 포괄손익계산서의 OCI 부분과 자본변동표를 읽는다. 스캔본은 쪽 이미지를 보고 인쇄된 숫자를 옮겼다(`printed`).
+    텍스트가 있는 원문도 같은 방식으로 옮기고 note에 "read from the text layer"라고 적었다(행 패턴 규칙을 새로 쓰지 않음).
+  - 채무상품 OCI는 **공정가치 평가 줄만** 쓴다. 당기손익으로 재분류된 금액과 위험회피(현금흐름 위험회피, 위험회피 비용) 줄은
+    빼므로 구성 항목의 합은 OCI 합계와 맞지 않는다(검증 규칙을 두지 않은 이유). 처음 AIA는 재분류액을 더했다가 이 규칙으로 고쳤다.
+  - 보험계약과 재보험 OCI를 한 줄로 쓰는 회사(Dhipaya, Krungthai-AXA, FWD 2026년)는 전액을 `oci_ins_finance`에, `oci_reins_finance`는 0.
+    줄이 없는 항목(재보험: BUI, FWD 2025, Phillip, Saha / 지분상품: Rabbit)은 const 0.
+  - FY2024에 TFRS 9 적용 전인 회사(AIA, FWD, Krungthai-AXA, Phillip, Tokio Marine)는 종전 기준의 FVOCI 투자자산 평가손익을 채무상품 OCI로 썼다.
+  - 연결·지분법 재무제표를 함께 내는 회사(Bangkok, Muang Thai, Phillip, Thai Life)는 기존 결정대로 **별도재무제표** 열과 별도 자본변동표.
+  - 기초 자본은 재작성(ปรับปรุงใหม่) 잔액. AIA는 지점이라 '본점 계정 합계' 열.
+- **점검**: `verify_extract.equity_continuity`가 분기마다 기초 자본이 그해 연차(없으면 1분기) 추출과 같은지 본다(테스트 포함).
+  Saha는 2025년 분기 재무제표(1,070,505,655.36바트)와 FY2025 재무제표(1,090,296,189.33바트)의 1월 1일 재작성 잔액이 달라
+  `accepted_breaks`(check `equity_continuity`)로 사유를 남겼다. 이 종류의 break는 데이터 품질 표에는 나오지 않는다.
+- **단계적 도입**: 추출 중에는 `common.PHASED_IN`으로 규칙이 없는 회사를 'Not extracted'로 두었다가, 모두 채운 뒤 빈 집합으로 되돌렸다.
+  파일럿 워크북은 이 항목이 없으므로 `NOT_IN_PILOT`으로 제외.
+- **지표** (`metrics.py`, 그룹 OCI): `oci_total`, `oci_ratio`(OCI ÷ 기초 자본), `oci_offset`(−(보험+재보험 OCI) ÷ 채무상품 OCI). 연환산하지 않는다.
+- **차트**: 5번 스트립 차트에 두 줄 추가(중앙값 기준 축, 0 제한 없음). 팝업은 OCI와 기초 자본, 부채 OCI(부호 반대)와 채무상품 OCI.
+  상쇄율은 채무상품 OCI가 작으면 극단값이 된다(예: 2Q2026 BUI 790%). 축 끝 표시로 처리한다.
+- 10번에 OCI 정책 주석(`oci_policy`)을 더했다.
+- 2Q2026 결과: 업계 중앙값 OCI ÷ 기초 자본 −12.0%, 상쇄율 62.3%. Samsung −37.5%(20위), 상쇄율 24.0%.

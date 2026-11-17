@@ -315,6 +315,63 @@
     "note": "SCI (equals 4)",
     "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q1": {
+    "page": 4,
+    "printed": "(238,862,384.33)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q1": {
+    "page": 4,
+    "printed": "86,561,345.18",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q1": {
+    "const": 0,
+    "page": 4,
+    "evidence": "no reinsurance OCI line on the statement"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q1": {
+    "page": 4,
+    "printed": "293,298.40",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q1": {
+    "page": 4,
+    "printed": "(128,786,007.64)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q1": {
+    "page": 5,
+    "printed": "1,164,908,977.95",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงในส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
   }
  },
  "items_3m": {

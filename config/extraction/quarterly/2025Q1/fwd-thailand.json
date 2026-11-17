@@ -319,6 +319,63 @@
     "note": "SCI (equals 6)",
     "heading_seen": "งบกำไรขาดทุน สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "11,184,312",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(11,663,726)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q1": {
+    "const": 0,
+    "page": 6,
+    "evidence": "no separate reinsurance OCI line"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(183,305)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "76,791",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q1": {
+    "page": 7,
+    "printed": "77,469,774",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9)",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (หน่วย: พันบาท)"
+   }
   }
  },
  "items_3m": {

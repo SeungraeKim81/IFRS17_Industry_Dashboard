@@ -57,6 +57,14 @@ def load_line_items() -> list[dict]:
     return read_csv(CONFIG / "line_items.csv")
 
 
+# Line items being added to every extraction one insurer at a time. Until an extraction carries them, extract does
+# not ask its spec for a rule and ingest writes them blank with status "Not extracted" (shown as n/a). Empty this
+# set once every extraction has them, so that a missing rule stops the run again.
+PHASED_IN: set[str] = set()  # the OCI items and opening equity were phased in this way (v1.11); all extracted now
+# Line items the pilot capture workbook (kept for reference) never had.
+NOT_IN_PILOT = {"oci_debt_fvoci", "oci_ins_finance", "oci_reins_finance", "oci_equity_fvoci", "oci_total", "equity_open"}
+
+
 def quarter_info(period: str) -> dict | None:
     """Extraction period 2026Q2 -> year 2026, quarter 2, 6 months to date, prior year-end 2025FY; None for FY periods."""
     import re

@@ -84,9 +84,9 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
    (axes centred on the industry median, the onerous ratio fixed at 0-10%; points beyond sit on the edge; the tooltip lists every insurer at the spot with the numerator and denominator)
 4. **CSM movement analysis**: the CSM sustainability quadrant, then the roll-forward waterfall (focus vs industry, opening = 100)
    (quadrant axes capped at a 30% release ratio and 3x new business / release; points beyond sit on the edge with their true value)
-5. **Subsequent measurement & financial indicators**: insurance service margin, CSM adjustment ratio and net investment ratio
-   as strip rows like section 3 (axes centred on the median, all insurers on one axis); a note under the chart names the
-   insurers whose accounting policy choices affect the measures (RA not disaggregated)
+5. **Subsequent measurement & financial indicators**: insurance service margin, CSM adjustment ratio, net investment ratio,
+   OCI / opening equity and liability OCI offset as strip rows like section 3 (axes centred on the median, all insurers on one
+   axis); a note under the chart names the insurers whose accounting policy choices affect the measures (RA not disaggregated)
 6. **Profit bridge**: what happens to 100 baht of insurance revenue, ordered by net-profit margin
 7. **All insurers**: sortable table with FY2025 / FY2024 / change views and a CSV download
 8. **Indicator definitions**: every indicator with its formula, generated from `pipeline/metrics.py` (always open)
@@ -135,3 +135,4 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.8 | 2026-11 | Section order: new-business quality 3, CSM movement 4 (quadrant first); new-business axes capped at 30% (cost, onerous) and 3x; table headers centred; indicator definitions as their own open section 8, data quality 9 and method 10 folded |
 | v1.9 | 2026-11 | New-business quality: axes centred on the industry median (onerous ratio 0-10%), edge marks with counts, and a tooltip listing every overlapping insurer with each measure's numerator and denominator |
 | v1.10 | 2026-11 | Section 5 becomes subsequent measurement & financial indicators: service margin, CSM adjustment ratio and net investment ratio as strip rows with one axis for all insurers, and a policy note under the chart; 'Highlights' heading, first line ranks new-business CSM, closing CSM, revenue; the onerous ratio is the last new-business row; strip ticks keep a decimal for 2.5% steps |
+| v1.11 | 2026-11 | OCI: five OCI lines (debt FVOCI, insurance and reinsurance finance OCI, equity FVOCI, total) and opening equity extracted for every insurer and period; OCI / opening equity and liability OCI offset in section 5; OCI policy note in section 10 |

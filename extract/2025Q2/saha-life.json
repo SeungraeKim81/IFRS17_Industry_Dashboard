@@ -374,6 +374,73 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q2": {
+    "value": 137.64523147,
+    "printed": "137,645,231.47",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท; six-month columns)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q2": {
+    "value": -42.34988548,
+    "printed": "(42,349,885.48)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท; six-month columns)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q2": {
+    "value": 0.0,
+    "page": 4,
+    "evidence": "no reinsurance OCI line on the statement"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q2": {
+    "value": -0.5129584,
+    "printed": "(512,958.40)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท; six-month columns)"
+   }
+  },
+  "oci_total": {
+   "2025Q2": {
+    "value": 70.6065238,
+    "printed": "70,606,523.80",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท; six-month columns)"
+   }
+  },
+  "equity_open": {
+   "2025Q2": {
+    "value": 1070.50565536,
+    "printed": "1,070,505,655.36",
+    "unit": "baht",
+    "sign": 1,
+    "page": 5,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January 2568 as printed in the 2025 interim statements (the FY2025 statement restates it to 1,090,296,189.33)",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงในส่วนของเจ้าของ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
+   }
   }
  },
  "ytd_months": 6,
@@ -492,6 +559,11 @@
    "check": "continuity",
    "difference": 4.03272019,
    "reason": "the 2025 interims open the CSM at 250,261,717.61 Baht; the FY2025 annual statements restate the 1 January 2568 CSM as 246,228,997.42 Baht (owner decision 2026-11-11: record the interims as printed)"
+  },
+  {
+   "check": "equity_continuity",
+   "difference": -19.79053397,
+   "reason": "The 2025 interim statements open on the restated 1 January 2568 equity of 1,070,505,655.36 baht; the FY2025 statement restates it again to 1,090,296,189.33 baht. Both are taken as printed."
   }
  ]
 }

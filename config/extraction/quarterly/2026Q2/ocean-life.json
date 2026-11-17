@@ -312,6 +312,66 @@
     "note": "SCI (equals 8.1)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(2,151,181)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "1,265,360",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(1,998)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "117,047",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q2": {
+    "page": 7,
+    "printed": "(1,756,695)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q2": {
+    "page": 9,
+    "printed": "23,208,243",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของผู้ถือหุ้น (ไม่ได้ตรวจสอบ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (พันบาท)"
+   }
   }
  },
  "items_3m": {

@@ -12,7 +12,7 @@ from pathlib import Path
 import openpyxl
 
 from pipeline import build, ingest, metrics, validate
-from pipeline.common import ROOT, load_settings, read_csv
+from pipeline.common import PHASED_IN, ROOT, load_line_items, load_settings, read_csv
 
 PERIOD = load_settings()["period"]
 WORKBOOK = ROOT / load_settings()["capture_workbook"]
@@ -41,11 +41,12 @@ class TestIngest(unittest.TestCase):
         rows, notes, rows_3m, _ = ingest.ingest_extractions(PERIOD)
         self.assertEqual(rows_3m, [])  # annual: no three-month profit or loss
         self.assertEqual(len(notes), 20)  # the 17 pilot insurers + BUI, Phillip, Saha
-        self.assertEqual(len(rows), 20 * 2 * 30)
+        self.assertEqual(len(rows), 20 * 2 * len(load_line_items()))
         nd = {(r["company"], r["code"]) for r in rows if r["status"] == "Not disclosed"}
         self.assertEqual(nd, {("BUI Life", "nb_pv_acq"), ("BUI Life", "nb_pv_claims")})
-        self.assertEqual({r["status"] for r in rows}, {"Extracted", "Not disclosed"})
-        self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows))  # where each value was read
+        self.assertEqual({r["status"] for r in rows} - {"Not extracted"}, {"Extracted", "Not disclosed"})
+        self.assertTrue(all(r["code"] in PHASED_IN for r in rows if r["status"] == "Not extracted"))
+        self.assertTrue(all(re.match(r"(file )?p\.\d+ ", r["source"]) for r in rows if r["status"] != "Not extracted"))  # where each value was read
 
     def test_quarterly_extractions(self):
         """A quarter takes every insurer extracted; the comparative is the same quarter a year earlier, where extracted."""
@@ -209,8 +210,12 @@ class TestExtractions(unittest.TestCase):
         for f in self.files:
             ex = verify_extract.load(f)
             with self.subTest(company=ex["company"], period=ex["period"]):
-                self.assertEqual(len(ex["items"]), 30)
+                required = {it["code"] for it in load_line_items()} - PHASED_IN
+                self.assertEqual(required - set(ex["items"]), set())
+                self.assertEqual(set(ex["items"]) - required - PHASED_IN, set())
                 self.assertEqual([r for r in verify_extract.reconcile(ex) if not r["ok"]], [])
+                eq = verify_extract.equity_continuity(ex)  # every quarter opens on the year's 1 January equity
+                self.assertTrue(eq is None or eq["ok"], eq)
                 if ex.get("ytd_months"):  # quarterly: three-month bridge and continuity with the prior year-end
                     self.assertEqual(set(ex["items_3m"]), set(verify_extract.PL_3M))
                     self.assertEqual([r for r in verify_extract.reconcile_3m(ex) if not r["ok"]], [])

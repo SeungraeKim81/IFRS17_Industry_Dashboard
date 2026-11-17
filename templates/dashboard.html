@@ -406,7 +406,7 @@ const UI = {
     noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median. Each axis is centred on that median; insurers beyond its range sit at the end with ‹ or › (the onerous ratio has a fixed 0–10% axis).",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Subsequent measurement & financial indicators",
-    noteInforce: "The insurance service margin is the insurance service result divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results. The CSM adjustment ratio is the CSM adjustment divided by the CSM before release: the rate of change in the CSM from assumption and experience adjustments. The net investment ratio is the share of net investment income left after the insurance finance expense.",
+    noteInforce: "The insurance service margin is the insurance service result divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results. The CSM adjustment ratio is the CSM adjustment divided by the CSM before release: the rate of change in the CSM from assumption and experience adjustments. The net investment ratio is the share of net investment income left after the insurance finance expense. OCI / opening equity is other comprehensive income for the year to date, net of tax, as a share of total equity at 1 January. The liability OCI offset is the share of the OCI on debt instruments at FVOCI that the insurance and reinsurance finance OCI cancels out (100% = fully offset), both before tax.",
     noteAxis: "Under the VFA the finance expense follows the underlying items, so an insurer with much VFA business shows a structurally low ratio. On quarterly pages all three measures are year to date. Each axis is centred on the industry median; insurers beyond its range sit at the end with ‹ or ›.",
     notePolicy: "Accounting policy choices differ by insurer. {k} of {n} insurers do not disaggregate the risk-adjustment change ({names}), so their insurance service margin also carries the RA finance effect. See section 10.",
     ariaStrips5: "Strip plots of subsequent-measurement indicators",
@@ -431,6 +431,7 @@ const UI = {
     tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
+    ndOci: "OCI, net of tax", ndEqOpen: "Opening equity", ndLiabOci: "Liability OCI (sign reversed)", ndDebtOci: "Debt FVOCI OCI",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
     ctxRankMed: "Rank {r} of {n} · median {v}",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
@@ -488,7 +489,7 @@ const UI = {
     noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다. 각 축은 이 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다(신계약 손실부담 비율은 0–10% 고정).",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 후속측정 · 재무 지표",
-    noteInforce: "보험서비스이익률은 보험서비스결과를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다. CSM 조정률은 CSM 조정액을 상각 전 CSM으로 나눈 값으로, 가정·경험 조정에 의한 CSM의 변동 비율이다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다.",
+    noteInforce: "보험서비스이익률은 보험서비스결과를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다. CSM 조정률은 CSM 조정액을 상각 전 CSM으로 나눈 값으로, 가정·경험 조정에 의한 CSM의 변동 비율이다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다. OCI ÷ 기초 자본은 연초 이후 기타포괄손익(세후)을 1월 1일 자본총계로 나눈 값이다. 부채 OCI 상쇄율은 채무상품 FVOCI 평가손익을 보험·재보험 금융손익 OCI가 상쇄하는 비율로(100% = 전부 상쇄), 둘 다 세전 기준이다.",
     noteAxis: "VFA 계약은 보험금융손익이 기초항목을 따라가므로, VFA 비중이 큰 회사는 구조적으로 낮게 나온다. 분기 페이지는 세 지표 모두 연초 이후 누적값이다. 각 축은 업계 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다.",
     notePolicy: "회계정책 선택은 회사마다 다르다. {n}개사 중 {k}개사({names})는 위험조정 변동을 분리하지 않아 보험서비스이익률에 RA 금융효과가 함께 들어간다. 10번 참고.",
     ariaStrips5: "후속측정 지표 스트립 차트",
@@ -513,6 +514,7 @@ const UI = {
     tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
     ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
+    ndOci: "기타포괄손익(세후)", ndEqOpen: "기초 자본", ndLiabOci: "부채 OCI(부호 반대)", ndDebtOci: "채무상품 FVOCI OCI",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
     ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
@@ -571,7 +573,7 @@ const UI = {
     noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม แต่ละแกนมีค่ามัธยฐานนี้อยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › (Onerous new business ใช้แกนคงที่ 0–10%)",
     ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
     h2ism: "5&nbsp; Subsequent measurement และตัวชี้วัดทางการเงิน",
-    noteInforce: "Insurance service margin คือ insurance service result หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน CSM adjustment ratio คือการปรับ CSM หารด้วย CSM ก่อน release เป็นอัตราการเปลี่ยนแปลงของ CSM จากการปรับข้อสมมติและประสบการณ์ Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense",
+    noteInforce: "Insurance service margin คือ insurance service result หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน CSM adjustment ratio คือการปรับ CSM หารด้วย CSM ก่อน release เป็นอัตราการเปลี่ยนแปลงของ CSM จากการปรับข้อสมมติและประสบการณ์ Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense OCI / opening equity คือกำไรขาดทุนเบ็ดเสร็จอื่นสะสมตั้งแต่ต้นปี สุทธิจากภาษี หารด้วยส่วนของเจ้าของรวม ณ วันที่ 1 มกราคม Liability OCI offset คือสัดส่วนที่ OCI ทางการเงินของสัญญาประกันภัยและสัญญาประกันภัยต่อหักล้าง OCI ของตราสารหนี้ที่วัดมูลค่า FVOCI (100% = หักล้างทั้งหมด) ทั้งสองรายการก่อนภาษี",
     noteAxis: "ภายใต้ VFA ค่า finance expense เคลื่อนไหวตาม underlying items บริษัทที่มีธุรกิจ VFA มากจึงมีอัตรานี้ต่ำโดยโครงสร้าง หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปีทั้งสามตัวชี้วัด แต่ละแกนมีค่ามัธยฐานของอุตสาหกรรมอยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ ›",
     notePolicy: "ทางเลือกนโยบายการบัญชีแตกต่างกันในแต่ละบริษัท {k} จาก {n} บริษัท ({names}) ไม่แยกการเปลี่ยนแปลงของ risk adjustment insurance service margin ของบริษัทเหล่านี้จึงรวมผลทางการเงินของ RA ด้วย ดูส่วนที่ 10",
     ariaStrips5: "แผนภูมิแถบของตัวชี้วัดการวัดมูลค่าภายหลัง",
@@ -596,6 +598,7 @@ const UI = {
     tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
+    ndOci: "OCI, net of tax", ndEqOpen: "Opening equity", ndLiabOci: "Liability OCI (sign reversed)", ndDebtOci: "Debt FVOCI OCI",
     ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
     ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
     wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
@@ -649,7 +652,7 @@ const chk = (id, f) => { const tr = TR(); const d = DATA.check_defs.find(c => c.
 const EN_CHECK_SHORT = { revenue_split: "Revenue", expense_split: "Expense", net_profit: "Net profit", csm_rollforward: "CSM roll", nb_csm: "NB CSM", nb_consistency: "NB = roll" };
 const noteT = (n, f) => { const tr = TR(); return (tr && tr.commentary[n.id] && tr.commentary[n.id][f]) || n[f]; };
 const flagMsg = f => f["message_" + LANG] || f.message;
-const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business" }[gname]); };
+const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business", oci: "OCI" }[gname]); };
 
 /* ---------- helpers ---------- */
 const el = (n, a = {}, txt) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };
@@ -979,10 +982,12 @@ const STRIP_ND = { nb_csm_margin: [["nb_csm"], ["nb_pv_premium"], "ndNbCsm", "nd
   onerous_ratio: [["nb_loss_component"], ["nb_csm"], "ndLoss", "ndNbCsm"], nb_to_release: [["nb_csm"], ["-csm_release"], "ndNbCsm", "ndRel"],
   csm_adj_ratio: [["csm_future_service"], ["csm_open", "csm_nb", "csm_accretion"], "ndAdj", "ndAdjBase"],
   net_inv_ratio: [["net_investment_income", "ifie"], ["net_investment_income"], "ndNetInv", "ndInv"],
-  ism_gross: [["insurance_revenue", "insurance_service_expense"], ["insurance_revenue"], "ndIsr", "ndRev"] };
+  ism_gross: [["insurance_revenue", "insurance_service_expense"], ["insurance_revenue"], "ndIsr", "ndRev"],
+  oci_ratio: [["oci_total"], ["equity_open"], "ndOci", "ndEqOpen"],
+  oci_offset: [["-oci_ins_finance", "-oci_reins_finance"], ["oci_debt_fvoci"], "ndLiabOci", "ndDebtOci"] };
 const ndAmt = (c, codes) => codes.reduce((s, f) => { const neg = f[0] === "-", v = raw(c, neg ? f.slice(1) : f); return s == null || v == null ? null : s + (neg ? -v : v); }, 0);
 // measures that can fall below zero: their axis is centred on the median without the zero floor
-const STRIP_SIGNED = new Set(["ism_gross", "csm_adj_ratio", "net_inv_ratio"]);
+const STRIP_SIGNED = new Set(["ism_gross", "csm_adj_ratio", "net_inv_ratio", "oci_ratio", "oci_offset"]);
 const pctl = (v, p) => { const s = v.slice().sort((a, b) => a - b), k = (s.length - 1) * p, f = Math.floor(k), c = Math.min(f + 1, s.length - 1); return s[f] + (s[c] - s[f]) * (k - f); };
 // Axis of one strip (owner decision): centred on the industry median, half-width 1.25 times the farther of the
 // 10th and 90th percentiles from it, and never below zero (half-width at most the median). The onerous ratio is
@@ -1218,7 +1223,7 @@ function renderAll() {
   $$(".f-name").forEach(e => e.textContent = F);
   focusSection(); market(); waterfall(); quadrant();
   strips("#strips", ["nb_csm_margin", "acq_cost_ratio", "nb_to_release", "onerous_ratio"]);
-  strips("#strips5", ["ism_gross", "csm_adj_ratio", "net_inv_ratio"]); policyNote(); bridge(); table(); defs(); dataQuality(); method();
+  strips("#strips5", ["ism_gross", "csm_adj_ratio", "net_inv_ratio", "oci_ratio", "oci_offset"]); policyNote(); bridge(); table(); defs(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));

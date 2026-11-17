@@ -374,6 +374,78 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ), งบการเงินเฉพาะกิจการ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q1": {
+    "value": -50165.236,
+    "printed": "(50,165,236)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q1": {
+    "value": 15365.353,
+    "printed": "15,365,353",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q1": {
+    "value": 119.09,
+    "printed": "119,090",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q1": {
+    "value": -1290.076,
+    "printed": "(1,290,076)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_total": {
+   "2026Q1": {
+    "value": -30961.898,
+    "printed": "(30,961,898)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "equity_open": {
+   "2026Q1": {
+    "value": 154477.719,
+    "printed": "154,477,719",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SOCE total equity at 1 January; separate statements",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ (งบการเงินเฉพาะกิจการ) (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
   }
  },
  "ytd_months": 3,

@@ -12,7 +12,8 @@
     "scale": "규모",
     "profitability": "수익성",
     "csm": "CSM",
-    "new_business": "신계약"
+    "new_business": "신계약",
+    "oci": "OCI"
   },
   "metrics": {
     "insurance_revenue": {"label": "보험수익", "formula": "보험수익 합계"},
@@ -35,6 +36,9 @@
     "nb_to_release": {"label": "신계약 CSM ÷ 상각", "formula": "신계약 CSM ÷ CSM 상각"},
     "csm_adj_ratio": {"label": "CSM 조정률", "formula": "미래서비스 관련 CSM 조정 ÷ (기초 CSM + 신계약 + 이자부리). 분기 페이지는 연초 이후 누적값이며 연환산하지 않음"},
     "net_inv_ratio": {"label": "순투자손익률", "formula": "(투자손익 + 보험금융손익) ÷ 투자손익. 투자손익이 0 이하이면 n/a"},
+    "oci_total": {"label": "기타포괄손익", "formula": "당기 기타포괄손익(세후)"},
+    "oci_ratio": {"label": "OCI ÷ 기초 자본", "formula": "기타포괄손익(세후) ÷ 기초 자본총계. 분기 페이지는 연초 이후 누적값"},
+    "oci_offset": {"label": "부채 OCI 상쇄율", "formula": "−(보험계약 + 재보험 금융손익 OCI) ÷ FVOCI 채무상품 OCI, 모두 세전"},
     "nb_csm_margin": {"label": "신계약 CSM 마진율", "formula": "신계약 CSM ÷ 신계약 PV 보험료"},
     "acq_cost_ratio": {"label": "신계약비용률", "formula": "신계약 PV 보험취득현금흐름 ÷ 신계약 PV 보험료"},
     "nb_claims_ratio": {"label": "신계약 보험금·급부 비율", "formula": "신계약 PV 보험금 유출 ÷ 신계약 PV 보험료"},
@@ -55,6 +59,10 @@
     "ra_policy": {
       "title": "위험조정(RA) 분리 여부는 이익률 비교에 영향을 준다",
       "body": "위험조정 변동을 보험서비스결과와 보험금융손익으로 나누지 않는 보험사는 할인율 변동 효과를 포함한 RA 변동 전체를 보험서비스결과에 반영한다. 5번 섹션은 모든 보험사를 보험서비스이익률 한 축에 보여 주며, RA를 분리하지 않는 보험사는 차트 아래에 적었다. 공통 기준으로 재계산하려면 RA 금융효과의 당기손익/기타포괄손익 구분이 필요한데 재무제표에 공시되지 않으므로, 재계산한 이익률은 보여 주지 않는다. 당기순이익은 이 선택의 영향을 받지 않는다."
+    },
+    "oci_policy": {
+      "title": "OCI 지표는 회계정책과 재무제표의 구분 방식에 따라 달라진다",
+      "body": "모든 보험사가 보험금융손익의 일부를 기타포괄손익으로 인식(OCI 옵션)하므로, 보험계약 OCI는 FVOCI 채무상품 OCI와 반대 방향으로 움직인다. Dhipaya Life, Krungthai-AXA Life, FWD Thailand(2026년부터)는 발행 보험계약과 보유 재보험계약의 금융손익 OCI를 한 줄로 표시하며, 이는 보험계약 OCI로 보여 준다. 채무상품 OCI는 공정가치 평가 줄만 쓰고 당기손익으로 재분류된 금액과 위험회피 항목은 제외하므로, 구성 항목의 합은 OCI 합계와 일치하지 않는다. FY2024에는 AIA, FWD, Krungthai-AXA, Phillip, Tokio Marine이 TFRS 9을 적용하기 전이어서, 채무상품 OCI는 종전 기준의 FVOCI 투자자산 공정가치 변동이다. 기초 자본은 자본변동표의 1월 1일 재작성 잔액이며, 연결 또는 지분법 재무제표를 함께 공시하는 회사는 별도재무제표 기준이다."
     },
     "transition": {
       "title": "FY2024 수치는 전환 비교기간 수치다",

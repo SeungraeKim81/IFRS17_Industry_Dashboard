@@ -371,6 +371,78 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q2": {
+    "value": -3359.364346,
+    "printed": "(3,359,364,346)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, debt FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q2": {
+    "value": 807.158843,
+    "printed": "807,158,843",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q2": {
+    "value": -0.606041,
+    "printed": "(606,041)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q2": {
+    "value": 108.732767,
+    "printed": "108,732,767",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, equity FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q2": {
+    "value": -1953.458126,
+    "printed": "(1,953,458,126)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q2": {
+    "value": 5215.088838,
+    "printed": "5,215,088,838",
+    "unit": "baht",
+    "sign": 1,
+    "page": 10,
+    "note": "SOCE total equity at 1 January 2569",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (หน่วย: บาท)"
+   }
   }
  },
  "ytd_months": 6,

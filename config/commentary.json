@@ -6,6 +6,12 @@
     "body": "An insurer that does not split the change in the risk adjustment between the insurance service result and insurance finance income or expense carries the whole RA change, including the effect of discount-rate movements, in the insurance service result. Section 5 shows every insurer on one service-margin axis and names under the chart the insurers that do not disaggregate. Restating to a common basis would need the P&L/OCI split of the RA finance effect, which the statements do not disclose, so no restated margin is shown. Net profit is not affected by the choice."
   },
   {
+    "id": "oci_policy",
+    "title": "OCI measures depend on accounting policy and on what the statements separate",
+    "companies": [],
+    "body": "Every insurer takes part of its insurance finance income or expense to other comprehensive income (the OCI option), so its insurance OCI moves against the OCI on debt instruments at fair value through OCI. Dhipaya Life, Krungthai-AXA Life and FWD Thailand (from 2026) print the finance OCI of insurance contracts issued and reinsurance contracts held on one line; it is shown as insurance OCI. Debt OCI is the fair-value line only: amounts reclassified to profit or loss and hedging lines are left out, so the components do not add up to total OCI. For FY2024, AIA, FWD, Krungthai-AXA, Phillip and Tokio Marine had not yet applied TFRS 9; their debt OCI is the fair-value change of investments at FVOCI under the previous standard. Opening equity is the restated balance at 1 January from the statement of changes in equity (the separate statements where an insurer also presents consolidated or equity-method statements)."
+  },
+  {
     "id": "transition",
     "periods": ["FY2025"],
     "title": "FY2024 figures are transition comparatives",

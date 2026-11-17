@@ -318,6 +318,66 @@
     "note": "SCI (equals 9)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "(2,285,128)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out); read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "1,065,131",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "1,171",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "254,640",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "(958,545)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax; read from the text layer",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q1": {
+    "page": 8,
+    "printed": "9,517,912",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; read from the text layer; restated balance",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของผู้ถือหุ้น (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (พันบาท)"
+   }
   }
  },
  "items_3m": {
