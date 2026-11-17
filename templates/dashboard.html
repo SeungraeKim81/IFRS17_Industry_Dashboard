@@ -1038,7 +1038,10 @@ function strips(sel, rows) {
     const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34, med = ind(k).median;
     const pts = COS.map(c => ({ c, v: g(c, k) })).filter(p => p.v != null);
     const [lo, hi] = stripAxis(k, pts.map(p => p.v), med);
-    const { ticks } = niceTicks(lo, hi, 6);
+    const { ticks, step } = niceTicks(lo, hi, 6);
+    // one decimal when the step is a fraction of the unit (2.5% steps would otherwise print as 3%, 8%, 13%)
+    const tdp = s => Math.abs(s - Math.round(s)) > 1e-6 ? 1 : 0;
+    const tickTxt = tk => d.unit === "pct" ? nf(tk * 100, tdp(step * 100)) + "%" : nf(tk, 1 + tdp(step * 10)) + "×";
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
     const near = p => pts.filter(q => Math.abs(px(q.v) - px(p.v)) <= NEAR).sort((a, b) => a.v - b.v).map(q => q.c);
     // name, then its definition (as in the definitions table) in small type, then the reading direction
@@ -1048,7 +1051,7 @@ function strips(sel, rows) {
     svg.appendChild(el("text", { x: 0, y: cy + 6 + defLines.length * 12.5, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
     ticks.forEach(tk => {
       svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
-      svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(tk * 100, 0) + "%" : nf(tk, 1) + "×"));
+      svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, tickTxt(tk)));
     });
     svg.appendChild(el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "var(--axis)" }));
     if (med != null) svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: cy - 16, y2: cy + 16, stroke: "var(--ink-2)", "stroke-width": 2 }));
