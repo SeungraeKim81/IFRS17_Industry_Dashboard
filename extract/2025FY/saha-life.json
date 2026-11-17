@@ -677,6 +677,128 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "FY2025": {
+    "value": 75.77077652,
+    "printed": "75,770,776.52",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   },
+   "FY2024": {
+    "value": 132.24773995,
+    "printed": "132,247,739.95",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "FY2025": {
+    "value": -29.5263627,
+    "printed": "(29,526,362.70)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   },
+   "FY2024": {
+    "value": -16.25326611,
+    "printed": "(16,253,266.11)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "FY2025": {
+    "value": 0.0,
+    "page": 7,
+    "evidence": "no reinsurance OCI line on the statement"
+   },
+   "FY2024": {
+    "value": 0.0,
+    "page": 7,
+    "evidence": "no reinsurance OCI line on the statement"
+   }
+  },
+  "oci_equity_fvoci": {
+   "FY2025": {
+    "value": -0.3476904,
+    "printed": "(347,690.40)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   },
+   "FY2024": {
+    "value": 1.3978814,
+    "printed": "1,397,881.40",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   }
+  },
+  "oci_total": {
+   "FY2025": {
+    "value": 33.48899512,
+    "printed": "33,488,995.12",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   },
+   "FY2024": {
+    "value": 94.14946123,
+    "printed": "94,149,461.23",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "FY2025": {
+    "value": 1090.29618933,
+    "printed": "1,090,296,189.33",
+    "unit": "baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงในส่วนของเจ้าของ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   },
+   "FY2024": {
+    "value": 899.38522499,
+    "printed": "899,385,224.99",
+    "unit": "baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงในส่วนของเจ้าของ สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   }
   }
  }
 }

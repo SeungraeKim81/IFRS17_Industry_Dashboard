@@ -1391,15 +1391,15 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,Saha Life,insurance_revenue,99.764519,Extracted,"file p.4 SCI (equals 8) printed 99,764,518.79 (baht, read from page image)"
 2026Q1,2026Q1,Saha Life,insurance_service_expense,-89.492758,Extracted,"file p.4 SCI (equals 4) printed (89,492,758.31) (baht, read from page image)"
 2026Q1,2025Q1,Saha Life,insurance_service_expense,-88.515748,Extracted,"file p.4 SCI (equals 8) printed (88,515,748.21) (baht, read from page image)"
-2026Q1,2026Q1,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,Saha Life,oci_debt_fvoci,-238.862384,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (238,862,384.33) (baht, read from page image)"
+2026Q1,2025Q1,Saha Life,oci_debt_fvoci,43.166425,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 43,166,424.69 (baht, read from page image)"
+2026Q1,2026Q1,Saha Life,oci_ins_finance,86.561345,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed 86,561,345.18 (baht, read from page image)"
+2026Q1,2025Q1,Saha Life,oci_ins_finance,-16.428179,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed (16,428,179.36) (baht, read from page image)"
+2026Q1,2026Q1,Saha Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2026Q1,2025Q1,Saha Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2026Q1,2026Q1,Saha Life,oci_equity_fvoci,0.293298,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed 293,298.40 (baht, read from page image)"
+2026Q1,2025Q1,Saha Life,oci_equity_fvoci,-0.161502,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed (161,502.40) (baht, read from page image)"
+2026Q1,2026Q1,Saha Life,oci_total,-128.786008,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed (128,786,007.64) (baht, read from page image)"
+2026Q1,2025Q1,Saha Life,oci_total,19.748204,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed 19,748,204.44 (baht, read from page image)"
+2026Q1,2026Q1,Saha Life,equity_open,1164.908978,Extracted,"file p.5 SOCE total equity at 1 January printed 1,164,908,977.95 (baht, read from page image)"
+2026Q1,2025Q1,Saha Life,equity_open,1070.505655,Extracted,"file p.5 SOCE total equity at 1 January; restated balance at 1 January 2568 as printed in the 2025 interim statements (the FY2025 statement restates it to 1,090,296,189.33) printed 1,070,505,655.36 (baht, read from page image)"

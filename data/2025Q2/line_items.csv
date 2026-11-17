@@ -641,9 +641,9 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Saha Life,nb_loss_component,45.012405,Extracted,"file p.58 9.1.3 total, onerous contracts printed 45,012,404.56 (baht, read from page image)"
 2025Q2,2025Q2,Saha Life,insurance_revenue,212.552194,Extracted,"file p.4 SCI six months (equals 8) printed 212,552,194.31 (baht, read from page image)"
 2025Q2,2025Q2,Saha Life,insurance_service_expense,-186.996017,Extracted,"file p.4 SCI six months (equals 8) printed (186,996,016.82) (baht, read from page image)"
-2025Q2,2025Q2,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Saha Life,oci_debt_fvoci,137.645231,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 137,645,231.47 (baht, read from page image)"
+2025Q2,2025Q2,Saha Life,oci_ins_finance,-42.349885,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed (42,349,885.48) (baht, read from page image)"
+2025Q2,2025Q2,Saha Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2025Q2,2025Q2,Saha Life,oci_equity_fvoci,-0.512958,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed (512,958.40) (baht, read from page image)"
+2025Q2,2025Q2,Saha Life,oci_total,70.606524,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed 70,606,523.80 (baht, read from page image)"
+2025Q2,2025Q2,Saha Life,equity_open,1070.505655,Extracted,"file p.5 SOCE total equity at 1 January; restated balance at 1 January 2568 as printed in the 2025 interim statements (the FY2025 statement restates it to 1,090,296,189.33) printed 1,070,505,655.36 (baht, read from page image)"

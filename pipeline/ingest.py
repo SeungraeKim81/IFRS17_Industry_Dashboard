@@ -202,7 +202,7 @@ def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict],
                     rows.append(_row(period, fy, name, code, rec, _source_text))
         for fy, src in ((period, ex), (fy_cmp, cmp_ex)) if quarterly else ((period, ex),):
             for b in (src or {}).get("accepted_breaks", []):
-                if b["check"] != "continuity":  # continuity is checked on the extraction, not on the page data
+                if b["check"] not in ("continuity", "equity_continuity"):  # checked on the extraction, not on the page data
                     accepted.append({"company": name, "fiscal_year": fy, "check": b["check"],
                                      "difference": fmt_num(b["difference"]), "reason": b["reason"]})
         if quarterly:

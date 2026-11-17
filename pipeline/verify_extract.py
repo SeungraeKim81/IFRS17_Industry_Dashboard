@@ -169,7 +169,9 @@ def equity_continuity(ex: dict) -> dict | None:
         return None
     tol = load_settings()["tolerance_thb_m"]
     d = own["value"] - ref
-    return {"opening": own["value"], "reference": ref, "difference": d, "ok": abs(d) <= tol, "note": note}
+    accepted = None if abs(d) <= tol else _accepted(ex, "equity_continuity", d)
+    return {"opening": own["value"], "reference": ref, "difference": d, "ok": abs(d) <= tol or accepted is not None,
+            "note": note, **({"accepted": accepted} if accepted else {})}
 
 
 def compare_pilot(ex: dict, pilot_csv: Path | None = None) -> list[dict]:
@@ -229,6 +231,7 @@ def run(path: str) -> bool:
               + (f" (ACCEPTED: difference {cont['difference']:.3f}, {cont['accepted']})" if cont.get("accepted") else ""))
     eq = equity_continuity(ex)
     if eq:
-        print(f"  opening equity {eq['opening']:.3f} vs {eq['note']} {eq['reference']:.3f}" + (" OK" if eq["ok"] else " MISMATCH"))
+        print(f"  opening equity {eq['opening']:.3f} vs {eq['note']} {eq['reference']:.3f}" + (" OK" if eq["ok"] else " MISMATCH")
+              + (f" (ACCEPTED: difference {eq['difference']:.3f}, {eq['accepted']})" if eq.get("accepted") else ""))
     return (all(r["ok"] for r in rec) and not any(r["status"] == "DIFFERENT" for r in cmp_)
             and all(r["ok"] for r in rec3) and (cont is None or cont["ok"]) and (eq is None or eq["ok"]))

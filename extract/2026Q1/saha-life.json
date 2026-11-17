@@ -374,6 +374,73 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q1": {
+    "value": -238.86238433,
+    "printed": "(238,862,384.33)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q1": {
+    "value": 86.56134518,
+    "printed": "86,561,345.18",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q1": {
+    "value": 0.0,
+    "page": 4,
+    "evidence": "no reinsurance OCI line on the statement"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q1": {
+    "value": 0.2932984,
+    "printed": "293,298.40",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q1": {
+    "value": -128.78600764,
+    "printed": "(128,786,007.64)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 4,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ยังไม่ได้ตรวจสอบแต่สอบทานแล้ว) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q1": {
+    "value": 1164.90897795,
+    "printed": "1,164,908,977.95",
+    "unit": "baht",
+    "sign": 1,
+    "page": 5,
+    "note": "SOCE total equity at 1 January",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงในส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
   }
  },
  "ytd_months": 3,

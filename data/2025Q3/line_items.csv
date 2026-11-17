@@ -677,9 +677,9 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Saha Life,nb_loss_component,108.834671,Extracted,"file p.58 9.1.3 total, onerous contracts printed 108,834,670.62 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,insurance_revenue,344.978017,Extracted,"file p.4 SCI nine months (equals 8) printed 344,978,017.29 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,insurance_service_expense,-236.875652,Extracted,"file p.4 SCI nine months (equals 8) printed (236,875,651.91) (baht, read from page image)"
-2025Q3,2025Q3,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Saha Life,oci_debt_fvoci,194.909935,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 194,909,935.38 (baht, read from page image)"
+2025Q3,2025Q3,Saha Life,oci_ins_finance,-21.096412,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed (21,096,411.65) (baht, read from page image)"
+2025Q3,2025Q3,Saha Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2025Q3,2025Q3,Saha Life,oci_equity_fvoci,-0.266102,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed (266,102.40) (baht, read from page image)"
+2025Q3,2025Q3,Saha Life,oci_total,138.84671,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed 138,846,710.13 (baht, read from page image)"
+2025Q3,2025Q3,Saha Life,equity_open,1070.505655,Extracted,"file p.5 SOCE total equity at 1 January; restated balance at 1 January 2568 as printed in the 2025 interim statements (the FY2025 statement restates it to 1,090,296,189.33) printed 1,070,505,655.36 (baht, read from page image)"
