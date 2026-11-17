@@ -779,18 +779,18 @@ FY2025,FY2025,CHUBB Life,insurance_revenue,5453.009568,Extracted,"file p.7 SCI p
 FY2025,FY2024,CHUBB Life,insurance_revenue,4215.366488,Extracted,"file p.7 SCI printed 4,215,366,488 (baht, read from page image)"
 FY2025,FY2025,CHUBB Life,insurance_service_expense,-4205.300944,Extracted,"file p.7 SCI printed (4,205,300,944) (baht, read from page image)"
 FY2025,FY2024,CHUBB Life,insurance_service_expense,-7700.770458,Extracted,"file p.7 SCI printed (7,700,770,458) (baht, read from page image)"
-FY2025,FY2025,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,CHUBB Life,oci_debt_fvoci,1795.503954,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,795,503,954 (baht, read from page image)"
+FY2025,FY2024,CHUBB Life,oci_debt_fvoci,2003.317285,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 2,003,317,285 (baht, read from page image)"
+FY2025,FY2025,CHUBB Life,oci_ins_finance,-1103.756074,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (1,103,756,074) (baht, read from page image)"
+FY2025,FY2024,CHUBB Life,oci_ins_finance,-2479.863579,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (2,479,863,579) (baht, read from page image)"
+FY2025,FY2025,CHUBB Life,oci_reins_finance,-215.550704,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (215,550,704) (baht, read from page image)"
+FY2025,FY2024,CHUBB Life,oci_reins_finance,225.345249,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed 225,345,249 (baht, read from page image)"
+FY2025,FY2025,CHUBB Life,oci_equity_fvoci,0,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed - (baht, read from page image)"
+FY2025,FY2024,CHUBB Life,oci_equity_fvoci,-2.950329,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed (2,950,329) (baht, read from page image)"
+FY2025,FY2025,CHUBB Life,oci_total,354.165151,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed 354,165,151 (baht, read from page image)"
+FY2025,FY2024,CHUBB Life,oci_total,-205.171902,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed (205,171,902) (baht, read from page image)"
+FY2025,FY2025,CHUBB Life,equity_open,8927.398303,Extracted,"file p.9 SOCE total equity at 1 January; restated balance at 1 January printed 8,927,398,303 (baht, read from page image)"
+FY2025,FY2024,CHUBB Life,equity_open,11055.26042,Extracted,"file p.10 SOCE total equity at 1 January; restated balance at 1 January printed 11,055,260,420 (baht, read from page image)"
 FY2025,FY2025,Tokio Marine Life,ra_release,182.859464,Extracted,"file p.111 26.1 printed 182,859,464 (baht, read from page image)"
 FY2025,FY2024,Tokio Marine Life,ra_release,264.163517,Extracted,"file p.111 26.1 printed 264,163,517 (baht, read from page image)"
 FY2025,FY2025,Tokio Marine Life,bel_release,1929.749457,Extracted,"file p.111 26.1 printed 1,929,749,457 (baht, read from page image)"

@@ -389,12 +389,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,CHUBB Life,nb_loss_component,84.738108,Extracted,"file p.55 15.1.3, 30 มิถุนายน 2568 total, onerous contracts printed 84,738,108 (baht, read from page image)"
 2025Q2,2025Q2,CHUBB Life,insurance_revenue,2502.829085,Extracted,"file p.7 SCI six months (equals 21.1) printed 2,502,829,085 (baht, read from page image)"
 2025Q2,2025Q2,CHUBB Life,insurance_service_expense,-2117.225307,Extracted,"file p.7 SCI six months (equals 21.1) printed (2,117,225,307) (baht, read from page image)"
-2025Q2,2025Q2,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,CHUBB Life,oci_debt_fvoci,1972.200773,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,972,200,773 (baht, read from page image)"
+2025Q2,2025Q2,CHUBB Life,oci_ins_finance,-2106.909495,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (2,106,909,495) (baht, read from page image)"
+2025Q2,2025Q2,CHUBB Life,oci_reins_finance,108.82027,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed 108,820,270 (baht, read from page image)"
+2025Q2,2025Q2,CHUBB Life,oci_equity_fvoci,7.947471,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed 7,947,471 (baht, read from page image)"
+2025Q2,2025Q2,CHUBB Life,oci_total,-11.727422,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed (11,727,422) (baht, read from page image)"
+2025Q2,2025Q2,CHUBB Life,equity_open,8927.398303,Extracted,"file p.9 SOCE total equity at 1 January; restated balance at 1 January printed 8,927,398,303 (baht, read from page image)"
 2025Q2,2025Q2,Tokio Marine Life,ra_release,91.931484,Extracted,"file p.71 16 total printed 91,931,484 (baht, read from page image)"
 2025Q2,2025Q2,Tokio Marine Life,bel_release,937.852075,Extracted,"file p.71 16 total printed 937,852,075 (baht, read from page image)"
 2025Q2,2025Q2,Tokio Marine Life,paa_revenue,1190.248557,Extracted,"file p.71 16 PAA revenue printed 1,190,248,557 (baht, read from page image)"

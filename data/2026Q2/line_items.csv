@@ -779,18 +779,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2025Q2,CHUBB Life,insurance_revenue,2502.829085,Extracted,"file p.7 SCI six months (equals 21.1) printed 2,502,829,085 (baht, read from page image)"
 2026Q2,2026Q2,CHUBB Life,insurance_service_expense,-2552.991918,Extracted,"file p.7 SCI (equals 21.1) printed (2,552,991,918) (baht, read from page image)"
 2026Q2,2025Q2,CHUBB Life,insurance_service_expense,-2117.225307,Extracted,"file p.7 SCI six months (equals 21.1) printed (2,117,225,307) (baht, read from page image)"
-2026Q2,2026Q2,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,CHUBB Life,oci_debt_fvoci,-3154.481772,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out); read from the text layer printed (3,154,481,772) (baht, read from page image)"
+2026Q2,2025Q2,CHUBB Life,oci_debt_fvoci,1972.200773,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,972,200,773 (baht, read from page image)"
+2026Q2,2026Q2,CHUBB Life,oci_ins_finance,2051.725277,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax; read from the text layer printed 2,051,725,277 (baht, read from page image)"
+2026Q2,2025Q2,CHUBB Life,oci_ins_finance,-2106.909495,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (2,106,909,495) (baht, read from page image)"
+2026Q2,2026Q2,CHUBB Life,oci_reins_finance,-10.201925,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax; read from the text layer printed (10,201,925) (baht, read from page image)"
+2026Q2,2025Q2,CHUBB Life,oci_reins_finance,108.82027,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed 108,820,270 (baht, read from page image)"
+2026Q2,2026Q2,CHUBB Life,oci_equity_fvoci,1.319226,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax; read from the text layer printed 1,319,226 (baht, read from page image)"
+2026Q2,2025Q2,CHUBB Life,oci_equity_fvoci,7.947471,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed 7,947,471 (baht, read from page image)"
+2026Q2,2026Q2,CHUBB Life,oci_total,-842.843312,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax; read from the text layer printed (842,843,312) (baht, read from page image)"
+2026Q2,2025Q2,CHUBB Life,oci_total,-11.727422,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed (11,727,422) (baht, read from page image)"
+2026Q2,2026Q2,CHUBB Life,equity_open,9863.931204,Extracted,"file p.9 SOCE total equity at 1 January; read from the text layer printed 9,863,931,204 (baht, read from page image)"
+2026Q2,2025Q2,CHUBB Life,equity_open,8927.398303,Extracted,"file p.9 SOCE total equity at 1 January; restated balance at 1 January printed 8,927,398,303 (baht, read from page image)"
 2026Q2,2026Q2,Tokio Marine Life,ra_release,107.414109,Extracted,"file p.44 15 total printed 107,414,109 (baht, read from page image)"
 2026Q2,2025Q2,Tokio Marine Life,ra_release,91.931484,Extracted,"file p.71 16 total printed 91,931,484 (baht, read from page image)"
 2026Q2,2026Q2,Tokio Marine Life,bel_release,910.362108,Extracted,"file p.44 15 total printed 910,362,108 (baht, read from page image)"
