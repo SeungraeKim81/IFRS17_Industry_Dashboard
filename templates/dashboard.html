@@ -108,8 +108,6 @@ h2{font-weight:700;font-size:20px;margin:0;letter-spacing:-.005em;color:var(--ti
 .panel{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:16px}
 .panel h3{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
 .panel .sub{font-size:12px;color:var(--muted);margin:3px 0 10px}
-h3.subsec{font-size:16px;font-weight:650;color:var(--title);margin:28px 0 0}
-h2 + h3.subsec{margin-top:16px}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 @media(max-width:860px){.panels{grid-template-columns:1fr}}
 svg{display:block;width:100%;height:auto;overflow:visible}
@@ -312,16 +310,8 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 
 <section id="s-ism">
   <h2 data-t="h2ism"></h2>
-  <h3 class="subsec" data-t="h3ism1"></h3>
-  <p class="sec-note" data-t="noteIsmDef" style="margin-bottom:6px"></p>
-  <p class="sec-note" data-t="noteIsm"></p>
-  <div class="panels">
-    <div class="panel"><h3 data-t="h3dis"></h3><div class="sub" id="m1sub"></div><svg id="m1" viewBox="0 0 520 330" role="img" data-t-aria="h3dis"></svg></div>
-    <div class="panel"><h3 data-t="h3not"></h3><div class="sub" id="m2sub"></div><svg id="m2" viewBox="0 0 520 330" role="img" data-t-aria="h3not"></svg></div>
-  </div>
-  <h3 class="subsec" data-t="h3ism2"></h3>
   <p class="sec-note" data-t="noteInforce"></p>
-  <div class="panel"><svg id="strips5" viewBox="0 0 900 190" role="img" data-t-aria="ariaStrips5"></svg>
+  <div class="panel"><svg id="strips5" viewBox="0 0 900 280" role="img" data-t-aria="ariaStrips5"></svg>
     <div class="legend">
       <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span> <span class="p-cur"></span></span>
       <span class="key"><i class="dot" style="border:2px solid var(--focus);background:transparent"></i><span class="f-name"></span> <span class="p-cmp"></span></span>
@@ -329,6 +319,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
       <span class="key"><i class="sq" style="width:2px;height:12px;background:var(--ink-2)"></i><span data-t="lgMedian"></span></span>
     </div>
   </div>
+  <p class="sec-note" id="policyNote" style="margin:12px 0 0"></p>
 </section>
 
 <section id="s-bridge">
@@ -415,12 +406,9 @@ const UI = {
     noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median. Each axis is centred on that median; insurers beyond its range sit at the end with ‹ or › (the onerous ratio has a fixed 0–10% axis).",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Subsequent measurement & financial indicators",
-    h3ism1: "5-1&nbsp; Insurance service margin, split by RA policy", h3ism2: "5-2&nbsp; CSM adjustment and net investment ratio",
-    noteInforce: "Two measures of the business in force, laid out like section 3. The CSM adjustment ratio is the change in estimates that adjusts the CSM (future service) as a share of the CSM before release (opening + new business + accretion); it is positive when assumption and experience updates add future profit. The net investment ratio is the share of net investment income left after the insurance finance expense. Under the VFA the finance expense follows the underlying items, so an insurer with much VFA business shows a structurally low ratio. On quarterly pages both are year to date, not annualised. Each axis is centred on the industry median; insurers beyond its range sit at the end with ‹ or ›.",
-    ariaStrips5: "Strip plots of in-force indicators",
-    noteIsmDef: "The insurance service margin is the insurance service result (insurance revenue plus insurance service expense) divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results.",
-    noteIsm: "An insurer that does <b>not</b> disaggregate the risk-adjustment change carries its financial effect inside the insurance service result, which lifts the margin. The two groups are on different bases and are compared only within each group; the tick marks each group's median.",
-    h3dis: "Disaggregates the RA", h3not: "Does not disaggregate",
+    noteInforce: "Three measures of the business in force, laid out like section 3. The insurance service margin is the insurance service result (insurance revenue plus insurance service expense) divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results. The CSM adjustment ratio is the change in estimates that adjusts the CSM (future service) as a share of the CSM before release (opening + new business + accretion); it is positive when assumption and experience updates add future profit. The net investment ratio is the share of net investment income left after the insurance finance expense. Under the VFA the finance expense follows the underlying items, so an insurer with much VFA business shows a structurally low ratio. On quarterly pages all three are year to date, not annualised. Each axis is centred on the industry median; insurers beyond its range sit at the end with ‹ or ›.",
+    notePolicy: "Accounting policy choices differ by insurer. {k} of {n} insurers do not disaggregate the risk-adjustment change ({names}), so their insurance service margin also carries the RA finance effect. See section 10.",
+    ariaStrips5: "Strip plots of subsequent-measurement indicators",
     h2bridge: "6&nbsp; What happens to a hundred baht of insurance revenue",
     noteBridge: "Every driver between the insurance service result and net profit, as a share of the insurer's own insurance revenue. Contributions sit right of zero, drags left of it; the diamond marks the net-profit margin. Investment income is shown <b>net of insurance finance expense</b>: the two move together with rates and mislead apart. Insurers are ordered by net-profit margin, highest first.",
     ariaBridge: "Contribution chart from insurance service result to net profit margin",
@@ -438,10 +426,10 @@ const UI = {
     focusFlag: "focus", industry: "Industry", industryAgg: "Industry aggregate", industryN: "Industry ({n} insurers)",
     insurer: "Insurer", shareCol: "{x} · share", share: "Share", mktMeasure: "Measure shown", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
-    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy", tipIsmNet: "Margin after reinsurance",
-    tipIsmCmp: "Service margin {cmp}", tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy",
+    tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
-    ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income",
+    ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
     ctxRaGroup: "Rank {r} of {k} in RA group · group median {v}", ctxRankMed: "Rank {r} of {n} · median {v}",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
@@ -449,7 +437,6 @@ const UI = {
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
     qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
     better: "higher is better", worse: "lower is better", median: "median {v}",
-    groupSub: "{n} insurers · {cur} · group median {v}",
     dqNote: "<b>{ok} of {total}</b> reconciliations pass within {tol}m ({n} insurers × {y} years × {c} checks). The build stops if any one fails, so a published dashboard always ties to the printed subtotals. Hover a tick for the difference.",
     dqFlags: "Flags", diff: "difference {v}m", none: "None.",
     defArea: "Area", defInd: "Indicator", defDef: "Definition",
@@ -500,12 +487,9 @@ const UI = {
     noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다. 각 축은 이 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다(신계약 손실부담 비율은 0–10% 고정).",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 후속측정 · 재무 지표",
-    h3ism1: "5-1&nbsp; 보험서비스이익률 (RA 분리 정책별)", h3ism2: "5-2&nbsp; CSM 조정률 · 순투자손익률",
-    noteInforce: "보유계약에 관한 두 지표를 3번 섹션과 같은 방식으로 배치한다. CSM 조정률은 미래서비스 관련 CSM 조정액을 상각 전 CSM(기초 + 신계약 + 이자부리)으로 나눈 값으로, 가정·경험 변경이 미래 이익을 늘리면 양수다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다. VFA 계약은 보험금융손익이 기초항목을 따라가므로, VFA 비중이 큰 회사는 구조적으로 낮게 나온다. 분기 페이지는 두 지표 모두 연초 이후 누적값이며 연환산하지 않는다. 각 축은 업계 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다.",
-    ariaStrips5: "보유계약 지표 스트립 차트",
-    noteIsmDef: "보험서비스이익률은 보험서비스결과(보험수익 + 보험서비스비용)를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다.",
-    noteIsm: "위험조정 변동을 <b>분리하지 않는</b> 보험사는 RA의 금융효과까지 보험서비스결과에 포함하므로 이익률이 높게 나온다. 두 그룹은 기준이 달라 그룹 안에서만 비교하며, 세로선은 그룹별 중앙값이다.",
-    h3dis: "RA 분리", h3not: "RA 미분리",
+    noteInforce: "보유계약에 관한 세 지표를 3번 섹션과 같은 방식으로 배치한다. 보험서비스이익률은 보험서비스결과(보험수익 + 보험서비스비용)를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다. CSM 조정률은 미래서비스 관련 CSM 조정액을 상각 전 CSM(기초 + 신계약 + 이자부리)으로 나눈 값으로, 가정·경험 변경이 미래 이익을 늘리면 양수다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다. VFA 계약은 보험금융손익이 기초항목을 따라가므로, VFA 비중이 큰 회사는 구조적으로 낮게 나온다. 분기 페이지는 세 지표 모두 연초 이후 누적값이며 연환산하지 않는다. 각 축은 업계 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다.",
+    notePolicy: "회계정책 선택은 회사마다 다르다. {n}개사 중 {k}개사({names})는 위험조정 변동을 분리하지 않아 보험서비스이익률에 RA 금융효과가 함께 들어간다. 10번 참고.",
+    ariaStrips5: "후속측정 지표 스트립 차트",
     h2bridge: "6&nbsp; 보험수익 100바트는 어디로 가나",
     noteBridge: "보험서비스결과부터 당기순이익까지의 각 요인을 해당 보험사 보험수익 대비 비율로 표시한다. 0 오른쪽은 이익에 더하는 요인, 왼쪽은 빼는 요인이고, 마름모는 순이익률이다. 투자수익은 <b>보험금융비용을 차감한 순액</b>으로 보여 준다. 둘은 금리와 함께 움직여서 따로 보면 오해를 낳는다. 보험사는 순이익률이 높은 순으로 놓았다.",
     ariaBridge: "보험서비스결과에서 순이익률까지의 기여도 차트",
@@ -523,10 +507,10 @@ const UI = {
     focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
     insurer: "보험사", shareCol: "{x} · 점유율", share: "점유율", mktMeasure: "표시할 지표", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
     tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스이익률", tipRel: "CSM 상각률",
-    tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책", tipIsmNet: "재보험 후 이익률",
-    tipIsmCmp: "{cmp} 보험서비스이익률", tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
+    tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책",
+    tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
-    ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익",
+    ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
     ctxRaGroup: "RA 그룹 {k}개사 중 {r}위 · 그룹 중앙값 {v}", ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
@@ -534,7 +518,6 @@ const UI = {
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
     qX: "CSM 상각률 (상각 ÷ 상각 전 CSM)", qY: "신계약 CSM ÷ 상각",
     better: "높을수록 좋음", worse: "낮을수록 좋음", median: "중앙값 {v}",
-    groupSub: "{n}개사 · {cur} · 그룹 중앙값 {v}",
     dqNote: "대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사 × {y}개 연도 × {c}개 점검). 하나라도 어긋나면 빌드가 멈추므로, 게시된 대시보드는 항상 재무제표의 소계와 맞는다. 체크 표시에 마우스를 올리면 차이가 보인다.",
     dqFlags: "플래그", diff: "차이 {v}백만", none: "없음.",
     defArea: "구분", defInd: "지표", defDef: "정의",
@@ -586,12 +569,9 @@ const UI = {
     noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม แต่ละแกนมีค่ามัธยฐานนี้อยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › (Onerous new business ใช้แกนคงที่ 0–10%)",
     ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
     h2ism: "5&nbsp; Subsequent measurement และตัวชี้วัดทางการเงิน",
-    h3ism1: "5-1&nbsp; Insurance service margin แยกตามนโยบาย RA", h3ism2: "5-2&nbsp; CSM adjustment ratio และ net investment ratio",
-    noteInforce: "ตัวชี้วัดสองตัวของธุรกิจที่มีผลบังคับ จัดวางแบบเดียวกับส่วนที่ 3 CSM adjustment ratio คือการเปลี่ยนแปลงประมาณการที่ปรับ CSM (บริการในอนาคต) หารด้วย CSM ก่อน release (ต้นงวด + ธุรกิจใหม่ + accretion) จะเป็นบวกเมื่อการปรับข้อสมมติและประสบการณ์เพิ่มกำไรในอนาคต Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense ภายใต้ VFA ค่า finance expense เคลื่อนไหวตาม underlying items บริษัทที่มีธุรกิจ VFA มากจึงมีอัตรานี้ต่ำโดยโครงสร้าง หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปีทั้งสองตัว ไม่ปรับเป็นรายปี แต่ละแกนมีค่ามัธยฐานของอุตสาหกรรมอยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ ›",
-    ariaStrips5: "แผนภูมิแถบของตัวชี้วัดธุรกิจที่มีผลบังคับ",
-    noteIsmDef: "Insurance service margin คือ insurance service result (insurance revenue บวก insurance service expense) หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน",
-    noteIsm: "บริษัทที่<b>ไม่</b>แยกการเปลี่ยนแปลงของ risk adjustment จะรวมผลทางการเงินของ RA ไว้ใน insurance service result ทำให้อัตรากำไรสูงขึ้น สองกลุ่มนี้มีเกณฑ์ต่างกัน จึงเปรียบเทียบเฉพาะภายในกลุ่มเดียวกัน ขีดแนวตั้งคือค่ามัธยฐานของแต่ละกลุ่ม",
-    h3dis: "แยก RA", h3not: "ไม่แยก RA",
+    noteInforce: "ตัวชี้วัดสามตัวของธุรกิจที่มีผลบังคับ จัดวางแบบเดียวกับส่วนที่ 3 Insurance service margin คือ insurance service result (insurance revenue บวก insurance service expense) หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน CSM adjustment ratio คือการเปลี่ยนแปลงประมาณการที่ปรับ CSM (บริการในอนาคต) หารด้วย CSM ก่อน release (ต้นงวด + ธุรกิจใหม่ + accretion) จะเป็นบวกเมื่อการปรับข้อสมมติและประสบการณ์เพิ่มกำไรในอนาคต Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense ภายใต้ VFA ค่า finance expense เคลื่อนไหวตาม underlying items บริษัทที่มีธุรกิจ VFA มากจึงมีอัตรานี้ต่ำโดยโครงสร้าง หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปีทั้งสามตัว ไม่ปรับเป็นรายปี แต่ละแกนมีค่ามัธยฐานของอุตสาหกรรมอยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ ›",
+    notePolicy: "ทางเลือกนโยบายการบัญชีแตกต่างกันในแต่ละบริษัท {k} จาก {n} บริษัท ({names}) ไม่แยกการเปลี่ยนแปลงของ risk adjustment insurance service margin ของบริษัทเหล่านี้จึงรวมผลทางการเงินของ RA ด้วย ดูส่วนที่ 10",
+    ariaStrips5: "แผนภูมิแถบของตัวชี้วัดการวัดมูลค่าภายหลัง",
     h2bridge: "6&nbsp; Insurance revenue 100 บาท ไปอยู่ที่ไหน",
     noteBridge: "ทุกปัจจัยระหว่าง insurance service result กับ net profit แสดงเป็นสัดส่วนของ insurance revenue ของบริษัทนั้นเอง ปัจจัยที่เพิ่มกำไรอยู่ทางขวาของศูนย์ ปัจจัยที่ลดกำไรอยู่ทางซ้าย รูปข้าวหลามตัดคือ net profit margin ผลการลงทุนแสดงเป็น<b>ยอดสุทธิหลังหักค่าใช้จ่ายทางการเงินจากการประกันภัย (IFIE)</b> เพราะทั้งสองรายการเคลื่อนไหวไปพร้อมกับอัตราดอกเบี้ย หากดูแยกกันอาจเข้าใจผิดได้ เรียงบริษัทตาม net profit margin จากสูงไปต่ำ",
     ariaBridge: "แผนภูมิองค์ประกอบจาก insurance service result ถึง net profit margin",
@@ -609,10 +589,10 @@ const UI = {
     focusFlag: "เน้น", industry: "อุตสาหกรรม", industryAgg: "ยอดรวมอุตสาหกรรม", industryN: "อุตสาหกรรม ({n} บริษัท)",
     insurer: "บริษัท", shareCol: "{x} · ส่วนแบ่ง", share: "ส่วนแบ่ง", mktMeasure: "ตัวชี้วัดที่แสดง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
-    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "นโยบาย RA", tipIsmNet: "Margin after reinsurance",
-    tipIsmCmp: "Service margin {cmp}", tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "นโยบาย RA",
+    tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
-    ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income",
+    ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
     ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
     ctxRaGroup: "อันดับ {r} จาก {k} ในกลุ่ม RA · ค่ามัธยฐานกลุ่ม {v}", ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
     wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
@@ -620,7 +600,6 @@ const UI = {
     qSub: "{cur} · ขนาดวงกลม = CSM closing, {lo} ถึง {hi} ล้าน", qThreshold: "1.0× — เหนือเส้นคือเติม CSM ได้ ใต้เส้นคือ CSM ลดลง",
     qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
     better: "ยิ่งสูงยิ่งดี", worse: "ยิ่งต่ำยิ่งดี", median: "ค่ามัธยฐาน {v}",
-    groupSub: "{n} บริษัท · {cur} · ค่ามัธยฐานกลุ่ม {v}",
     dqNote: "การกระทบยอด <b>{ok} จาก {total}</b> รายการตรงกันภายใน {tol} ล้าน ({n} บริษัท × {y} ปี × {c} รายการตรวจ) หากมีรายการใดไม่ผ่าน การสร้างหน้าจะหยุด แดชบอร์ดที่เผยแพร่จึงตรงกับยอดรวมย่อยที่พิมพ์ในงบการเงินเสมอ ชี้ที่เครื่องหมายเพื่อดูผลต่าง",
     dqFlags: "ข้อสังเกต", diff: "ผลต่าง {v} ล้าน", none: "ไม่มี",
     defArea: "หมวด", defInd: "ตัวชี้วัด", defDef: "นิยาม",
@@ -999,10 +978,11 @@ function wrapText(s, maxW, fs) {
 const STRIP_ND = { nb_csm_margin: [["nb_csm"], ["nb_pv_premium"], "ndNbCsm", "ndPvPrem"], acq_cost_ratio: [["nb_pv_acq"], ["nb_pv_premium"], "ndPvAcq", "ndPvPrem"],
   onerous_ratio: [["nb_loss_component"], ["nb_csm"], "ndLoss", "ndNbCsm"], nb_to_release: [["nb_csm"], ["-csm_release"], "ndNbCsm", "ndRel"],
   csm_adj_ratio: [["csm_future_service"], ["csm_open", "csm_nb", "csm_accretion"], "ndAdj", "ndAdjBase"],
-  net_inv_ratio: [["net_investment_income", "ifie"], ["net_investment_income"], "ndNetInv", "ndInv"] };
+  net_inv_ratio: [["net_investment_income", "ifie"], ["net_investment_income"], "ndNetInv", "ndInv"],
+  ism_gross: [["insurance_revenue", "insurance_service_expense"], ["insurance_revenue"], "ndIsr", "ndRev"] };
 const ndAmt = (c, codes) => codes.reduce((s, f) => { const neg = f[0] === "-", v = raw(c, neg ? f.slice(1) : f); return s == null || v == null ? null : s + (neg ? -v : v); }, 0);
 // measures that can fall below zero: their axis is centred on the median without the zero floor
-const STRIP_SIGNED = new Set(["csm_adj_ratio", "net_inv_ratio"]);
+const STRIP_SIGNED = new Set(["ism_gross", "csm_adj_ratio", "net_inv_ratio"]);
 const pctl = (v, p) => { const s = v.slice().sort((a, b) => a - b), k = (s.length - 1) * p, f = Math.floor(k), c = Math.min(f + 1, s.length - 1); return s[f] + (s[c] - s[f]) * (k - f); };
 // Axis of one strip (owner decision): centred on the industry median, half-width 1.25 times the farther of the
 // 10th and 90th percentiles from it, and never below zero (half-width at most the median). The onerous ratio is
@@ -1081,40 +1061,11 @@ function strips(sel, rows) {
   });
 }
 
-/* ---------- 5 margin lollipops ---------- */
-function lolli(sel, subSel, list, slots) {
-  const svg = $(sel); svg.textContent = "";
-  const W = 520, L = 150, R = 56, T = 12, B = 30, step = 25, H = T + slots * step + B;
-  svg.setAttribute("viewBox", "0 0 " + W + " " + H);
-  const vals = COS.map(c => g(c, "ism_gross"));
-  const lo = Math.min(0, Math.floor(Math.min(...vals) * 20) / 20), hi = Math.max(0.45, Math.ceil(Math.max(...vals) * 20) / 20);
-  const px = v => L + (v - lo) / (hi - lo) * (W - L - R);
-  const { ticks } = niceTicks(lo, hi, 4);
-  ticks.forEach(tk => {
-    svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: T - 4, y2: H - B + 4, stroke: tk === 0 ? "var(--axis)" : "var(--grid)" }));
-    svg.appendChild(el("text", { x: px(tk), y: H - B + 20, "text-anchor": "middle", fill: "var(--muted)", "font-size": 11 }, nf(tk * 100, 0) + "%"));
-  });
-  const sorted = list.slice().sort((a, b) => g(b, "ism_gross") - g(a, "ism_gross"));
-  const v = sorted.map(c => g(c, "ism_gross")).sort((a, b) => a - b), n = v.length;
-  const med = n % 2 ? v[(n - 1) / 2] : (v[n / 2 - 1] + v[n / 2]) / 2;
-  $(subSel).textContent = t("groupSub", { n, cur: CURL, v: fP(med) });
-  svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: T - 4, y2: T + n * step, stroke: "var(--ink-2)", "stroke-width": 1.5 }));
-  sorted.forEach((c, i) => {
-    const y = T + i * step + step / 2, col = colr(c), xv = px(g(c, "ism_gross")), gg = el("g");
-    if (isF(c)) gg.appendChild(el("rect", { x: 0, y: y - step / 2 + 1, width: W, height: step - 2, rx: 3, fill: "var(--focus-soft)" }));
-    gg.appendChild(el("line", { x1: px(Math.max(0, lo)), x2: xv, y1: y, y2: y, stroke: col, "stroke-width": 2, "stroke-opacity": isF(c) ? 1 : .45 }));
-    gg.appendChild(el("circle", { cx: xv, cy: y, r: isF(c) ? 6.5 : 5.5, fill: col, stroke: "var(--surface)", "stroke-width": 2 }));
-    gg.appendChild(el("text", { x: L - 10, y: y + 4, "text-anchor": "end", fill: "var(--ink)", "font-size": 12.5, "font-weight": isF(c) ? 650 : 400 }, c.name));
-    gg.appendChild(el("text", { x: W - R + 10, y: y + 4, fill: "var(--ink-2)", "font-size": 11.5 }, fP(g(c, "ism_gross"))));
-    const hit = el("rect", { x: 0, y: y - step / 2, width: W, height: step, fill: "transparent" });
-    hover(hit, () => coTip(c, [[t("tipIsmNet"), fP(g(c, "ism_net"))], [t("tipIsmCmp", { cmp: CMPL }), fP(g(c, "ism_gross", CMP))]]));
-    gg.appendChild(hit); svg.appendChild(gg);
-  });
-}
-function margins() {
-  const dis = COS.filter(c => c.ra === "disaggregated"), not = COS.filter(c => c.ra !== "disaggregated");
-  const slots = Math.max(dis.length, not.length);
-  lolli("#m1", "#m1sub", dis, slots); lolli("#m2", "#m2sub", not, slots);
+/* ---------- 5 accounting-policy note under the strips ---------- */
+// one axis for every insurer (owner decision); the policy choices that affect the measures are named here instead
+function policyNote() {
+  const not = COS.filter(c => c.ra !== "disaggregated");
+  $("#policyNote").textContent = not.length ? t("notePolicy", { k: not.length, n: COS.length, names: not.map(c => c.name).join(", ") }) : "";
 }
 
 /* ---------- 6 bridge ---------- */
@@ -1266,8 +1217,8 @@ function renderAll() {
   staticText();
   $$(".f-name").forEach(e => e.textContent = F);
   focusSection(); market(); waterfall(); quadrant();
-  strips("#strips", ["nb_csm_margin", "acq_cost_ratio", "nb_to_release", "onerous_ratio"]); margins();
-  strips("#strips5", ["csm_adj_ratio", "net_inv_ratio"]); bridge(); table(); defs(); dataQuality(); method();
+  strips("#strips", ["nb_csm_margin", "acq_cost_ratio", "nb_to_release", "onerous_ratio"]);
+  strips("#strips5", ["ism_gross", "csm_adj_ratio", "net_inv_ratio"]); policyNote(); bridge(); table(); defs(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));
