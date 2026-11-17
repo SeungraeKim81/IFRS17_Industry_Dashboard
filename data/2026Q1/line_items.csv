@@ -131,18 +131,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,Thai Life,insurance_revenue,8874.683,Extracted,"file p.6 SCI separate (equals 12.1) printed 8,874,683 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Thai Life,insurance_service_expense,-5480.128,Extracted,"file p.6 SCI (equals 10.1) printed (5,480,128) (thousand_baht, read from page image)"
 2026Q1,2025Q1,Thai Life,insurance_service_expense,-5689.599,Extracted,"file p.6 SCI separate (equals 12.1) printed (5,689,599) (thousand_baht, read from page image)"
-2026Q1,2026Q1,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,Thai Life,oci_debt_fvoci,-50165.236,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (50,165,236) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Thai Life,oci_debt_fvoci,10897.811,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 10,897,811 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Thai Life,oci_ins_finance,15365.353,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed 15,365,353 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Thai Life,oci_ins_finance,-1749.935,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed (1,749,935) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Thai Life,oci_reins_finance,119.09,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed 119,090 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Thai Life,oci_reins_finance,3.759,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed 3,759 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Thai Life,oci_equity_fvoci,-1290.076,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed (1,290,076) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Thai Life,oci_equity_fvoci,-3201.755,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed (3,201,755) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Thai Life,oci_total,-30961.898,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed (30,961,898) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Thai Life,oci_total,5444.307,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed 5,444,307 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Thai Life,equity_open,154477.719,Extracted,"file p.11 SOCE total equity at 1 January; separate statements printed 154,477,719 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Thai Life,equity_open,125307.359,Extracted,"file p.11 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 125,307,359 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Muang Thai Life,ra_release,310.877,Extracted,"file p.36 10.1 printed 310,877 (thousand_baht, read from page image)"
 2026Q1,2025Q1,Muang Thai Life,ra_release,303.526,Extracted,"file p.61 13.1 printed 303,526 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Muang Thai Life,bel_release,3592.368,Extracted,"file p.36 10.1 printed 3,592,368 (thousand_baht, read from page image)"

@@ -131,18 +131,18 @@ FY2025,FY2025,Thai Life,insurance_revenue,35954.787,Extracted,"file p.10 SCI (eq
 FY2025,FY2024,Thai Life,insurance_revenue,32811.372,Extracted,"file p.10 SCI (equals 17.1) printed 32,811,372 (thousand_baht, read from page image)"
 FY2025,FY2025,Thai Life,insurance_service_expense,-22850.845,Extracted,"file p.10 SCI (equals 17.1) printed (22,850,845) (thousand_baht, read from page image)"
 FY2025,FY2024,Thai Life,insurance_service_expense,-20237.721,Extracted,"file p.10 SCI (equals 17.1) printed (20,237,721) (thousand_baht, read from page image)"
-FY2025,FY2025,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Thai Life,oci_debt_fvoci,34374.393,Extracted,"file p.11 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 34,374,393 (thousand_baht, read from page image)"
+FY2025,FY2024,Thai Life,oci_debt_fvoci,34200.262,Extracted,"file p.11 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 34,200,262 (thousand_baht, read from page image)"
+FY2025,FY2025,Thai Life,oci_ins_finance,-7560.44,Extracted,"file p.11 SCI OCI, insurance contracts issued before tax printed (7,560,440) (thousand_baht, read from page image)"
+FY2025,FY2024,Thai Life,oci_ins_finance,-16191.625,Extracted,"file p.11 SCI OCI, insurance contracts issued before tax printed (16,191,625) (thousand_baht, read from page image)"
+FY2025,FY2025,Thai Life,oci_reins_finance,-72.547,Extracted,"file p.11 SCI OCI, reinsurance contracts held before tax printed (72,547) (thousand_baht, read from page image)"
+FY2025,FY2024,Thai Life,oci_reins_finance,-45.552,Extracted,"file p.11 SCI OCI, reinsurance contracts held before tax printed (45,552) (thousand_baht, read from page image)"
+FY2025,FY2025,Thai Life,oci_equity_fvoci,2609.728,Extracted,"file p.11 SCI OCI, equity instruments at FVOCI before tax printed 2,609,728 (thousand_baht, read from page image)"
+FY2025,FY2024,Thai Life,oci_equity_fvoci,1590.565,Extracted,"file p.11 SCI OCI, equity instruments at FVOCI before tax printed 1,590,565 (thousand_baht, read from page image)"
+FY2025,FY2025,Thai Life,oci_total,22833.088,Extracted,"file p.11 SCI other comprehensive income for the period, net of tax printed 22,833,088 (thousand_baht, read from page image)"
+FY2025,FY2024,Thai Life,oci_total,17575.65,Extracted,"file p.11 SCI other comprehensive income for the period, net of tax printed 17,575,650 (thousand_baht, read from page image)"
+FY2025,FY2025,Thai Life,equity_open,125307.359,Extracted,"file p.15 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 125,307,359 (thousand_baht, read from page image)"
+FY2025,FY2024,Thai Life,equity_open,102542.778,Extracted,"file p.14 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 102,542,778 (thousand_baht, read from page image)"
 FY2025,FY2025,Muang Thai Life,ra_release,1244.003,Extracted,"file p.91 17.1 printed 1,244,003 (thousand_baht, read from page image)"
 FY2025,FY2024,Muang Thai Life,ra_release,1270.383,Extracted,"file p.91 17.1 printed 1,270,383 (thousand_baht, read from page image)"
 FY2025,FY2025,Muang Thai Life,bel_release,14463.009,Extracted,"file p.91 17.1 printed 14,463,009 (thousand_baht, read from page image)"

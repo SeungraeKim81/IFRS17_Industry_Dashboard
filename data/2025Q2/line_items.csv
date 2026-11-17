@@ -65,12 +65,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Thai Life,nb_loss_component,3.818,Extracted,"file p.86 9.1 4) total, onerous contracts printed 3,818 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Thai Life,insurance_revenue,17961.216,Extracted,"file p.8 SCI separate, six months (equals 12.1) printed 17,961,216 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Thai Life,insurance_service_expense,-11128.845,Extracted,"file p.8 SCI separate, six months (equals 12.1) printed (11,128,845) (thousand_baht, read from page image)"
-2025Q2,2025Q2,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Thai Life,oci_debt_fvoci,37834.619,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 37,834,619 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Thai Life,oci_ins_finance,-13765.312,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (13,765,312) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Thai Life,oci_reins_finance,-55.843,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (55,843) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Thai Life,oci_equity_fvoci,-31.239,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed (31,239) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Thai Life,oci_total,21208.915,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed 21,208,915 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Thai Life,equity_open,125307.359,Extracted,"file p.13 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 125,307,359 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Muang Thai Life,ra_release,609.912,Extracted,"file p.62 13.1 six months printed 609,912 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Muang Thai Life,bel_release,7102.34,Extracted,"file p.62 13.1 six months printed 7,102,340 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Muang Thai Life,paa_revenue,3425.748,Extracted,"file p.62 13.1 six months, PAA revenue printed 3,425,748 (thousand_baht, read from page image)"
