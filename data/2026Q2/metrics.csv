@@ -359,6 +359,46 @@ Rabbit Life,2026Q2,nb_to_release,5.233255,2,20
 BUI Life,2026Q2,nb_to_release,2.047066,6,20
 Phillip Life,2026Q2,nb_to_release,1.411132,12,20
 Saha Life,2026Q2,nb_to_release,0.070435,20,20
+AIA Thailand,2026Q2,csm_adj_ratio,-0.011006,12,20
+Thai Life,2026Q2,csm_adj_ratio,-0.001134,9,20
+Muang Thai Life,2026Q2,csm_adj_ratio,0.012731,4,20
+Allianz Ayudhya,2026Q2,csm_adj_ratio,0.010962,5,20
+FWD Thailand,2026Q2,csm_adj_ratio,0.003959,7,20
+Krungthai-AXA Life,2026Q2,csm_adj_ratio,-0.039091,15,20
+Bangkok Life,2026Q2,csm_adj_ratio,0.000119,8,20
+Prudential Life,2026Q2,csm_adj_ratio,-0.010295,11,20
+Generali Life,2026Q2,csm_adj_ratio,-0.091739,18,20
+Ocean Life,2026Q2,csm_adj_ratio,-0.035205,14,20
+CHUBB Life,2026Q2,csm_adj_ratio,-0.055932,16,20
+Tokio Marine Life,2026Q2,csm_adj_ratio,0.051308,3,20
+Dhipaya Life,2026Q2,csm_adj_ratio,0.005799,6,20
+Southeast Life,2026Q2,csm_adj_ratio,-0.004036,10,20
+Samsung Life,2026Q2,csm_adj_ratio,-0.06637,17,20
+T Life,2026Q2,csm_adj_ratio,0.114012,2,20
+Rabbit Life,2026Q2,csm_adj_ratio,-0.26523,19,20
+BUI Life,2026Q2,csm_adj_ratio,-0.280787,20,20
+Phillip Life,2026Q2,csm_adj_ratio,-0.024346,13,20
+Saha Life,2026Q2,csm_adj_ratio,0.304416,1,20
+AIA Thailand,2026Q2,net_inv_ratio,0.29344,11,20
+Thai Life,2026Q2,net_inv_ratio,0.191987,17,20
+Muang Thai Life,2026Q2,net_inv_ratio,0.358676,8,20
+Allianz Ayudhya,2026Q2,net_inv_ratio,0.070342,19,20
+FWD Thailand,2026Q2,net_inv_ratio,0.233005,15,20
+Krungthai-AXA Life,2026Q2,net_inv_ratio,0.266539,13,20
+Bangkok Life,2026Q2,net_inv_ratio,0.341112,10,20
+Prudential Life,2026Q2,net_inv_ratio,0.248642,14,20
+Generali Life,2026Q2,net_inv_ratio,0.125609,18,20
+Ocean Life,2026Q2,net_inv_ratio,0.229974,16,20
+CHUBB Life,2026Q2,net_inv_ratio,0.758065,4,20
+Tokio Marine Life,2026Q2,net_inv_ratio,-0.105781,20,20
+Dhipaya Life,2026Q2,net_inv_ratio,0.432868,7,20
+Southeast Life,2026Q2,net_inv_ratio,0.341566,9,20
+Samsung Life,2026Q2,net_inv_ratio,0.28029,12,20
+T Life,2026Q2,net_inv_ratio,0.644635,5,20
+Rabbit Life,2026Q2,net_inv_ratio,0.832919,2,20
+BUI Life,2026Q2,net_inv_ratio,0.82476,3,20
+Phillip Life,2026Q2,net_inv_ratio,0.861995,1,20
+Saha Life,2026Q2,net_inv_ratio,0.611422,6,20
 AIA Thailand,2026Q2,nb_csm_margin,0.165698,4,20
 Thai Life,2026Q2,nb_csm_margin,0.177671,2,20
 Muang Thai Life,2026Q2,nb_csm_margin,0.129651,9,20
@@ -821,6 +861,41 @@ Samsung Life,2025Q2,nb_to_release,2.250951,2,18
 T Life,2025Q2,nb_to_release,0.295516,17,18
 BUI Life,2025Q2,nb_to_release,0.336773,16,18
 Saha Life,2025Q2,nb_to_release,0.057448,18,18
+AIA Thailand,2025Q2,csm_adj_ratio,0.010479,5,18
+Thai Life,2025Q2,csm_adj_ratio,-0.00475,8,18
+Muang Thai Life,2025Q2,csm_adj_ratio,0.006329,6,18
+Allianz Ayudhya,2025Q2,csm_adj_ratio,-0.009368,11,18
+FWD Thailand,2025Q2,csm_adj_ratio,0.011901,4,18
+Krungthai-AXA Life,2025Q2,csm_adj_ratio,-0.017554,13,18
+Bangkok Life,2025Q2,csm_adj_ratio,-0.026462,14,18
+Prudential Life,2025Q2,csm_adj_ratio,-0.00222,7,18
+Generali Life,2025Q2,csm_adj_ratio,0.019081,3,18
+Ocean Life,2025Q2,csm_adj_ratio,-0.031709,15,18
+CHUBB Life,2025Q2,csm_adj_ratio,-0.035853,16,18
+Tokio Marine Life,2025Q2,csm_adj_ratio,0.07733,2,18
+Dhipaya Life,2025Q2,csm_adj_ratio,-0.010155,12,18
+Southeast Life,2025Q2,csm_adj_ratio,-0.005209,9,18
+Samsung Life,2025Q2,csm_adj_ratio,-0.037926,17,18
+T Life,2025Q2,csm_adj_ratio,-0.006349,10,18
+BUI Life,2025Q2,csm_adj_ratio,-0.661566,18,18
+Saha Life,2025Q2,csm_adj_ratio,0.103379,1,18
+AIA Thailand,2025Q2,net_inv_ratio,0.193071,12,17
+Thai Life,2025Q2,net_inv_ratio,0.16231,13,17
+Muang Thai Life,2025Q2,net_inv_ratio,0.332031,7,17
+Allianz Ayudhya,2025Q2,net_inv_ratio,-0.003483,16,17
+FWD Thailand,2025Q2,net_inv_ratio,0.286859,9,17
+Krungthai-AXA Life,2025Q2,net_inv_ratio,0.28306,10,17
+Bangkok Life,2025Q2,net_inv_ratio,0.281262,11,17
+Prudential Life,2025Q2,net_inv_ratio,-0.042414,17,17
+Generali Life,2025Q2,net_inv_ratio,0.16153,14,17
+Ocean Life,2025Q2,net_inv_ratio,0.487126,3,17
+CHUBB Life,2025Q2,net_inv_ratio,0.790591,2,17
+Tokio Marine Life,2025Q2,net_inv_ratio,0.100941,15,17
+Dhipaya Life,2025Q2,net_inv_ratio,0.347372,6,17
+Southeast Life,2025Q2,net_inv_ratio,0.442079,4,17
+Samsung Life,2025Q2,net_inv_ratio,0.310699,8,17
+T Life,2025Q2,net_inv_ratio,0.423638,5,17
+BUI Life,2025Q2,net_inv_ratio,0.918607,1,17
 AIA Thailand,2025Q2,nb_csm_margin,0.157519,1,18
 Thai Life,2025Q2,nb_csm_margin,0.156709,2,18
 Muang Thai Life,2025Q2,nb_csm_margin,0.113074,8,18

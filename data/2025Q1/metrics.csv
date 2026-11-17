@@ -341,6 +341,43 @@ T Life,2025Q1,nb_to_release,0.461406,18,19
 BUI Life,2025Q1,nb_to_release,1.974024,7,19
 Phillip Life,2025Q1,nb_to_release,3.118298,2,19
 Saha Life,2025Q1,nb_to_release,0.069927,19,19
+AIA Thailand,2025Q1,csm_adj_ratio,-0.00261,9,19
+Thai Life,2025Q1,csm_adj_ratio,0.001477,7,19
+Muang Thai Life,2025Q1,csm_adj_ratio,0.002595,6,19
+Allianz Ayudhya,2025Q1,csm_adj_ratio,-0.003836,10,19
+FWD Thailand,2025Q1,csm_adj_ratio,0.010221,5,19
+Krungthai-AXA Life,2025Q1,csm_adj_ratio,-0.015679,15,19
+Bangkok Life,2025Q1,csm_adj_ratio,-0.01998,17,19
+Prudential Life,2025Q1,csm_adj_ratio,-0.00707,11,19
+Generali Life,2025Q1,csm_adj_ratio,0.102296,1,19
+Ocean Life,2025Q1,csm_adj_ratio,-0.012667,12,19
+CHUBB Life,2025Q1,csm_adj_ratio,-0.015667,14,19
+Tokio Marine Life,2025Q1,csm_adj_ratio,0.057856,2,19
+Dhipaya Life,2025Q1,csm_adj_ratio,-0.015113,13,19
+Southeast Life,2025Q1,csm_adj_ratio,0.001035,8,19
+Samsung Life,2025Q1,csm_adj_ratio,-0.019906,16,19
+T Life,2025Q1,csm_adj_ratio,0.017488,3,19
+BUI Life,2025Q1,csm_adj_ratio,-0.546565,19,19
+Phillip Life,2025Q1,csm_adj_ratio,0.01028,4,19
+Saha Life,2025Q1,csm_adj_ratio,-0.034157,18,19
+AIA Thailand,2025Q1,net_inv_ratio,0.366294,7,18
+Thai Life,2025Q1,net_inv_ratio,0.076335,16,18
+Muang Thai Life,2025Q1,net_inv_ratio,0.325815,8,18
+Allianz Ayudhya,2025Q1,net_inv_ratio,0.006901,17,18
+FWD Thailand,2025Q1,net_inv_ratio,0.153363,14,18
+Krungthai-AXA Life,2025Q1,net_inv_ratio,0.291746,10,18
+Bangkok Life,2025Q1,net_inv_ratio,0.104408,15,18
+Prudential Life,2025Q1,net_inv_ratio,0.187551,13,18
+Generali Life,2025Q1,net_inv_ratio,0.371916,6,18
+Ocean Life,2025Q1,net_inv_ratio,0.477113,4,18
+CHUBB Life,2025Q1,net_inv_ratio,0.821303,1,18
+Tokio Marine Life,2025Q1,net_inv_ratio,0.004532,18,18
+Dhipaya Life,2025Q1,net_inv_ratio,0.246342,11,18
+Southeast Life,2025Q1,net_inv_ratio,0.388113,5,18
+Samsung Life,2025Q1,net_inv_ratio,0.291843,9,18
+T Life,2025Q1,net_inv_ratio,0.188794,12,18
+BUI Life,2025Q1,net_inv_ratio,0.693492,2,18
+Phillip Life,2025Q1,net_inv_ratio,0.639193,3,18
 AIA Thailand,2025Q1,nb_csm_margin,0.153936,2,19
 Thai Life,2025Q1,nb_csm_margin,0.176353,1,19
 Muang Thai Life,2025Q1,nb_csm_margin,0.13587,6,19

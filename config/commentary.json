@@ -1,9 +1,9 @@
 [
   {
     "id": "ra_policy",
-    "title": "Risk-adjustment disaggregation limits margin comparisons",
+    "title": "Risk-adjustment disaggregation affects margin comparisons",
     "companies": [],
-    "body": "An insurer that does not split the change in the risk adjustment between the insurance service result and insurance finance income or expense carries the whole RA change, including the effect of discount-rate movements, in the insurance service result. Service margins are therefore compared only within each policy group. Restating to a common basis would need the P&L/OCI split of the RA finance effect, which the statements do not disclose, so no restated margin is shown. Net profit is not affected by the choice."
+    "body": "An insurer that does not split the change in the risk adjustment between the insurance service result and insurance finance income or expense carries the whole RA change, including the effect of discount-rate movements, in the insurance service result. Section 5 shows every insurer on one service-margin axis and names under the chart the insurers that do not disaggregate. Restating to a common basis would need the P&L/OCI split of the RA finance effect, which the statements do not disclose, so no restated margin is shown. Net profit is not affected by the choice."
   },
   {
     "id": "transition",
