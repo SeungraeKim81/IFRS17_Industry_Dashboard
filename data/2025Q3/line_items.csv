@@ -209,12 +209,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Krungthai-AXA Life,nb_loss_component,37.142,Extracted,"file p.60 groups 7, 8, 10 totals printed ['36,988', '-', '154'] (thousand_baht, read from page image)"
 2025Q3,2025Q3,Krungthai-AXA Life,insurance_revenue,18315.046,Extracted,"file p.7 SCI nine months (equals 6) printed 18,315,046 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Krungthai-AXA Life,insurance_service_expense,-12178.052,Extracted,"file p.7 SCI nine months (equals 6) printed (12,178,052) (thousand_baht, read from page image)"
-2025Q3,2025Q3,Krungthai-AXA Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Krungthai-AXA Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Krungthai-AXA Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Krungthai-AXA Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Krungthai-AXA Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Krungthai-AXA Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Krungthai-AXA Life,oci_debt_fvoci,22359.723,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 22,359,723 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Krungthai-AXA Life,oci_ins_finance,-16425.038,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed (16,425,038) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Krungthai-AXA Life,oci_reins_finance,0,Extracted,p.8 one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+2025Q3,2025Q3,Krungthai-AXA Life,oci_equity_fvoci,-519.189,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed (519,189) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Krungthai-AXA Life,oci_total,6714.909,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed 6,714,909 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Krungthai-AXA Life,equity_open,20684.966,Extracted,"file p.9 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 20,684,966 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,ra_release,227.89,Extracted,"file p.98 21.1 total printed 227,890 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,bel_release,4287.136,Extracted,"file p.98 21.1 total printed 4,287,136 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,paa_revenue,1739.878,Extracted,"file p.98 21.1 PAA revenue printed 1,739,878 (thousand_baht, read from page image)"
