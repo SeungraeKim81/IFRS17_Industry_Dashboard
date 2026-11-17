@@ -1283,18 +1283,18 @@ FY2025,FY2025,BUI Life,insurance_revenue,63.727644,Extracted,"file p.12 SCI (equ
 FY2025,FY2024,BUI Life,insurance_revenue,39.402356,Extracted,"file p.12 SCI (equals 8.1) printed 39,402,356.23 (baht, read from page image)"
 FY2025,FY2025,BUI Life,insurance_service_expense,-53.486941,Extracted,"file p.12 SCI (printed positive) printed 53,486,941.13 (baht, read from page image)"
 FY2025,FY2024,BUI Life,insurance_service_expense,-37.77469,Extracted,"file p.12 SCI (printed positive) printed 37,774,689.95 (baht, read from page image)"
-FY2025,FY2025,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,BUI Life,oci_debt_fvoci,4.606966,Extracted,"file p.12 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 4,606,965.66 (baht, read from page image)"
+FY2025,FY2024,BUI Life,oci_debt_fvoci,4.880496,Extracted,"file p.12 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 4,880,495.59 (baht, read from page image)"
+FY2025,FY2025,BUI Life,oci_ins_finance,-3.873563,Extracted,"file p.12 SCI OCI, insurance contracts issued before tax printed (3,873,562.56) (baht, read from page image)"
+FY2025,FY2024,BUI Life,oci_ins_finance,-3.64959,Extracted,"file p.12 SCI OCI, insurance contracts issued before tax printed (3,649,590.46) (baht, read from page image)"
+FY2025,FY2025,BUI Life,oci_reins_finance,0,Extracted,p.12 no reinsurance OCI line on the statement
+FY2025,FY2024,BUI Life,oci_reins_finance,0,Extracted,p.12 no reinsurance OCI line on the statement
+FY2025,FY2025,BUI Life,oci_equity_fvoci,-4.362711,Extracted,"file p.12 SCI OCI, equity instruments at FVOCI before tax printed (4,362,711.20) (baht, read from page image)"
+FY2025,FY2024,BUI Life,oci_equity_fvoci,-6.738225,Extracted,"file p.12 SCI OCI, equity instruments at FVOCI before tax printed (6,738,225.19) (baht, read from page image)"
+FY2025,FY2025,BUI Life,oci_total,-2.116162,Extracted,"file p.12 SCI other comprehensive income for the period, net of tax printed (2,116,161.52) (baht, read from page image)"
+FY2025,FY2024,BUI Life,oci_total,-6.83798,Extracted,"file p.12 SCI other comprehensive income for the period, net of tax printed (6,837,980.41) (baht, read from page image)"
+FY2025,FY2025,BUI Life,equity_open,439.820624,Extracted,"file p.13 SOCE total equity at 1 January; restated balance (TFRS 17, TFRS 9 and the error correction) printed 439,820,624.41 (baht, read from page image)"
+FY2025,FY2024,BUI Life,equity_open,455.19675,Extracted,"file p.13 SOCE total equity at 1 January; restated balance (TFRS 17, TFRS 9 and the error correction) printed 455,196,749.73 (baht, read from page image)"
 FY2025,FY2025,Phillip Life,ra_release,1.223,Extracted,"file p.94 6.1 total printed 1,223 (thousand_baht, read from page image)"
 FY2025,FY2024,Phillip Life,ra_release,49.214,Extracted,"file p.96 6.1 total printed 49,214 (thousand_baht, read from page image)"
 FY2025,FY2025,Phillip Life,bel_release,361.662,Extracted,"file p.94 6.1 total printed 361,662 (thousand_baht, read from page image)"

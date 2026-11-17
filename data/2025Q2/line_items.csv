@@ -605,12 +605,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,BUI Life,nb_loss_component,5.584324,Extracted,"file p.86 9.3 total, onerous contracts printed 5,584,323.62 (baht, read from page image)"
 2025Q2,2025Q2,BUI Life,insurance_revenue,20.396583,Extracted,"file p.4 SCI six months (equals 8) printed 20,396,583.16 (baht, read from page image)"
 2025Q2,2025Q2,BUI Life,insurance_service_expense,-24.143092,Extracted,"file p.4 SCI six months (equals 8) printed (24,143,091.62) (baht, read from page image)"
-2025Q2,2025Q2,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,BUI Life,oci_debt_fvoci,4.337789,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 4,337,789.06 (baht, read from page image)"
+2025Q2,2025Q2,BUI Life,oci_ins_finance,4.058962,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed 4,058,961.97 (baht, read from page image)"
+2025Q2,2025Q2,BUI Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2025Q2,2025Q2,BUI Life,oci_equity_fvoci,-35.268075,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed (35,268,074.93) (baht, read from page image)"
+2025Q2,2025Q2,BUI Life,oci_total,-20.685267,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed (20,685,266.73) (baht, read from page image)"
+2025Q2,2025Q2,BUI Life,equity_open,439.820624,Extracted,"file p.5 SOCE total equity at 1 January; restated balance (TFRS 17, TFRS 9 and the error correction) printed 439,820,624.41 (baht, read from page image)"
 2025Q2,2025Q2,Saha Life,ra_release,14.656796,Extracted,"file p.45 8 total printed 14,656,796.31 (baht, read from page image)"
 2025Q2,2025Q2,Saha Life,bel_release,153.594666,Extracted,"file p.45 8 total printed 153,594,666.02 (baht, read from page image)"
 2025Q2,2025Q2,Saha Life,paa_revenue,0,Extracted,"file p.45 8 (no PAA business) printed - (baht, read from page image)"

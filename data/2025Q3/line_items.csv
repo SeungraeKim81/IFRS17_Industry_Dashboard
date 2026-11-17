@@ -605,12 +605,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,BUI Life,nb_loss_component,6.053491,Extracted,"file p.76 9.3 total, onerous contracts printed 6,053,491.23 (baht, read from page image)"
 2025Q3,2025Q3,BUI Life,insurance_revenue,35.190894,Extracted,"file p.4 SCI nine months (equals 8) printed 35,190,893.68 (baht, read from page image)"
 2025Q3,2025Q3,BUI Life,insurance_service_expense,-33.452216,Extracted,"file p.4 SCI nine months (equals 8) printed (33,452,215.70) (baht, read from page image)"
-2025Q3,2025Q3,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,BUI Life,oci_debt_fvoci,4.211632,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 4,211,632.21 (baht, read from page image)"
+2025Q3,2025Q3,BUI Life,oci_ins_finance,0.746652,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed 746,652.16 (baht, read from page image)"
+2025Q3,2025Q3,BUI Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2025Q3,2025Q3,BUI Life,oci_equity_fvoci,5.205045,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed 5,205,045.19 (baht, read from page image)"
+2025Q3,2025Q3,BUI Life,oci_total,8.279994,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed 8,279,994.08 (baht, read from page image)"
+2025Q3,2025Q3,BUI Life,equity_open,439.820624,Extracted,"file p.5 SOCE total equity at 1 January; restated balance (TFRS 17, TFRS 9 and the error correction) printed 439,820,624.41 (baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,ra_release,5.491,Extracted,"file p.57 6 total printed 5,491 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,bel_release,285.246,Extracted,"file p.57 6 total printed 285,246 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,paa_revenue,5.625,Extracted,"file p.57 6 PAA revenue printed 5,625 (thousand_baht, read from page image)"

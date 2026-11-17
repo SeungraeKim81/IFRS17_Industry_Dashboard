@@ -1247,18 +1247,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,BUI Life,insurance_revenue,10.00024,Extracted,"file p.4 SCI (equals 8) printed 10,000,239.61 (baht, read from page image)"
 2026Q1,2026Q1,BUI Life,insurance_service_expense,-91.425239,Extracted,"file p.4 SCI (equals 5.1) printed (91,425,239.08) (baht, read from page image)"
 2026Q1,2025Q1,BUI Life,insurance_service_expense,-17.396716,Extracted,"file p.4 SCI (equals 8) printed (17,396,716.32) (baht, read from page image)"
-2026Q1,2026Q1,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,BUI Life,oci_debt_fvoci,-0.665017,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (665,017.10) (baht, read from page image)"
+2026Q1,2025Q1,BUI Life,oci_debt_fvoci,1.52269,Extracted,"file p.4 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,522,689.72 (baht, read from page image)"
+2026Q1,2026Q1,BUI Life,oci_ins_finance,3.944453,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed 3,944,453.29 (baht, read from page image)"
+2026Q1,2025Q1,BUI Life,oci_ins_finance,-1.636707,Extracted,"file p.4 SCI OCI, insurance contracts issued before tax printed (1,636,706.82) (baht, read from page image)"
+2026Q1,2026Q1,BUI Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2026Q1,2025Q1,BUI Life,oci_reins_finance,0,Extracted,p.4 no reinsurance OCI line on the statement
+2026Q1,2026Q1,BUI Life,oci_equity_fvoci,-3.873207,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed (3,873,206.50) (baht, read from page image)"
+2026Q1,2025Q1,BUI Life,oci_equity_fvoci,6.193876,Extracted,"file p.4 SCI OCI, equity instruments at FVOCI before tax printed 6,193,876.44 (baht, read from page image)"
+2026Q1,2026Q1,BUI Life,oci_total,-0.475016,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed (475,016.32) (baht, read from page image)"
+2026Q1,2025Q1,BUI Life,oci_total,4.536546,Extracted,"file p.4 SCI other comprehensive income for the period, net of tax printed 4,536,546.11 (baht, read from page image)"
+2026Q1,2026Q1,BUI Life,equity_open,443.263925,Extracted,"file p.5 SOCE total equity at 1 January printed 443,263,924.84 (baht, read from page image)"
+2026Q1,2025Q1,BUI Life,equity_open,439.820624,Extracted,"file p.5 SOCE total equity at 1 January; restated balance (TFRS 17, TFRS 9 and the error correction) printed 439,820,624.41 (baht, read from page image)"
 2026Q1,2026Q1,Phillip Life,ra_release,4.431,Extracted,"file p.16 5 total printed 4,431 (thousand_baht, read from page image)"
 2026Q1,2025Q1,Phillip Life,ra_release,6.081,Extracted,"file p.50 6.1 total printed 6,081 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Phillip Life,bel_release,78.147,Extracted,"file p.16 5 total printed 78,147 (thousand_baht, read from page image)"
