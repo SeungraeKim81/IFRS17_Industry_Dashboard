@@ -569,12 +569,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q1,2025Q1,T Life,nb_loss_component,20.738,Extracted,"file p.30 3.3.1.3 total, onerous contracts printed 20,738 (thousand_baht, read from page image)"
 2025Q1,2025Q1,T Life,insurance_revenue,106.904274,Extracted,"file p.8 P&L (equals 3.2.1) printed 106,904,274 (baht, read from page image)"
 2025Q1,2025Q1,T Life,insurance_service_expense,-101.902784,Extracted,"file p.8 P&L (equals 3.2.1) printed (101,902,784) (baht, read from page image)"
-2025Q1,2025Q1,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q1,2025Q1,T Life,oci_debt_fvoci,30.227667,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 30,227,667 (baht, read from page image)"
+2025Q1,2025Q1,T Life,oci_ins_finance,-80.070743,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (80,070,743) (baht, read from page image)"
+2025Q1,2025Q1,T Life,oci_reins_finance,-0.184283,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (184,283) (baht, read from page image)"
+2025Q1,2025Q1,T Life,oci_equity_fvoci,-0.122559,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed (122,559) (baht, read from page image)"
+2025Q1,2025Q1,T Life,oci_total,-55.274708,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (55,274,708) (baht, read from page image)"
+2025Q1,2025Q1,T Life,equity_open,946.145625,Extracted,"file p.11 SOCE total equity at 1 January; restated balance at 1 January (TFRS 17) printed 946,145,625 (baht, read from page image)"
 2025Q1,2025Q1,BUI Life,ra_release,1.242454,Extracted,"file p.45 8 total printed 1,242,454.28 (baht, read from page image)"
 2025Q1,2025Q1,BUI Life,bel_release,8.407846,Extracted,"file p.45 8 total printed 8,407,846.14 (baht, read from page image)"
 2025Q1,2025Q1,BUI Life,paa_revenue,0,Extracted,"file p.45 8 (no PAA business) printed - (baht, read from page image)"

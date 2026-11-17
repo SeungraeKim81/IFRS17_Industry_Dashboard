@@ -1139,18 +1139,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,T Life,insurance_revenue,106.904274,Extracted,"file p.8 P&L (equals 3.2.1) printed 106,904,274 (baht, read from page image)"
 2026Q1,2026Q1,T Life,insurance_service_expense,-81.642838,Extracted,"file p.9 P&L (equals 2.2.1) printed (81,642,838) (baht, read from page image)"
 2026Q1,2025Q1,T Life,insurance_service_expense,-101.902784,Extracted,"file p.8 P&L (equals 3.2.1) printed (101,902,784) (baht, read from page image)"
-2026Q1,2026Q1,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,T Life,oci_debt_fvoci,-39.422447,Extracted,"file p.10 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (39,422,447) (baht, read from page image)"
+2026Q1,2025Q1,T Life,oci_debt_fvoci,30.227667,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 30,227,667 (baht, read from page image)"
+2026Q1,2026Q1,T Life,oci_ins_finance,62.326338,Extracted,"file p.10 SCI OCI, insurance contracts issued before tax printed 62,326,338 (baht, read from page image)"
+2026Q1,2025Q1,T Life,oci_ins_finance,-80.070743,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (80,070,743) (baht, read from page image)"
+2026Q1,2026Q1,T Life,oci_reins_finance,0.250965,Extracted,"file p.10 SCI OCI, reinsurance contracts held before tax printed 250,965 (baht, read from page image)"
+2026Q1,2025Q1,T Life,oci_reins_finance,-0.184283,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (184,283) (baht, read from page image)"
+2026Q1,2026Q1,T Life,oci_equity_fvoci,48.902296,Extracted,"file p.10 SCI OCI, equity instruments at FVOCI before tax printed 48,902,296 (baht, read from page image)"
+2026Q1,2025Q1,T Life,oci_equity_fvoci,-0.122559,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed (122,559) (baht, read from page image)"
+2026Q1,2026Q1,T Life,oci_total,67.639879,Extracted,"file p.10 SCI other comprehensive income for the period, net of tax printed 67,639,879 (baht, read from page image)"
+2026Q1,2025Q1,T Life,oci_total,-55.274708,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (55,274,708) (baht, read from page image)"
+2026Q1,2026Q1,T Life,equity_open,1067.768209,Extracted,"file p.12 SOCE total equity at 1 January printed 1,067,768,209 (baht, read from page image)"
+2026Q1,2025Q1,T Life,equity_open,946.145625,Extracted,"file p.11 SOCE total equity at 1 January; restated balance at 1 January (TFRS 17) printed 946,145,625 (baht, read from page image)"
 2026Q1,2026Q1,Rabbit Life,ra_release,2.948,Extracted,"file p.15 3 printed 2,948 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Rabbit Life,bel_release,32.527,Extracted,"file p.15 3 printed 32,527 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Rabbit Life,paa_revenue,0,Extracted,"file p.15 no PAA business printed - (thousand_baht, read from page image)"

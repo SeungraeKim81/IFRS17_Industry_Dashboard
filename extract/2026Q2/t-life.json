@@ -377,6 +377,78 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุน สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q2": {
+    "value": -13.496246,
+    "printed": "(13,496,246)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท; six-month columns)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q2": {
+    "value": 37.565906,
+    "printed": "37,565,906",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท; six-month columns)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q2": {
+    "value": 0.208012,
+    "printed": "208,012",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท; six-month columns)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q2": {
+    "value": 65.472991,
+    "printed": "65,472,991",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท; six-month columns)"
+   }
+  },
+  "oci_total": {
+   "2026Q2": {
+    "value": 72.900327,
+    "printed": "72,900,327",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท; six-month columns)"
+   }
+  },
+  "equity_open": {
+   "2026Q2": {
+    "value": 1067.768209,
+    "printed": "1,067,768,209",
+    "unit": "baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SOCE total equity at 1 January",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2569 (บาท)"
+   }
   }
  },
  "ytd_months": 6,

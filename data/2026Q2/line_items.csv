@@ -1139,18 +1139,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2025Q2,T Life,insurance_revenue,214.422112,Extracted,"file p.8 P&L six months (equals 3.2.1) printed 214,422,112 (baht, read from page image)"
 2026Q2,2026Q2,T Life,insurance_service_expense,-184.693414,Extracted,"file p.8 P&L six months (equals 2.2.1) printed (184,693,414) (baht, read from page image)"
 2026Q2,2025Q2,T Life,insurance_service_expense,-196.90104,Extracted,"file p.8 P&L six months (equals 3.2.1) printed (196,901,040) (baht, read from page image)"
-2026Q2,2026Q2,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,T Life,oci_debt_fvoci,-13.496246,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (13,496,246) (baht, read from page image)"
+2026Q2,2025Q2,T Life,oci_debt_fvoci,44.898711,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 44,898,711 (baht, read from page image)"
+2026Q2,2026Q2,T Life,oci_ins_finance,37.565906,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed 37,565,906 (baht, read from page image)"
+2026Q2,2025Q2,T Life,oci_ins_finance,-133.217304,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (133,217,304) (baht, read from page image)"
+2026Q2,2026Q2,T Life,oci_reins_finance,0.208012,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed 208,012 (baht, read from page image)"
+2026Q2,2025Q2,T Life,oci_reins_finance,-0.388267,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (388,267) (baht, read from page image)"
+2026Q2,2026Q2,T Life,oci_equity_fvoci,65.472991,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed 65,472,991 (baht, read from page image)"
+2026Q2,2025Q2,T Life,oci_equity_fvoci,-30.252814,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed (30,252,814) (baht, read from page image)"
+2026Q2,2026Q2,T Life,oci_total,72.900327,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed 72,900,327 (baht, read from page image)"
+2026Q2,2025Q2,T Life,oci_total,-129.29248,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (129,292,480) (baht, read from page image)"
+2026Q2,2026Q2,T Life,equity_open,1067.768209,Extracted,"file p.11 SOCE total equity at 1 January printed 1,067,768,209 (baht, read from page image)"
+2026Q2,2025Q2,T Life,equity_open,946.145625,Extracted,"file p.11 SOCE total equity at 1 January; restated balance at 1 January (TFRS 17) printed 946,145,625 (baht, read from page image)"
 2026Q2,2026Q2,Rabbit Life,ra_release,5.148,Extracted,"file p.18 3 printed 5,148 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Rabbit Life,bel_release,51.346,Extracted,"file p.18 3 printed 51,346 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Rabbit Life,paa_revenue,0,Extracted,"file p.18 no PAA business printed - (thousand_baht, read from page image)"

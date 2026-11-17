@@ -569,12 +569,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,T Life,nb_loss_component,31.49,Extracted,"file p.31 3.3.1.3 total, onerous contracts printed 31,490 (thousand_baht, read from page image)"
 2025Q2,2025Q2,T Life,insurance_revenue,214.422112,Extracted,"file p.8 P&L six months (equals 3.2.1) printed 214,422,112 (baht, read from page image)"
 2025Q2,2025Q2,T Life,insurance_service_expense,-196.90104,Extracted,"file p.8 P&L six months (equals 3.2.1) printed (196,901,040) (baht, read from page image)"
-2025Q2,2025Q2,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,T Life,oci_debt_fvoci,44.898711,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 44,898,711 (baht, read from page image)"
+2025Q2,2025Q2,T Life,oci_ins_finance,-133.217304,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (133,217,304) (baht, read from page image)"
+2025Q2,2025Q2,T Life,oci_reins_finance,-0.388267,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (388,267) (baht, read from page image)"
+2025Q2,2025Q2,T Life,oci_equity_fvoci,-30.252814,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed (30,252,814) (baht, read from page image)"
+2025Q2,2025Q2,T Life,oci_total,-129.29248,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (129,292,480) (baht, read from page image)"
+2025Q2,2025Q2,T Life,equity_open,946.145625,Extracted,"file p.11 SOCE total equity at 1 January; restated balance at 1 January (TFRS 17) printed 946,145,625 (baht, read from page image)"
 2025Q2,2025Q2,BUI Life,ra_release,2.540642,Extracted,"file p.63 8 total printed 2,540,642.03 (baht, read from page image)"
 2025Q2,2025Q2,BUI Life,bel_release,17.162993,Extracted,"file p.63 8 total printed 17,162,993.42 (baht, read from page image)"
 2025Q2,2025Q2,BUI Life,paa_revenue,0,Extracted,"file p.63 8 (no PAA business) printed - (baht, read from page image)"

@@ -318,6 +318,66 @@
     "note": "P&L six months (equals 3.2.1)",
     "heading_seen": "งบกำไรขาดทุน สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q2": {
+    "page": 9,
+    "printed": "44,898,711",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท; six-month columns)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q2": {
+    "page": 9,
+    "printed": "(133,217,304)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท; six-month columns)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q2": {
+    "page": 9,
+    "printed": "(388,267)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท; six-month columns)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q2": {
+    "page": 9,
+    "printed": "(30,252,814)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท; six-month columns)"
+   }
+  },
+  "oci_total": {
+   "2025Q2": {
+    "page": 9,
+    "printed": "(129,292,480)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนและหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท; six-month columns)"
+   }
+  },
+  "equity_open": {
+   "2025Q2": {
+    "page": 11,
+    "printed": "946,145,625",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January (TFRS 17)",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (บาท)"
+   }
   }
  },
  "items_3m": {

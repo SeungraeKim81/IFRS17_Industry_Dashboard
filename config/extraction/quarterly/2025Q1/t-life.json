@@ -318,6 +318,66 @@
     "note": "P&L (equals 3.2.1)",
     "heading_seen": "งบกำไรขาดทุน สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q1": {
+    "page": 9,
+    "printed": "30,227,667",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q1": {
+    "page": 9,
+    "printed": "(80,070,743)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q1": {
+    "page": 9,
+    "printed": "(184,283)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q1": {
+    "page": 9,
+    "printed": "(122,559)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q1": {
+    "page": 9,
+    "printed": "(55,274,708)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q1": {
+    "page": 11,
+    "printed": "946,145,625",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January (TFRS 17)",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับรอบระยะเวลาสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
   }
  },
  "items_3m": {

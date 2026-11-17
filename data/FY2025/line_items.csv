@@ -1139,18 +1139,18 @@ FY2025,FY2025,T Life,insurance_revenue,462.924465,Extracted,"file p.39 P&L print
 FY2025,FY2024,T Life,insurance_revenue,350.874687,Extracted,"file p.39 P&L printed 350,874,687 (baht, read from page image)"
 FY2025,FY2025,T Life,insurance_service_expense,-352.88482,Extracted,"file p.39 P&L printed (352,884,820) (baht, read from page image)"
 FY2025,FY2024,T Life,insurance_service_expense,-315.763174,Extracted,"file p.39 P&L printed (315,763,174) (baht, read from page image)"
-FY2025,FY2025,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,T Life,oci_debt_fvoci,46.819655,Extracted,"file p.40 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 46,819,655 (baht, read from page image)"
+FY2025,FY2024,T Life,oci_debt_fvoci,20.38748,Extracted,"file p.40 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 20,387,480 (baht, read from page image)"
+FY2025,FY2025,T Life,oci_ins_finance,-56.142624,Extracted,"file p.40 SCI OCI, insurance contracts issued before tax printed (56,142,624) (baht, read from page image)"
+FY2025,FY2024,T Life,oci_ins_finance,-4.336573,Extracted,"file p.40 SCI OCI, insurance contracts issued before tax printed (4,336,573) (baht, read from page image)"
+FY2025,FY2025,T Life,oci_reins_finance,-1.354618,Extracted,"file p.40 SCI OCI, reinsurance contracts held before tax printed (1,354,618) (baht, read from page image)"
+FY2025,FY2024,T Life,oci_reins_finance,-0.080782,Extracted,"file p.40 SCI OCI, reinsurance contracts held before tax printed (80,782) (baht, read from page image)"
+FY2025,FY2025,T Life,oci_equity_fvoci,74.601711,Extracted,"file p.40 SCI OCI, equity instruments at FVOCI before tax printed 74,601,711 (baht, read from page image)"
+FY2025,FY2024,T Life,oci_equity_fvoci,-16.350564,Extracted,"file p.40 SCI OCI, equity instruments at FVOCI before tax printed (16,350,564) (baht, read from page image)"
+FY2025,FY2025,T Life,oci_total,36.650369,Extracted,"file p.40 SCI other comprehensive income for the period, net of tax printed 36,650,369 (baht, read from page image)"
+FY2025,FY2024,T Life,oci_total,-5.407246,Extracted,"file p.40 SCI other comprehensive income for the period, net of tax printed (5,407,246) (baht, read from page image)"
+FY2025,FY2025,T Life,equity_open,946.145625,Extracted,"file p.42 SOCE total equity at 1 January; restated balance at 1 January (TFRS 17) printed 946,145,625 (baht, read from page image)"
+FY2025,FY2024,T Life,equity_open,886.779286,Extracted,"file p.41 SOCE total equity at 1 January; restated balance at 1 January (TFRS 17) printed 886,779,286 (baht, read from page image)"
 FY2025,FY2025,Rabbit Life,ra_release,16.682,Extracted,"file p.94 8.1 printed 16,682 (thousand_baht, read from page image)"
 FY2025,FY2024,Rabbit Life,ra_release,14.614,Extracted,"file p.94 8.1 printed 14,614 (thousand_baht, read from page image)"
 FY2025,FY2025,Rabbit Life,bel_release,185.569,Extracted,"file p.94 8.1 printed 185,569 (thousand_baht, read from page image)"
