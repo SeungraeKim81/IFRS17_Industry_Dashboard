@@ -377,6 +377,81 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q2": {
+    "value": 84064.0,
+    "printed": [
+     "85,128",
+     "(1,064)"
+    ],
+    "unit": "million_baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SCI OCI, debt instruments at FVOCI before tax; plus the amounts reclassified to profit or loss (1,064); hedging lines left out",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q2": {
+    "value": -84284.0,
+    "printed": "(84,284)",
+    "unit": "million_baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q2": {
+    "value": -12662.0,
+    "printed": "(12,662)",
+    "unit": "million_baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q2": {
+    "value": -12365.0,
+    "printed": "(12,365)",
+    "unit": "million_baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q2": {
+    "value": -20273.0,
+    "printed": "(20,273)",
+    "unit": "million_baht",
+    "sign": 1,
+    "page": 8,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q2": {
+    "value": 86953.0,
+    "printed": "86,953",
+    "unit": "million_baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SOCE total equity at 1 January; head-office account (branch), total column, restated balance",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงในส่วนของสำนักงานใหญ่ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาหกเดือนสิ้นสุดวันที่ 30 มิถุนายน พ.ศ. 2568 (ล้านบาท)"
+   }
   }
  },
  "ytd_months": 6,

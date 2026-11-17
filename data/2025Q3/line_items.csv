@@ -29,12 +29,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,AIA Thailand,nb_loss_component,25,Extracted,"file p.85 15.4 total, loss on initial recognition printed 25 (million_baht, read from page image)"
 2025Q3,2025Q3,AIA Thailand,insurance_revenue,68305,Extracted,"file p.7 SCI nine months (equals 15.1) printed 68,305 (million_baht, read from page image)"
 2025Q3,2025Q3,AIA Thailand,insurance_service_expense,-52653,Extracted,"file p.7 SCI nine months (equals 15.2) printed (52,653) (million_baht, read from page image)"
-2025Q3,2025Q3,AIA Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,AIA Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,AIA Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,AIA Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,AIA Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,AIA Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,AIA Thailand,oci_debt_fvoci,112463,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax; plus the amounts reclassified to profit or loss (1,288); hedging lines left out printed ['113,751', '(1,288)'] (million_baht, read from page image)"
+2025Q3,2025Q3,AIA Thailand,oci_ins_finance,-86472,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (86,472) (million_baht, read from page image)"
+2025Q3,2025Q3,AIA Thailand,oci_reins_finance,-13319,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (13,319) (million_baht, read from page image)"
+2025Q3,2025Q3,AIA Thailand,oci_equity_fvoci,-7780,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed (7,780) (million_baht, read from page image)"
+2025Q3,2025Q3,AIA Thailand,oci_total,5095,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed 5,095 (million_baht, read from page image)"
+2025Q3,2025Q3,AIA Thailand,equity_open,86953,Extracted,"file p.9 SOCE total equity at 1 January; head-office account (branch), total column, restated balance printed 86,953 (million_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,ra_release,1440.928,Extracted,"file p.109 12.1 1) printed 1,440,928 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,bel_release,11984.581,Extracted,"file p.109 12.1 1) printed 11,984,581 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,paa_revenue,1815.304,Extracted,"file p.109 12.1 1) PAA revenue printed 1,815,304 (thousand_baht, read from page image)"
