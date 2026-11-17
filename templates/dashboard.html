@@ -158,6 +158,18 @@ table.data th,table.data th.l{text-align:center}
 table.data td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap;font-variant-numeric:tabular-nums}
 table.data tr:last-child td{border-bottom:0}
 table.data tr.focus td{background:var(--focus-soft)}
+/* definitions on narrow screens (owner decision): one block per indicator - area, name, then the definition
+   below it - so the definition is never pushed off screen */
+@media(max-width:620px){
+  table#defs thead{display:none}
+  table#defs,table#defs tbody,table#defs tr,table#defs td{display:block;width:auto}
+  table#defs tr{padding:9px 12px;border-bottom:1px solid var(--grid)}
+  table#defs tr:last-child{border-bottom:0}
+  table#defs td{border:0;padding:0;white-space:normal!important;text-align:left}
+  table#defs td:nth-child(1){font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  table#defs td:nth-child(2){font-weight:600;color:var(--ink);margin:2px 0 3px}
+  table#defs td:nth-child(3){color:var(--ink-2);line-height:1.45}
+}
 table.data tr.focus td.l{font-weight:600}
 table.data tr.tier-break td{border-top:2px solid var(--axis)}
 table#all th{white-space:normal;line-height:1.3}
