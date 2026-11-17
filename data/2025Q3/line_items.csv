@@ -101,12 +101,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Muang Thai Life,nb_loss_component,614.976,Extracted,"file p.53 12.1 ค. total, onerous contracts printed 614,976 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Muang Thai Life,insurance_revenue,22952.83,Extracted,"file p.7 SCI separate, nine months (equals 13.1) printed 22,952,830 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Muang Thai Life,insurance_service_expense,-16533.894,Extracted,"file p.7 SCI separate, nine months (equals 13.1) printed (16,533,894) (thousand_baht, read from page image)"
-2025Q3,2025Q3,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Muang Thai Life,oci_debt_fvoci,48664.44,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 48,664,440 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Muang Thai Life,oci_ins_finance,-37094.092,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed (37,094,092) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Muang Thai Life,oci_reins_finance,350.503,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed 350,503 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Muang Thai Life,oci_equity_fvoci,705.319,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed 705,319 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Muang Thai Life,oci_total,11391.667,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed 11,391,667 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Muang Thai Life,equity_open,108053.395,Extracted,"file p.11 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 108,053,395 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,ra_release,463.143,Extracted,"file p.82 24.1 total printed 463,143 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,bel_release,5118.354,Extracted,"file p.82 24.1 total printed 5,118,354 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,paa_revenue,3751.885,Extracted,"file p.82 24.1 PAA revenue printed 3,751,885 (thousand_baht, read from page image)"

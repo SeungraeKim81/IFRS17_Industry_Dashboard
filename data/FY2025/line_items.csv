@@ -203,18 +203,18 @@ FY2025,FY2025,Muang Thai Life,insurance_revenue,30835.593,Extracted,"file p.8 SC
 FY2025,FY2024,Muang Thai Life,insurance_revenue,27339.525,Extracted,"file p.8 SCI (equals 17.1) printed 27,339,525 (thousand_baht, read from page image)"
 FY2025,FY2025,Muang Thai Life,insurance_service_expense,-22418.287,Extracted,"file p.8 SCI (equals 17.1) printed (22,418,287) (thousand_baht, read from page image)"
 FY2025,FY2024,Muang Thai Life,insurance_service_expense,-21261.108,Extracted,"file p.8 SCI (equals 17.1) printed (21,261,108) (thousand_baht, read from page image)"
-FY2025,FY2025,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Muang Thai Life,oci_debt_fvoci,31607.027,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 31,607,027 (thousand_baht, read from page image)"
+FY2025,FY2024,Muang Thai Life,oci_debt_fvoci,33426.015,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 33,426,015 (thousand_baht, read from page image)"
+FY2025,FY2025,Muang Thai Life,oci_ins_finance,-12815.976,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (12,815,976) (thousand_baht, read from page image)"
+FY2025,FY2024,Muang Thai Life,oci_ins_finance,-21378.155,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (21,378,155) (thousand_baht, read from page image)"
+FY2025,FY2025,Muang Thai Life,oci_reins_finance,228.972,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed 228,972 (thousand_baht, read from page image)"
+FY2025,FY2024,Muang Thai Life,oci_reins_finance,-172.599,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (172,599) (thousand_baht, read from page image)"
+FY2025,FY2025,Muang Thai Life,oci_equity_fvoci,1256.739,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed 1,256,739 (thousand_baht, read from page image)"
+FY2025,FY2024,Muang Thai Life,oci_equity_fvoci,2576.379,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed 2,576,379 (thousand_baht, read from page image)"
+FY2025,FY2025,Muang Thai Life,oci_total,17813.081,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed 17,813,081 (thousand_baht, read from page image)"
+FY2025,FY2024,Muang Thai Life,oci_total,12805.026,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed 12,805,026 (thousand_baht, read from page image)"
+FY2025,FY2025,Muang Thai Life,equity_open,108053.395,Extracted,"file p.12 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 108,053,395 (thousand_baht, read from page image)"
+FY2025,FY2024,Muang Thai Life,equity_open,89084.729,Extracted,"file p.11 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 89,084,729 (thousand_baht, read from page image)"
 FY2025,FY2025,Allianz Ayudhya,ra_release,617.524,Extracted,"file p.205 30.1 total printed 617,524 (thousand_baht, read from page image)"
 FY2025,FY2024,Allianz Ayudhya,ra_release,467.396,Extracted,"file p.205 30.1 total printed 467,396 (thousand_baht, read from page image)"
 FY2025,FY2025,Allianz Ayudhya,bel_release,6871.852,Extracted,"file p.205 30.1 total printed 6,871,852 (thousand_baht, read from page image)"

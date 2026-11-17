@@ -203,18 +203,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,Muang Thai Life,insurance_revenue,7530.707,Extracted,"file p.6 SCI separate (equals 13.1) printed 7,530,707 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Muang Thai Life,insurance_service_expense,-5084.792,Extracted,"file p.6 SCI (equals 10.1) printed (5,084,792) (thousand_baht, read from page image)"
 2026Q1,2025Q1,Muang Thai Life,insurance_service_expense,-5187.845,Extracted,"file p.6 SCI separate (equals 13.1) printed (5,187,845) (thousand_baht, read from page image)"
-2026Q1,2026Q1,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,Muang Thai Life,oci_debt_fvoci,-48543.357,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (48,543,357) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Muang Thai Life,oci_debt_fvoci,9726.729,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 9,726,729 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Muang Thai Life,oci_ins_finance,34374.653,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed 34,374,653 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Muang Thai Life,oci_ins_finance,-9039.51,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed (9,039,510) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Muang Thai Life,oci_reins_finance,38.882,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed 38,882 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Muang Thai Life,oci_reins_finance,-61.89,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed (61,890) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Muang Thai Life,oci_equity_fvoci,3123.051,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed 3,123,051 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Muang Thai Life,oci_equity_fvoci,-4154.511,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (4,154,511) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Muang Thai Life,oci_total,-9765.661,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (9,765,661) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Muang Thai Life,oci_total,-2269.019,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (2,269,019) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Muang Thai Life,equity_open,133684.714,Extracted,"file p.10 SOCE total equity at 1 January; separate statements printed 133,684,714 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Muang Thai Life,equity_open,108053.395,Extracted,"file p.10 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 108,053,395 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Allianz Ayudhya,ra_release,201.695,Extracted,"file p.44 22.1 total printed 201,695 (thousand_baht, read from page image)"
 2026Q1,2025Q1,Allianz Ayudhya,ra_release,148.348,Extracted,"file p.83 23.1 total printed 148,348 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Allianz Ayudhya,bel_release,1824.893,Extracted,"file p.44 22.1 total printed 1,824,893 (thousand_baht, read from page image)"
