@@ -381,6 +381,78 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q3": {
+    "value": 10924.404,
+    "printed": "10,924,404",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 10,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q3": {
+    "value": -9631.224,
+    "printed": "(9,631,224)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 10,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q3": {
+    "value": 36.812,
+    "printed": "36,812",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 10,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q3": {
+    "value": 1644.019,
+    "printed": "1,644,019",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 10,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q3": {
+    "value": 3618.143,
+    "printed": "3,618,143",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 10,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q3": {
+    "value": 12068.97,
+    "printed": "12,068,970",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January 2568",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ (ยังไม่ได้ตรวจสอบ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (พันบาท)"
+   }
   }
  },
  "ytd_months": 9,

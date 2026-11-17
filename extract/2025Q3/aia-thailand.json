@@ -380,15 +380,12 @@
   },
   "oci_debt_fvoci": {
    "2025Q3": {
-    "value": 112463.0,
-    "printed": [
-     "113,751",
-     "(1,288)"
-    ],
+    "value": 113751.0,
+    "printed": "113,751",
     "unit": "million_baht",
     "sign": 1,
     "page": 8,
-    "note": "SCI OCI, debt instruments at FVOCI before tax; plus the amounts reclassified to profit or loss (1,288); hedging lines left out",
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ยังไม่ได้ตรวจสอบ) (ต่อ) สำหรับรอบระยะเวลาเก้าเดือนสิ้นสุดวันที่ 30 กันยายน พ.ศ. 2568 (ล้านบาท)"
    }

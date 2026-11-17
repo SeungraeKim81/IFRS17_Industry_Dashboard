@@ -29,7 +29,7 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,AIA Thailand,nb_loss_component,10,Extracted,"file p.85 15.4 total, loss on initial recognition printed 10 (million_baht, read from page image)"
 2025Q2,2025Q2,AIA Thailand,insurance_revenue,45516,Extracted,"file p.7 SCI six months (equals 15.1) printed 45,516 (million_baht, read from page image)"
 2025Q2,2025Q2,AIA Thailand,insurance_service_expense,-34917,Extracted,"file p.7 SCI six months (equals 15.2) printed (34,917) (million_baht, read from page image)"
-2025Q2,2025Q2,AIA Thailand,oci_debt_fvoci,84064,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax; plus the amounts reclassified to profit or loss (1,064); hedging lines left out printed ['85,128', '(1,064)'] (million_baht, read from page image)"
+2025Q2,2025Q2,AIA Thailand,oci_debt_fvoci,85128,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 85,128 (million_baht, read from page image)"
 2025Q2,2025Q2,AIA Thailand,oci_ins_finance,-84284,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (84,284) (million_baht, read from page image)"
 2025Q2,2025Q2,AIA Thailand,oci_reins_finance,-12662,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (12,662) (million_baht, read from page image)"
 2025Q2,2025Q2,AIA Thailand,oci_equity_fvoci,-12365,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed (12,365) (million_baht, read from page image)"
@@ -137,12 +137,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Allianz Ayudhya,nb_loss_component,0,Extracted,"file p.74 19.1.3 (no onerous new business) printed - (thousand_baht, read from page image)"
 2025Q2,2025Q2,Allianz Ayudhya,insurance_revenue,13251.672,Extracted,"file p.9 SCI six months (equals 24.1) printed 13,251,672 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Allianz Ayudhya,insurance_service_expense,-7514.194,Extracted,"file p.9 SCI six months (equals 24.1) printed (7,514,194) (thousand_baht, read from page image)"
-2025Q2,2025Q2,Allianz Ayudhya,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Allianz Ayudhya,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Allianz Ayudhya,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Allianz Ayudhya,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Allianz Ayudhya,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Allianz Ayudhya,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Allianz Ayudhya,oci_debt_fvoci,8444.138,Extracted,"file p.10 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 8,444,138 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Allianz Ayudhya,oci_ins_finance,-8437.985,Extracted,"file p.10 SCI OCI, insurance contracts issued before tax printed (8,437,985) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Allianz Ayudhya,oci_reins_finance,21.071,Extracted,"file p.10 SCI OCI, reinsurance contracts held before tax printed 21,071 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Allianz Ayudhya,oci_equity_fvoci,-367.265,Extracted,"file p.10 SCI OCI, equity instruments at FVOCI before tax printed (367,265) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Allianz Ayudhya,oci_total,711.148,Extracted,"file p.10 SCI other comprehensive income for the period, net of tax printed 711,148 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Allianz Ayudhya,equity_open,12068.97,Extracted,"file p.11 SOCE total equity at 1 January; restated balance at 1 January 2568 printed 12,068,970 (thousand_baht, read from page image)"
 2025Q2,2025Q2,FWD Thailand,ra_release,299.316,Extracted,"file p.53 6 total printed 299,316 (thousand_baht, read from page image)"
 2025Q2,2025Q2,FWD Thailand,bel_release,5266.1,Extracted,"file p.53 6 total printed 5,266,100 (thousand_baht, read from page image)"
 2025Q2,2025Q2,FWD Thailand,paa_revenue,588.438,Extracted,"file p.53 6 PAA revenue printed 588,438 (thousand_baht, read from page image)"

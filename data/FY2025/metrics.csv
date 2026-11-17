@@ -399,12 +399,15 @@ Rabbit Life,FY2025,net_inv_ratio,0.851316,2,20
 BUI Life,FY2025,net_inv_ratio,0.912476,1,20
 Phillip Life,FY2025,net_inv_ratio,0.75631,3,20
 Saha Life,FY2025,net_inv_ratio,0.286193,12,20
-AIA Thailand,FY2025,oci_total,2060,1,2
-Samsung Life,FY2025,oci_total,997.076925,2,2
-AIA Thailand,FY2025,oci_ratio,0.023691,2,2
-Samsung Life,FY2025,oci_ratio,0.276845,1,2
-AIA Thailand,FY2025,oci_offset,0.854877,1,2
-Samsung Life,FY2025,oci_offset,0.549503,2,2
+AIA Thailand,FY2025,oci_total,2060,1,3
+Allianz Ayudhya,FY2025,oci_total,1939.334,2,3
+Samsung Life,FY2025,oci_total,997.076925,3,3
+AIA Thailand,FY2025,oci_ratio,0.023691,3,3
+Allianz Ayudhya,FY2025,oci_ratio,0.160688,2,3
+Samsung Life,FY2025,oci_ratio,0.276845,1,3
+AIA Thailand,FY2025,oci_offset,0.828324,2,3
+Allianz Ayudhya,FY2025,oci_offset,1.056122,1,3
+Samsung Life,FY2025,oci_offset,0.549503,3,3
 AIA Thailand,FY2025,nb_csm_margin,0.153078,2,20
 Thai Life,FY2025,nb_csm_margin,0.147056,3,20
 Muang Thai Life,FY2025,nb_csm_margin,0.091085,11,20
@@ -943,12 +946,15 @@ Rabbit Life,FY2024,net_inv_ratio,0.723189,3,20
 BUI Life,FY2024,net_inv_ratio,0.906833,2,20
 Phillip Life,FY2024,net_inv_ratio,0.473722,6,20
 Saha Life,FY2024,net_inv_ratio,0.061518,18,20
-AIA Thailand,FY2024,oci_total,-29951,2,2
-Samsung Life,FY2024,oci_total,1156.022688,1,2
-AIA Thailand,FY2024,oci_ratio,-0.241494,2,2
-Samsung Life,FY2024,oci_ratio,0.74004,1,2
-AIA Thailand,FY2024,oci_offset,3.498941,1,2
-Samsung Life,FY2024,oci_offset,0.384022,2,2
+AIA Thailand,FY2024,oci_total,-29951,3,3
+Allianz Ayudhya,FY2024,oci_total,1962.72,1,3
+Samsung Life,FY2024,oci_total,1156.022688,2,3
+AIA Thailand,FY2024,oci_ratio,-0.241494,3,3
+Allianz Ayudhya,FY2024,oci_ratio,0.365444,2,3
+Samsung Life,FY2024,oci_ratio,0.74004,1,3
+AIA Thailand,FY2024,oci_offset,3.760196,1,3
+Allianz Ayudhya,FY2024,oci_offset,0.701166,2,3
+Samsung Life,FY2024,oci_offset,0.384022,3,3
 AIA Thailand,FY2024,nb_csm_margin,0.164164,3,20
 Thai Life,FY2024,nb_csm_margin,0.146176,5,20
 Muang Thai Life,FY2024,nb_csm_margin,0.137159,7,20

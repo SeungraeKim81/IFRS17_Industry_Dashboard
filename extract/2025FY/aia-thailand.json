@@ -689,28 +689,22 @@
   },
   "oci_debt_fvoci": {
    "FY2025": {
-    "value": 75274.0,
-    "printed": [
-     "77,687",
-     "(2,413)"
-    ],
+    "value": 77687.0,
+    "printed": "77,687",
     "unit": "million_baht",
     "sign": 1,
     "page": 8,
-    "note": "SCI OCI, debt instruments at FVOCI before tax; plus the amounts reclassified to profit or loss (2,413); hedging lines left out",
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (ล้านบาท)"
    },
    "FY2024": {
-    "value": 16048.0,
-    "printed": [
-     "14,933",
-     "1,115"
-    ],
+    "value": 14933.0,
+    "printed": "14,933",
     "unit": "million_baht",
     "sign": 1,
     "page": 8,
-    "note": "SCI OCI, debt instruments at FVOCI before tax; 2567 (restated) before TFRS 9: fair value change of investments at FVOCI under the previous standard, plus the amounts reclassified to profit or loss 1,115",
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out); 2567 restated, before TFRS 9: investments at FVOCI under the previous standard",
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม พ.ศ. 2568 (ล้านบาท)"
    }
