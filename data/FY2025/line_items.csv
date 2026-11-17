@@ -635,18 +635,18 @@ FY2025,FY2025,Generali Life,insurance_revenue,7536.929356,Extracted,"file p.8 SC
 FY2025,FY2024,Generali Life,insurance_revenue,5370.603133,Extracted,"file p.8 SCI printed 5,370,603,133 (baht, read from page image)"
 FY2025,FY2025,Generali Life,insurance_service_expense,-6484.122276,Extracted,"file p.8 SCI printed (6,484,122,276) (baht, read from page image)"
 FY2025,FY2024,Generali Life,insurance_service_expense,-4743.112072,Extracted,"file p.8 SCI printed (4,743,112,072) (baht, read from page image)"
-FY2025,FY2025,Generali Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Generali Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Generali Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Generali Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Generali Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Generali Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Generali Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Generali Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Generali Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Generali Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Generali Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Generali Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Generali Life,oci_debt_fvoci,1076.844666,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,076,844,666 (baht, read from page image)"
+FY2025,FY2024,Generali Life,oci_debt_fvoci,956.103855,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 956,103,855 (baht, read from page image)"
+FY2025,FY2025,Generali Life,oci_ins_finance,-537.28849,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (537,288,490) (baht, read from page image)"
+FY2025,FY2024,Generali Life,oci_ins_finance,-948.152294,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (948,152,294) (baht, read from page image)"
+FY2025,FY2025,Generali Life,oci_reins_finance,-4.214725,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (4,214,725) (baht, read from page image)"
+FY2025,FY2024,Generali Life,oci_reins_finance,-12.741335,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (12,741,335) (baht, read from page image)"
+FY2025,FY2025,Generali Life,oci_equity_fvoci,0.571976,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed 571,976 (baht, read from page image)"
+FY2025,FY2024,Generali Life,oci_equity_fvoci,2.084873,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed 2,084,873 (baht, read from page image)"
+FY2025,FY2025,Generali Life,oci_total,316.785071,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed 316,785,071 (baht, read from page image)"
+FY2025,FY2024,Generali Life,oci_total,-194.831963,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (194,831,963) (baht, read from page image)"
+FY2025,FY2025,Generali Life,equity_open,2649.373362,Extracted,"file p.11 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 2,649,373,362 (baht, read from page image)"
+FY2025,FY2024,Generali Life,equity_open,2304.600622,Extracted,"file p.10 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 2,304,600,622 (baht, read from page image)"
 FY2025,FY2025,Ocean Life,ra_release,175.047,Extracted,"file p.96 16.1 total printed 175,047 (thousand_baht, read from page image)"
 FY2025,FY2024,Ocean Life,ra_release,182.893,Extracted,"file p.97 16.1 total printed 182,893 (thousand_baht, read from page image)"
 FY2025,FY2025,Ocean Life,bel_release,2311.059,Extracted,"file p.96 16.1 total printed 2,311,059 (thousand_baht, read from page image)"

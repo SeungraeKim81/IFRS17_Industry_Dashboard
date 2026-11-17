@@ -318,6 +318,66 @@
     "note": "SCI nine months (equals 9.1.1)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "1,690,058,837",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท; continues on p.9)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "(940,702,412)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท; continues on p.9)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "(8,542,886)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท; continues on p.9)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q3": {
+    "page": 9,
+    "printed": "571,976",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท; continues on p.9)"
+   }
+  },
+  "oci_total": {
+   "2025Q3": {
+    "page": 9,
+    "printed": "402,021,667",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท; continues on p.9)"
+   }
+  },
+  "equity_open": {
+   "2025Q3": {
+    "page": 11,
+    "printed": "2,649,373,362",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9)",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ (ไม่ได้ตรวจสอบ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (บาท)"
+   }
   }
  },
  "items_3m": {

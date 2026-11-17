@@ -377,6 +377,78 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q1": {
+    "value": 448.738901,
+    "printed": "448,738,901",
+    "unit": "baht",
+    "sign": 1,
+    "page": 6,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท; continues on p.7)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q1": {
+    "value": -204.691489,
+    "printed": "(204,691,489)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 6,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท; continues on p.7)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q1": {
+    "value": -1.523574,
+    "printed": "(1,523,574)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 6,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท; continues on p.7)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q1": {
+    "value": 0.571976,
+    "printed": "571,976",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท; continues on p.7)"
+   }
+  },
+  "oci_total": {
+   "2025Q1": {
+    "value": 153.233639,
+    "printed": "153,233,639",
+    "unit": "baht",
+    "sign": 1,
+    "page": 7,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท; continues on p.7)"
+   }
+  },
+  "equity_open": {
+   "2025Q1": {
+    "value": 2649.373362,
+    "printed": "2,649,373,362",
+    "unit": "baht",
+    "sign": 1,
+    "page": 9,
+    "note": "SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9)",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (บาท)"
+   }
   }
  },
  "ytd_months": 3,

@@ -317,12 +317,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Generali Life,nb_loss_component,0.167,Extracted,"file p.82 new-business table total, onerous contracts printed 167 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Generali Life,insurance_revenue,3565.032347,Extracted,"file p.8 SCI six months (equals 9.1.1) printed 3,565,032,347 (baht, read from page image)"
 2025Q2,2025Q2,Generali Life,insurance_service_expense,-2892.319383,Extracted,"file p.8 SCI six months (equals 9.1.1) printed (2,892,319,383) (baht, read from page image)"
-2025Q2,2025Q2,Generali Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Generali Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Generali Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Generali Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Generali Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Generali Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Generali Life,oci_debt_fvoci,1317.791239,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,317,791,239 (baht, read from page image)"
+2025Q2,2025Q2,Generali Life,oci_ins_finance,-842.633379,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (842,633,379) (baht, read from page image)"
+2025Q2,2025Q2,Generali Life,oci_reins_finance,-9.147204,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (9,147,204) (baht, read from page image)"
+2025Q2,2025Q2,Generali Life,oci_equity_fvoci,0.571976,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed 571,976 (baht, read from page image)"
+2025Q2,2025Q2,Generali Life,oci_total,201.672304,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed 201,672,304 (baht, read from page image)"
+2025Q2,2025Q2,Generali Life,equity_open,2649.373362,Extracted,"file p.11 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 2,649,373,362 (baht, read from page image)"
 2025Q2,2025Q2,Ocean Life,ra_release,86.973,Extracted,"file p.63 10.1 total printed 86,973 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Ocean Life,bel_release,1169.106,Extracted,"file p.63 10.1 total printed 1,169,106 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Ocean Life,paa_revenue,996.735,Extracted,"file p.63 10.1 PAA revenue printed 996,735 (thousand_baht, read from page image)"
