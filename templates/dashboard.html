@@ -1000,7 +1000,7 @@ function stripTip(k, list) {
 }
 function strips() {
   const svg = $("#strips"); svg.textContent = "";
-  const rows = ["nb_csm_margin", "acq_cost_ratio", "onerous_ratio", "nb_to_release"];
+  const rows = ["nb_csm_margin", "acq_cost_ratio", "nb_to_release", "onerous_ratio"];
   const W = 900, L = 200, R = 40, rowH = 88, T = 10, H = T + rows.length * rowH + 4, NEAR = 10;
   svg.setAttribute("viewBox", "0 0 " + W + " " + H);
   rows.forEach((k, ri) => {
