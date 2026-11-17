@@ -497,12 +497,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Southeast Life,nb_loss_component,111.229,Extracted,"file p.49 9.1.1.3 total, onerous contracts printed 111,229 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Southeast Life,insurance_revenue,1720.899,Extracted,"file p.7 SCI six months (equals 11.1) printed 1,720,899 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Southeast Life,insurance_service_expense,-1168.613,Extracted,"file p.7 SCI six months (equals 11.1) printed (1,168,613) (thousand_baht, read from page image)"
-2025Q2,2025Q2,Southeast Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Southeast Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Southeast Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Southeast Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Southeast Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Southeast Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Southeast Life,oci_debt_fvoci,1875.509,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,875,509 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Southeast Life,oci_ins_finance,-1591.611,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed (1,591,611) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Southeast Life,oci_reins_finance,-2.854,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed (2,854) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Southeast Life,oci_equity_fvoci,-1159.999,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed (1,159,999) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Southeast Life,oci_total,-657.69,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed (657,690) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Southeast Life,equity_open,8697.654,Extracted,"file p.9 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 8,697,654 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Samsung Life,ra_release,25.024,Extracted,"file p.130 15.1 total printed 25,024 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Samsung Life,bel_release,381.3,Extracted,"file p.130 15.1 total printed 381,300 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Samsung Life,paa_revenue,0,Extracted,"file p.130 15.1 (no PAA business) printed - (thousand_baht, read from page image)"

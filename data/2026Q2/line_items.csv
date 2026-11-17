@@ -995,18 +995,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2025Q2,Southeast Life,insurance_revenue,1720.899,Extracted,"file p.7 SCI six months (equals 11.1) printed 1,720,899 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Southeast Life,insurance_service_expense,-1201.776,Extracted,"file p.8 SCI (equals 9) printed (1,201,776) (thousand_baht, read from page image)"
 2026Q2,2025Q2,Southeast Life,insurance_service_expense,-1168.613,Extracted,"file p.7 SCI six months (equals 11.1) printed (1,168,613) (thousand_baht, read from page image)"
-2026Q2,2026Q2,Southeast Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Southeast Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Southeast Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Southeast Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Southeast Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Southeast Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Southeast Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Southeast Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Southeast Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Southeast Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Southeast Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Southeast Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,Southeast Life,oci_debt_fvoci,-1636.137,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out); read from the text layer printed (1,636,137) (thousand_baht, read from page image)"
+2026Q2,2025Q2,Southeast Life,oci_debt_fvoci,1875.509,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,875,509 (thousand_baht, read from page image)"
+2026Q2,2026Q2,Southeast Life,oci_ins_finance,563.101,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax; read from the text layer printed 563,101 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Southeast Life,oci_ins_finance,-1591.611,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed (1,591,611) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Southeast Life,oci_reins_finance,0.684,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax; read from the text layer printed 684 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Southeast Life,oci_reins_finance,-2.854,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed (2,854) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Southeast Life,oci_equity_fvoci,1210.024,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax; read from the text layer printed 1,210,024 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Southeast Life,oci_equity_fvoci,-1159.999,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed (1,159,999) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Southeast Life,oci_total,-96.379,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax; read from the text layer printed (96,379) (thousand_baht, read from page image)"
+2026Q2,2025Q2,Southeast Life,oci_total,-657.69,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed (657,690) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Southeast Life,equity_open,9517.912,Extracted,"file p.10 SOCE total equity at 1 January; read from the text layer; restated balance printed 9,517,912 (thousand_baht, read from page image)"
+2026Q2,2025Q2,Southeast Life,equity_open,8697.654,Extracted,"file p.9 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 8,697,654 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Samsung Life,ra_release,29.675,Extracted,"file p.33 9 printed 29,675 (thousand_baht, read from page image)"
 2026Q2,2025Q2,Samsung Life,ra_release,25.024,Extracted,"file p.130 15.1 total printed 25,024 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Samsung Life,bel_release,427.494,Extracted,"file p.33 9 printed 427,494 (thousand_baht, read from page image)"
