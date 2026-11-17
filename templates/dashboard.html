@@ -153,6 +153,8 @@ table.data{border-collapse:collapse;width:100%;font-size:13px}
 table.data th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:550;text-align:right;
   padding:10px 8px;border-bottom:1px solid var(--axis);white-space:nowrap;vertical-align:bottom}
 table.data th.l,table.data td.l{text-align:left}
+/* headers centred in every table (owner decision); the cells keep their own alignment */
+table.data th,table.data th.l{text-align:center}
 table.data td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap;font-variant-numeric:tabular-nums}
 table.data tr:last-child td{border-bottom:0}
 table.data tr.focus td{background:var(--focus-soft)}
