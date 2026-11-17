@@ -281,12 +281,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Prudential Life,nb_loss_component,93.652,Extracted,"file p.38 7.3 total, onerous contracts printed 93,652 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Prudential Life,insurance_revenue,9596.379,Extracted,"file p.7 SCI nine months (equals 6) printed 9,596,379 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Prudential Life,insurance_service_expense,-7954.165,Extracted,"file p.7 SCI nine months (equals 6) printed (7,954,165) (thousand_baht, read from page image)"
-2025Q3,2025Q3,Prudential Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Prudential Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Prudential Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Prudential Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Prudential Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Prudential Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Prudential Life,oci_debt_fvoci,14597.079,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 14,597,079 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Prudential Life,oci_ins_finance,-13598.447,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax printed (13,598,447) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Prudential Life,oci_reins_finance,-45.143,Extracted,"file p.8 SCI OCI, reinsurance contracts held before tax printed (45,143) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Prudential Life,oci_equity_fvoci,2963.786,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed 2,963,786 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Prudential Life,oci_total,6158.93,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed 6,158,930 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Prudential Life,equity_open,25902.534,Extracted,"file p.9 SOCE total equity at 1 January; restated balance at 1 January printed 25,902,534 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Generali Life,ra_release,28.818,Extracted,"file p.148 9.1.1 total printed 28,818 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Generali Life,bel_release,915.247,Extracted,"file p.148 9.1.1 total printed 915,247 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Generali Life,paa_revenue,3269.743,Extracted,"file p.149 9.1.1 PAA revenue printed 3,269,743 (thousand_baht, read from page image)"

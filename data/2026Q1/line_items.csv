@@ -563,18 +563,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,Prudential Life,insurance_revenue,3230.567,Extracted,"file p.5 SCI (equals 6) printed 3,230,567 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Prudential Life,insurance_service_expense,-2704.105,Extracted,"file p.5 SCI (equals 5) printed (2,704,105) (thousand_baht, read from page image)"
 2026Q1,2025Q1,Prudential Life,insurance_service_expense,-2673.295,Extracted,"file p.5 SCI (equals 6) printed (2,673,295) (thousand_baht, read from page image)"
-2026Q1,2026Q1,Prudential Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Prudential Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Prudential Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Prudential Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Prudential Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Prudential Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Prudential Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Prudential Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Prudential Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Prudential Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Prudential Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Prudential Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,Prudential Life,oci_debt_fvoci,-15342.801,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (15,342,801) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Prudential Life,oci_debt_fvoci,3223.99,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 3,223,990 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Prudential Life,oci_ins_finance,11890.943,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed 11,890,943 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Prudential Life,oci_ins_finance,-4136.409,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed (4,136,409) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Prudential Life,oci_reins_finance,42.482,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed 42,482 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Prudential Life,oci_reins_finance,-10.248,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed (10,248) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Prudential Life,oci_equity_fvoci,781.727,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed 781,727 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Prudential Life,oci_equity_fvoci,-844.957,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (844,957) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Prudential Life,oci_total,-9188.202,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (9,188,202) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Prudential Life,oci_total,-893.101,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (893,101) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Prudential Life,equity_open,28581.078,Extracted,"file p.7 SOCE total equity at 1 January printed 28,581,078 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Prudential Life,equity_open,25902.534,Extracted,"file p.7 SOCE total equity at 1 January; restated balance at 1 January printed 25,902,534 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Generali Life,ra_release,10.361,Extracted,"file p.87 7.1.1 total printed 10,361 (thousand_baht, read from page image)"
 2026Q1,2025Q1,Generali Life,ra_release,9.257,Extracted,"file p.146 9.1.1 total printed 9,257 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Generali Life,bel_release,321.435,Extracted,"file p.87 7.1.1 total printed 321,435 (thousand_baht, read from page image)"

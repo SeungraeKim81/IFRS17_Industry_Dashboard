@@ -318,6 +318,66 @@
     "note": "SCI nine months (equals 6)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "14,597,079",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "(13,598,447)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "(45,143)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "2,963,786",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q3": {
+    "page": 8,
+    "printed": "6,158,930",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q3": {
+    "page": 9,
+    "printed": "25,902,534",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดเก้าเดือนสิ้นสุดวันที่ 30 กันยายน 2568 (หน่วย: พันบาท)"
+   }
   }
  },
  "items_3m": {
