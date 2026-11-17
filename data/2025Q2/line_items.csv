@@ -533,12 +533,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Samsung Life,nb_loss_component,38.586,Extracted,"file p.76 1.3 total, onerous contracts printed 38,586 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Samsung Life,insurance_revenue,1062.04,Extracted,"file p.8 SCI (equals 15.1) printed 1,062,040 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Samsung Life,insurance_service_expense,-706.443,Extracted,"file p.8 SCI (equals 15.1) printed (706,443) (thousand_baht, read from page image)"
-2025Q2,2025Q2,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Samsung Life,oci_debt_fvoci,2679.161,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax; read from the text layer printed 2,679,161 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Samsung Life,oci_ins_finance,-2159.991,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax; read from the text layer printed (2,159,991) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Samsung Life,oci_reins_finance,6.724,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax; read from the text layer printed 6,724 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Samsung Life,oci_equity_fvoci,-79.274,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax; read from the text layer printed (79,274) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Samsung Life,oci_total,356.66,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax; read from the text layer printed 356,660 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Samsung Life,equity_open,3601.567,Extracted,"file p.11 SOCE total equity at 1 January; read from the text layer; restated balance printed 3,601,567 (thousand_baht, read from page image)"
 2025Q2,2025Q2,T Life,ra_release,18.309,Extracted,"file p.21 3.2.1 six months printed 18,309 (thousand_baht, read from page image)"
 2025Q2,2025Q2,T Life,bel_release,120.976,Extracted,"file p.21 3.2.1 six months printed 120,976 (thousand_baht, read from page image)"
 2025Q2,2025Q2,T Life,paa_revenue,0,Extracted,"file p.21 no PAA business printed - (thousand_baht, read from page image)"

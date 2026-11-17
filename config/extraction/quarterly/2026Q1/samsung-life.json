@@ -312,6 +312,66 @@
     "note": "SCI (equals 9)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท; ยังไม่ได้ตรวจสอบ แต่สอบทานแล้ว)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "(3,901,019,744)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "1,005,736,317",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "135,602",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "(9,054,125)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "oci_total": {
+   "2026Q1": {
+    "page": 7,
+    "printed": "(2,320,873,458)",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "2026Q1": {
+    "page": 8,
+    "printed": "5,215,088,838",
+    "unit": "baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2569 (หน่วย: บาท)"
+   }
   }
  },
  "items_3m": {

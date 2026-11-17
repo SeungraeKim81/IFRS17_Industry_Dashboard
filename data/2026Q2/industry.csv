@@ -19,9 +19,9 @@ fiscal_year,metric,aggregate,median,n
 2026Q2,nb_to_release,1.420535,1.619604,20
 2026Q2,csm_adj_ratio,-0.005145,-0.007165,20
 2026Q2,net_inv_ratio,0.281758,0.317276,20
-2026Q2,oci_total,,,0
-2026Q2,oci_ratio,,,0
-2026Q2,oci_offset,,,0
+2026Q2,oci_total,-1953.458126,-1953.458126,1
+2026Q2,oci_ratio,-0.374578,-0.374578,1
+2026Q2,oci_offset,0.240091,0.240091,1
 2026Q2,nb_csm_margin,0.13926,0.119801,20
 2026Q2,acq_cost_ratio,0.147778,0.138077,19
 2026Q2,nb_claims_ratio,0.697251,0.702398,19
@@ -52,9 +52,9 @@ fiscal_year,metric,aggregate,median,n
 2025Q2,nb_to_release,1.327109,1.096185,18
 2025Q2,csm_adj_ratio,-0.000082,-0.005779,18
 2025Q2,net_inv_ratio,0.242604,0.286859,17
-2025Q2,oci_total,,,0
-2025Q2,oci_ratio,,,0
-2025Q2,oci_offset,,,0
+2025Q2,oci_total,356.66,356.66,1
+2025Q2,oci_ratio,0.099029,0.099029,1
+2025Q2,oci_offset,0.803709,0.803709,1
 2025Q2,nb_csm_margin,0.124922,0.10525,18
 2025Q2,acq_cost_ratio,0.143325,0.134806,17
 2025Q2,nb_claims_ratio,0.71077,0.756118,17

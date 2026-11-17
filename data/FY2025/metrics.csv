@@ -399,6 +399,9 @@ Rabbit Life,FY2025,net_inv_ratio,0.851316,2,20
 BUI Life,FY2025,net_inv_ratio,0.912476,1,20
 Phillip Life,FY2025,net_inv_ratio,0.75631,3,20
 Saha Life,FY2025,net_inv_ratio,0.286193,12,20
+Samsung Life,FY2025,oci_total,997.076925,1,1
+Samsung Life,FY2025,oci_ratio,0.276845,1,1
+Samsung Life,FY2025,oci_offset,0.549503,1,1
 AIA Thailand,FY2025,nb_csm_margin,0.153078,2,20
 Thai Life,FY2025,nb_csm_margin,0.147056,3,20
 Muang Thai Life,FY2025,nb_csm_margin,0.091085,11,20
@@ -937,6 +940,9 @@ Rabbit Life,FY2024,net_inv_ratio,0.723189,3,20
 BUI Life,FY2024,net_inv_ratio,0.906833,2,20
 Phillip Life,FY2024,net_inv_ratio,0.473722,6,20
 Saha Life,FY2024,net_inv_ratio,0.061518,18,20
+Samsung Life,FY2024,oci_total,1156.022688,1,1
+Samsung Life,FY2024,oci_ratio,0.74004,1,1
+Samsung Life,FY2024,oci_offset,0.384022,1,1
 AIA Thailand,FY2024,nb_csm_margin,0.164164,3,20
 Thai Life,FY2024,nb_csm_margin,0.146176,5,20
 Muang Thai Life,FY2024,nb_csm_margin,0.137159,7,20

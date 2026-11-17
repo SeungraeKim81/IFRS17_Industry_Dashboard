@@ -1067,18 +1067,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2025Q2,Samsung Life,insurance_revenue,1062.04,Extracted,"file p.8 SCI (equals 15.1) printed 1,062,040 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Samsung Life,insurance_service_expense,-876.495242,Extracted,"file p.8 SCI (equals 9) printed (876,495,242) (baht, read from page image)"
 2026Q2,2025Q2,Samsung Life,insurance_service_expense,-706.443,Extracted,"file p.8 SCI (equals 15.1) printed (706,443) (thousand_baht, read from page image)"
-2026Q2,2026Q2,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,Samsung Life,oci_debt_fvoci,-3359.364346,Extracted,"file p.9 SCI OCI, debt FVOCI before tax printed (3,359,364,346) (baht, read from page image)"
+2026Q2,2025Q2,Samsung Life,oci_debt_fvoci,2679.161,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax; read from the text layer printed 2,679,161 (thousand_baht, read from page image)"
+2026Q2,2026Q2,Samsung Life,oci_ins_finance,807.158843,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed 807,158,843 (baht, read from page image)"
+2026Q2,2025Q2,Samsung Life,oci_ins_finance,-2159.991,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax; read from the text layer printed (2,159,991) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Samsung Life,oci_reins_finance,-0.606041,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (606,041) (baht, read from page image)"
+2026Q2,2025Q2,Samsung Life,oci_reins_finance,6.724,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax; read from the text layer printed 6,724 (thousand_baht, read from page image)"
+2026Q2,2026Q2,Samsung Life,oci_equity_fvoci,108.732767,Extracted,"file p.9 SCI OCI, equity FVOCI before tax printed 108,732,767 (baht, read from page image)"
+2026Q2,2025Q2,Samsung Life,oci_equity_fvoci,-79.274,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax; read from the text layer printed (79,274) (thousand_baht, read from page image)"
+2026Q2,2026Q2,Samsung Life,oci_total,-1953.458126,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed (1,953,458,126) (baht, read from page image)"
+2026Q2,2025Q2,Samsung Life,oci_total,356.66,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax; read from the text layer printed 356,660 (thousand_baht, read from page image)"
+2026Q2,2026Q2,Samsung Life,equity_open,5215.088838,Extracted,"file p.10 SOCE total equity at 1 January 2569 printed 5,215,088,838 (baht, read from page image)"
+2026Q2,2025Q2,Samsung Life,equity_open,3601.567,Extracted,"file p.11 SOCE total equity at 1 January; read from the text layer; restated balance printed 3,601,567 (thousand_baht, read from page image)"
 2026Q2,2026Q2,T Life,ra_release,16.689,Extracted,"file p.14 2.2.1 six months printed 16,689 (thousand_baht, read from page image)"
 2026Q2,2025Q2,T Life,ra_release,18.309,Extracted,"file p.21 3.2.1 six months printed 18,309 (thousand_baht, read from page image)"
 2026Q2,2026Q2,T Life,bel_release,93.414,Extracted,"file p.14 2.2.1 six months printed 93,414 (thousand_baht, read from page image)"

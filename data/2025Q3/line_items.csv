@@ -533,12 +533,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Samsung Life,nb_loss_component,96.054,Extracted,"file p.76 1.3 total, onerous contracts printed 96,054 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Samsung Life,insurance_revenue,1673.994,Extracted,"file p.8 SCI nine months (equals 15.1) printed 1,673,994 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Samsung Life,insurance_service_expense,-1125.53,Extracted,"file p.8 SCI nine months (equals 15.1) printed (1,125,530) (thousand_baht, read from page image)"
-2025Q3,2025Q3,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Samsung Life,oci_debt_fvoci,3665.491,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax printed 3,665,491 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Samsung Life,oci_ins_finance,-2570.557,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax printed (2,570,557) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Samsung Life,oci_reins_finance,-2.601,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax printed (2,601) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Samsung Life,oci_equity_fvoci,388.654,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax printed 388,654 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Samsung Life,oci_total,1183.952,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax printed 1,183,952 (thousand_baht, read from page image)"
+2025Q3,2025Q3,Samsung Life,equity_open,3601.567,Extracted,"file p.11 SOCE total equity at 1 January; read from the text layer; restated balance printed 3,601,567 (thousand_baht, read from page image)"
 2025Q3,2025Q3,T Life,ra_release,26.662,Extracted,"file p.38 4.2.1 nine months printed 26,662 (thousand_baht, read from page image)"
 2025Q3,2025Q3,T Life,bel_release,183.209,Extracted,"file p.38 4.2.1 nine months printed 183,209 (thousand_baht, read from page image)"
 2025Q3,2025Q3,T Life,paa_revenue,0,Extracted,"file p.38 no PAA business printed - (thousand_baht, read from page image)"

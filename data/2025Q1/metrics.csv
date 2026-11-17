@@ -378,6 +378,9 @@ Samsung Life,2025Q1,net_inv_ratio,0.291843,9,18
 T Life,2025Q1,net_inv_ratio,0.188794,12,18
 BUI Life,2025Q1,net_inv_ratio,0.693492,2,18
 Phillip Life,2025Q1,net_inv_ratio,0.639193,3,18
+Samsung Life,2025Q1,oci_total,-326.987,1,1
+Samsung Life,2025Q1,oci_ratio,-0.09079,1,1
+Samsung Life,2025Q1,oci_offset,1.536511,1,1
 AIA Thailand,2025Q1,nb_csm_margin,0.153936,2,19
 Thai Life,2025Q1,nb_csm_margin,0.176353,1,19
 Muang Thai Life,2025Q1,nb_csm_margin,0.13587,6,19

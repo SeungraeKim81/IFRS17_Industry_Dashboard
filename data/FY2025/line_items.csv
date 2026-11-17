@@ -1067,18 +1067,18 @@ FY2025,FY2025,Samsung Life,insurance_revenue,2321.096,Extracted,"file p.152 17.1
 FY2025,FY2024,Samsung Life,insurance_revenue,1821.682,Extracted,"file p.153 17.1 printed 1,821,682 (thousand_baht, text layer)"
 FY2025,FY2025,Samsung Life,insurance_service_expense,-1604.785,Extracted,"file p.152 17.1 printed (1,604,785) (thousand_baht, text layer)"
 FY2025,FY2024,Samsung Life,insurance_service_expense,-1069.455,Extracted,"file p.153 17.1 printed (1,069,455) (thousand_baht, text layer)"
-FY2025,FY2025,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Samsung Life,oci_debt_fvoci,2390.154376,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax; read from the text layer printed 2,390,154,376 (baht, read from page image)"
+FY2025,FY2024,Samsung Life,oci_debt_fvoci,2344.43714,Extracted,"file p.9 SCI OCI, debt instruments at FVOCI before tax; read from the text layer printed 2,344,437,140 (baht, read from page image)"
+FY2025,FY2025,Samsung Life,oci_ins_finance,-1309.691291,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax; read from the text layer printed (1,309,691,291) (baht, read from page image)"
+FY2025,FY2024,Samsung Life,oci_ins_finance,-903.590901,Extracted,"file p.9 SCI OCI, insurance contracts issued before tax; read from the text layer printed (903,590,901) (baht, read from page image)"
+FY2025,FY2025,Samsung Life,oci_reins_finance,-3.70637,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax; read from the text layer printed (3,706,370) (baht, read from page image)"
+FY2025,FY2024,Samsung Life,oci_reins_finance,3.276261,Extracted,"file p.9 SCI OCI, reinsurance contracts held before tax; read from the text layer printed 3,276,261 (baht, read from page image)"
+FY2025,FY2025,Samsung Life,oci_equity_fvoci,185.259337,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax; read from the text layer printed 185,259,337 (baht, read from page image)"
+FY2025,FY2024,Samsung Life,oci_equity_fvoci,3.793523,Extracted,"file p.9 SCI OCI, equity instruments at FVOCI before tax; read from the text layer printed 3,793,523 (baht, read from page image)"
+FY2025,FY2025,Samsung Life,oci_total,997.076925,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax; read from the text layer printed 997,076,925 (baht, read from page image)"
+FY2025,FY2024,Samsung Life,oci_total,1156.022688,Extracted,"file p.9 SCI other comprehensive income for the period, net of tax; read from the text layer printed 1,156,022,688 (baht, read from page image)"
+FY2025,FY2025,Samsung Life,equity_open,3601.566834,Extracted,"file p.11 SOCE total equity at 1 January; read from the text layer; restated balance printed 3,601,566,834 (baht, read from page image)"
+FY2025,FY2024,Samsung Life,equity_open,1562.108786,Extracted,"file p.10 SOCE total equity at 1 January; read from the text layer; restated balance printed 1,562,108,786 (baht, read from page image)"
 FY2025,FY2025,T Life,ra_release,34.665,Extracted,"file p.75 4.2.1 printed 34,665 (thousand_baht, read from page image)"
 FY2025,FY2024,T Life,ra_release,34.619,Extracted,"file p.75 4.2.1 printed 34,619 (thousand_baht, read from page image)"
 FY2025,FY2025,T Life,bel_release,244.57,Extracted,"file p.75 4.2.1 printed 244,570 (thousand_baht, read from page image)"

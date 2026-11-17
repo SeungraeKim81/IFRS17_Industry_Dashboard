@@ -399,6 +399,9 @@ Rabbit Life,2026Q2,net_inv_ratio,0.832919,2,20
 BUI Life,2026Q2,net_inv_ratio,0.82476,3,20
 Phillip Life,2026Q2,net_inv_ratio,0.861995,1,20
 Saha Life,2026Q2,net_inv_ratio,0.611422,6,20
+Samsung Life,2026Q2,oci_total,-1953.458126,1,1
+Samsung Life,2026Q2,oci_ratio,-0.374578,1,1
+Samsung Life,2026Q2,oci_offset,0.240091,1,1
 AIA Thailand,2026Q2,nb_csm_margin,0.165698,4,20
 Thai Life,2026Q2,nb_csm_margin,0.177671,2,20
 Muang Thai Life,2026Q2,nb_csm_margin,0.129651,9,20
@@ -896,6 +899,9 @@ Southeast Life,2025Q2,net_inv_ratio,0.442079,4,17
 Samsung Life,2025Q2,net_inv_ratio,0.310699,8,17
 T Life,2025Q2,net_inv_ratio,0.423638,5,17
 BUI Life,2025Q2,net_inv_ratio,0.918607,1,17
+Samsung Life,2025Q2,oci_total,356.66,1,1
+Samsung Life,2025Q2,oci_ratio,0.099029,1,1
+Samsung Life,2025Q2,oci_offset,0.803709,1,1
 AIA Thailand,2025Q2,nb_csm_margin,0.157519,1,18
 Thai Life,2025Q2,nb_csm_margin,0.156709,2,18
 Muang Thai Life,2025Q2,nb_csm_margin,0.113074,8,18
