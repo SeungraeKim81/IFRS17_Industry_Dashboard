@@ -21,7 +21,7 @@ fiscal_year,metric,aggregate,median,n
 2026Q1,net_inv_ratio,0.274411,0.313896,20
 2026Q1,oci_total,-95095.215496,-1652.679991,20
 2026Q1,oci_ratio,-0.145528,-0.106263,20
-2026Q1,oci_offset,0.719338,0.772252,20
+2026Q1,oci_offset,0.719338,0.746231,18
 2026Q1,nb_csm_margin,0.13198,0.114823,20
 2026Q1,acq_cost_ratio,0.141234,0.141706,19
 2026Q1,nb_claims_ratio,0.710789,0.712066,19
@@ -54,7 +54,7 @@ fiscal_year,metric,aggregate,median,n
 2025Q1,net_inv_ratio,0.222391,0.291795,18
 2025Q1,oci_total,-16112.683458,-55.274708,19
 2025Q1,oci_ratio,-0.02843,-0.01583,19
-2025Q1,oci_offset,0.984644,1.026696,19
+2025Q1,oci_offset,0.984644,1.023196,14
 2025Q1,nb_csm_margin,0.132096,0.109796,19
 2025Q1,acq_cost_ratio,0.137866,0.129084,18
 2025Q1,nb_claims_ratio,0.706857,0.728803,18

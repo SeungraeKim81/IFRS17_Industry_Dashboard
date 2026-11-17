@@ -21,7 +21,7 @@ fiscal_year,metric,aggregate,median,n
 2025Q1,net_inv_ratio,0.222391,0.291795,18
 2025Q1,oci_total,-16112.683458,-55.274708,19
 2025Q1,oci_ratio,-0.02843,-0.01583,19
-2025Q1,oci_offset,0.984644,1.026696,19
+2025Q1,oci_offset,0.984644,1.023196,14
 2025Q1,nb_csm_margin,0.132096,0.109796,19
 2025Q1,acq_cost_ratio,0.137866,0.129084,18
 2025Q1,nb_claims_ratio,0.706857,0.728803,18
