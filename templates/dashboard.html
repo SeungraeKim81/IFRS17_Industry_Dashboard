@@ -153,9 +153,23 @@ table.data{border-collapse:collapse;width:100%;font-size:13px}
 table.data th{font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:550;text-align:right;
   padding:10px 8px;border-bottom:1px solid var(--axis);white-space:nowrap;vertical-align:bottom}
 table.data th.l,table.data td.l{text-align:left}
+/* headers centred in every table (owner decision); the cells keep their own alignment */
+table.data th,table.data th.l{text-align:center}
 table.data td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--grid);white-space:nowrap;font-variant-numeric:tabular-nums}
 table.data tr:last-child td{border-bottom:0}
 table.data tr.focus td{background:var(--focus-soft)}
+/* definitions on narrow screens (owner decision): one block per indicator - area, name, then the definition
+   below it - so the definition is never pushed off screen */
+@media(max-width:620px){
+  table#defs thead{display:none}
+  table#defs,table#defs tbody,table#defs tr,table#defs td{display:block;width:auto}
+  table#defs tr{padding:9px 12px;border-bottom:1px solid var(--grid)}
+  table#defs tr:last-child{border-bottom:0}
+  table#defs td{border:0;padding:0;white-space:normal!important;text-align:left}
+  table#defs td:nth-child(1){font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  table#defs td:nth-child(2){font-weight:600;color:var(--ink);margin:2px 0 3px}
+  table#defs td:nth-child(3){color:var(--ink-2);line-height:1.45}
+}
 table.data tr.focus td.l{font-weight:600}
 table.data tr.tier-break td{border-top:2px solid var(--axis)}
 table#all th{white-space:normal;line-height:1.3}
@@ -252,28 +266,6 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
     <div class="tbl-wrap"><table class="data" id="mktM"></table></div></div>
 </section>
 
-<section id="s-csm">
-  <h2 data-t="h2csm"></h2>
-  <p class="sec-note" data-t="noteCsm"></p>
-  <div class="panel"><h3 data-t="h3wf"></h3><div class="sub" id="wfSub"></div>
-    <svg id="wf" viewBox="0 0 900 320" role="img" data-t-aria="ariaWf"></svg>
-    <div class="legend">
-      <span class="key"><i class="sq" style="background:var(--total)"></i><span data-t="lgOpenClose"></span></span>
-      <span class="key"><i class="sq" style="background:var(--pos)"></i><span data-t="lgIncrease"></span></span>
-      <span class="key"><i class="sq" style="background:var(--neg)"></i><span data-t="lgDecrease"></span></span>
-    </div>
-  </div>
-  <div class="panel" style="margin-top:20px"><h3 data-t="h3quad"></h3><div class="sub" id="qSub"></div>
-    <svg id="quad" viewBox="0 0 900 470" role="img" data-t-aria="ariaQuad"></svg>
-    <div class="legend">
-      <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span></span>
-      <span class="key"><i class="dot" style="background:var(--peer)"></i><span data-t="lgOthers"></span></span>
-      <span class="key" style="color:var(--muted)">&#9650;&nbsp;&#9654;&nbsp;<span data-t="lgCeiling"></span></span>
-      <span class="key" style="color:var(--muted)" data-t="lgBubble"></span>
-    </div>
-  </div>
-</section>
-
 <section id="s-nb">
   <h2 data-t="h2nb"></h2>
   <p class="sec-note" data-t="noteNb"></p>
@@ -283,6 +275,28 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
       <span class="key"><i class="dot" style="border:2px solid var(--focus);background:transparent"></i><span class="f-name"></span> <span class="p-cmp"></span></span>
       <span class="key"><i class="dot" style="background:var(--peer);opacity:.6"></i><span data-t="lgOthers"></span></span>
       <span class="key"><i class="sq" style="width:2px;height:12px;background:var(--ink-2)"></i><span data-t="lgMedian"></span></span>
+    </div>
+  </div>
+</section>
+
+<section id="s-csm">
+  <h2 data-t="h2csm"></h2>
+  <p class="sec-note" data-t="noteCsm"></p>
+  <div class="panel"><h3 data-t="h3quad"></h3><div class="sub" id="qSub"></div>
+    <svg id="quad" viewBox="0 0 900 470" role="img" data-t-aria="ariaQuad"></svg>
+    <div class="legend">
+      <span class="key"><i class="dot" style="background:var(--focus)"></i><span class="f-name"></span></span>
+      <span class="key"><i class="dot" style="background:var(--peer)"></i><span data-t="lgOthers"></span></span>
+      <span class="key" style="color:var(--muted)">&#9650;&nbsp;&#9654;&nbsp;<span data-t="lgCeiling"></span></span>
+      <span class="key" style="color:var(--muted)" data-t="lgBubble"></span>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:20px"><h3 data-t="h3wf"></h3><div class="sub" id="wfSub"></div>
+    <svg id="wf" viewBox="0 0 900 320" role="img" data-t-aria="ariaWf"></svg>
+    <div class="legend">
+      <span class="key"><i class="sq" style="background:var(--total)"></i><span data-t="lgOpenClose"></span></span>
+      <span class="key"><i class="sq" style="background:var(--pos)"></i><span data-t="lgIncrease"></span></span>
+      <span class="key"><i class="sq" style="background:var(--neg)"></i><span data-t="lgDecrease"></span></span>
     </div>
   </div>
 </section>
@@ -322,6 +336,11 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
   <div class="tbl-wrap"><table class="data" id="all"></table></div>
 </section>
 
+<section id="s-defs">
+  <h2 data-t="h2defs"></h2>
+  <div class="tbl-wrap"><table class="data" id="defs"></table></div>
+</section>
+
 <section id="s-dq"><details class="sec-fold">
   <summary><h2 data-t="h2dq"></h2></summary>
   <p class="sec-note" id="dqNote"></p>
@@ -334,8 +353,6 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 <section id="s-method"><details class="sec-fold">
   <summary><h2 data-t="h2method"></h2></summary>
   <div class="notes" id="commentary"></div>
-  <div class="notes"><h4 data-t="h4defs"></h4></div>
-  <div class="tbl-wrap" style="margin-top:8px"><table class="data" id="defs"></table></div>
   <div class="notes" id="extract"></div>
 </details></section>
 
@@ -365,16 +382,16 @@ const UI = {
     langName: "English", brandLabel: "IFRS 17 · Industry dashboard", keyMessages: "Key messages", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
     lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
-    toc: ["Focus", "Market position", "CSM movement", "New business", "Service margin", "Profit bridge", "All insurers", "Data quality", "Method & notes"],
+    toc: ["Focus", "Market position", "New business", "CSM movement", "Service margin", "Profit bridge", "All insurers", "Definitions", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
     noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and what the insurer earns this year (insurance revenue). Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
-    h2csm: "3&nbsp; CSM movement analysis",
-    noteCsm: "How the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total. The quadrant then sets the release pace against how much new business replaces what was released.",
+    h2csm: "4&nbsp; CSM movement analysis",
+    noteCsm: "The quadrant sets each insurer's release pace against how much new business replaces what was released. The roll-forward below then shows how the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total.",
     h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
     lgOpenClose: "Opening / closing", lgIncrease: "Increase", lgDecrease: "Decrease",
     h3quad: "CSM sustainability quadrant", ariaQuad: "Scatter of CSM release ratio against new business divided by release",
     lgOthers: "Other insurers", lgCeiling: "plotted at the axis limit, true value labelled", lgBubble: "bubble area = closing CSM",
-    h2nb: "4&nbsp; New-business quality",
+    h2nb: "3&nbsp; New-business quality",
     noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median.",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Insurance service margin, split by RA policy",
@@ -389,9 +406,9 @@ const UI = {
     h2all: "7&nbsp; All insurers",
     noteAll: "Click a column heading to sort. The view switch shows the current year, the comparative year or the change between them (percentage-point change for ratios). The download gives the full indicator set as CSV.",
     download: "Download CSV", viewChange: "Change", tableView: "Table view",
-    h2dq: "8&nbsp; Data quality", h4flags: "Plausibility flags",
-    noteFlags: "Raised automatically for review; they do not stop the build. Each one is either explained in section 9 or followed up with the source.",
-    h2method: "9&nbsp; Method &amp; notes", h4defs: "Indicator definitions", h4comp: "Comparability notes", compYear: "Comparative year",
+    h2dq: "9&nbsp; Data quality", h4flags: "Plausibility flags",
+    noteFlags: "Raised automatically for review; they do not stop the build. Each one is either explained in section 10 or followed up with the source.",
+    h2method: "10&nbsp; Method &amp; notes", h2defs: "8&nbsp; Indicator definitions", h4comp: "Comparability notes", compYear: "Comparative year",
     h4extract: "Extraction notes by insurer", notesLang: "",
     na: "n/a", nm: "n.m.", noCmp: "no comparative", nmBase: "n.m. vs {cmp} (base ≤ 0)", vs: "vs {cmp}", pp: "pp", m: "m",
     rankOf: "{r} of {n} by revenue", raChip: "RA {p}", raDis: "disaggregated", raNot: "not disagg.", raYes: "Yes", raNo: "No",
@@ -445,16 +462,16 @@ const UI = {
     langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", keyMessages: "핵심 메시지", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
     lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
-    toc: ["강조 보험사", "시장 지위", "CSM 변동분석", "신계약", "보험서비스이익률", "이익 브리지", "전체 보험사", "데이터 품질", "방법론·주석"],
+    toc: ["강조 보험사", "시장 지위", "신계약", "CSM 변동분석", "보험서비스이익률", "이익 브리지", "전체 보험사", "지표 정의", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
     noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 벌어들인 이익의 원천(보험수익). 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
-    h2csm: "3&nbsp; CSM 변동분석",
-    noteCsm: "강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다. 이어서 사분면에서 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다.",
+    h2csm: "4&nbsp; CSM 변동분석",
+    noteCsm: "사분면에서 보험사별 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다. 이어서 아래 변동표에서 강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다.",
     h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
     lgOpenClose: "기초 / 기말", lgIncrease: "증가", lgDecrease: "감소",
     h3quad: "CSM 지속가능성 사분면", ariaQuad: "CSM 상각률과 신계약 CSM ÷ 상각 배수의 산점도",
     lgOthers: "다른 보험사", lgCeiling: "축 한계에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
-    h2nb: "4&nbsp; 신계약 품질",
+    h2nb: "3&nbsp; 신계약 품질",
     noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다.",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 보험서비스이익률 (RA 분리 정책별)",
@@ -469,9 +486,9 @@ const UI = {
     h2all: "7&nbsp; 전체 보험사",
     noteAll: "열 이름을 누르면 정렬된다. 보기 전환으로 당기, 비교기간, 두 기간의 차이(비율은 %p 변동)를 볼 수 있다. 다운로드하면 전체 지표를 CSV로 받는다.",
     download: "CSV 다운로드", viewChange: "변동", tableView: "표 보기",
-    h2dq: "8&nbsp; 데이터 품질", h4flags: "검토 플래그",
-    noteFlags: "검토용으로 자동 생성되며 빌드를 멈추지 않는다. 각 항목은 9장에서 설명하거나 원천 자료로 확인한다.",
-    h2method: "9&nbsp; 방법론 및 주석", h4defs: "지표 정의", h4comp: "비교 가능성 관련 주석", compYear: "비교기간",
+    h2dq: "9&nbsp; 데이터 품질", h4flags: "검토 플래그",
+    noteFlags: "검토용으로 자동 생성되며 빌드를 멈추지 않는다. 각 항목은 10장에서 설명하거나 원천 자료로 확인한다.",
+    h2method: "10&nbsp; 방법론 및 주석", h2defs: "8&nbsp; 지표 정의", h4comp: "비교 가능성 관련 주석", compYear: "비교기간",
     h4extract: "보험사별 추출 메모", notesLang: "",
     na: "없음", nm: "산출 불가", noCmp: "비교기간 없음", nmBase: "{cmp} 대비 산출 불가 (기준값 ≤ 0)", vs: "{cmp} 대비", pp: "%p", m: "백만",
     rankOf: "보험수익 {n}개사 중 {r}", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
@@ -526,16 +543,16 @@ const UI = {
     langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", keyMessages: "ประเด็นสำคัญ", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
     lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ในงบการเงินก่อนนำมาแสดงบนหน้านี้",
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
-    toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "การเปลี่ยนแปลง CSM", "ธุรกิจใหม่", "Service margin", "องค์ประกอบกำไร", "บริษัททั้งหมด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
+    toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "ธุรกิจใหม่", "การเปลี่ยนแปลง CSM", "Service margin", "องค์ประกอบกำไร", "บริษัททั้งหมด", "นิยามตัวชี้วัด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
     h2market: "2&nbsp; สถานะทางการตลาด",
     noteMarket: "ขนาดตามสามมิติ: กำไรในอนาคตที่เพิ่มขึ้นจากการขายในปีนี้ (New-business CSM) กำไรที่สะสมไว้สำหรับปีต่อ ๆ ไป (CSM closing) และรายได้ที่บริษัทได้รับในปีนี้ (Insurance revenue) เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม",
-    h2csm: "3&nbsp; การวิเคราะห์การเปลี่ยนแปลง CSM",
-    noteCsm: "การเปลี่ยนแปลงของ CSM ในรอบงวด ปรับเป็นดัชนีโดยให้ CSM ต้นงวด&nbsp;=&nbsp;100 เปรียบเทียบบริษัทที่เน้นกับยอดรวมของอุตสาหกรรม จากนั้นแผนภาพสี่ส่วนเปรียบเทียบความเร็วในการรับรู้ CSM กับปริมาณธุรกิจใหม่ที่เข้ามาทดแทนส่วนที่รับรู้ไป",
+    h2csm: "4&nbsp; การวิเคราะห์การเปลี่ยนแปลง CSM",
+    noteCsm: "แผนภาพสี่ส่วนเปรียบเทียบความเร็วในการรับรู้ CSM ของแต่ละบริษัทกับปริมาณธุรกิจใหม่ที่เข้ามาทดแทนส่วนที่รับรู้ไป จากนั้นตารางการเปลี่ยนแปลงด้านล่างแสดงการเปลี่ยนแปลงของ CSM ในรอบงวด ปรับเป็นดัชนีโดยให้ CSM ต้นงวด&nbsp;=&nbsp;100 เปรียบเทียบบริษัทที่เน้นกับยอดรวมของอุตสาหกรรม",
     h3wf: "การเปลี่ยนแปลง CSM (ต้นงวด = 100)", ariaWf: "แผนภูมิน้ำตกการเปลี่ยนแปลง CSM ของบริษัทที่เน้นและอุตสาหกรรม",
     lgOpenClose: "Opening / closing", lgIncrease: "เพิ่มขึ้น", lgDecrease: "ลดลง",
     h3quad: "แผนภาพสี่ส่วนความยั่งยืนของ CSM", ariaQuad: "แผนภาพการกระจายของ CSM release ratio เทียบกับ New business / release",
     lgOthers: "บริษัทอื่น", lgCeiling: "แสดงที่ขอบแกน พร้อมป้ายค่าจริง", lgBubble: "ขนาดวงกลม = CSM closing",
-    h2nb: "4&nbsp; คุณภาพธุรกิจใหม่",
+    h2nb: "3&nbsp; คุณภาพธุรกิจใหม่",
     noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม",
     ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
     h2ism: "5&nbsp; Insurance service margin แยกตามนโยบาย RA",
@@ -550,9 +567,9 @@ const UI = {
     h2all: "7&nbsp; บริษัททั้งหมด",
     noteAll: "คลิกหัวคอลัมน์เพื่อเรียงลำดับ ปุ่มสลับมุมมองแสดงงวดปัจจุบัน งวดเปรียบเทียบ หรือการเปลี่ยนแปลงระหว่างสองงวด (อัตราส่วนแสดงเป็นจุดร้อยละ) ปุ่มดาวน์โหลดให้ตัวชี้วัดทั้งหมดเป็นไฟล์ CSV",
     download: "ดาวน์โหลด CSV", viewChange: "การเปลี่ยนแปลง", tableView: "มุมมองตาราง",
-    h2dq: "8&nbsp; คุณภาพข้อมูล", h4flags: "ข้อสังเกตด้านความสมเหตุสมผล",
-    noteFlags: "สร้างขึ้นอัตโนมัติเพื่อการตรวจทาน และไม่หยุดการสร้างหน้า แต่ละรายการจะอธิบายไว้ในส่วนที่ 9 หรือตรวจสอบกับแหล่งข้อมูลต้นทาง",
-    h2method: "9&nbsp; วิธีการและหมายเหตุ", h4defs: "นิยามตัวชี้วัด", h4comp: "หมายเหตุด้านการเปรียบเทียบ", compYear: "งวดเปรียบเทียบ",
+    h2dq: "9&nbsp; คุณภาพข้อมูล", h4flags: "ข้อสังเกตด้านความสมเหตุสมผล",
+    noteFlags: "สร้างขึ้นอัตโนมัติเพื่อการตรวจทาน และไม่หยุดการสร้างหน้า แต่ละรายการจะอธิบายไว้ในส่วนที่ 10 หรือตรวจสอบกับแหล่งข้อมูลต้นทาง",
+    h2method: "10&nbsp; วิธีการและหมายเหตุ", h2defs: "8&nbsp; นิยามตัวชี้วัด", h4comp: "หมายเหตุด้านการเปรียบเทียบ", compYear: "งวดเปรียบเทียบ",
     h4extract: "บันทึกการดึงข้อมูลรายบริษัท", notesLang: "",
     na: "n/a", nm: "n.m.", noCmp: "ไม่มีงวดเปรียบเทียบ", nmBase: "n.m. เทียบกับ {cmp} (ฐาน ≤ 0)", vs: "เทียบกับ {cmp}", pp: "pp", m: "ล้าน",
     rankOf: "{r} จาก {n} บริษัท ตาม Insurance revenue", raChip: "RA {p}", raDis: "แยก", raNot: "ไม่แยก", raYes: "แยก", raNo: "ไม่แยก",
@@ -682,7 +699,7 @@ function staticText() {
   $("#units").textContent = t(QTR ? (M.has_comparative ? "unitsQ" : "unitsQnoCmp") : "units",
     { unit: metaT("unit"), pe: metaT("period_end"), cmp: CMPL, n: COS.length, mo: M.ytd_months });
   periodLinks();
-  const ids = ["s-focus", "s-market", "s-csm", "s-nb", "s-ism", "s-bridge", "s-all", "s-dq", "s-method"];
+  const ids = ["s-focus", "s-market", "s-nb", "s-csm", "s-ism", "s-bridge", "s-all", "s-defs", "s-dq", "s-method"];
   $("#toc").innerHTML = t("toc").map((lab, i) => '<a href="#' + ids[i] + '">' + (i + 1) + " " + esc(lab) + "</a>").join("");
   $("#toc").setAttribute("aria-label", t("toc")[0]);
   const sel = $("#focusSel");
@@ -818,7 +835,7 @@ function market() {
   tm.querySelectorAll("tr[data-co]").forEach(tr => hover(tr, () => coTip(byName(tr.dataset.co))));
 }
 
-/* ---------- 3a waterfall ---------- */
+/* ---------- 4b waterfall ---------- */
 function waterfall() {
   const svg = $("#wf"); svg.textContent = "";
   const c = byName(F);
@@ -864,7 +881,7 @@ function waterfall() {
 // Approximate width of text at font size fs: a Korean character is about 1 em, others about 0.55 em.
 const textW = (s, fs) => [...s].reduce((a, ch) => a + (/[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]/.test(ch) ? 1 : 0.55) * fs, 0);
 
-/* ---------- 3b quadrant ---------- */
+/* ---------- 4a quadrant ---------- */
 function quadrant() {
   const svg = $("#quad"); svg.textContent = "";
   // axis limits: y at 3x; x at 30%, 1.5 times the top of the 5%-20% plausibility range. A point beyond
@@ -931,7 +948,7 @@ function quadrant() {
   });
 }
 
-/* ---------- 4 strips ---------- */
+/* ---------- 3 strips ---------- */
 // Break text into lines no wider than maxW (SVG units) at font size fs.
 function wrapText(s, maxW, fs) {
   const w = x => textW(x, fs);
@@ -950,7 +967,9 @@ function strips() {
   rows.forEach((k, ri) => {
     const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34;
     const all = COS.flatMap(c => [g(c, k), g(c, k, CMP)]).filter(v => v != null);
-    const cap = { nb_to_release: 3, onerous_ratio: 0.6 }[k] || null;
+    // axis limits (owner decision): 30% for the cost and onerous ratios, 3x for new business / release.
+    // A value beyond the limit sits on it with a › marker; its true value is in the label and tooltip.
+    const cap = { acq_cost_ratio: 0.3, onerous_ratio: 0.3, nb_to_release: 3 }[k] || null;
     let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
     const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
@@ -1129,7 +1148,7 @@ function downloadCsv() {
   document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500);
 }
 
-/* ---------- 8 data quality ---------- */
+/* ---------- 9 data quality ---------- */
 function dataQuality() {
   const defs = DATA.check_defs;
   let total = 0, ok = 0, nAcc = 0, nNa = 0;
@@ -1150,12 +1169,10 @@ function dataQuality() {
   $("#flags").innerHTML = DATA.flags.map(f => "<li><b>" + esc(f.company) + "</b> " + esc(fyL(f.fiscal_year)) + ": " + esc(flagMsg(f)) + "</li>").join("") || "<li>" + t("none") + "</li>";
 }
 
-/* ---------- 9 method ---------- */
+/* ---------- 10 method ---------- */
 function method() {
   $("#commentary").innerHTML = "<h4>" + t("h4comp") + "</h4><p><b>" + t("compYear") + ".</b> " + esc(metaT("comparative_caveat")) + "</p>" +
     DATA.commentary.filter(x => x.id !== "transition").map(x => "<p><b>" + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</p>").join("");
-  $("#defs").innerHTML = "<thead><tr><th class='l'>" + t("defArea") + "</th><th class='l'>" + t("defInd") + "</th><th class='l'>" + t("defDef") + "</th></tr></thead><tbody>" +
-    DATA.metric_defs.map(d => "<tr><td class='l'>" + esc(groupT(d.group)) + "</td><td class='l'>" + esc(mLabel(d.code)) + "</td><td class='l' style='white-space:normal'>" + esc(mFormula(d.code)) + "</td></tr>").join("") + "</tbody>";
   const tr = TR(), ex = $("#extract");
   ex.innerHTML = "<h4>" + t("h4extract") + "</h4>" + (tr && tr.notes_language_label ? "<p>" + esc(tr.notes_language_label) + "</p>" : "");
   COS.forEach(c => {
@@ -1167,10 +1184,16 @@ function method() {
   $("#foot").innerHTML = t("foot", { wb: esc(M.source_ref), gen: esc(M.generated), git: M.git ? t("footGit", { git: esc(M.git) }) : "" });
 }
 
+/* ---------- 8 definitions ---------- */
+function defs() {
+  $("#defs").innerHTML = "<thead><tr><th class='l'>" + t("defArea") + "</th><th class='l'>" + t("defInd") + "</th><th class='l'>" + t("defDef") + "</th></tr></thead><tbody>" +
+    DATA.metric_defs.map(d => "<tr><td class='l'>" + esc(groupT(d.group)) + "</td><td class='l'>" + esc(mLabel(d.code)) + "</td><td class='l' style='white-space:normal'>" + esc(mFormula(d.code)) + "</td></tr>").join("") + "</tbody>";
+}
+
 function renderAll() {
   staticText();
   $$(".f-name").forEach(e => e.textContent = F);
-  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); dataQuality(); method();
+  focusSection(); market(); waterfall(); quadrant(); strips(); margins(); bridge(); table(); defs(); dataQuality(); method();
 }
 (function init() {
   const h = new URLSearchParams(location.hash.slice(1));
