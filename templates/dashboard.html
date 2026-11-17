@@ -1017,10 +1017,16 @@ function stripTip(k, list) {
 }
 function strips(sel, rows) {
   const svg = $(sel); svg.textContent = "";
-  const W = 900, L = 200, R = 40, rowH = 88, T = 10, H = T + rows.length * rowH + 4, NEAR = 10;
+  const W = 900, L = 200, R = 40, rowH = 88, T = 10, NEAR = 10;
+  // a row grows when its definition wraps to many lines, so the reading direction under it never runs into
+  // the next row's name (the net investment ratio wraps to five lines)
+  const defOf = rows.map(k => wrapText(mFormula(k), L - 14, 10.5));
+  const ys = []; let yAt = T;
+  defOf.forEach(dl => { ys.push(yAt); yAt += Math.max(rowH, Math.ceil(42 + dl.length * 12.5)); });
+  const H = yAt + 4;
   svg.setAttribute("viewBox", "0 0 " + W + " " + H);
   rows.forEach((k, ri) => {
-    const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34, med = ind(k).median;
+    const d = DEF[k], y0 = ys[ri], cy = y0 + 34, med = ind(k).median;
     const pts = COS.map(c => ({ c, v: g(c, k) })).filter(p => p.v != null);
     const [lo, hi] = stripAxis(k, pts.map(p => p.v), med);
     const { ticks, step } = niceTicks(lo, hi, 6);
@@ -1031,7 +1037,7 @@ function strips(sel, rows) {
     const near = p => pts.filter(q => Math.abs(px(q.v) - px(p.v)) <= NEAR).sort((a, b) => a.v - b.v).map(q => q.c);
     // name, then its definition (as in the definitions table) in small type, then the reading direction
     svg.appendChild(el("text", { x: 0, y: cy - 14, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
-    const defLines = wrapText(mFormula(k), L - 14, 10.5);
+    const defLines = defOf[ri];
     defLines.forEach((s, i) => svg.appendChild(el("text", { x: 0, y: cy + 2 + i * 12.5, "font-size": 10.5, fill: "var(--ink-2)" }, s)));
     svg.appendChild(el("text", { x: 0, y: cy + 6 + defLines.length * 12.5, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
     ticks.forEach(tk => {
