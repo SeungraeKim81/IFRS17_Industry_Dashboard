@@ -707,18 +707,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q1,2025Q1,Ocean Life,insurance_revenue,1519.926,Extracted,"file p.6 SCI (equals 10.1) printed 1,519,926 (thousand_baht, read from page image)"
 2026Q1,2026Q1,Ocean Life,insurance_service_expense,-901.501,Extracted,"file p.6 SCI (equals 8.1) printed (901,501) (thousand_baht, read from page image)"
 2026Q1,2025Q1,Ocean Life,insurance_service_expense,-953.498,Extracted,"file p.6 SCI (equals 10.1) printed (953,498) (thousand_baht, read from page image)"
-2026Q1,2026Q1,Ocean Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Ocean Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Ocean Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Ocean Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Ocean Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Ocean Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Ocean Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Ocean Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Ocean Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Ocean Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2026Q1,Ocean Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q1,2025Q1,Ocean Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q1,2026Q1,Ocean Life,oci_debt_fvoci,-2958.892,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (2,958,892) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Ocean Life,oci_debt_fvoci,911.015,Extracted,"file p.6 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 911,015 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Ocean Life,oci_ins_finance,2272.258,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed 2,272,258 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Ocean Life,oci_ins_finance,-1530.762,Extracted,"file p.6 SCI OCI, insurance contracts issued before tax printed (1,530,762) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Ocean Life,oci_reins_finance,-3.625,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed (3,625) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Ocean Life,oci_reins_finance,2.245,Extracted,"file p.6 SCI OCI, reinsurance contracts held before tax printed 2,245 (thousand_baht, read from page image)"
+2026Q1,2026Q1,Ocean Life,oci_equity_fvoci,-12.39,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (12,390) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Ocean Life,oci_equity_fvoci,-99.989,Extracted,"file p.6 SCI OCI, equity instruments at FVOCI before tax printed (99,989) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Ocean Life,oci_total,-1856.036,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (1,856,036) (thousand_baht, read from page image)"
+2026Q1,2025Q1,Ocean Life,oci_total,-352.45,Extracted,"file p.6 SCI other comprehensive income for the period, net of tax printed (352,450) (thousand_baht, read from page image)"
+2026Q1,2026Q1,Ocean Life,equity_open,23208.243,Extracted,"file p.8 SOCE total equity at 1 January printed 23,208,243 (thousand_baht, read from page image)"
+2026Q1,2025Q1,Ocean Life,equity_open,22264.086,Extracted,"file p.8 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 22,264,086 (thousand_baht, read from page image)"
 2026Q1,2026Q1,CHUBB Life,ra_release,71.103832,Extracted,"file p.36 20.1 printed 71,103,832 (baht, read from page image)"
 2026Q1,2025Q1,CHUBB Life,ra_release,70.932142,Extracted,"file p.84 21.1 printed 70,932,142 (baht, read from page image)"
 2026Q1,2026Q1,CHUBB Life,bel_release,981.505619,Extracted,"file p.36 20.1 printed 981,505,619 (baht, read from page image)"

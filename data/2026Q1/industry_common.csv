@@ -19,9 +19,9 @@ fiscal_year,basis,metric,aggregate,median,n
 2026Q1,common,nb_to_release,1.448758,1.487312,19
 2026Q1,common,csm_adj_ratio,-0.004018,-0.000143,19
 2026Q1,common,net_inv_ratio,0.272542,0.294002,19
-2026Q1,common,oci_total,-50809.486839,-3741,11
-2026Q1,common,oci_ratio,-0.120862,-0.101972,11
-2026Q1,common,oci_offset,0.794545,0.796306,11
+2026Q1,common,oci_total,-52665.522839,-3030.936729,12
+2026Q1,common,oci_ratio,-0.118723,-0.090973,12
+2026Q1,common,oci_offset,0.794214,0.781512,12
 2026Q1,common,nb_csm_margin,0.13172,0.10817,19
 2026Q1,common,acq_cost_ratio,0.141277,0.141766,18
 2026Q1,common,nb_claims_ratio,0.711017,0.728063,18
@@ -52,9 +52,9 @@ fiscal_year,basis,metric,aggregate,median,n
 2025Q1,common,nb_to_release,1.625416,1.437804,19
 2025Q1,common,csm_adj_ratio,-0.001858,-0.003836,19
 2025Q1,common,net_inv_ratio,0.222391,0.291795,18
-2025Q1,common,oci_total,-19802.127254,-77.991459,11
-2025Q1,common,oci_ratio,-0.052987,-0.01621,11
-2025Q1,common,oci_offset,1.090208,1.026696,11
+2025Q1,common,oci_total,-20154.577254,-202.48923,12
+2025Q1,common,oci_ratio,-0.050898,-0.01602,12
+2025Q1,common,oci_offset,1.097723,1.034781,12
 2025Q1,common,nb_csm_margin,0.132096,0.109796,19
 2025Q1,common,acq_cost_ratio,0.137866,0.129084,18
 2025Q1,common,nb_claims_ratio,0.706857,0.728803,18

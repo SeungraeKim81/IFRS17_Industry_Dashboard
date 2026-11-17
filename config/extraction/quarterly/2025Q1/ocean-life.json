@@ -312,6 +312,66 @@
     "note": "SCI (equals 10.1)",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "911,015",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(1,530,762)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "2,245",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, reinsurance contracts held before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(99,989)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q1": {
+    "page": 6,
+    "printed": "(352,450)",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q1": {
+    "page": 8,
+    "printed": "22,264,086",
+    "unit": "thousand_baht",
+    "sign": 1,
+    "note": "SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9)",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของผู้ถือหุ้น (ไม่ได้ตรวจสอบ) สำหรับงวดสามเดือนสิ้นสุดวันที่ 31 มีนาคม 2568 (พันบาท)"
+   }
   }
  },
  "items_3m": {

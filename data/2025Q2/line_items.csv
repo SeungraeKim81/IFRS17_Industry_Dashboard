@@ -353,12 +353,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q2,2025Q2,Ocean Life,nb_loss_component,2.402,Extracted,"file p.53 9.1.3 total, onerous contracts printed 2,402 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Ocean Life,insurance_revenue,2983.716,Extracted,"file p.7 SCI six months (equals 10.1) printed 2,983,716 (thousand_baht, read from page image)"
 2025Q2,2025Q2,Ocean Life,insurance_service_expense,-1899.941,Extracted,"file p.7 SCI six months (equals 10.1) printed (1,899,941) (thousand_baht, read from page image)"
-2025Q2,2025Q2,Ocean Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Ocean Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Ocean Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Ocean Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Ocean Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q2,2025Q2,Ocean Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q2,2025Q2,Ocean Life,oci_debt_fvoci,2677.87,Extracted,"file p.7 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 2,677,870 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Ocean Life,oci_ins_finance,-3889.988,Extracted,"file p.7 SCI OCI, insurance contracts issued before tax printed (3,889,988) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Ocean Life,oci_reins_finance,6.176,Extracted,"file p.7 SCI OCI, reinsurance contracts held before tax printed 6,176 (thousand_baht, read from page image)"
+2025Q2,2025Q2,Ocean Life,oci_equity_fvoci,-186.305,Extracted,"file p.7 SCI OCI, equity instruments at FVOCI before tax printed (186,305) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Ocean Life,oci_total,-213.349,Extracted,"file p.7 SCI other comprehensive income for the period, net of tax printed (213,349) (thousand_baht, read from page image)"
+2025Q2,2025Q2,Ocean Life,equity_open,22264.086,Extracted,"file p.9 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 22,264,086 (thousand_baht, read from page image)"
 2025Q2,2025Q2,CHUBB Life,ra_release,128.460867,Extracted,"file p.64 21.1 printed 128,460,867 (baht, read from page image)"
 2025Q2,2025Q2,CHUBB Life,bel_release,1920.866863,Extracted,"file p.64 21.1 printed 1,920,866,863 (baht, read from page image)"
 2025Q2,2025Q2,CHUBB Life,paa_revenue,0,Extracted,"file p.64 21.1 (no PAA business) printed - (baht, read from page image)"
