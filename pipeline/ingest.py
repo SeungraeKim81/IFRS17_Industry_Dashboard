@@ -37,7 +37,7 @@ import json
 
 import openpyxl
 
-from .common import (ROOT, annual_companies, comparative_period, fmt_num, load_companies, load_line_items,
+from .common import (NOT_IN_PILOT, PHASED_IN, ROOT, annual_companies, comparative_period, fmt_num, load_companies, load_line_items,
                      load_settings, period_dir, quarter_info, write_csv)
 
 HEADER_ROW = 4
@@ -81,7 +81,7 @@ def _number(cached, raw, where: str) -> float:
 def ingest(workbook: Path, period: str) -> tuple[list[dict], list[dict]]:
     wb_raw = openpyxl.load_workbook(workbook, data_only=False)
     wb_val = openpyxl.load_workbook(workbook, data_only=True)
-    items = load_line_items()
+    items = [it for it in load_line_items() if it["code"] not in NOT_IN_PILOT]
     labels = _label_index(items)
     rows, notes, errors = [], [], []
 
@@ -193,7 +193,10 @@ def ingest_extractions(period: str) -> tuple[list[dict], list[dict], list[dict],
                 if src is None:
                     continue  # no comparative extraction for this insurer
                 rec = src["items"].get(code, {}).get(fy)
-                if rec is None:
+                if rec is None and code in PHASED_IN and code not in src["items"]:
+                    rows.append({"report": period, "fiscal_year": fy, "company": name, "code": code, "value": "",
+                                 "status": "Not extracted", "source": "not yet extracted (common.PHASED_IN)"})
+                elif rec is None:
                     errors.append(f"{name}: {code} {fy} missing from the extraction")
                 else:
                     rows.append(_row(period, fy, name, code, rec, _source_text))
@@ -240,7 +243,7 @@ def run(period: str | None = None, workbook: str | None = None) -> Path:
     elif (out / "accepted_breaks.csv").exists():
         (out / "accepted_breaks.csv").unlink()
     write_csv(out / "company_notes.csv", notes, ["company", "sheet_title", "header_note", "extraction_note"])
-    unconfirmed = [r for r in rows if r["status"].strip().lower() not in ("confirmed", "extracted", "not disclosed")]
+    unconfirmed = [r for r in rows if r["status"].strip().lower() not in ("confirmed", "extracted", "not disclosed", "not extracted")]
     print(f"ingest: {len(rows)} values for {len(notes)} companies -> {out.relative_to(ROOT)}/line_items.csv")
     if unconfirmed:
         print(f"ingest: WARNING {len(unconfirmed)} values not marked 'Confirmed'", file=sys.stderr)

@@ -649,7 +649,7 @@ const chk = (id, f) => { const tr = TR(); const d = DATA.check_defs.find(c => c.
 const EN_CHECK_SHORT = { revenue_split: "Revenue", expense_split: "Expense", net_profit: "Net profit", csm_rollforward: "CSM roll", nb_csm: "NB CSM", nb_consistency: "NB = roll" };
 const noteT = (n, f) => { const tr = TR(); return (tr && tr.commentary[n.id] && tr.commentary[n.id][f]) || n[f]; };
 const flagMsg = f => f["message_" + LANG] || f.message;
-const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business" }[gname]); };
+const groupT = gname => { const tr = TR(); return (tr && tr.groups[gname]) || ({ scale: "Scale", profitability: "Profitability", csm: "CSM", new_business: "New business", oci: "OCI" }[gname]); };
 
 /* ---------- helpers ---------- */
 const el = (n, a = {}, txt) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; };

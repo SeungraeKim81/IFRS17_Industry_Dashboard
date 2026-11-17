@@ -29,3 +29,9 @@ csm_close,CSM closing,,csm,+,CSM at the end of the year (net)
 nb_loss_component,Loss component - new business,Loss component — new business,new_business,+,Losses on initial recognition of onerous new business (shown positive)
 insurance_revenue,Total insurance revenue,,total,+,Total insurance revenue as printed
 insurance_service_expense,Total insurance service expense,,total,-,Total insurance service expense as printed
+oci_debt_fvoci,OCI - debt instruments at FVOCI,,oci,+/-,Fair value gain or loss on debt instruments at FVOCI in other comprehensive income before tax (including amounts reclassified to profit or loss on disposal)
+oci_ins_finance,OCI - insurance finance (contracts issued),,oci,+/-,Insurance finance income or expense of insurance contracts issued recognised in other comprehensive income before tax
+oci_reins_finance,OCI - reinsurance finance (contracts held),,oci,+/-,Finance income or expense of reinsurance contracts held recognised in other comprehensive income before tax (0 where none)
+oci_equity_fvoci,OCI - equity instruments at FVOCI,,oci,+/-,Fair value gain or loss on equity instruments designated at FVOCI in other comprehensive income before tax (0 where none)
+oci_total,Other comprehensive income (net of tax),,oci,+/-,Other comprehensive income for the period after tax as printed
+equity_open,Total equity - opening,,equity,+,Total equity at the beginning of the year (statement of changes in equity)

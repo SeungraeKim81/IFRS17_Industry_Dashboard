@@ -29,6 +29,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,AIA Thailand,nb_loss_component,25,Extracted,"file p.85 15.4 total, loss on initial recognition printed 25 (million_baht, read from page image)"
 2025Q3,2025Q3,AIA Thailand,insurance_revenue,68305,Extracted,"file p.7 SCI nine months (equals 15.1) printed 68,305 (million_baht, read from page image)"
 2025Q3,2025Q3,AIA Thailand,insurance_service_expense,-52653,Extracted,"file p.7 SCI nine months (equals 15.2) printed (52,653) (million_baht, read from page image)"
+2025Q3,2025Q3,AIA Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,AIA Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,AIA Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,AIA Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,AIA Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,AIA Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Thai Life,ra_release,1440.928,Extracted,"file p.109 12.1 1) printed 1,440,928 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,bel_release,11984.581,Extracted,"file p.109 12.1 1) printed 11,984,581 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,paa_revenue,1815.304,Extracted,"file p.109 12.1 1) PAA revenue printed 1,815,304 (thousand_baht, read from page image)"
@@ -59,6 +65,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Thai Life,nb_loss_component,6.104,Extracted,"file p.86 9.1 4) total, onerous contracts printed 6,104 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,insurance_revenue,27157.348,Extracted,"file p.8 SCI separate, nine months (equals 12.1) printed 27,157,348 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Thai Life,insurance_service_expense,-17018.996,Extracted,"file p.8 SCI separate, nine months (equals 12.1) printed (17,018,996) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Muang Thai Life,ra_release,919.929,Extracted,"file p.62 13.1 nine months printed 919,929 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Muang Thai Life,bel_release,10681.526,Extracted,"file p.62 13.1 nine months printed 10,681,526 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Muang Thai Life,paa_revenue,5189.316,Extracted,"file p.62 13.1 nine months, PAA revenue printed 5,189,316 (thousand_baht, read from page image)"
@@ -89,6 +101,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Muang Thai Life,nb_loss_component,614.976,Extracted,"file p.53 12.1 ค. total, onerous contracts printed 614,976 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Muang Thai Life,insurance_revenue,22952.83,Extracted,"file p.7 SCI separate, nine months (equals 13.1) printed 22,952,830 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Muang Thai Life,insurance_service_expense,-16533.894,Extracted,"file p.7 SCI separate, nine months (equals 13.1) printed (16,533,894) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Allianz Ayudhya,ra_release,463.143,Extracted,"file p.82 24.1 total printed 463,143 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,bel_release,5118.354,Extracted,"file p.82 24.1 total printed 5,118,354 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,paa_revenue,3751.885,Extracted,"file p.82 24.1 PAA revenue printed 3,751,885 (thousand_baht, read from page image)"
@@ -119,6 +137,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Allianz Ayudhya,nb_loss_component,0,Extracted,"file p.74 19.1.3 (no onerous new business) printed - (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,insurance_revenue,20313.357,Extracted,"file p.9 SCI nine months (equals 24.1) printed 20,313,357 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Allianz Ayudhya,insurance_service_expense,-11794.082,Extracted,"file p.9 SCI nine months (equals 24.1) printed (11,794,082) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Allianz Ayudhya,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Allianz Ayudhya,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Allianz Ayudhya,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Allianz Ayudhya,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Allianz Ayudhya,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Allianz Ayudhya,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,FWD Thailand,ra_release,447.015,Extracted,"file p.53 6 total printed 447,015 (thousand_baht, read from page image)"
 2025Q3,2025Q3,FWD Thailand,bel_release,7878.353,Extracted,"file p.53 6 total printed 7,878,353 (thousand_baht, read from page image)"
 2025Q3,2025Q3,FWD Thailand,paa_revenue,817.025,Extracted,"file p.53 6 PAA revenue printed 817,025 (thousand_baht, read from page image)"
@@ -149,6 +173,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,FWD Thailand,nb_loss_component,28.115,Extracted,"file p.59 7.3 total, onerous contracts (opposite sign) printed (28,115) (thousand_baht, read from page image)"
 2025Q3,2025Q3,FWD Thailand,insurance_revenue,20025.075,Extracted,"file p.7 SCI nine months (equals 6) printed 20,025,075 (thousand_baht, read from page image)"
 2025Q3,2025Q3,FWD Thailand,insurance_service_expense,-14156.519,Extracted,"file p.7 SCI nine months (equals 6) printed (14,156,519) (thousand_baht, read from page image)"
+2025Q3,2025Q3,FWD Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,FWD Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,FWD Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,FWD Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,FWD Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,FWD Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Krungthai-AXA Life,ra_release,339.4,Extracted,"file p.50 6 total printed 339,400 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Krungthai-AXA Life,bel_release,10666.272,Extracted,"file p.50 6 total printed 10,666,272 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Krungthai-AXA Life,paa_revenue,1716.253,Extracted,"file p.50 6 total (group PAA) printed 1,716,253 (thousand_baht, read from page image)"
@@ -179,6 +209,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Krungthai-AXA Life,nb_loss_component,37.142,Extracted,"file p.60 groups 7, 8, 10 totals printed ['36,988', '-', '154'] (thousand_baht, read from page image)"
 2025Q3,2025Q3,Krungthai-AXA Life,insurance_revenue,18315.046,Extracted,"file p.7 SCI nine months (equals 6) printed 18,315,046 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Krungthai-AXA Life,insurance_service_expense,-12178.052,Extracted,"file p.7 SCI nine months (equals 6) printed (12,178,052) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Krungthai-AXA Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Krungthai-AXA Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Krungthai-AXA Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Krungthai-AXA Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Krungthai-AXA Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Krungthai-AXA Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Bangkok Life,ra_release,227.89,Extracted,"file p.98 21.1 total printed 227,890 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,bel_release,4287.136,Extracted,"file p.98 21.1 total printed 4,287,136 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,paa_revenue,1739.878,Extracted,"file p.98 21.1 PAA revenue printed 1,739,878 (thousand_baht, read from page image)"
@@ -209,6 +245,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Bangkok Life,nb_loss_component,72.383,Extracted,"file p.62 new-business total, onerous contracts (GMM + VFA) printed ['72,211', '172'] (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,insurance_revenue,9787.809,Extracted,"file p.8 SCI separate, nine months (equals 21.1) printed 9,787,809 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Bangkok Life,insurance_service_expense,-6631.512,Extracted,"file p.8 SCI separate, nine months (equals 21.1) printed (6,631,512) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Bangkok Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Bangkok Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Bangkok Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Bangkok Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Bangkok Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Bangkok Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Prudential Life,ra_release,278.025,Extracted,"file p.32 6 printed 278,025 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Prudential Life,bel_release,3399.453,Extracted,"file p.32 6 printed 3,399,453 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Prudential Life,paa_revenue,0,Extracted,"file p.32 6 (no PAA revenue this year) printed - (thousand_baht, read from page image)"
@@ -239,6 +281,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Prudential Life,nb_loss_component,93.652,Extracted,"file p.38 7.3 total, onerous contracts printed 93,652 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Prudential Life,insurance_revenue,9596.379,Extracted,"file p.7 SCI nine months (equals 6) printed 9,596,379 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Prudential Life,insurance_service_expense,-7954.165,Extracted,"file p.7 SCI nine months (equals 6) printed (7,954,165) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Prudential Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Prudential Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Prudential Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Prudential Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Prudential Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Prudential Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Generali Life,ra_release,28.818,Extracted,"file p.148 9.1.1 total printed 28,818 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Generali Life,bel_release,915.247,Extracted,"file p.148 9.1.1 total printed 915,247 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Generali Life,paa_revenue,3269.743,Extracted,"file p.149 9.1.1 PAA revenue printed 3,269,743 (thousand_baht, read from page image)"
@@ -269,6 +317,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Generali Life,nb_loss_component,0.167,Extracted,"file p.82 new-business table total, onerous contracts printed 167 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Generali Life,insurance_revenue,5517.132823,Extracted,"file p.8 SCI nine months (equals 9.1.1) printed 5,517,132,823 (baht, read from page image)"
 2025Q3,2025Q3,Generali Life,insurance_service_expense,-4600.795264,Extracted,"file p.8 SCI nine months (equals 9.1.1) printed (4,600,795,264) (baht, read from page image)"
+2025Q3,2025Q3,Generali Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Generali Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Generali Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Generali Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Generali Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Generali Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Ocean Life,ra_release,130.971,Extracted,"file p.62 10.1 total printed 130,971 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Ocean Life,bel_release,1736.666,Extracted,"file p.62 10.1 total printed 1,736,666 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Ocean Life,paa_revenue,1431.907,Extracted,"file p.62 10.1 PAA revenue printed 1,431,907 (thousand_baht, read from page image)"
@@ -299,6 +353,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Ocean Life,nb_loss_component,3.534,Extracted,"file p.52 9.1.3 total, onerous contracts printed 3,534 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Ocean Life,insurance_revenue,4385.276,Extracted,"file p.7 SCI nine months (equals 10.1) printed 4,385,276 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Ocean Life,insurance_service_expense,-2812.844,Extracted,"file p.7 SCI nine months (equals 10.1) printed (2,812,844) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Ocean Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Ocean Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Ocean Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Ocean Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Ocean Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Ocean Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,CHUBB Life,ra_release,187.785059,Extracted,"file p.65 21.1 printed 187,785,059 (baht, read from page image)"
 2025Q3,2025Q3,CHUBB Life,bel_release,2990.374146,Extracted,"file p.65 21.1 printed 2,990,374,146 (baht, read from page image)"
 2025Q3,2025Q3,CHUBB Life,paa_revenue,0,Extracted,"file p.65 21.1 (no PAA business) printed - (baht, read from page image)"
@@ -329,6 +389,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,CHUBB Life,nb_loss_component,141.384912,Extracted,"file p.56 15.1.3, 30 กันยายน 2568 total, onerous contracts printed 141,384,912 (baht, read from page image)"
 2025Q3,2025Q3,CHUBB Life,insurance_revenue,3939.276717,Extracted,"file p.7 SCI nine months (equals 21.1) printed 3,939,276,717 (baht, read from page image)"
 2025Q3,2025Q3,CHUBB Life,insurance_service_expense,-3001.786377,Extracted,"file p.7 SCI nine months (equals 21.1) printed (3,001,786,377) (baht, read from page image)"
+2025Q3,2025Q3,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Tokio Marine Life,ra_release,135.963723,Extracted,"file p.71 16 total printed 135,963,723 (baht, read from page image)"
 2025Q3,2025Q3,Tokio Marine Life,bel_release,1408.932551,Extracted,"file p.71 16 total printed 1,408,932,551 (baht, read from page image)"
 2025Q3,2025Q3,Tokio Marine Life,paa_revenue,1833.748332,Extracted,"file p.71 16 PAA revenue printed 1,833,748,332 (baht, read from page image)"
@@ -359,6 +425,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Tokio Marine Life,nb_loss_component,2.209981,Extracted,"file p.56 14.1.3 total, onerous contracts printed 2,209,981 (baht, read from page image)"
 2025Q3,2025Q3,Tokio Marine Life,insurance_revenue,4148.981931,Extracted,"file p.7 SCI nine months (equals 16) printed 4,148,981,931 (baht, read from page image)"
 2025Q3,2025Q3,Tokio Marine Life,insurance_service_expense,-3014.247252,Extracted,"file p.7 SCI nine months (equals 16) printed (3,014,247,252) (baht, read from page image)"
+2025Q3,2025Q3,Tokio Marine Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Tokio Marine Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Tokio Marine Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Tokio Marine Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Tokio Marine Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Tokio Marine Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Dhipaya Life,ra_release,105.116048,Extracted,"file p.51 6 total printed 105,116,048 (baht, read from page image)"
 2025Q3,2025Q3,Dhipaya Life,bel_release,2058.416071,Extracted,"file p.51 6 total printed 2,058,416,071 (baht, read from page image)"
 2025Q3,2025Q3,Dhipaya Life,paa_revenue,0,Extracted,"file p.51 no PAA business printed - (baht, read from page image)"
@@ -389,6 +461,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Dhipaya Life,nb_loss_component,169.584219,Extracted,"file p.57 7.3 + 8.3 total, onerous contracts (sum of groups 7 and 8) printed ['149,196,154', '20,388,065'] (baht, read from page image)"
 2025Q3,2025Q3,Dhipaya Life,insurance_revenue,2826.213412,Extracted,"file p.10 SCI nine months (equals 6) printed 2,826,213,412 (baht, read from page image)"
 2025Q3,2025Q3,Dhipaya Life,insurance_service_expense,-2775.789989,Extracted,"file p.10 SCI nine months (equals 6) printed (2,775,789,989) (baht, read from page image)"
+2025Q3,2025Q3,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Southeast Life,ra_release,171.832,Extracted,"file p.62 11.1 total printed 171,832 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Southeast Life,bel_release,1496.359,Extracted,"file p.62 11.1 total printed 1,496,359 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Southeast Life,paa_revenue,0,Extracted,"file p.62 no PAA business printed - (thousand_baht, read from page image)"
@@ -419,6 +497,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Southeast Life,nb_loss_component,131.461,Extracted,"file p.49 9.1.1.3 total, onerous contracts printed 131,461 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Southeast Life,insurance_revenue,2667.354,Extracted,"file p.7 SCI nine months (equals 11.1) printed 2,667,354 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Southeast Life,insurance_service_expense,-1758.557,Extracted,"file p.7 SCI nine months (equals 11.1) printed (1,758,557) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Southeast Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Southeast Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Southeast Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Southeast Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Southeast Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Southeast Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Samsung Life,ra_release,37.777,Extracted,"file p.130 15.1 total printed 37,777 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Samsung Life,bel_release,586.467,Extracted,"file p.130 15.1 total printed 586,467 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Samsung Life,paa_revenue,0,Extracted,"file p.130 15.1 (no PAA business) printed - (thousand_baht, read from page image)"
@@ -449,6 +533,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Samsung Life,nb_loss_component,96.054,Extracted,"file p.76 1.3 total, onerous contracts printed 96,054 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Samsung Life,insurance_revenue,1673.994,Extracted,"file p.8 SCI nine months (equals 15.1) printed 1,673,994 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Samsung Life,insurance_service_expense,-1125.53,Extracted,"file p.8 SCI nine months (equals 15.1) printed (1,125,530) (thousand_baht, read from page image)"
+2025Q3,2025Q3,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,T Life,ra_release,26.662,Extracted,"file p.38 4.2.1 nine months printed 26,662 (thousand_baht, read from page image)"
 2025Q3,2025Q3,T Life,bel_release,183.209,Extracted,"file p.38 4.2.1 nine months printed 183,209 (thousand_baht, read from page image)"
 2025Q3,2025Q3,T Life,paa_revenue,0,Extracted,"file p.38 no PAA business printed - (thousand_baht, read from page image)"
@@ -479,6 +569,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,T Life,nb_loss_component,43.515,Extracted,"file p.48 4.3.1.3 total, onerous contracts printed 43,515 (thousand_baht, read from page image)"
 2025Q3,2025Q3,T Life,insurance_revenue,338.584265,Extracted,"file p.8 P&L nine months (equals 4.2.1) printed 338,584,265 (baht, read from page image)"
 2025Q3,2025Q3,T Life,insurance_service_expense,-240.910685,Extracted,"file p.8 P&L nine months (equals 4.2.1) printed (240,910,685) (baht, read from page image)"
+2025Q3,2025Q3,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,BUI Life,ra_release,4.965838,Extracted,"file p.63 8 total printed 4,965,837.98 (baht, read from page image)"
 2025Q3,2025Q3,BUI Life,bel_release,29.617034,Extracted,"file p.63 8 total printed 29,617,034.16 (baht, read from page image)"
 2025Q3,2025Q3,BUI Life,paa_revenue,0,Extracted,"file p.63 8 (no PAA business) printed - (baht, read from page image)"
@@ -509,6 +605,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,BUI Life,nb_loss_component,6.053491,Extracted,"file p.76 9.3 total, onerous contracts printed 6,053,491.23 (baht, read from page image)"
 2025Q3,2025Q3,BUI Life,insurance_revenue,35.190894,Extracted,"file p.4 SCI nine months (equals 8) printed 35,190,893.68 (baht, read from page image)"
 2025Q3,2025Q3,BUI Life,insurance_service_expense,-33.452216,Extracted,"file p.4 SCI nine months (equals 8) printed (33,452,215.70) (baht, read from page image)"
+2025Q3,2025Q3,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Phillip Life,ra_release,5.491,Extracted,"file p.57 6 total printed 5,491 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,bel_release,285.246,Extracted,"file p.57 6 total printed 285,246 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,paa_revenue,5.625,Extracted,"file p.57 6 PAA revenue printed 5,625 (thousand_baht, read from page image)"
@@ -539,6 +641,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Phillip Life,nb_loss_component,7.41,Extracted,"file p.67 new-business total, onerous contracts printed 7,410 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,insurance_revenue,353.401263,Extracted,"file p.10 SCI separate, nine months (equals 6) printed 353,401,263 (baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,insurance_service_expense,-341.810267,Extracted,"file p.10 SCI separate, nine months (equals 6) printed (341,810,267) (baht, read from page image)"
+2025Q3,2025Q3,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 2025Q3,2025Q3,Saha Life,ra_release,25.248502,Extracted,"file p.45 8 total printed 25,248,502.43 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,bel_release,244.111586,Extracted,"file p.45 8 total printed 244,111,586.17 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,paa_revenue,0,Extracted,"file p.45 8 (no PAA business) printed - (baht, read from page image)"
@@ -569,3 +677,9 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Saha Life,nb_loss_component,108.834671,Extracted,"file p.58 9.1.3 total, onerous contracts printed 108,834,670.62 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,insurance_revenue,344.978017,Extracted,"file p.4 SCI nine months (equals 8) printed 344,978,017.29 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,insurance_service_expense,-236.875652,Extracted,"file p.4 SCI nine months (equals 8) printed (236,875,651.91) (baht, read from page image)"
+2025Q3,2025Q3,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)

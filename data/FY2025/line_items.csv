@@ -59,6 +59,18 @@ FY2025,FY2025,AIA Thailand,insurance_revenue,91244,Extracted,"file p.7 SCI print
 FY2025,FY2024,AIA Thailand,insurance_revenue,83600,Extracted,"file p.7 SCI printed 83,600 (million_baht, read from page image)"
 FY2025,FY2025,AIA Thailand,insurance_service_expense,-71208,Extracted,"file p.7 SCI printed (71,208) (million_baht, read from page image)"
 FY2025,FY2024,AIA Thailand,insurance_service_expense,-66715,Extracted,"file p.7 SCI printed (66,715) (million_baht, read from page image)"
+FY2025,FY2025,AIA Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,AIA Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,AIA Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,AIA Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,AIA Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,AIA Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,AIA Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,AIA Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,AIA Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,AIA Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,AIA Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,AIA Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Thai Life,ra_release,1972.483,Extracted,"file p.138 17.1 1) printed 1,972,483 (thousand_baht, read from page image)"
 FY2025,FY2024,Thai Life,ra_release,2186.29,Extracted,"file p.138 17.1 1) printed 2,186,290 (thousand_baht, read from page image)"
 FY2025,FY2025,Thai Life,bel_release,16019.876,Extracted,"file p.138 17.1 1) printed 16,019,876 (thousand_baht, read from page image)"
@@ -119,6 +131,18 @@ FY2025,FY2025,Thai Life,insurance_revenue,35954.787,Extracted,"file p.10 SCI (eq
 FY2025,FY2024,Thai Life,insurance_revenue,32811.372,Extracted,"file p.10 SCI (equals 17.1) printed 32,811,372 (thousand_baht, read from page image)"
 FY2025,FY2025,Thai Life,insurance_service_expense,-22850.845,Extracted,"file p.10 SCI (equals 17.1) printed (22,850,845) (thousand_baht, read from page image)"
 FY2025,FY2024,Thai Life,insurance_service_expense,-20237.721,Extracted,"file p.10 SCI (equals 17.1) printed (20,237,721) (thousand_baht, read from page image)"
+FY2025,FY2025,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Muang Thai Life,ra_release,1244.003,Extracted,"file p.91 17.1 printed 1,244,003 (thousand_baht, read from page image)"
 FY2025,FY2024,Muang Thai Life,ra_release,1270.383,Extracted,"file p.91 17.1 printed 1,270,383 (thousand_baht, read from page image)"
 FY2025,FY2025,Muang Thai Life,bel_release,14463.009,Extracted,"file p.91 17.1 printed 14,463,009 (thousand_baht, read from page image)"
@@ -179,6 +203,18 @@ FY2025,FY2025,Muang Thai Life,insurance_revenue,30835.593,Extracted,"file p.8 SC
 FY2025,FY2024,Muang Thai Life,insurance_revenue,27339.525,Extracted,"file p.8 SCI (equals 17.1) printed 27,339,525 (thousand_baht, read from page image)"
 FY2025,FY2025,Muang Thai Life,insurance_service_expense,-22418.287,Extracted,"file p.8 SCI (equals 17.1) printed (22,418,287) (thousand_baht, read from page image)"
 FY2025,FY2024,Muang Thai Life,insurance_service_expense,-21261.108,Extracted,"file p.8 SCI (equals 17.1) printed (21,261,108) (thousand_baht, read from page image)"
+FY2025,FY2025,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Muang Thai Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Muang Thai Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Muang Thai Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Muang Thai Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Muang Thai Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Muang Thai Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Allianz Ayudhya,ra_release,617.524,Extracted,"file p.205 30.1 total printed 617,524 (thousand_baht, read from page image)"
 FY2025,FY2024,Allianz Ayudhya,ra_release,467.396,Extracted,"file p.205 30.1 total printed 467,396 (thousand_baht, read from page image)"
 FY2025,FY2025,Allianz Ayudhya,bel_release,6871.852,Extracted,"file p.205 30.1 total printed 6,871,852 (thousand_baht, read from page image)"
@@ -239,6 +275,18 @@ FY2025,FY2025,Allianz Ayudhya,insurance_revenue,27359.967,Extracted,"file p.82 S
 FY2025,FY2024,Allianz Ayudhya,insurance_revenue,25216.768,Extracted,"file p.82 SCI printed 25,216,768 (thousand_baht, read from page image)"
 FY2025,FY2025,Allianz Ayudhya,insurance_service_expense,-15991.689,Extracted,"file p.82 SCI printed (15,991,689) (thousand_baht, read from page image)"
 FY2025,FY2024,Allianz Ayudhya,insurance_service_expense,-14989.159,Extracted,"file p.82 SCI printed (14,989,159) (thousand_baht, read from page image)"
+FY2025,FY2025,Allianz Ayudhya,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Allianz Ayudhya,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Allianz Ayudhya,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Allianz Ayudhya,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Allianz Ayudhya,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Allianz Ayudhya,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Allianz Ayudhya,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Allianz Ayudhya,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Allianz Ayudhya,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Allianz Ayudhya,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Allianz Ayudhya,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Allianz Ayudhya,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,FWD Thailand,ra_release,882.636,Extracted,"file p.65 9.1 total printed 882,636 (thousand_baht, read from page image)"
 FY2025,FY2024,FWD Thailand,ra_release,495.765,Extracted,"file p.67 9.1 total printed 495,765 (thousand_baht, read from page image)"
 FY2025,FY2025,FWD Thailand,bel_release,10488.961,Extracted,"file p.65 9.1 total printed 10,488,961 (thousand_baht, read from page image)"
@@ -299,6 +347,18 @@ FY2025,FY2025,FWD Thailand,insurance_revenue,27175.494,Extracted,"file p.8 SCI p
 FY2025,FY2024,FWD Thailand,insurance_revenue,26741.234,Extracted,"file p.8 SCI printed 26,741,234 (thousand_baht, read from page image)"
 FY2025,FY2025,FWD Thailand,insurance_service_expense,-18948.095,Extracted,"file p.8 SCI printed (18,948,095) (thousand_baht, read from page image)"
 FY2025,FY2024,FWD Thailand,insurance_service_expense,-20485.898,Extracted,"file p.8 SCI printed (20,485,898) (thousand_baht, read from page image)"
+FY2025,FY2025,FWD Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,FWD Thailand,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,FWD Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,FWD Thailand,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,FWD Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,FWD Thailand,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,FWD Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,FWD Thailand,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,FWD Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,FWD Thailand,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,FWD Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,FWD Thailand,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Krungthai-AXA Life,ra_release,442.416,Extracted,"file p.62 8.1 total printed 442,416 (thousand_baht, read from page image)"
 FY2025,FY2024,Krungthai-AXA Life,ra_release,510.313,Extracted,"file p.64 8.1 total printed 510,313 (thousand_baht, read from page image)"
 FY2025,FY2025,Krungthai-AXA Life,bel_release,14254.29,Extracted,"file p.62 8.1 total printed 14,254,290 (thousand_baht, read from page image)"
@@ -359,6 +419,18 @@ FY2025,FY2025,Krungthai-AXA Life,insurance_revenue,25020.989,Extracted,"file p.8
 FY2025,FY2024,Krungthai-AXA Life,insurance_revenue,22178.397,Extracted,"file p.8 SCI printed 22,178,397 (thousand_baht, read from page image)"
 FY2025,FY2025,Krungthai-AXA Life,insurance_service_expense,-16300.647,Extracted,"file p.8 SCI printed (16,300,647) (thousand_baht, read from page image)"
 FY2025,FY2024,Krungthai-AXA Life,insurance_service_expense,-15287.248,Extracted,"file p.8 SCI printed (15,287,248) (thousand_baht, read from page image)"
+FY2025,FY2025,Krungthai-AXA Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Krungthai-AXA Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Krungthai-AXA Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Krungthai-AXA Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Krungthai-AXA Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Krungthai-AXA Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Krungthai-AXA Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Krungthai-AXA Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Krungthai-AXA Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Krungthai-AXA Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Krungthai-AXA Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Krungthai-AXA Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Bangkok Life,ra_release,311.545,Extracted,"file p.122 25.1 total printed 311,545 (thousand_baht, read from page image)"
 FY2025,FY2024,Bangkok Life,ra_release,-77.616,Extracted,"file p.124 25.1 total printed (77,616) (thousand_baht, read from page image)"
 FY2025,FY2025,Bangkok Life,bel_release,5690.969,Extracted,"file p.122 25.1 total printed 5,690,969 (thousand_baht, read from page image)"
@@ -419,6 +491,18 @@ FY2025,FY2025,Bangkok Life,insurance_revenue,13234.86,Extracted,"file p.10 SCI (
 FY2025,FY2024,Bangkok Life,insurance_revenue,12954.752,Extracted,"file p.10 SCI (equals 25.1) printed 12,954,752 (thousand_baht, read from page image)"
 FY2025,FY2025,Bangkok Life,insurance_service_expense,-8594.087,Extracted,"file p.10 SCI (equals 25.1) printed (8,594,087) (thousand_baht, read from page image)"
 FY2025,FY2024,Bangkok Life,insurance_service_expense,-9358.652,Extracted,"file p.10 SCI (equals 25.1) printed (9,358,652) (thousand_baht, read from page image)"
+FY2025,FY2025,Bangkok Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Bangkok Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Bangkok Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Bangkok Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Bangkok Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Bangkok Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Bangkok Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Bangkok Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Bangkok Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Bangkok Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Bangkok Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Bangkok Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Prudential Life,ra_release,321.476,Extracted,"file p.50 8.1 printed 321,476 (thousand_baht, read from page image)"
 FY2025,FY2024,Prudential Life,ra_release,354.099,Extracted,"file p.50 8.1 printed 354,099 (thousand_baht, read from page image)"
 FY2025,FY2025,Prudential Life,bel_release,4601.389,Extracted,"file p.50 8.1 printed 4,601,389 (thousand_baht, read from page image)"
@@ -479,6 +563,18 @@ FY2025,FY2025,Prudential Life,insurance_revenue,13010.322,Extracted,"file p.7 SC
 FY2025,FY2024,Prudential Life,insurance_revenue,12095.778,Extracted,"file p.7 SCI (equals 8.1) printed 12,095,778 (thousand_baht, read from page image)"
 FY2025,FY2025,Prudential Life,insurance_service_expense,-10045.919,Extracted,"file p.7 SCI (equals 8.1) printed (10,045,919) (thousand_baht, read from page image)"
 FY2025,FY2024,Prudential Life,insurance_service_expense,-10058.89,Extracted,"file p.7 SCI (equals 8.1) printed (10,058,890) (thousand_baht, read from page image)"
+FY2025,FY2025,Prudential Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Prudential Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Prudential Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Prudential Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Prudential Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Prudential Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Prudential Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Prudential Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Prudential Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Prudential Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Prudential Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Prudential Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Generali Life,ra_release,39.796,Extracted,"file p.162 15.1.1 total printed 39,796 (thousand_baht, read from page image)"
 FY2025,FY2024,Generali Life,ra_release,33.763,Extracted,"file p.164 15.1.1 total printed 33,763 (thousand_baht, read from page image)"
 FY2025,FY2025,Generali Life,bel_release,1247.541,Extracted,"file p.162 15.1.1 total printed 1,247,541 (thousand_baht, read from page image)"
@@ -539,6 +635,18 @@ FY2025,FY2025,Generali Life,insurance_revenue,7536.929356,Extracted,"file p.8 SC
 FY2025,FY2024,Generali Life,insurance_revenue,5370.603133,Extracted,"file p.8 SCI printed 5,370,603,133 (baht, read from page image)"
 FY2025,FY2025,Generali Life,insurance_service_expense,-6484.122276,Extracted,"file p.8 SCI printed (6,484,122,276) (baht, read from page image)"
 FY2025,FY2024,Generali Life,insurance_service_expense,-4743.112072,Extracted,"file p.8 SCI printed (4,743,112,072) (baht, read from page image)"
+FY2025,FY2025,Generali Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Generali Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Generali Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Generali Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Generali Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Generali Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Generali Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Generali Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Generali Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Generali Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Generali Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Generali Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Ocean Life,ra_release,175.047,Extracted,"file p.96 16.1 total printed 175,047 (thousand_baht, read from page image)"
 FY2025,FY2024,Ocean Life,ra_release,182.893,Extracted,"file p.97 16.1 total printed 182,893 (thousand_baht, read from page image)"
 FY2025,FY2025,Ocean Life,bel_release,2311.059,Extracted,"file p.96 16.1 total printed 2,311,059 (thousand_baht, read from page image)"
@@ -599,6 +707,18 @@ FY2025,FY2025,Ocean Life,insurance_revenue,5748.018,Extracted,"file p.8 SCI (equ
 FY2025,FY2024,Ocean Life,insurance_revenue,6568.4,Extracted,"file p.8 SCI (equals 16.1) printed 6,568,400 (thousand_baht, read from page image)"
 FY2025,FY2025,Ocean Life,insurance_service_expense,-3727.847,Extracted,"file p.8 SCI (equals 16.1) printed (3,727,847) (thousand_baht, read from page image)"
 FY2025,FY2024,Ocean Life,insurance_service_expense,-4778.368,Extracted,"file p.8 SCI (equals 16.1) printed (4,778,368) (thousand_baht, read from page image)"
+FY2025,FY2025,Ocean Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Ocean Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Ocean Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Ocean Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Ocean Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Ocean Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Ocean Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Ocean Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Ocean Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Ocean Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Ocean Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Ocean Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,CHUBB Life,ra_release,264.20481,Extracted,"file p.94 27.1 printed 264,204,810 (baht, read from page image)"
 FY2025,FY2024,CHUBB Life,ra_release,247.124185,Extracted,"file p.94 27.1 printed 247,124,185 (baht, read from page image)"
 FY2025,FY2025,CHUBB Life,bel_release,4100.259025,Extracted,"file p.94 27.1 printed 4,100,259,025 (baht, read from page image)"
@@ -659,6 +779,18 @@ FY2025,FY2025,CHUBB Life,insurance_revenue,5453.009568,Extracted,"file p.7 SCI p
 FY2025,FY2024,CHUBB Life,insurance_revenue,4215.366488,Extracted,"file p.7 SCI printed 4,215,366,488 (baht, read from page image)"
 FY2025,FY2025,CHUBB Life,insurance_service_expense,-4205.300944,Extracted,"file p.7 SCI printed (4,205,300,944) (baht, read from page image)"
 FY2025,FY2024,CHUBB Life,insurance_service_expense,-7700.770458,Extracted,"file p.7 SCI printed (7,700,770,458) (baht, read from page image)"
+FY2025,FY2025,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,CHUBB Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,CHUBB Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,CHUBB Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,CHUBB Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,CHUBB Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,CHUBB Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Tokio Marine Life,ra_release,182.859464,Extracted,"file p.111 26.1 printed 182,859,464 (baht, read from page image)"
 FY2025,FY2024,Tokio Marine Life,ra_release,264.163517,Extracted,"file p.111 26.1 printed 264,163,517 (baht, read from page image)"
 FY2025,FY2025,Tokio Marine Life,bel_release,1929.749457,Extracted,"file p.111 26.1 printed 1,929,749,457 (baht, read from page image)"
@@ -719,6 +851,18 @@ FY2025,FY2025,Tokio Marine Life,insurance_revenue,5418.284988,Extracted,"file p.
 FY2025,FY2024,Tokio Marine Life,insurance_revenue,5133.148656,Extracted,"file p.7 SCI printed 5,133,148,656 (baht, read from page image)"
 FY2025,FY2025,Tokio Marine Life,insurance_service_expense,-4123.594486,Extracted,"file p.7 SCI printed (4,123,594,486) (baht, read from page image)"
 FY2025,FY2024,Tokio Marine Life,insurance_service_expense,-3885.160815,Extracted,"file p.7 SCI printed (3,885,160,815) (baht, read from page image)"
+FY2025,FY2025,Tokio Marine Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Tokio Marine Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Tokio Marine Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Tokio Marine Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Tokio Marine Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Tokio Marine Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Tokio Marine Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Tokio Marine Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Tokio Marine Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Tokio Marine Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Tokio Marine Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Tokio Marine Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Dhipaya Life,ra_release,207.841501,Extracted,"file p.81 8.1 total printed 207,841,501 (baht, read from page image)"
 FY2025,FY2024,Dhipaya Life,ra_release,146.523891,Extracted,"file p.82 8.1 total printed 146,523,891 (baht, read from page image)"
 FY2025,FY2025,Dhipaya Life,bel_release,2766.311213,Extracted,"file p.81 8.1 total printed 2,766,311,213 (baht, read from page image)"
@@ -779,6 +923,18 @@ FY2025,FY2025,Dhipaya Life,insurance_revenue,3777.589953,Extracted,"file p.33 SC
 FY2025,FY2024,Dhipaya Life,insurance_revenue,3008.981671,Extracted,"file p.33 SCI (equals 8.1) printed 3,008,981,671 (baht, read from page image)"
 FY2025,FY2025,Dhipaya Life,insurance_service_expense,-3556.876565,Extracted,"file p.33 SCI (equals 8.1) printed (3,556,876,565) (baht, read from page image)"
 FY2025,FY2024,Dhipaya Life,insurance_service_expense,-2766.674032,Extracted,"file p.33 SCI (equals 8.1) printed (2,766,674,032) (baht, read from page image)"
+FY2025,FY2025,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Southeast Life,ra_release,227.129,Extracted,"file p.238 18 total printed 227,129 (thousand_baht, read from page image)"
 FY2025,FY2024,Southeast Life,ra_release,183.957,Extracted,"file p.240 18 total printed 183,957 (thousand_baht, read from page image)"
 FY2025,FY2025,Southeast Life,bel_release,2030.798,Extracted,"file p.238 18 total printed 2,030,798 (thousand_baht, read from page image)"
@@ -839,6 +995,18 @@ FY2025,FY2025,Southeast Life,insurance_revenue,3578.127,Extracted,"file p.157 SC
 FY2025,FY2024,Southeast Life,insurance_revenue,3688.297,Extracted,"file p.157 SCI (equals 18) printed 3,688,297 (thousand_baht, read from page image)"
 FY2025,FY2025,Southeast Life,insurance_service_expense,-2466.053,Extracted,"file p.157 SCI (equals 18) printed (2,466,053) (thousand_baht, read from page image)"
 FY2025,FY2024,Southeast Life,insurance_service_expense,-2657.624,Extracted,"file p.157 SCI (equals 18) printed (2,657,624) (thousand_baht, read from page image)"
+FY2025,FY2025,Southeast Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Southeast Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Southeast Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Southeast Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Southeast Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Southeast Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Southeast Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Southeast Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Southeast Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Southeast Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Southeast Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Southeast Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Samsung Life,ra_release,53.36,Extracted,"file p.152 17.1 printed 53,360 (thousand_baht, text layer)"
 FY2025,FY2024,Samsung Life,ra_release,41.111,Extracted,"file p.153 17.1 printed 41,111 (thousand_baht, text layer)"
 FY2025,FY2025,Samsung Life,bel_release,797.38,Extracted,"file p.152 17.1 printed 797,380 (thousand_baht, text layer)"
@@ -899,6 +1067,18 @@ FY2025,FY2025,Samsung Life,insurance_revenue,2321.096,Extracted,"file p.152 17.1
 FY2025,FY2024,Samsung Life,insurance_revenue,1821.682,Extracted,"file p.153 17.1 printed 1,821,682 (thousand_baht, text layer)"
 FY2025,FY2025,Samsung Life,insurance_service_expense,-1604.785,Extracted,"file p.152 17.1 printed (1,604,785) (thousand_baht, text layer)"
 FY2025,FY2024,Samsung Life,insurance_service_expense,-1069.455,Extracted,"file p.153 17.1 printed (1,069,455) (thousand_baht, text layer)"
+FY2025,FY2025,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Samsung Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Samsung Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Samsung Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Samsung Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Samsung Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Samsung Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,T Life,ra_release,34.665,Extracted,"file p.75 4.2.1 printed 34,665 (thousand_baht, read from page image)"
 FY2025,FY2024,T Life,ra_release,34.619,Extracted,"file p.75 4.2.1 printed 34,619 (thousand_baht, read from page image)"
 FY2025,FY2025,T Life,bel_release,244.57,Extracted,"file p.75 4.2.1 printed 244,570 (thousand_baht, read from page image)"
@@ -959,6 +1139,18 @@ FY2025,FY2025,T Life,insurance_revenue,462.924465,Extracted,"file p.39 P&L print
 FY2025,FY2024,T Life,insurance_revenue,350.874687,Extracted,"file p.39 P&L printed 350,874,687 (baht, read from page image)"
 FY2025,FY2025,T Life,insurance_service_expense,-352.88482,Extracted,"file p.39 P&L printed (352,884,820) (baht, read from page image)"
 FY2025,FY2024,T Life,insurance_service_expense,-315.763174,Extracted,"file p.39 P&L printed (315,763,174) (baht, read from page image)"
+FY2025,FY2025,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,T Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,T Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,T Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,T Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,T Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,T Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Rabbit Life,ra_release,16.682,Extracted,"file p.94 8.1 printed 16,682 (thousand_baht, read from page image)"
 FY2025,FY2024,Rabbit Life,ra_release,14.614,Extracted,"file p.94 8.1 printed 14,614 (thousand_baht, read from page image)"
 FY2025,FY2025,Rabbit Life,bel_release,185.569,Extracted,"file p.94 8.1 printed 185,569 (thousand_baht, read from page image)"
@@ -1019,6 +1211,18 @@ FY2025,FY2025,Rabbit Life,insurance_revenue,413.957159,Extracted,"file p.49 SCI 
 FY2025,FY2024,Rabbit Life,insurance_revenue,366.03409,Extracted,"file p.49 SCI printed 366,034,090 (baht, read from page image)"
 FY2025,FY2025,Rabbit Life,insurance_service_expense,-395.687936,Extracted,"file p.49 SCI printed (395,687,936) (baht, read from page image)"
 FY2025,FY2024,Rabbit Life,insurance_service_expense,-625.350293,Extracted,"file p.49 SCI printed (625,350,293) (baht, read from page image)"
+FY2025,FY2025,Rabbit Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Rabbit Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Rabbit Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Rabbit Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Rabbit Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Rabbit Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Rabbit Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Rabbit Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Rabbit Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Rabbit Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Rabbit Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Rabbit Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,BUI Life,ra_release,6.751627,Extracted,"file p.86 8.1 total printed 6,751,627.00 (baht, read from page image)"
 FY2025,FY2024,BUI Life,ra_release,4.631965,Extracted,"file p.86 8.1 total printed 4,631,965.04 (baht, read from page image)"
 FY2025,FY2025,BUI Life,bel_release,52.460875,Extracted,"file p.86 8.1 total printed 52,460,875.30 (baht, read from page image)"
@@ -1079,6 +1283,18 @@ FY2025,FY2025,BUI Life,insurance_revenue,63.727644,Extracted,"file p.12 SCI (equ
 FY2025,FY2024,BUI Life,insurance_revenue,39.402356,Extracted,"file p.12 SCI (equals 8.1) printed 39,402,356.23 (baht, read from page image)"
 FY2025,FY2025,BUI Life,insurance_service_expense,-53.486941,Extracted,"file p.12 SCI (printed positive) printed 53,486,941.13 (baht, read from page image)"
 FY2025,FY2024,BUI Life,insurance_service_expense,-37.77469,Extracted,"file p.12 SCI (printed positive) printed 37,774,689.95 (baht, read from page image)"
+FY2025,FY2025,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,BUI Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,BUI Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,BUI Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,BUI Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,BUI Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,BUI Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Phillip Life,ra_release,1.223,Extracted,"file p.94 6.1 total printed 1,223 (thousand_baht, read from page image)"
 FY2025,FY2024,Phillip Life,ra_release,49.214,Extracted,"file p.96 6.1 total printed 49,214 (thousand_baht, read from page image)"
 FY2025,FY2025,Phillip Life,bel_release,361.662,Extracted,"file p.94 6.1 total printed 361,662 (thousand_baht, read from page image)"
@@ -1139,6 +1355,18 @@ FY2025,FY2025,Phillip Life,insurance_revenue,519.667734,Extracted,"file p.40 SCI
 FY2025,FY2024,Phillip Life,insurance_revenue,667.468668,Extracted,"file p.40 SCI printed 667,468,668 (baht, read from page image)"
 FY2025,FY2025,Phillip Life,insurance_service_expense,-532.86185,Extracted,"file p.40 SCI printed (532,861,850) (baht, read from page image)"
 FY2025,FY2024,Phillip Life,insurance_service_expense,-618.045949,Extracted,"file p.40 SCI printed (618,045,949) (baht, read from page image)"
+FY2025,FY2025,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
 FY2025,FY2025,Saha Life,ra_release,34.070181,Extracted,"file p.55 8 total printed 34,070,181.15 (baht, read from page image)"
 FY2025,FY2024,Saha Life,ra_release,27.477335,Extracted,"file p.57 8 total printed 27,477,334.93 (baht, read from page image)"
 FY2025,FY2025,Saha Life,bel_release,329.767986,Extracted,"file p.55 8 total printed 329,767,986.28 (baht, read from page image)"
@@ -1199,3 +1427,15 @@ FY2025,FY2025,Saha Life,insurance_revenue,426.760958,Extracted,"file p.7 SCI (eq
 FY2025,FY2024,Saha Life,insurance_revenue,399.402361,Extracted,"file p.7 SCI (equals 8) printed 399,402,360.92 (baht, read from page image)"
 FY2025,FY2025,Saha Life,insurance_service_expense,-327.377029,Extracted,"file p.7 SCI (equals 8) printed (327,377,029.18) (baht, read from page image)"
 FY2025,FY2024,Saha Life,insurance_service_expense,-269.047582,Extracted,"file p.7 SCI (equals 8) printed (269,047,581.86) (baht, read from page image)"
+FY2025,FY2025,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Saha Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Saha Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Saha Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Saha Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Saha Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2024,Saha Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)

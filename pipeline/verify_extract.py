@@ -146,6 +146,32 @@ def continuity(ex: dict) -> dict | None:
             "note": note, **({"accepted": accepted} if accepted else {})}
 
 
+def equity_continuity(ex: dict) -> dict | None:
+    """Opening total equity of a quarterly extraction against the same 1 January balance read elsewhere.
+
+    Every quarter of a year opens on the same balance: the year's annual extraction carries it (FY2025 in 2025FY for
+    2025Q1-Q3); when that does not exist yet, the first quarter of the year does (2026Q1 for 2026Q2). None when there
+    is nothing to compare (an annual extraction, a first quarter without an annual one, or no equity_open yet)."""
+    q = quarter_info(ex["period"])
+    own = ex["items"].get("equity_open", {}).get(ex["period"])
+    if q is None or own is None:
+        return None
+    ref = note = None
+    annual = ROOT / "extract" / f"{q['year']}FY" / f"{ex['company_id']}.json"
+    first = ROOT / "extract" / f"{q['year']}Q1" / f"{ex['company_id']}.json"
+    if annual.exists():
+        rec = load(annual)["items"].get("equity_open", {}).get(f"FY{q['year']}")
+        ref, note = (rec["value"], f"{q['year']}FY opening equity") if rec else (None, None)
+    elif q["quarter"] > 1 and first.exists():
+        rec = load(first)["items"].get("equity_open", {}).get(f"{q['year']}Q1")
+        ref, note = (rec["value"], f"{q['year']}Q1 opening equity") if rec else (None, None)
+    if ref is None:
+        return None
+    tol = load_settings()["tolerance_thb_m"]
+    d = own["value"] - ref
+    return {"opening": own["value"], "reference": ref, "difference": d, "ok": abs(d) <= tol, "note": note}
+
+
 def compare_pilot(ex: dict, pilot_csv: Path | None = None) -> list[dict]:
     if ex["period"] != "2025FY":
         return []
@@ -201,5 +227,8 @@ def run(path: str) -> bool:
               + ("(none)" if cont["prior_close"] is None else f"{cont['prior_close']:.3f}")
               + (" OK" if cont["ok"] else " MISMATCH")
               + (f" (ACCEPTED: difference {cont['difference']:.3f}, {cont['accepted']})" if cont.get("accepted") else ""))
+    eq = equity_continuity(ex)
+    if eq:
+        print(f"  opening equity {eq['opening']:.3f} vs {eq['note']} {eq['reference']:.3f}" + (" OK" if eq["ok"] else " MISMATCH"))
     return (all(r["ok"] for r in rec) and not any(r["status"] == "DIFFERENT" for r in cmp_)
-            and all(r["ok"] for r in rec3) and (cont is None or cont["ok"]))
+            and all(r["ok"] for r in rec3) and (cont is None or cont["ok"]) and (eq is None or eq["ok"]))

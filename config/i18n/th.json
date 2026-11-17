@@ -12,7 +12,8 @@
     "scale": "ขนาด",
     "profitability": "ความสามารถในการทำกำไร",
     "csm": "CSM",
-    "new_business": "ธุรกิจใหม่"
+    "new_business": "ธุรกิจใหม่",
+    "oci": "OCI"
   },
   "metrics": {
     "insurance_revenue": {"label": "Insurance revenue", "formula": "Insurance revenue รวมทั้งหมด"},
@@ -35,6 +36,9 @@
     "nb_to_release": {"label": "New business / release", "formula": "CSM จากธุรกิจใหม่ / CSM release"},
     "csm_adj_ratio": {"label": "CSM adjustment ratio", "formula": "การปรับ CSM สำหรับบริการในอนาคต / (CSM ต้นงวด + ธุรกิจใหม่ + accretion) หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปี ไม่ปรับเป็นรายปี"},
     "net_inv_ratio": {"label": "Net investment ratio", "formula": "(Net investment income + net insurance finance expense) / net investment income ถ้า net investment income เป็นศูนย์หรือติดลบจะแสดง n/a"},
+    "oci_total": {"label": "Other comprehensive income", "formula": "กำไรขาดทุนเบ็ดเสร็จอื่นสำหรับงวด สุทธิจากภาษี"},
+    "oci_ratio": {"label": "OCI / opening equity", "formula": "กำไรขาดทุนเบ็ดเสร็จอื่นสุทธิจากภาษี / ส่วนของเจ้าของรวมต้นปี หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปี"},
+    "oci_offset": {"label": "Liability OCI offset", "formula": "−(OCI ทางการเงินของสัญญาประกันภัย + สัญญาประกันภัยต่อ) / OCI ของตราสารหนี้ที่วัดมูลค่า FVOCI ทั้งหมดก่อนภาษี"},
     "nb_csm_margin": {"label": "New-business CSM margin", "formula": "CSM จากธุรกิจใหม่ / PV premium ของธุรกิจใหม่"},
     "acq_cost_ratio": {"label": "Acquisition cost ratio", "formula": "PV acquisition cost / PV premium ของธุรกิจใหม่"},
     "nb_claims_ratio": {"label": "Claims & benefits ratio (NB)", "formula": "PV สินไหมและผลประโยชน์ / PV premium ของธุรกิจใหม่"},
