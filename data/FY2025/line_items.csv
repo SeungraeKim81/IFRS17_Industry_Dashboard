@@ -923,18 +923,18 @@ FY2025,FY2025,Dhipaya Life,insurance_revenue,3777.589953,Extracted,"file p.33 SC
 FY2025,FY2024,Dhipaya Life,insurance_revenue,3008.981671,Extracted,"file p.33 SCI (equals 8.1) printed 3,008,981,671 (baht, read from page image)"
 FY2025,FY2025,Dhipaya Life,insurance_service_expense,-3556.876565,Extracted,"file p.33 SCI (equals 8.1) printed (3,556,876,565) (baht, read from page image)"
 FY2025,FY2024,Dhipaya Life,insurance_service_expense,-2766.674032,Extracted,"file p.33 SCI (equals 8.1) printed (2,766,674,032) (baht, read from page image)"
-FY2025,FY2025,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Dhipaya Life,oci_debt_fvoci,1114.349493,Extracted,"file p.34 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,114,349,493 (baht, read from page image)"
+FY2025,FY2024,Dhipaya Life,oci_debt_fvoci,1287.860535,Extracted,"file p.34 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,287,860,535 (baht, read from page image)"
+FY2025,FY2025,Dhipaya Life,oci_ins_finance,-1377.094064,Extracted,"file p.34 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed (1,377,094,064) (baht, read from page image)"
+FY2025,FY2024,Dhipaya Life,oci_ins_finance,-1036.01961,Extracted,"file p.34 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed (1,036,019,610) (baht, read from page image)"
+FY2025,FY2025,Dhipaya Life,oci_reins_finance,0,Extracted,p.34 the statement prints one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+FY2025,FY2024,Dhipaya Life,oci_reins_finance,0,Extracted,p.34 the statement prints one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+FY2025,FY2025,Dhipaya Life,oci_equity_fvoci,1425.808655,Extracted,"file p.34 SCI OCI, equity instruments at FVOCI before tax printed 1,425,808,655 (baht, read from page image)"
+FY2025,FY2024,Dhipaya Life,oci_equity_fvoci,-8.790133,Extracted,"file p.34 SCI OCI, equity instruments at FVOCI before tax printed (8,790,133) (baht, read from page image)"
+FY2025,FY2025,Dhipaya Life,oci_total,939.467931,Extracted,"file p.34 SCI other comprehensive income for the period, net of tax printed 939,467,931 (baht, read from page image)"
+FY2025,FY2024,Dhipaya Life,oci_total,191.994703,Extracted,"file p.34 SCI other comprehensive income for the period, net of tax printed 191,994,703 (baht, read from page image)"
+FY2025,FY2025,Dhipaya Life,equity_open,4811.36663,Extracted,"file p.35 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 4,811,366,630 (baht, read from page image)"
+FY2025,FY2024,Dhipaya Life,equity_open,4309.448237,Extracted,"file p.35 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 4,309,448,237 (baht, read from page image)"
 FY2025,FY2025,Southeast Life,ra_release,227.129,Extracted,"file p.238 18 total printed 227,129 (thousand_baht, read from page image)"
 FY2025,FY2024,Southeast Life,ra_release,183.957,Extracted,"file p.240 18 total printed 183,957 (thousand_baht, read from page image)"
 FY2025,FY2025,Southeast Life,bel_release,2030.798,Extracted,"file p.238 18 total printed 2,030,798 (thousand_baht, read from page image)"

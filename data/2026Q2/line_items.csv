@@ -923,18 +923,18 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2025Q2,Dhipaya Life,insurance_revenue,1868.012892,Extracted,"file p.10 SCI six months (equals 6) printed 1,868,012,892 (baht, read from page image)"
 2026Q2,2026Q2,Dhipaya Life,insurance_service_expense,-1646.568287,Extracted,"file p.10 SCI (equals 4) printed (1,646,568,287) (baht, read from page image)"
 2026Q2,2025Q2,Dhipaya Life,insurance_service_expense,-1802.799126,Extracted,"file p.10 SCI six months (equals 6) printed (1,802,799,126) (baht, read from page image)"
-2026Q2,2026Q2,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2025Q2,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,Dhipaya Life,oci_debt_fvoci,-1496.494641,Extracted,"file p.11 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (1,496,494,641) (baht, read from page image)"
+2026Q2,2025Q2,Dhipaya Life,oci_debt_fvoci,1473.365181,Extracted,"file p.11 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 1,473,365,181 (baht, read from page image)"
+2026Q2,2026Q2,Dhipaya Life,oci_ins_finance,993.061734,Extracted,"file p.11 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed 993,061,734 (baht, read from page image)"
+2026Q2,2025Q2,Dhipaya Life,oci_ins_finance,-1191.150086,Extracted,"file p.11 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed (1,191,150,086) (baht, read from page image)"
+2026Q2,2026Q2,Dhipaya Life,oci_reins_finance,0,Extracted,p.11 the statement prints one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+2026Q2,2025Q2,Dhipaya Life,oci_reins_finance,0,Extracted,p.11 the statement prints one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+2026Q2,2026Q2,Dhipaya Life,oci_equity_fvoci,45.503151,Extracted,"file p.11 SCI OCI, equity instruments at FVOCI before tax printed 45,503,151 (baht, read from page image)"
+2026Q2,2025Q2,Dhipaya Life,oci_equity_fvoci,-228.223814,Extracted,"file p.11 SCI OCI, equity instruments at FVOCI before tax printed (228,223,814) (baht, read from page image)"
+2026Q2,2026Q2,Dhipaya Life,oci_total,-368.250609,Extracted,"file p.11 SCI other comprehensive income for the period, net of tax printed (368,250,609) (baht, read from page image)"
+2026Q2,2025Q2,Dhipaya Life,oci_total,47.281408,Extracted,"file p.11 SCI other comprehensive income for the period, net of tax printed 47,281,408 (baht, read from page image)"
+2026Q2,2026Q2,Dhipaya Life,equity_open,6017.754347,Extracted,"file p.12 SOCE total equity at 1 January printed 6,017,754,347 (baht, read from page image)"
+2026Q2,2025Q2,Dhipaya Life,equity_open,4811.36663,Extracted,"file p.12 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 4,811,366,630 (baht, read from page image)"
 2026Q2,2026Q2,Southeast Life,ra_release,109.292,Extracted,"file p.39 9 total printed 109,292 (thousand_baht, read from page image)"
 2026Q2,2025Q2,Southeast Life,ra_release,116.671,Extracted,"file p.62 11.1 total printed 116,671 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Southeast Life,bel_release,1035.899,Extracted,"file p.39 9 total printed 1,035,899 (thousand_baht, read from page image)"

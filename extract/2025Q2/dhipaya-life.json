@@ -409,6 +409,73 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
    }
+  },
+  "oci_debt_fvoci": {
+   "2025Q2": {
+    "value": 1473.365181,
+    "printed": "1,473,365,181",
+    "unit": "baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
+   }
+  },
+  "oci_ins_finance": {
+   "2025Q2": {
+    "value": -1191.150086,
+    "printed": "(1,191,150,086)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
+   }
+  },
+  "oci_reins_finance": {
+   "2025Q2": {
+    "value": 0.0,
+    "page": 11,
+    "evidence": "the statement prints one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance"
+   }
+  },
+  "oci_equity_fvoci": {
+   "2025Q2": {
+    "value": -228.223814,
+    "printed": "(228,223,814)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
+   }
+  },
+  "oci_total": {
+   "2025Q2": {
+    "value": 47.281408,
+    "printed": "47,281,408",
+    "unit": "baht",
+    "sign": 1,
+    "page": 11,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนเบ็ดเสร็จ (ต่อ) สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
+   }
+  },
+  "equity_open": {
+   "2025Q2": {
+    "value": 4811.36663,
+    "printed": "4,811,366,630",
+    "unit": "baht",
+    "sign": 1,
+    "page": 12,
+    "note": "SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9)",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ สำหรับงวดหกเดือนสิ้นสุดวันที่ 30 มิถุนายน 2568 (หน่วย: บาท)"
+   }
   }
  },
  "ytd_months": 6,

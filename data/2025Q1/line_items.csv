@@ -461,12 +461,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q1,2025Q1,Dhipaya Life,nb_loss_component,58.06892,Extracted,"file p.50 7.3 + 8.3 total, onerous contracts (sum of groups 7 and 8) printed ['51,201,558', '6,867,362'] (baht, read from page image)"
 2025Q1,2025Q1,Dhipaya Life,insurance_revenue,888.5877,Extracted,"file p.7 SCI (equals 6) printed 888,587,700 (baht, read from page image)"
 2025Q1,2025Q1,Dhipaya Life,insurance_service_expense,-794.656743,Extracted,"file p.7 SCI (equals 6) printed (794,656,743) (baht, read from page image)"
-2025Q1,2025Q1,Dhipaya Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Dhipaya Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Dhipaya Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Dhipaya Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Dhipaya Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q1,2025Q1,Dhipaya Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q1,2025Q1,Dhipaya Life,oci_debt_fvoci,504.811073,Extracted,"file p.8 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 504,811,073 (baht, read from page image)"
+2025Q1,2025Q1,Dhipaya Life,oci_ins_finance,-514.753193,Extracted,"file p.8 SCI OCI, insurance contracts issued before tax; one line for insurance contracts issued and reinsurance contracts held printed (514,753,193) (baht, read from page image)"
+2025Q1,2025Q1,Dhipaya Life,oci_reins_finance,0,Extracted,p.8 the statement prints one line for insurance contracts issued and reinsurance contracts held; it is in oci_ins_finance
+2025Q1,2025Q1,Dhipaya Life,oci_equity_fvoci,-91.199494,Extracted,"file p.8 SCI OCI, equity instruments at FVOCI before tax printed (91,199,494) (baht, read from page image)"
+2025Q1,2025Q1,Dhipaya Life,oci_total,-77.991459,Extracted,"file p.8 SCI other comprehensive income for the period, net of tax printed (77,991,459) (baht, read from page image)"
+2025Q1,2025Q1,Dhipaya Life,equity_open,4811.36663,Extracted,"file p.9 SOCE total equity at 1 January; restated balance (TFRS 17 and TFRS 9) printed 4,811,366,630 (baht, read from page image)"
 2025Q1,2025Q1,Southeast Life,ra_release,60.824,Extracted,"file p.60 11.1 total printed 60,824 (thousand_baht, read from page image)"
 2025Q1,2025Q1,Southeast Life,bel_release,491.365,Extracted,"file p.60 11.1 total printed 491,365 (thousand_baht, read from page image)"
 2025Q1,2025Q1,Southeast Life,paa_revenue,0,Extracted,"file p.60 no PAA business printed - (thousand_baht, read from page image)"
