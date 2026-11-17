@@ -950,7 +950,9 @@ function strips() {
   rows.forEach((k, ri) => {
     const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34;
     const all = COS.flatMap(c => [g(c, k), g(c, k, CMP)]).filter(v => v != null);
-    const cap = { nb_to_release: 3, onerous_ratio: 0.6 }[k] || null;
+    // axis limits (owner decision): 30% for the cost and onerous ratios, 3x for new business / release.
+    // A value beyond the limit sits on it with a › marker; its true value is in the label and tooltip.
+    const cap = { acq_cost_ratio: 0.3, onerous_ratio: 0.3, nb_to_release: 3 }[k] || null;
     let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
     const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
