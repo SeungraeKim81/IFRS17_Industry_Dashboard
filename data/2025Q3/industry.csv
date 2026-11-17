@@ -17,6 +17,8 @@ fiscal_year,metric,aggregate,median,n
 2025Q3,csm_release_amount,49709.429767,790.59,19
 2025Q3,release_ratio,0.098886,0.120286,19
 2025Q3,nb_to_release,1.217538,1.221717,19
+2025Q3,csm_adj_ratio,0.000252,-0.003776,19
+2025Q3,net_inv_ratio,0.236103,0.331801,19
 2025Q3,nb_csm_margin,0.118309,0.092178,19
 2025Q3,acq_cost_ratio,0.146236,0.146428,18
 2025Q3,nb_claims_ratio,0.716486,0.74234,18

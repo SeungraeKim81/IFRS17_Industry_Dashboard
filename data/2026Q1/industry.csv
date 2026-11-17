@@ -17,6 +17,8 @@ fiscal_year,metric,aggregate,median,n
 2026Q1,csm_release_amount,16682.037043,213.8355,20
 2026Q1,release_ratio,0.101554,0.127007,20
 2026Q1,nb_to_release,1.451769,1.602416,20
+2026Q1,csm_adj_ratio,-0.004188,-0.000172,20
+2026Q1,net_inv_ratio,0.274411,0.313896,20
 2026Q1,nb_csm_margin,0.13198,0.114823,20
 2026Q1,acq_cost_ratio,0.141234,0.141706,19
 2026Q1,nb_claims_ratio,0.710789,0.712066,19
@@ -45,6 +47,8 @@ fiscal_year,metric,aggregate,median,n
 2025Q1,csm_release_amount,16366.354826,246.433,19
 2025Q1,release_ratio,0.104666,0.12829,19
 2025Q1,nb_to_release,1.625416,1.437804,19
+2025Q1,csm_adj_ratio,-0.001858,-0.003836,19
+2025Q1,net_inv_ratio,0.222391,0.291795,18
 2025Q1,nb_csm_margin,0.132096,0.109796,19
 2025Q1,acq_cost_ratio,0.137866,0.129084,18
 2025Q1,nb_claims_ratio,0.706857,0.728803,18
