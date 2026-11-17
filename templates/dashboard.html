@@ -399,7 +399,7 @@ let LANG = M.default_language || "en";
    definitions, checks, commentary, review flags) comes from config/i18n/<lang>.json. */
 const UI = {
   en: {
-    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", keyMessages: "Key messages", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
+    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", keyMessages: "Highlights", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
     lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "New business", "CSM movement", "Measurement & finance", "Profit bridge", "All insurers", "Definitions", "Data quality", "Method & notes"],
@@ -471,8 +471,8 @@ const UI = {
     ord: n => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] || ["th", "st", "nd", "rd"][n % 100] || "th"),
     chg: (x, up, down) => x == null ? "moved (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
     headlines: p => [
-      p.short + " is the " + p.ord(p.sizeRank) + " largest of " + p.n + " by insurance revenue (" + p.revShare + " share), " +
-        p.ord(p.csmRank) + " by closing CSM and " + p.ord(p.nbRank) + " by new-business CSM.",
+      p.short + " is " + p.ord(p.nbRank) + " of " + p.n + " by new-business CSM, " + p.ord(p.csmRank) + " by closing CSM and " +
+        p.ord(p.sizeRank) + " by insurance revenue (" + p.revShare + " share).",
       "CSM " + p.chg(p.csmG, "grew", "fell") + " " + (p.q ? "since 1 January" : "over the year") + " to " + p.csmClose + "m (industry " + p.csmGi + "); new business replaced " +
         p.nbr + " the release (industry median " + p.nbrMed + ").",
       p.hasCmp ? "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
@@ -484,7 +484,7 @@ const UI = {
     ],
   },
   ko: {
-    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", keyMessages: "핵심 메시지", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
+    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", keyMessages: "하이라이트", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
     lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "신계약", "CSM 변동분석", "후속측정·재무", "이익 브리지", "전체 보험사", "지표 정의", "데이터 품질", "방법론·주석"],
@@ -556,8 +556,8 @@ const UI = {
     ord: n => n + "위",
     chg: (x, up, down) => x == null ? "변동(산출 불가)" : nf(Math.abs(x) * 100, 1) + "% " + (x >= 0 ? up : down),
     headlines: p => [
-      "보험수익 기준 " + p.n + "개사 중 " + p.ord(p.sizeRank) + "(점유율 " + p.revShare + "), 기말 CSM 기준 " + p.ord(p.csmRank) +
-        ", 신계약 CSM 기준 " + p.ord(p.nbRank) + ".",
+      "신계약 CSM 기준 " + p.n + "개사 중 " + p.ord(p.nbRank) + ", 기말 CSM 기준 " + p.ord(p.csmRank) +
+        ", 보험수익 기준 " + p.ord(p.sizeRank) + "(점유율 " + p.revShare + ").",
       "CSM은 " + (p.q ? "연초 대비 " : "연간 ") + p.chg(p.csmG, "증가", "감소") + "해 " + p.csmClose + "백만 바트가 됐다(업계 " + p.csmGi + "). 신계약 CSM이 상각액의 " +
         p.nbr + "를 채웠다(업계 중앙값 " + p.nbrMed + ").",
       p.hasCmp ? "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
@@ -570,7 +570,7 @@ const UI = {
   },
   // Thai: indicator names and IFRS 17 terms stay in English (owner decision); sentences and interface text in Thai
   th: {
-    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", keyMessages: "ประเด็นสำคัญ", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
+    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", keyMessages: "ไฮไลต์", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
     lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ในงบการเงินก่อนนำมาแสดงบนหน้านี้",
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "ธุรกิจใหม่", "การเปลี่ยนแปลง CSM", "Measurement & finance", "องค์ประกอบกำไร", "บริษัททั้งหมด", "นิยามตัวชี้วัด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
@@ -642,8 +642,8 @@ const UI = {
     ord: n => "อันดับ " + n,
     chg: (x, up, down) => x == null ? "เปลี่ยนแปลง (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
     headlines: p => [
-      p.short + " อยู่" + p.ord(p.sizeRank) + " จาก " + p.n + " บริษัทตาม Insurance revenue (ส่วนแบ่ง " + p.revShare + ") " +
-        p.ord(p.csmRank) + " ตาม CSM closing และ" + p.ord(p.nbRank) + " ตาม New-business CSM",
+      p.short + " อยู่" + p.ord(p.nbRank) + " จาก " + p.n + " บริษัทตาม New-business CSM " +
+        p.ord(p.csmRank) + " ตาม CSM closing และ" + p.ord(p.sizeRank) + " ตาม Insurance revenue (ส่วนแบ่ง " + p.revShare + ")",
       "CSM " + p.chg(p.csmG, "เพิ่มขึ้น", "ลดลง") + " " + (p.q ? "นับจาก 1 มกราคม" : "ในรอบปี") + " เป็น " + p.csmClose + " ล้านบาท (อุตสาหกรรม " + p.csmGi + ") ธุรกิจใหม่ทดแทนได้ " +
         p.nbr + " ของ CSM release (ค่ามัธยฐานอุตสาหกรรม " + p.nbrMed + ")",
       p.hasCmp ? "Net profit " + p.chg(p.npG, "เพิ่มขึ้น", "ลดลง") + " เป็น " + p.np + " ล้านบาท ขณะที่ insurance service result " + p.chg(p.isrG, "เพิ่มขึ้น", "ลดลง") +
