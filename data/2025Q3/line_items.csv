@@ -641,12 +641,12 @@ report,fiscal_year,company,code,value,status,source
 2025Q3,2025Q3,Phillip Life,nb_loss_component,7.41,Extracted,"file p.67 new-business total, onerous contracts printed 7,410 (thousand_baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,insurance_revenue,353.401263,Extracted,"file p.10 SCI separate, nine months (equals 6) printed 353,401,263 (baht, read from page image)"
 2025Q3,2025Q3,Phillip Life,insurance_service_expense,-341.810267,Extracted,"file p.10 SCI separate, nine months (equals 6) printed (341,810,267) (baht, read from page image)"
-2025Q3,2025Q3,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2025Q3,2025Q3,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2025Q3,2025Q3,Phillip Life,oci_debt_fvoci,531.962872,Extracted,"file p.11 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 531,962,872 (baht, read from page image)"
+2025Q3,2025Q3,Phillip Life,oci_ins_finance,-342.593638,Extracted,"file p.11 SCI OCI, insurance contracts issued before tax printed (342,593,638) (baht, read from page image)"
+2025Q3,2025Q3,Phillip Life,oci_reins_finance,0,Extracted,p.11 no reinsurance OCI line on the statement
+2025Q3,2025Q3,Phillip Life,oci_equity_fvoci,28.557874,Extracted,"file p.11 SCI OCI, equity instruments at FVOCI before tax printed 28,557,874 (baht, read from page image)"
+2025Q3,2025Q3,Phillip Life,oci_total,106.367745,Extracted,"file p.11 SCI other comprehensive income for the period, net of tax printed 106,367,745 (baht, read from page image)"
+2025Q3,2025Q3,Phillip Life,equity_open,3206.757849,Extracted,"file p.13 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 3,206,757,849 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,ra_release,25.248502,Extracted,"file p.45 8 total printed 25,248,502.43 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,bel_release,244.111586,Extracted,"file p.45 8 total printed 244,111,586.17 (baht, read from page image)"
 2025Q3,2025Q3,Saha Life,paa_revenue,0,Extracted,"file p.45 8 (no PAA business) printed - (baht, read from page image)"

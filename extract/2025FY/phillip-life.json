@@ -689,6 +689,128 @@
     "read": "visual",
     "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
    }
+  },
+  "oci_debt_fvoci": {
+   "FY2025": {
+    "value": 379.220569,
+    "printed": "379,220,569",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out)",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "value": 625.055865,
+    "printed": "625,055,865",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out); 2567 before TFRS 9: gain on investments at FVOCI under the previous standard",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_ins_finance": {
+   "FY2025": {
+    "value": -222.392664,
+    "printed": "(222,392,664)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "value": -811.66467,
+    "printed": "(811,664,670)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI OCI, insurance contracts issued before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_reins_finance": {
+   "FY2025": {
+    "value": 0.0,
+    "page": 41,
+    "evidence": "no reinsurance OCI line on the statement"
+   },
+   "FY2024": {
+    "value": 0.0,
+    "page": 41,
+    "evidence": "no reinsurance OCI line on the statement"
+   }
+  },
+  "oci_equity_fvoci": {
+   "FY2025": {
+    "value": 60.330663,
+    "printed": "60,330,663",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "value": 0.0,
+    "printed": "-",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI OCI, equity instruments at FVOCI before tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "oci_total": {
+   "FY2025": {
+    "value": 130.128386,
+    "printed": "130,128,386",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   },
+   "FY2024": {
+    "value": -311.619991,
+    "printed": "(311,619,991)",
+    "unit": "baht",
+    "sign": 1,
+    "page": 41,
+    "note": "SCI other comprehensive income for the period, net of tax",
+    "read": "visual",
+    "heading_seen": "งบกำไรขาดทุนและกำไรขาดทุนเบ็ดเสร็จอื่น (ต่อ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท; งบการเงินเฉพาะกิจการ columns)"
+   }
+  },
+  "equity_open": {
+   "FY2025": {
+    "value": 3206.757849,
+    "printed": "3,206,757,849",
+    "unit": "baht",
+    "sign": 1,
+    "page": 43,
+    "note": "SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9)",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ (งบการเงินเฉพาะกิจการ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   },
+   "FY2024": {
+    "value": 3289.593372,
+    "printed": "3,289,593,372",
+    "unit": "baht",
+    "sign": 1,
+    "page": 43,
+    "note": "SOCE total equity at 1 January; separate statements; restated balance (TFRS 17)",
+    "read": "visual",
+    "heading_seen": "งบการเปลี่ยนแปลงส่วนของเจ้าของ (งบการเงินเฉพาะกิจการ) สำหรับปีสิ้นสุดวันที่ 31 ธันวาคม 2568 (หน่วย: บาท)"
+   }
   }
  }
 }

@@ -1355,18 +1355,18 @@ FY2025,FY2025,Phillip Life,insurance_revenue,519.667734,Extracted,"file p.40 SCI
 FY2025,FY2024,Phillip Life,insurance_revenue,667.468668,Extracted,"file p.40 SCI printed 667,468,668 (baht, read from page image)"
 FY2025,FY2025,Phillip Life,insurance_service_expense,-532.86185,Extracted,"file p.40 SCI printed (532,861,850) (baht, read from page image)"
 FY2025,FY2024,Phillip Life,insurance_service_expense,-618.045949,Extracted,"file p.40 SCI printed (618,045,949) (baht, read from page image)"
-FY2025,FY2025,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2025,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
-FY2025,FY2024,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+FY2025,FY2025,Phillip Life,oci_debt_fvoci,379.220569,Extracted,"file p.41 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed 379,220,569 (baht, read from page image)"
+FY2025,FY2024,Phillip Life,oci_debt_fvoci,625.055865,Extracted,"file p.41 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out); 2567 before TFRS 9: gain on investments at FVOCI under the previous standard printed 625,055,865 (baht, read from page image)"
+FY2025,FY2025,Phillip Life,oci_ins_finance,-222.392664,Extracted,"file p.41 SCI OCI, insurance contracts issued before tax printed (222,392,664) (baht, read from page image)"
+FY2025,FY2024,Phillip Life,oci_ins_finance,-811.66467,Extracted,"file p.41 SCI OCI, insurance contracts issued before tax printed (811,664,670) (baht, read from page image)"
+FY2025,FY2025,Phillip Life,oci_reins_finance,0,Extracted,p.41 no reinsurance OCI line on the statement
+FY2025,FY2024,Phillip Life,oci_reins_finance,0,Extracted,p.41 no reinsurance OCI line on the statement
+FY2025,FY2025,Phillip Life,oci_equity_fvoci,60.330663,Extracted,"file p.41 SCI OCI, equity instruments at FVOCI before tax printed 60,330,663 (baht, read from page image)"
+FY2025,FY2024,Phillip Life,oci_equity_fvoci,0,Extracted,"file p.41 SCI OCI, equity instruments at FVOCI before tax printed - (baht, read from page image)"
+FY2025,FY2025,Phillip Life,oci_total,130.128386,Extracted,"file p.41 SCI other comprehensive income for the period, net of tax printed 130,128,386 (baht, read from page image)"
+FY2025,FY2024,Phillip Life,oci_total,-311.619991,Extracted,"file p.41 SCI other comprehensive income for the period, net of tax printed (311,619,991) (baht, read from page image)"
+FY2025,FY2025,Phillip Life,equity_open,3206.757849,Extracted,"file p.43 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17 and TFRS 9) printed 3,206,757,849 (baht, read from page image)"
+FY2025,FY2024,Phillip Life,equity_open,3289.593372,Extracted,"file p.43 SOCE total equity at 1 January; separate statements; restated balance (TFRS 17) printed 3,289,593,372 (baht, read from page image)"
 FY2025,FY2025,Saha Life,ra_release,34.070181,Extracted,"file p.55 8 total printed 34,070,181.15 (baht, read from page image)"
 FY2025,FY2024,Saha Life,ra_release,27.477335,Extracted,"file p.57 8 total printed 27,477,334.93 (baht, read from page image)"
 FY2025,FY2025,Saha Life,bel_release,329.767986,Extracted,"file p.55 8 total printed 329,767,986.28 (baht, read from page image)"

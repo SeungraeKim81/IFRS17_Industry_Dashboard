@@ -1289,12 +1289,12 @@ report,fiscal_year,company,code,value,status,source
 2026Q2,2026Q2,Phillip Life,nb_loss_component,3.818,Extracted,"file p.32 new-business total, onerous contracts printed 3,818 (thousand_baht, read from page image)"
 2026Q2,2026Q2,Phillip Life,insurance_revenue,328.060918,Extracted,"file p.9 SCI separate (equals 5) printed 328,060,918 (baht, read from page image)"
 2026Q2,2026Q2,Phillip Life,insurance_service_expense,-543.96385,Extracted,"file p.9 SCI separate (equals 5) printed (543,963,850) (baht, read from page image)"
-2026Q2,2026Q2,Phillip Life,oci_debt_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Phillip Life,oci_ins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Phillip Life,oci_reins_finance,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Phillip Life,oci_equity_fvoci,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Phillip Life,oci_total,,Not extracted,not yet extracted (common.PHASED_IN)
-2026Q2,2026Q2,Phillip Life,equity_open,,Not extracted,not yet extracted (common.PHASED_IN)
+2026Q2,2026Q2,Phillip Life,oci_debt_fvoci,-363.423184,Extracted,"file p.10 SCI OCI, debt instruments at FVOCI before tax (fair-value line only; reclassifications to profit or loss and hedging lines left out) printed (363,423,184) (baht, read from page image)"
+2026Q2,2026Q2,Phillip Life,oci_ins_finance,359.686935,Extracted,"file p.10 SCI OCI, insurance contracts issued before tax printed 359,686,935 (baht, read from page image)"
+2026Q2,2026Q2,Phillip Life,oci_reins_finance,0,Extracted,p.10 no reinsurance OCI line on the statement
+2026Q2,2026Q2,Phillip Life,oci_equity_fvoci,61.807187,Extracted,"file p.10 SCI OCI, equity instruments at FVOCI before tax printed 61,807,187 (baht, read from page image)"
+2026Q2,2026Q2,Phillip Life,oci_total,111.22186,Extracted,"file p.10 SCI other comprehensive income for the period, net of tax printed 111,221,860 (baht, read from page image)"
+2026Q2,2026Q2,Phillip Life,equity_open,3922.56356,Extracted,"file p.12 SOCE total equity at 1 January; separate statements printed 3,922,563,560 (baht, read from page image)"
 2026Q2,2026Q2,Saha Life,ra_release,16.447256,Extracted,"file p.12 4 total printed 16,447,256.33 (baht, read from page image)"
 2026Q2,2025Q2,Saha Life,ra_release,14.656796,Extracted,"file p.45 8 total printed 14,656,796.31 (baht, read from page image)"
 2026Q2,2026Q2,Saha Life,bel_release,169.751025,Extracted,"file p.12 4 total printed 169,751,025.05 (baht, read from page image)"
