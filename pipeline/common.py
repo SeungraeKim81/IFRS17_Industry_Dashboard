@@ -60,7 +60,7 @@ def load_line_items() -> list[dict]:
 # Line items being added to every extraction one insurer at a time. Until an extraction carries them, extract does
 # not ask its spec for a rule and ingest writes them blank with status "Not extracted" (shown as n/a). Empty this
 # set once every extraction has them, so that a missing rule stops the run again.
-PHASED_IN = {"oci_debt_fvoci", "oci_ins_finance", "oci_reins_finance", "oci_equity_fvoci", "oci_total", "equity_open"}
+PHASED_IN: set[str] = set()  # the OCI items and opening equity were phased in this way (v1.11); all extracted now
 # Line items the pilot capture workbook (kept for reference) never had.
 NOT_IN_PILOT = {"oci_debt_fvoci", "oci_ins_finance", "oci_reins_finance", "oci_equity_fvoci", "oci_total", "equity_open"}
 
