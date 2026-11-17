@@ -697,7 +697,13 @@ function showTip(ev, html) {
   if (y + h > innerHeight - 10) y = innerHeight - h - 10;
   tip.style.left = Math.max(8, x) + "px"; tip.style.top = Math.max(8, y) + "px";
 }
-const hideTip = () => tip.style.opacity = 0;
+// the chart element whose tooltip is open. On a phone a tap opens the tooltip through an emulated mousemove, but
+// no mouseleave follows when the reader scrolls or taps text, so a press outside that element, or any scroll
+// (also inside a scrolling box, hence capture), closes it
+let tipOwner = null;
+const hideTip = () => { tip.style.opacity = 0; tipOwner = null; };
+document.addEventListener("pointerdown", e => { if (tipOwner && !tipOwner.contains(e.target)) hideTip(); }, true);
+addEventListener("scroll", () => { if (tipOwner) hideTip(); }, { capture: true, passive: true });
 const tipTable = (title, rows) => "<b>" + esc(title) + "</b><table>" + rows.map(r => "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td></tr>").join("") + "</table>";
 function coTip(c, extra = []) {
   return tipTable(c.name, [
@@ -708,7 +714,9 @@ function coTip(c, extra = []) {
     [t("tipRa"), raLabel(c)], ...extra]);
 }
 function hover(node, html) {
-  node.addEventListener("mousemove", e => showTip(e, typeof html === "function" ? html() : html));
+  const open = e => { showTip(e, typeof html === "function" ? html() : html); tipOwner = node; };
+  node.addEventListener("mousemove", open);
+  node.addEventListener("click", open);  // a tap opens it even where the browser emulates no mousemove
   node.addEventListener("mouseleave", hideTip);
   node.style.cursor = "default";
 }
