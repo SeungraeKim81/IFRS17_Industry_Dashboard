@@ -392,7 +392,7 @@ const UI = {
     h3quad: "CSM sustainability quadrant", ariaQuad: "Scatter of CSM release ratio against new business divided by release",
     lgOthers: "Other insurers", lgCeiling: "plotted at the axis limit, true value labelled", lgBubble: "bubble area = closing CSM",
     h2nb: "3&nbsp; New-business quality",
-    noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median.",
+    noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median. Each axis is centred on that median; insurers beyond its range sit at the end with ‹ or › (the onerous ratio has a fixed 0–10% axis).",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Insurance service margin, split by RA policy",
     noteIsmDef: "The insurance service margin is the insurance service result (insurance revenue plus insurance service expense) divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results.",
@@ -472,7 +472,7 @@ const UI = {
     h3quad: "CSM 지속가능성 사분면", ariaQuad: "CSM 상각률과 신계약 CSM ÷ 상각 배수의 산점도",
     lgOthers: "다른 보험사", lgCeiling: "축 한계에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
     h2nb: "3&nbsp; 신계약 품질",
-    noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다.",
+    noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다. 각 축은 이 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다(신계약 손실부담 비율은 0–10% 고정).",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 보험서비스이익률 (RA 분리 정책별)",
     noteIsmDef: "보험서비스이익률은 보험서비스결과(보험수익 + 보험서비스비용)를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다.",
@@ -553,7 +553,7 @@ const UI = {
     h3quad: "แผนภาพสี่ส่วนความยั่งยืนของ CSM", ariaQuad: "แผนภาพการกระจายของ CSM release ratio เทียบกับ New business / release",
     lgOthers: "บริษัทอื่น", lgCeiling: "แสดงที่ขอบแกน พร้อมป้ายค่าจริง", lgBubble: "ขนาดวงกลม = CSM closing",
     h2nb: "3&nbsp; คุณภาพธุรกิจใหม่",
-    noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม",
+    noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม แต่ละแกนมีค่ามัธยฐานนี้อยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › (Onerous new business ใช้แกนคงที่ 0–10%)",
     ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
     h2ism: "5&nbsp; Insurance service margin แยกตามนโยบาย RA",
     noteIsmDef: "Insurance service margin คือ insurance service result (insurance revenue บวก insurance service expense) หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน",
@@ -959,20 +959,28 @@ function wrapText(s, maxW, fs) {
   });
   return lines;
 }
+const pctl = (v, p) => { const s = v.slice().sort((a, b) => a - b), k = (s.length - 1) * p, f = Math.floor(k), c = Math.min(f + 1, s.length - 1); return s[f] + (s[c] - s[f]) * (k - f); };
+// Axis of one strip (owner decision): centred on the industry median, half-width 1.25 times the farther of the
+// 10th and 90th percentiles from it, and never below zero (half-width at most the median). The onerous ratio is
+// too skewed for that (median near 0, a few insurers in the thousands of %), so it has a fixed 0-10% axis.
+function stripAxis(k, vals, med) {
+  if (k === "onerous_ratio") return [0, 0.1];
+  if (med == null || !vals.length) return [Math.min(0, ...vals), Math.max(...vals)];
+  const d = Math.min(1.25 * Math.max(Math.abs(pctl(vals, 0.1) - med), Math.abs(pctl(vals, 0.9) - med)), med);
+  return d > 0 ? [med - d, med + d] : [Math.min(0, ...vals), Math.max(...vals)];
+}
 function strips() {
   const svg = $("#strips"); svg.textContent = "";
   const rows = ["nb_csm_margin", "acq_cost_ratio", "onerous_ratio", "nb_to_release"];
   const W = 900, L = 200, R = 40, rowH = 88, T = 10, H = T + rows.length * rowH + 4;
   svg.setAttribute("viewBox", "0 0 " + W + " " + H);
   rows.forEach((k, ri) => {
-    const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34;
-    const all = COS.flatMap(c => [g(c, k), g(c, k, CMP)]).filter(v => v != null);
-    // axis limits (owner decision): 30% for the cost and onerous ratios, 3x for new business / release.
-    // A value beyond the limit sits on it with a › marker; its true value is in the label and tooltip.
-    const cap = { acq_cost_ratio: 0.3, onerous_ratio: 0.3, nb_to_release: 3 }[k] || null;
-    let lo = Math.min(0, ...all), hi = cap ? cap : Math.max(...all);
-    const { ticks } = niceTicks(lo, hi, 6); hi = Math.max(hi, ticks[ticks.length - 1]);
+    const d = DEF[k], y0 = T + ri * rowH, cy = y0 + 34, med = ind(k).median;
+    const pts = COS.map(c => ({ c, v: g(c, k) })).filter(p => p.v != null);
+    const [lo, hi] = stripAxis(k, pts.map(p => p.v), med);
+    const { ticks } = niceTicks(lo, hi, 6);
     const px = v => L + (Math.min(Math.max(v, lo), hi) - lo) / (hi - lo) * (W - L - R);
+    const dotTip = (c, extra = []) => tipTable(c.name, [[mLabel(k) + " " + CURL, fmtU(d.unit, g(c, k))], [CMPL, fmtU(d.unit, g(c, k, CMP))], ...extra]);
     // name, then its definition (as in the definitions table) in small type, then the reading direction
     svg.appendChild(el("text", { x: 0, y: cy - 14, "font-size": 13, "font-weight": 600, fill: "var(--ink)" }, mLabel(k)));
     const defLines = wrapText(mFormula(k), L - 14, 10.5);
@@ -983,14 +991,14 @@ function strips() {
       svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, d.unit === "pct" ? nf(tk * 100, 0) + "%" : nf(tk, 1) + "×"));
     });
     svg.appendChild(el("line", { x1: L, x2: W - R, y1: cy, y2: cy, stroke: "var(--axis)" }));
-    const med = ind(k).median;
     if (med != null) svg.appendChild(el("line", { x1: px(med), x2: px(med), y1: cy - 16, y2: cy + 16, stroke: "var(--ink-2)", "stroke-width": 2 }));
-    const dotTip = (c, extra = []) => tipTable(c.name, [[mLabel(k) + " " + CURL, fmtU(d.unit, g(c, k))], [CMPL, fmtU(d.unit, g(c, k, CMP))], ...extra]);
-    COS.filter(c => !isF(c)).forEach(c => {
-      const v = g(c, k); if (v == null) return;
-      const dot = el("circle", { cx: px(v), cy, r: 5, fill: "var(--peer)", "fill-opacity": .55, stroke: "var(--surface)", "stroke-width": 1.5 });
-      hover(dot, () => dotTip(c)); svg.appendChild(dot);
-      if (cap && v > cap) svg.appendChild(el("text", { x: px(v) + 7, y: cy + 4, "font-size": 10, fill: "var(--muted)" }, "›"));
+    // insurers beyond the axis sit on its end; one mark per end, with their number when there are several
+    const nLo = pts.filter(p => p.v < lo).length, nHi = pts.filter(p => p.v > hi).length;
+    if (nLo) svg.appendChild(el("text", { x: L - 8, y: cy + 4, "text-anchor": "end", "font-size": 10.5, fill: "var(--muted)" }, "‹" + (nLo > 1 ? nLo : "")));
+    if (nHi) svg.appendChild(el("text", { x: W - R + 8, y: cy + 4, "font-size": 10.5, fill: "var(--muted)" }, "›" + (nHi > 1 ? nHi : "")));
+    pts.filter(p => !isF(p.c)).forEach(p => {
+      const dot = el("circle", { cx: px(p.v), cy, r: 5, fill: "var(--peer)", "fill-opacity": .55, stroke: "var(--surface)", "stroke-width": 1.5 });
+      hover(dot, () => dotTip(p.c)); svg.appendChild(dot);
     });
     const c = byName(F), v = g(c, k), vp = g(c, k, CMP);
     if (v == null) {  // the highlighted insurer does not disclose this measure
@@ -1004,7 +1012,8 @@ function strips() {
     const fd = el("circle", { cx: px(v), cy, r: 7, fill: "var(--focus)", stroke: "var(--surface)", "stroke-width": 2 });
     hover(fd, () => dotTip(c, [[t("tipMedian"), fmtU(d.unit, med)], [t("tipRank"), rk(c, k).rank + " / " + rk(c, k).n]]));
     svg.appendChild(fd);
-    svg.appendChild(el("text", { x: px(v), y: cy - 14, "text-anchor": "middle", "font-size": 12, "font-weight": 650, fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 4, "paint-order": "stroke" }, c.short + " " + fmtU(d.unit, v) + (cap && v > cap ? " ›" : "")));
+    const edge = v < lo ? "‹ " : "", edgeR = v > hi ? " ›" : "";
+    svg.appendChild(el("text", { x: px(v), y: cy - 14, "text-anchor": "middle", "font-size": 12, "font-weight": 650, fill: "var(--ink)", stroke: "var(--surface)", "stroke-width": 4, "paint-order": "stroke" }, edge + c.short + " " + fmtU(d.unit, v) + edgeR));
     if (med != null) svg.appendChild(el("text", { x: px(med), y: cy + 44, "text-anchor": "middle", "font-size": 10.5, fill: "var(--ink-2)" }, t("median", { v: fmtU(d.unit, med) })));
   });
 }
