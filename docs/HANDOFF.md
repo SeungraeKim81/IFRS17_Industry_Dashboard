@@ -68,10 +68,11 @@
 
 1. 데스크톱 앱을 최신 버전으로 업데이트한다.
 2. 저장소를 클론한다. iCloud Drive나 Google Drive 동기화 폴더 밖의 일반 폴더에 둔다(`.git`이 동기화와 충돌할 수 있음).
+   소유자 Mac에서는 iCloud '데스크탑 및 문서' 동기화가 켜져 있어 `~/Documents`도 동기화 대상이므로 `~/Developer`를 쓴다(24절).
    ```bash
-   mkdir -p ~/Documents/GitHub && cd ~/Documents/GitHub && git clone https://github.com/SeungraeKim81/IFRS17_Industry_Dashboard.git
+   mkdir -p ~/Developer && cd ~/Developer && git clone https://github.com/SeungraeKim81/IFRS17_Industry_Dashboard.git
    ```
-3. 데스크톱 앱에서 **로컬** Claude Code 세션을 새로 열고, 작업 폴더로 `~/Documents/GitHub/IFRS17_Industry_Dashboard`를 지정한다.
+3. 데스크톱 앱에서 **로컬** Claude Code 세션을 새로 열고, 작업 폴더로 `~/Developer/IFRS17_Industry_Dashboard`를 지정한다.
 4. 입력창 **+ → Add folder**로 원문 폴더 `FS_Life_Industry`를 추가한다.
    - Google Drive 앱으로 동기화되는 폴더면 보통 `~/Library/CloudStorage/GoogleDrive-<계정>/My Drive/FS_Life_Industry`에 있다.
    - 파일이 "온라인 전용"이면 읽을 때 내려받는다. 느리면 폴더를 우클릭해 오프라인 사용으로 설정한다.
@@ -527,11 +528,14 @@ Southeast는 2Q 스캔본, 3Q 텍스트 레이어. BUI·Saha는 3분기 이익�
   목차는 10개 항목이 됐고, 검토 플래그 설명의 '9장' 참조를 '10장'으로 고쳤다.
 - **휴대폰의 지표 정의**: 620px 이하에서는 표 대신 지표마다 한 덩어리(분야 → 지표 이름 → 아래 줄에 정의)로 보여 준다(소유자 결정).
   전에는 390px에서 정의 열이 화면 밖으로 밀려 표 안에서 옆으로 밀어야 했다(영 105px, 태 171px). 621px 이상은 표 그대로이고 넘침 없음(영·한·태).
-- **남은 일: 저장소를 iCloud 밖으로 옮기기**(소유자 결정 2026-11-17, Claude 데스크톱에서 진행 예정). 지금 위치 `~/Documents/GitHub/`는
-  iCloud '데스크탑 및 문서' 동기화 대상이고, 'Mac 저장 공간 최적화'로 작업 파일 557개와 `.git` 안 파일 328개가 기기에서 지워져
-  (dataless) 읽을 때마다 하나씩 다시 내려받는다. 첫 빌드가 몇 분 멈췄고, 이름 끝이 " 2"인 복사본 87개도 같은 원인으로 보인다.
-  5-1절 2번 권고대로 동기화되지 않는 폴더(예: `~/Developer/`)에 새로 클론하고, 로컬 전용 `.claude/`(launch.json 등)와 `design/`을 옮긴 뒤
-  작업 폴더를 바꾼다.
+- **저장소를 iCloud 밖으로 옮김(완료 2026-11-18)**. 전 위치 `~/Documents/GitHub/`는 iCloud '데스크탑 및 문서' 동기화 대상이고,
+  'Mac 저장 공간 최적화'로 작업 파일 557개와 `.git` 안 파일 328개가 기기에서 지워져(dataless) 읽을 때마다 하나씩 다시 내려받았다.
+  첫 빌드가 몇 분 멈췄고, 이름 끝이 " 2"인 복사본 87개도 같은 원인으로 보인다(옮기기 직전에도 dataless 475개, `.git/info/refs 2` 1개).
+  - 새 위치 `~/Developer/IFRS17_Industry_Dashboard`에 GitHub에서 새로 클론했다. 로컬 전용 브랜치·`design/`·`.claude/launch.json`을 옮겼다
+    (이 세션 임시 폴더를 가리키던 `oci-mockup` 항목은 뺐다).
+  - 확인: 새 위치에서 `python -m pipeline all` 결과 `data/`는 main과 같고 `output/`은 빌드 표시(`generated`, `git`)만 다르다.
+    테스트 25개 통과(1개 건너뜀: node 없음, 전 위치와 같음). 전체 빌드 0.7초.
+  - 전 폴더는 소유자가 확인 뒤 직접 휴지통으로 옮긴다(소유자 결정). 그 전까지 전 폴더에서는 작업하지 않는다.
 
 ## 25. 신계약 품질 차트 (v1.9, 2026-11-17)
 
