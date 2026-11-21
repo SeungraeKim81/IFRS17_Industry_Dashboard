@@ -22,6 +22,8 @@
     "nb_csm": {"label": "New-business CSM", "formula": "CSM จากสัญญาที่รับรู้เมื่อเริ่มแรกในงวด"},
     "nb_pv_premium": {"label": "New-business PV premium", "formula": "มูลค่าปัจจุบันของกระแสเงินสดรับในอนาคตของธุรกิจใหม่"},
     "isr_gross": {"label": "Insurance service result", "formula": "Insurance revenue + insurance service expense"},
+    "net_inv_result": {"label": "Net investment result", "formula": "Net investment income + net insurance finance expense"},
+    "pbt": {"label": "Profit before tax", "formula": "Net profit + ค่าใช้จ่ายภาษีเงินได้"},
     "ism_gross": {"label": "Insurance service margin", "formula": "(Insurance revenue + insurance service expense) / insurance revenue"},
     "ism_net": {"label": "Insurance service margin after reinsurance", "formula": "(Insurance service result + reinsurance result) / insurance revenue"},
     "inv_margin": {"label": "Investment result net of IFIE", "formula": "(Net investment income + net insurance finance expense) / insurance revenue"},
@@ -45,7 +47,8 @@
     "onerous_ratio": {"label": "Onerous new business", "formula": "Loss component ของธุรกิจใหม่ / CSM จากธุรกิจใหม่"},
     "rev_share": {"label": "Share of insurance revenue", "formula": "Insurance revenue ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"},
     "csm_share": {"label": "Share of closing CSM", "formula": "CSM closing ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"},
-    "nb_csm_share": {"label": "Share of new-business CSM", "formula": "New-business CSM ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"}
+    "nb_csm_share": {"label": "Share of new-business CSM", "formula": "New-business CSM ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"},
+    "pbt_share": {"label": "Share of profit before tax", "formula": "Profit before tax ของบริษัท / ยอดรวมของทุกบริษัทที่ครอบคลุม"}
   },
   "checks": {
     "revenue_split": {"label": "ผลรวมองค์ประกอบ = Insurance revenue รวม", "short": "รายได้"},

@@ -5,6 +5,8 @@ fiscal_year,basis,metric,aggregate,median,n
 2026Q1,common,nb_csm,24139.212476,428.531599,19
 2026Q1,common,nb_pv_premium,183262.080492,4277.126,19
 2026Q1,common,isr_gross,23645.255909,453.28916,19
+2026Q1,common,net_inv_result,9331.978452,201.597771,19
+2026Q1,common,pbt,26116.084155,342.206,19
 2026Q1,common,ism_gross,0.306821,0.295732,19
 2026Q1,common,ism_net,0.270143,0.261524,19
 2026Q1,common,inv_margin,0.121092,0.11678,19
@@ -38,6 +40,8 @@ fiscal_year,basis,metric,aggregate,median,n
 2025Q1,common,nb_csm,26602.129222,410.099153,19
 2025Q1,common,nb_pv_premium,201384.106756,3124.821511,19
 2025Q1,common,isr_gross,19503.906049,450.154647,19
+2025Q1,common,net_inv_result,5562.634522,115.105,19
+2025Q1,common,pbt,19808.431063,463.782341,19
 2025Q1,common,ism_gross,0.267166,0.248745,19
 2025Q1,common,ism_net,0.246794,0.257832,19
 2025Q1,common,inv_margin,0.076197,0.081503,19

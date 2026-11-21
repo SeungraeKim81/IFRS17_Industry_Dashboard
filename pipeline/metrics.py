@@ -44,6 +44,10 @@ METRICS = [
      "PV of future inflows on new business", lambda v: v["nb_pv_premium"]),
     ("isr_gross", "Insurance service result", "thb_m", True, "profitability",
      "Insurance revenue + insurance service expense", lambda v: v["insurance_revenue"] + v["insurance_service_expense"]),
+    ("net_inv_result", "Net investment result", "thb_m", True, "profitability",
+     "Net investment income + net insurance finance expense", lambda v: v["net_investment_income"] + v["ifie"]),
+    ("pbt", "Profit before tax", "thb_m", True, "profitability",
+     "Net profit + income tax expense", lambda v: v["net_profit"] - v["income_tax"]),
     ("ism_gross", "Insurance service margin", "pct", True, "profitability",
      "(Insurance revenue + insurance service expense) / insurance revenue",
      lambda v: _div(v["insurance_revenue"] + v["insurance_service_expense"], v["insurance_revenue"])),
@@ -116,7 +120,7 @@ def metric_value(code: str, v: dict, fiscal_year: str):
     """The indicator as the dashboard shows it (annualised where it applies); None when not disclosed."""
     return annualise(code, evaluate(METRIC_INDEX[code][6], v), fiscal_year)
 # Market share is computed across companies, not per company.
-SHARE_OF = {"rev_share": "insurance_revenue", "csm_share": "csm_close", "nb_csm_share": "nb_csm"}
+SHARE_OF = {"rev_share": "insurance_revenue", "csm_share": "csm_close", "nb_csm_share": "nb_csm", "pbt_share": "pbt"}
 
 
 def load_values(period: str) -> dict[tuple[str, str], dict[str, float | None]]:
