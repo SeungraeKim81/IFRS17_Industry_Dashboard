@@ -19,6 +19,7 @@ __ROBOTS__
   --good:#1e7a46; --bad:#b01e34; --neutral-mid:#eef2f8;
   --title:#0b3267; --mast:#0033cc; --mast-ink:#ffffff; --mast-ink-2:#d6e2ff; --mast-muted:#b8ccff;
   --band:#e6edfc; --band-ink:#0b3267;
+  --weak:#fab019; --weak-bg:#fff7e0; --weak-ink:#7a4f00;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   color-scheme:dark;
@@ -31,6 +32,7 @@ __ROBOTS__
   --good:#5fd08f; --bad:#ff7b8c; --neutral-mid:#1b2a48;
   --title:#ffffff; --mast:#0b3267; --mast-ink:#ffffff; --mast-ink-2:#c9d6f0; --mast-muted:#9fb2d8;
   --band:#16264a; --band-ink:#e8edf6;
+  --weak:#f5b83d; --weak-bg:rgba(245,184,61,.13); --weak-ink:#f7cd78;
 }}
 :root[data-theme="dark"]{
   color-scheme:dark;
@@ -43,6 +45,7 @@ __ROBOTS__
   --good:#5fd08f; --bad:#ff7b8c; --neutral-mid:#1b2a48;
   --title:#ffffff; --mast:#0b3267; --mast-ink:#ffffff; --mast-ink-2:#c9d6f0; --mast-muted:#9fb2d8;
   --band:#16264a; --band-ink:#e8edf6;
+  --weak:#f5b83d; --weak-bg:rgba(245,184,61,.13); --weak-ink:#f7cd78;
 }
 *{box-sizing:border-box}
 /* one line length for all running text, about the width of the charts. In rem, not ch: ch is the width
@@ -128,22 +131,21 @@ svg text{font-family:"Neue Haas Grotesk Text Pro",system-ui,-apple-system,"Segoe
 @media(max-width:480px){
   .tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
   .tile{padding:9px 10px 9px}
-  .tile .lab{font-size:12px;line-height:1.3}
+  .tile .lab{font-size:13px;line-height:1.3}
   .tile .val{font-size:20px;margin-top:3px}
   .tile .delta{font-size:11.5px;line-height:1.35}
   .tile .ctx{font-size:11px;line-height:1.35;margin-top:3px}
 }
 .tile{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
-.tile .lab{font-size:13px;color:var(--ink-2)}
+.tile .lab{font-size:15px;font-weight:700;line-height:1.3;color:var(--ink)}
 .tile .val{font-size:26px;font-weight:700;line-height:1.25;margin-top:2px;color:var(--title);font-variant-numeric:tabular-nums}
 .tile .delta{font-size:13px;margin-top:2px}
 .tile .ctx{font-size:12px;color:var(--muted);margin-top:4px}
+/* lower half of the industry on this measure (owner decision, v1.13): amber, with a tag so colour is not the only cue */
+.tile.weak{background:var(--weak-bg);border-top-color:var(--weak)}
+.tile .weak-tag{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:600;color:var(--weak-ink)}
+.tiles-note{margin:10px 0 0}
 .up-good,.down-good{color:var(--good)} .up-bad,.down-bad{color:var(--bad)} .flat{color:var(--ink-2)}
-.keymsg{margin-top:16px;padding:14px 20px 12px;border-radius:6px;background:var(--band);color:var(--band-ink)}
-.keymsg .eyebrow{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--focus)}
-:lang(ko) .keymsg .eyebrow,:lang(th) .keymsg .eyebrow{letter-spacing:.04em}
-.headlines{margin:0;padding:0 0 0 18px;color:var(--band-ink);max-width:var(--measure)}
-.headlines li{margin:4px 0}
 .callouts{margin-top:14px;display:grid;gap:8px}
 .callout{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--axis);padding:4px 0 4px 12px}
 .callout b{color:var(--ink)}
@@ -261,7 +263,7 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 
 <section id="s-focus">
   <div class="tiles" id="tiles"></div>
-  <div class="keymsg"><p class="eyebrow" data-t="keyMessages"></p><ul class="headlines" id="headlines"></ul></div>
+  <p class="sec-note tiles-note" id="tilesNote"></p>
   <div class="callouts" id="callouts"></div>
 </section>
 
@@ -402,8 +404,8 @@ let LANG = M.default_language || "en";
    definitions, checks, commentary, review flags) comes from config/i18n/<lang>.json. */
 const UI = {
   en: {
-    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", keyMessages: "Highlights", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
-    lede: "{n} Thai life insurers under {std}, {cur}. Every figure is taken from the filed financial statements and tied back to their printed subtotals before it reaches this page.",
+    langName: "English", brandLabel: "IFRS 17 · Industry dashboard", langLabel: "Language", focusPick: "Highlighted insurer", deflt: "(default)",
+    lede: "{n} Thai life insurers under {std}, {cur}. Based on the published financial statements.",
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "New business", "CSM movement", "Measurement & finance", "Profit bridge", "All insurers", "Definitions", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
@@ -446,6 +448,8 @@ const UI = {
     ndEqOpen: "Opening equity", h3oci: "OCI composition, % of opening equity", ariaOci: "Other comprehensive income of each insurer by component, as a share of opening equity", ociSub: "{cur} · {n} insurers · ordered by total OCI, highest first · right: total OCI · liability OCI offset", lgOciDebt: "Debt FVOCI (assets)", lgOciLiab: "Insurance & reinsurance finance OCI (liabilities)", lgOciEq: "Equity FVOCI", lgOciRest: "Income tax & other", lgOciNet: "Total OCI, net of tax", ociColHead: "OCI · offset", tipOciIns: "Insurance contracts OCI", tipOciReins: "Reinsurance contracts OCI", tipOffset: "Liability OCI offset", noteOci: "The OCI chart splits each insurer's other comprehensive income for the year to date, as a share of total equity at 1 January, into the fair-value change on debt instruments at FVOCI (assets), the insurance and reinsurance finance OCI that offsets it (liabilities), equity instruments at FVOCI, and income tax and other items (reclassifications to profit or loss, hedging); the bars add up to total OCI after tax, the diamond. The liability OCI offset on the right is the share of the debt FVOCI change that the liability OCI cancels out, both before tax (100% = fully offset); it is n/a when the debt FVOCI change is under 5% of opening equity.",
     ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
     ctxRankMed: "Rank {r} of {n} · median {v}",
+    noteTiles: "A shaded card marks the lower half of the insurers on that measure: ratios by their value, amounts by their growth over {cmp} (closing CSM by its growth over the period). Neutral measures are not marked.",
+    weakRank: "Lower half of the industry", weakGrowth: "Growth in the lower half",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
@@ -457,7 +461,7 @@ const UI = {
     foot: "Source: published TFRS 17 financial statements of each insurer (SET filings, OIC annual disclosures and company websites), extracted page by page from each filed statement (files used: <code>{wb}</code>). Built {gen}{git}. Compiled from public information by the dashboard owner; extraction errors are possible, so the filed statements remain the authoritative source. Not investment advice.",
     footGit: " from commit {git}", reviewFlag: "Review flag {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
     periodsLabel: "Period",
-    ledeQ: "{n} Thai life insurers under {std}, {cur}, year to date. Every figure is taken from the filed interim statements and tied back to their printed subtotals before it reaches this page.",
+    ledeQ: "{n} Thai life insurers under {std}, {cur}, year to date. Based on the published financial statements.",
     unitsQ: "{unit} · {mo} months to {pe} · comparative {cmp} · {n} insurers", unitsQnoCmp: "{unit} · {mo} months to {pe} · no comparative · {n} insurers",
     qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (ann.)",
     noteAllQ: " Figures are year to date. The industry change compares the {k} insurers present in both periods.",
@@ -470,23 +474,10 @@ const UI = {
       csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
       acq_cost_ratio: "Acq. cost ratio", onerous_ratio: "Onerous NB" },
     ord: n => n + (["th", "st", "nd", "rd"][(n % 100 - 20) % 10] || ["th", "st", "nd", "rd"][n % 100] || "th"),
-    chg: (x, up, down) => x == null ? "moved (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
-    headlines: p => [
-      p.short + " is " + p.ord(p.nbRank) + " of " + p.n + " by new-business CSM, " + p.ord(p.csmRank) + " by closing CSM and " +
-        p.ord(p.sizeRank) + " by insurance revenue (" + p.revShare + " share).",
-      "CSM " + p.chg(p.csmG, "grew", "fell") + " " + (p.q ? "since 1 January" : "over the year") + " to " + p.csmClose + "m (industry " + p.csmGi + "); new business replaced " +
-        p.nbr + " the release (industry median " + p.nbrMed + ").",
-      p.hasCmp ? "Net profit " + p.chg(p.npG, "rose", "fell") + " to " + p.np + "m while the insurance service result " + p.chg(p.isrG, "rose", "fell") +
-        (p.taxBig ? "; income tax went from " + p.taxPrev + "m to " + p.taxNow + "m." : ".")
-        : "Net profit was " + p.np + "m and the insurance service result " + p.isr + "m (no comparative period on this page).",
-      "New-business CSM margin of " + p.nbm + " ranks " + p.ord(p.nbmRank) + " of " + p.n + (p.acqNa
-        ? "; the statements do not split new-business outflows into acquisition cost and claims."
-        : "; acquisition cost takes " + p.acq + " of new-business premium (median " + p.acqMed + ")."),
-    ],
   },
   ko: {
-    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", keyMessages: "하이라이트", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
-    lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 모든 수치는 공시된 재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
+    langName: "한국어", brandLabel: "IFRS 17 · 업계 대시보드", langLabel: "언어", focusPick: "강조 보험사", deflt: "(기본)",
+    lede: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 실적. 공시재무제표 기준.",
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "신계약", "CSM 변동분석", "후속측정·재무", "이익 브리지", "전체 보험사", "지표 정의", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
@@ -529,6 +520,8 @@ const UI = {
     ndEqOpen: "기초 자본", h3oci: "OCI 구성, 기초 자본 대비 %", ariaOci: "회사별 기타포괄손익의 구성, 기초 자본 대비 비율", ociSub: "{cur} · {n}개사 · OCI 합계가 높은 순 · 오른쪽: OCI 합계 · 부채 OCI 상쇄율", lgOciDebt: "채무상품 FVOCI (자산)", lgOciLiab: "보험·재보험 금융손익 OCI (부채)", lgOciEq: "지분상품 FVOCI", lgOciRest: "법인세 및 기타", lgOciNet: "OCI 합계(세후)", ociColHead: "OCI · 상쇄율", tipOciIns: "보험계약 OCI", tipOciReins: "재보험계약 OCI", tipOffset: "부채 OCI 상쇄율", noteOci: "OCI 차트는 회사별 연초 이후 기타포괄손익을 1월 1일 자본총계 대비 비율로 나타내며, 채무상품 FVOCI 평가손익(자산), 이를 상쇄하는 보험·재보험 금융손익 OCI(부채), 지분상품 FVOCI, 법인세 및 기타(당기손익 재분류, 위험회피)로 나눈다. 막대를 합하면 세후 OCI 합계(◆)가 된다. 오른쪽의 부채 OCI 상쇄율은 채무상품 FVOCI 평가손익을 부채 OCI가 상쇄하는 비율로(100% = 전부 상쇄), 둘 다 세전 기준이며, 채무상품 평가손익이 기초 자본의 5% 미만이면 n/a로 표시한다.",
     ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
     ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
+    noteTiles: "음영 카드는 해당 지표에서 업계 하위 절반이라는 뜻이다. 비율은 값으로, 금액은 {cmp} 대비 증가율로 판정한다(기말 CSM은 기간 중 증가율). 좋고 나쁨이 없는 지표는 표시하지 않는다.",
+    weakRank: "업계 하위 절반", weakGrowth: "증가율 업계 하위 절반",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
     wf: ["기초", "신계약", "이자부리", "CSM 조정", "상각", "기말"],
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
@@ -540,7 +533,7 @@ const UI = {
     foot: "출처: 각 보험사가 공시한 TFRS 17 재무제표(SET 공시, OIC 연차 공시, 회사 홈페이지)의 원문에서 쪽 단위로 추출(사용한 원문 목록: <code>{wb}</code>). 빌드 {gen}{git}. 대시보드 작성자가 공개 정보로 정리한 자료로, 추출 오류가 있을 수 있으므로 공시된 재무제표가 최종 기준이다. 투자 권유가 아니다.",
     footGit: " (커밋 {git})", reviewFlag: "{fy} 검토 플래그", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
     periodsLabel: "기간",
-    ledeQ: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 누적 실적. 모든 수치는 공시된 중간재무제표에서 가져왔고, 화면에 올리기 전에 재무제표에 인쇄된 소계와 맞는지 대사했다.",
+    ledeQ: "{std}를 적용하는 태국 생명보험사 {n}곳의 {cur} 누적 실적. 공시재무제표 기준.",
     unitsQ: "단위 {unit} · {pe}까지 {mo}개월 누적 · 비교기간 {cmp} · {n}개사", unitsQnoCmp: "단위 {unit} · {pe}까지 {mo}개월 누적 · 비교기간 없음 · {n}개사",
     qXQ: "CSM 상각률, 연환산 (상각 ÷ 상각 전 CSM, × 12 ÷ 경과월수)", ann: " (연환산)",
     noteAllQ: " 수치는 누적 기준이다. 업계 변동은 두 기간에 모두 있는 {k}개사끼리 비교한다.",
@@ -553,24 +546,11 @@ const UI = {
       csm_growth: "CSM 증가율", release_ratio: "CSM 상각률", nb_to_release: "신계약 ÷ 상각", nb_csm: "신계약 CSM", nb_csm_margin: "신계약 마진율",
       acq_cost_ratio: "신계약비용률", onerous_ratio: "손실부담 비율" },
     ord: n => n + "위",
-    chg: (x, up, down) => x == null ? "변동(산출 불가)" : nf(Math.abs(x) * 100, 1) + "% " + (x >= 0 ? up : down),
-    headlines: p => [
-      "신계약 CSM 기준 " + p.n + "개사 중 " + p.ord(p.nbRank) + ", 기말 CSM 기준 " + p.ord(p.csmRank) +
-        ", 보험수익 기준 " + p.ord(p.sizeRank) + "(점유율 " + p.revShare + ").",
-      "CSM은 " + (p.q ? "연초 대비 " : "연간 ") + p.chg(p.csmG, "증가", "감소") + "해 " + p.csmClose + "백만 바트가 됐다(업계 " + p.csmGi + "). 신계약 CSM이 상각액의 " +
-        p.nbr + "를 채웠다(업계 중앙값 " + p.nbrMed + ").",
-      p.hasCmp ? "당기순이익은 " + p.chg(p.npG, "증가", "감소") + "한 " + p.np + "백만 바트, 보험서비스결과는 " + p.chg(p.isrG, "증가", "감소") + "했다" +
-        (p.taxBig ? ". 법인세는 " + p.taxPrev + "백만에서 " + p.taxNow + "백만 바트로 바뀌었다." : ".")
-        : "당기순이익은 " + p.np + "백만 바트, 보험서비스결과는 " + p.isr + "백만 바트다(이 페이지에는 비교기간이 없다).",
-      "신계약 CSM 마진율 " + p.nbm + "는 " + p.n + "개사 중 " + p.ord(p.nbmRank) + (p.acqNa
-        ? "이다. 재무제표가 신계약 현금유출을 보험취득비용과 보험금으로 나누어 공시하지 않는다."
-        : "이며, 보험취득비용이 신계약 PV 보험료의 " + p.acq + "를 차지한다(중앙값 " + p.acqMed + ")."),
-    ],
   },
   // Thai: indicator names and IFRS 17 terms stay in English (owner decision); sentences and interface text in Thai
   th: {
-    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", keyMessages: "ไฮไลต์", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
-    lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ในงบการเงินก่อนนำมาแสดงบนหน้านี้",
+    langName: "ไทย", brandLabel: "IFRS 17 · แดชบอร์ดอุตสาหกรรม", langLabel: "ภาษา", focusPick: "บริษัทที่เน้น", deflt: "(ค่าเริ่มต้น)",
+    lede: "ผลการดำเนินงาน {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} อ้างอิงงบการเงินที่เปิดเผยต่อสาธารณะ",
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "ธุรกิจใหม่", "การเปลี่ยนแปลง CSM", "Measurement & finance", "องค์ประกอบกำไร", "บริษัททั้งหมด", "นิยามตัวชี้วัด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
     h2market: "2&nbsp; สถานะทางการตลาด",
@@ -613,6 +593,8 @@ const UI = {
     ndEqOpen: "Opening equity", h3oci: "องค์ประกอบของ OCI, % ของส่วนของเจ้าของต้นงวด", ariaOci: "กำไรขาดทุนเบ็ดเสร็จอื่นของแต่ละบริษัทแยกตามองค์ประกอบ เป็นสัดส่วนของส่วนของเจ้าของต้นงวด", ociSub: "{cur} · {n} บริษัท · เรียงตาม OCI รวมจากมากไปน้อย · ด้านขวา: OCI รวม · liability OCI offset", lgOciDebt: "ตราสารหนี้ FVOCI (สินทรัพย์)", lgOciLiab: "OCI ทางการเงินของสัญญาประกันภัยและประกันภัยต่อ (หนี้สิน)", lgOciEq: "ตราสารทุน FVOCI", lgOciRest: "ภาษีเงินได้และอื่น ๆ", lgOciNet: "OCI รวม สุทธิจากภาษี", ociColHead: "OCI · offset", tipOciIns: "OCI สัญญาประกันภัย", tipOciReins: "OCI สัญญาประกันภัยต่อ", tipOffset: "Liability OCI offset", noteOci: "แผนภูมิ OCI แสดงกำไรขาดทุนเบ็ดเสร็จอื่นสะสมตั้งแต่ต้นปีของแต่ละบริษัท เป็นสัดส่วนของส่วนของเจ้าของรวม ณ วันที่ 1 มกราคม แยกเป็นการเปลี่ยนแปลงมูลค่ายุติธรรมของตราสารหนี้ที่วัดมูลค่า FVOCI (สินทรัพย์) OCI ทางการเงินของสัญญาประกันภัยและสัญญาประกันภัยต่อที่หักล้างรายการนั้น (หนี้สิน) ตราสารทุนที่วัดมูลค่า FVOCI และภาษีเงินได้และรายการอื่น (การจัดประเภทใหม่เข้ากำไรขาดทุน การป้องกันความเสี่ยง) แท่งทั้งหมดรวมกันเท่ากับ OCI รวมสุทธิจากภาษี (◆) Liability OCI offset ด้านขวาคือสัดส่วนที่ OCI ของหนี้สินหักล้างการเปลี่ยนแปลงของตราสารหนี้ FVOCI ทั้งสองรายการก่อนภาษี (100% = หักล้างทั้งหมด) และแสดงเป็น n/a เมื่อการเปลี่ยนแปลงของตราสารหนี้ FVOCI น้อยกว่า 5% ของส่วนของเจ้าของต้นงวด",
     ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
     ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
+    noteTiles: "การ์ดที่แรเงาหมายถึงอยู่ในครึ่งล่างของอุตสาหกรรมในตัวชี้วัดนั้น อัตราส่วนวัดจากค่า ส่วนจำนวนเงินวัดจากอัตราการเติบโตเทียบกับ {cmp} (CSM closing วัดจากการเติบโตระหว่างงวด) ตัวชี้วัดที่เป็นกลางจะไม่ถูกแรเงา",
+    weakRank: "ครึ่งล่างของอุตสาหกรรม", weakGrowth: "การเติบโตอยู่ครึ่งล่าง",
     wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · ขนาดวงกลม = CSM closing, {lo} ถึง {hi} ล้าน", qThreshold: "1.0× — เหนือเส้นคือเติม CSM ได้ ใต้เส้นคือ CSM ลดลง",
@@ -624,7 +606,7 @@ const UI = {
     foot: "แหล่งที่มา: งบการเงินตาม TFRS 17 ที่แต่ละบริษัทเปิดเผย (เอกสารที่ยื่นต่อ SET การเปิดเผยข้อมูลประจำปีต่อ คปภ. และเว็บไซต์บริษัท) ดึงข้อมูลทีละหน้าจากงบการเงินที่ยื่นแต่ละฉบับ (ไฟล์ที่ใช้: <code>{wb}</code>) สร้างเมื่อ {gen}{git} ผู้จัดทำแดชบอร์ดรวบรวมจากข้อมูลสาธารณะ อาจมีข้อผิดพลาดในการดึงข้อมูล งบการเงินที่ยื่นจึงเป็นแหล่งอ้างอิงหลัก ไม่ใช่คำแนะนำการลงทุน",
     footGit: " จาก commit {git}", reviewFlag: "ข้อสังเกตเพื่อตรวจทาน {fy}", csvName: "thai_life_ifrs17_indicators_{cur}.csv",
     periodsLabel: "งวด",
-    ledeQ: "ผลการดำเนินงานสะสมตั้งแต่ต้นปีถึง {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} ตัวเลขทุกรายการนำมาจากงบการเงินระหว่างกาลที่ยื่นต่อหน่วยงาน และได้กระทบยอดกับยอดรวมย่อยที่พิมพ์ไว้ก่อนนำมาแสดงบนหน้านี้",
+    ledeQ: "ผลการดำเนินงานสะสมตั้งแต่ต้นปีถึง {cur} ของบริษัทประกันชีวิตไทย {n} แห่ง ภายใต้ {std} อ้างอิงงบการเงินที่เปิดเผยต่อสาธารณะ",
     unitsQ: "{unit} · {mo} เดือนถึง {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท", unitsQnoCmp: "{unit} · {mo} เดือนถึง {pe} · ไม่มีงวดเปรียบเทียบ · {n} บริษัท",
     qXQ: "CSM release ratio, annualised (release ÷ CSM available before release, × 12 ÷ months)", ann: " (รายปี)",
     noteAllQ: " ตัวเลขเป็นยอดสะสมตั้งแต่ต้นปี การเปลี่ยนแปลงของอุตสาหกรรมเปรียบเทียบเฉพาะ {k} บริษัทที่มีข้อมูลทั้งสองงวด",
@@ -637,19 +619,6 @@ const UI = {
       csm_growth: "CSM growth", release_ratio: "Release ratio", nb_to_release: "NB / release", nb_csm: "NB CSM", nb_csm_margin: "NB CSM margin",
       acq_cost_ratio: "Acq. cost ratio", onerous_ratio: "Onerous NB" },
     ord: n => "อันดับ " + n,
-    chg: (x, up, down) => x == null ? "เปลี่ยนแปลง (n.m.)" : (x >= 0 ? up : down) + " " + nf(Math.abs(x) * 100, 1) + "%",
-    headlines: p => [
-      p.short + " อยู่" + p.ord(p.nbRank) + " จาก " + p.n + " บริษัทตาม New-business CSM " +
-        p.ord(p.csmRank) + " ตาม CSM closing และ" + p.ord(p.sizeRank) + " ตาม Insurance revenue (ส่วนแบ่ง " + p.revShare + ")",
-      "CSM " + p.chg(p.csmG, "เพิ่มขึ้น", "ลดลง") + " " + (p.q ? "นับจาก 1 มกราคม" : "ในรอบปี") + " เป็น " + p.csmClose + " ล้านบาท (อุตสาหกรรม " + p.csmGi + ") ธุรกิจใหม่ทดแทนได้ " +
-        p.nbr + " ของ CSM release (ค่ามัธยฐานอุตสาหกรรม " + p.nbrMed + ")",
-      p.hasCmp ? "Net profit " + p.chg(p.npG, "เพิ่มขึ้น", "ลดลง") + " เป็น " + p.np + " ล้านบาท ขณะที่ insurance service result " + p.chg(p.isrG, "เพิ่มขึ้น", "ลดลง") +
-        (p.taxBig ? " income tax เปลี่ยนจาก " + p.taxPrev + " ล้าน เป็น " + p.taxNow + " ล้านบาท" : "")
-        : "Net profit เท่ากับ " + p.np + " ล้านบาท และ insurance service result " + p.isr + " ล้านบาท (หน้านี้ไม่มีงวดเปรียบเทียบ)",
-      "New-business CSM margin " + p.nbm + " อยู่" + p.ord(p.nbmRank) + " จาก " + p.n + " บริษัท" + (p.acqNa
-        ? " งบการเงินไม่ได้แยกกระแสเงินสดจ่ายของธุรกิจใหม่เป็น acquisition cost และ claims"
-        : " acquisition cost คิดเป็น " + p.acq + " ของ new-business premium (ค่ามัธยฐาน " + p.acqMed + ")"),
-    ],
   },
 };
 const TR = () => (DATA.i18n || {})[LANG] || null;
@@ -799,37 +768,44 @@ function focusSection() {
     { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
     { k: "csm_release_amount", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "csm_release_amount").rank, n, v: fM(ind("csm_release_amount").agg) }) },
     { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
-    { k: "insurance_revenue", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "insurance_revenue").rank, n, s: fP(g(c, "rev_share")) }) },
-    { k: "net_profit", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_profit").rank, n, v: fM(ind("net_profit").agg) }) },
+    { k: "isr_gross", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "isr_gross").rank, n, v: fM(ind("isr_gross").agg) }) },
+    { k: "net_inv_result", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_inv_result").rank, n, v: fM(ind("net_inv_result").agg) }) },
   ];
   const T2 = [
     { k: "nb_csm_margin", kind: "pp", ctx: rankMed("nb_csm_margin", fP) },
     { k: "nb_to_release", kind: "x", ctx: rankMed("nb_to_release", fX) },
     { k: "release_ratio", kind: "pp", ctx: rankMed("release_ratio", fP) },
     { k: "ism_gross", kind: "pp", ctx: rankMed("ism_gross", fP) },
-    { k: "npm", kind: "pp", ctx: rankMed("npm", fP) },
+    { k: "pbt", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "pbt").rank, n, s: fP(g(c, "pbt_share")) }) },
   ];
+  // Industry standing (owner decision, v1.13): a card is marked when the insurer is in the lower half of the
+  // insurers on it. Ratios by their own value; amounts by their growth on the comparative period, since their
+  // size rank only repeats the insurer's size (closing CSM by its growth since the start of the year).
+  // Neutral measures, and an amount without a growth (no comparative, or a base at or below zero), are not marked.
+  const weak = x => {
+    const better = DEF[x.k].better;
+    if (better == null) return null;
+    let mine, all;
+    if (x.k === "csm_close") { mine = g(c, "csm_growth"); all = COS.map(o => g(o, "csm_growth")); }
+    else if (x.kind === "growth") {
+      const gr = o => { const a = g(o, x.k), b = g(o, x.k, CMP); return a == null || b == null ? null : growth(a, b); };
+      mine = gr(c); all = COS.map(gr);
+    } else { mine = g(c, x.k); all = COS.map(o => g(o, x.k)); }
+    all = all.filter(v => v != null);
+    if (mine == null || all.length < 2) return null;
+    const ahead = all.filter(v => better ? v > mine : v < mine).length;  // insurers better placed
+    return ahead + 1 > Math.ceil(all.length / 2) ? (x.kind === "growth" ? "weakGrowth" : "weakRank") : null;
+  };
   const tile = x => {
-    const d = DEF[x.k];
-    return '<div class="tile"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
-      '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div></div>";
+    const d = DEF[x.k], w = weak(x);
+    return '<div class="tile' + (w ? " weak" : "") + '"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
+      '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div>" +
+      (w ? '<div class="weak-tag">' + t(w) + "</div>" : "") + "</div>";
   };
   // one grid in reading order: 5 + 5 on a wide screen; narrower screens refill the rows in the same order (owner decision)
   $("#tiles").innerHTML = [...T1, ...T2].map(tile).join("");
+  $("#tilesNote").innerHTML = t("noteTiles", { cmp: esc(CMPL) });
 
-  const taxNow = -raw(c, "income_tax"), taxPrev = -raw(c, "income_tax", CMP);
-  const L = t("headlines")({
-    short: c.short, n, ord, chg: t("chg"), sizeRank: c.size_rank, revShare: fP(g(c, "rev_share")),
-    q: QTR, hasCmp: M.has_comparative !== false, isr: fM(g(c, "isr_gross")),
-    csmRank: rk(c, "csm_close").rank, nbRank: rk(c, "nb_csm").rank,
-    csmG: g(c, "csm_growth"), csmClose: fM(raw(c, "csm_close")), csmGi: fP(QTR ? ind("csm_growth").agg : growth(ind("csm_close").agg, ind("csm_close", CMP).agg)),
-    nbr: fX(g(c, "nb_to_release")), nbrMed: fX(ind("nb_to_release").median),
-    npG: growth(raw(c, "net_profit"), raw(c, "net_profit", CMP)), np: fM(raw(c, "net_profit")),
-    isrG: growth(g(c, "isr_gross"), g(c, "isr_gross", CMP)),
-    taxBig: Math.abs(taxNow - taxPrev) > 0.2 * Math.abs(raw(c, "net_profit")), taxNow: fM(taxNow), taxPrev: fM(taxPrev),
-    nbm: fP(g(c, "nb_csm_margin")), nbmRank: rk(c, "nb_csm_margin").rank, acq: fP(g(c, "acq_cost_ratio")), acqNa: g(c, "acq_cost_ratio") == null, acqMed: fP(ind("acq_cost_ratio").median),
-  });
-  $("#headlines").innerHTML = L.map(s => "<li>" + esc(s) + "</li>").join("");
   const notes = DATA.commentary.filter(x => x.companies.includes(F));
   const flags = DATA.flags.filter(f => f.company === F);
   $("#callouts").innerHTML = notes.map(x => '<div class="callout"><b>' + esc(noteT(x, "title")) + ".</b> " + esc(noteT(x, "body")) + "</div>").join("") +
