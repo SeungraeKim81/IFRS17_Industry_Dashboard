@@ -409,7 +409,7 @@ const UI = {
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "New business", "CSM movement", "Measurement & finance", "Profit bridge", "All insurers", "Definitions", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
-    noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and what the insurer earns this year (insurance revenue). Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
+    noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and this year's profit before tax. Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
     h2csm: "4&nbsp; CSM movement analysis",
     noteCsm: "The quadrant sets each insurer's release pace against how much new business replaces what was released. The roll-forward below then shows how the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total.",
     h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
@@ -481,7 +481,7 @@ const UI = {
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "신계약", "CSM 변동분석", "후속측정·재무", "이익 브리지", "전체 보험사", "지표 정의", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
-    noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해 벌어들인 이익의 원천(보험수익). 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
+    noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해의 세전이익. 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
     h2csm: "4&nbsp; CSM 변동분석",
     noteCsm: "사분면에서 보험사별 상각 속도와, 상각된 만큼을 신계약이 얼마나 채우는지를 함께 본다. 이어서 아래 변동표에서 강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다.",
     h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
@@ -554,7 +554,7 @@ const UI = {
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "ธุรกิจใหม่", "การเปลี่ยนแปลง CSM", "Measurement & finance", "องค์ประกอบกำไร", "บริษัททั้งหมด", "นิยามตัวชี้วัด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
     h2market: "2&nbsp; สถานะทางการตลาด",
-    noteMarket: "ขนาดตามสามมิติ: กำไรในอนาคตที่เพิ่มขึ้นจากการขายในปีนี้ (New-business CSM) กำไรที่สะสมไว้สำหรับปีต่อ ๆ ไป (CSM closing) และรายได้ที่บริษัทได้รับในปีนี้ (Insurance revenue) เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม",
+    noteMarket: "ขนาดตามสามมิติ: กำไรในอนาคตที่เพิ่มขึ้นจากการขายในปีนี้ (New-business CSM) กำไรที่สะสมไว้สำหรับปีต่อ ๆ ไป (CSM closing) และกำไรก่อนภาษีของปีนี้ (Profit before tax) เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม",
     h2csm: "4&nbsp; การวิเคราะห์การเปลี่ยนแปลง CSM",
     noteCsm: "แผนภาพสี่ส่วนเปรียบเทียบความเร็วในการรับรู้ CSM ของแต่ละบริษัทกับปริมาณธุรกิจใหม่ที่เข้ามาทดแทนส่วนที่รับรู้ไป จากนั้นตารางการเปลี่ยนแปลงด้านล่างแสดงการเปลี่ยนแปลงของ CSM ในรอบงวด ปรับเป็นดัชนีโดยให้ CSM ต้นงวด&nbsp;=&nbsp;100 เปรียบเทียบบริษัทที่เน้นกับยอดรวมของอุตสาหกรรม",
     h3wf: "การเปลี่ยนแปลง CSM (ต้นงวด = 100)", ariaWf: "แผนภูมิน้ำตกการเปลี่ยนแปลง CSM ของบริษัทที่เน้นและอุตสาหกรรม",
@@ -815,7 +815,8 @@ function focusSection() {
 /* ---------- 2 market ---------- */
 let MKT = 0;  // measure shown in the narrow-screen market table (index into cols)
 function market() {
-  const cols = [["nb_csm", "nb_csm_share"], ["csm_close", "csm_share"], ["insurance_revenue", "rev_share"]];
+  // third measure: profit before tax (owner decision v1.13, CFO feedback; was insurance revenue)
+  const cols = [["nb_csm", "nb_csm_share"], ["csm_close", "csm_share"], ["pbt", "pbt_share"]];
   const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
   let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
   // ordered by new-business CSM; # is the new-business CSM rank
