@@ -417,11 +417,11 @@ const UI = {
     h3quad: "CSM sustainability quadrant", ariaQuad: "Scatter of CSM release ratio against new business divided by release",
     lgOthers: "Other insurers", lgCeiling: "plotted at the axis limit, true value labelled", lgBubble: "bubble area = closing CSM",
     h2nb: "3&nbsp; New-business quality",
-    noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median. Each axis is centred on that median; insurers beyond its range sit at the end with ‹ or › (the onerous ratio has a fixed 0–10% axis).",
+    noteNb: "Each row places all insurers on one measure of the year's new business. The highlighted insurer is labelled; its hollow ring is the comparative year, so the line shows the direction of travel. The vertical tick is the industry median. Each axis is centred on that median; insurers beyond its range sit at the end with ‹ or › (the onerous ratio has a fixed 0–10% axis). Green shading marks the better side of the median, red the worse side.",
     ariaStrips: "Strip plots of new-business indicators", lgMedian: "Industry median",
     h2ism: "5&nbsp; Subsequent measurement & financial indicators",
     noteInforce: "The insurance service margin is the insurance service result divided by insurance revenue: the margin of the insurance business itself, before reinsurance and before investment and finance results. The net investment ratio is the share of net investment income left after the insurance finance expense. The CSM adjustment ratio is the CSM adjustment divided by the CSM before release: the rate of change in the CSM from assumption and experience adjustments.",
-    noteAxis: "Under the VFA the finance expense follows the underlying items, so an insurer with much VFA business shows a structurally low ratio. On quarterly pages all three measures are year to date. Each axis is centred on the industry median; insurers beyond its range sit at the end with ‹ or ›.",
+    noteAxis: "Under the VFA the finance expense follows the underlying items, so an insurer with much VFA business shows a structurally low ratio. On quarterly pages all three measures are year to date. Each axis is centred on the industry median; insurers beyond its range sit at the end with ‹ or ›. The CSM adjustment ratio is neutral and has no shading.",
     notePolicy: "Accounting policy choices differ by insurer. {k} of {n} insurers do not disaggregate the risk-adjustment change ({names}), so their insurance service margin also carries the RA finance effect. See section 10.",
     ariaStrips5: "Strip plots of subsequent-measurement indicators",
     h2bridge: "6&nbsp; What happens to a hundred baht of insurance revenue",
@@ -454,7 +454,7 @@ const UI = {
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
     qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
-    better: "higher is better", worse: "lower is better", median: "median {v}",
+    better: "higher is better", worse: "lower is better", zBetterL: "← better", zBetterR: "better →", zWorseL: "← worse", zWorseR: "worse →", median: "median {v}",
     dqNote: "<b>{ok} of {total}</b> reconciliations pass within {tol}m ({n} insurers × {y} years × {c} checks). The build stops if any one fails, so a published dashboard always ties to the printed subtotals. Hover a tick for the difference.",
     dqFlags: "Flags", diff: "difference {v}m", none: "None.",
     defArea: "Area", defInd: "Indicator", defDef: "Definition",
@@ -489,11 +489,11 @@ const UI = {
     h3quad: "CSM 지속가능성 사분면", ariaQuad: "CSM 상각률과 신계약 CSM ÷ 상각 배수의 산점도",
     lgOthers: "다른 보험사", lgCeiling: "축 한계에 표시, 실제 값은 라벨로", lgBubble: "원 면적 = 기말 CSM",
     h2nb: "3&nbsp; 신계약 품질",
-    noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다. 각 축은 이 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다(신계약 손실부담 비율은 0–10% 고정).",
+    noteNb: "각 줄은 올해 신계약의 한 가지 지표에 모든 보험사를 배치한다. 강조 보험사는 라벨로 표시하고, 속이 빈 원은 비교기간 값이라 선이 변화 방향을 보여 준다. 세로 눈금은 업계 중앙값이다. 각 축은 이 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다(신계약 손실부담 비율은 0–10% 고정). 중앙값을 기준으로 초록 음영은 좋은 쪽, 빨강 음영은 나쁜 쪽이다.",
     ariaStrips: "신계약 지표 스트립 차트", lgMedian: "업계 중앙값",
     h2ism: "5&nbsp; 후속측정 · 재무 지표",
     noteInforce: "보험서비스마진은 보험서비스결과를 보험수익으로 나눈 값으로, 재보험과 투자·금융손익 전 보험 본업의 마진이다. 순투자손익률은 투자손익 가운데 보험금융손익을 차감하고 남는 비율이다. CSM 조정률은 CSM 조정액을 상각 전 CSM으로 나눈 값으로, 가정·경험 조정에 의한 CSM의 변동 비율이다.",
-    noteAxis: "VFA 계약은 보험금융손익이 기초항목을 따라가므로, VFA 비중이 큰 회사는 구조적으로 낮게 나온다. 분기 페이지는 세 지표 모두 연초 이후 누적값이다. 각 축은 업계 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다.",
+    noteAxis: "VFA 계약은 보험금융손익이 기초항목을 따라가므로, VFA 비중이 큰 회사는 구조적으로 낮게 나온다. 분기 페이지는 세 지표 모두 연초 이후 누적값이다. 각 축은 업계 중앙값을 가운데에 두며, 범위를 벗어난 회사는 양 끝에 ‹ 또는 ›로 표시한다. CSM 조정률은 좋고 나쁨이 없는 지표라 음영이 없다.",
     notePolicy: "회계정책 선택은 회사마다 다르다. {n}개사 중 {k}개사({names})는 위험조정 변동을 분리하지 않아 보험서비스마진에 RA 금융효과가 함께 들어간다. 10번 참고.",
     ariaStrips5: "후속측정 지표 스트립 차트",
     h2bridge: "6&nbsp; 보험수익 100바트는 어디로 가나",
@@ -526,7 +526,7 @@ const UI = {
     wf: ["기초", "신계약", "이자부리", "CSM 조정", "상각", "기말"],
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
     qX: "CSM 상각률 (상각 ÷ 상각 전 CSM)", qY: "신계약 CSM ÷ 상각",
-    better: "높을수록 좋음", worse: "낮을수록 좋음", median: "중앙값 {v}",
+    better: "높을수록 좋음", worse: "낮을수록 좋음", zBetterL: "← 좋음", zBetterR: "좋음 →", zWorseL: "← 나쁨", zWorseR: "나쁨 →", median: "중앙값 {v}",
     dqNote: "대사 <b>{total}건 중 {ok}건</b>이 {tol}백만 이내로 일치한다 ({n}개사 × {y}개 연도 × {c}개 점검). 하나라도 어긋나면 빌드가 멈추므로, 게시된 대시보드는 항상 재무제표의 소계와 맞는다. 체크 표시에 마우스를 올리면 차이가 보인다.",
     dqFlags: "플래그", diff: "차이 {v}백만", none: "없음.",
     defArea: "구분", defInd: "지표", defDef: "정의",
@@ -562,11 +562,11 @@ const UI = {
     h3quad: "แผนภาพสี่ส่วนความยั่งยืนของ CSM", ariaQuad: "แผนภาพการกระจายของ CSM release ratio เทียบกับ New business / release",
     lgOthers: "บริษัทอื่น", lgCeiling: "แสดงที่ขอบแกน พร้อมป้ายค่าจริง", lgBubble: "ขนาดวงกลม = CSM closing",
     h2nb: "3&nbsp; คุณภาพธุรกิจใหม่",
-    noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม แต่ละแกนมีค่ามัธยฐานนี้อยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › (Onerous new business ใช้แกนคงที่ 0–10%)",
+    noteNb: "แต่ละแถววางทุกบริษัทบนตัวชี้วัดหนึ่งของธุรกิจใหม่ในงวดนี้ บริษัทที่เน้นมีป้ายชื่อ วงกลมกลวงคือค่าของงวดเปรียบเทียบ เส้นจึงแสดงทิศทางการเปลี่ยนแปลง ขีดแนวตั้งคือค่ามัธยฐานของอุตสาหกรรม แต่ละแกนมีค่ามัธยฐานนี้อยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › (Onerous new business ใช้แกนคงที่ 0–10%) แถบสีเขียวคือด้านที่ดีกว่าค่ามัธยฐาน แถบสีแดงคือด้านที่แย่กว่า",
     ariaStrips: "แผนภูมิแถบของตัวชี้วัดธุรกิจใหม่", lgMedian: "ค่ามัธยฐานอุตสาหกรรม",
     h2ism: "5&nbsp; Subsequent measurement และตัวชี้วัดทางการเงิน",
     noteInforce: "Insurance service margin คือ insurance service result หารด้วย insurance revenue เป็นอัตรากำไรของธุรกิจประกันภัยเอง ก่อนผลจากการประกันภัยต่อ และก่อนผลการลงทุนและผลทางการเงิน Net investment ratio คือสัดส่วนของ net investment income ที่เหลือหลังหัก insurance finance expense CSM adjustment ratio คือการปรับ CSM หารด้วย CSM ก่อน release เป็นอัตราการเปลี่ยนแปลงของ CSM จากการปรับข้อสมมติและประสบการณ์",
-    noteAxis: "ภายใต้ VFA ค่า finance expense เคลื่อนไหวตาม underlying items บริษัทที่มีธุรกิจ VFA มากจึงมีอัตรานี้ต่ำโดยโครงสร้าง หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปีทั้งสามตัวชี้วัด แต่ละแกนมีค่ามัธยฐานของอุตสาหกรรมอยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ ›",
+    noteAxis: "ภายใต้ VFA ค่า finance expense เคลื่อนไหวตาม underlying items บริษัทที่มีธุรกิจ VFA มากจึงมีอัตรานี้ต่ำโดยโครงสร้าง หน้ารายไตรมาสแสดงค่าสะสมตั้งแต่ต้นปีทั้งสามตัวชี้วัด แต่ละแกนมีค่ามัธยฐานของอุตสาหกรรมอยู่ตรงกลาง บริษัทที่อยู่นอกช่วงจะแสดงที่ปลายแกนด้วยเครื่องหมาย ‹ หรือ › CSM adjustment ratio เป็นตัวชี้วัดที่เป็นกลางจึงไม่มีแถบสี",
     notePolicy: "ทางเลือกนโยบายการบัญชีแตกต่างกันในแต่ละบริษัท {k} จาก {n} บริษัท ({names}) ไม่แยกการเปลี่ยนแปลงของ risk adjustment insurance service margin ของบริษัทเหล่านี้จึงรวมผลทางการเงินของ RA ด้วย ดูส่วนที่ 10",
     ariaStrips5: "แผนภูมิแถบของตัวชี้วัดการวัดมูลค่าภายหลัง",
     h2bridge: "6&nbsp; Insurance revenue 100 บาท ไปอยู่ที่ไหน",
@@ -599,7 +599,7 @@ const UI = {
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · ขนาดวงกลม = CSM closing, {lo} ถึง {hi} ล้าน", qThreshold: "1.0× — เหนือเส้นคือเติม CSM ได้ ใต้เส้นคือ CSM ลดลง",
     qX: "CSM release ratio (release ÷ CSM available before release)", qY: "New-business CSM ÷ release",
-    better: "ยิ่งสูงยิ่งดี", worse: "ยิ่งต่ำยิ่งดี", median: "ค่ามัธยฐาน {v}",
+    better: "ยิ่งสูงยิ่งดี", worse: "ยิ่งต่ำยิ่งดี", zBetterL: "← ดีกว่า", zBetterR: "ดีกว่า →", zWorseL: "← แย่กว่า", zWorseR: "แย่กว่า →", median: "ค่ามัธยฐาน {v}",
     dqNote: "การกระทบยอด <b>{ok} จาก {total}</b> รายการตรงกันภายใน {tol} ล้าน ({n} บริษัท × {y} ปี × {c} รายการตรวจ) หากมีรายการใดไม่ผ่าน การสร้างหน้าจะหยุด แดชบอร์ดที่เผยแพร่จึงตรงกับยอดรวมย่อยที่พิมพ์ในงบการเงินเสมอ ชี้ที่เครื่องหมายเพื่อดูผลต่าง",
     dqFlags: "ข้อสังเกต", diff: "ผลต่าง {v} ล้าน", none: "ไม่มี",
     defArea: "หมวด", defInd: "ตัวชี้วัด", defDef: "นิยาม",
@@ -1035,6 +1035,18 @@ function strips(sel, rows) {
     const defLines = defOf[ri];
     defLines.forEach((s, i) => svg.appendChild(el("text", { x: 0, y: cy + 2 + i * 12.5, "font-size": 10.5, fill: "var(--ink-2)" }, s)));
     svg.appendChild(el("text", { x: 0, y: cy + 6 + defLines.length * 12.5, "font-size": 11, fill: "var(--muted)" }, d.better === true ? t("better") : d.better === false ? t("worse") : ""));
+    // better and worse sides of the industry median, lightly tinted, with a word at each outer end
+    // (owner decision v1.13); a neutral measure has none. A side narrower than its word gets no word.
+    if (d.better != null && med != null) {
+      const xm = px(med), sides = [[L, xm, !d.better], [xm, W - R, d.better]];
+      sides.forEach(([a, b, good], i) => {
+        if (b - a < 1) return;
+        svg.appendChild(el("rect", { x: a, y: cy - 18, width: b - a, height: 36, fill: good ? "var(--good)" : "var(--bad)", "fill-opacity": good ? .09 : .07 }));
+        if (b - a < 70) return;
+        svg.appendChild(el("text", { x: i ? b - 4 : a + 4, y: cy + 15, "text-anchor": i ? "end" : "start", "font-size": 10, "font-weight": 600,
+          fill: good ? "var(--good)" : "var(--bad)" }, t((good ? "zBetter" : "zWorse") + (i ? "R" : "L"))));
+      });
+    }
     ticks.forEach(tk => {
       svg.appendChild(el("line", { x1: px(tk), x2: px(tk), y1: cy - 18, y2: cy + 18, stroke: "var(--grid)" }));
       svg.appendChild(el("text", { x: px(tk), y: cy + 32, "text-anchor": "middle", "font-size": 10.5, fill: "var(--muted)" }, tickTxt(tk)));
