@@ -18,7 +18,7 @@ from .common import (CONFIG, OUTPUT, ROOT, TEMPLATES, comparative_period, load_c
                      quarter_info, read_csv)
 from .metrics import METRICS, SHARE_OF, load_values
 
-METRIC_LABEL = {"insurance_revenue": "insurance revenue", "csm_close": "closing CSM", "nb_csm": "new-business CSM"}
+METRIC_LABEL = {"insurance_revenue": "insurance revenue", "csm_close": "closing CSM", "nb_csm": "new-business CSM", "pbt": "profit before tax"}
 from .validate import RECONCILIATIONS
 
 

@@ -77,14 +77,16 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 ## Dashboard sections
 
 1. **Focus**: ten KPI tiles for the highlighted insurer, amounts on top (new-business CSM, CSM release, closing CSM,
-   insurance revenue, net profit) and the matching ratios below, each with its change from the comparative period,
-   rank and industry benchmark, plus auto-generated headlines and any notes or review flags that apply to it
-2. **Market position**: new-business CSM, closing CSM and insurance revenue with market shares, ordered by new-business CSM
-3. **New-business quality**: NB CSM margin, acquisition cost ratio, NB / release and onerous share, each with its definition; focus vs comparative against all insurers
-   (axes centred on the industry median, the onerous ratio fixed at 0-10%; points beyond sit on the edge; the tooltip lists every insurer at the spot with the numerator and denominator)
+   insurance service result, net investment result) and ratios below (NB CSM margin, NB / release, release ratio,
+   insurance service margin) with profit before tax, each with its change from the comparative period, rank and
+   industry benchmark; a tile is shaded amber when the insurer is in the lower half of the industry on it (ratios by
+   value, amounts by growth). Any notes or review flags that apply to the insurer follow
+2. **Market position**: new-business CSM, closing CSM and profit before tax with market shares, ordered by new-business CSM
+3. **New-business quality**: NB CSM margin, NB / release, acquisition cost ratio and onerous share, each with its definition; focus vs comparative against all insurers
+   (axes centred on the industry median, the onerous ratio fixed at 0-10%; the better side of the median tinted green, the worse red; points beyond sit on the edge; the tooltip lists every insurer at the spot with the numerator and denominator)
 4. **CSM movement analysis**: the CSM sustainability quadrant, then the roll-forward waterfall (focus vs industry, opening = 100)
-   (quadrant axes capped at a 30% release ratio and 3x new business / release; points beyond sit on the edge with their true value)
-5. **Subsequent measurement & financial indicators**: insurance service margin, CSM adjustment ratio and net investment ratio
+   (quadrant: new-business CSM margin across, with the industry median, against new business / release; axes capped at 25% and 3x; points beyond sit on the edge with their true value)
+5. **Subsequent measurement & financial indicators**: insurance service margin, net investment ratio and CSM adjustment ratio
    as strip rows like section 3 (axes centred on the median, all insurers on one axis); a note under the chart names the
    insurers whose accounting policy choices affect the measures (RA not disaggregated). Below it, OCI composition bars: debt
    FVOCI, liability OCI, equity FVOCI and income tax & other as % of opening equity, adding up to total OCI (diamond), with the
@@ -139,3 +141,4 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.10 | 2026-11 | Section 5 becomes subsequent measurement & financial indicators: service margin, CSM adjustment ratio and net investment ratio as strip rows with one axis for all insurers, and a policy note under the chart; 'Highlights' heading, first line ranks new-business CSM, closing CSM, revenue; the onerous ratio is the last new-business row; strip ticks keep a decimal for 2.5% steps |
 | v1.11 | 2026-11 | OCI: five OCI lines (debt FVOCI, insurance and reinsurance finance OCI, equity FVOCI, total) and opening equity extracted for every insurer and period; OCI / opening equity and liability OCI offset in section 5; OCI policy note in section 10 |
 | v1.12 | 2026-11 | OCI as composition bars instead of two strip rows (income tax & other closes each bar to total OCI, prior-year tick); liability OCI offset n/a when the debt OCI is under 5% of opening equity; strip rows grow to fit long definitions |
+| v1.13 | 2026-11 | CFO feedback: header line 'based on the published financial statements'; cards show insurance service result, net investment result and profit before tax, larger titles, amber when in the industry's lower half; highlights removed; market position by profit before tax; strips reordered with better/worse tint; quadrant x-axis is the new-business CSM margin; larger chart titles |

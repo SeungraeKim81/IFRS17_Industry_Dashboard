@@ -53,7 +53,7 @@ the two figures come from different notes and must agree.
 - [ ] RA disaggregation policy re-tested (AOC insurance-finance row, RA column) and `config/companies.csv` agrees
 - [ ] Every plausibility flag explained (commentary) or fixed
 - [ ] Commentary re-read: no stale statements carried from the previous period
-- [ ] Dashboard opened and read through as a reader would; headlines for the focus insurer make sense
+- [ ] Dashboard opened and read through as a reader would; the focus cards and their shading make sense
 
 ## Rolling to a new period
 
@@ -96,7 +96,7 @@ the build stops if any Korean or Thai text is missing.
 
 | Text | Where the translations live |
 |---|---|
-| Interface (headings, notes under headings, legends, buttons, tooltips, headlines) | `UI.ko` and `UI.th` in `templates/dashboard.html`, next to `UI.en`; a test checks all have the same keys |
+| Interface (headings, notes under headings, legends, buttons, tooltips) | `UI.ko` and `UI.th` in `templates/dashboard.html`, next to `UI.en`; a test checks all have the same keys |
 | Indicator names and definitions, reconciliation names, period and unit text | `config/i18n/<lang>.json` (the quarterly period end is written by the build; the quarterly caveat is `meta.quarterly_caveat`) |
 | Commentary | `config/i18n/<lang>.json` → `commentary.<id>`, one entry per note in `config/commentary.json` |
 | Review flags | `pipeline/validate.py` writes `message`, `message_ko` and `message_th` together |
