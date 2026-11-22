@@ -22,8 +22,10 @@
     "nb_csm": {"label": "신계약 CSM", "formula": "당기에 최초 인식한 계약에서 발생한 CSM"},
     "nb_pv_premium": {"label": "신계약 PV 보험료", "formula": "신계약 미래 현금유입의 현재가치"},
     "isr_gross": {"label": "보험서비스결과", "formula": "보험수익 + 보험서비스비용"},
-    "ism_gross": {"label": "보험서비스이익률", "formula": "(보험수익 + 보험서비스비용) ÷ 보험수익"},
-    "ism_net": {"label": "재보험 후 보험서비스이익률", "formula": "(보험서비스결과 + 재보험손익) ÷ 보험수익"},
+    "net_inv_result": {"label": "순투자손익", "formula": "투자손익 + 보험금융손익"},
+    "pbt": {"label": "세전이익", "formula": "당기순이익 + 법인세비용"},
+    "ism_gross": {"label": "보험서비스마진", "formula": "(보험수익 + 보험서비스비용) ÷ 보험수익"},
+    "ism_net": {"label": "재보험 후 보험서비스마진", "formula": "(보험서비스결과 + 재보험손익) ÷ 보험수익"},
     "inv_margin": {"label": "투자손익(보험금융비용 차감 후)", "formula": "(순투자수익 + 순보험금융비용) ÷ 보험수익"},
     "other_ratio": {"label": "기타비용(순)", "formula": "(기타비용 + 기타수익) ÷ 보험수익"},
     "tax_ratio": {"label": "법인세", "formula": "법인세 ÷ 보험수익"},
@@ -45,7 +47,8 @@
     "onerous_ratio": {"label": "신계약 손실부담 비율", "formula": "신계약 손실요소 ÷ 신계약 CSM"},
     "rev_share": {"label": "보험수익 점유율", "formula": "회사 보험수익 ÷ 대상 보험사 전체 합계"},
     "csm_share": {"label": "기말 CSM 점유율", "formula": "회사 기말 CSM ÷ 대상 보험사 전체 합계"},
-    "nb_csm_share": {"label": "신계약 CSM 점유율", "formula": "회사 신계약 CSM ÷ 대상 보험사 전체 합계"}
+    "nb_csm_share": {"label": "신계약 CSM 점유율", "formula": "회사 신계약 CSM ÷ 대상 보험사 전체 합계"},
+    "pbt_share": {"label": "세전이익 점유율", "formula": "회사 세전이익 ÷ 대상 보험사 전체 합계"}
   },
   "checks": {
     "revenue_split": {"label": "보험수익 구성 합계 = 보험수익 총액", "short": "수익"},
