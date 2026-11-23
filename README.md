@@ -79,9 +79,12 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 1. **Focus**: ten KPI tiles for the highlighted insurer, amounts on top (new-business CSM, CSM release, closing CSM,
    insurance service result, net investment result) and ratios below (NB CSM margin, NB / release, release ratio,
    insurance service margin) with profit before tax, each with its change from the comparative period, rank and
-   industry benchmark; a tile is shaded amber when the insurer is in the lower half of the industry on it (ratios by
-   value, amounts by growth). Any notes or review flags that apply to the insurer follow
-2. **Market position**: new-business CSM, closing CSM and profit before tax with market shares, ordered by new-business CSM
+   industry benchmark; a tile is green when the measure moved the better way against the comparative period and deep
+   yellow when it moved the worse way (white for a change under 2% / 0.5 pp / 0.05x, a measure with no better direction or
+   no comparative). Any notes or review flags that apply to the insurer follow
+2. **Market position**: five measures with market shares, ordered by new-business CSM: new-business CSM and closing CSM
+   (future profit), then insurance service result, net investment result and profit before tax (profit for the period);
+   negative values in red
 3. **New-business quality**: NB CSM margin, NB / release, acquisition cost ratio and onerous share, each with its definition; focus vs comparative against all insurers
    (axes centred on the industry median, the onerous ratio fixed at 0-10%; the better side of the median tinted green, the worse red; points beyond sit on the edge; the tooltip lists every insurer at the spot with the numerator and denominator)
 4. **CSM movement analysis**: the CSM sustainability quadrant, then the roll-forward waterfall (focus vs industry, opening = 100)
@@ -142,3 +145,4 @@ disclose is n/a, and a break the statement itself contains passes only as an acc
 | v1.11 | 2026-11 | OCI: five OCI lines (debt FVOCI, insurance and reinsurance finance OCI, equity FVOCI, total) and opening equity extracted for every insurer and period; OCI / opening equity and liability OCI offset in section 5; OCI policy note in section 10 |
 | v1.12 | 2026-11 | OCI as composition bars instead of two strip rows (income tax & other closes each bar to total OCI, prior-year tick); liability OCI offset n/a when the debt OCI is under 5% of opening equity; strip rows grow to fit long definitions |
 | v1.13 | 2026-11 | CFO feedback: header line 'based on the published financial statements'; cards show insurance service result, net investment result and profit before tax, larger titles, amber when in the industry's lower half; highlights removed; market position by profit before tax; strips reordered with better/worse tint; quadrant x-axis is the new-business CSM margin; larger chart titles |
+| v1.14 | 2026-11 | Cards coloured by the insurer's own change on the comparative period (green better, deep yellow worse, white when small or neutral), the change shown large; market position with five measures in two groups and negative values in red; dark mode removed |
