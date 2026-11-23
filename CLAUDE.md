@@ -30,12 +30,13 @@ pitfalls. Locate tables by heading, never by page number.
   come from data so they cannot go stale.
 - The template uses no external scripts, fonts or styles, so the output works
   offline. Keep it that way. Colours are CSS variables at the top of
-  `templates/dashboard.html`, with light and dark values.
+  `templates/dashboard.html`. The page has a light theme only (dark mode
+  removed in v1.14 by owner decision).
 - The page is bilingual (English / Korean). Every interface string goes into
   both `UI.en` and `UI.ko` in the template; data-driven text into
   `config/i18n/ko.json`. The build and tests fail on a missing translation.
   See "Languages" in `docs/WORKFLOW.md`.
-- Check a template change by rendering it with Playwright (light, dark,
+- Check a template change by rendering it with Playwright (desktop and
   390px wide) and looking for console errors and overlaps.
 - Publishing: `.github/workflows/pages.yml` validates every push and deploys
   `_site/` (from `python -m pipeline site`) to GitHub Pages from `main` only.

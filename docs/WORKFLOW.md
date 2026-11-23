@@ -27,7 +27,7 @@ must be different people** for any insurer.
 | 4 | **Ingest**: `python -m pipeline ingest` (source `extract` in `config/dashboard.json`) | Extractor | `data/<period>/line_items.csv` | Every insurer in `config/companies.csv` has an extraction with all line items |
 | 5 | **Validate**: `python -m pipeline validate` | Extractor | `validation.csv`, `flags.csv` | **Blocking:** 6 reconciliations × 2 years × every insurer within 0.05m (a check needing a not-disclosed item is N/A; a break the statement itself contains passes only as an accepted break). **Advisory:** each flag is either explained in `config/commentary.json` or fixed at source |
 | 6 | **Metrics**: `python -m pipeline metrics` | Maintainer | `metrics.csv`, `industry.csv` | Tests pass (`python -m unittest discover -s tests`) |
-| 7 | **Build**: `python -m pipeline build` | Maintainer | `output/<period>/…html` | Opens without console errors, in light and dark mode and at phone width |
+| 7 | **Build**: `python -m pipeline build` | Maintainer | `output/<period>/…html` | Opens without console errors, on desktop and at phone width |
 | 8 | **Review**: see the checklist below | Reviewer | Signed-off pull request | Checklist complete |
 | 9 | **Release**: merge into `main` (publishes to GitHub Pages, see `docs/DEPLOY.md`), tag (`fy2025-v1`), share the link | Owner | Release | Owner approval; the publish run is green |
 

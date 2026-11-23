@@ -8,6 +8,7 @@
 __ROBOTS__
 <style>
 :root{
+  /* light only: the dark theme was removed in v1.14 (owner decision) */
   color-scheme:light;
   /* SLI palette (company template): brand-blue #0345e4, brand-blue-deep #0033cc, navy #0b3267,
      chart accents #2939e8 #00beed #fab019 #b01e34, surface-tint #e6edfc */
@@ -20,32 +21,6 @@ __ROBOTS__
   --title:#0b3267; --mast:#0033cc; --mast-ink:#ffffff; --mast-ink-2:#d6e2ff; --mast-muted:#b8ccff;
   --band:#e6edfc; --band-ink:#0b3267;
   --weak:#fab019; --weak-bg:#fff7e0; --weak-ink:#7a4f00;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
-  /* dark theme: not in the company template; deep navy with a lighter brand blue for contrast */
-  --plane:#0b1220; --surface:#111a2c; --ink:#e8edf6; --ink-2:#aeb8ca; --muted:#8792a6;
-  --grid:#1e2a42; --axis:#2c3a57; --hair:rgba(255,255,255,.10);
-  --peer:#5b6f96; --focus:#6f9bff; --focus-soft:rgba(111,155,255,.16);
-  --c1:#6f86ff; --c2:#38cfee; --c3:#f5b83d; --c4:#e0566b;
-  --pos:#6f86ff; --neg:#e0566b; --total:#8792a6;
-  --good:#5fd08f; --bad:#ff7b8c; --neutral-mid:#1b2a48;
-  --title:#ffffff; --mast:#0b3267; --mast-ink:#ffffff; --mast-ink-2:#c9d6f0; --mast-muted:#9fb2d8;
-  --band:#16264a; --band-ink:#e8edf6;
-  --weak:#f5b83d; --weak-bg:rgba(245,184,61,.13); --weak-ink:#f7cd78;
-}}
-:root[data-theme="dark"]{
-  color-scheme:dark;
-  /* dark theme: not in the company template; deep navy with a lighter brand blue for contrast */
-  --plane:#0b1220; --surface:#111a2c; --ink:#e8edf6; --ink-2:#aeb8ca; --muted:#8792a6;
-  --grid:#1e2a42; --axis:#2c3a57; --hair:rgba(255,255,255,.10);
-  --peer:#5b6f96; --focus:#6f9bff; --focus-soft:rgba(111,155,255,.16);
-  --c1:#6f86ff; --c2:#38cfee; --c3:#f5b83d; --c4:#e0566b;
-  --pos:#6f86ff; --neg:#e0566b; --total:#8792a6;
-  --good:#5fd08f; --bad:#ff7b8c; --neutral-mid:#1b2a48;
-  --title:#ffffff; --mast:#0b3267; --mast-ink:#ffffff; --mast-ink-2:#c9d6f0; --mast-muted:#9fb2d8;
-  --band:#16264a; --band-ink:#e8edf6;
-  --weak:#f5b83d; --weak-bg:rgba(245,184,61,.13); --weak-ink:#f7cd78;
 }
 *{box-sizing:border-box}
 /* one line length for all running text, about the width of the charts. In rem, not ch: ch is the width
