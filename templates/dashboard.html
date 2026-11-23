@@ -8,6 +8,7 @@
 __ROBOTS__
 <style>
 :root{
+  /* light only: the dark theme was removed in v1.14 (owner decision) */
   color-scheme:light;
   /* SLI palette (company template): brand-blue #0345e4, brand-blue-deep #0033cc, navy #0b3267,
      chart accents #2939e8 #00beed #fab019 #b01e34, surface-tint #e6edfc */
@@ -19,33 +20,8 @@ __ROBOTS__
   --good:#1e7a46; --bad:#b01e34; --neutral-mid:#eef2f8;
   --title:#0b3267; --mast:#0033cc; --mast-ink:#ffffff; --mast-ink-2:#d6e2ff; --mast-muted:#b8ccff;
   --band:#e6edfc; --band-ink:#0b3267;
-  --weak:#fab019; --weak-bg:#fff7e0; --weak-ink:#7a4f00;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
-  /* dark theme: not in the company template; deep navy with a lighter brand blue for contrast */
-  --plane:#0b1220; --surface:#111a2c; --ink:#e8edf6; --ink-2:#aeb8ca; --muted:#8792a6;
-  --grid:#1e2a42; --axis:#2c3a57; --hair:rgba(255,255,255,.10);
-  --peer:#5b6f96; --focus:#6f9bff; --focus-soft:rgba(111,155,255,.16);
-  --c1:#6f86ff; --c2:#38cfee; --c3:#f5b83d; --c4:#e0566b;
-  --pos:#6f86ff; --neg:#e0566b; --total:#8792a6;
-  --good:#5fd08f; --bad:#ff7b8c; --neutral-mid:#1b2a48;
-  --title:#ffffff; --mast:#0b3267; --mast-ink:#ffffff; --mast-ink-2:#c9d6f0; --mast-muted:#9fb2d8;
-  --band:#16264a; --band-ink:#e8edf6;
-  --weak:#f5b83d; --weak-bg:rgba(245,184,61,.13); --weak-ink:#f7cd78;
-}}
-:root[data-theme="dark"]{
-  color-scheme:dark;
-  /* dark theme: not in the company template; deep navy with a lighter brand blue for contrast */
-  --plane:#0b1220; --surface:#111a2c; --ink:#e8edf6; --ink-2:#aeb8ca; --muted:#8792a6;
-  --grid:#1e2a42; --axis:#2c3a57; --hair:rgba(255,255,255,.10);
-  --peer:#5b6f96; --focus:#6f9bff; --focus-soft:rgba(111,155,255,.16);
-  --c1:#6f86ff; --c2:#38cfee; --c3:#f5b83d; --c4:#e0566b;
-  --pos:#6f86ff; --neg:#e0566b; --total:#8792a6;
-  --good:#5fd08f; --bad:#ff7b8c; --neutral-mid:#1b2a48;
-  --title:#ffffff; --mast:#0b3267; --mast-ink:#ffffff; --mast-ink-2:#c9d6f0; --mast-muted:#9fb2d8;
-  --band:#16264a; --band-ink:#e8edf6;
-  --weak:#f5b83d; --weak-bg:rgba(245,184,61,.13); --weak-ink:#f7cd78;
+  /* card colours (v1.14): better / worse than the comparative period; worse is a deep yellow, not red (owner decision) */
+  --good-bg:#eef8f1; --warn:#d99a00; --warn-bg:#fff6dc; --warn-ink:#8f5c00;
 }
 *{box-sizing:border-box}
 /* one line length for all running text, about the width of the charts. In rem, not ch: ch is the width
@@ -134,18 +110,23 @@ svg text{font-family:"Neue Haas Grotesk Text Pro",system-ui,-apple-system,"Segoe
   .tile .lab{font-size:13px;line-height:1.3}
   .tile .val{font-size:20px;margin-top:3px}
   .tile .delta{font-size:11.5px;line-height:1.35}
+  .tile .chg{font-size:15px}
+  .tile .vs{font-size:10.5px}
   .tile .ctx{font-size:11px;line-height:1.35;margin-top:3px}
 }
-.tile{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:13px 14px 12px;border-top:3px solid var(--focus)}
+.tile{background:var(--surface);border:1px solid var(--hair);border-radius:6px;padding:13px 14px 12px;border-top:4px solid var(--title)}
 .tile .lab{font-size:15px;font-weight:700;line-height:1.3;color:var(--ink)}
 .tile .val{font-size:26px;font-weight:700;line-height:1.25;margin-top:2px;color:var(--title);font-variant-numeric:tabular-nums}
-.tile .delta{font-size:13px;margin-top:2px}
-.tile .ctx{font-size:12px;color:var(--muted);margin-top:4px}
-/* lower half of the industry on this measure (owner decision, v1.13): amber, with a tag so colour is not the only cue */
-.tile.weak{background:var(--weak-bg);border-top-color:var(--weak)}
-.tile .weak-tag{display:inline-block;margin-top:6px;font-size:11.5px;font-weight:600;color:var(--weak-ink)}
-.tiles-note{margin:10px 0 0}
-.up-good,.down-good{color:var(--good)} .up-bad,.down-bad{color:var(--bad)} .flat{color:var(--ink-2)}
+.tile .delta{font-size:13px;margin-top:3px;line-height:1.25}
+.tile .ctx{font-size:12px;color:var(--muted);margin-top:6px}
+/* change on the comparative period (v1.14, owner decision): large and coloured; the period label small */
+.tile .chg{font-size:19px;font-weight:700;font-variant-numeric:tabular-nums}
+.tile .chg.good{color:var(--good)} .tile .chg.bad{color:var(--warn-ink)} .tile .chg.flat{color:var(--ink-2)}
+.tile .vs{font-size:11px;color:var(--muted);white-space:nowrap}
+.tile.good{background:var(--good-bg);border-top-color:var(--good)}
+.tile.bad{background:var(--warn-bg);border-top-color:var(--warn)}
+.tiles-note{margin:10px 0 0;display:flex;flex-wrap:wrap;gap:4px 18px}
+.tiles-note .sw{display:inline-block;width:14px;height:10px;border:1px solid var(--hair);border-top-width:3px;border-radius:2px;margin-right:6px;vertical-align:-1px}
 .callouts{margin-top:14px;display:grid;gap:8px}
 .callout{font-size:13.5px;color:var(--ink-2);border-left:3px solid var(--axis);padding:4px 0 4px 12px}
 .callout b{color:var(--ink)}
@@ -178,16 +159,33 @@ table#all th{white-space:normal;line-height:1.3}
 table.data th.sortable{cursor:pointer;user-select:none}
 table.data th.sortable:hover{color:var(--ink)}
 table.data th .arr{display:inline-block;width:10px;color:var(--ink-2)}
-.barcell{display:flex;align-items:center;gap:8px;justify-content:flex-end;min-width:200px}
-.barcell .track{flex:1;height:10px;position:relative}
-.barcell .fill{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0;background:var(--peer);opacity:.75}
-tr.focus .barcell .fill{background:var(--focus);opacity:1}
-.barcell .v{min-width:56px}
-.barcell .s{min-width:44px;color:var(--muted)}
-/* market position up to 860px, where the full table would need sideways scrolling: one measure at a time, picked with
-   the switch (owner decision); wider screens show all three */
+/* market position (v1.14, owner decision): five measures in two groups, future profit (CSM) and profit for the
+   period; a thin rule between measures and a heavier one between the groups. Bars start at a zero line, so a negative
+   value runs left of it in red. */
+table#mkt{table-layout:fixed}
+table#mkt col.cn{width:34px} table#mkt col.co{width:150px} table#mkt col.cv{width:64px} table#mkt col.cs{width:52px}
+table#mkt tr.grp th{text-align:left;font-size:12px;letter-spacing:0;text-transform:none;color:var(--title);font-weight:700;padding:10px 10px 5px;border-bottom:2px solid var(--title)}
+table#mkt tr.grp th.blank{border-bottom:0}
+table#mkt tr.ms th{white-space:normal;line-height:1.25}
+table#mkt th.ml{text-align:left;padding-left:10px}
+table#mkt th.shh{text-align:right;padding-left:0;font-weight:400}
+table#mkt .msep{border-left:1px solid var(--hair)}
+table#mkt .gsep{border-left:2px solid var(--axis)}
+table#mkt td.bar{padding-left:10px}
+table#mkt td.nm{overflow:hidden;text-overflow:ellipsis}
+table#mkt td.s,table#mktM td.s{color:var(--muted);font-size:12px}
+table#mkt td.s{background:rgba(11,50,103,.025)}
+#s-market td.neg{color:var(--bad)}
+#s-market .track{position:relative;height:10px}
+#s-market .fill{position:absolute;top:0;bottom:0;border-radius:2px;background:var(--peer);opacity:.75}
+#s-market .fill.neg{background:var(--bad);opacity:.45}
+#s-market tr.focus .fill{background:var(--focus);opacity:1}
+#s-market tr.focus .fill.neg{background:var(--bad);opacity:.8}
+#s-market .zero{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--axis)}
+/* up to 1060px, where the five measures would leave the bars too short: one measure at a time, picked with
+   the switch (owner decision); wider screens show all five */
 .mkt-m{display:none}
-@media(max-width:860px){#s-market .mkt-full{display:none}#s-market .mkt-m{display:block}}
+@media(max-width:1060px){#s-market .mkt-full{display:none}#s-market .mkt-m{display:block}}
 #mktSeg{display:flex;width:100%;margin:0 0 8px}
 #mktSeg button{flex:1;padding:7px 4px;line-height:1.25}
 #mktSeg button[aria-pressed="true"]{background:var(--focus);color:#ffffff;font-weight:600}
@@ -195,10 +193,7 @@ table#mktM td{padding:6px 6px}
 table#mktM th{white-space:normal;padding:8px 6px;line-height:1.25}
 table#mktM td.nm{white-space:normal;line-height:1.3;overflow-wrap:anywhere}
 table#mktM td.br{width:22%}
-table#mktM .track{height:9px;position:relative;background:var(--grid);border-radius:0 4px 4px 0;overflow:hidden}
-table#mktM .fill{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0;background:var(--peer);opacity:.75}
-table#mktM tr.focus .fill{background:var(--focus);opacity:1}
-table#mktM td.s{color:var(--muted);font-size:12px}
+table#mktM .track{height:9px;background:var(--grid);border-radius:2px}
 .flag{display:inline-block;font-size:10.5px;padding:0 5px;border-radius:3px;border:1px solid var(--hair);color:var(--ink-2);margin-left:6px;font-weight:400}
 .tbl-tools{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px;font-size:13px;color:var(--ink-2)}
 .seg{display:inline-flex;border:1px solid var(--axis);border-radius:6px;overflow:hidden}
@@ -410,7 +405,8 @@ const UI = {
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "New business", "CSM movement", "Measurement & finance", "Profit bridge", "All insurers", "Definitions", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
-    noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and this year's profit before tax. Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
+    noteMarket: "Size on five measures, from future profit to this year's result: new-business CSM and closing CSM, then the insurance service result, the net investment result and profit before tax. Insurers are ordered by new-business CSM; share is of the {n} insurers covered. Negative values are in red.",
+    mktGFuture: "Future profit (CSM)", mktGPeriod: "Profit for the period",
     h2csm: "4&nbsp; CSM movement analysis",
     noteCsm: "The quadrant sets the margin of each insurer's new business (across) against how much of the CSM released that new business replaces (up): insurers to the right of the median sell at a higher margin, and those above 1.0× grow their CSM. The roll-forward below then shows how the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total.",
     h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
@@ -440,17 +436,18 @@ const UI = {
     na: "n/a", nm: "n.m.", noCmp: "no comparative", nmBase: "n.m. vs {cmp} (base ≤ 0)", vs: "vs {cmp}", pp: "pp", m: "m",
     rankOf: "{r} of {n} by revenue", raChip: "RA {p}", raDis: "disaggregated", raNot: "not disagg.", raYes: "Yes", raNo: "No",
     focusFlag: "focus", industry: "Industry", industryAgg: "Industry aggregate", industryN: "Industry ({n} insurers)",
-    insurer: "Insurer", shareCol: "{x} · share", share: "Share", mktMeasure: "Measure shown", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
+    insurer: "Insurer", share: "Share", mktMeasure: "Measure shown", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
     tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy",
     tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
     ndEqOpen: "Opening equity", h3oci: "OCI composition, % of opening equity", ariaOci: "Other comprehensive income of each insurer by component, as a share of opening equity", ociSub: "{cur} · {n} insurers · ordered by total OCI, highest first · right: total OCI · liability OCI offset", lgOciDebt: "Debt FVOCI (assets)", lgOciLiab: "Insurance & reinsurance finance OCI (liabilities)", lgOciEq: "Equity FVOCI", lgOciRest: "Income tax & other", lgOciNet: "Total OCI, net of tax", ociColHead: "OCI · offset", tipOciIns: "Insurance contracts OCI", tipOciReins: "Reinsurance contracts OCI", tipOffset: "Liability OCI offset", noteOci: "The OCI chart splits each insurer's other comprehensive income for the year to date, as a share of total equity at 1 January, into the fair-value change on debt instruments at FVOCI (assets), the insurance and reinsurance finance OCI that offsets it (liabilities), equity instruments at FVOCI, and income tax and other items (reclassifications to profit or loss, hedging); the bars add up to total OCI after tax, the diamond. The liability OCI offset on the right is the share of the debt FVOCI change that the liability OCI cancels out, both before tax (100% = fully offset); it is n/a when the debt FVOCI change is under 5% of opening equity.",
-    ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}", ctxCsm: "Rank {r} · growth rank {g} of {n}",
+    ctxRankShare: "Rank {r} of {n} · share {s}", ctxRankInd: "Rank {r} of {n} · industry {v}",
     ctxRankMed: "Rank {r} of {n} · median {v}",
-    noteTiles: "A shaded card marks the lower half of the insurers on that measure: ratios by their value, amounts by their growth over {cmp} (closing CSM by its growth over the period). Neutral measures are not marked.",
-    weakRank: "Lower half of the industry", weakGrowth: "Growth in the lower half",
+    lgBetter: "Better than {cmp}", lgWorse: "Worse than {cmp}",
+    lgPlain: "Small change (under 2% for amounts, 0.5 pp for ratios, 0.05× for multiples) or no better direction",
+    lgNoCmp: "No comparative period, so the cards are not coloured.",
     wfSub: "{cur} · THB m in the tooltip · {co} opening CSM {v}m",
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · bubble = closing CSM, {lo} to {hi}m", qThreshold: "1.0× — replenishing above, depleting below",
@@ -482,7 +479,8 @@ const UI = {
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "신계약", "CSM 변동분석", "후속측정·재무", "이익 브리지", "전체 보험사", "지표 정의", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
-    noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해의 세전이익. 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
+    noteMarket: "다섯 가지 기준의 규모. 미래 이익(신계약 CSM, 기말 CSM)에서 당기 손익(보험서비스결과, 순투자손익, 세전이익)으로 이어진다. 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다. 음수는 빨강으로 표시한다.",
+    mktGFuture: "미래 이익 (CSM)", mktGPeriod: "당기 손익",
     h2csm: "4&nbsp; CSM 변동분석",
     noteCsm: "사분면의 가로축은 신계약의 마진율, 세로축은 상각된 CSM을 신계약이 얼마나 채우는지(CSM의 성장성)다. 중앙값보다 오른쪽이면 업계보다 높은 마진으로 팔고, 1.0배보다 위면 CSM이 늘어난다. 이어서 아래 변동표에서 강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다.",
     h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
@@ -512,17 +510,18 @@ const UI = {
     na: "없음", nm: "산출 불가", noCmp: "비교기간 없음", nmBase: "{cmp} 대비 산출 불가 (기준값 ≤ 0)", vs: "{cmp} 대비", pp: "%p", m: "백만",
     rankOf: "보험수익 {n}개사 중 {r}", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
     focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
-    insurer: "보험사", shareCol: "{x} · 점유율", share: "점유율", mktMeasure: "표시할 지표", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
+    insurer: "보험사", share: "점유율", mktMeasure: "표시할 지표", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
     tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스마진", tipRel: "CSM 상각률",
     tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책",
     tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
     ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
     ndEqOpen: "기초 자본", h3oci: "OCI 구성, 기초 자본 대비 %", ariaOci: "회사별 기타포괄손익의 구성, 기초 자본 대비 비율", ociSub: "{cur} · {n}개사 · OCI 합계가 높은 순 · 오른쪽: OCI 합계 · 부채 OCI 상쇄율", lgOciDebt: "채무상품 FVOCI (자산)", lgOciLiab: "보험·재보험 금융손익 OCI (부채)", lgOciEq: "지분상품 FVOCI", lgOciRest: "법인세 및 기타", lgOciNet: "OCI 합계(세후)", ociColHead: "OCI · 상쇄율", tipOciIns: "보험계약 OCI", tipOciReins: "재보험계약 OCI", tipOffset: "부채 OCI 상쇄율", noteOci: "OCI 차트는 회사별 연초 이후 기타포괄손익을 1월 1일 자본총계 대비 비율로 나타내며, 채무상품 FVOCI 평가손익(자산), 이를 상쇄하는 보험·재보험 금융손익 OCI(부채), 지분상품 FVOCI, 법인세 및 기타(당기손익 재분류, 위험회피)로 나눈다. 막대를 합하면 세후 OCI 합계(◆)가 된다. 오른쪽의 부채 OCI 상쇄율은 채무상품 FVOCI 평가손익을 부채 OCI가 상쇄하는 비율로(100% = 전부 상쇄), 둘 다 세전 기준이며, 채무상품 평가손익이 기초 자본의 5% 미만이면 n/a로 표시한다.",
-    ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}", ctxCsm: "{r}위 · 증가율 {n}개사 중 {g}위",
+    ctxRankShare: "{n}개사 중 {r}위 · 점유율 {s}", ctxRankInd: "{n}개사 중 {r}위 · 업계 {v}",
     ctxRankMed: "{n}개사 중 {r}위 · 중앙값 {v}",
-    noteTiles: "음영 카드는 해당 지표에서 업계 하위 절반이라는 뜻이다. 비율은 값으로, 금액은 {cmp} 대비 증가율로 판정한다(기말 CSM은 기간 중 증가율). 좋고 나쁨이 없는 지표는 표시하지 않는다.",
-    weakRank: "업계 하위 절반", weakGrowth: "증가율 업계 하위 절반",
+    lgBetter: "{cmp} 대비 좋아짐", lgWorse: "{cmp} 대비 나빠짐",
+    lgPlain: "변화 미미(금액 ±2%, 비율 ±0.5%p, 배수 ±0.05× 미만) · 좋고 나쁨이 없는 지표",
+    lgNoCmp: "비교기간이 없어 카드에 색을 칠하지 않는다.",
     wfSub: "{cur} · 금액(백만 바트)은 툴팁에 · {co} 기초 CSM {v}백만",
     wf: ["기초", "신계약", "이자부리", "CSM 조정", "상각", "기말"],
     qSub: "{cur} · 원 면적 = 기말 CSM, {lo} ~ {hi}백만", qThreshold: "1.0배 — 위는 보충, 아래는 소진",
@@ -555,7 +554,8 @@ const UI = {
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "ธุรกิจใหม่", "การเปลี่ยนแปลง CSM", "Measurement & finance", "องค์ประกอบกำไร", "บริษัททั้งหมด", "นิยามตัวชี้วัด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
     h2market: "2&nbsp; สถานะทางการตลาด",
-    noteMarket: "ขนาดตามสามมิติ: กำไรในอนาคตที่เพิ่มขึ้นจากการขายในปีนี้ (New-business CSM) กำไรที่สะสมไว้สำหรับปีต่อ ๆ ไป (CSM closing) และกำไรก่อนภาษีของปีนี้ (Profit before tax) เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม",
+    noteMarket: "ขนาดตามห้ามิติ จากกำไรในอนาคตสู่ผลของปีนี้: New-business CSM และ CSM closing ตามด้วย Insurance service result, Net investment result และ Profit before tax เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม ค่าติดลบแสดงเป็นสีแดง",
+    mktGFuture: "กำไรในอนาคต (CSM)", mktGPeriod: "กำไรขาดทุนของงวด",
     h2csm: "4&nbsp; การวิเคราะห์การเปลี่ยนแปลง CSM",
     noteCsm: "แผนภาพสี่ส่วนเปรียบเทียบอัตรากำไรของธุรกิจใหม่ของแต่ละบริษัท (แกนนอน) กับสัดส่วนที่ธุรกิจใหม่เข้ามาทดแทน CSM ที่รับรู้ไป (แกนตั้ง) บริษัทที่อยู่ทางขวาของค่ามัธยฐานขายด้วยอัตรากำไรสูงกว่า และบริษัทที่อยู่เหนือ 1.0× มี CSM เพิ่มขึ้น จากนั้นตารางการเปลี่ยนแปลงด้านล่างแสดงการเปลี่ยนแปลงของ CSM ในรอบงวด ปรับเป็นดัชนีโดยให้ CSM ต้นงวด&nbsp;=&nbsp;100 เปรียบเทียบบริษัทที่เน้นกับยอดรวมของอุตสาหกรรม",
     h3wf: "การเปลี่ยนแปลง CSM (ต้นงวด = 100)", ariaWf: "แผนภูมิน้ำตกการเปลี่ยนแปลง CSM ของบริษัทที่เน้นและอุตสาหกรรม",
@@ -585,17 +585,18 @@ const UI = {
     na: "n/a", nm: "n.m.", noCmp: "ไม่มีงวดเปรียบเทียบ", nmBase: "n.m. เทียบกับ {cmp} (ฐาน ≤ 0)", vs: "เทียบกับ {cmp}", pp: "pp", m: "ล้าน",
     rankOf: "{r} จาก {n} บริษัท ตาม Insurance revenue", raChip: "RA {p}", raDis: "แยก", raNot: "ไม่แยก", raYes: "แยก", raNo: "ไม่แยก",
     focusFlag: "เน้น", industry: "อุตสาหกรรม", industryAgg: "ยอดรวมอุตสาหกรรม", industryN: "อุตสาหกรรม ({n} บริษัท)",
-    insurer: "บริษัท", shareCol: "{x} · ส่วนแบ่ง", share: "ส่วนแบ่ง", mktMeasure: "ตัวชี้วัดที่แสดง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
+    insurer: "บริษัท", share: "ส่วนแบ่ง", mktMeasure: "ตัวชี้วัดที่แสดง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
     tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "นโยบาย RA",
     tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
     ndEqOpen: "Opening equity", h3oci: "องค์ประกอบของ OCI, % ของส่วนของเจ้าของต้นงวด", ariaOci: "กำไรขาดทุนเบ็ดเสร็จอื่นของแต่ละบริษัทแยกตามองค์ประกอบ เป็นสัดส่วนของส่วนของเจ้าของต้นงวด", ociSub: "{cur} · {n} บริษัท · เรียงตาม OCI รวมจากมากไปน้อย · ด้านขวา: OCI รวม · liability OCI offset", lgOciDebt: "ตราสารหนี้ FVOCI (สินทรัพย์)", lgOciLiab: "OCI ทางการเงินของสัญญาประกันภัยและประกันภัยต่อ (หนี้สิน)", lgOciEq: "ตราสารทุน FVOCI", lgOciRest: "ภาษีเงินได้และอื่น ๆ", lgOciNet: "OCI รวม สุทธิจากภาษี", ociColHead: "OCI · offset", tipOciIns: "OCI สัญญาประกันภัย", tipOciReins: "OCI สัญญาประกันภัยต่อ", tipOffset: "Liability OCI offset", noteOci: "แผนภูมิ OCI แสดงกำไรขาดทุนเบ็ดเสร็จอื่นสะสมตั้งแต่ต้นปีของแต่ละบริษัท เป็นสัดส่วนของส่วนของเจ้าของรวม ณ วันที่ 1 มกราคม แยกเป็นการเปลี่ยนแปลงมูลค่ายุติธรรมของตราสารหนี้ที่วัดมูลค่า FVOCI (สินทรัพย์) OCI ทางการเงินของสัญญาประกันภัยและสัญญาประกันภัยต่อที่หักล้างรายการนั้น (หนี้สิน) ตราสารทุนที่วัดมูลค่า FVOCI และภาษีเงินได้และรายการอื่น (การจัดประเภทใหม่เข้ากำไรขาดทุน การป้องกันความเสี่ยง) แท่งทั้งหมดรวมกันเท่ากับ OCI รวมสุทธิจากภาษี (◆) Liability OCI offset ด้านขวาคือสัดส่วนที่ OCI ของหนี้สินหักล้างการเปลี่ยนแปลงของตราสารหนี้ FVOCI ทั้งสองรายการก่อนภาษี (100% = หักล้างทั้งหมด) และแสดงเป็น n/a เมื่อการเปลี่ยนแปลงของตราสารหนี้ FVOCI น้อยกว่า 5% ของส่วนของเจ้าของต้นงวด",
-    ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}", ctxCsm: "อันดับ {r} · อันดับการเติบโต {g} จาก {n}",
+    ctxRankShare: "อันดับ {r} จาก {n} · ส่วนแบ่ง {s}", ctxRankInd: "อันดับ {r} จาก {n} · อุตสาหกรรม {v}",
     ctxRankMed: "อันดับ {r} จาก {n} · ค่ามัธยฐาน {v}",
-    noteTiles: "การ์ดที่แรเงาหมายถึงอยู่ในครึ่งล่างของอุตสาหกรรมในตัวชี้วัดนั้น อัตราส่วนวัดจากค่า ส่วนจำนวนเงินวัดจากอัตราการเติบโตเทียบกับ {cmp} (CSM closing วัดจากการเติบโตระหว่างงวด) ตัวชี้วัดที่เป็นกลางจะไม่ถูกแรเงา",
-    weakRank: "ครึ่งล่างของอุตสาหกรรม", weakGrowth: "การเติบโตอยู่ครึ่งล่าง",
+    lgBetter: "ดีขึ้นเทียบกับ {cmp}", lgWorse: "แย่ลงเทียบกับ {cmp}",
+    lgPlain: "เปลี่ยนแปลงเล็กน้อย (จำนวนเงินต่ำกว่า 2% อัตราส่วนต่ำกว่า 0.5 pp จำนวนเท่าต่ำกว่า 0.05×) หรือตัวชี้วัดที่เป็นกลาง",
+    lgNoCmp: "ไม่มีงวดเปรียบเทียบ จึงไม่แสดงสีบนการ์ด",
     wfSub: "{cur} · จำนวนเงิน (ล้านบาท) แสดงเมื่อชี้ · CSM ต้นงวดของ {co} {v} ล้าน",
     wf: ["Opening", "New business", "Accretion", "CSM adjustment", "Release", "Closing"],
     qSub: "{cur} · ขนาดวงกลม = CSM closing, {lo} ถึง {hi} ล้าน", qThreshold: "1.0× — เหนือเส้นคือเติม CSM ได้ ใต้เส้นคือ CSM ลดลง",
@@ -747,16 +748,20 @@ function controls() {
 }
 
 /* ---------- 1 focus ---------- */
-function deltaHtml(kind, cur, prev, better) {
-  if (cur == null || prev == null) return '<span class="flat">' + t("noCmp") + "</span>";
+// Card colour (v1.14, owner decision after the CFO review): the insurer's own change on the comparative period,
+// better or worse for the measure. A change smaller than CHG_MIN, a measure with no better direction and a missing
+// comparative leave the card plain. The industry rank stays on the card as a small reference line only.
+const CHG_MIN = { growth: 0.02, pp: 0.005, x: 0.05 };
+function cardChange(kind, cur, prev, better) {
+  if (cur == null || prev == null) return { html: '<span class="vs">' + t("noCmp") + "</span>", status: null };
   let d, txt;
-  if (kind === "growth") { d = growth(cur, prev); if (d == null) return '<span class="flat">' + t("nmBase", { cmp: CMPL }) + "</span>"; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
+  if (kind === "growth") { d = growth(cur, prev); if (d == null) return { html: '<span class="vs">' + t("nmBase", { cmp: CMPL }) + "</span>", status: null }; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + "%"; }
   else if (kind === "pp") { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d * 100, 1) + " " + t("pp"); }
   else { d = cur - prev; txt = (d >= 0 ? "+" : "") + nf(d, 2) + "×"; }
   const dir = Math.abs(d) < 1e-9 ? "flat" : d > 0 ? "up" : "down";
-  const cls = dir === "flat" || better == null ? "flat" : ((dir === "up") === better ? dir + "-good" : dir + "-bad");
+  const status = better == null || Math.abs(d) < CHG_MIN[kind] - 1e-12 ? null : (d > 0) === better ? "good" : "bad";
   const arrow = dir === "up" ? "▲" : dir === "down" ? "▼" : "◆";
-  return '<span class="' + cls + '">' + arrow + " " + txt + '</span> <span class="flat">' + t("vs", { cmp: CMPL }) + "</span>";
+  return { html: '<span class="chg ' + (status || "flat") + '">' + arrow + " " + txt + '</span> <span class="vs">' + t("vs", { cmp: CMPL }) + "</span>", status };
 }
 function focusSection() {
   const c = byName(F), n = COS.length;
@@ -768,7 +773,7 @@ function focusSection() {
   const T1 = [
     { k: "nb_csm", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "nb_csm").rank, n, s: fP(g(c, "nb_csm_share")) }) },
     { k: "csm_release_amount", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "csm_release_amount").rank, n, v: fM(ind("csm_release_amount").agg) }) },
-    { k: "csm_close", kind: "growth", ctx: () => t("ctxCsm", { r: rk(c, "csm_close").rank, g: rk(c, "csm_growth").rank, n }) },
+    { k: "csm_close", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "csm_close").rank, n, v: fM(ind("csm_close").agg) }) },
     { k: "isr_gross", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "isr_gross").rank, n, v: fM(ind("isr_gross").agg) }) },
     { k: "net_inv_result", kind: "growth", ctx: () => t("ctxRankInd", { r: rk(c, "net_inv_result").rank, n, v: fM(ind("net_inv_result").agg) }) },
   ];
@@ -779,33 +784,19 @@ function focusSection() {
     { k: "ism_gross", kind: "pp", ctx: rankMed("ism_gross", fP) },
     { k: "pbt", kind: "growth", ctx: () => t("ctxRankShare", { r: rk(c, "pbt").rank, n, s: fP(g(c, "pbt_share")) }) },
   ];
-  // Industry standing (owner decision, v1.13): a card is marked when the insurer is in the lower half of the
-  // insurers on it. Ratios by their own value; amounts by their growth on the comparative period, since their
-  // size rank only repeats the insurer's size (closing CSM by its growth since the start of the year).
-  // Neutral measures, and an amount without a growth (no comparative, or a base at or below zero), are not marked.
-  const weak = x => {
-    const better = DEF[x.k].better;
-    if (better == null) return null;
-    let mine, all;
-    if (x.k === "csm_close") { mine = g(c, "csm_growth"); all = COS.map(o => g(o, "csm_growth")); }
-    else if (x.kind === "growth") {
-      const gr = o => { const a = g(o, x.k), b = g(o, x.k, CMP); return a == null || b == null ? null : growth(a, b); };
-      mine = gr(c); all = COS.map(gr);
-    } else { mine = g(c, x.k); all = COS.map(o => g(o, x.k)); }
-    all = all.filter(v => v != null);
-    if (mine == null || all.length < 2) return null;
-    const ahead = all.filter(v => better ? v > mine : v < mine).length;  // insurers better placed
-    return ahead + 1 > Math.ceil(all.length / 2) ? (x.kind === "growth" ? "weakGrowth" : "weakRank") : null;
-  };
   const tile = x => {
-    const d = DEF[x.k], w = weak(x);
-    return '<div class="tile' + (w ? " weak" : "") + '"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
-      '</div><div class="delta">' + deltaHtml(x.kind, g(c, x.k), g(c, x.k, CMP), d.better) + '</div><div class="ctx">' + x.ctx() + "</div>" +
-      (w ? '<div class="weak-tag">' + t(w) + "</div>" : "") + "</div>";
+    const d = DEF[x.k], ch = cardChange(x.kind, g(c, x.k), g(c, x.k, CMP), d.better);
+    return '<div class="tile' + (ch.status ? " " + ch.status : "") + '"><div class="lab">' + esc(mLabel(x.k)) + (d.unit === "thb_m" ? " (" + t("m") + ")" : "") + '</div><div class="val">' + fmtU(d.unit, g(c, x.k)) +
+      '</div><div class="delta">' + ch.html + '</div><div class="ctx">' + x.ctx() + "</div></div>";
   };
   // one grid in reading order: 5 + 5 on a wide screen; narrower screens refill the rows in the same order (owner decision)
   $("#tiles").innerHTML = [...T1, ...T2].map(tile).join("");
-  $("#tilesNote").innerHTML = t("noteTiles", { cmp: esc(CMPL) });
+  const sw = (bg, top) => '<i class="sw" style="background:' + bg + ";border-top-color:" + top + '"></i>';
+  $("#tilesNote").innerHTML = M.has_comparative !== false
+    ? ["<span>" + sw("var(--good-bg)", "var(--good)") + t("lgBetter", { cmp: esc(CMPL) }) + "</span>",
+       "<span>" + sw("var(--warn-bg)", "var(--warn)") + t("lgWorse", { cmp: esc(CMPL) }) + "</span>",
+       "<span>" + sw("var(--surface)", "var(--title)") + t("lgPlain") + "</span>"].join("")
+    : "<span>" + t("lgNoCmp") + "</span>";
 
   const notes = DATA.commentary.filter(x => x.companies.includes(F));
   const flags = DATA.flags.filter(f => f.company === F);
@@ -815,35 +806,52 @@ function focusSection() {
 
 /* ---------- 2 market ---------- */
 let MKT = 0;  // measure shown in the narrow-screen market table (index into cols)
+// a bar from a zero line, scaled to the measure's range; a negative value runs left of the line
+function mktBar(v, lo, hi) {
+  if (v == null) return "";
+  const span = hi - lo || 1, z = -lo / span * 100, w = Math.abs(v) / span * 100, left = v < 0 ? z - w : z;
+  return "<div class='track'>" + (lo < 0 ? "<i class='zero' style='left:" + z.toFixed(2) + "%'></i>" : "") +
+    "<div class='fill" + (v < 0 ? " neg" : "") + "' style='left:" + left.toFixed(2) + "%;width:" + w.toFixed(2) + "%'></div></div>";
+}
 function market() {
-  // third measure: profit before tax (owner decision v1.13, CFO feedback; was insurance revenue)
-  const cols = [["nb_csm", "nb_csm_share"], ["csm_close", "csm_share"], ["pbt", "pbt_share"]];
-  const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
-  let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
+  // five measures (owner decision v1.14, CFO feedback): new-business CSM and closing CSM (future profit), then the
+  // insurance service result, net investment result and profit before tax (profit for the period)
+  const cols = ["nb_csm", "csm_close", "isr_gross", "net_inv_result", "pbt"], NFUT = 2;
+  const vals = k => COS.map(c => g(c, k)).filter(v => v != null);
+  const rng = Object.fromEntries(cols.map(k => [k, [Math.min(0, ...vals(k)), Math.max(0, ...vals(k))]]));
+  const sh = (c, k) => { const v = g(c, k), a = ind(k).agg; return v == null || !a ? null : v / a; };
+  const neg = v => v != null && v < 0 ? " neg" : "";
+  const sep = i => i === NFUT ? "gsep" : "msep";
+  let h = "<colgroup><col class='cn'><col class='co'>" + cols.map(() => "<col><col class='cv'><col class='cs'>").join("") + "</colgroup>" +
+    "<thead><tr class='grp'><th class='blank' colspan='2'></th><th colspan='" + 3 * NFUT + "'>" + t("mktGFuture") + "</th>" +
+    "<th class='gsep' colspan='" + 3 * (cols.length - NFUT) + "'>" + t("mktGPeriod") + "</th></tr>" +
+    "<tr class='ms'><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" +
+    cols.map((k, i) => "<th class='ml " + sep(i) + "' colspan='2'>" + esc(mLabel(k)) + "</th><th class='shh'>" + t("share") + "</th>").join("") + "</tr></thead><tbody>";
   // ordered by new-business CSM; # is the new-business CSM rank
   const nbv = c => g(c, "nb_csm") ?? -Infinity;
   COS.slice().sort((a, b) => nbv(b) - nbv(a)).forEach(c => {
     const r = rk(c, "nb_csm")?.rank;
-    h += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (r ?? "") + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
-      cols.map(([k, s]) => "<td><div class='barcell'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, k)) / max[k]).toFixed(2) + "%'></div></div><span class='v'>" +
-        fM(g(c, k)) + "</span><span class='s'>" + fP(g(c, s)) + "</span></div></td>").join("") + "</tr>";
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (r ?? "") + "</td><td class='l nm'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+      cols.map((k, i) => { const v = g(c, k), s = sh(c, k);
+        return "<td class='bar " + sep(i) + "'>" + mktBar(v, ...rng[k]) + "</td><td class='v" + neg(v) + "'>" + fM(v) + "</td><td class='s" + neg(s) + "'>" + fP(s) + "</td>"; }).join("") + "</tr>";
   });
-  h += "<tr><td class='l'></td><td class='l'><b>" + t("industry") + "</b></td>" + cols.map(([k]) => "<td><div class='barcell'><span class='v'><b>" + fM(ind(k).agg) + "</b></span><span class='s'>100%</span></div></td>").join("") + "</tr></tbody>";
+  h += "<tr><td class='l'></td><td class='l'><b>" + t("industry") + "</b></td>" +
+    cols.map((k, i) => "<td class='" + sep(i) + "'></td><td><b>" + fM(ind(k).agg) + "</b></td><td class='s'>100%</td>").join("") + "</tr></tbody>";
   const tb = $("#mkt"); tb.innerHTML = h;
   tb.querySelectorAll("tr[data-co]").forEach(tr => hover(tr, () => coTip(byName(tr.dataset.co))));
 
   // narrow screens: the measure picked with the switch, its own ranking and order
-  const [mk, ms] = cols[MKT];
+  const mk = cols[MKT];
   const sw = $("#mktSeg"); sw.setAttribute("aria-label", t("mktMeasure"));
-  sw.innerHTML = cols.map(([k], i) => "<button type='button' data-i='" + i + "' aria-pressed='" + (i === MKT) + "'>" + esc(mLabel(k)) + "</button>").join("");
+  sw.innerHTML = cols.map((k, i) => "<button type='button' data-i='" + i + "' aria-pressed='" + (i === MKT) + "'>" + esc(mLabel(k)) + "</button>").join("");
   sw.querySelectorAll("button").forEach(b => b.addEventListener("click", () => { MKT = +b.dataset.i; market(); }));
   const mv = c => g(c, mk) ?? -Infinity;
   let m = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th><th></th><th>" + esc(mLabel(mk)) + (DEF[mk].unit === "thb_m" ? " (" + t("m") + ")" : "") +
     "</th><th>" + t("share") + "</th></tr></thead><tbody>";
   COS.slice().sort((a, b) => mv(b) - mv(a)).forEach(c => {
+    const v = g(c, mk), s = sh(c, mk);
     m += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (rk(c, mk)?.rank ?? "") + "</td><td class='l nm'>" + esc(c.name) + "</td>" +
-      "<td class='br'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, mk)) / max[mk]).toFixed(2) + "%'></div></div></td>" +
-      "<td>" + fM(g(c, mk)) + "</td><td class='s'>" + fP(g(c, ms)) + "</td></tr>";
+      "<td class='br'>" + mktBar(v, ...rng[mk]) + "</td><td class='" + neg(v).trim() + "'>" + fM(v) + "</td><td class='s" + neg(s) + "'>" + fP(s) + "</td></tr>";
   });
   m += "<tr><td class='l'></td><td class='l nm'><b>" + t("industry") + "</b></td><td></td><td><b>" + fM(ind(mk).agg) + "</b></td><td class='s'>100%</td></tr></tbody>";
   const tm = $("#mktM"); tm.innerHTML = m;
