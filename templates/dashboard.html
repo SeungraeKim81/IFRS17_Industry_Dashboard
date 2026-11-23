@@ -159,16 +159,33 @@ table#all th{white-space:normal;line-height:1.3}
 table.data th.sortable{cursor:pointer;user-select:none}
 table.data th.sortable:hover{color:var(--ink)}
 table.data th .arr{display:inline-block;width:10px;color:var(--ink-2)}
-.barcell{display:flex;align-items:center;gap:8px;justify-content:flex-end;min-width:200px}
-.barcell .track{flex:1;height:10px;position:relative}
-.barcell .fill{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0;background:var(--peer);opacity:.75}
-tr.focus .barcell .fill{background:var(--focus);opacity:1}
-.barcell .v{min-width:56px}
-.barcell .s{min-width:44px;color:var(--muted)}
-/* market position up to 860px, where the full table would need sideways scrolling: one measure at a time, picked with
-   the switch (owner decision); wider screens show all three */
+/* market position (v1.14, owner decision): five measures in two groups, future profit (CSM) and profit for the
+   period; a thin rule between measures and a heavier one between the groups. Bars start at a zero line, so a negative
+   value runs left of it in red. */
+table#mkt{table-layout:fixed}
+table#mkt col.cn{width:34px} table#mkt col.co{width:150px} table#mkt col.cv{width:64px} table#mkt col.cs{width:52px}
+table#mkt tr.grp th{text-align:left;font-size:12px;letter-spacing:0;text-transform:none;color:var(--title);font-weight:700;padding:10px 10px 5px;border-bottom:2px solid var(--title)}
+table#mkt tr.grp th.blank{border-bottom:0}
+table#mkt tr.ms th{white-space:normal;line-height:1.25}
+table#mkt th.ml{text-align:left;padding-left:10px}
+table#mkt th.shh{text-align:right;padding-left:0;font-weight:400}
+table#mkt .msep{border-left:1px solid var(--hair)}
+table#mkt .gsep{border-left:2px solid var(--axis)}
+table#mkt td.bar{padding-left:10px}
+table#mkt td.nm{overflow:hidden;text-overflow:ellipsis}
+table#mkt td.s,table#mktM td.s{color:var(--muted);font-size:12px}
+table#mkt td.s{background:rgba(11,50,103,.025)}
+#s-market td.neg{color:var(--bad)}
+#s-market .track{position:relative;height:10px}
+#s-market .fill{position:absolute;top:0;bottom:0;border-radius:2px;background:var(--peer);opacity:.75}
+#s-market .fill.neg{background:var(--bad);opacity:.45}
+#s-market tr.focus .fill{background:var(--focus);opacity:1}
+#s-market tr.focus .fill.neg{background:var(--bad);opacity:.8}
+#s-market .zero{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--axis)}
+/* up to 1060px, where the five measures would leave the bars too short: one measure at a time, picked with
+   the switch (owner decision); wider screens show all five */
 .mkt-m{display:none}
-@media(max-width:860px){#s-market .mkt-full{display:none}#s-market .mkt-m{display:block}}
+@media(max-width:1060px){#s-market .mkt-full{display:none}#s-market .mkt-m{display:block}}
 #mktSeg{display:flex;width:100%;margin:0 0 8px}
 #mktSeg button{flex:1;padding:7px 4px;line-height:1.25}
 #mktSeg button[aria-pressed="true"]{background:var(--focus);color:#ffffff;font-weight:600}
@@ -176,10 +193,7 @@ table#mktM td{padding:6px 6px}
 table#mktM th{white-space:normal;padding:8px 6px;line-height:1.25}
 table#mktM td.nm{white-space:normal;line-height:1.3;overflow-wrap:anywhere}
 table#mktM td.br{width:22%}
-table#mktM .track{height:9px;position:relative;background:var(--grid);border-radius:0 4px 4px 0;overflow:hidden}
-table#mktM .fill{position:absolute;left:0;top:0;bottom:0;border-radius:0 4px 4px 0;background:var(--peer);opacity:.75}
-table#mktM tr.focus .fill{background:var(--focus);opacity:1}
-table#mktM td.s{color:var(--muted);font-size:12px}
+table#mktM .track{height:9px;background:var(--grid);border-radius:2px}
 .flag{display:inline-block;font-size:10.5px;padding:0 5px;border-radius:3px;border:1px solid var(--hair);color:var(--ink-2);margin-left:6px;font-weight:400}
 .tbl-tools{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px;font-size:13px;color:var(--ink-2)}
 .seg{display:inline-flex;border:1px solid var(--axis);border-radius:6px;overflow:hidden}
@@ -391,7 +405,8 @@ const UI = {
     units: "{unit} · year ended {pe} · comparative {cmp} · {n} insurers",
     toc: ["Focus", "Market position", "New business", "CSM movement", "Measurement & finance", "Profit bridge", "All insurers", "Definitions", "Data quality", "Method & notes"],
     h2market: "2&nbsp; Market position",
-    noteMarket: "Size on three measures: the future profit added by this year's sales (new-business CSM), the profit stored for future years (closing CSM) and this year's profit before tax. Insurers are ordered by new-business CSM; share is of the {n} insurers covered.",
+    noteMarket: "Size on five measures, from future profit to this year's result: new-business CSM and closing CSM, then the insurance service result, the net investment result and profit before tax. Insurers are ordered by new-business CSM; share is of the {n} insurers covered. Negative values are in red.",
+    mktGFuture: "Future profit (CSM)", mktGPeriod: "Profit for the period",
     h2csm: "4&nbsp; CSM movement analysis",
     noteCsm: "The quadrant sets the margin of each insurer's new business (across) against how much of the CSM released that new business replaces (up): insurers to the right of the median sell at a higher margin, and those above 1.0× grow their CSM. The roll-forward below then shows how the profit store moved over the year, indexed to opening CSM&nbsp;=&nbsp;100, for the highlighted insurer against the industry total.",
     h3wf: "CSM roll-forward, opening = 100", ariaWf: "CSM roll-forward waterfall for the highlighted insurer and the industry",
@@ -421,7 +436,7 @@ const UI = {
     na: "n/a", nm: "n.m.", noCmp: "no comparative", nmBase: "n.m. vs {cmp} (base ≤ 0)", vs: "vs {cmp}", pp: "pp", m: "m",
     rankOf: "{r} of {n} by revenue", raChip: "RA {p}", raDis: "disaggregated", raNot: "not disagg.", raYes: "Yes", raNo: "No",
     focusFlag: "focus", industry: "Industry", industryAgg: "Industry aggregate", industryN: "Industry ({n} insurers)",
-    insurer: "Insurer", shareCol: "{x} · share", share: "Share", mktMeasure: "Measure shown", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
+    insurer: "Insurer", share: "Share", mktMeasure: "Measure shown", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
     tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy",
     tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
@@ -464,7 +479,8 @@ const UI = {
     units: "단위 {unit} · 결산일 {pe} · 비교기간 {cmp} · {n}개사",
     toc: ["강조 보험사", "시장 지위", "신계약", "CSM 변동분석", "후속측정·재무", "이익 브리지", "전체 보험사", "지표 정의", "데이터 품질", "방법론·주석"],
     h2market: "2&nbsp; 시장 지위",
-    noteMarket: "세 가지 기준의 규모: 올해 판매로 새로 더한 미래이익(신계약 CSM), 미래 이익으로 쌓아 둔 몫(기말 CSM), 올해의 세전이익. 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다.",
+    noteMarket: "다섯 가지 기준의 규모. 미래 이익(신계약 CSM, 기말 CSM)에서 당기 손익(보험서비스결과, 순투자손익, 세전이익)으로 이어진다. 보험사는 신계약 CSM 순으로 놓았고, 점유율은 대상 {n}개사 합계 기준이다. 음수는 빨강으로 표시한다.",
+    mktGFuture: "미래 이익 (CSM)", mktGPeriod: "당기 손익",
     h2csm: "4&nbsp; CSM 변동분석",
     noteCsm: "사분면의 가로축은 신계약의 마진율, 세로축은 상각된 CSM을 신계약이 얼마나 채우는지(CSM의 성장성)다. 중앙값보다 오른쪽이면 업계보다 높은 마진으로 팔고, 1.0배보다 위면 CSM이 늘어난다. 이어서 아래 변동표에서 강조 보험사와 업계 전체의 연간 CSM 변동을 기초 CSM&nbsp;=&nbsp;100으로 지수화해 비교한다.",
     h3wf: "CSM 변동표 (기초 = 100)", ariaWf: "강조 보험사와 업계의 CSM 변동 워터폴 차트",
@@ -494,7 +510,7 @@ const UI = {
     na: "없음", nm: "산출 불가", noCmp: "비교기간 없음", nmBase: "{cmp} 대비 산출 불가 (기준값 ≤ 0)", vs: "{cmp} 대비", pp: "%p", m: "백만",
     rankOf: "보험수익 {n}개사 중 {r}", raChip: "RA {p}", raDis: "분리", raNot: "미분리", raYes: "분리", raNo: "미분리",
     focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
-    insurer: "보험사", shareCol: "{x} · 점유율", share: "점유율", mktMeasure: "표시할 지표", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
+    insurer: "보험사", share: "점유율", mktMeasure: "표시할 지표", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
     tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스마진", tipRel: "CSM 상각률",
     tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책",
     tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
@@ -538,7 +554,8 @@ const UI = {
     units: "{unit} · รอบปีสิ้นสุด {pe} · งวดเปรียบเทียบ {cmp} · {n} บริษัท",
     toc: ["บริษัทที่เน้น", "สถานะทางการตลาด", "ธุรกิจใหม่", "การเปลี่ยนแปลง CSM", "Measurement & finance", "องค์ประกอบกำไร", "บริษัททั้งหมด", "นิยามตัวชี้วัด", "คุณภาพข้อมูล", "วิธีการและหมายเหตุ"],
     h2market: "2&nbsp; สถานะทางการตลาด",
-    noteMarket: "ขนาดตามสามมิติ: กำไรในอนาคตที่เพิ่มขึ้นจากการขายในปีนี้ (New-business CSM) กำไรที่สะสมไว้สำหรับปีต่อ ๆ ไป (CSM closing) และกำไรก่อนภาษีของปีนี้ (Profit before tax) เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม",
+    noteMarket: "ขนาดตามห้ามิติ จากกำไรในอนาคตสู่ผลของปีนี้: New-business CSM และ CSM closing ตามด้วย Insurance service result, Net investment result และ Profit before tax เรียงบริษัทตาม New-business CSM ส่วนแบ่งคำนวณจากบริษัททั้ง {n} แห่งที่ครอบคลุม ค่าติดลบแสดงเป็นสีแดง",
+    mktGFuture: "กำไรในอนาคต (CSM)", mktGPeriod: "กำไรขาดทุนของงวด",
     h2csm: "4&nbsp; การวิเคราะห์การเปลี่ยนแปลง CSM",
     noteCsm: "แผนภาพสี่ส่วนเปรียบเทียบอัตรากำไรของธุรกิจใหม่ของแต่ละบริษัท (แกนนอน) กับสัดส่วนที่ธุรกิจใหม่เข้ามาทดแทน CSM ที่รับรู้ไป (แกนตั้ง) บริษัทที่อยู่ทางขวาของค่ามัธยฐานขายด้วยอัตรากำไรสูงกว่า และบริษัทที่อยู่เหนือ 1.0× มี CSM เพิ่มขึ้น จากนั้นตารางการเปลี่ยนแปลงด้านล่างแสดงการเปลี่ยนแปลงของ CSM ในรอบงวด ปรับเป็นดัชนีโดยให้ CSM ต้นงวด&nbsp;=&nbsp;100 เปรียบเทียบบริษัทที่เน้นกับยอดรวมของอุตสาหกรรม",
     h3wf: "การเปลี่ยนแปลง CSM (ต้นงวด = 100)", ariaWf: "แผนภูมิน้ำตกการเปลี่ยนแปลง CSM ของบริษัทที่เน้นและอุตสาหกรรม",
@@ -568,7 +585,7 @@ const UI = {
     na: "n/a", nm: "n.m.", noCmp: "ไม่มีงวดเปรียบเทียบ", nmBase: "n.m. เทียบกับ {cmp} (ฐาน ≤ 0)", vs: "เทียบกับ {cmp}", pp: "pp", m: "ล้าน",
     rankOf: "{r} จาก {n} บริษัท ตาม Insurance revenue", raChip: "RA {p}", raDis: "แยก", raNot: "ไม่แยก", raYes: "แยก", raNo: "ไม่แยก",
     focusFlag: "เน้น", industry: "อุตสาหกรรม", industryAgg: "ยอดรวมอุตสาหกรรม", industryN: "อุตสาหกรรม ({n} บริษัท)",
-    insurer: "บริษัท", shareCol: "{x} · ส่วนแบ่ง", share: "ส่วนแบ่ง", mktMeasure: "ตัวชี้วัดที่แสดง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
+    insurer: "บริษัท", share: "ส่วนแบ่ง", mktMeasure: "ตัวชี้วัดที่แสดง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
     tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "นโยบาย RA",
     tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
@@ -789,35 +806,52 @@ function focusSection() {
 
 /* ---------- 2 market ---------- */
 let MKT = 0;  // measure shown in the narrow-screen market table (index into cols)
+// a bar from a zero line, scaled to the measure's range; a negative value runs left of the line
+function mktBar(v, lo, hi) {
+  if (v == null) return "";
+  const span = hi - lo || 1, z = -lo / span * 100, w = Math.abs(v) / span * 100, left = v < 0 ? z - w : z;
+  return "<div class='track'>" + (lo < 0 ? "<i class='zero' style='left:" + z.toFixed(2) + "%'></i>" : "") +
+    "<div class='fill" + (v < 0 ? " neg" : "") + "' style='left:" + left.toFixed(2) + "%;width:" + w.toFixed(2) + "%'></div></div>";
+}
 function market() {
-  // third measure: profit before tax (owner decision v1.13, CFO feedback; was insurance revenue)
-  const cols = [["nb_csm", "nb_csm_share"], ["csm_close", "csm_share"], ["pbt", "pbt_share"]];
-  const max = Object.fromEntries(cols.map(([k]) => [k, Math.max(...COS.map(c => g(c, k)))]));
-  let h = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" + cols.map(([k]) => "<th>" + esc(t("shareCol", { x: mLabel(k) })) + "</th>").join("") + "</tr></thead><tbody>";
+  // five measures (owner decision v1.14, CFO feedback): new-business CSM and closing CSM (future profit), then the
+  // insurance service result, net investment result and profit before tax (profit for the period)
+  const cols = ["nb_csm", "csm_close", "isr_gross", "net_inv_result", "pbt"], NFUT = 2;
+  const vals = k => COS.map(c => g(c, k)).filter(v => v != null);
+  const rng = Object.fromEntries(cols.map(k => [k, [Math.min(0, ...vals(k)), Math.max(0, ...vals(k))]]));
+  const sh = (c, k) => { const v = g(c, k), a = ind(k).agg; return v == null || !a ? null : v / a; };
+  const neg = v => v != null && v < 0 ? " neg" : "";
+  const sep = i => i === NFUT ? "gsep" : "msep";
+  let h = "<colgroup><col class='cn'><col class='co'>" + cols.map(() => "<col><col class='cv'><col class='cs'>").join("") + "</colgroup>" +
+    "<thead><tr class='grp'><th class='blank' colspan='2'></th><th colspan='" + 3 * NFUT + "'>" + t("mktGFuture") + "</th>" +
+    "<th class='gsep' colspan='" + 3 * (cols.length - NFUT) + "'>" + t("mktGPeriod") + "</th></tr>" +
+    "<tr class='ms'><th class='l'>#</th><th class='l'>" + t("insurer") + "</th>" +
+    cols.map((k, i) => "<th class='ml " + sep(i) + "' colspan='2'>" + esc(mLabel(k)) + "</th><th class='shh'>" + t("share") + "</th>").join("") + "</tr></thead><tbody>";
   // ordered by new-business CSM; # is the new-business CSM rank
   const nbv = c => g(c, "nb_csm") ?? -Infinity;
   COS.slice().sort((a, b) => nbv(b) - nbv(a)).forEach(c => {
     const r = rk(c, "nb_csm")?.rank;
-    h += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (r ?? "") + "</td><td class='l'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
-      cols.map(([k, s]) => "<td><div class='barcell'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, k)) / max[k]).toFixed(2) + "%'></div></div><span class='v'>" +
-        fM(g(c, k)) + "</span><span class='s'>" + fP(g(c, s)) + "</span></div></td>").join("") + "</tr>";
+    h += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (r ?? "") + "</td><td class='l nm'>" + esc(c.name) + (isF(c) ? "<span class='flag'>" + t("focusFlag") + "</span>" : "") + "</td>" +
+      cols.map((k, i) => { const v = g(c, k), s = sh(c, k);
+        return "<td class='bar " + sep(i) + "'>" + mktBar(v, ...rng[k]) + "</td><td class='v" + neg(v) + "'>" + fM(v) + "</td><td class='s" + neg(s) + "'>" + fP(s) + "</td>"; }).join("") + "</tr>";
   });
-  h += "<tr><td class='l'></td><td class='l'><b>" + t("industry") + "</b></td>" + cols.map(([k]) => "<td><div class='barcell'><span class='v'><b>" + fM(ind(k).agg) + "</b></span><span class='s'>100%</span></div></td>").join("") + "</tr></tbody>";
+  h += "<tr><td class='l'></td><td class='l'><b>" + t("industry") + "</b></td>" +
+    cols.map((k, i) => "<td class='" + sep(i) + "'></td><td><b>" + fM(ind(k).agg) + "</b></td><td class='s'>100%</td>").join("") + "</tr></tbody>";
   const tb = $("#mkt"); tb.innerHTML = h;
   tb.querySelectorAll("tr[data-co]").forEach(tr => hover(tr, () => coTip(byName(tr.dataset.co))));
 
   // narrow screens: the measure picked with the switch, its own ranking and order
-  const [mk, ms] = cols[MKT];
+  const mk = cols[MKT];
   const sw = $("#mktSeg"); sw.setAttribute("aria-label", t("mktMeasure"));
-  sw.innerHTML = cols.map(([k], i) => "<button type='button' data-i='" + i + "' aria-pressed='" + (i === MKT) + "'>" + esc(mLabel(k)) + "</button>").join("");
+  sw.innerHTML = cols.map((k, i) => "<button type='button' data-i='" + i + "' aria-pressed='" + (i === MKT) + "'>" + esc(mLabel(k)) + "</button>").join("");
   sw.querySelectorAll("button").forEach(b => b.addEventListener("click", () => { MKT = +b.dataset.i; market(); }));
   const mv = c => g(c, mk) ?? -Infinity;
   let m = "<thead><tr><th class='l'>#</th><th class='l'>" + t("insurer") + "</th><th></th><th>" + esc(mLabel(mk)) + (DEF[mk].unit === "thb_m" ? " (" + t("m") + ")" : "") +
     "</th><th>" + t("share") + "</th></tr></thead><tbody>";
   COS.slice().sort((a, b) => mv(b) - mv(a)).forEach(c => {
+    const v = g(c, mk), s = sh(c, mk);
     m += "<tr class='" + (isF(c) ? "focus" : "") + "' data-co='" + esc(c.name) + "'><td class='l'>" + (rk(c, mk)?.rank ?? "") + "</td><td class='l nm'>" + esc(c.name) + "</td>" +
-      "<td class='br'><div class='track'><div class='fill' style='width:" + (100 * Math.max(0, g(c, mk)) / max[mk]).toFixed(2) + "%'></div></div></td>" +
-      "<td>" + fM(g(c, mk)) + "</td><td class='s'>" + fP(g(c, ms)) + "</td></tr>";
+      "<td class='br'>" + mktBar(v, ...rng[mk]) + "</td><td class='" + neg(v).trim() + "'>" + fM(v) + "</td><td class='s" + neg(s) + "'>" + fP(s) + "</td></tr>";
   });
   m += "<tr><td class='l'></td><td class='l nm'><b>" + t("industry") + "</b></td><td></td><td><b>" + fM(ind(mk).agg) + "</b></td><td class='s'>100%</td></tr></tbody>";
   const tm = $("#mktM"); tm.innerHTML = m;
