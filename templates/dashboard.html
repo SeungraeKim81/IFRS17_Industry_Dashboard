@@ -444,7 +444,7 @@ const UI = {
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
     tipNbr: "NB / release", tipNbm: "NB CSM margin",
     tipIse: "Insurance service expense", tipIsr: "Insurance service result", tipInv: "Investment income", tipIfie: "Insurance finance expense",
-    tipNir: "Net investment result", tipPbt: "Profit before tax",
+    tipNir: "Net investment result", tipPbt: "Profit before tax", tipNbCsm: "NB CSM", tipRelAmt: "CSM release", tipNbPv: "NB PV premium",
     tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
@@ -520,7 +520,7 @@ const UI = {
     tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스마진", tipRel: "CSM 상각률",
     tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율",
     tipIse: "보험서비스비용", tipIsr: "보험서비스결과", tipInv: "투자이익", tipIfie: "보험금융비용",
-    tipNir: "순투자손익", tipPbt: "세전이익",
+    tipNir: "순투자손익", tipPbt: "세전이익", tipNbCsm: "신계약 CSM", tipRelAmt: "CSM 상각액", tipNbPv: "신계약 PV 보험료",
     tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
     ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
@@ -597,7 +597,7 @@ const UI = {
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
     tipNbr: "NB / release", tipNbm: "NB CSM margin",
     tipIse: "Insurance service expense", tipIsr: "Insurance service result", tipInv: "Investment income", tipIfie: "Insurance finance expense",
-    tipNir: "Net investment result", tipPbt: "Profit before tax",
+    tipNir: "Net investment result", tipPbt: "Profit before tax", tipNbCsm: "NB CSM", tipRelAmt: "CSM release", tipNbPv: "NB PV premium",
     tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
@@ -703,6 +703,13 @@ function coTip(c) {
     [t("tipPbt"), tipM(g(c, "pbt"))], [t("tipNp"), tipM(raw(c, "net_profit"))], null,
     [t("tipIsm"), fP(g(c, "ism_gross"))], [t("tipRel") + (QTR ? t("ann") : ""), fP(g(c, "release_ratio"))],
     [t("tipNbr"), fX(g(c, "nb_to_release"))], [t("tipNbm"), fP(g(c, "nb_csm_margin"))]]);
+}
+// CSM sustainability quadrant: its two ratios, the amounts behind them, then the closing CSM the circle's area shows
+function quadTip(c) {
+  return tipTable(c.name, [
+    [t("tipNbr"), fX(g(c, "nb_to_release"))], [t("tipNbm"), fP(g(c, "nb_csm_margin"))], null,
+    [t("tipNbCsm"), tipM(g(c, "nb_csm"))], [t("tipRelAmt"), tipM(g(c, "csm_release_amount"))], [t("tipNbPv"), tipM(g(c, "nb_pv_premium"))], null,
+    [t("tipCsm"), tipM(g(c, "csm_close"))]]);
 }
 function hover(node, html) {
   const open = e => { showTip(e, typeof html === "function" ? html() : html); tipOwner = node; };
@@ -991,7 +998,7 @@ function quadrant() {
     gg.appendChild(el("text", { x: p.lx, y: p.ly, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--ink)", "font-size": isF(p.c) ? 13 : 11.5, "font-weight": isF(p.c) ? 650 : 400 }, p.txt));
     if (p.over) gg.appendChild(el("text", { x: p.lx, y: p.ly + 12, "text-anchor": p.side > 0 ? "start" : "end", fill: "var(--muted)", "font-size": 10.5 }, p.extra));
     const hit = el("circle", { cx: p.x, cy: p.y, r: Math.max(p.rad, 12), fill: "transparent" });
-    hover(hit, () => coTip(p.c)); gg.appendChild(hit); svg.appendChild(gg);
+    hover(hit, () => quadTip(p.c)); gg.appendChild(hit); svg.appendChild(gg);
   });
 }
 
