@@ -222,6 +222,10 @@ footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--hair);font-si
 .tip table{border-collapse:collapse;width:100%}
 .tip td{padding:1px 0;font-size:12px;white-space:nowrap}
 .tip td:last-child{text-align:right;padding-left:16px;font-variant-numeric:tabular-nums}
+/* a null row in tipTable starts a new group of rows, set off by a hairline */
+.tip tr.gs td{border-top:1px solid var(--hair);padding-top:4px}
+.tip tr.gs+tr td,.tip tr:first-child td{padding-top:1px}
+.tip .neg{color:var(--bad)}
 /* new-business strip tooltip: one row per insurer at the spot, with the measure's numerator and denominator */
 .tip:has(table.tipgrid){max-width:min(460px,calc(100vw - 16px))}
 .tip table.tipgrid th{font-size:11px;font-weight:600;color:var(--muted);text-align:right;padding:0 0 3px 12px;white-space:nowrap}
@@ -438,7 +442,9 @@ const UI = {
     focusFlag: "focus", industry: "Industry", industryAgg: "Industry aggregate", industryN: "Industry ({n} insurers)",
     insurer: "Insurer", share: "Share", mktMeasure: "Measure shown", raSplit: "RA split", raSplitTitle: "Risk-adjustment change disaggregated between insurance service result and IFIE",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
-    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "RA policy",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin",
+    tipIse: "Insurance service expense", tipIsr: "Insurance service result", tipInv: "Investment income", tipIfie: "Insurance finance expense",
+    tipNir: "Net investment result", tipPbt: "Profit before tax",
     tipIndex: "Index (opening = 100)", tipMedian: "Industry median", tipRank: "Rank (1 = highest)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "Amounts in THB m, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
@@ -512,7 +518,9 @@ const UI = {
     focusFlag: "강조", industry: "업계", industryAgg: "업계 합계", industryN: "업계 ({n}개사)",
     insurer: "보험사", share: "점유율", mktMeasure: "표시할 지표", raSplit: "RA 분리", raSplitTitle: "위험조정 변동을 보험서비스결과와 보험금융손익으로 분리하는지 여부",
     tipRev: "보험수익", tipNp: "당기순이익", tipCsm: "기말 CSM", tipIsm: "보험서비스마진", tipRel: "CSM 상각률",
-    tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율", tipNpm: "순이익률", tipRa: "RA 정책",
+    tipNbr: "신계약 CSM ÷ 상각", tipNbm: "신계약 CSM 마진율",
+    tipIse: "보험서비스비용", tipIsr: "보험서비스결과", tipInv: "투자이익", tipIfie: "보험금융비용",
+    tipNir: "순투자손익", tipPbt: "세전이익",
     tipIndex: "지수 (기초 = 100)", tipMedian: "업계 중앙값", tipRank: "순위 (1 = 최고)",
     ndNbCsm: "신계약 CSM", ndPvPrem: "신계약 PV 보험료", ndPvAcq: "PV 보험취득현금흐름", ndLoss: "신계약 손실요소", ndRel: "CSM 상각", tipAmounts: "금액 단위 백만 바트, {cur}",
     ndAdj: "CSM 조정액", ndAdjBase: "기초 CSM + 신계약 + 이자부리", ndNetInv: "보험금융손익 차감 후", ndInv: "투자손익", ndIsr: "보험서비스결과", ndRev: "보험수익",
@@ -587,7 +595,9 @@ const UI = {
     focusFlag: "เน้น", industry: "อุตสาหกรรม", industryAgg: "ยอดรวมอุตสาหกรรม", industryN: "อุตสาหกรรม ({n} บริษัท)",
     insurer: "บริษัท", share: "ส่วนแบ่ง", mktMeasure: "ตัวชี้วัดที่แสดง", raSplit: "แยก RA", raSplitTitle: "แยกการเปลี่ยนแปลงของ risk adjustment ระหว่าง insurance service result กับ IFIE หรือไม่",
     tipRev: "Insurance revenue", tipNp: "Net profit", tipCsm: "CSM closing", tipIsm: "Service margin", tipRel: "Release ratio",
-    tipNbr: "NB / release", tipNbm: "NB CSM margin", tipNpm: "Net profit margin", tipRa: "นโยบาย RA",
+    tipNbr: "NB / release", tipNbm: "NB CSM margin",
+    tipIse: "Insurance service expense", tipIsr: "Insurance service result", tipInv: "Investment income", tipIfie: "Insurance finance expense",
+    tipNir: "Net investment result", tipPbt: "Profit before tax",
     tipIndex: "ดัชนี (ต้นงวด = 100)", tipMedian: "ค่ามัธยฐานอุตสาหกรรม", tipRank: "อันดับ (1 = สูงสุด)",
     ndNbCsm: "NB CSM", ndPvPrem: "NB PV premium", ndPvAcq: "PV acquisition cost", ndLoss: "NB loss component", ndRel: "CSM release", tipAmounts: "จำนวนเงินเป็นล้านบาท, {cur}",
     ndAdj: "CSM adjustment", ndAdjBase: "Opening CSM + NB + accretion", ndNetInv: "Net of IFIE", ndInv: "Net investment income", ndIsr: "Insurance service result", ndRev: "Insurance revenue",
@@ -675,14 +685,24 @@ let tipOwner = null;
 const hideTip = () => { tip.style.opacity = 0; tipOwner = null; };
 document.addEventListener("pointerdown", e => { if (tipOwner && !tipOwner.contains(e.target)) hideTip(); }, true);
 addEventListener("scroll", () => { if (tipOwner) hideTip(); }, { capture: true, passive: true });
-const tipTable = (title, rows) => "<b>" + esc(title) + "</b><table>" + rows.map(r => "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td></tr>").join("") + "</table>";
-function coTip(c, extra = []) {
+// rows are [label, value html]; a null entry starts a new group (a hairline above the next row)
+const tipTable = (title, rows) => {
+  let gs = false;
+  return "<b>" + esc(title) + "</b><table>" + rows.map(r => {
+    if (!r) { gs = true; return ""; }
+    const h = "<tr" + (gs ? " class='gs'" : "") + "><td>" + r[0] + "</td><td>" + r[1] + "</td></tr>"; gs = false; return h;
+  }).join("") + "</table>";
+};
+const tipM = v => v != null && v < 0 ? "<span class='neg'>" + fM(v) + "</span>" : fM(v);  // an amount, red when negative
+// market position: the profit lines as the statements show them (expenses negative), then the ratios
+// (owner decision v1.15: net profit margin and RA policy left out)
+function coTip(c) {
   return tipTable(c.name, [
-    [t("tipRev"), fM(raw(c, "insurance_revenue"))], [t("tipNp"), fM(raw(c, "net_profit"))],
-    [t("tipCsm"), fM(raw(c, "csm_close"))], [t("tipIsm"), fP(g(c, "ism_gross"))],
-    [t("tipRel") + (QTR ? t("ann") : ""), fP(g(c, "release_ratio"))], [t("tipNbr"), fX(g(c, "nb_to_release"))],
-    [t("tipNbm"), fP(g(c, "nb_csm_margin"))], [t("tipNpm"), fP(g(c, "npm"))],
-    [t("tipRa"), raLabel(c)], ...extra]);
+    [t("tipRev"), tipM(raw(c, "insurance_revenue"))], [t("tipIse"), tipM(raw(c, "insurance_service_expense"))], [t("tipIsr"), tipM(g(c, "isr_gross"))], null,
+    [t("tipInv"), tipM(raw(c, "net_investment_income"))], [t("tipIfie"), tipM(raw(c, "ifie"))], [t("tipNir"), tipM(g(c, "net_inv_result"))], null,
+    [t("tipPbt"), tipM(g(c, "pbt"))], [t("tipNp"), tipM(raw(c, "net_profit"))], null,
+    [t("tipIsm"), fP(g(c, "ism_gross"))], [t("tipRel") + (QTR ? t("ann") : ""), fP(g(c, "release_ratio"))],
+    [t("tipNbr"), fX(g(c, "nb_to_release"))], [t("tipNbm"), fP(g(c, "nb_csm_margin"))]]);
 }
 function hover(node, html) {
   const open = e => { showTip(e, typeof html === "function" ? html() : html); tipOwner = node; };
